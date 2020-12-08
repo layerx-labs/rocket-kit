@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox renders 1`] = `
+<DocumentFragment>
+  <label
+    class="sc-gsTCUz fIQQCp"
+  >
+    <span
+      class="sc-dlfnbm jMDpkz"
+    >
+      ola
+    </span>
+    <input
+      checked=""
+      class="sc-hKgILt erBOJf"
+      name="check"
+      type="checkbox"
+    />
+    <span
+      class="sc-eCssSg khPRpK"
+    />
+  </label>
+</DocumentFragment>
+`;
