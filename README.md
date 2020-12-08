@@ -1,4 +1,4 @@
-# Taikai Design System
+# TAIKAI Design System
 
 Built with [TSDX](https://tsdx.io/) 
 
