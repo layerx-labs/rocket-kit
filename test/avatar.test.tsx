@@ -9,7 +9,7 @@ describe('Avatar', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  
+
   it('Avatar has correct alt', async () => {
     const avatarAlt = 'user avatar';
     render(<Avatar alt={avatarAlt} url={'/dummy.png'} />);
