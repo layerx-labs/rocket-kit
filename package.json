@@ -1,6 +1,14 @@
 {
   "version": "0.1.1-0",
   "license": "MIT",
+  "repository": "taikai/taikai-design-system",
+  "keywords": [
+    "react",
+    "design-system",
+    "taikai",
+    "design",
+    "component library"
+  ],
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -36,7 +44,7 @@
     "trailingComma": "es5"
   },
   "name": "taikai-design-system",
-  "author": "TAIKAI",
+  "author": "taikai",
   "module": "dist/taikai-design-system.esm.js",
   "size-limit": [
     {
@@ -71,5 +79,8 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
     "typescript": "^4.1.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
