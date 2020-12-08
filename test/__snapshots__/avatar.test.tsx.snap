@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar renders 1`] = `
+<DocumentFragment>
+  <img
+    alt="avatar alt"
+    class="sc-bdfBwQ fwfWIB"
+    src="/dummy.png"
+  />
+</DocumentFragment>
+`;
