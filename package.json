@@ -1,7 +1,10 @@
 {
   "version": "0.1.1-1",
   "license": "MIT",
-  "repository": "taikai/taikai-design-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taikai/taikai-design-system.git"
+  },
   "keywords": [
     "react",
     "design-system",
@@ -43,7 +46,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "taikai-design-system",
+  "name": "@taikai/taikai-design-system",
   "author": "taikai",
   "module": "dist/taikai-design-system.esm.js",
   "size-limit": [
