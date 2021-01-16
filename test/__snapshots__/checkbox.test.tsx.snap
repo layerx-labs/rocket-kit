@@ -8,7 +8,7 @@ exports[`Checkbox renders 1`] = `
     <span
       class="sc-dlfnbm jMDpkz"
     >
-      ola
+      hello
     </span>
     <input
       checked=""

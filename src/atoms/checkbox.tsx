@@ -14,7 +14,7 @@ const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   position: relative;
   height: 24px;
   padding-left: 0;
-  cursor: ${props => (props.disabled ? 'auto' : 'pointer')};
+  cursor: ${(props) => (props.disabled ? 'auto' : 'pointer')};
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -25,13 +25,13 @@ const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   }
 
   span {
-    color: ${props =>
+    color: ${(props) =>
       props.error
         ? 'var(--red, hsl(354, 83%, 64%))'
         : props.disabled
         ? 'var(--grey, hsl(0, 0%, 85%))'
         : null};
-    border-color: ${props =>
+    border-color: ${(props) =>
       props.error ? 'var(--red, hsl(354, 83%, 64%))' : null};
   }
 `;
@@ -81,7 +81,7 @@ const Checkmark = styled.span<CheckboxErrorProps>`
   top: 0;
   left: 0;
   border: 2px solid
-    ${props =>
+    ${(props) =>
       props.error
         ? 'var(--red, hsl(354, 83%, 64%))'
         : 'var(--grey, hsl(0, 0%, 85%))'};
