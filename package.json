@@ -52,11 +52,11 @@
   "size-limit": [
     {
       "path": "dist/taikai-design-system.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "30 KB"
     },
     {
       "path": "dist/taikai-design-system.esm.js",
-      "limit": "10 KB"
+      "limit": "30 KB"
     }
   ],
   "devDependencies": {
