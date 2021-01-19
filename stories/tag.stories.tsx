@@ -2,7 +2,7 @@ import React from 'react';
 import { Tag } from '../src';
 
 export default {
-  title: 'Design System|Atoms/Tags',
+  title: 'Atoms/Tags',
   component: Tag,
 };
 
