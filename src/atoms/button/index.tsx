@@ -11,9 +11,7 @@ interface ButtonProps {
   className?: string;
   querySelector?: string;
   ariaLabel?: string;
-  action?:
-    | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
-    | undefined;
+  action?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   disabled?: boolean;
   loading?: boolean;
   dataTestId?: string;
@@ -40,16 +38,14 @@ const Button = (props: ButtonProps) => {
 
   useEffect(() => {
     if (!document) return;
-
-    const element = document.querySelector(querySelector as any);
+    const element: HTMLElement | null = document.querySelector(querySelector);
     if (!element) return;
-
-    element.onmousemove = (e: any) => {
-      const x = e.pageX - e.target?.offsetLeft ?? -0;
-      const y = e.pageY - e.target?.offsetTop;
-      e.target?.style.setProperty('--x', `${x}px`);
-      e.target?.style.setProperty('--y', `${y}px`);
-    };
+    element.addEventListener('mousemove', (event) => {
+      const x = event.pageX - event.offsetX;
+      const y = event.pageY - event.offsetY;
+      element.style.setProperty('--x', `${x}px`);
+      element.style.setProperty('--y', `${y}px`);
+    });
   }, [querySelector]);
 
   return (
