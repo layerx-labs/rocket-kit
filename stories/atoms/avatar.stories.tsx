@@ -1,8 +1,8 @@
 import React from 'react';
-import { Avatar } from '../src';
+import { Avatar } from '../../src';
 
 export default {
-  title: 'Avatar',
+  title: 'Atoms/Avatar',
   component: Avatar,
 };
 
@@ -11,5 +11,5 @@ export const AvatarPNG = () => (
 );
 
 export const AvatarSVG = () => (
-    <Avatar alt={'alt'} url={'./images/default-avatar.svg'} />
-  );
+  <Avatar alt={'alt'} url={'./images/default-avatar.svg'} />
+);

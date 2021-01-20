@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tag } from '../src';
+import { Tag } from '../../src';
 
 export default {
   title: 'Atoms/Tags',

@@ -1,7 +1,11 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
+import { TagColor } from './types';
 
-const TagWrapper = styled.span`
+interface TagWrapperProps {
+  color?: TagColor;
+}
+
+export const TagWrapper = styled.span<TagWrapperProps>`
   display: inline-block;
   border: 2px solid var(--green, hsl(186, 62%, 59%));
   border-radius: 999px;
@@ -19,21 +23,21 @@ const TagWrapper = styled.span`
     margin-left: 5px;
   }
 
-  ${(props) =>
+  ${props =>
     props.color === 'orange' &&
     css`
       border-color: var(--orange, hsl(36, 100%, 57%));
       background-color: var(--orange, hsl(36, 100%, 57%));
     `}
 
-  ${(props) =>
+  ${props =>
     props.color === 'danger' &&
     css`
       border-color: var(--red, hsl(354, 83%, 64%));
       background-color: var(--red, hsl(354, 83%, 64%));
     `}
 
-    ${(props) =>
+    ${props =>
       props.color === 'info' &&
       css`
         border-color: var(--grey, hsl(0, 0%, 85%));
@@ -41,7 +45,7 @@ const TagWrapper = styled.span`
         color: var(--default, hsl(0, 0%, 16%));
       `}
 
-  ${(props) =>
+  ${props =>
     props.color === 'outline' &&
     css`
       border-color: var(--default, hsl(0, 0%, 16%));
@@ -49,17 +53,3 @@ const TagWrapper = styled.span`
       color: var(--default, hsl(0, 0%, 16%));
     `}
 `;
-
-type Color = 'primary' | 'orange' | 'danger' | 'info' | 'outline';
-
-interface TagProps {
-  color?: Color;
-  value: string;
-}
-
-const Tag = (props: TagProps) => {
-  const { color = 'primary', value } = props;
-  return <TagWrapper color={color}>{value}</TagWrapper>;
-};
-
-export default Tag;

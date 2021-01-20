@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from '../src';
+import { Checkbox } from '../../src';
 
 export default {
   title: 'Atoms/Checkbox',

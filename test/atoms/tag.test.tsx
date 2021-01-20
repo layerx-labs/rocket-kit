@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Tag } from '../src';
+import { Tag } from '../../src';
 
 describe('Tag', () => {
   it('renders', () => {

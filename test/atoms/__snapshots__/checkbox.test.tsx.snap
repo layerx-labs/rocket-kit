@@ -3,21 +3,21 @@
 exports[`Checkbox renders 1`] = `
 <DocumentFragment>
   <label
-    class="sc-gsTCUz fIQQCp"
+    class="sc-dlfnbm cOiyNW"
   >
     <span
-      class="sc-dlfnbm jMDpkz"
+      class="sc-hKgILt byfDOB"
     >
       hello
     </span>
     <input
       checked=""
-      class="sc-hKgILt erBOJf"
+      class="sc-eCssSg ugTxk"
       name="check"
       type="checkbox"
     />
     <span
-      class="sc-eCssSg khPRpK"
+      class="sc-jSgupP fNROdD"
     />
   </label>
 </DocumentFragment>

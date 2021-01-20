@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Checkbox } from '../src';
+import { Checkbox } from '../../src';
 
 describe('Checkbox', () => {
   it('renders', () => {
