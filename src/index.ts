@@ -10,3 +10,4 @@ export { default as Checkbox } from './atoms/checkbox';
 export { default as Tag } from './atoms/tag';
 export { default as Spinner } from './atoms/spinner';
 export { default as Icon } from './atoms/icon';
+export { default as Button } from './atoms/button';

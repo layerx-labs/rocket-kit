@@ -24,5 +24,5 @@ export const IconComponent = (args) => (
 
 IconComponent.args = {
   fill: '#000000',
-  icon: '20px',
+  icon: 'rocket',
 };
