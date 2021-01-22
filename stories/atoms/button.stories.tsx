@@ -3,7 +3,7 @@ import { Button } from '../../src';
 import icons from '../../src/ions/icons';
 
 export default {
-  title: 'Atoms/Button',
+  title: 'Design System/Atoms/Button',
   component: Button,
   argTypes: {
     color: {
@@ -37,6 +37,8 @@ export default {
 };
 
 export const ButtonComponent = (args) => <Button {...args} />;
+
+ButtonComponent.storyName = 'Button';
 
 ButtonComponent.args = {
   value: 'Dummie',

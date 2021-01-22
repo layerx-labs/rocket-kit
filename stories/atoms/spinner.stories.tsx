@@ -2,7 +2,7 @@ import React from 'react';
 import { Spinner } from '../../src';
 
 export default {
-  title: 'Atoms/Spinner',
+  title: 'Design System/Atoms/Spinner',
   component: Spinner,
   argTypes: {
     fill: { control: 'color' },
@@ -10,6 +10,8 @@ export default {
 };
 
 export const SpinnerComponent = (args) => <Spinner {...args} />;
+
+SpinnerComponent.storyName = 'Spinner';
 
 SpinnerComponent.args = {
   fill: '#000000',
