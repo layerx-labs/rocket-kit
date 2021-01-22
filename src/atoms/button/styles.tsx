@@ -28,35 +28,36 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   --txt: var(--white, hsl(0, 0%, 100%));
   --hover: hsl(186, 62%, 49%);
 
-  border-width: ${props => (props.variant === 'outline' ? '3px' : 0)};
+  border-width: ${(props) => (props.variant === 'outline' ? '3px' : 0)};
   border-style: solid;
   border-color: var(--button);
-  border-radius: ${props => (props.variant === 'text' ? 0 : '999px')};
-  background-color: ${props =>
+  border-radius: ${(props) => (props.variant === 'text' ? 0 : '999px')};
+  background-color: ${(props) =>
     props.variant === 'solid' ? 'var(--button)' : 'transparent'};
-  width: ${props =>
+  width: ${(props) =>
     props.value ? (props.circle ? '36px' : 'min-content') : '36px'};
   height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${props => (props.value ? (props.circle ? 0 : '0 20px') : 0)};
+  padding: ${(props) => (props.value ? (props.circle ? 0 : '0 20px') : 0)};
   text-transform: uppercase;
   white-space: nowrap;
   transition-duration: 0.3s;
   cursor: pointer;
 
   &:hover {
-    border-color: ${props => (props.variant === 'solid' ? '' : 'var(--hover)')};
-    background-color: ${props =>
+    border-color: ${(props) =>
+      props.variant === 'solid' ? '' : 'var(--hover)'};
+    background-color: ${(props) =>
       props.variant === 'solid' ? 'var(--hover)' : 'transparent'};
 
     span {
-      color: ${props => (props.variant === 'solid' ? '' : 'var(--hover)')};
+      color: ${(props) => (props.variant === 'solid' ? '' : 'var(--hover)')};
     }
 
     svg {
-      fill: ${props => (props.variant === 'solid' ? '' : 'var(--hover)')};
+      fill: ${(props) => (props.variant === 'solid' ? '' : 'var(--hover)')};
     }
   }
 
@@ -74,7 +75,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   }
 
   .spinner {
-    border-top-color: ${props =>
+    border-top-color: ${(props) =>
       props.variant === 'solid' ? '' : 'var(--button)'};
   }
 
@@ -82,7 +83,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     position: relative;
     font-size: 0.75rem;
     font-weight: var(--bold, 700);
-    color: ${props =>
+    color: ${(props) =>
       props.variant === 'solid' ? 'var(--txt)' : 'var(--button)'};
     pointer-events: none;
     transition-duration: 0.3s;
@@ -92,47 +93,47 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     width: auto;
     min-width: 20px;
     height: 20px;
-    fill: ${props =>
+    fill: ${(props) =>
       props.variant === 'solid' ? 'var(--txt)' : 'var(--button)'};
     transition: 0.3s;
   }
 
-  ${props =>
+  ${(props) =>
     props.color === 'danger' &&
     css`
       --button: var(--red, hsl(354, 83%, 64%));
       --hover: hsl(354, 83%, 54%);
     `}
 
-  ${props =>
+  ${(props) =>
     props.color === 'info' &&
     css`
       --button: var(--grey, hsl(0, 0%, 85%));
       --hover: hsl(0, 0%, 75%);
     `}
 
-  ${props =>
+  ${(props) =>
     props.color === 'purple' &&
     css`
       --button: var(--purple, hsl(256, 55%, 43%));
       --hover: hsl(256, 55%, 33%);
     `}
 
-  ${props =>
+  ${(props) =>
     props.color === 'white' &&
     css`
       --button: var(--white);
       --hover: var(--grey);
     `}
 
-  ${props =>
+  ${(props) =>
     props.color === 'black' &&
     css`
       --button: var(--default, hsl(0, 0%, 16%));
       --hover: hsl(0, 0%, 6%);
     `}
 
-  ${props =>
+  ${(props) =>
     props.color === 'magic' &&
     css`
       position: relative;
@@ -167,7 +168,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.color === 'live' &&
     css`
       animation: ${live} 1s infinite;

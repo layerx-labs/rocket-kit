@@ -7,7 +7,7 @@ interface IconProps {
 }
 
 const Icon = (props: IconProps) => {
-  const { fill = '#000000', icon } = props;
+  const { fill, icon } = props;
 
   return (
     <svg viewBox="0 0 32 32">
