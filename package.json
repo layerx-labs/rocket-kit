@@ -86,5 +86,8 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "polished": "^4.0.5"
   }
 }
