@@ -26,6 +26,7 @@ const Checkbox = (props: Props) => {
     style,
     className = '',
   } = props;
+
   return (
     <CheckboxWrapper
       error={error}

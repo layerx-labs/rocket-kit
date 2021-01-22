@@ -16,10 +16,9 @@ const rotation = keyframes`
 
 export const Loading = styled.div<LoadingProps>`
   border: 5px solid rgba(255, 255, 255, 0.4);
-  border-top-color: ${(props) =>
-    props.fill || 'var(--white, hsl(0, 0%, 100%))'};
+  border-top-color: ${props => props.fill || 'var(--white, hsl(0, 0%, 100%))'};
   border-radius: 50%;
-  width: ${(props) => props.size || '20px'};
-  height: ${(props) => props.size || '20px'};
+  width: ${props => props.size || '20px'};
+  height: ${props => props.size || '20px'};
   animation: ${rotation} 0.8s ease infinite;
 `;

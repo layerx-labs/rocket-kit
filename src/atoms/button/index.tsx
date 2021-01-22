@@ -41,9 +41,11 @@ const Button = (props: ButtonProps) => {
     const element: HTMLElement | null = document.querySelector(querySelector);
 
     if (!element) return;
-    element.addEventListener('mousemove', (event) => {
-      const x = event.pageX - event.offsetX;
-      const y = event.pageY - event.offsetY;
+    element.addEventListener('mousemove', event => {
+      const target: HTMLElement | null = event.target as HTMLElement;
+      const x = event.pageX - target?.offsetLeft ?? 0;
+      const y = event.pageY - target?.offsetTop ?? 0;
+
       element.style.setProperty('--x', `${x}px`);
       element.style.setProperty('--y', `${y}px`);
     });
