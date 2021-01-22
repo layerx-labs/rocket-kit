@@ -1,15 +1,20 @@
 import React from 'react';
 import * as Styles from './styles';
-import { TagColor } from './types';
+import { TagVariant, TagColor } from './types';
 
 interface TagProps {
+  variant?: TagVariant;
   color?: TagColor;
   value: string;
 }
 
 const Tag = (props: TagProps) => {
-  const { color = 'primary', value } = props;
-  return <Styles.TagWrapper color={color}>{value}</Styles.TagWrapper>;
+  const { variant = 'solid', color = 'primary', value } = props;
+  return (
+    <Styles.TagWrapper variant={variant} color={color}>
+      {value}
+    </Styles.TagWrapper>
+  );
 };
 
 export default Tag;

@@ -2,41 +2,30 @@ import React from 'react';
 import { Tag } from '../../src';
 
 export default {
-  title: 'Atoms/Tags',
+  title: 'Design System/Atoms/Tag',
   component: Tag,
+  argTypes: {
+    color: {
+      control: {
+        type: 'select',
+        options: ['primary', 'orange', 'danger', 'info'],
+      },
+    },
+    variant: {
+      control: {
+        type: 'select',
+        options: ['solid', 'outline'],
+      },
+    },
+  },
 };
 
 export const TagPrimaryComponent = (args) => <Tag {...args} />;
 
+TagPrimaryComponent.storyName = 'Tag';
+
 TagPrimaryComponent.args = {
   color: 'primary',
-  value: 'Burgdoggen',
-};
-
-export const TagOrangeComponent = (args) => <Tag color="orange" {...args} />;
-
-TagOrangeComponent.args = {
-  color: 'orange',
-  value: 'Burgdoggen',
-};
-
-export const TagDangerComponent = (args) => <Tag {...args} />;
-
-TagDangerComponent.args = {
-  color: 'danger',
-  value: 'Burgdoggen',
-};
-
-export const TagInfoComponent = (args) => <Tag {...args} />;
-
-TagInfoComponent.args = {
-  color: 'info',
-  value: 'Burgdoggen',
-};
-
-export const TagOutlineComponent = (args) => <Tag {...args} />;
-
-TagOutlineComponent.args = {
-  color: 'outline',
+  variant: 'solid',
   value: 'Burgdoggen',
 };

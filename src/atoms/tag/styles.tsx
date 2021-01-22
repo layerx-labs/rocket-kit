@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
-import { TagColor } from './types';
+import { TagVariant, TagColor } from './types';
 
 interface TagWrapperProps {
+  variant?: TagVariant;
   color?: TagColor;
 }
 
@@ -46,7 +47,7 @@ export const TagWrapper = styled.span<TagWrapperProps>`
       `}
 
   ${(props) =>
-    props.color === 'outline' &&
+    props.variant === 'outline' &&
     css`
       border-color: var(--default, hsl(0, 0%, 16%));
       background-color: transparent;
