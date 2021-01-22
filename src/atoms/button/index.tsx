@@ -39,8 +39,9 @@ const Button = (props: ButtonProps) => {
   useEffect(() => {
     if (!document) return;
     const element: HTMLElement | null = document.querySelector(querySelector);
+
     if (!element) return;
-    element.addEventListener('mousemove', event => {
+    element.addEventListener('mousemove', (event) => {
       const x = event.pageX - event.offsetX;
       const y = event.pageY - event.offsetY;
       element.style.setProperty('--x', `${x}px`);
