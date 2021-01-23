@@ -13,7 +13,7 @@ export const Wrapper = styled.div<NoteCardProps>`
   --light: ${lighten(0.4, 'hsl(0, 0%, 48%)')};
   --dark: ${darken(0.1, 'hsl(0, 0%, 48%)')};
 
-  ${(props) =>
+  ${props =>
     props.color === 'info' &&
     css`
       --default: hsl(0, 0%, 48%);
@@ -21,7 +21,7 @@ export const Wrapper = styled.div<NoteCardProps>`
       --dark: ${darken(0.1, 'hsl(0, 0%, 48%)')};
     `}
 
-  ${(props) =>
+  ${props =>
     props.color === 'primary' &&
     css`
       --default: hsl(186, 62%, 59%);
@@ -29,7 +29,7 @@ export const Wrapper = styled.div<NoteCardProps>`
       --dark: ${darken(0.15, 'hsl(186, 62%, 59%)')};
     `}
 
-  ${(props) =>
+  ${props =>
     props.color === 'danger' &&
     css`
       --default: hsl(354, 83%, 64%);
@@ -54,7 +54,7 @@ export const Wrapper = styled.div<NoteCardProps>`
     }
   }
 
-  ${(props) =>
+  ${props =>
     props.buttonValue &&
     css`
       button {

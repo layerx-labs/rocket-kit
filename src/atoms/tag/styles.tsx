@@ -24,21 +24,21 @@ export const TagWrapper = styled.span<TagWrapperProps>`
     margin-left: 5px;
   }
 
-  ${(props) =>
+  ${props =>
     props.color === 'orange' &&
     css`
       border-color: var(--orange, hsl(36, 100%, 57%));
       background-color: var(--orange, hsl(36, 100%, 57%));
     `}
 
-  ${(props) =>
+  ${props =>
     props.color === 'danger' &&
     css`
       border-color: var(--red, hsl(354, 83%, 64%));
       background-color: var(--red, hsl(354, 83%, 64%));
     `}
 
-    ${(props) =>
+    ${props =>
       props.color === 'info' &&
       css`
         border-color: var(--grey, hsl(0, 0%, 85%));
@@ -46,7 +46,7 @@ export const TagWrapper = styled.span<TagWrapperProps>`
         color: var(--default, hsl(0, 0%, 16%));
       `}
 
-  ${(props) =>
+  ${props =>
     props.variant === 'outline' &&
     css`
       border-color: var(--default, hsl(0, 0%, 16%));
