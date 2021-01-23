@@ -54,6 +54,12 @@ Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adju
 
 Jest tests are set up to run with `npm test` or `yarn test`.
 
+To debug tests
+```
+import { screen } from '@testing-library/react';
+screen.logTestingPlaygroundURL();
+```
+
 ### Bundle analysis
 
 Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` and visulize it with `npm run analyze`.

@@ -1,15 +1,13 @@
-import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 interface CheckboxErrorProps {
   error?: string;
 }
-
 interface CheckboxWrapperProps extends CheckboxErrorProps {
   disabled?: boolean;
 }
 
-const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
+export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   display: inline-block;
   position: relative;
   height: 24px;
@@ -36,13 +34,13 @@ const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   }
 `;
 
-const Label = styled.span`
+export const CheckboxLabel = styled.span`
   padding-left: 30px;
   line-height: 24px;
   vertical-align: middle;
 `;
 
-const Input = styled.input`
+export const CheckboxInput = styled.input`
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -76,7 +74,7 @@ const Input = styled.input`
   }
 `;
 
-const Checkmark = styled.span<CheckboxErrorProps>`
+export const Checkmark = styled.span<CheckboxErrorProps>`
   position: absolute;
   top: 0;
   left: 0;
@@ -105,45 +103,3 @@ const Checkmark = styled.span<CheckboxErrorProps>`
     transform: rotate(45deg);
   }
 `;
-
-interface Props extends HTMLAttributes<HTMLDivElement> {
-  value: string;
-  label?: string;
-  checked?: boolean;
-  onChange?: () => {};
-  error?: string;
-  disabled?: boolean;
-}
-
-const Checkbox = (props: Props) => {
-  const {
-    label,
-    value,
-    checked = false,
-    onChange = () => {},
-    error,
-    disabled = false,
-    style,
-    className = '',
-  } = props;
-  return (
-    <CheckboxWrapper
-      error={error}
-      disabled={disabled}
-      style={style}
-      className={className}
-    >
-      <Label>{label}</Label>
-      <Input
-        type="checkbox"
-        name={value}
-        checked={checked}
-        onChange={onChange}
-        disabled={disabled}
-      />
-      <Checkmark />
-    </CheckboxWrapper>
-  );
-};
-
-export default Checkbox;
