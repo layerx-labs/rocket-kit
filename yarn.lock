@@ -2383,7 +2383,7 @@
     resolve-from "^5.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/theming@6.1.15":
+"@storybook/theming@6.1.15", "@storybook/theming@^6.1.15":
   version "6.1.15"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-6.1.15.tgz#01083ab89904dd959429b0b3fd1c76bd0ecc59ef"
   integrity sha512-88IdYaPzp4NMKf/GKBrPggxD6/d/lkdQ4SNowXxN9g9eONd9M7HtTbjuJGRCbGMJ52xGcbpj2exEnAqKQ2iodA==
