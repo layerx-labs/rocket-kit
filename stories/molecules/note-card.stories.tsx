@@ -4,15 +4,30 @@ import { NoteCard } from '../../src';
 export default {
   title: 'Design System/Molecules/Note Card',
   component: NoteCard,
-  // argTypes: {
-  //   value: "sadasd",
-  // },
+  argTypes: {
+    color: {
+      control: {
+        type: 'select',
+        options: ['info', 'primary', 'danger'],
+      },
+    },
+    onClick: { action: 'clicked' },
+  },
 };
 
-export const NoteCardComponent = (args) => <NoteCard {...args} />;
+export const NoteCardText = (args) => <NoteCard {...args} />;
 
-NoteCardComponent.storyName = 'Note Card';
+NoteCardText.storyName = 'Text Only';
+NoteCardText.args = {
+  color: 'info',
+  value:
+    'Adaptogen humblebrag letterpress, plaid franzen authentic four loko street art vice succulents health goth art party offal 3 wolf moon. Synth lyft hoodie mustache blog narwhal small batch hot chicken enamel pin venmo vaporware subway tile health goth.',
+};
 
-NoteCardComponent.args = {
-  value: 'Dummie',
+export const NoteCardAction = NoteCardText.bind({});
+
+NoteCardAction.storyName = 'With Action';
+NoteCardAction.args = {
+  ...NoteCardText.args,
+  buttonValue: 'Awesome Button',
 };
