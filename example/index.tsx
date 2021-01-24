@@ -1,12 +1,12 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { TaikaiLogo } from '../.';
+import { Tag } from '../.';
 
 const App = () => {
   return (
     <div>
-      <TaikaiLogo />
+      <Tag value={'Hello'} />
     </div>
   );
 };
