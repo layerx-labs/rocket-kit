@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 const Avatar = (props: Props) => {
   const { url, alt, style } = props;
-  return <Styles.Image src={url} alt={alt} style={style} />;
+  return <Styles.Image className="avatar" src={url} alt={alt} style={style} />;
 };
 
 export default Avatar;

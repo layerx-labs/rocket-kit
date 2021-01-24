@@ -3,7 +3,7 @@
 exports[`Button Link renders 1`] = `
 <DocumentFragment>
   <a
-    class="sc-dlfnbm jqqxiH button button"
+    class="sc-dlfnbm jqqxiH button button-link"
     color="primary"
     data-event=""
     data-testid=""

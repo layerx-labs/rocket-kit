@@ -24,7 +24,7 @@ const Checkbox = (props: Props) => {
     error,
     disabled = false,
     style,
-    className = '',
+    className = 'checkbox',
   } = props;
 
   return (

@@ -11,7 +11,7 @@ interface TagProps {
 const Tag = (props: TagProps) => {
   const { variant = 'solid', color = 'primary', value } = props;
   return (
-    <Styles.TagWrapper variant={variant} color={color}>
+    <Styles.TagWrapper className="tag" variant={variant} color={color}>
       {value}
     </Styles.TagWrapper>
   );

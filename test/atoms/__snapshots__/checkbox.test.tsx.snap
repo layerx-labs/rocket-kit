@@ -3,7 +3,7 @@
 exports[`Checkbox renders 1`] = `
 <DocumentFragment>
   <label
-    class="sc-hKgILt evueWg"
+    class="sc-hKgILt evueWg checkbox"
   >
     <span
       class="sc-eCssSg hvEIaS"
@@ -12,7 +12,7 @@ exports[`Checkbox renders 1`] = `
     </span>
     <input
       checked=""
-      class="sc-jSgupP eRktch"
+      class="sc-jSgupP bRpWvY"
       name="check"
       type="checkbox"
     />
