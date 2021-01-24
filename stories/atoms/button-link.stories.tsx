@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from '../../src';
+import { Button, ButtonLink } from '../../src';
 import icons from '../../src/ions/icons';
 
 export default {
-  title: 'Design System/Atoms/Button',
+  title: 'Design System/Atoms/ButtonLink',
   component: Button,
   argTypes: {
     color: {
@@ -36,17 +36,21 @@ export default {
   },
 };
 
-export const ButtonComponent = (args) => <Button {...args} />;
+export const ButtonLinkComponent = (args) => <ButtonLink {...args} />;
 
-ButtonComponent.args = {
-  value: 'Dummie',
+ButtonLinkComponent.args = {
+  url: "https://github.com/taikai/taikai-design-system",
+  value: 'Contribute to this code',
   variant: 'solid',
   circle: false,
-  color: 'primary',
+  color: 'magic',
   className: 'button',
   querySelector: '.button',
   ariaLabel: 'Dummie Button',
   disabled: false,
   loading: false,
-  icon: 'rocket',
+  icon: 'github',
+  blank: true
 };
+
+

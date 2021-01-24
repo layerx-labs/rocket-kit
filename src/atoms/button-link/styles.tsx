@@ -1,29 +1,16 @@
-import styled, { css, keyframes } from 'styled-components';
-import { ButtonColor, ButtonVariant } from './types';
+import styled, { css } from 'styled-components';
+import { device } from '../../ions/breakpoints';
+import { liveKeyframe } from '../button/styles';
+import { ButtonColor, ButtonVariant } from '../button/types';
 
-interface ButtonProps {
+interface ButtonStyleProps {
   variant?: ButtonVariant;
   circle?: boolean;
   color?: ButtonColor;
   value?: String;
 }
 
-export const liveKeyframe = keyframes`
-  0% {
-    background-color: hsl(354, 83%, 54%);
-    box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0.3);
-  }
-  50% {
-    background-color: var(--red, hsl(354, 83%, 64%));
-    box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0);
-  }
-  100% {
-    background-color: hsl(354, 83%, 54%);
-    box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0.3);
-  }
-`;
-
-export const ButtonWrapper = styled.button<ButtonProps>`
+export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
   --button: var(--green, hsl(186, 62%, 59%));
   --txt: var(--white, hsl(0, 0%, 100%));
   --hover: hsl(186, 62%, 49%);
@@ -34,17 +21,22 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   border-radius: ${props => (props.variant === 'text' ? 0 : '999px')};
   background-color: ${props =>
     props.variant === 'solid' ? 'var(--button)' : 'transparent'};
-  width: ${props =>
-    props.value ? (props.circle ? '36px' : 'min-content') : '36px'};
+  width: min-content;
+  min-width: ${props => (props.value ? '80px' : '36px')};
   height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${props => (props.value ? (props.circle ? 0 : '0 20px') : 0)};
+  padding: ${props => (props.value ? '0 20px' : 0)};
   text-transform: uppercase;
   white-space: nowrap;
+  text-decoration: none;
   transition-duration: 0.3s;
   cursor: pointer;
+
+  @media ${device.l} {
+    min-width: ${props => (props.value ? '100px' : '36px')};
+  }
 
   &:hover {
     border-color: ${props => (props.variant === 'solid' ? '' : 'var(--hover)')};
@@ -60,22 +52,8 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     }
   }
 
-  &:disabled {
-    cursor: inherit;
-    opacity: 0.5;
-
-    &:hover {
-      pointer-events: none;
-    }
-  }
-
   > *:not(:last-child) {
     margin-right: 5px;
-  }
-
-  .spinner {
-    border-top-color: ${props =>
-      props.variant === 'solid' ? '' : 'var(--button)'};
   }
 
   span {
@@ -116,13 +94,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     css`
       --button: var(--purple, hsl(256, 55%, 43%));
       --hover: hsl(256, 55%, 33%);
-    `}
-
-  ${props =>
-    props.color === 'white' &&
-    css`
-      --button: var(--white);
-      --hover: var(--grey);
     `}
 
   ${props =>
@@ -167,9 +138,21 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       }
     `}
 
-  ${props =>
-    props.color === 'live' &&
-    css`
-      animation: ${liveKeyframe} 1s infinite;
-    `}
+    ${props =>
+      props.color === 'live' &&
+      css`
+        animation: ${liveKeyframe} 1s infinite;
+      `}
+
+    ${props =>
+      props.color === 'white' &&
+      css`
+        --txt: var(--purple, hsl(256, 55%, 43%));
+        --button: var(--white, hsl(0, 0%, 100%));
+        --hover: var(--yellow, hsl(43, 94%, 62%));
+
+        &:hover {
+          --txt: var(--white, hsl(0, 0%, 100%));
+        }
+      `}
 `;
