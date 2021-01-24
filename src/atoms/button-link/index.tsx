@@ -1,10 +1,12 @@
 import React from 'react';
-import { Icon, Spinner } from '../..';
+import { Icon } from '../..';
 import { useMouseMoveEffect } from '../../utils/hooks/use-mouse-move-effect';
+import { ButtonColor, ButtonVariant } from '../button/types';
 import * as Styles from './styles';
-import { ButtonColor, ButtonVariant } from './types';
 
-export interface ButtonProps {
+export interface ButtonLinkProps {
+  url: string;
+  blank?: boolean;
   variant?: ButtonVariant;
   circle?: boolean;
   color?: ButtonColor;
@@ -12,50 +14,46 @@ export interface ButtonProps {
   className?: string;
   querySelector?: string;
   ariaLabel?: string;
-  action?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  disabled?: boolean;
-  loading?: boolean;
+  action?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
   dataTestId?: string;
   eventId?: string;
   icon?: string;
 }
 
-const Button = (props: ButtonProps) => {
+const ButtonLink = (props: ButtonLinkProps) => {
   const {
     variant = 'solid',
-    circle = false,
     color = 'primary',
-    value = '',
-    className = 'button',
     querySelector = '.button',
-    ariaLabel = '',
+    className = 'button',
+    url,
+    blank = false,
+    icon = '',
+    value = '',
     action = () => {},
-    disabled = false,
-    loading = false,
     dataTestId = '',
     eventId = '',
-    icon = '',
   } = props;
 
   useMouseMoveEffect({ querySelector });
 
   return (
-    <Styles.ButtonWrapper
+    <Styles.ButtonLinkStyle
       variant={variant}
       color={color}
-      circle={circle}
-      className={className}
+      className={`button ${className}`}
+      href={url}
+      target={blank ? '_blank' : ''}
+      rel={blank ? 'noopener noreferrer' : ''}
       value={value}
-      aria-label={ariaLabel}
       onClick={action}
-      disabled={disabled || loading}
       data-testid={dataTestId}
       data-event={eventId}
     >
-      {loading ? <Spinner /> : icon ? <Icon icon={icon} /> : null}
+      {icon && <Icon icon={icon} />}
       {value && <span>{value}</span>}
-    </Styles.ButtonWrapper>
+    </Styles.ButtonLinkStyle>
   );
 };
 
-export default Button;
+export default ButtonLink;
