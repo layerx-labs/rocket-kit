@@ -5,9 +5,9 @@ export default {
   title: 'Design System/Atoms/ErrorField',
   component: ErrorField,
   argTypes: {
-    variant: {
-      color: {
-        type: 'select',
+    color: {
+      control: {
+        type: 'inline-radio',
         options: ['success', 'danger'],
       },
     },

@@ -7,13 +7,13 @@ export default {
   argTypes: {
     color: {
       control: {
-        type: 'select',
+        type: 'inline-radio',
         options: ['primary', 'orange', 'danger', 'info'],
       },
     },
     variant: {
       control: {
-        type: 'select',
+        type: 'inline-radio',
         options: ['solid', 'outline'],
       },
     },

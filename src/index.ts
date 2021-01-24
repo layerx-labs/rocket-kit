@@ -7,6 +7,7 @@ export { default as ErrorField } from './atoms/error-field';
 export { default as Icon } from './atoms/icon';
 export { default as Spinner } from './atoms/spinner';
 export { default as Tag } from './atoms/tag';
+export { default as TextField } from './atoms/text-field';
 
 // Molecules
 export { default as NoteCard } from './molecules/note-card';
