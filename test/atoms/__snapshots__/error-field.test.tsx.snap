@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tag renders 1`] = `
+exports[`ErrorField renders 1`] = `
 <DocumentFragment>
   <span
-    class="sc-pFZIQ pZSnQ"
+    class="sc-iBPRYJ hefxai"
     color="danger"
   >
-    hello
+    operation failed.
   </span>
 </DocumentFragment>
 `;
