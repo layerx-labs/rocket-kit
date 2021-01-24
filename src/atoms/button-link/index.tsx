@@ -24,8 +24,8 @@ const ButtonLink = (props: ButtonLinkProps) => {
   const {
     variant = 'solid',
     color = 'primary',
-    querySelector = '.button',
-    className = 'button',
+    querySelector = '.button-link',
+    className = 'button-link',
     url,
     blank = false,
     icon = '',
