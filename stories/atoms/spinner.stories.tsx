@@ -9,11 +9,11 @@ export default {
   },
 };
 
-export const SpinnerComponent = (args) => <Spinner {...args} />;
+export const SpinnerComponent = args => <Spinner {...args} />;
 
 SpinnerComponent.storyName = 'Spinner';
 
 SpinnerComponent.args = {
-  fill: '#000000',
+  fill: '#7a7a7a',
   size: '20px',
 };

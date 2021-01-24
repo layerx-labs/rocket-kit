@@ -17,7 +17,7 @@ export default {
           'white',
           'black',
           'magic',
-          'live',
+          'pulse',
         ],
       },
     },
@@ -42,8 +42,8 @@ ButtonComponent.storyName = 'Action';
 ButtonComponent.args = {
   value: 'Dummie',
   variant: 'solid',
-  circle: false,
   color: 'primary',
+  circle: false,
   className: 'button',
   querySelector: '.button',
   ariaLabel: 'Dummie Button',

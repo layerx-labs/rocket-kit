@@ -29,10 +29,10 @@ const Checkbox = (props: Props) => {
 
   return (
     <CheckboxWrapper
-      error={error}
-      disabled={disabled}
       style={style}
       className={className}
+      error={error}
+      disabled={disabled}
     >
       <CheckboxLabel>{label}</CheckboxLabel>
       <CheckboxInput
@@ -40,6 +40,7 @@ const Checkbox = (props: Props) => {
         name={value}
         checked={checked}
         onChange={onChange}
+        error={error}
         disabled={disabled}
       />
       <Checkmark />

@@ -7,7 +7,7 @@ interface SpinnerProps {
 }
 
 const Spinner = (props: SpinnerProps) => {
-  const { fill = '#ffffff', size = '20px' } = props;
+  const { fill = '#7a7a7a', size = '20px' } = props;
   return <Styles.Loading className="spinner" fill={fill} size={size} />;
 };
 
