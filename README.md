@@ -1,8 +1,6 @@
 # TAIKAI Design System
 
-Built with [TSDX](https://tsdx.io/) 
-
-> If you’re new to TypeScript and React, checkout [this handy cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet/)
+Check our components in [StoryBook](https://main--600c295ccb36300021e7d82f.chromatic.com) or in [Chromatic library](https://chromatic.com/library?appId=600c295ccb36300021e7d82f&branch=main)
 
 ## Commands
 
