@@ -13,7 +13,11 @@ const NoteCard = (props: NoteCardProps) => {
   const { color = 'info', value = '', buttonValue = '', onClick } = props;
 
   return (
-    <Styles.Wrapper color={color} buttonValue={buttonValue}>
+    <Styles.Wrapper
+      className="note-card"
+      color={color}
+      buttonValue={buttonValue}
+    >
       <div>
         <p>{value}</p>
       </div>
