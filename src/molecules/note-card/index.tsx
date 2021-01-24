@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { NoteColor } from './types';
 import * as Styles from './styles';
 
@@ -7,16 +7,26 @@ interface NoteCardProps {
   value: any;
   buttonValue?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  className?: string;
+  style?: CSSProperties;
 }
 
 const NoteCard = (props: NoteCardProps) => {
-  const { color = 'info', value = '', buttonValue = '', onClick } = props;
+  const {
+    color = 'info',
+    value = '',
+    buttonValue = '',
+    onClick,
+    className = 'note-card',
+    style,
+  } = props;
 
   return (
     <Styles.Wrapper
-      className="note-card"
+      className={className}
       color={color}
       buttonValue={buttonValue}
+      style={style}
     >
       <div>
         <p>{value}</p>
