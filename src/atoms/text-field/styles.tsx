@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import { lighten, rem } from 'polished';
+import { colors } from '../../ions/variables';
 import icons from '../../ions/icons';
 
 interface InputStyleProps {
@@ -7,41 +9,49 @@ interface InputStyleProps {
   icon?: string;
 }
 
+const { info, danger, purple } = colors;
+
 export const TextFieldInputStyle = styled.input<InputStyleProps>`
   border-width: ${props => (props.minimal ? '0 0 1px 0' : '1px')};
   border-style: solid;
-  border-color: ${props =>
-    props.error
-      ? 'var(--red, hsl(354, 83%, 64%))'
-      : 'var(--grey, hsl(0, 0%, 85%))'};
+  border-color: ${props => (props.error ? danger : info)};
   border-radius: ${props => (props.minimal ? 0 : '6px')};
-  height: ${props => (props.minimal ? '40px' : '50px')};
-  padding: ${props => (props.minimal ? 0 : '10px')};
+  height: ${props => (props.minimal ? rem('40px') : rem('50px'))};
+  padding: ${props => (props.minimal ? 0 : rem('10px'))};
   font-family: inherit;
   font-size: 1rem;
   transition-duration: 0.3s;
 
   &:focus {
-    border-color: var(--purple, hsl(256, 55%, 43%));
+    border-color: ${purple};
+    outline: none;
   }
 
   &:disabled {
-    background-color: hsl(0, 0%, 98%);
-    color: var(--darkGrey, hsl(0, 0%, 48%));
+    background-color: ${lighten(0.45, info)};
+    color: ${info};
+  }
+
+  &:invalid {
+    border-color: ${danger};
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
   }
 
   &::placeholder {
-    color: var(--grey, hsl(0, 0%, 85%));
+    color: ${info};
     opacity: 1;
   }
 
   &:-ms-input-placeholder {
-    color: var(--grey, hsl(0, 0%, 85%));
+    color: ${info};
     opacity: 1;
   }
 
   &::-ms-input-placeholder {
-    color: var(--grey, hsl(0, 0%, 85%));
+    color: ${info};
     opacity: 1;
   }
 
@@ -49,12 +59,19 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
     props.icon &&
     css`
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32">
-        <path style="fill:hsl(0, 0%, 85%)" d=${JSON.stringify(
-          icons[props.icon]
-        )} /></svg>');
-      padding-left: 50px;
+        <path style="fill:${info}" d=${JSON.stringify(
+      icons[props.icon]
+    )} /></svg>');
+      padding-left: ${props.minimal ? '40px' : '50px'};
       background-repeat: no-repeat;
       background-size: 30px 30px;
-      background-position: 10px 50%;
+      background-position: ${props.minimal ? 0 : '10px'} 50%;
+
+      &:focus {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32">
+        <path style="fill:${purple}" d=${JSON.stringify(
+      icons[props.icon]
+    )} /></svg>');
+  }
     `}
 `;

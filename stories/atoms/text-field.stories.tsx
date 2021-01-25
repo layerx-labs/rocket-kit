@@ -6,6 +6,11 @@ export default {
   title: 'Design System/Atoms/TextField',
   component: TextField,
   argTypes: {
+    minimal: {
+      control: {
+        type: 'boolean',
+      },
+    },
     type: {
       control: {
         type: 'select',
@@ -18,129 +23,129 @@ export default {
         options: Object.keys(icons),
       },
     },
-    min: {
-      control: {
-        type: 'number',
-      },
-    },
-    max: {
-      control: {
-        type: 'number',
-      },
-    },
   },
 };
 
 export const TextComponent = args => <TextField {...args} />;
 
+TextComponent.storyName = 'Text';
 TextComponent.args = {
   minimal: true,
   type: 'text',
-  name: 'name',
+  name: 'awesome-input',
+  placeholder: 'Awesome Placeholder',
   onChange: () => {},
   disabled: false,
-  placeholder: 'type your name here',
 };
-
-export const DefaultValuesComponent = () => <TextField />;
 
 export const DisabledComponent = args => <TextField {...args} />;
 
+DisabledComponent.storyName = 'Disabled';
 DisabledComponent.args = {
   minimal: true,
   type: 'text',
   name: 'name',
+  placeholder: 'Awesome Placeholder',
+  value: 'Cannot edit this',
   onChange: () => {},
   disabled: true,
-  value: 'cannot edit this',
 };
 
-export const TextNotMinimalComponent = args => <TextField {...args} />;
+export const TextFullBorderComponent = args => <TextField {...args} />;
 
-TextNotMinimalComponent.args = {
+TextFullBorderComponent.storyName = 'Full Border';
+TextFullBorderComponent.args = {
   minimal: false,
   type: 'text',
-  name: 'name',
+  name: 'awesome-input',
+  placeholder: 'Awesome Placeholder',
   onChange: () => {},
   disabled: false,
-  placeholder: 'type your name here',
 };
 
 export const TextIconComponent = args => <TextField {...args} />;
 
+TextIconComponent.storyName = 'W/ Icon';
 TextIconComponent.args = {
   minimal: true,
-  icon: 'rocket',
   type: 'text',
-  name: 'name',
+  name: 'awesome-input',
+  icon: 'rocket',
+  placeholder: 'Awesome Placeholder',
   onChange: () => {},
   disabled: false,
-  placeholder: 'type your name here',
 };
 
 export const UrlComponent = args => <TextField {...args} />;
 
+UrlComponent.storyName = 'URL';
 UrlComponent.args = {
   minimal: true,
   type: 'url',
-  name: 'url',
+  name: 'awesome-url',
+  placeholder: 'Type your URL here',
   onChange: () => {},
   disabled: false,
-  placeholder: 'type your url here',
 };
 
 export const PasswordComponent = args => <TextField {...args} />;
 
+PasswordComponent.storyName = 'Password';
 PasswordComponent.args = {
   minimal: true,
   type: 'password',
-  name: 'password',
+  name: 'awesome-password',
+  placeholder: 'Type your password here',
   onChange: () => {},
   disabled: false,
-  placeholder: 'type your password here',
 };
 
 export const DateComponent = args => <TextField {...args} />;
 
+DateComponent.storyName = 'Date';
 DateComponent.args = {
   minimal: true,
   type: 'date',
-  name: 'date',
+  name: 'awesome-date',
   onChange: () => {},
   disabled: false,
 };
 
 export const TimeComponent = args => <TextField {...args} />;
 
+TimeComponent.storyName = 'Time';
 TimeComponent.args = {
   minimal: true,
   type: 'time',
-  name: 'time',
+  name: 'awesome-time',
   onChange: () => {},
   disabled: false,
 };
 
 export const NumberComponent = args => <TextField {...args} />;
 
+NumberComponent.storyName = 'Number';
 NumberComponent.args = {
   minimal: false,
   type: 'number',
-  name: 'number',
-  onChange: () => {},
-  disabled: false,
   min: 1,
   max: 150,
-  placeholder: 'age',
+  name: 'awesome-number',
+  placeholder: 'Your age',
+  onChange: () => {},
+  disabled: false,
 };
 
 export const TextErrorComponent = args => <TextField {...args} />;
 
+TextErrorComponent.storyName = 'Error';
 TextErrorComponent.args = {
   minimal: true,
   type: 'text',
-  name: 'name',
+  name: 'awesome-input',
+  placeholder: 'Awesome Placeholder',
+  value: 'This is bad',
   onChange: () => {},
+  error: 'Not so awesome error',
   disabled: false,
-  value: 'lol',
-  error: 'invalid value',
 };
