@@ -3,7 +3,7 @@
 exports[`ErrorField renders 1`] = `
 <DocumentFragment>
   <span
-    class="sc-fubCfw laRIMs"
+    class="sc-fubCfw laRIMs error-field"
     color="danger"
   >
     operation failed.
