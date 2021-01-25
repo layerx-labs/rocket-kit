@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { ErrorField } from '../..';
 import * as Styles from './styles';
 import { TextFieldType } from './types';
@@ -15,6 +15,7 @@ interface TextFieldProps {
   placeholder?: string;
   dataTestId?: string;
   className?: string;
+  style?: CSSProperties;
   min?: number;
   max?: number;
 }
@@ -33,7 +34,8 @@ const TextField = (props: TextFieldProps) => {
     disabled = false,
     error,
     dataTestId,
-    className,
+    className = 'text-field',
+    style,
   } = props;
 
   return (
@@ -52,6 +54,7 @@ const TextField = (props: TextFieldProps) => {
         error={error}
         data-testid={dataTestId}
         className={className}
+        style={style}
       />
       {error ? <ErrorField error={error} /> : null}
     </>
