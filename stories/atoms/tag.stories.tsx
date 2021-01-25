@@ -13,7 +13,7 @@ export default {
     },
     variant: {
       control: {
-        type: 'select',
+        type: 'inline-radio',
         options: ['solid', 'outline'],
       },
     },
