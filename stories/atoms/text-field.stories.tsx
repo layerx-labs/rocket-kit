@@ -106,10 +106,7 @@ DateComponent.args = {
   minimal: true,
   type: 'date',
   name: 'date',
-  //onChange: () => {},
-  onChange: evt => {
-    console.log('evt target value: ', evt.target.value);
-  },
+  onChange: () => {},
   disabled: false,
 };
 
