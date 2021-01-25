@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React, { CSSProperties } from 'react';
 import {
   CheckboxWrapper,
   CheckboxLabel,
@@ -6,13 +6,15 @@ import {
   Checkmark,
 } from './styles';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props {
   value: string;
   label?: string;
   checked?: boolean;
   onChange?: () => {};
   error?: string;
   disabled?: boolean;
+  className?: string;
+  style?: CSSProperties;
 }
 
 const Checkbox = (props: Props) => {
@@ -23,8 +25,8 @@ const Checkbox = (props: Props) => {
     onChange = () => {},
     error,
     disabled = false,
-    style,
     className = 'checkbox',
+    style,
   } = props;
 
   return (
