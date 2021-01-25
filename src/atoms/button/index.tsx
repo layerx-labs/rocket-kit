@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { Icon, Spinner } from '../..';
 import { useMouseMoveEffect } from '../../utils/hooks/use-mouse-move-effect';
 import * as Styles from './styles';
@@ -18,6 +18,7 @@ export interface ButtonProps {
   dataTestId?: string;
   eventId?: string;
   icon?: string;
+  style?: CSSProperties;
 }
 
 const Button = (props: ButtonProps) => {
@@ -35,6 +36,7 @@ const Button = (props: ButtonProps) => {
     dataTestId = '',
     eventId = '',
     icon = '',
+    style,
   } = props;
 
   useMouseMoveEffect({ querySelector });
@@ -51,6 +53,7 @@ const Button = (props: ButtonProps) => {
       disabled={disabled || loading}
       data-testid={dataTestId}
       data-event={eventId}
+      style={style}
     >
       {loading ? <Spinner /> : icon ? <Icon icon={icon} /> : null}
       {value && <span>{value}</span>}

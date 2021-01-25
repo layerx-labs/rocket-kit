@@ -6,12 +6,16 @@ export default {
   component: Checkbox,
 };
 
-export const CheckboxComponent = (args) => <Checkbox {...args} />;
+export const CheckboxComponent = args => <Checkbox {...args} />;
 
 CheckboxComponent.storyName = 'Checkbox';
 
 CheckboxComponent.args = {
-  name: 'checkbox',
   label: 'Option 1',
+  value: 'option_1',
+  className: 'checkbox',
   checked: true,
+  disabled: false,
+  error: '',
+  onChange: () => {},
 };

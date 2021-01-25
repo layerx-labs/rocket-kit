@@ -2,39 +2,42 @@ import styled, { css } from 'styled-components';
 import { NoteColor } from './types';
 import { rem, lighten, darken } from 'polished';
 import { device } from '../../ions/breakpoints';
+import { colors } from '../../ions/variables';
 
 interface NoteCardProps {
   color?: NoteColor;
   buttonValue?: string;
 }
 
+const { primary, info, danger } = colors;
+
 export const Wrapper = styled.div<NoteCardProps>`
-  --default: hsl(0, 0%, 48%);
-  --light: ${lighten(0.4, 'hsl(0, 0%, 48%)')};
-  --dark: ${darken(0.1, 'hsl(0, 0%, 48%)')};
+  --default: ${info};
+  --light: ${lighten(0.4, info)};
+  --dark: ${darken(0.1, info)};
 
   ${props =>
     props.color === 'info' &&
     css`
-      --default: hsl(0, 0%, 48%);
-      --light: ${lighten(0.4, 'hsl(0, 0%, 48%)')};
-      --dark: ${darken(0.1, 'hsl(0, 0%, 48%)')};
+      --default: ${info};
+      --light: ${lighten(0.4, info)};
+      --dark: ${darken(0.1, info)};
     `}
 
   ${props =>
     props.color === 'primary' &&
     css`
-      --default: hsl(186, 62%, 59%);
-      --light: ${lighten(0.3, 'hsl(186, 62%, 59%)')};
-      --dark: ${darken(0.15, 'hsl(186, 62%, 59%)')};
+      --default: ${primary};
+      --light: ${lighten(0.3, primary)};
+      --dark: ${darken(0.15, primary)};
     `}
 
   ${props =>
     props.color === 'danger' &&
     css`
-      --default: hsl(354, 83%, 64%);
-      --light: ${lighten(0.25, 'hsl(354, 83%, 64%)')};
-      --dark: ${darken(0.19, 'hsl(354, 83%, 64%)')};
+      --default: ${danger};
+      --light: ${lighten(0.25, danger)};
+      --dark: ${darken(0.19, danger)};
     `}
 
   border-width: 2px;
