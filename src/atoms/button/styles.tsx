@@ -1,5 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
+import { device } from '../../ions/breakpoints';
 import { ButtonColor, ButtonVariant } from './types';
+import { colors } from '../../ions/variables';
+import { rem, lighten, darken } from 'polished';
 
 interface ButtonProps {
   variant?: ButtonVariant;
@@ -8,25 +11,82 @@ interface ButtonProps {
   value?: String;
 }
 
-export const liveKeyframe = keyframes`
+const { normal, light, info, primary, danger, purple } = colors;
+
+export const pulseKeyframes = keyframes`
   0% {
-    background-color: hsl(354, 83%, 54%);
     box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0.3);
   }
   50% {
-    background-color: var(--red, hsl(354, 83%, 64%));
     box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0);
   }
   100% {
-    background-color: hsl(354, 83%, 54%);
     box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0.3);
   }
 `;
 
 export const ButtonWrapper = styled.button<ButtonProps>`
-  --button: var(--green, hsl(186, 62%, 59%));
-  --txt: var(--white, hsl(0, 0%, 100%));
-  --hover: hsl(186, 62%, 49%);
+  --button: ${primary};
+  --txt: ${light};
+  --hover: ${darken(0.15, primary)};
+
+  ${props =>
+    props.color === 'primary' &&
+    css`
+      --button: ${primary};
+      --hover: ${darken(0.19, primary)};
+    `}
+
+  ${props =>
+    props.color === 'danger' &&
+    css`
+      --button: ${danger};
+      --hover: ${darken(0.19, danger)};
+    `}
+
+  ${props =>
+    props.color === 'info' &&
+    css`
+      --button: ${info};
+      --hover: ${darken(0.1, info)};
+    `}
+
+  ${props =>
+    props.color === 'purple' &&
+    css`
+      --button: ${purple};
+      --hover: ${darken(0.15, purple)};
+    `}
+
+  ${props =>
+    props.color === 'white' &&
+    css`
+      --button: ${light};
+      --txt: ${normal};
+      --hover: ${lighten(0.4, info)};
+    `}
+
+  ${props =>
+    props.color === 'black' &&
+    css`
+      --button: ${normal};
+      --hover: ${darken(1, normal)};
+    `}
+
+  ${props =>
+    props.color === 'pulse' &&
+    css`
+      --button: ${danger};
+      --hover: ${darken(0.19, danger)};
+      animation: ${pulseKeyframes} 1s infinite;
+    `}
+
+  ${props =>
+    props.color === 'magic' &&
+    css`
+      --button: ${light};
+      --hover: ${lighten(0.4, info)};
+    `}
 
   border-width: ${props => (props.variant === 'outline' ? '3px' : 0)};
   border-style: solid;
@@ -35,16 +95,21 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   background-color: ${props =>
     props.variant === 'solid' ? 'var(--button)' : 'transparent'};
   width: ${props =>
-    props.value ? (props.circle ? '36px' : 'min-content') : '36px'};
-  height: 36px;
+    props.value ? (props.circle ? rem('36px') : 'min-content') : rem('36px')};
+  height: ${rem('36px')};
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${props => (props.value ? (props.circle ? 0 : '0 20px') : 0)};
+  padding: ${props =>
+    props.value ? (props.circle ? 0 : `0 ${rem('20px')}`) : 0};
   text-transform: uppercase;
   white-space: nowrap;
   transition-duration: 0.3s;
   cursor: pointer;
+
+  @media ${device.l} {
+    min-width: ${props => (props.value ? rem('100px') : rem('36px'))};
+  }
 
   &:hover {
     border-color: ${props => (props.variant === 'solid' ? '' : 'var(--hover)')};
@@ -90,55 +155,20 @@ export const ButtonWrapper = styled.button<ButtonProps>`
 
   svg {
     width: auto;
-    min-width: 20px;
-    height: 20px;
+    min-width: ${rem('20px')};
+    height: ${rem('20px')};
     fill: ${props =>
       props.variant === 'solid' ? 'var(--txt)' : 'var(--button)'};
     transition: 0.3s;
   }
 
   ${props =>
-    props.color === 'danger' &&
-    css`
-      --button: var(--red, hsl(354, 83%, 64%));
-      --hover: hsl(354, 83%, 54%);
-    `}
-
-  ${props =>
-    props.color === 'info' &&
-    css`
-      --button: var(--grey, hsl(0, 0%, 85%));
-      --hover: hsl(0, 0%, 75%);
-    `}
-
-  ${props =>
-    props.color === 'purple' &&
-    css`
-      --button: var(--purple, hsl(256, 55%, 43%));
-      --hover: hsl(256, 55%, 33%);
-    `}
-
-  ${props =>
-    props.color === 'white' &&
-    css`
-      --button: var(--white);
-      --hover: var(--grey);
-    `}
-
-  ${props =>
-    props.color === 'black' &&
-    css`
-      --button: var(--default, hsl(0, 0%, 16%));
-      --hover: hsl(0, 0%, 6%);
-    `}
-
-  ${props =>
     props.color === 'magic' &&
     css`
       position: relative;
       background-image: linear-gradient(to bottom right, #ef5867, #5031a8);
-      height: 60px;
-      padding: 0 40px;
+      height: ${rem('60px')};
+      padding: 0 ${rem('40px')};
       overflow: hidden;
 
       span {
@@ -165,11 +195,5 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       &:hover:before {
         --size: 200px;
       }
-    `}
-
-  ${props =>
-    props.color === 'live' &&
-    css`
-      animation: ${liveKeyframe} 1s infinite;
     `}
 `;

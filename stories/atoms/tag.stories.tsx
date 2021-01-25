@@ -7,8 +7,8 @@ export default {
   argTypes: {
     color: {
       control: {
-        type: 'inline-radio',
-        options: ['primary', 'orange', 'danger', 'info'],
+        type: 'select',
+        options: ['primary', 'warning', 'danger', 'info'],
       },
     },
     variant: {
@@ -20,12 +20,12 @@ export default {
   },
 };
 
-export const TagPrimaryComponent = (args) => <Tag {...args} />;
+export const TagPrimaryComponent = args => <Tag {...args} />;
 
 TagPrimaryComponent.storyName = 'Tag';
 
 TagPrimaryComponent.args = {
-  color: 'primary',
+  color: 'info',
   variant: 'solid',
   value: 'Burgdoggen',
 };

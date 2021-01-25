@@ -1,14 +1,17 @@
-import React, { HTMLAttributes } from 'react';
+import React, { CSSProperties } from 'react';
 import * as Styles from './styles';
-
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface AvatarProps {
   url: string;
   alt: string;
+  className?: string;
+  style?: CSSProperties;
 }
 
-const Avatar = (props: Props) => {
-  const { url, alt, style } = props;
-  return <Styles.Image src={url} alt={alt} style={style} />;
+const Avatar = (props: AvatarProps) => {
+  const { url, alt, style, className = 'avatar' } = props;
+  return (
+    <Styles.Image className={className} src={url} alt={alt} style={style} />
+  );
 };
 
 export default Avatar;

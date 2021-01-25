@@ -1,21 +1,24 @@
 import styled, { css } from 'styled-components';
+import { rem } from 'polished';
 import { TagVariant, TagColor } from './types';
+import { colors } from '../../ions/variables';
 
 interface TagWrapperProps {
   variant?: TagVariant;
   color?: TagColor;
 }
 
+const { light, info, primary, warning, danger } = colors;
+
 export const TagWrapper = styled.span<TagWrapperProps>`
   display: inline-block;
-  border: 2px solid var(--green, hsl(186, 62%, 59%));
+  border: 2px solid ${info};
   border-radius: 999px;
-  background-color: var(--green, hsl(186, 62%, 59%));
-  max-width: 150px;
-  padding: 2px 10px;
+  background-color: ${info};
+  max-width: ${rem('150px')};
+  padding: ${rem('2px')} ${rem('10px')};
   font-size: 0.85rem;
-  color: var(--white, hsl(0, 0%, 100%));
-  text-transform: lowercase;
+  color: ${light};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -25,32 +28,40 @@ export const TagWrapper = styled.span<TagWrapperProps>`
   }
 
   ${props =>
-    props.color === 'orange' &&
+    props.color === 'primary' &&
     css`
-      border-color: var(--orange, hsl(36, 100%, 57%));
-      background-color: var(--orange, hsl(36, 100%, 57%));
+      border-color: ${primary};
+      background-color: ${primary};
+      color: ${props.variant === 'solid' ? light : primary};
+    `}
+
+  ${props =>
+    props.color === 'warning' &&
+    css`
+      border-color: ${warning};
+      background-color: ${warning};
+      color: ${props.variant === 'solid' ? light : warning};
     `}
 
   ${props =>
     props.color === 'danger' &&
     css`
-      border-color: var(--red, hsl(354, 83%, 64%));
-      background-color: var(--red, hsl(354, 83%, 64%));
+      border-color: ${danger};
+      background-color: ${danger};
+      color: ${props.variant === 'solid' ? light : danger};
     `}
 
     ${props =>
       props.color === 'info' &&
       css`
-        border-color: var(--grey, hsl(0, 0%, 85%));
-        background-color: var(--lightGrey, hsl(0, 0%, 98%));
-        color: var(--default, hsl(0, 0%, 16%));
+        border-color: ${info};
+        background-color: ${info};
+        color: ${props.variant === 'solid' ? light : info};
       `}
 
   ${props =>
     props.variant === 'outline' &&
     css`
-      border-color: var(--default, hsl(0, 0%, 16%));
       background-color: transparent;
-      color: var(--default, hsl(0, 0%, 16%));
     `}
 `;

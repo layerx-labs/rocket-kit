@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { Icon } from '../..';
 import { useMouseMoveEffect } from '../../utils/hooks/use-mouse-move-effect';
 import { ButtonColor, ButtonVariant } from '../button/types';
@@ -18,14 +18,15 @@ export interface ButtonLinkProps {
   dataTestId?: string;
   eventId?: string;
   icon?: string;
+  style?: CSSProperties;
 }
 
 const ButtonLink = (props: ButtonLinkProps) => {
   const {
     variant = 'solid',
     color = 'primary',
-    querySelector = '.button',
-    className = 'button',
+    querySelector = '.button-link',
+    className = 'button-link',
     url,
     blank = false,
     icon = '',
@@ -33,6 +34,7 @@ const ButtonLink = (props: ButtonLinkProps) => {
     action = () => {},
     dataTestId = '',
     eventId = '',
+    style,
   } = props;
 
   useMouseMoveEffect({ querySelector });
@@ -49,6 +51,7 @@ const ButtonLink = (props: ButtonLinkProps) => {
       onClick={action}
       data-testid={dataTestId}
       data-event={eventId}
+      style={style}
     >
       {icon && <Icon icon={icon} />}
       {value && <span>{value}</span>}

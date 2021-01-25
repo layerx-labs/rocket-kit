@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../../src';
+import { Button, ButtonLink } from '../../src';
 import icons from '../../src/ions/icons';
 
 export default {
@@ -17,7 +17,7 @@ export default {
           'white',
           'black',
           'magic',
-          'live',
+          'pulse',
         ],
       },
     },
@@ -36,17 +36,27 @@ export default {
   },
 };
 
-export const ButtonComponent = (args) => <Button {...args} />;
+export const ButtonComponent = args => <Button {...args} />;
 
+ButtonComponent.storyName = 'Action';
 ButtonComponent.args = {
   value: 'Dummie',
   variant: 'solid',
-  circle: false,
   color: 'primary',
+  circle: false,
   className: 'button',
   querySelector: '.button',
   ariaLabel: 'Dummie Button',
   disabled: false,
   loading: false,
   icon: 'rocket',
+};
+
+export const ButtonLinkComponent = args => <ButtonLink {...args} />;
+
+ButtonLinkComponent.storyName = 'Link';
+ButtonLinkComponent.args = {
+  ...ButtonComponent.args,
+  url: 'https://github.com/taikai/taikai-design-system',
+  blank: true,
 };
