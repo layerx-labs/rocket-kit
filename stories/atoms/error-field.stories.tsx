@@ -16,6 +16,7 @@ export default {
 
 export const ErrorComponent = args => <ErrorField {...args} />;
 
+ErrorComponent.storyName = 'Error';
 ErrorComponent.args = {
   error: 'Please insert valid name',
   color: 'danger',
@@ -23,6 +24,7 @@ ErrorComponent.args = {
 
 export const SuccessComponent = args => <ErrorField {...args} />;
 
+SuccessComponent.storyName = 'Success';
 SuccessComponent.args = {
   error: 'Name saved with success',
   color: 'success',
