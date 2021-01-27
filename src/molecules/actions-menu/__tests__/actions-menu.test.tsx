@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
-import { ActionsMenu } from '../../src';
-import { ActionMenu } from '../../src/molecules/actions-menu/types';
+import { ActionsMenu } from '../../..';
+import { ActionMenu } from '../types';
 
 describe('Actions Menu', () => {
   it('renders open menu', () => {
@@ -35,7 +36,7 @@ describe('Actions Menu', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('open menu has action', async () => {
+  it('has action in open menu', async () => {
     const actionText = 'Go to Details';
     const actions: ActionMenu<string>[] = [
       {
@@ -47,8 +48,34 @@ describe('Actions Menu', () => {
     ];
 
     render(<ActionsMenu<string> actions={actions} startsOpen />);
-    const foundAction = await screen.getByText(actionText);
-    expect(foundAction).toBeTruthy();
+    screen.getByText(actionText);
+  });
+
+  it('has action in open menu with multiple items', async () => {
+    const actionText = 'Go to Details';
+    const actions: ActionMenu<string>[] = [
+      {
+        id: 'actionDetails',
+        type: 'default',
+        value: actionText,
+        action: () => {},
+      },
+      {
+        id: 'action2',
+        type: 'default',
+        value: 'Edit',
+        action: () => {},
+      },
+      {
+        id: 'action3',
+        type: 'danger',
+        value: 'Delete',
+        action: () => {},
+      },
+    ];
+
+    render(<ActionsMenu<string> actions={actions} startsOpen />);
+    screen.getByText(actionText);
   });
 
   it('can open menu with click', async () => {
@@ -64,10 +91,38 @@ describe('Actions Menu', () => {
 
     render(<ActionsMenu<string> actions={actions} />);
     const foundButton = await screen.getByTestId('action-menu-button');
-    expect(foundButton).toBeTruthy();
     userEvent.click(foundButton);
-    const foundAction = await screen.getByText(actionText);
-    expect(foundAction).toBeTruthy();
-    screen.logTestingPlaygroundURL();
+    await screen.getByText(actionText);
+  });
+
+  it('calls action callback on click', async () => {
+    interface ActionData {
+      name: string;
+      type: string;
+    }
+
+    const data: ActionData = {
+      name: 'hello',
+      type: 'test',
+    };
+
+    const onClick = jest.fn();
+    const actionText = 'Go to Details';
+    const actions: ActionMenu<ActionData>[] = [
+      {
+        id: 'actionDetails',
+        type: 'default',
+        value: actionText,
+        action: onClick,
+      },
+    ];
+
+    render(
+      <ActionsMenu<ActionData> actions={actions} startsOpen data={data} />
+    );
+    const action = screen.getByText(actionText);
+    userEvent.click(action);
+    expect(onClick).toBeCalledTimes(1);
+    expect(onClick).toBeCalledWith(expect.anything(), data);
   });
 });

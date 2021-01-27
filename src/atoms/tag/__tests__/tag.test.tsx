@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Tag } from '../../src';
+import { Tag } from '../../..';
 
 describe('Tag', () => {
   it('renders', () => {
@@ -8,11 +8,9 @@ describe('Tag', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('Tag has correct value', async () => {
+  it('has correct value', async () => {
     const tagValue = 'This is my tag';
     render(<Tag color={'danger'} value={tagValue} />);
-
-    const foundText = await screen.getByText(tagValue);
-    expect(foundText).toBeTruthy();
+    await screen.getByText(tagValue);
   });
 });
