@@ -10,4 +10,5 @@ export { default as Tag } from './atoms/tag';
 export { default as TextField } from './atoms/text-field';
 
 // Molecules
+export { default as ActionsMenu } from './molecules/actions-menu';
 export { default as NoteCard } from './molecules/note-card';
