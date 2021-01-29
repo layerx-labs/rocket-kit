@@ -2,7 +2,7 @@ import React from 'react';
 import { ActionsMenu } from '../../src';
 
 export default {
-  title: 'Design System/Atoms/ActionsMenu',
+  title: 'Design System/Molecules/ActionsMenu',
   component: ActionsMenu,
   argTypes: {},
 };
