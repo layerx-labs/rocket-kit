@@ -3,12 +3,12 @@
 exports[`Actions Menu renders closed menu 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kEjbxe bXuCyO"
+    class="sc-kEjbxe cjaEPW"
   >
     <button
       aria-label=""
-      class="sc-gsTCUz hStJLJ button"
-      color="black"
+      class="sc-gsTCUz dQVqYO button"
+      color="dark"
       data-event=""
       data-testid="action-menu-button"
       value=""
@@ -29,12 +29,12 @@ exports[`Actions Menu renders closed menu 1`] = `
 exports[`Actions Menu renders open menu 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kEjbxe bXuCyO"
+    class="sc-kEjbxe cjaEPW"
   >
     <button
       aria-label=""
-      class="sc-gsTCUz hStJLJ button"
-      color="black"
+      class="sc-gsTCUz dQVqYO button"
+      color="dark"
       data-event=""
       data-testid="action-menu-button"
       value=""
@@ -57,7 +57,9 @@ exports[`Actions Menu renders open menu 1`] = `
         <a
           href=""
         >
-          Go to Details
+          <span>
+            Go to Details
+          </span>
         </a>
       </li>
     </ul>

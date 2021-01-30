@@ -5,21 +5,24 @@ import { Button } from '../..';
 import { ActionMenu } from './types';
 
 interface ActionsMenuInterface<T> {
-  data?: T;
-  actions: ActionMenu<T>[];
   className?: string;
   style?: CSSProperties;
+  ariaLabel?: string;
+  actions: ActionMenu<T>[];
+  data?: T;
   dataTestId?: string;
   startsOpen?: boolean;
 }
 
 const ActionsMenu = <T,>(props: ActionsMenuInterface<T>) => {
   const {
+    ariaLabel = '',
     actions = [],
     data = null,
     dataTestId = 'action-menu-button',
     startsOpen = false,
   } = props;
+
   const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
     startsOpen
   );
@@ -36,8 +39,9 @@ const ActionsMenu = <T,>(props: ActionsMenuInterface<T>) => {
     <Styles.ActionsMenuStyle ref={ref}>
       <Button
         variant="text"
-        color="black"
+        color="dark"
         icon="menuVert"
+        ariaLabel={ariaLabel}
         action={evt => {
           evt.preventDefault();
           setIsVisible(!isVisible);
@@ -67,7 +71,7 @@ const ActionsMenu = <T,>(props: ActionsMenuInterface<T>) => {
                     action(e, data);
                   }}
                 >
-                  {value}
+                  <span>{value}</span>
                 </a>
               </li>
             )

@@ -26,14 +26,17 @@ const actions = [
   },
 ];
 
+ActionsMenuOpenComponent.storyName = 'Opened';
 ActionsMenuOpenComponent.args = {
+  ariaLabel: 'Open submenu',
   actions,
   startsOpen: true,
 };
 
 export const ActionsMenuClosedComponent = args => <ActionsMenu {...args} />;
 
+ActionsMenuClosedComponent.storyName = 'Closed';
 ActionsMenuClosedComponent.args = {
-  actions,
+  ...ActionsMenuOpenComponent.args,
   startsOpen: false,
 };
