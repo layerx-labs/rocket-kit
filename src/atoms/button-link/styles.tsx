@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { device } from '../../ions/breakpoints';
 import { ButtonColor, ButtonVariant } from '../button/types';
-import { colors } from '../../ions/variables';
+import { colors, fontWeigth } from '../../ions/variables';
 import { rem, lighten, darken } from 'polished';
 import { pulseKeyframes } from '../button/styles';
 
@@ -13,6 +13,7 @@ interface ButtonStyleProps {
 }
 
 const { normal, light, info, primary, danger, purple } = colors;
+const { bold, black } = fontWeigth;
 
 export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
   --button: ${primary};
@@ -56,7 +57,7 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
     `}
 
   ${props =>
-    props.color === 'black' &&
+    props.color === 'dark' &&
     css`
       --button: ${normal};
       --hover: ${darken(1, normal)};
@@ -121,7 +122,7 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
   span {
     position: relative;
     font-size: 0.75rem;
-    font-weight: var(--bold, 700);
+    font-weight: ${bold};
     color: ${props =>
       props.variant === 'solid' ? 'var(--txt)' : 'var(--button)'};
     pointer-events: none;
@@ -148,7 +149,7 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
 
       span {
         font-size: 1rem;
-        font-weight: var(--black, 700);
+        font-weight: ${black};
       }
 
       &:before {
