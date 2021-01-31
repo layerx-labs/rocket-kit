@@ -67,11 +67,11 @@
     "@size-limit/preset-small-lib": "^4.9.1",
     "@storybook/addon-a11y": "^6.1.15",
     "@storybook/addon-controls": "^6.1.10",
-    "@storybook/addon-essentials": "^6.1.10",
+    "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.1.10",
-    "@storybook/addons": "^6.1.10",
-    "@storybook/react": "^6.1.10",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/addons": "^6.1.15",
+    "@storybook/react": "^6.1.15",
     "@storybook/theming": "^6.1.15",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.2",
@@ -95,6 +95,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
     "polished": "^4.0.5",
     "styled-components": "^5.2.1"
   }

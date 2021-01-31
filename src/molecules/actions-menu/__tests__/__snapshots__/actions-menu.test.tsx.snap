@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions Menu renders closed menu 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-kEjbxe cjaEPW"
+  >
+    <button
+      aria-label=""
+      class="sc-gsTCUz dQVqYO button"
+      color="dark"
+      data-event=""
+      data-testid="action-menu-button"
+      value=""
+    >
+      <svg
+        class="icon"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M16 10.667c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.666 1.194-2.667 2.666v0c0.004 1.471 1.196 2.662 2.666 2.667h0zM16 13.333c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667c1.473 0 2.667-1.194 2.667-2.667v0c-0.005-1.471-1.196-2.662-2.666-2.667h-0zM16 21.333c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667c1.473 0 2.667-1.194 2.667-2.667v0c-0.005-1.471-1.196-2.662-2.666-2.667h-0z"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Actions Menu renders open menu 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-kEjbxe cjaEPW"
+  >
+    <button
+      aria-label=""
+      class="sc-gsTCUz dQVqYO button"
+      color="dark"
+      data-event=""
+      data-testid="action-menu-button"
+      value=""
+    >
+      <svg
+        class="icon"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M16 10.667c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.666 1.194-2.667 2.666v0c0.004 1.471 1.196 2.662 2.666 2.667h0zM16 13.333c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667c1.473 0 2.667-1.194 2.667-2.667v0c-0.005-1.471-1.196-2.662-2.666-2.667h-0zM16 21.333c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667c1.473 0 2.667-1.194 2.667-2.667v0c-0.005-1.471-1.196-2.662-2.666-2.667h-0z"
+        />
+      </svg>
+    </button>
+    <ul
+      data-testid="ul-action-menu"
+    >
+      <li
+        data-testid="li-action-menu"
+      >
+        <a
+          href=""
+        >
+          <span>
+            Go to Details
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

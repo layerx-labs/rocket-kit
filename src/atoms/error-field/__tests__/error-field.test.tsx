@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ErrorField } from '../../src';
+import { ErrorField } from '../../..';
 
 describe('ErrorField', () => {
   it('renders', () => {
@@ -8,17 +8,15 @@ describe('ErrorField', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('ErrorField error has correct text', async () => {
+  it('has correct error text', async () => {
     const fieldText = 'Failed to save name';
     render(<ErrorField error={fieldText} color="danger" />);
-    const foundText = await screen.getByText(fieldText);
-    expect(foundText).toBeTruthy();
+    await screen.getByText(fieldText);
   });
 
-  it('ErrorField success has correct text', async () => {
+  it('has correct success text', async () => {
     const fieldText = 'Name save!';
     render(<ErrorField error={fieldText} color="success" />);
-    const foundText = await screen.getByText(fieldText);
-    expect(foundText).toBeTruthy();
+    await screen.getByText(fieldText);
   });
 });

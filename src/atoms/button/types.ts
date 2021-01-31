@@ -6,6 +6,6 @@ export type ButtonColor =
   | 'info'
   | 'purple'
   | 'white'
-  | 'black'
+  | 'dark'
   | 'magic'
   | 'pulse';

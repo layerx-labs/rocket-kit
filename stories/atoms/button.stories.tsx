@@ -15,7 +15,7 @@ export default {
           'info',
           'purple',
           'white',
-          'black',
+          'dark',
           'magic',
           'pulse',
         ],

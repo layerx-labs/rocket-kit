@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 import { device } from '../../ions/breakpoints';
 import { ButtonColor, ButtonVariant } from './types';
-import { colors } from '../../ions/variables';
+import { colors, fontWeigth } from '../../ions/variables';
 import { rem, lighten, darken } from 'polished';
 
 interface ButtonProps {
@@ -12,6 +12,7 @@ interface ButtonProps {
 }
 
 const { normal, light, info, primary, danger, purple } = colors;
+const { bold, black } = fontWeigth;
 
 export const pulseKeyframes = keyframes`
   0% {
@@ -67,7 +68,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     `}
 
   ${props =>
-    props.color === 'black' &&
+    props.color === 'dark' &&
     css`
       --button: ${normal};
       --hover: ${darken(1, normal)};
@@ -146,7 +147,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   span {
     position: relative;
     font-size: 0.75rem;
-    font-weight: var(--bold, 700);
+    font-weight: ${bold};
     color: ${props =>
       props.variant === 'solid' ? 'var(--txt)' : 'var(--button)'};
     pointer-events: none;
@@ -173,7 +174,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
 
       span {
         font-size: 1rem;
-        font-weight: var(--black, 700);
+        font-weight: ${black};
       }
 
       &:before {
