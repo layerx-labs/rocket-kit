@@ -12,3 +12,4 @@ export { default as TextField } from './atoms/text-field';
 // Molecules
 export { default as ActionsMenu } from './molecules/actions-menu';
 export { default as NoteCard } from './molecules/note-card';
+export { default as Table } from './molecules/table';
