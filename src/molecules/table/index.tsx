@@ -8,7 +8,7 @@ interface TableOption<CellDataType> {
   value: string;
   dataKey: string;
   renderer?: (value: any, data: CellDataType) => JSX.Element | null;
-  className: string;
+  className?: string;
   dataTestId?: string;
 }
 
@@ -17,7 +17,6 @@ export interface TableOptions<CellDataType> {
 }
 
 interface TableProps<CellDataType> {
-  rowMenu?: boolean;
   options: TableOptions<CellDataType>;
   values: CellDataType[];
   actions?: ActionMenu<CellDataType>[];
@@ -34,13 +33,14 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
   const {
     options,
     values = [],
-    rowMenu = false,
     actions = [],
     dataTestId = 'table-test-id',
     menuDataTestId = 'table-action-menu',
     actionMenuTestId = 'icon-button',
   } = props;
+
   const { columns = [] } = options;
+  const hasActionMenu = actions.length > 0;
 
   return (
     <Styles.TableWrapper data-testid={dataTestId}>
@@ -56,7 +56,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
               <th
                 key={id}
                 className={className}
-                data-testid={colDataTestId ? `tr-${colDataTestId}` : null}
+                data-testid={colDataTestId ? `th-${colDataTestId}` : null}
               >
                 {value}
               </th>
@@ -94,7 +94,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
               )
             )}
 
-            {rowMenu && (
+            {hasActionMenu && (
               <td className="menu" data-testid={menuDataTestId}>
                 <ActionsMenu
                   actions={actions}

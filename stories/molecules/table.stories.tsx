@@ -42,6 +42,7 @@ const columns = {
       value: 'Amount',
       dataKey: 'amount',
       className: 'kai',
+      dataTestId: 'header-amount-id',
     },
     {
       id: 'type',
@@ -59,7 +60,7 @@ const columns = {
 
 const rows = [
   {
-    id: 1,
+    id: '1',
     transactionName: 'To the Moon',
     amount: '2700',
     type: 'Back',
@@ -67,7 +68,7 @@ const rows = [
     avatar: './images/default-avatar.svg',
   },
   {
-    id: 2,
+    id: '2',
     transactionName: 'To the Moon',
     amount: '2000',
     type: 'Back',
@@ -75,7 +76,7 @@ const rows = [
     avatar: './images/default-avatar.svg',
   },
   {
-    id: 3,
+    id: '3',
     transactionName: 'To the Moon',
     amount: '5000',
     type: 'Back',
@@ -83,7 +84,7 @@ const rows = [
     avatar: './images/default-avatar.svg',
   },
   {
-    id: 4,
+    id: '4',
     transactionName: '@Caneco',
     avatar: './images/avatar.png',
     amount: '900',
@@ -93,12 +94,10 @@ const rows = [
 ];
 
 export const TableComponent = args => (
-  <Table options={columns} values={rows} actions={actions} rowMenu {...args} />
+  <Table options={columns} values={rows} {...args} />
 );
 
 TableComponent.storyName = 'Table';
 TableComponent.args = {
-  ariaLabel: 'Open submenu',
   actions,
-  startsOpen: true,
 };
