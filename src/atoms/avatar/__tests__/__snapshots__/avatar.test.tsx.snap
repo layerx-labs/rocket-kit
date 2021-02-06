@@ -4,7 +4,7 @@ exports[`Avatar renders 1`] = `
 <DocumentFragment>
   <img
     alt="avatar alt"
-    class="sc-bdfBwQ eWkXDZ avatar"
+    class="sc-bdfBwQ eWkXDZ tk-avatar"
     src="/dummy.png"
   />
 </DocumentFragment>

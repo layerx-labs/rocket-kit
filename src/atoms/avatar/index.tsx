@@ -8,7 +8,7 @@ interface AvatarProps {
 }
 
 const Avatar = (props: AvatarProps) => {
-  const { url, alt, style, className = 'avatar' } = props;
+  const { url, alt, style, className = 'tk-avatar' } = props;
   return (
     <Styles.Image className={className} src={url} alt={alt} style={style} />
   );
