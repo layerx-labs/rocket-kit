@@ -3,7 +3,7 @@
 exports[`Table renders 1`] = `
 <DocumentFragment>
   <table
-    class="sc-kstrdz cCcIlM table"
+    class="sc-kstrdz gAkPaK table"
     data-testid="table-test-id"
   >
     <thead>

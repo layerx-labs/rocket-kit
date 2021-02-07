@@ -1,5 +1,10 @@
 import styled from 'styled-components';
+import { rem, lighten } from 'polished';
+import { colors, fontWeigth } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
+
+const { normal, light, info } = colors;
+const { bold } = fontWeigth;
 
 export const TableWrapper = styled.table`
   width: 100%;
@@ -8,8 +13,8 @@ export const TableWrapper = styled.table`
 
   th,
   td {
-    height: 50px;
-    padding: 0 15px;
+    height: ${rem('50px')};
+    padding: 0 ${rem('15px')};
 
     &.center {
       text-align: center;
@@ -46,14 +51,14 @@ export const TableWrapper = styled.table`
       align-items: center;
 
       img {
-        margin-right: 15px;
+        margin-right: ${rem('15px')};
       }
     }
   }
 
   th {
     font-size: 0.85rem;
-    background-color: var(--white, hsl(0, 0%, 100%));
+    background-color: ${light};
 
     &:first-child {
       border-top-left-radius: 6px;
@@ -65,12 +70,12 @@ export const TableWrapper = styled.table`
   }
 
   tr {
-    border: 1px solid var(--darkGrey, hsl(0, 0%, 48%));
+    border: 1px solid ${info};
     border-radius: 6px;
     position: relative;
 
     &:not(:last-child) {
-      margin-bottom: 15px;
+      margin-bottom: ${rem('15px')};
     }
 
     @media ${device.s} {
@@ -90,8 +95,8 @@ export const TableWrapper = styled.table`
 
     @media ${device.s} {
       display: contents;
-      font-weight: var(--bold, 700);
-      color: var(--grey, hsl(0, 0%, 85%));
+      font-weight: ${bold};
+      color: ${info};
       text-transform: uppercase;
       text-align: left;
     }
@@ -103,7 +108,7 @@ export const TableWrapper = styled.table`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: var(--lightGrey, hsl(0, 0%, 98%));
+        background-color: ${lighten(0.4, info)};
 
         td.menu {
           button {
@@ -118,10 +123,10 @@ export const TableWrapper = styled.table`
     }
 
     td {
-      border-top: 1px solid var(--grey, hsl(0, 0%, 85%));
+      border-top: 1px solid ${lighten(0.4, info)};
       height: inherit;
-      min-height: 50px;
-      padding: 15px;
+      min-height: ${rem('50px')};
+      padding: ${rem('15px')};
       display: flex;
       justify-content: flex-end;
 
@@ -145,15 +150,15 @@ export const TableWrapper = styled.table`
       }
 
       img {
-        min-width: 30px;
-        min-height: 30px;
+        min-width: ${rem('30px')};
+        min-height: ${rem('30px')};
       }
 
       a {
         display: flex;
         align-items: center;
-        color: var(--default, hsl(0, 0%, 16%));
-        text-decoration-color: var(--grey, hsl(0, 0%, 85%));
+        color: ${normal};
+        text-decoration-color: ${info};
       }
 
       &:first-child {
@@ -162,9 +167,9 @@ export const TableWrapper = styled.table`
 
       &:before {
         position: absolute;
-        left: 15px;
+        left: ${rem('15px')};
         content: attr(data-label);
-        font-weight: var(--bold, 700);
+        font-weight: ${bold};
         text-transform: capitalize;
       }
 
@@ -172,8 +177,8 @@ export const TableWrapper = styled.table`
         svg {
           float: right;
           width: auto;
-          min-width: 20px;
-          max-height: 20px;
+          min-width: ${rem('20px')};
+          max-height: ${rem('20px')};
         }
       }
 
@@ -190,22 +195,23 @@ export const TableWrapper = styled.table`
       }
 
       &.menu {
-        padding: 0 10px 0 0;
+        padding: 0 ${rem('10px')} 0 0;
 
         button {
-          margin-top: 5px;
+          margin-top: ${rem('5px')};
           transition: 0.3s;
         }
 
         ul {
-          margin-left: -170px;
+          top: 5px;
+          margin-left: ${rem('-170px')};
         }
       }
 
       @media ${device.s} {
         display: table-cell;
-        height: 50px;
-        padding: 0 15px;
+        height: ${rem('50px')};
+        padding: 0 ${rem('15px')};
         align-items: center;
 
         > div {
@@ -220,7 +226,7 @@ export const TableWrapper = styled.table`
         }
 
         &:first-child {
-          border-top: 1px solid var(--grey, hsl(0, 0%, 85%));
+          border-top: 1px solid ${lighten(0.4, info)};
         }
 
         &:before {
@@ -228,7 +234,7 @@ export const TableWrapper = styled.table`
         }
 
         &.kai {
-          max-width: 100px;
+          max-width: ${rem('100px')};
         }
 
         img {
@@ -246,7 +252,7 @@ export const TableWrapper = styled.table`
         }
 
         &.menu {
-          width: 40px;
+          width: ${rem('40px')};
 
           button {
             opacity: 0;
