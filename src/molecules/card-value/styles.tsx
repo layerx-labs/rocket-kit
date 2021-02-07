@@ -1,22 +1,26 @@
 import styled from 'styled-components';
+import { rem, lighten } from 'polished';
 import { device } from '../../ions/breakpoints';
+import { colors } from '../../ions/variables';
+
+const { light, info } = colors;
 
 export const CardValueStyle = styled.div`
-  border: 1px solid var(--grey, hsl(0, 0%, 85%));
+  border: 1px solid ${lighten(0.4, info)};
   border-radius: 6px;
-  background-color: var(--white, hsl(0, 0%, 100%));
+  background-color: ${light};
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: ${rem('15px')};
   overflow-x: auto;
 
   @media ${device.l} {
-    padding: 30px;
+    padding: ${rem('30px')};
   }
 
   span {
     display: block;
-    margin-top: 5px;
+    margin-top: ${rem('5px')};
     font-size: 2rem;
     font-weight: var(--bold, 700);
     line-height: 1;
@@ -27,11 +31,10 @@ export const CardValueStyle = styled.div`
 `;
 
 export const CardValueButtonWrapper = styled.div`
-  margin-top: 20px;
   right: 0;
-  align-self: flex-end;
-  flex-grow: 2;
-
+  margin-top: ${rem('20px')};
   display: flex;
   flex-direction: column-reverse;
+  flex-grow: 2;
+  align-self: flex-end;
 `;
