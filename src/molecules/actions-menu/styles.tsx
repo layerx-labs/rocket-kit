@@ -5,10 +5,9 @@ import { colors } from '../../ions/variables';
 const { normal, light, info, danger } = colors;
 
 export const ActionsMenuStyle = styled.div`
-  height: 50px !important;
-
+  height: 50px;
   button {
-    margin-top: 7px !important;
+    margin-top: 7px;
   }
 
   ul {

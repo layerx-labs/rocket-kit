@@ -3,7 +3,7 @@
 exports[`Tag renders 1`] = `
 <DocumentFragment>
   <span
-    class="sc-jrAGrp kXWiTr tag"
+    class="sc-kEjbxe dDirKs tag"
     color="danger"
   >
     hello
