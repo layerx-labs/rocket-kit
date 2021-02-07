@@ -5,7 +5,7 @@ import * as Styles from './styles';
 interface CardValueProps {
   label: string;
   kai?: boolean;
-  value: string;
+  value: string | number;
   showArrowButton?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   className?: string;

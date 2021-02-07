@@ -11,9 +11,17 @@ describe('Card Value', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('has correct label and value', async () => {
+  it('has correct label and string value', async () => {
     const label = 'Accounts';
     const value = '345';
+    render(<CardValue label={label} value={value} kai />);
+    await screen.getByText(label);
+    await screen.getByText(value);
+  });
+
+  it('has correct label and number value', async () => {
+    const label = 'Accounts';
+    const value = 345;
     render(<CardValue label={label} value={value} kai />);
     await screen.getByText(label);
     await screen.getByText(value);
