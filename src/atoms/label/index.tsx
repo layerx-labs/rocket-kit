@@ -1,6 +1,8 @@
 import React from 'react';
-import { Icon } from '../..';
 import * as Styles from './styles';
+
+import { colors } from '../../ions/variables';
+import { Icon } from '../..';
 
 interface LabelProps {
   kai?: boolean;
@@ -9,12 +11,14 @@ interface LabelProps {
   style?: React.CSSProperties;
 }
 
+const { info } = colors;
+
 const Label = (props: LabelProps) => {
   const { value, kai = false, className = 'label', style } = props;
   return (
     <Styles.LabelStyle className={className} style={style}>
       {value}
-      {kai ? <Icon icon="kai" fill="hsl(0, 0%, 85%)" /> : null}
+      {kai ? <Icon icon="kai" fill={info} /> : null}
     </Styles.LabelStyle>
   );
 };

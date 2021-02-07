@@ -3,7 +3,7 @@
 exports[`Label renders 1`] = `
 <DocumentFragment>
   <label
-    class="sc-pFZIQ lkbNLm label"
+    class="sc-pFZIQ godpbM label"
   >
     Amount
   </label>
