@@ -23,6 +23,8 @@ interface TableProps<CellDataType> {
   dataTestId?: string;
   menuDataTestId?: string;
   actionMenuTestId?: string;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 interface CellBaseType {
@@ -37,13 +39,19 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
     dataTestId = 'table-test-id',
     menuDataTestId = 'table-action-menu',
     actionMenuTestId = 'icon-button',
+    className = 'table',
+    style,
   } = props;
 
   const { columns = [] } = options;
   const hasActionMenu = actions.length > 0;
 
   return (
-    <Styles.TableWrapper data-testid={dataTestId}>
+    <Styles.TableWrapper
+      data-testid={dataTestId}
+      className={className}
+      style={style}
+    >
       <thead>
         <tr>
           {columns.map(
