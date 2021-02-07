@@ -5,6 +5,7 @@ export { default as ButtonLink } from './atoms/button-link';
 export { default as Checkbox } from './atoms/checkbox';
 export { default as ErrorField } from './atoms/error-field';
 export { default as Icon } from './atoms/icon';
+export { default as Label } from './atoms/label';
 export { default as Spinner } from './atoms/spinner';
 export { default as Tag } from './atoms/tag';
 export { default as TextField } from './atoms/text-field';

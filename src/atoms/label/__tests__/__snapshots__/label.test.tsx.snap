@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label renders 1`] = `
+<DocumentFragment>
+  <label
+    class="sc-pFZIQ lkbNLm"
+  >
+    Amount
+  </label>
+</DocumentFragment>
+`;
