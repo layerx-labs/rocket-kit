@@ -9,7 +9,6 @@ exports[`Actions Menu renders closed menu 1`] = `
       aria-label=""
       class="sc-gsTCUz dQVqYO button"
       color="dark"
-      data-event=""
       data-testid="action-menu-button"
       value=""
     >
@@ -35,7 +34,6 @@ exports[`Actions Menu renders open menu 1`] = `
       aria-label=""
       class="sc-gsTCUz dQVqYO button"
       color="dark"
-      data-event=""
       data-testid="action-menu-button"
       value=""
     >
