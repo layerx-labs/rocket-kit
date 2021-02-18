@@ -1,5 +1,16 @@
 import React from 'react';
-import { Avatar, Table } from '../../src';
+import Table from '..';
+import { Avatar } from '../../..';
+import { ActionMenu } from '../../actions-menu/types';
+
+interface Transaction {
+  id: string;
+  transactionName: string;
+  amount: string;
+  type: string;
+  createdAt: string;
+  avatar: string;
+}
 
 export default {
   title: 'Design System/Molecules/Table',
@@ -7,20 +18,16 @@ export default {
   argTypes: {},
 };
 
-const actions = [
+const actions: ActionMenu<Transaction>[] = [
   {
     id: 'actionDetails',
     type: 'default',
     value: 'Go to Details',
-    url: null,
-    action: () => {},
   },
   {
     id: 'actionDelete',
     type: 'danger',
     value: 'Delete',
-    url: null,
-    action: () => {},
   },
 ];
 
@@ -30,7 +37,7 @@ const columns = {
       id: 'transactionName',
       value: 'Last Transaction',
       dataKey: 'transactionName',
-      renderer: (transactionName, { avatar }) => (
+      renderer: (transactionName: string, { avatar }: { avatar: string }) => (
         <>
           <Avatar url={avatar} alt={transactionName} /> {transactionName}
         </>
@@ -58,7 +65,7 @@ const columns = {
   ],
 };
 
-const rows = [
+const rows: Transaction[] = [
   {
     id: '1',
     transactionName: 'To the Moon',
@@ -93,11 +100,9 @@ const rows = [
   },
 ];
 
-export const TableComponent = args => (
-  <Table options={columns} values={rows} {...args} />
+export const TableComponent = () => (
+  <Table<Transaction> options={columns} values={rows} actions={actions} />
 );
 
 TableComponent.storyName = 'Table';
-TableComponent.args = {
-  actions,
-};
+TableComponent.args = {};

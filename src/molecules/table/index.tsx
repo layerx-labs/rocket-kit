@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActionsMenu, Icon } from '../..';
+import { hasValue } from '../../utils/filters/has-value';
 import { ActionMenu } from '../actions-menu/types';
 import * as Styles from './styles';
 
@@ -16,9 +17,9 @@ export interface TableOptions<CellDataType> {
   columns: TableOption<CellDataType>[];
 }
 
-interface TableProps<CellDataType> {
+export interface TableProps<CellDataType> {
   options: TableOptions<CellDataType>;
-  values: CellDataType[];
+  values: (CellDataType | null)[];
   actions?: ActionMenu<CellDataType>[];
   dataTestId?: string;
   menuDataTestId?: string;
@@ -27,7 +28,7 @@ interface TableProps<CellDataType> {
   style?: React.CSSProperties;
 }
 
-interface CellBaseType {
+export interface CellBaseType {
   id: string;
 }
 
@@ -45,6 +46,8 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
 
   const { columns = [] } = options;
   const hasActionMenu = actions.length > 0;
+
+  const validValues = values.filter(hasValue);
 
   return (
     <Styles.TableWrapper
@@ -73,7 +76,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
         </tr>
       </thead>
       <tbody>
-        {values.map(row => (
+        {validValues.map(row => (
           <tr key={row.id} data-testid={`row-${dataTestId}`}>
             {columns.map(
               ({
