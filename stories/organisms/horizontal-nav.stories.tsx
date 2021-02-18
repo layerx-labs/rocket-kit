@@ -3,21 +3,6 @@ import { HorizontalNav, Icon } from '../../src';
 
 export default {
   title: 'Design System/Organisms/Navigation',
-  // component: HorizontalNav,
-  // argTypes: {
-  //   color: {
-  //     control: {
-  //       type: 'select',
-  //       options: ['primary', 'warning', 'danger', 'info'],
-  //     },
-  //   },
-  //   variant: {
-  //     control: {
-  //       type: 'inline-radio',
-  //       options: ['solid', 'outline'],
-  //     },
-  //   },
-  // },
 };
 
 export const HorizontalNavComponent = () => {
