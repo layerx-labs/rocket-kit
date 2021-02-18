@@ -18,4 +18,5 @@ export { default as NoteCard } from './molecules/note-card';
 export { default as Table } from './molecules/table';
 
 // Organisms
+export { default as HorizontalNav } from './organisms/horizontal-nav';
 export { default as Modal } from './organisms/modal';
