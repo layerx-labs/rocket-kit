@@ -15,3 +15,6 @@ export { default as ActionsMenu } from './molecules/actions-menu';
 export { default as CardValue } from './molecules/card-value';
 export { default as NoteCard } from './molecules/note-card';
 export { default as Table } from './molecules/table';
+
+// Organisms
+export { default as HorizontalNav } from './organisms/horizontal-nav';
