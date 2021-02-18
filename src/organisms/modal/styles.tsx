@@ -1,15 +1,20 @@
 import styled from 'styled-components';
+import { rgba } from 'polished';
+import { colors, fontWeigth } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
 interface ModalStyleBaseProps {
   zIndex: number;
 }
 
+const { light } = colors;
+const { bold } = fontWeigth;
+
 export const ModalOverlay = styled.div<ModalStyleBaseProps>`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(231, 163, 163, 0.8);
+  background-color: ${rgba(0, 0, 0, 0.8)};
   width: 100vw;
   height: 100vh;
   z-index: ${props => (props.zIndex ? props.zIndex : 10)};
@@ -34,7 +39,7 @@ export const ModalWrapper = styled.div<ModalStyleBaseProps>`
 
 export const ModalContainer = styled.div<ModalStyleBaseProps>`
   position: relative;
-  background: var(--white, hsl(0, 0%, 100%));
+  background: ${light};
   width: 100%;
   min-height: 0;
   padding: 15px;
@@ -59,17 +64,17 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
     }
 
     .modal-footer {
-      margin-top: 15px;
-      max-width: 800px;
+      margin-top: rem('15px');
+      max-width: rem('800px');
 
       @media ${device.s} {
-        margin: 50px auto 0 auto;
+        margin: rem('50px') auto 0 auto;
       }
     }
   }
 
   > p + div {
-    margin-top: 15px;
+    margin-top: rem('15px');
 
     &:last-child {
       margin-bottom: 0;
@@ -77,7 +82,7 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
   }
 
   .bold {
-    font-weight: var(--bold, 700);
+    font-weight: ${bold};
   }
 `;
 
@@ -85,7 +90,7 @@ export const ModalHeader = styled.div`
   display: flex;
 
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: rem('30px');
   }
 
   button {
@@ -94,13 +99,13 @@ export const ModalHeader = styled.div`
     top: 0;
     right: 0;
     margin: -15px -15px 0 0;
-    background-color: var(--white, hsl(0, 0%, 100%));
-    width: 30px;
-    height: 30px;
+    background-color: ${light};
+    width: rem('30px');
+    height: rem('30px');
     z-index: 1;
 
     &:hover {
-      background-color: var(--white, hsl(0, 0%, 100%));
+      background-color: ${light};
     }
 
     @media ${device.s} {
