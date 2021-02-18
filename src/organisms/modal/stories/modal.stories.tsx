@@ -22,29 +22,61 @@ ModalComponentBase.storyName = 'Simple';
 ModalComponentBase.args = {
   title: 'Checkout',
   closeValue: 'Cancel',
-  focus: true,
+  focus: false,
   focusModeValue: 'Focus Mode',
   isShowing: true,
 };
 
-export const ModalEditorComponent = (args: ModalProps) => {
-  const [focus, setFocus] = useState(args.focus);
+interface ModalEditorComponentProps extends ModalProps {
+  showFocusButton: boolean;
+  focusModeValue: string;
+}
 
+export const ModalEditorComponent = (args: ModalEditorComponentProps) => {
+  const [focus, setFocus] = useState(args.focus);
+  const [isShowing, setIsShowing] = useState(true);
   return (
-    <Modal {...args} focus>
-      <textarea style={{minHeight: 200, width: "100%"}}/>
-      <ModalFooter
-        closeValue={'Cancel'}
-        closeAction={() => {}}
-        focusMode={args.focus}
-        focusModeValue={'Focus Value'}
-        focusModeAction={() => {
-          setFocus(!focus);
+    <div>
+      {!isShowing && (
+        <Button
+          value={'Open Modal'}
+          action={() => {
+            setIsShowing(!isShowing);
+          }}
+        />
+      )}
+      <Modal
+        {...args}
+        isShowing={isShowing}
+        focus={focus}
+        hide={() => {
+          setIsShowing(false);
         }}
       >
-        <Button type="submit" value={'Save'} action={() => {}} />
-      </ModalFooter>
-    </Modal>
+        <textarea style={{ minHeight: 60, width: '100%' }}>
+          Random text
+        </textarea>
+        <ModalFooter
+          closeValue={'Cancel'}
+          closeAction={() => {
+            setIsShowing(false);
+          }}
+          focusMode={args.showFocusButton}
+          focusModeValue={args.focusModeValue}
+          focusModeAction={() => {
+            setFocus(!focus);
+          }}
+        >
+          <Button
+            type="submit"
+            value={'Save'}
+            action={() => {
+              setIsShowing(false);
+            }}
+          />
+        </ModalFooter>
+      </Modal>
+    </div>
   );
 };
 
@@ -54,5 +86,5 @@ ModalEditorComponent.args = {
   focusModeValue: 'Focus Mode',
   closeValue: 'Cancel',
   focus: false,
-  isShowing: false,
+  showFocusButton: true,
 };
