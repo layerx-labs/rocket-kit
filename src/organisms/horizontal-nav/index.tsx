@@ -60,7 +60,7 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
     }
 
     return;
-  }, [ref.current]);
+  }, [ref]);
 
   return (
     <Styles.Wrapper ref={ref}>
