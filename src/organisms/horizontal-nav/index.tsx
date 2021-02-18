@@ -4,17 +4,17 @@ import useVisible from '../../utils/hooks/use-visible';
 import { Button } from '../..';
 
 interface HorizontalNavInterface {
-  // querySelector: string;
   items: any;
   startsOpen?: boolean;
+  style?: any;
 }
 
 const HorizontalNav = (props: HorizontalNavInterface) => {
   const [showMore, setShowMore] = useState(false);
-  // const wrapperRef = useRef(null);
   const moreMenu = useRef(null);
+  const visibleMenuRef = useRef<HTMLUListElement>(null);
 
-  const { items, startsOpen = false } = props;
+  const { items, startsOpen = false, style } = props;
 
   const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
     startsOpen
@@ -46,7 +46,7 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
     const checkOverflow = () => {
       moreVisibility();
       for (let i = 0; i < visible.length + 20; i++) {
-        ref.current!.scrollWidth + 50 > ref.current!.offsetWidth
+        visibleMenuRef.current!.scrollWidth + 50 > ref.current!.offsetWidth
           ? removeItem()
           : addItem();
       }
@@ -64,8 +64,10 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
   }, [ref.current]);
 
   return (
-    <Styles.Wrapper ref={ref}>
-      <ul className="menu">{items}</ul>
+    <Styles.Wrapper ref={ref} style={style}>
+      <ul className="menu" ref={visibleMenuRef}>
+        {items}
+      </ul>
 
       <Styles.More className={showMore ? 'hide' : ''} ref={moreMenu}>
         <Button
