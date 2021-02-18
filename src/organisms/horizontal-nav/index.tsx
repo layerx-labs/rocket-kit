@@ -6,7 +6,6 @@ import { Button } from '../..';
 interface HorizontalNavInterface {
   items: any;
   startsOpen?: boolean;
-  style?: any;
 }
 
 const HorizontalNav = (props: HorizontalNavInterface) => {
@@ -14,7 +13,7 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
   const moreMenu = useRef(null);
   const visibleMenuRef = useRef<HTMLUListElement>(null);
 
-  const { items, startsOpen = false, style } = props;
+  const { items, startsOpen = false } = props;
 
   const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
     startsOpen
@@ -64,7 +63,7 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
   }, [ref.current]);
 
   return (
-    <Styles.Wrapper ref={ref} style={style}>
+    <Styles.Wrapper ref={ref}>
       <ul className="menu" ref={visibleMenuRef}>
         {items}
       </ul>
