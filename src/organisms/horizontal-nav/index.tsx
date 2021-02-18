@@ -4,17 +4,15 @@ import useVisible from '../../utils/hooks/use-visible';
 import { Button } from '../..';
 
 interface HorizontalNavInterface {
-  querySelector: string;
+  // querySelector: string;
   items: any;
+  startsOpen?: boolean;
 }
 
 const HorizontalNav = (props: HorizontalNavInterface) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [showMore, setShowMore] = useState(false);
-  const wrapperRef = useRef(null);
-  const visibleMenuRef = useRef(null);
+  // const wrapperRef = useRef(null);
   const moreMenu = useRef(null);
-  const toggling = () => setIsOpen(!isOpen);
 
   const { items, startsOpen = false } = props;
 
@@ -23,30 +21,32 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
   );
 
   useEffect(() => {
-    const visible = document
-      .querySelector('ul.menu')
+    if (!ref || !ref.current) return;
+
+    const visible = document!
+      .querySelector('ul.menu')!
       .getElementsByTagName('li');
 
-    const more = document.querySelector('.more').getElementsByTagName('li');
+    const more = document.querySelector('.more')!.getElementsByTagName('li');
     const moreVisibility = () =>
       more.length > 0 ? setShowMore(true) : setShowMore(false);
 
     const removeItem = () => {
       if (visible.length === 1) return;
-      var last = visible[visible.length - 1];
-      document.querySelector('ul.more').prepend(last);
+      let last = visible[visible.length - 1];
+      document.querySelector('ul.more')!.prepend(last);
     };
 
     const addItem = () => {
       if (more.length === 0) return;
-      var first = more[0];
-      document.querySelector('ul.menu').append(first);
+      let first = more[0];
+      document.querySelector('ul.menu')!.append(first);
     };
 
     const checkOverflow = () => {
       moreVisibility();
-      for (var i = 0; i < visible.length + 20; i++) {
-        visibleMenuRef.current.scrollWidth + 50 > wrapperRef.current.offsetWidth
+      for (let i = 0; i < visible.length + 20; i++) {
+        ref.current!.scrollWidth + 50 > ref.current!.offsetWidth
           ? removeItem()
           : addItem();
       }
@@ -59,17 +59,24 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
       window.addEventListener('resize', checkOverflow);
       return () => window.removeEventListener('resize', checkOverflow);
     }
-  }, [visibleMenuRef.current]);
+
+    return;
+  }, [ref.current]);
 
   return (
-    <Styles.Wrapper ref={wrapperRef}>
-      <ul className="menu" ref={visibleMenuRef}>
-        {items}
-      </ul>
+    <Styles.Wrapper ref={ref}>
+      <ul className="menu">{items}</ul>
 
       <Styles.More className={showMore ? 'hide' : ''} ref={moreMenu}>
-        <Button variant="text" color="dark" icon="menuVert" action={toggling} />
-        <ul className={isOpen ? 'more is-open' : 'more'}></ul>
+        <Button
+          variant="text"
+          color="dark"
+          icon="menuVert"
+          action={() => {
+            setIsVisible(!isVisible);
+          }}
+        />
+        <ul className={isVisible ? 'more is-open' : 'more'}></ul>
       </Styles.More>
     </Styles.Wrapper>
   );
