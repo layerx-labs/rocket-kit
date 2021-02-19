@@ -19,6 +19,7 @@ export interface ButtonProps {
   eventId?: string;
   icon?: string;
   style?: CSSProperties;
+  type?: 'submit' | 'reset' | 'button';
 }
 
 const Button = (props: ButtonProps) => {
@@ -29,14 +30,15 @@ const Button = (props: ButtonProps) => {
     value = '',
     className = 'button',
     querySelector = '.button',
-    ariaLabel = '',
+    ariaLabel,
     action = () => {},
     disabled = false,
     loading = false,
-    dataTestId = '',
-    eventId = '',
+    dataTestId,
+    eventId,
     icon = '',
     style,
+    type,
   } = props;
 
   useMouseMoveEffect({ querySelector });
@@ -54,6 +56,7 @@ const Button = (props: ButtonProps) => {
       data-testid={dataTestId}
       data-event={eventId}
       style={style}
+      type={type}
     >
       {loading ? <Spinner /> : icon ? <Icon icon={icon} /> : null}
       {value && <span>{value}</span>}

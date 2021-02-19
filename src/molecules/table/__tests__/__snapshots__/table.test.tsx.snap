@@ -3,7 +3,7 @@
 exports[`Table renders 1`] = `
 <DocumentFragment>
   <table
-    class="sc-kstrdz gAkPaK table"
+    class="sc-hBEYos bTJLkM table"
     data-testid="table-test-id"
   >
     <thead>
@@ -67,7 +67,6 @@ exports[`Table renders 1`] = `
               aria-label=""
               class="sc-gsTCUz dQVqYO button"
               color="dark"
-              data-event=""
               data-testid="icon-button"
               value=""
             >

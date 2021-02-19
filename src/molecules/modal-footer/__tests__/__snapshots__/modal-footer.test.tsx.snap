@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Footer renders 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hHftDr blpPoG modal-footer"
+  >
+    <button
+      class="sc-gsTCUz bLoURZ button"
+      color="info"
+      value="Cancel"
+    >
+      <span>
+        Cancel
+      </span>
+    </button>
+    <button
+      class="sc-gsTCUz kncSuy button"
+      color="primary"
+      type="submit"
+      value="save"
+    >
+      <span>
+        save
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

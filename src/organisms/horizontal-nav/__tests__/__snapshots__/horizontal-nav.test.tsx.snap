@@ -3,7 +3,7 @@
 exports[`Horizontal Nav renders 1`] = `
 <DocumentFragment>
   <div
-    class="sc-hBEYos kZDQde"
+    class="sc-fodVxV iScPpd"
   >
     <ul
       class="menu"
@@ -27,14 +27,11 @@ exports[`Horizontal Nav renders 1`] = `
       </li>
     </ul>
     <div
-      class="sc-fodVxV jqWqXU hide"
+      class="sc-fFubgz jzEDtX hide"
     >
       <button
-        aria-label=""
         class="sc-gsTCUz dQVqYO button"
         color="dark"
-        data-event=""
-        data-testid=""
         value=""
       >
         <svg
