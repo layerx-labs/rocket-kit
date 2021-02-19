@@ -40,7 +40,8 @@ const Checkbox = (props: Props) => {
       <CheckboxInput
         type="checkbox"
         name={value}
-        checked={checked}
+        defaultChecked={checked}
+        aria-checked={checked}
         onChange={onChange}
         error={error}
         disabled={disabled}
