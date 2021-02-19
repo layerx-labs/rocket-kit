@@ -22,18 +22,10 @@ ModalComponentBase.storyName = 'Simple';
 ModalComponentBase.args = {
   title: 'Checkout',
   closeValue: 'Cancel',
-  focus: false,
-  focusModeValue: 'Focus Mode',
   isShowing: true,
 };
 
-interface ModalEditorComponentProps extends ModalProps {
-  showFocusButton: boolean;
-  focusModeValue: string;
-}
-
-export const ModalEditorComponent = (args: ModalEditorComponentProps) => {
-  const [focus, setFocus] = useState(args.focus);
+export const ModalEditorComponent = (args: ModalProps) => {
   const [isShowing, setIsShowing] = useState(true);
   return (
     <div>
@@ -48,7 +40,6 @@ export const ModalEditorComponent = (args: ModalEditorComponentProps) => {
       <Modal
         {...args}
         isShowing={isShowing}
-        focus={focus}
         hide={() => {
           setIsShowing(false);
         }}
@@ -60,11 +51,6 @@ export const ModalEditorComponent = (args: ModalEditorComponentProps) => {
           closeValue={'Cancel'}
           closeAction={() => {
             setIsShowing(false);
-          }}
-          focusMode={args.showFocusButton}
-          focusModeValue={args.focusModeValue}
-          focusModeAction={() => {
-            setFocus(!focus);
           }}
         >
           <Button
@@ -83,8 +69,5 @@ export const ModalEditorComponent = (args: ModalEditorComponentProps) => {
 ModalEditorComponent.storyName = 'Modal Editor';
 ModalEditorComponent.args = {
   title: 'Checkout',
-  focusModeValue: 'Focus Mode',
   closeValue: 'Cancel',
-  focus: false,
-  showFocusButton: true,
 };

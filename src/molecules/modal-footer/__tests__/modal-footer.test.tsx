@@ -37,20 +37,4 @@ describe('Modal Footer', () => {
     userEvent.click(screen.getByText(/save/i));
     expect(mockAction).toBeCalledTimes(1);
   });
-
-  it('focus mode button is visible and clickable', () => {
-    const mockAction = jest.fn();
-    render(
-      <ModalFooter
-        focusMode
-        focusModeAction={mockAction}
-        focusModeValue="Focus mode on"
-      >
-        <Button type="submit" value="save" />
-      </ModalFooter>
-    );
-
-    userEvent.click(screen.getByText(/focus mode on/i));
-    expect(mockAction).toBeCalledTimes(1);
-  });
 });

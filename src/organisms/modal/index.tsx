@@ -10,7 +10,6 @@ export interface ModalProps {
   children: React.ReactNode;
   closeValue: string;
   footer: boolean;
-  focus?: boolean;
   zIndex?: number;
 }
 
@@ -22,7 +21,6 @@ const Modal = (props: ModalProps) => {
     children,
     closeValue = 'Close',
     footer = false,
-    focus = false,
     zIndex = 10,
   } = props;
 
@@ -32,29 +30,25 @@ const Modal = (props: ModalProps) => {
         <Styles.ModalOverlay zIndex={zIndex} />
         <Styles.ModalWrapper
           aria-modal
-          aria-hidden
           tabIndex={-1}
           role="dialog"
           zIndex={zIndex}
         >
           <Styles.ModalContainer
-            className={focus ? 'focus' : ''}
             onClick={event => event.stopPropagation()}
             zIndex={zIndex}
           >
-            {!focus && (
-              <Styles.ModalHeader>
-                {title && <h2>{title}</h2>}
+            <Styles.ModalHeader>
+              {title && <h2>{title}</h2>}
 
-                <Button
-                  variant="outline"
-                  color="info"
-                  icon="cross"
-                  ariaLabel="Close"
-                  action={hide}
-                />
-              </Styles.ModalHeader>
-            )}
+              <Button
+                variant="outline"
+                color="info"
+                icon="cross"
+                ariaLabel="Close"
+                action={hide}
+              />
+            </Styles.ModalHeader>
 
             {children}
 
