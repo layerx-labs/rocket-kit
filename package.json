@@ -1,5 +1,5 @@
 {
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "TAIKAI Design System",
   "license": "MIT",
   "repository": {
@@ -84,14 +84,14 @@
     "chromatic": "^5.6.3",
     "cross-var": "^1.1.0",
     "dotenv-cli": "^4.0.0",
+    "husky": "^4.3.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
     "size-limit": "^4.9.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
-    "typescript": "^4.1.5",
-    "husky": "^4.3.5"
+    "typescript": "^4.1.5"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
