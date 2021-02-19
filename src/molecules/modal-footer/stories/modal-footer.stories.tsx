@@ -15,32 +15,15 @@ export const ModalFooterComponentNoChildren = (args: ModalFooterProps) => (
 ModalFooterComponentNoChildren.storyName = 'No children';
 ModalFooterComponentNoChildren.args = {
   closeValue: 'Cancel',
-  focusMode: false,
-  focusModeValue: 'Focus Mode',
 };
 
-export const ModalFooterComponentNoFocus = (args: ModalFooterProps) => (
+export const ModalFooterComponentChildren = (args: ModalFooterProps) => (
   <ModalFooter {...args}>
     <Button type="submit" value="save" />
   </ModalFooter>
 );
 
-ModalFooterComponentNoFocus.storyName = 'Without Focus';
-ModalFooterComponentNoFocus.args = {
-  closeValue: 'Cancel',
-  focusMode: false,
-  focusModeValue: 'Focus Mode',
-};
-
-export const ModalFooterComponentFocus = (args: ModalFooterProps) => (
-  <ModalFooter {...args}>
-    <Button type="submit" value="save" />
-  </ModalFooter>
-);
-
-ModalFooterComponentFocus.storyName = 'With Focus';
-ModalFooterComponentFocus.args = {
+ModalFooterComponentChildren.storyName = 'With children';
+ModalFooterComponentChildren.args = {
   closeValue: 'Abort',
-  focusMode: true,
-  focusModeValue: 'Focus Mode',
 };
