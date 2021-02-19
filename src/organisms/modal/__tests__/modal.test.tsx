@@ -52,7 +52,7 @@ describe('Modal', () => {
     screen.getByText(/ground round corned beef/i);
     screen.getByText(/checkout/i);
 
-    userEvent.click(screen.getByText(/submit/i));
+    userEvent.click(screen.getByRole('button', { name: /submit/i }));
     expect(onClick).toBeCalledTimes(1);
   });
 });
