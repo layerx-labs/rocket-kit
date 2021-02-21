@@ -21,7 +21,8 @@ export const ModalComponentBase = (args: ModalProps) => (
 ModalComponentBase.storyName = 'Simple';
 ModalComponentBase.args = {
   title: 'Checkout',
-  closeValue: 'Cancel',
+  footer: true,
+  closeValue: 'Close',
   isShowing: true,
 };
 
@@ -69,5 +70,4 @@ export const ModalEditorComponent = (args: ModalProps) => {
 ModalEditorComponent.storyName = 'Modal Editor';
 ModalEditorComponent.args = {
   title: 'Checkout',
-  closeValue: 'Cancel',
 };
