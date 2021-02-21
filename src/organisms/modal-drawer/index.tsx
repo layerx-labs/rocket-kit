@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, ModalFooter } from '../..';
+import { ModalFooter } from '../..';
 import * as Styles from './styles';
 
-export interface ModalProps {
+export interface ModalDrawerProps {
   isShowing: boolean;
   hide: () => void;
   title: string;
   children: React.ReactNode;
   closeValue?: string;
-  footer: boolean;
+  footer?: React.ReactNode;
   zIndex?: number;
 }
 
-const Modal = (props: ModalProps) => {
+const ModalDrawer = (props: ModalDrawerProps) => {
   const {
     isShowing = false,
     hide,
@@ -38,21 +38,12 @@ const Modal = (props: ModalProps) => {
             onClick={event => event.stopPropagation()}
             zIndex={zIndex}
           >
-            <Styles.ModalHeader>
-              {title && <h2>{title}</h2>}
+            <Styles.ModalHeader>{title && <h2>{title}</h2>}</Styles.ModalHeader>
+            <Styles.ModalContent>{children}</Styles.ModalContent>
 
-              <Button
-                variant="outline"
-                color="info"
-                icon="cross"
-                ariaLabel="Close"
-                action={hide}
-              />
-            </Styles.ModalHeader>
-
-            {children}
-
-            {footer && (
+            {footer ? (
+              footer
+            ) : (
               <ModalFooter closeAction={hide} closeValue={closeValue} />
             )}
           </Styles.ModalContainer>
@@ -65,4 +56,4 @@ const Modal = (props: ModalProps) => {
   );
 };
 
-export default Modal;
+export default ModalDrawer;

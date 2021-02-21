@@ -20,3 +20,4 @@ export { default as Table } from './molecules/table';
 // Organisms
 export { default as HorizontalNav } from './organisms/horizontal-nav';
 export { default as Modal } from './organisms/modal';
+export { default as ModalDrawer } from './organisms/modal-drawer';
