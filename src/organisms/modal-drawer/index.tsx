@@ -43,11 +43,12 @@ const ModalDrawer = (props: ModalDrawerProps) => {
             <Styles.ModalHeader>{title && <h2>{title}</h2>}</Styles.ModalHeader>
             <Styles.ModalContent>{children}</Styles.ModalContent>
 
-            {!footerHidden && footer ? (
-              footer
-            ) : (
-              <ModalFooter closeAction={hide} closeValue={closeValue} />
-            )}
+            {!footerHidden &&
+              (footer ? (
+                footer
+              ) : (
+                <ModalFooter closeAction={hide} closeValue={closeValue} />
+              ))}
           </Styles.ModalContainer>
         </Styles.ModalWrapper>
       </React.Fragment>,
