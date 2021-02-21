@@ -8,7 +8,7 @@ export interface ModalProps {
   hide: () => void;
   title: string;
   children: React.ReactNode;
-  closeValue: string;
+  closeValue?: string;
   footer: boolean;
   zIndex?: number;
 }

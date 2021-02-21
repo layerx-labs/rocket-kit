@@ -8,7 +8,7 @@ export interface ModalDrawerProps {
   hide: () => void;
   title: string;
   children: React.ReactNode;
-  closeValue: string;
+  closeValue?: string;
   footer?: React.ReactNode;
   zIndex?: number;
 }
