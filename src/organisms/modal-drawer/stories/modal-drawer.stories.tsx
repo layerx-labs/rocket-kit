@@ -56,4 +56,61 @@ ModalDrawerComponent.storyName = 'Drawer';
 ModalDrawerComponent.args = {
   title: 'Voting Cart Checkout',
   closeValue: 'Close',
+  footerHidden: false,
+};
+
+export const ModalDrawerCustomFooterComponent = (args: ModalDrawerProps) => {
+  const [isShowing, setIsShowing] = useState(true);
+  return (
+    <div>
+      {!isShowing && (
+        <Button
+          value={'Open Modal'}
+          action={() => {
+            setIsShowing(!isShowing);
+          }}
+        />
+      )}
+      <ModalDrawer
+        {...args}
+        isShowing={isShowing}
+        hide={() => {
+          setIsShowing(false);
+        }}
+      >
+        <p>
+          I'm baby tofu man bun readymade, chartreuse vexillologist pok pok
+          retro sriracha drinking vinegar pinterest tumblr lyft venmo vape woke.
+        </p>
+        <ModalFooter
+          closeValue={'Close'}
+          closeAction={() => {
+            setIsShowing(false);
+          }}
+        >
+          <Button
+            type="submit"
+            value={'Checkout'}
+            action={() => {
+              setIsShowing(false);
+            }}
+          />
+          <Button
+            type="submit"
+            value={'Submit'}
+            action={() => {
+              setIsShowing(false);
+            }}
+          />
+        </ModalFooter>
+      </ModalDrawer>
+    </div>
+  );
+};
+
+ModalDrawerCustomFooterComponent.storyName = 'Drawer custom footer';
+ModalDrawerCustomFooterComponent.args = {
+  title: 'Voting Cart Checkout',
+  closeValue: 'Close',
+  footerHidden: true,
 };

@@ -10,6 +10,7 @@ export interface ModalDrawerProps {
   children: React.ReactNode;
   closeValue?: string;
   footer?: React.ReactNode;
+  footerHidden?: boolean;
   zIndex?: number;
 }
 
@@ -20,7 +21,8 @@ const ModalDrawer = (props: ModalDrawerProps) => {
     title,
     children,
     closeValue = 'Close',
-    footer = false,
+    footer = null,
+    footerHidden = false,
     zIndex = 10,
   } = props;
 
@@ -41,11 +43,12 @@ const ModalDrawer = (props: ModalDrawerProps) => {
             <Styles.ModalHeader>{title && <h2>{title}</h2>}</Styles.ModalHeader>
             <Styles.ModalContent>{children}</Styles.ModalContent>
 
-            {footer ? (
-              footer
-            ) : (
-              <ModalFooter closeAction={hide} closeValue={closeValue} />
-            )}
+            {!footerHidden &&
+              (footer ? (
+                footer
+              ) : (
+                <ModalFooter closeAction={hide} closeValue={closeValue} />
+              ))}
           </Styles.ModalContainer>
         </Styles.ModalWrapper>
       </React.Fragment>,

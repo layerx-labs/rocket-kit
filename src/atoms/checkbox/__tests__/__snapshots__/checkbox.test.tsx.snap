@@ -11,6 +11,7 @@ exports[`Checkbox renders 1`] = `
       hello
     </span>
     <input
+      aria-checked="true"
       checked=""
       class="sc-jSgupP dJNPYs"
       name="check"
