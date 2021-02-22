@@ -8,6 +8,7 @@ export { default as Icon } from './atoms/icon';
 export { default as Label } from './atoms/label';
 export { default as Spinner } from './atoms/spinner';
 export { default as Tag } from './atoms/tag';
+export { default as TagNumber } from './atoms/tag-number';
 export { default as TextField } from './atoms/text-field';
 
 // Molecules
