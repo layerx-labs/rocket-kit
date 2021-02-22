@@ -15,7 +15,7 @@ export const TagWrapper = styled.div`
     display: inline-block;
     padding: ${rem('2px')} ${rem('10px')};
 
-    &.number {
+    &.value {
       background-color: ${lighten(0.4, info)};
       font-weight: ${bold};
     }
