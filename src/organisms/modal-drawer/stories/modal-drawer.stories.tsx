@@ -78,31 +78,41 @@ export const ModalDrawerCustomFooterComponent = (args: ModalDrawerProps) => {
           setIsShowing(false);
         }}
       >
-        <p>
-          I'm baby tofu man bun readymade, chartreuse vexillologist pok pok
-          retro sriracha drinking vinegar pinterest tumblr lyft venmo vape woke.
-        </p>
-        <ModalFooter
-          closeValue={'Close'}
-          closeAction={() => {
-            setIsShowing(false);
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
           }}
         >
-          <Button
-            type="submit"
-            value={'Checkout'}
-            action={() => {
+          <p>
+            I'm baby tofu man bun readymade, chartreuse vexillologist pok pok
+            retro sriracha drinking vinegar pinterest tumblr lyft venmo vape
+            woke.
+          </p>
+          <ModalFooter
+            closeValue={'Close'}
+            closeAction={() => {
               setIsShowing(false);
             }}
-          />
-          <Button
-            type="submit"
-            value={'Submit'}
-            action={() => {
-              setIsShowing(false);
-            }}
-          />
-        </ModalFooter>
+          >
+            <Button
+              type="submit"
+              value={'Checkout'}
+              action={() => {
+                setIsShowing(false);
+              }}
+            />
+            <Button
+              type="submit"
+              value={'Submit'}
+              action={() => {
+                setIsShowing(false);
+              }}
+            />
+          </ModalFooter>
+        </div>
       </ModalDrawer>
     </div>
   );
