@@ -17,6 +17,7 @@ export { default as CardValue } from './molecules/card-value';
 export { default as ModalFooter } from './molecules/modal-footer';
 export { default as NoteCard } from './molecules/note-card';
 export { default as Table } from './molecules/table';
+export { default as NumberInputSpinner } from './molecules/number-input-spinner';
 
 // Organisms
 export { default as HorizontalNav } from './organisms/horizontal-nav';

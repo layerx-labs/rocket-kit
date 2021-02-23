@@ -38,6 +38,17 @@ export const Input = styled.input`
   font-family: inherit;
   font-size: 1rem;
   text-align: center;
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
 
   &:invalid {
     box-shadow: none;

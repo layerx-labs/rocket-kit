@@ -8,10 +8,14 @@ export default {
 };
 
 export const NumberInputSpinnerComponent = (args: NumberInputSpinnerProps) => (
-  <NumberInputSpinner value={10} {...args} />
+  <NumberInputSpinner {...args} />
 );
 
 NumberInputSpinnerComponent.storyName = 'Number Spinner';
 NumberInputSpinnerComponent.args = {
+  increment: 1,
+  min: 0,
+  max: 10,
+  value: 5,
   disabled: false,
 };
