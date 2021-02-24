@@ -32,7 +32,7 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
       <Styles.Button
         className="remove-button"
         aria-label={decreaseAriaLabel}
-        onClick={() => setNumber(number - increment)}
+        onClick={() => setNumber(number - (number > min ? increment : 0))}
         disabled={number <= min || disabled}
       >
         <Icon icon="remove" />
@@ -48,7 +48,7 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
       <Styles.Button
         className="add-button"
         aria-label={increaseAriaLabel}
-        onClick={() => setNumber(number + increment)}
+        onClick={() => setNumber(number + (number < max ? increment : 0))}
         disabled={number >= max || disabled}
       >
         <Icon icon="add" />
