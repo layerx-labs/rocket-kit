@@ -1,0 +1,162 @@
+import React from 'react';
+import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+import { NumberInputSpinner } from '../../..';
+describe('NumberInputSpinner', () => {
+  it('renders', () => {
+    const { asFragment } = render(
+      <NumberInputSpinner
+        decreaseAriaLabel="Decrease Value"
+        increaseAriaLabel="Increase Value"
+        increment={1}
+        min={0}
+        max={10}
+        value={5}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it('decrease button in disabled when min is reached', () => {
+    render(
+      <NumberInputSpinner
+        increment={2}
+        min={0}
+        max={10}
+        value={0}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /decrease value/i,
+    });
+    expect(decreaseButton).toBeDisabled();
+  });
+  it('increase button in disabled when max is reached', () => {
+    render(
+      <NumberInputSpinner
+        increment={2}
+        min={0}
+        max={10}
+        value={10}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const increaseButton = screen.getByRole('button', {
+      name: /increase value/i,
+    });
+    expect(increaseButton).toBeDisabled();
+  });
+  it('decreases by 1', () => {
+    render(
+      <NumberInputSpinner
+        increment={1}
+        min={0}
+        max={10}
+        value={1}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /decrease value/i,
+    });
+    userEvent.click(decreaseButton);
+    const spinInput = screen.getByRole('spinbutton');
+    expect(spinInput).toHaveValue(0);
+  });
+  it('increases by 1', () => {
+    render(
+      <NumberInputSpinner
+        increment={1}
+        min={0}
+        max={10}
+        value={9}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /increase value/i,
+    });
+    userEvent.click(decreaseButton);
+    const spinInput = screen.getByRole('spinbutton');
+    expect(spinInput).toHaveValue(10);
+  });
+  it('does not cross minimum limit when value is decreased by 2', () => {
+    render(
+      <NumberInputSpinner
+        increment={2}
+        min={0}
+        max={10}
+        value={1}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /decrease value/i,
+    });
+    userEvent.click(decreaseButton);
+    const spinInput = screen.getByRole('spinbutton');
+    expect(spinInput).toHaveValue(0);
+  });
+  it('does not cross maximum limit when value is increased by 2', () => {
+    render(
+      <NumberInputSpinner
+        increment={2}
+        min={0}
+        max={10}
+        value={9}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /increase value/i,
+    });
+    userEvent.click(decreaseButton);
+    const spinInput = screen.getByRole('spinbutton');
+    expect(spinInput).toHaveValue(10);
+  });
+  it('does not cross minimum limit when value is decreased by 3', () => {
+    render(
+      <NumberInputSpinner
+        increment={3}
+        min={0}
+        max={10}
+        value={2}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /decrease value/i,
+    });
+    userEvent.click(decreaseButton);
+    const spinInput = screen.getByRole('spinbutton');
+    expect(spinInput).toHaveValue(0);
+  });
+  it('does not cross maximum limit when value is increased by 3', () => {
+    render(
+      <NumberInputSpinner
+        increment={3}
+        min={0}
+        max={10}
+        value={8}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /increase value/i,
+    });
+    userEvent.click(decreaseButton);
+    const spinInput = screen.getByRole('spinbutton');
+    expect(spinInput).toHaveValue(10);
+  });
+});

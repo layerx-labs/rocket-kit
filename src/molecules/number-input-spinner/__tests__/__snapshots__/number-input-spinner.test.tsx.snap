@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberInputSpinner renders 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fFubgz guWIzZ"
+  >
+    <button
+      aria-label="Decrease Value"
+      class="sc-idOhPF cKVGdM remove-button"
+    >
+      <svg
+        class="icon"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M24 17.333h-16c-0.733 0-1.333-0.6-1.333-1.333v0c0-0.733 0.6-1.333 1.333-1.333h16c0.733 0 1.333 0.6 1.333 1.333v0c0 0.733-0.6 1.333-1.333 1.333z"
+        />
+      </svg>
+    </button>
+    <input
+      class="sc-bkzZxe fPsHLr"
+      max="10"
+      min="0"
+      type="number"
+      value="5"
+    />
+    <button
+      aria-label="Increase Value"
+      class="sc-idOhPF cKVGdM add-button"
+    >
+      <svg
+        class="icon"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M24 17.333h-6.667v6.667c0 0.733-0.6 1.333-1.333 1.333s-1.333-0.6-1.333-1.333v-6.667h-6.667c-0.733 0-1.333-0.6-1.333-1.333s0.6-1.333 1.333-1.333h6.667v-6.667c0-0.733 0.6-1.333 1.333-1.333s1.333 0.6 1.333 1.333v6.667h6.667c0.733 0 1.333 0.6 1.333 1.333s-0.6 1.333-1.333 1.333z"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;

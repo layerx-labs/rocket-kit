@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react';
 import icons from '../../ions/icons';
 
-interface IconProps {
+export interface IconProps {
   fill?: string;
   icon: string;
   className?: string;

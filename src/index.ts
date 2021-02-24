@@ -8,6 +8,7 @@ export { default as Icon } from './atoms/icon';
 export { default as Label } from './atoms/label';
 export { default as Spinner } from './atoms/spinner';
 export { default as Tag } from './atoms/tag';
+export { default as TagNumber } from './atoms/tag-number';
 export { default as TextField } from './atoms/text-field';
 
 // Molecules
@@ -16,6 +17,7 @@ export { default as CardValue } from './molecules/card-value';
 export { default as ModalFooter } from './molecules/modal-footer';
 export { default as NoteCard } from './molecules/note-card';
 export { default as Table } from './molecules/table';
+export { default as NumberInputSpinner } from './molecules/number-input-spinner';
 
 // Organisms
 export { default as HorizontalNav } from './organisms/horizontal-nav';

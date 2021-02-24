@@ -3,7 +3,7 @@
 exports[`Actions Menu renders closed menu 1`] = `
 <DocumentFragment>
   <div
-    class="sc-iqHYGH fdHIFN"
+    class="sc-crrsfI bHQIRU"
   >
     <button
       aria-label=""
@@ -28,7 +28,7 @@ exports[`Actions Menu renders closed menu 1`] = `
 exports[`Actions Menu renders open menu 1`] = `
 <DocumentFragment>
   <div
-    class="sc-iqHYGH fdHIFN"
+    class="sc-crrsfI bHQIRU"
   >
     <button
       aria-label=""

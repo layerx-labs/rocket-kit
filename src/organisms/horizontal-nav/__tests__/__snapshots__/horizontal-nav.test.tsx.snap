@@ -3,7 +3,7 @@
 exports[`Horizontal Nav renders 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fodVxV iScPpd"
+    class="sc-dIUggk cGCGlD"
   >
     <ul
       class="menu"
@@ -27,7 +27,7 @@ exports[`Horizontal Nav renders 1`] = `
       </li>
     </ul>
     <div
-      class="sc-fFubgz jzEDtX hide"
+      class="sc-hHftDr eeUDid hide"
     >
       <button
         class="sc-gsTCUz dQVqYO button"

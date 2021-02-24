@@ -22,7 +22,7 @@ export default {
 
 export const TagPrimaryComponent = args => <Tag {...args} />;
 
-TagPrimaryComponent.storyName = 'Tag';
+TagPrimaryComponent.storyName = 'Simple';
 
 TagPrimaryComponent.args = {
   color: 'info',
