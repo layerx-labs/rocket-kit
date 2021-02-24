@@ -19,7 +19,7 @@ exports[`NumberInputSpinner renders 1`] = `
       </svg>
     </button>
     <input
-      class="sc-bkzZxe cdIwOI"
+      class="sc-bkzZxe fPsHLr"
       max="10"
       min="0"
       type="number"

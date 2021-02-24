@@ -4,6 +4,10 @@ import { colors } from '../../ions/variables';
 
 const { info, danger } = colors;
 
+interface NumberInputSpinnerProps {
+  max?: number;
+}
+
 export const Wrapper = styled.div`
   border: 1px solid ${info};
   border-radius: 6px;
@@ -30,9 +34,12 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<NumberInputSpinnerProps>`
   border: 0;
-  width: 70px;
+  width: ${props =>
+    props.max != null && props.max.toString().length > 5
+      ? props.max.toString().length * 10 + 20 + 'px'
+      : '70px'};
   height: 50px;
   padding: 10px;
   font-family: inherit;
