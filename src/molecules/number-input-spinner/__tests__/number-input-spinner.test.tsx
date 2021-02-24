@@ -19,7 +19,7 @@ describe('NumberInputSpinner', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it.only('decrease button in disabled when min is reached', () => {
+  it('decrease button in disabled when min is reached', () => {
     render(
       <NumberInputSpinner
         increment={2}
@@ -33,10 +33,9 @@ describe('NumberInputSpinner', () => {
     const decreaseButton = screen.getByRole('button', {
       name: /decrease value/i,
     });
-
     expect(decreaseButton).toBeDisabled();
   });
-  it.only('increase button in disabled when max is reached', () => {
+  it('increase button in disabled when max is reached', () => {
     render(
       <NumberInputSpinner
         increment={2}
@@ -50,7 +49,6 @@ describe('NumberInputSpinner', () => {
     const increaseButton = screen.getByRole('button', {
       name: /increase value/i,
     });
-
     expect(increaseButton).toBeDisabled();
   });
   it('decreases by 1', () => {
@@ -114,6 +112,42 @@ describe('NumberInputSpinner', () => {
         min={0}
         max={10}
         value={9}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /increase value/i,
+    });
+    userEvent.click(decreaseButton);
+    const spinInput = screen.getByRole('spinbutton');
+    expect(spinInput).toHaveValue(10);
+  });
+  it('does not cross minimum limit when value is decreased by 3', () => {
+    render(
+      <NumberInputSpinner
+        increment={3}
+        min={0}
+        max={10}
+        value={2}
+        onChange={() => {}}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /decrease value/i,
+    });
+    userEvent.click(decreaseButton);
+    const spinInput = screen.getByRole('spinbutton');
+    expect(spinInput).toHaveValue(0);
+  });
+  it('does not cross maximum limit when value is increased by 3', () => {
+    render(
+      <NumberInputSpinner
+        increment={3}
+        min={0}
+        max={10}
+        value={8}
         onChange={() => {}}
         disabled={false}
       />
