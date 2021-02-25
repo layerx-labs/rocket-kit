@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Styles from './styles';
 import { Icon } from '../..';
 
@@ -9,7 +9,7 @@ export interface NumberInputSpinnerProps {
   min?: number;
   max?: number;
   value?: number;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
 }
 
@@ -21,20 +21,29 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
     min = 0,
     max = 10,
     value = 0,
-    onChange = () => {},
+    onChange,
     disabled = false,
   } = props;
 
   const [number, setNumber] = useState(value);
+
+  useEffect(() => {
+    const handleChange = (number: any) => {
+      if (onChange) {
+        onChange(number);
+      }
+    };
+    handleChange(number);
+  });
 
   return (
     <Styles.Wrapper>
       <Styles.Button
         className="remove-button"
         aria-label={decreaseAriaLabel}
-        onClick={() =>
-          setNumber(number - increment > min ? number - increment : min)
-        }
+        onClick={() => {
+          setNumber(number - increment > min ? number - increment : min);
+        }}
         disabled={number <= min || disabled}
       >
         <Icon icon="remove" />
@@ -44,15 +53,17 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
         min={min}
         max={max}
         value={number}
-        onChange={onChange}
+        onChange={e => {
+          setNumber(parseInt(e.target.value));
+        }}
         disabled={disabled}
       />
       <Styles.Button
         className="add-button"
         aria-label={increaseAriaLabel}
-        onClick={() =>
-          setNumber(number + increment < max ? number + increment : max)
-        }
+        onClick={() => {
+          setNumber(number + increment < max ? number + increment : max);
+        }}
         disabled={number >= max || disabled}
       >
         <Icon icon="add" />

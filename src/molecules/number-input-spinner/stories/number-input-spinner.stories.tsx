@@ -9,7 +9,9 @@ export default {
 
 export const NumberInputSpinnerSimpleComponent = (
   args: NumberInputSpinnerProps
-) => <NumberInputSpinner {...args} />;
+) => {
+  return <NumberInputSpinner {...args} />;
+};
 
 NumberInputSpinnerSimpleComponent.storyName = 'Simple 1-10';
 NumberInputSpinnerSimpleComponent.args = {
@@ -17,6 +19,7 @@ NumberInputSpinnerSimpleComponent.args = {
   min: 0,
   max: 10,
   value: 5,
+  onChange: (value: any) => console.log(value),
   disabled: false,
 };
 
