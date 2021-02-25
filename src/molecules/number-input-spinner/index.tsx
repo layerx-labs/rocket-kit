@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import * as Styles from './styles';
 import { Icon } from '../..';
 
@@ -9,7 +9,7 @@ export interface NumberInputSpinnerProps {
   min?: number;
   max?: number;
   value?: number;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (value: number) => void;
   disabled?: boolean;
 }
 
@@ -26,15 +26,18 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
   } = props;
 
   const [number, setNumber] = useState(value);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    const handleChange = (number: any) => {
-      if (onChange) {
-        onChange(number);
-      }
-    };
-    handleChange(number);
-  });
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    if (onChange) {
+      onChange(number);
+    }
+  }, [number]);
 
   return (
     <Styles.Wrapper>

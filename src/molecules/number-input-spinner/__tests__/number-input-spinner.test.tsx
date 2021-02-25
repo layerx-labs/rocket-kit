@@ -167,7 +167,7 @@ describe('NumberInputSpinner', () => {
         min={0}
         max={10}
         value={2}
-        onChange={mockCallback((value: any) => value)}
+        onChange={mockCallback}
         disabled={false}
       />
     );
@@ -176,5 +176,6 @@ describe('NumberInputSpinner', () => {
     });
     userEvent.click(decreaseButton);
     expect(mockCallback).toBeCalledTimes(1);
+    expect(mockCallback).toBeCalledWith(1);
   });
 });
