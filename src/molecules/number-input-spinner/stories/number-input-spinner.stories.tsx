@@ -5,6 +5,7 @@ import { NumberInputSpinnerProps } from '..';
 export default {
   title: 'Design System/Molecules/Number Spinner',
   component: NumberInputSpinner,
+  argTypes: { onChange: { action: 'update value' } },
 };
 
 export const NumberInputSpinnerSimpleComponent = (
@@ -19,7 +20,6 @@ NumberInputSpinnerSimpleComponent.args = {
   min: 0,
   max: 10,
   value: 5,
-  onChange: (value: any) => console.log(value),
   disabled: false,
 };
 
