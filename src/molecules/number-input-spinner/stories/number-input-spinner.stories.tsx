@@ -5,11 +5,14 @@ import { NumberInputSpinnerProps } from '..';
 export default {
   title: 'Design System/Molecules/Number Spinner',
   component: NumberInputSpinner,
+  argTypes: { onChange: { action: 'update value' } },
 };
 
 export const NumberInputSpinnerSimpleComponent = (
   args: NumberInputSpinnerProps
-) => <NumberInputSpinner {...args} />;
+) => {
+  return <NumberInputSpinner {...args} />;
+};
 
 NumberInputSpinnerSimpleComponent.storyName = 'Simple 1-10';
 NumberInputSpinnerSimpleComponent.args = {

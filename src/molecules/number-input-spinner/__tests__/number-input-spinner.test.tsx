@@ -159,4 +159,23 @@ describe('NumberInputSpinner', () => {
     const spinInput = screen.getByRole('spinbutton');
     expect(spinInput).toHaveValue(10);
   });
+  it('calls onChange callback when value changes', () => {
+    const mockCallback = jest.fn();
+    render(
+      <NumberInputSpinner
+        increment={1}
+        min={0}
+        max={10}
+        value={2}
+        onChange={mockCallback}
+        disabled={false}
+      />
+    );
+    const decreaseButton = screen.getByRole('button', {
+      name: /decrease value/i,
+    });
+    userEvent.click(decreaseButton);
+    expect(mockCallback).toBeCalledTimes(1);
+    expect(mockCallback).toBeCalledWith(1);
+  });
 });
