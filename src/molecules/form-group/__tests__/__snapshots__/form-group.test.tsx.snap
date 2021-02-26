@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormGroup renders 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fFubgz jgfnXo"
+  >
+    <label
+      class="sc-pFZIQ godpbM label"
+    >
+      label
+    </label>
+    <input
+      class="sc-iBPRYJ fUkShs text-field"
+      placeholder=""
+      type="text"
+      value="this is my text"
+    />
+  </div>
+</DocumentFragment>
+`;
