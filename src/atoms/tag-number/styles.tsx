@@ -18,7 +18,6 @@ export const TagWrapper = styled.div`
     padding: ${rem('2px')} ${rem('10px')};
 
     &.label {
-      /* width: 100%; */
       flex: 1;
       overflow: hidden;
       white-space: nowrap;
