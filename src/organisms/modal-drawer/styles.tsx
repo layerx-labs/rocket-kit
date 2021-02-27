@@ -71,7 +71,10 @@ export const ModalHeader = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
+
+  @media ${device.s} {
+    flex: 1;
+  }
 `;
