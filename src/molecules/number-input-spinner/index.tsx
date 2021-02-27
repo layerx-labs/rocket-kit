@@ -44,7 +44,8 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
       <Styles.Button
         className="remove-button"
         aria-label={decreaseAriaLabel}
-        onClick={() => {
+        onClick={evt => {
+          evt.preventDefault();
           setNumber(number - increment > min ? number - increment : min);
         }}
         disabled={number <= min || disabled}
@@ -56,15 +57,17 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
         min={min}
         max={max}
         value={number}
-        onChange={e => {
-          setNumber(parseInt(e.target.value));
+        onChange={evt => {
+          evt.preventDefault();
+          setNumber(parseInt(evt.target.value));
         }}
         disabled={disabled}
       />
       <Styles.Button
         className="add-button"
         aria-label={increaseAriaLabel}
-        onClick={() => {
+        onClick={evt => {
+          evt.preventDefault();
           setNumber(number + increment < max ? number + increment : max);
         }}
         disabled={number >= max || disabled}
