@@ -3,7 +3,8 @@
 exports[`Tag Number renders 1`] = `
 <DocumentFragment>
   <div
-    class="sc-iqHYGH hCrSDR tag-number"
+    class="sc-iqHYGH bhGBf tag-number"
+    title="Example"
   >
     <span
       class="label"

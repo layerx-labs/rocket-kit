@@ -11,7 +11,7 @@ export interface TagNumberProps {
 const TagNumber = (props: TagNumberProps) => {
   const { label, value, className = 'tag-number', style } = props;
   return (
-    <Styles.TagWrapper className={className} style={style}>
+    <Styles.TagWrapper className={className} style={style} title={label}>
       <span className="label">{label}</span>
       <span className="value">{value}</span>
     </Styles.TagWrapper>
