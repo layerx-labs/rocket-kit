@@ -5,6 +5,7 @@ exports[`Tag renders 1`] = `
   <span
     class="sc-kEjbxe dDirKs tag"
     color="danger"
+    title="hello"
   >
     hello
   </span>

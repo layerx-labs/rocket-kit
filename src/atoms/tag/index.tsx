@@ -24,6 +24,7 @@ const Tag = (props: TagProps) => {
       variant={variant}
       color={color}
       style={style}
+      title={value}
     >
       {value}
     </Styles.TagWrapper>
