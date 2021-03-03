@@ -40,6 +40,7 @@ export const Wrapper = styled.div`
           margin-right: ${rem('5px')};
           width: auto;
           height: ${rem('24px')};
+          min-width: ${rem('24px')};
           fill: ${lighten(0.4, info)};
           transition-duration: 0.3s;
         }
@@ -88,6 +89,7 @@ export const More = styled.div`
     -webkit-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
     box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
     z-index: 1;
+    overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
