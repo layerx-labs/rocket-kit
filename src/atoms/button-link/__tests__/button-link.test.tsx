@@ -11,7 +11,7 @@ describe('Button Link', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('has correct value', async () => {
+  it('has correct value', () => {
     const buttonText = 'Check the source code';
     render(
       <ButtonLink
@@ -19,31 +19,31 @@ describe('Button Link', () => {
         value={buttonText}
       />
     );
-    await screen.queryByText(buttonText);
+    screen.queryByText(buttonText);
   });
 
-  it('has correct href', async () => {
+  it('has correct href', () => {
     const buttonText = 'Check the source code';
     const buttonUrl = 'https://github.com/taikai/taikai-design-system';
     render(<ButtonLink url={buttonUrl} value={buttonText} />);
-    const anchorElem = await screen.getByText(buttonText).closest('a');
+    const anchorElem = screen.getByText(buttonText).closest('a');
     expect(anchorElem).toHaveProperty('href', buttonUrl);
   });
 
-  it('has target _blank and noreferrer', async () => {
+  it('has target _blank and noreferrer', () => {
     const buttonText = 'Check the source code';
     const buttonUrl = 'https://github.com/taikai/taikai-design-system';
     render(<ButtonLink url={buttonUrl} value={buttonText} blank />);
-    const anchorElem = await screen.getByText(buttonText).closest('a');
+    const anchorElem = screen.getByText(buttonText).closest('a');
     expect(anchorElem).toHaveProperty('target', '_blank');
     expect(anchorElem).toHaveProperty('rel', 'noopener noreferrer');
   });
 
-  it('has empty target if not defined', async () => {
+  it('has empty target if not defined', () => {
     const buttonText = 'Check the source code';
     const buttonUrl = 'https://github.com/taikai/taikai-design-system';
     render(<ButtonLink url={buttonUrl} value={buttonText} />);
-    const anchorElem = await screen.getByText(buttonText).closest('a');
+    const anchorElem = screen.getByText(buttonText).closest('a');
     expect(anchorElem).toHaveProperty('target', '');
   });
 

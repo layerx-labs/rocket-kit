@@ -8,15 +8,15 @@ describe('ErrorField', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('has correct error text', async () => {
+  it('has correct error text', () => {
     const fieldText = 'Failed to save name';
     render(<ErrorField error={fieldText} color="danger" />);
-    await screen.getByText(fieldText);
+    screen.getByText(fieldText);
   });
 
-  it('has correct success text', async () => {
+  it('has correct success text', () => {
     const fieldText = 'Name save!';
     render(<ErrorField error={fieldText} color="success" />);
-    await screen.getByText(fieldText);
+    screen.getByText(fieldText);
   });
 });

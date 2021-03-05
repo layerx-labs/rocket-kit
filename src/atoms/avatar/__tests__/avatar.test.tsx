@@ -10,10 +10,10 @@ describe('Avatar', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('has correct alt and src', async () => {
+  it('has correct alt and src', () => {
     const avatarAlt = 'user avatar';
     render(<Avatar alt={avatarAlt} url={'/dummy.png'} />);
-    const avatar = await screen.queryByAltText(avatarAlt);
+    const avatar = screen.queryByAltText(avatarAlt);
     expect(avatar).toHaveProperty('src', 'http://localhost/dummy.png');
   });
 });

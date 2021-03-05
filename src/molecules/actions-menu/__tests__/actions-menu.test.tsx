@@ -35,7 +35,7 @@ describe('Actions Menu', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('has action in open menu', async () => {
+  it('has action in open menu', () => {
     const actionText = 'Go to Details';
     const actions: ActionMenu<string>[] = [
       {
@@ -50,7 +50,7 @@ describe('Actions Menu', () => {
     screen.getByText(actionText);
   });
 
-  it('has action in open menu with multiple items', async () => {
+  it('has action in open menu with multiple items', () => {
     const actionText = 'Go to Details';
     const actions: ActionMenu<string>[] = [
       {
@@ -77,7 +77,7 @@ describe('Actions Menu', () => {
     screen.getByText(actionText);
   });
 
-  it('can open menu with click', async () => {
+  it('can open menu with click', () => {
     const actionText = 'Go to Details';
     const actions: ActionMenu<string>[] = [
       {
@@ -89,12 +89,12 @@ describe('Actions Menu', () => {
     ];
 
     render(<ActionsMenu<string> actions={actions} />);
-    const foundButton = await screen.getByTestId('action-menu-button');
+    const foundButton = screen.getByTestId('action-menu-button');
     userEvent.click(foundButton);
-    await screen.getByText(actionText);
+    screen.getByText(actionText);
   });
 
-  it('calls action callback on click', async () => {
+  it('calls action callback on click', () => {
     interface ActionData {
       name: string;
       type: string;

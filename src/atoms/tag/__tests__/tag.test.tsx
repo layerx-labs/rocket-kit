@@ -8,9 +8,9 @@ describe('Tag', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('has correct value', async () => {
+  it('has correct value', () => {
     const tagValue = 'This is my tag';
     render(<Tag color={'danger'} value={tagValue} />);
-    await screen.getByText(tagValue);
+    screen.getByText(tagValue);
   });
 });

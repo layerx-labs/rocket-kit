@@ -140,3 +140,18 @@ $ npm login --scope=@OWNER --registry=https://npm.pkg.github.com
 ```
 
 
+## ESLint configuration for VSCode
+
+Add the following config to the file: .vscode/settings.json
+
+```
+{
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```

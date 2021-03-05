@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { FormGroup, TextField } from '../../..';
 
@@ -12,7 +13,7 @@ describe('FormGroup', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('has correct value', async () => {
+  it('has correct value', () => {
     const textValue = 'this is my text';
     render(
       <FormGroup label="label" kai={false}>
@@ -20,6 +21,6 @@ describe('FormGroup', () => {
       </FormGroup>
     );
     const foundInput = screen.getByDisplayValue(textValue);
-    expect(foundInput).toHaveProperty('value', textValue);
+    expect(foundInput).toHaveValue(textValue);
   });
 });
