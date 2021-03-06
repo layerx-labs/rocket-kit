@@ -1,5 +1,10 @@
 import styled from 'styled-components';
+import { rem, lighten, rgba } from 'polished';
+import { colors, fontWeigth } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
+
+const { info, light } = colors;
+const { bold } = fontWeigth;
 
 interface BorderProps {
   border: boolean;
@@ -12,27 +17,26 @@ export const EmptyTableWrapper = styled.div`
 export const EmptyTableHead = styled.div<BorderProps>`
   border-width: ${props => (props.border ? '1px' : '0 0 1px 0')};
   border-style: solid;
-  border-color: var(--grey, hsl(0, 0%, 85%));
+  border-color: ${lighten(0.4, info)};
   border-radius: 6px 6px 0 0;
-  height: 50px;
+  height: ${rem('50px')};
   display: flex;
   align-items: center;
   font-size: 0.85rem;
-  font-weight: var(--bold, 700);
-  color: var(--grey, hsl(0, 0%, 85%));
+  font-weight: ${bold};
+  color: ${info};
   text-transform: uppercase;
 
   > div {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
     display: none;
     flex: 1;
-    padding: 0 15px;
+    padding: 0 ${rem('15px')};
     font-size: 0.85rem;
-    font-weight: var(--bold, 700);
-    color: var(--grey, hsl(0, 0%, 85%));
+    font-weight: ${bold};
+    color: ${info};
     text-transform: uppercase;
 
     &:first-child,
@@ -61,27 +65,27 @@ export const EmptyTableHead = styled.div<BorderProps>`
 export const EmptyTableBody = styled.div<BorderProps>`
   border-width: ${props => (props.border ? '0 1px 1px 1px' : 0)};
   border-style: solid;
-  border-color: var(--grey, hsl(0, 0%, 85%));
+  border-color: ${lighten(0.4, info)};
   border-radius: 0 0 6px 6px;
 `;
 
 export const EmptyTableRow = styled.div`
-  height: 50px;
+  height: ${rem('50px')};
   display: flex;
   align-items: center;
 
   &:not(:last-child) {
-    border-bottom: 1px solid var(--grey, hsl(0, 0%, 85%));
+    border-bottom: 1px solid ${lighten(0.4, info)};
   }
 
   > div {
     display: none;
     flex: 1;
-    padding: 0 15px;
+    padding: 0 ${rem('15px')};
 
     &:first-child,
     &:nth-child(2) {
-      display: inherit !important;
+      display: inherit;
     }
 
     @media ${device.s} {
@@ -105,7 +109,7 @@ export const EmptyTableRow = styled.div`
 export const EmptyTableCellText = styled.div`
   background-color: #edeef1;
   width: 100%;
-  height: 15px;
+  height: ${rem('15px')};
 `;
 
 export const EmptyTableOverlay = styled.div`
@@ -113,15 +117,15 @@ export const EmptyTableOverlay = styled.div`
   bottom: 0;
   background-image: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1)
+    ${rgba(light, 0)},
+    ${rgba(light, 1)}
   );
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - ${rem('50px')});
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 0 15px 15px 15px;
+  padding: 0 ${rem('15px')} ${rem('15px')} ${rem('15px')};
   text-align: center;
-  color: var(--darkGrey, hsl(0, 0%, 85%));
+  color: ${info};
 `;
