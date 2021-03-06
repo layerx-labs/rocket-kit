@@ -8,7 +8,10 @@ interface TableOption<CellDataType> {
   id: string;
   value: string;
   dataKey: string;
-  renderer?: (value: any, data: CellDataType) => JSX.Element | null;
+  renderer?: (
+    value: any,
+    data: CellDataType
+  ) => JSX.Element | string | number | null | undefined;
   className?: string;
   dataTestId?: string;
 }
