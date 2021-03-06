@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Modal from '..';
 import userEvent from '@testing-library/user-event';
@@ -32,7 +33,9 @@ describe('Modal', () => {
       </Modal>
     );
 
-    expect(screen.queryByText(/ground round corned beef/)).toBeNull();
+    expect(
+      screen.queryByText(/ground round corned beef/)
+    ).not.toBeInTheDocument();
   });
 
   it('is showing', () => {

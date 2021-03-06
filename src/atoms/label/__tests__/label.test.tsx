@@ -8,15 +8,15 @@ describe('Label', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('has correct value', async () => {
+  it('has correct value', () => {
     const fieldText = 'Savings';
     render(<Label value={fieldText} />);
-    await screen.getByText(fieldText);
+    screen.getByText(fieldText);
   });
 
-  it('has correct value with KAI', async () => {
+  it('has correct value with KAI', () => {
     const fieldText = 'Savings';
     render(<Label value={fieldText} kai />);
-    await screen.getByText(fieldText);
+    screen.getByText(fieldText);
   });
 });

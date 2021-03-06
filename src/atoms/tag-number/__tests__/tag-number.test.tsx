@@ -8,10 +8,10 @@ describe('Tag Number', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('has correct value', async () => {
+  it('has correct value', () => {
     const tagLabel = 'Tag Example';
     const tagValue = 10;
     render(<TagNumber label={tagLabel} value={tagValue} />);
-    await screen.getByText(tagLabel);
+    screen.getByText(tagLabel);
   });
 });

@@ -5,7 +5,7 @@ import { Avatar, Table } from '../../..';
 import userEvent from '@testing-library/user-event';
 
 describe('Table', () => {
-  it('renders', async () => {
+  it('renders', () => {
     interface CellData {
       id: string;
       transactionName: string;
@@ -66,7 +66,7 @@ describe('Table', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('renders 5 rows', async () => {
+  it('renders 5 rows', () => {
     interface CellData {
       id: string;
       transactionName: string;
@@ -155,7 +155,7 @@ describe('Table', () => {
     expect(screen.queryAllByTestId(`td-header-amount-id`)).toHaveLength(5);
   });
 
-  it('renders all table headers correctly', async () => {
+  it('renders all table headers correctly', () => {
     interface CellData {
       id: string;
       amount: string;
@@ -206,7 +206,7 @@ describe('Table', () => {
     expect(screen.getAllByRole('columnheader')).toHaveLength(3);
   });
 
-  it('open action menu', async () => {
+  it('open action menu', () => {
     interface CellData {
       id: string;
       transactionName: string;
