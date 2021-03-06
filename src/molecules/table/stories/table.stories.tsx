@@ -106,3 +106,12 @@ export const TableComponent = () => (
 
 TableComponent.storyName = 'Table';
 TableComponent.args = {};
+
+const emptyRows: Transaction[] = [];
+
+export const TableEmptyComponent = () => (
+  <Table<Transaction> options={columns} values={emptyRows} showEmpty />
+);
+
+TableEmptyComponent.storyName = 'Empty Table';
+TableEmptyComponent.args = {};

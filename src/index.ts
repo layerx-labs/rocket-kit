@@ -14,6 +14,7 @@ export { default as TextField } from './atoms/text-field';
 // Molecules
 export { default as ActionsMenu } from './molecules/actions-menu';
 export { default as CardValue } from './molecules/card-value';
+export { default as EmptyTable } from './molecules/empty-table';
 export { default as ModalFooter } from './molecules/modal-footer';
 export { default as NoteCard } from './molecules/note-card';
 export { default as Table } from './molecules/table';

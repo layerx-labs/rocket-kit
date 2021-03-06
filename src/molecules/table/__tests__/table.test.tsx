@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { ActionMenu } from '../../actions-menu/types';
 import { Avatar, Table } from '../../..';
 import userEvent from '@testing-library/user-event';
@@ -206,7 +207,54 @@ describe('Table', () => {
     expect(screen.getAllByRole('columnheader')).toHaveLength(3);
   });
 
-  it('open action menu', () => {
+  it('renders empty table with empty data', () => {
+    interface CellData {
+      id: string;
+      transactionName: string;
+      amount: string;
+      type: string;
+      createdAt: string;
+      avatar: string;
+    }
+
+    const rows: CellData[] = [];
+
+    const headerAmount = 'Amount';
+    const headerType = 'Type';
+    const headerCreated = 'Created';
+    const options = {
+      columns: [
+        {
+          id: 'amount',
+          value: headerAmount,
+          dataKey: 'amount',
+          className: 'kai',
+        },
+        {
+          id: 'type',
+          value: headerType,
+          dataKey: 'type',
+          className: 'center',
+        },
+        {
+          id: 'created',
+          value: headerCreated,
+          dataKey: 'createdAt',
+          className: 'createdAt',
+        },
+      ],
+    };
+
+    render(<Table<CellData> options={options} values={rows} showEmpty />);
+
+    expect(screen.getByText(headerAmount)).toBeInTheDocument();
+    expect(screen.getByText(headerType)).toBeInTheDocument();
+    expect(screen.getByText(headerCreated)).toBeInTheDocument();
+
+    expect(screen.getByText(/no data/i)).toBeInTheDocument();
+  });
+
+  it('opens action menu', () => {
     interface CellData {
       id: string;
       transactionName: string;

@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Empty Table renders 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-kstrdz dpfFac"
+  >
+    <div
+      class="sc-idOhPF hgtvTQ"
+    >
+      <span>
+        No data
+      </span>
+    </div>
+    <div
+      class="sc-hBEYos QPiVu"
+    >
+      <div>
+        Column 1
+      </div>
+      <div>
+        Column 2
+      </div>
+      <div>
+        Column 3
+      </div>
+      <div>
+        Column 4
+      </div>
+    </div>
+    <div
+      class="sc-fodVxV ijFASi"
+    >
+      <div
+        class="sc-fFubgz tTUlJ"
+      >
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+      </div>
+      <div
+        class="sc-fFubgz tTUlJ"
+      >
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+      </div>
+      <div
+        class="sc-fFubgz tTUlJ"
+      >
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+        <div>
+          <div
+            class="sc-bkzZxe lktOEj"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
