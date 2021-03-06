@@ -3,11 +3,11 @@
 exports[`NumberInputSpinner renders 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bkzZxe dCwngX"
+    class="sc-fKFyDc ftevka"
   >
     <button
       aria-label="Decrease Value"
-      class="sc-dIUggk gcvBmT remove-button"
+      class="sc-iwyYcG kpeHyu remove-button"
     >
       <svg
         class="icon"
@@ -19,7 +19,7 @@ exports[`NumberInputSpinner renders 1`] = `
       </svg>
     </button>
     <input
-      class="sc-idOhPF etJdZH"
+      class="sc-bBXqnf dcIOaW"
       max="10"
       min="0"
       type="number"
@@ -27,7 +27,7 @@ exports[`NumberInputSpinner renders 1`] = `
     />
     <button
       aria-label="Increase Value"
-      class="sc-dIUggk gcvBmT add-button"
+      class="sc-iwyYcG kpeHyu add-button"
     >
       <svg
         class="icon"

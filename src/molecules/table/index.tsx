@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionsMenu, Icon } from '../..';
+import { ActionsMenu, EmptyTable, Icon } from '../..';
 import { hasValue } from '../../utils/filters/has-value';
 import { ActionMenu } from '../actions-menu/types';
 import * as Styles from './styles';
@@ -8,7 +8,10 @@ interface TableOption<CellDataType> {
   id: string;
   value: string;
   dataKey: string;
-  renderer?: (value: any, data: CellDataType) => JSX.Element | null;
+  renderer?: (
+    value: any,
+    data: CellDataType
+  ) => JSX.Element | string | number | null | undefined;
   className?: string;
   dataTestId?: string;
 }
@@ -24,6 +27,8 @@ export interface TableProps<CellDataType> {
   dataTestId?: string;
   menuDataTestId?: string;
   actionMenuTestId?: string;
+  showEmpty?: boolean;
+  emptyValue?: string;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -40,6 +45,8 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
     dataTestId = 'table-test-id',
     menuDataTestId = 'table-action-menu',
     actionMenuTestId = 'icon-button',
+    showEmpty = false,
+    emptyValue = 'No Data',
     className = 'table',
     style,
   } = props;
@@ -48,6 +55,12 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
   const hasActionMenu = actions.length > 0;
 
   const validValues = values.filter(hasValue);
+
+  const hasValues = Array.isArray(values) && values.length > 0;
+  if (showEmpty && !hasValues) {
+    const columnHeaders = columns.map(column => column.value);
+    return <EmptyTable tableHead={columnHeaders} value={emptyValue} />;
+  }
 
   return (
     <Styles.TableWrapper
