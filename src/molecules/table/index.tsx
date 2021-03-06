@@ -25,6 +25,7 @@ export interface TableProps<CellDataType> {
   menuDataTestId?: string;
   actionMenuTestId?: string;
   showEmpty?: boolean;
+  emptyValue?: string;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -42,6 +43,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
     menuDataTestId = 'table-action-menu',
     actionMenuTestId = 'icon-button',
     showEmpty = false,
+    emptyValue = 'No Data',
     className = 'table',
     style,
   } = props;
@@ -54,7 +56,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
   const hasValues = Array.isArray(values) && values.length > 0;
   if (showEmpty && !hasValues) {
     const columnHeaders = columns.map(column => column.value);
-    return <EmptyTable tableHead={columnHeaders} value={'No Data'} />;
+    return <EmptyTable tableHead={columnHeaders} value={emptyValue} />;
   }
 
   return (
