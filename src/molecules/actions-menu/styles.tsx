@@ -6,6 +6,7 @@ const { normal, light, info, danger } = colors;
 
 export const ActionsMenuStyle = styled.div`
   height: 50px;
+
   button {
     margin-top: 7px;
   }
