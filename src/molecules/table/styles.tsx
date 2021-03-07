@@ -203,7 +203,7 @@ export const TableWrapper = styled.table`
         }
 
         ul {
-          top: 5px;
+          top: ${rem('36px')};
           margin-left: ${rem('-170px')};
         }
       }
@@ -215,6 +215,7 @@ export const TableWrapper = styled.table`
         align-items: center;
 
         > div {
+          position: relative;
           margin-left: 0;
           display: flex-start;
           justify-content: flex-start;
