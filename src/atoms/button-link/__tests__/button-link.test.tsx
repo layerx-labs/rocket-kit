@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ButtonLink } from '../../..';
 import userEvent from '@testing-library/user-event';
+import 'jest-styled-components';
+import { ButtonLink } from '../../..';
 
 describe('Button Link', () => {
   it('renders', () => {

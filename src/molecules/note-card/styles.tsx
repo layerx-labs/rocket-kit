@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import { NoteColor } from './types';
 import { rem, lighten, darken } from 'polished';
 import { device } from '../../ions/breakpoints';

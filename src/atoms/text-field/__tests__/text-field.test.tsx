@@ -1,8 +1,9 @@
 import React from 'react';
-import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { TextField } from '../../..';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+import 'jest-styled-components';
+import { TextField } from '../../..';
 
 describe('TextField', () => {
   it('renders', () => {

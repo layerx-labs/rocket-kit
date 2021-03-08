@@ -2,12 +2,97 @@
 
 exports[`NumberInputSpinner renders 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-fKFyDc ftevka"
+  .c0 {
+  border: 1px solid hsl(0,0%,48%);
+  border-radius: 6px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  height: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.c0 button:disabled,
+.c0 input:disabled {
+  cursor: inherit;
+  background-color: #f4f4f4;
+  color: #d3d3d3;
+}
+
+.c0 button:disabled svg,
+.c0 input:disabled svg {
+  fill: #d3d3d3;
+}
+
+.c0 button:disabled:hover,
+.c0 input:disabled:hover {
+  pointer-events: none;
+}
+
+.c2 {
+  border: 0;
+  width: 70px;
+  height: 50px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.c2::-webkit-outer-spin-button,
+.c2::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c2:invalid {
+  box-shadow: none;
+  background-color: #f8b4bb;
+}
+
+.c1 {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c1.remove-button {
+  border-right: 1px solid hsl(0,0%,48%);
+}
+
+.c1.add-button {
+  border-left: 1px solid hsl(0,0%,48%);
+}
+
+.c1 svg {
+  width: auto;
+  height: 20px;
+  fill: hsl(0,0%,48%);
+}
+
+.c1:hover {
+  background-color: #c7c7c7;
+}
+
+<div
+    class="c0"
   >
     <button
       aria-label="Decrease Value"
-      class="sc-iwyYcG kpeHyu remove-button"
+      class="c1 remove-button"
     >
       <svg
         class="icon"
@@ -19,7 +104,7 @@ exports[`NumberInputSpinner renders 1`] = `
       </svg>
     </button>
     <input
-      class="sc-bBXqnf dcIOaW"
+      class="c2"
       max="10"
       min="0"
       type="number"
@@ -27,7 +112,7 @@ exports[`NumberInputSpinner renders 1`] = `
     />
     <button
       aria-label="Increase Value"
-      class="sc-iwyYcG kpeHyu add-button"
+      class="c1 add-button"
     >
       <svg
         class="icon"

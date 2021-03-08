@@ -1,9 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import 'jest-styled-components';
 import { ActionMenu } from '../../actions-menu/types';
 import { Avatar, Table } from '../../..';
-import userEvent from '@testing-library/user-event';
 
 describe('Table', () => {
   it('renders', () => {

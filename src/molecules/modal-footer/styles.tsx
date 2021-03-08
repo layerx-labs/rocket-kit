@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { rem } from 'polished';
 import { device } from '../../ions/breakpoints';
 

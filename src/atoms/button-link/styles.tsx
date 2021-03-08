@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import { device } from '../../ions/breakpoints';
 import { ButtonColor, ButtonVariant } from '../button/types';
 import { colors, fontWeigth } from '../../ions/variables';

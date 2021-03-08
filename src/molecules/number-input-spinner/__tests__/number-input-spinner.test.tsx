@@ -1,8 +1,10 @@
 import React from 'react';
-import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+import 'jest-styled-components';
 import { render, screen } from '@testing-library/react';
 import { NumberInputSpinner } from '../../..';
+
 describe('NumberInputSpinner', () => {
   it('renders', () => {
     const { asFragment } = render(

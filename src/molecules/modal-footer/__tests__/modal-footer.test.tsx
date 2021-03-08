@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import ModalFooter from '..';
-import { Button } from '../../..';
 import userEvent from '@testing-library/user-event';
+import 'jest-styled-components';
+import { Button } from '../../..';
+import ModalFooter from '..';
 
 describe('Modal Footer', () => {
   it('renders', () => {

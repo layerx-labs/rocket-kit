@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import { rem } from 'polished';
 import { TagVariant, TagColor } from './types';
 import { colors } from '../../ions/variables';

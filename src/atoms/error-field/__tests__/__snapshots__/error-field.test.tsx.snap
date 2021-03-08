@@ -2,8 +2,18 @@
 
 exports[`ErrorField renders 1`] = `
 <DocumentFragment>
-  <span
-    class="sc-fubCfw laRIMs error-field"
+  .c1 {
+  display: block;
+  font-size: 0.7rem;
+  color: hsl(354,83%,64%);
+}
+
+.styles__TextFieldInputStyle-sc-1jl38sp-0 + .c0 {
+  margin-top: 0.3125rem;
+}
+
+<span
+    class="c0 c1 error-field"
     color="danger"
   >
     operation failed.

@@ -2,8 +2,28 @@
 
 exports[`Label renders 1`] = `
 <DocumentFragment>
-  <label
-    class="sc-pFZIQ godpbM label"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: hsl(0,0%,48%);
+  text-transform: uppercase;
+}
+
+.c0 svg {
+  width: auto;
+  height: 0.9375rem;
+}
+
+<label
+    class="c0 label"
   >
     Amount
   </label>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { rem } from 'polished';
 
 export const Wrapper = styled.div`

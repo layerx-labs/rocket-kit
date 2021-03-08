@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components/macro';
 import { rem, rgba, timingFunctions } from 'polished';
 import { colors } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
