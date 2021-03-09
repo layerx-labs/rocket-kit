@@ -2,8 +2,252 @@
 
 exports[`Horizontal Nav renders 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-cxFLnm gSZaBf"
+  .c2 {
+  --button: hsl(186,62%,59%);
+  --txt: hsl(0,0%,100%);
+  --hover: #2ba8b6;
+  --button: hsl(0,0%,16%);
+  --hover: #000;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--button);
+  border-radius: 0;
+  background-color: transparent;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.c2:hover {
+  border-color: var(--hover);
+  background-color: transparent;
+}
+
+.c2:hover span {
+  color: var(--hover);
+}
+
+.c2:hover svg {
+  fill: var(--hover);
+}
+
+.c2:disabled {
+  cursor: inherit;
+  opacity: 0.5;
+}
+
+.c2:disabled:hover {
+  pointer-events: none;
+}
+
+.c2 > *:not(:last-child) {
+  margin-right: 5px;
+}
+
+.c2 .spinner {
+  border-top-color: var(--button);
+}
+
+.c2 span {
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--button);
+  pointer-events: none;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c2 svg {
+  width: auto;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  fill: var(--button);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 ul {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin: 0;
+  padding: 0;
+}
+
+.c0 ul.menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 ul.menu li:not(:last-child) {
+  margin-right: 0.625rem;
+}
+
+.c0 ul li {
+  position: relative;
+  list-style: none;
+}
+
+.c0 ul li a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.625rem;
+  color: hsl(0,0%,16%);
+  text-transform: capitalize;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0 ul li a svg {
+  margin-right: 0.3125rem;
+  width: auto;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  fill: #e0e0e0;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0 ul li a:hover {
+  color: hsl(186,62%,59%);
+}
+
+.c0 ul li a:hover svg {
+  fill: hsl(186,62%,59%);
+}
+
+.c0 ul li.active {
+  font-weight: 700;
+}
+
+.c0 ul li.active a {
+  pointer-events: none;
+}
+
+.c0 ul li.active a svg {
+  fill: hsl(186,62%,59%);
+}
+
+.c1 {
+  position: relative;
+  display: none;
+}
+
+.c1.hide {
+  display: initial;
+}
+
+.c1 ul {
+  position: absolute;
+  right: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: hsl(0,0%,100%);
+  margin-top: 5px;
+  padding: 0;
+  -moz-box-shadow: 0 0 15px 0 rgba(40,40,40,0.2);
+  -webkit-box-shadow: 0 0 15px 0 rgba(40,40,40,0.2);
+  box-shadow: 0 0 15px 0 rgba(40,40,40,0.2);
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.c1 ul.more {
+  display: none;
+}
+
+.c1 ul.is-open {
+  display: inherit;
+}
+
+.c1 ul li {
+  list-style: none;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c1 ul li:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.c1 ul li:hover a {
+  color: hsl(0,0%,16%);
+}
+
+.c1 ul li:hover a svg {
+  fill: hsl(0,0%,16%);
+}
+
+.c1 ul li:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.c1 ul li:last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+.c1 ul li a {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+
+@media (min-width:1280px) {
+  .c2 {
+    min-width: 2.25rem;
+  }
+}
+
+<div
+    class="c0"
   >
     <ul
       class="menu"
@@ -27,10 +271,10 @@ exports[`Horizontal Nav renders 1`] = `
       </li>
     </ul>
     <div
-      class="sc-lmoMRL deLLoA hide"
+      class="c1 hide"
     >
       <button
-        class="sc-gsTCUz dQVqYO button"
+        class="c2 button"
         color="dark"
         value=""
       >

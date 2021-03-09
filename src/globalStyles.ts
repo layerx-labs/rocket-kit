@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components/macro';
 import { fontWeigth } from './ions/variables';
 
 const { regular } = fontWeigth;

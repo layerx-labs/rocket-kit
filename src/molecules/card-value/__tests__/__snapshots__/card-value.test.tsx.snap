@@ -2,11 +2,63 @@
 
 exports[`Card Value renders 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-dQppl crxVaQ card-value"
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: hsl(0,0%,48%);
+  text-transform: uppercase;
+}
+
+.c1 svg {
+  width: auto;
+  height: 0.9375rem;
+}
+
+.c0 {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: hsl(0,0%,100%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0.9375rem;
+  overflow-x: auto;
+}
+
+.c0 span {
+  display: block;
+  margin-top: 0.3125rem;
+  font-size: 2rem;
+  font-weight: var(--bold,700);
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width:1280px) {
+  .c0 {
+    padding: 1.875rem;
+  }
+}
+
+<div
+    class="c0 card-value"
   >
     <label
-      class="sc-pFZIQ godpbM label"
+      class="c1 label"
     >
       Amount
       <svg

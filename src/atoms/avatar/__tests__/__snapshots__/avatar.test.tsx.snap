@@ -2,9 +2,18 @@
 
 exports[`Avatar renders 1`] = `
 <DocumentFragment>
-  <img
+  .c0 {
+  border: 1px solid hsl(0,0%,16%);
+  border-radius: 999px;
+  width: 1.875rem;
+  height: 1.875rem;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+<img
     alt="avatar alt"
-    class="sc-bdfBwQ eWkXDZ tk-avatar"
+    class="c0 tk-avatar"
     src="/dummy.png"
   />
 </DocumentFragment>

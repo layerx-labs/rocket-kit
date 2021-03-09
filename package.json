@@ -1,5 +1,5 @@
 {
-  "version": "0.1.25",
+  "version": "0.1.26-0",
   "description": "TAIKAI Design System",
   "license": "MIT",
   "repository": {
@@ -80,6 +80,7 @@
     "@types/styled-components": "^5.1.4",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "babel-plugin-macros": "^3.0.1",
     "chromatic": "^5.6.3",
     "cross-var": "^1.1.0",
     "dotenv-cli": "^4.0.0",
@@ -99,6 +100,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
+    "jest-styled-components": "^7.0.3",
     "polished": "^4.1.1",
     "styled-components": "^5.2.1"
   }

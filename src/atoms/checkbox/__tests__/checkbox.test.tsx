@@ -1,8 +1,9 @@
 import React from 'react';
-import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { Checkbox } from '../../..';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+import 'jest-styled-components';
+import { Checkbox } from '../../..';
 
 describe('Checkbox', () => {
   it('renders', () => {

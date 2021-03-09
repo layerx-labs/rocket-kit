@@ -2,8 +2,45 @@
 
 exports[`Tag Number renders 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-iqHYGH WFpwW tag-number"
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  max-width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.c0 span {
+  display: inline-block;
+  padding: 0.125rem 0.625rem;
+}
+
+.c0 span.label {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c0 span.value {
+  background-color: #e0e0e0;
+  font-weight: 700;
+}
+
+.c0:not(:first-child) {
+  margin-left: 5px;
+}
+
+<div
+    class="c0 tag-number"
     title="Example"
   >
     <span

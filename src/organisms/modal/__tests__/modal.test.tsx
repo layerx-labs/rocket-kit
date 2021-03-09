@@ -1,8 +1,9 @@
 import React from 'react';
-import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import Modal from '..';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+import 'jest-styled-components';
+import Modal from '..';
 
 describe('Modal', () => {
   it('renders', () => {

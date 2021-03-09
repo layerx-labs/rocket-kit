@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import { lighten, rem } from 'polished';
 import { colors } from '../../ions/variables';
 import icons from '../../ions/icons';

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { rem, rgba } from 'polished';
 import { colors } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';

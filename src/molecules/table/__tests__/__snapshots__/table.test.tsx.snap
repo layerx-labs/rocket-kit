@@ -2,8 +2,500 @@
 
 exports[`Table renders 1`] = `
 <DocumentFragment>
-  <table
-    class="sc-dmlrTW hBKmSL table"
+  .c1 {
+  border: 1px solid hsl(0,0%,16%);
+  border-radius: 999px;
+  width: 1.875rem;
+  height: 1.875rem;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.c3 {
+  --button: hsl(186,62%,59%);
+  --txt: hsl(0,0%,100%);
+  --hover: #2ba8b6;
+  --button: hsl(0,0%,16%);
+  --hover: #000;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--button);
+  border-radius: 0;
+  background-color: transparent;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.c3:hover {
+  border-color: var(--hover);
+  background-color: transparent;
+}
+
+.c3:hover span {
+  color: var(--hover);
+}
+
+.c3:hover svg {
+  fill: var(--hover);
+}
+
+.c3:disabled {
+  cursor: inherit;
+  opacity: 0.5;
+}
+
+.c3:disabled:hover {
+  pointer-events: none;
+}
+
+.c3 > *:not(:last-child) {
+  margin-right: 5px;
+}
+
+.c3 .spinner {
+  border-top-color: var(--button);
+}
+
+.c3 span {
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--button);
+  pointer-events: none;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c3 svg {
+  width: auto;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  fill: var(--button);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c2 {
+  height: 50px;
+}
+
+.c2 button {
+  margin-top: 7px;
+}
+
+.c2 ul {
+  position: absolute;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: hsl(0,0%,100%);
+  margin-top: 5px;
+  min-width: 200px;
+  max-width: 250px;
+  padding: 0;
+  -moz-box-shadow: 0 0 15px 0 #dbdbdb;
+  -webkit-box-shadow: 0 0 15px 0 #dbdbdb;
+  box-shadow: 0 0 15px 0 #dbdbdb;
+  z-index: 1;
+}
+
+.c2 ul li {
+  list-style: none;
+  min-height: 45px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c2 ul li:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.c2 ul li:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.c2 ul li:last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+.c2 ul li.danger {
+  border-top: 1px solid #e0e0e0;
+}
+
+.c2 ul li.danger a {
+  color: hsl(354,83%,64%);
+}
+
+.c2 ul li a {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 20px;
+  color: hsl(0,0%,16%);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c2 ul li a span {
+  display: table-cell;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c0 {
+  width: 100%;
+  border-spacing: 0;
+  white-space: nowrap;
+}
+
+.c0 th,
+.c0 td {
+  height: 3.125rem;
+  padding: 0 0.9375rem;
+}
+
+.c0 th.center,
+.c0 td.center {
+  text-align: center;
+}
+
+.c0 th.center > div,
+.c0 td.center > div {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 th.right,
+.c0 td.right {
+  text-align: right;
+}
+
+.c0 th.right > div,
+.c0 td.right > div {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c0 th.kai,
+.c0 td.kai {
+  text-align: right;
+}
+
+.c0 th.kai > div,
+.c0 td.kai > div {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c0 th.avatar > div,
+.c0 td.avatar > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 th.avatar > div img,
+.c0 td.avatar > div img {
+  margin-right: 0.9375rem;
+}
+
+.c0 th {
+  font-size: 0.85rem;
+  background-color: hsl(0,0%,100%);
+}
+
+.c0 th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.c0 th:last-child {
+  border-top-right-radius: 6px;
+}
+
+.c0 tr {
+  border: 1px solid hsl(0,0%,48%);
+  border-radius: 6px;
+  position: relative;
+}
+
+.c0 tr:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+
+.c0 thead {
+  border: none;
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 tbody tr {
+  display: block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0 tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.c0 tbody tr:hover td.menu button {
+  opacity: 1;
+}
+
+.c0 tbody td {
+  border-top: 1px solid #e0e0e0;
+  height: inherit;
+  min-height: 3.125rem;
+  padding: 0.9375rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c0 tbody td > div {
+  margin-left: 100px;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  text-align: right;
+}
+
+.c0 tbody td > div > span {
+  display: none;
+}
+
+.c0 tbody td > div > span:first-child,
+.c0 tbody td > div > span:last-child {
+  display: inherit;
+}
+
+.c0 tbody td img {
+  min-width: 1.875rem;
+  min-height: 1.875rem;
+}
+
+.c0 tbody td a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: hsl(0,0%,16%);
+  -webkit-text-decoration-color: hsl(0,0%,48%);
+  text-decoration-color: hsl(0,0%,48%);
+}
+
+.c0 tbody td:first-child {
+  border: 0;
+}
+
+.c0 tbody td:before {
+  position: absolute;
+  left: 0.9375rem;
+  content: attr(data-label);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.c0 tbody td.kai svg {
+  float: right;
+  width: auto;
+  min-width: 1.25rem;
+  max-height: 1.25rem;
+}
+
+.c0 tbody td img {
+  display: none;
+}
+
+.c0 tbody td .tag {
+  margin: 0;
+}
+
+.c0 tbody td .tag:not(:first-child) {
+  display: none;
+}
+
+.c0 tbody td.menu {
+  padding: 0 0.625rem 0 0;
+}
+
+.c0 tbody td.menu button {
+  margin-top: 0.3125rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c0 tbody td.menu ul {
+  top: 2.25rem;
+  margin-left: -10.625rem;
+}
+
+@media (min-width:1280px) {
+  .c3 {
+    min-width: 2.25rem;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 th.thin,
+  .c0 td.thin {
+    max-width: -webkit-min-content;
+    max-width: -moz-min-content;
+    max-width: min-content;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 tr {
+    border: 0;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 thead {
+    display: contents;
+    font-weight: 700;
+    color: hsl(0,0%,48%);
+    text-transform: uppercase;
+    text-align: left;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 tbody tr {
+    display: table-row;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 tbody td {
+    display: table-cell;
+    height: 3.125rem;
+    padding: 0 0.9375rem;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .c0 tbody td > div {
+    position: relative;
+    margin-left: 0;
+    display: flex-start;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .c0 tbody td > div > span {
+    display: inherit;
+  }
+
+  .c0 tbody td:first-child {
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .c0 tbody td:before {
+    content: '';
+  }
+
+  .c0 tbody td.kai {
+    max-width: 6.25rem;
+  }
+
+  .c0 tbody td img {
+    display: inherit;
+  }
+
+  .c0 tbody td .tag:not(:first-child) {
+    display: inherit;
+  }
+
+  .c0 tbody td .tag:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  .c0 tbody td.menu {
+    width: 2.5rem;
+  }
+
+  .c0 tbody td.menu button {
+    opacity: 0;
+  }
+}
+
+<table
+    class="c0 table"
     data-testid="table-test-id"
   >
     <thead>
@@ -32,7 +524,7 @@ exports[`Table renders 1`] = `
           <div>
             <img
               alt="To the Moon"
-              class="sc-bdfBwQ eWkXDZ tk-avatar"
+              class="c1 tk-avatar"
               src="./images/default-avatar.svg"
             />
              To the Moon
@@ -61,11 +553,11 @@ exports[`Table renders 1`] = `
           data-testid="table-action-menu"
         >
           <div
-            class="sc-crrsfI cnURua"
+            class="c2"
           >
             <button
               aria-label=""
-              class="sc-gsTCUz dQVqYO button"
+              class="c3 button"
               color="dark"
               data-testid="icon-button"
               value=""
