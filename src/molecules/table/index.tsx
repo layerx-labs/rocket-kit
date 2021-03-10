@@ -21,6 +21,7 @@ export interface TableOptions<CellDataType> {
 }
 
 export interface TableProps<CellDataType> {
+  border?: boolean;
   options: TableOptions<CellDataType>;
   values: (CellDataType | null)[];
   actions?: ActionMenu<CellDataType>[];
@@ -39,6 +40,7 @@ export interface CellBaseType {
 
 const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
   const {
+    border = false,
     options,
     values = [],
     actions = [],
@@ -59,11 +61,18 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
   const hasValues = Array.isArray(values) && values.length > 0;
   if (showEmpty && !hasValues) {
     const columnHeaders = columns.map(column => column.value);
-    return <EmptyTable tableHead={columnHeaders} value={emptyValue} />;
+    return (
+      <EmptyTable
+        border={border}
+        tableHead={columnHeaders}
+        value={emptyValue}
+      />
+    );
   }
 
   return (
     <Styles.TableWrapper
+      border={border}
       data-testid={dataTestId}
       className={className}
       style={style}
