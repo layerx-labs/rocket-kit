@@ -6,8 +6,16 @@ import { device } from '../../ions/breakpoints';
 const { normal, light, info } = colors;
 const { bold } = fontWeigth;
 
-export const TableWrapper = styled.table`
+interface BorderProps {
+  border?: boolean;
+}
+
+export const TableWrapper = styled.table<BorderProps>`
   width: 100%;
+  border-width: ${props => (props.border ? '1px' : '0')};
+  border-style: solid;
+  border-color: ${lighten(0.4, info)};
+  border-radius: 6px;
   border-spacing: 0;
   white-space: nowrap;
 

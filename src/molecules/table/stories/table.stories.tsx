@@ -3,6 +3,10 @@ import Table from '..';
 import { Avatar } from '../../..';
 import { ActionMenu } from '../../actions-menu/types';
 
+export interface TableProps {
+  border?: boolean;
+}
+
 interface Transaction {
   id: string;
   transactionName: string;
@@ -15,7 +19,13 @@ interface Transaction {
 export default {
   title: 'Design System/Molecules/Table',
   component: Table,
-  argTypes: {},
+  argTypes: {
+    border: {
+      control: {
+        type: 'boolean',
+      },
+    },
+  },
 };
 
 const actions: ActionMenu<Transaction>[] = [
@@ -100,17 +110,29 @@ const rows: Transaction[] = [
   },
 ];
 
-export const TableComponent = () => (
-  <Table<Transaction> options={columns} values={rows} actions={actions} />
+export const TableComponent = (args: TableProps) => (
+  <Table<Transaction>
+    options={columns}
+    values={rows}
+    actions={actions}
+    {...args}
+  />
 );
 
 TableComponent.storyName = 'Table';
-TableComponent.args = {};
+TableComponent.args = {
+  border: false,
+};
 
 const emptyRows: Transaction[] = [];
 
-export const TableEmptyComponent = () => (
-  <Table<Transaction> options={columns} values={emptyRows} showEmpty />
+export const TableEmptyComponent = (args: TableProps) => (
+  <Table<Transaction>
+    options={columns}
+    values={emptyRows}
+    showEmpty
+    {...args}
+  />
 );
 
 TableEmptyComponent.storyName = 'Empty Table';
