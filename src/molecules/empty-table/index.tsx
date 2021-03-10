@@ -11,7 +11,7 @@ const EmptyTable = (props: EmptyTableProps) => {
   let rows = [];
   let columns = [];
 
-  const { border = true, tableHead = [], value } = props;
+  const { border = false, tableHead = [], value } = props;
   const headCells = tableHead.map((value, index) => (
     <div key={index}>{value}</div>
   ));
