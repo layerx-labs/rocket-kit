@@ -38,6 +38,19 @@ TextComponent.args = {
   disabled: false,
 };
 
+export const TextDefaultComponent = args => <TextField {...args} />;
+
+TextDefaultComponent.storyName = 'Default Value';
+TextDefaultComponent.args = {
+  minimal: true,
+  type: 'text',
+  defaultValue: 'awesome-input-default',
+  value: null,
+  placeholder: 'Awesome Placeholder',
+  onChange: () => {},
+  disabled: false,
+};
+
 export const DisabledComponent = args => <TextField {...args} />;
 
 DisabledComponent.storyName = 'Disabled';

@@ -10,6 +10,7 @@ interface TextFieldProps {
   icon?: string;
   name?: string;
   value?: string | number;
+  defaultValue?: string | number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
   placeholder?: string;
@@ -27,6 +28,7 @@ const TextField = (props: TextFieldProps) => {
     icon,
     name,
     value,
+    defaultValue,
     onChange = () => {},
     placeholder = '',
     min,
@@ -46,6 +48,7 @@ const TextField = (props: TextFieldProps) => {
         type={type}
         name={name}
         value={value}
+        defaultValue={defaultValue}
         onChange={onChange}
         placeholder={placeholder}
         min={min}
