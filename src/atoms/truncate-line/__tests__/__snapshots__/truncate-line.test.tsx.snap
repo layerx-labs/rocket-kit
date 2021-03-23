@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Truncate Line renders 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.c0 span {
+  display: table-cell;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+<div
+    class="c0 truncate"
+  >
+    <span>
+      this is my huge text
+    </span>
+  </div>
+</DocumentFragment>
+`;
