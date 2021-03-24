@@ -35,18 +35,22 @@ describe('Card Value', () => {
   });
 
   it('calls action callback', () => {
+    const description =
+      'Asymmetrical tbh irony echo park four dollar toast chia';
     const onClickAction = jest.fn();
     render(
       <CardValue
         label={'Amount'}
         value={'1234567'}
         kai
-        showArrowButton
+        description={description}
+        buttonValue="Open"
         onClick={onClickAction}
       />
     );
 
     userEvent.click(screen.getByRole('button'));
+    screen.getByText(description);
     expect(onClickAction).toBeCalledTimes(1);
   });
 });

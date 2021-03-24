@@ -37,7 +37,7 @@ exports[`Card Value renders 1`] = `
   overflow-x: auto;
 }
 
-.c0 span {
+.c0 > span {
   display: block;
   margin-top: 0.3125rem;
   font-size: 2rem;
