@@ -18,7 +18,7 @@ export const CardValueStyle = styled.div`
     padding: ${rem('30px')};
   }
 
-  span {
+  > span {
     display: block;
     margin-top: ${rem('5px')};
     font-size: 2rem;

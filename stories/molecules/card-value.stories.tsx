@@ -34,6 +34,8 @@ CardValueComponentButton.args = {
   label: 'Innovators',
   kai: false,
   value: '42',
-  showArrowButton: true,
+  description:
+    "I'm baby small batch blue bottle keytar, church-key man braid flannel austin twee poutine mustache.",
+  buttonValue: 'Go to Innovators',
   onClick: () => {},
 };
