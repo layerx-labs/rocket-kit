@@ -6,7 +6,8 @@ interface CardValueProps {
   label: string;
   kai?: boolean;
   value: string | number;
-  showArrowButton?: boolean;
+  description?: string;
+  buttonValue?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   className?: string;
   style?: React.CSSProperties;
@@ -17,7 +18,8 @@ const CardValue = (props: CardValueProps) => {
     label,
     kai = false,
     value,
-    showArrowButton = false,
+    description,
+    buttonValue,
     onClick,
     className = 'card-value',
     style,
@@ -27,14 +29,10 @@ const CardValue = (props: CardValueProps) => {
     <Styles.CardValueStyle className={className} style={style}>
       <Label value={label} kai={kai} />
       <span>{value}</span>
-      {showArrowButton && (
+      {description && <p>{description}</p>}
+      {buttonValue && onClick && (
         <Styles.CardValueButtonWrapper>
-          <Button
-            variant="outline"
-            color="info"
-            icon="arrowRight"
-            action={onClick}
-          />
+          <Button color="info" value={buttonValue} action={onClick} />
         </Styles.CardValueButtonWrapper>
       )}
     </Styles.CardValueStyle>
