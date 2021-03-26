@@ -37,7 +37,7 @@ const Modal = (props: ModalProps) => {
         ? setOverflow(true)
         : setOverflow(false);
 
-      const resizeWindow = throttle(function () {
+      const resizeWindow = throttle(function() {
         modalHeight && modalHeight.offsetHeight + 60 > window.innerHeight
           ? setOverflow(true)
           : setOverflow(false);

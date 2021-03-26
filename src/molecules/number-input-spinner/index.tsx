@@ -37,7 +37,7 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
     if (onChange) {
       onChange(number);
     }
-  }, [number]);
+  }, [number, onChange]);
 
   return (
     <Styles.Wrapper>
