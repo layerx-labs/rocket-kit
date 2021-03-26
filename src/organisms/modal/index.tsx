@@ -28,8 +28,6 @@ const Modal = (props: ModalProps) => {
   const [overflow, setOverflow] = useState(false);
 
   useEffect(() => {
-    if (!document) return;
-
     if (typeof window !== 'undefined') {
       const modalHeight: HTMLElement | null = document.querySelector(
         'div.modal'
