@@ -59,7 +59,7 @@ const Modal = (props: ModalProps) => {
           tabIndex={-1}
           role="dialog"
           zIndex={zIndex}
-          overflow={overflow}
+          modalOverflow={overflow}
         >
           <Styles.ModalContainer
             onClick={event => event.stopPropagation()}

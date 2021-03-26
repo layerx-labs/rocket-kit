@@ -5,7 +5,7 @@ import { device } from '../../ions/breakpoints';
 
 interface ModalStyleBaseProps {
   zIndex: number;
-  overflow?: boolean;
+  modalOverflow?: boolean;
 }
 
 const { light } = colors;
@@ -39,7 +39,7 @@ export const ModalWrapper = styled.div<ModalStyleBaseProps>`
   @media ${device.s} {
     display: flex;
     justify-content: center;
-    align-items: ${props => (props.overflow ? 'flex-start' : 'center')};
+    align-items: ${props => (props.modalOverflow ? 'flex-start' : 'center')};
   }
 `;
 
