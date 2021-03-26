@@ -50,7 +50,7 @@ const Modal = (props: ModalProps) => {
     } else {
       return;
     }
-  }, [overflow]);
+  }, []);
 
   return isShowing ? (
     ReactDOM.createPortal(
