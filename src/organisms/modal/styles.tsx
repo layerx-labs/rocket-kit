@@ -5,11 +5,7 @@ import { device } from '../../ions/breakpoints';
 
 interface ModalStyleBaseProps {
   zIndex: number;
-}
-
-interface ModalWrapperProps {
-  zIndex: number;
-  overflow: boolean;
+  overflow?: boolean;
 }
 
 const { light } = colors;
@@ -24,7 +20,7 @@ export const ModalOverlay = styled.div<ModalStyleBaseProps>`
   z-index: ${props => (props.zIndex ? props.zIndex : 10)};
 `;
 
-export const ModalWrapper = styled.div<ModalWrapperProps>`
+export const ModalWrapper = styled.div<ModalStyleBaseProps>`
   position: fixed;
   top: 0;
   left: 0;
