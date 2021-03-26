@@ -5,6 +5,7 @@ import { device } from '../../ions/breakpoints';
 
 interface ModalStyleBaseProps {
   zIndex: number;
+  modalOverflow?: boolean;
 }
 
 const { light } = colors;
@@ -24,15 +25,21 @@ export const ModalWrapper = styled.div<ModalStyleBaseProps>`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  z-index: ${props => props.zIndex + 1};
   overflow-x: hidden;
   overflow-y: auto;
-  z-index: ${props => props.zIndex + 1};
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 
   @media ${device.s} {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: ${props => (props.modalOverflow ? 'flex-start' : 'center')};
   }
 `;
 
@@ -46,10 +53,19 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
   transition-duration: 0.3s;
 
   @media ${device.s} {
-    margin: 0 ${rem('30px')};
+    --spacing: ${rem('30px')};
+    margin: var(--spacing);
     border-radius: 6px;
     max-width: ${rem('860px')};
-    padding: ${rem('30px')};
+    padding: var(--spacing);
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: calc(var(--spacing) * -1);
+      width: 1px;
+      height: var(--spacing);
+    }
   }
 `;
 
