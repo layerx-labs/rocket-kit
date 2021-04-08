@@ -5,8 +5,8 @@ import icons from '../../ions/icons';
 
 interface InputStyleProps {
   minimal?: boolean;
-  error?: string;
   icon?: string;
+  error?: string;
 }
 
 const { info, danger, purple } = colors;
@@ -38,6 +38,10 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
+  }
+
+  &:required {
+    border-color: ${props => (props.error ? danger : info)};
   }
 
   &::placeholder {

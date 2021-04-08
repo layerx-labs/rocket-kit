@@ -19,6 +19,8 @@ interface TextFieldProps {
   style?: CSSProperties;
   min?: number;
   max?: number;
+  pattern?: string;
+  required?: boolean;
 }
 
 const TextField = (props: TextFieldProps) => {
@@ -38,6 +40,8 @@ const TextField = (props: TextFieldProps) => {
     dataTestId,
     className = 'text-field',
     style,
+    pattern,
+    required = false,
   } = props;
 
   return (
@@ -58,6 +62,8 @@ const TextField = (props: TextFieldProps) => {
         data-testid={dataTestId}
         className={className}
         style={style}
+        pattern={pattern}
+        required={required}
       />
       {error ? <ErrorField error={error} /> : null}
     </>

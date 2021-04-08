@@ -7,6 +7,11 @@ export default {
   title: 'Design System/Molecules/Form Group',
   component: FormGroup,
   argTypes: {
+    error: {
+      control: {
+        type: 'boolean',
+      },
+    },
     kai: {
       control: {
         type: 'boolean',
@@ -27,4 +32,5 @@ FormGroupComponent.storyName = 'Form Group';
 FormGroupComponent.args = {
   label: 'Awesome Label',
   kai: false,
+  error: false,
 };

@@ -35,7 +35,9 @@ TextComponent.args = {
   name: 'awesome-input',
   placeholder: 'Awesome Placeholder',
   onChange: () => {},
+  error: '',
   disabled: false,
+  required: false,
 };
 
 export const TextDefaultComponent = args => <TextField {...args} />;

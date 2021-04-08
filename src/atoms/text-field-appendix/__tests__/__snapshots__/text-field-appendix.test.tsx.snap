@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormGroup renders 1`] = `
+exports[`TextField Appendix renders 1`] = `
 <DocumentFragment>
   .c2 {
-  border-width: 0 0 1px 0;
+  border-width: 1px;
   border-style: solid;
   border-color: hsl(0,0%,48%);
-  border-radius: 0;
-  height: 2.5rem;
-  padding: 0;
+  border-radius: 6px;
+  height: 3.125rem;
+  padding: 0.625rem;
   font-family: inherit;
   font-size: 1rem;
   -webkit-transition-duration: 0.3s;
@@ -67,47 +67,54 @@ exports[`FormGroup renders 1`] = `
   opacity: 1;
 }
 
-.c1 {
+.c0 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: hsl(0,0%,48%);
+  border-radius: 6px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 0.75rem;
-  font-weight: 700;
+  overflow: hidden;
+}
+
+.c0 input {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  color: hsl(0,0%,16%);
+}
+
+.c0 + span {
+  margin-top: 0;
+}
+
+.c1 {
+  border-width: 0 1px 0 0;
+  border-style: solid;
+  border-color: hsl(0,0%,48%);
+  background-color: #e0e0e0;
+  padding: 0 0.9375rem;
   color: hsl(0,0%,48%);
-  text-transform: uppercase;
-}
-
-.c1 svg {
-  width: auto;
-  height: 0.9375rem;
-}
-
-.c0 {
-  display: inline-block;
-}
-
-.c0 label {
-  margin-bottom: 0.3125rem;
-  color: hsl(0,0%,48%);
-}
-
-.c0:not(:last-child) {
-  margin-bottom: 0.9375rem;
+  line-height: 3rem;
+  vertical-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 <div
-    class="c0"
+    class="c0 text-field-appendix"
   >
-    <label
-      class="c1 label"
+    <div
+      class="c1"
     >
-      label
-    </label>
+      <span>
+        appendix
+      </span>
+    </div>
     <input
       class="c2 text-field"
       placeholder=""

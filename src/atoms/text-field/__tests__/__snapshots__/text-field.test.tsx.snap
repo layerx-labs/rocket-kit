@@ -33,6 +33,10 @@ exports[`TextField renders 1`] = `
   -moz-box-shadow: none;
 }
 
+.c0:required {
+  border-color: hsl(0,0%,48%);
+}
+
 .c0::-webkit-input-placeholder {
   color: hsl(0,0%,48%);
   opacity: 1;
