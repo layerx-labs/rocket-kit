@@ -15,6 +15,7 @@ interface Props {
   disabled?: boolean;
   className?: string;
   style?: CSSProperties;
+  dataTestId?: string;
 }
 
 const Checkbox = (props: Props) => {
@@ -27,6 +28,7 @@ const Checkbox = (props: Props) => {
     disabled = false,
     className = 'checkbox',
     style,
+    dataTestId,
   } = props;
 
   return (
@@ -45,6 +47,7 @@ const Checkbox = (props: Props) => {
         onChange={onChange}
         error={error}
         disabled={disabled}
+        data-testid={dataTestId}
       />
       <Checkmark />
     </CheckboxWrapper>
