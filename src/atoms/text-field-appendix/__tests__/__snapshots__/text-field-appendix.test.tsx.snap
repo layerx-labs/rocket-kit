@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField Appendix renders 1`] = `
+<DocumentFragment>
+  .c2 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: hsl(0,0%,48%);
+  border-radius: 6px;
+  height: 3.125rem;
+  padding: 0.625rem;
+  font-family: inherit;
+  font-size: 1rem;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c2:focus {
+  border-color: hsl(256,55%,43%);
+  outline: none;
+}
+
+.c2:disabled {
+  background-color: #ededed;
+  color: hsl(0,0%,48%);
+}
+
+.c2:invalid {
+  border-color: hsl(354,83%,64%);
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+.c2:required {
+  border-color: hsl(0,0%,48%);
+}
+
+.c2::-webkit-input-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c2::-moz-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c2:-ms-input-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c2::placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c2:-ms-input-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c2::-ms-input-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c0 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: hsl(0,0%,48%);
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.c0 input {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  color: hsl(0,0%,16%);
+}
+
+.c0 + span {
+  margin-top: 0;
+}
+
+.c1 {
+  border-width: 0 1px 0 0;
+  border-style: solid;
+  border-color: hsl(0,0%,48%);
+  background-color: #e0e0e0;
+  padding: 0 0.9375rem;
+  color: hsl(0,0%,48%);
+  line-height: 3rem;
+  vertical-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+<div
+    class="c0 text-field-appendix"
+  >
+    <div
+      class="c1"
+    >
+      <span>
+        appendix
+      </span>
+    </div>
+    <input
+      class="c2 text-field"
+      placeholder=""
+      type="text"
+      value="this is my text"
+    />
+  </div>
+</DocumentFragment>
+`;
