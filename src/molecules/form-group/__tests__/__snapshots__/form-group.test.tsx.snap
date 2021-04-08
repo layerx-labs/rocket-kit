@@ -33,6 +33,10 @@ exports[`FormGroup renders 1`] = `
   -moz-box-shadow: none;
 }
 
+.c2:required {
+  border-color: hsl(0,0%,48%);
+}
+
 .c2::-webkit-input-placeholder {
   color: hsl(0,0%,48%);
   opacity: 1;
@@ -89,6 +93,7 @@ exports[`FormGroup renders 1`] = `
 
 .c0 label {
   margin-bottom: 0.3125rem;
+  color: hsl(0,0%,48%);
 }
 
 .c0:not(:last-child) {
