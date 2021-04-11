@@ -1,26 +1,41 @@
 import React, { CSSProperties } from 'react';
 import * as Styles from './styles';
 
-type Step = {
+export type Step = {
   active: boolean;
   value: string;
   renderer?: string | React.ReactNode;
+  dataTestId?: string;
 };
 
 export interface WizardStepsProps {
   className?: string;
   style?: CSSProperties;
   steps: Step[];
+  dataTestId?: string;
 }
 
 const WizardSteps = (props: WizardStepsProps) => {
-  const { className = 'wizard-steps', style, steps = [] } = props;
+  const {
+    className = 'wizard-steps',
+    style,
+    steps = [],
+    dataTestId = 'wizard-steps-test-id',
+  } = props;
 
   return (
-    <Styles.Wrapper className={className} style={style}>
+    <Styles.Wrapper
+      className={className}
+      style={style}
+      data-testid={dataTestId}
+    >
       <Styles.Steps>
         {steps.map((step, index) => (
-          <Styles.Step key={index} active={step.active}>
+          <Styles.Step
+            key={index}
+            active={step.active}
+            data-testid={`step-${step.dataTestId}`}
+          >
             <div>
               <span>{step.value}</span>
             </div>
