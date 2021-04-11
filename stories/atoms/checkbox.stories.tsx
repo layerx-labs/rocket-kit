@@ -16,6 +16,6 @@ CheckboxComponent.args = {
   className: 'checkbox',
   checked: true,
   disabled: false,
-  error: '',
+  error: false,
   onChange: () => {},
 };
