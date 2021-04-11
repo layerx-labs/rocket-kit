@@ -4,7 +4,6 @@ import * as Styles from './styles';
 export type Step = {
   active: boolean;
   value: string;
-  renderer?: string | React.ReactNode;
   dataTestId?: string;
 };
 
@@ -24,11 +23,7 @@ const WizardSteps = (props: WizardStepsProps) => {
   } = props;
 
   return (
-    <Styles.Wrapper
-      className={className}
-      style={style}
-      data-testid={dataTestId}
-    >
+    <div className={className} style={style} data-testid={dataTestId}>
       <Styles.Steps>
         {steps.map((step, index) => (
           <Styles.Step
@@ -42,7 +37,7 @@ const WizardSteps = (props: WizardStepsProps) => {
           </Styles.Step>
         ))}
       </Styles.Steps>
-    </Styles.Wrapper>
+    </div>
   );
 };
 

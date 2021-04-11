@@ -9,8 +9,6 @@ interface WizardStepProps {
   active?: boolean;
 }
 
-export const Wrapper = styled.div``;
-
 export const Steps = styled.ul`
   margin: 0;
   width: 100%;
