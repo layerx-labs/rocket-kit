@@ -219,7 +219,7 @@ exports[`Wizard Steps renders wizard 1`] = `
 }
 
 <div
-    class="styles__Wrapper-aw7its-0 wizard-steps"
+    class="wizard-steps"
     data-testid="wizard-steps-test-id"
   >
     <ul
