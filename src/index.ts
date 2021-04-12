@@ -22,6 +22,7 @@ export { default as NoteCard } from './molecules/note-card';
 export { default as Table } from './molecules/table';
 export { default as FormGroup } from './molecules/form-group';
 export { default as NumberInputSpinner } from './molecules/number-input-spinner';
+export { default as WizardSteps } from './molecules/wizard-steps';
 
 // Organisms
 export { default as HorizontalNav } from './organisms/horizontal-nav';

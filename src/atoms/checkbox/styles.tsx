@@ -3,7 +3,7 @@ import { lighten, darken, rem } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface CheckboxErrorProps {
-  error?: string;
+  error?: boolean;
 }
 interface CheckboxWrapperProps extends CheckboxErrorProps {
   disabled?: boolean;
@@ -12,9 +12,8 @@ interface CheckboxWrapperProps extends CheckboxErrorProps {
 const { light, primary, danger, info } = colors;
 
 export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
-  display: inline-block;
+  display: flex;
   position: relative;
-  height: ${rem('24px')};
   padding-left: 0;
   cursor: ${props => (props.disabled ? 'auto' : 'pointer')};
   -webkit-user-select: none;
@@ -23,23 +22,23 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   user-select: none;
 
   &:hover input:not(:disabled) ~ span {
-    border-color: ${info};
+    border-color: ${props => (props.error ? darken(0.19, danger) : info)};
   }
 
   span {
-    color: ${props => (props.error ? danger : props.disabled ? info : null)};
+    color: ${props => (props.disabled ? info : props.error ? danger : null)};
     border-color: ${props => (props.error ? danger : null)};
   }
 `;
 
 export const CheckboxLabel = styled.span`
-  padding-left: ${rem('30px')};
+  margin-left: ${rem('30px')};
   line-height: ${rem('24px')};
-  vertical-align: middle;
 `;
 
 export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   position: absolute;
+  left: 0;
   opacity: 0;
   cursor: pointer;
 
@@ -54,6 +53,7 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   }
 
   &:checked:disabled ~ span {
+    border-color: transparent;
     background-color: ${lighten(0.4, info)};
     color: ${info};
 
@@ -63,12 +63,17 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   }
 
   &:not(:checked):disabled ~ span {
+    border-color: ${lighten(0.4, info)};
     background-color: ${light};
   }
 
   &:hover:not(:disabled) {
+    border-color: ${props =>
+      props.error ? darken(0.19, danger) : darken(0.15, primary)};
+
     &:checked ~ span {
-      border-color: ${darken(0.15, primary)};
+      border-color: ${props =>
+        props.error ? darken(0.19, danger) : darken(0.15, primary)};
     }
   }
 `;

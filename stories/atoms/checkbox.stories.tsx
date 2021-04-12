@@ -6,16 +6,38 @@ export default {
   component: Checkbox,
 };
 
-export const CheckboxComponent = args => <Checkbox {...args} />;
+export const CheckboxSimpleComponent = args => <Checkbox {...args} />;
 
-CheckboxComponent.storyName = 'Checkbox';
-
-CheckboxComponent.args = {
+CheckboxSimpleComponent.storyName = 'Simple';
+CheckboxSimpleComponent.args = {
   label: 'Option 1',
   value: 'option_1',
   className: 'checkbox',
   checked: true,
   disabled: false,
-  error: '',
+  error: false,
+  onChange: () => {},
+};
+
+export const CheckboxNodeComponent = args => (
+  <Checkbox
+    label={[
+      'I agree with ',
+      <a href="#0">Terms of Service</a>,
+      ' and ',
+      <a href="#0">Privacy Policy</a>,
+      ' of TAIKAI',
+    ]}
+    {...args}
+  />
+);
+
+CheckboxNodeComponent.storyName = 'With links';
+CheckboxNodeComponent.args = {
+  value: 'option_1',
+  className: 'checkbox',
+  checked: false,
+  disabled: false,
+  error: false,
   onChange: () => {},
 };

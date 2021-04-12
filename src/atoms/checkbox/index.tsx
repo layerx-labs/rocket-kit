@@ -8,10 +8,10 @@ import {
 
 interface Props {
   value: string;
-  label?: string;
+  label?: string | React.ReactNode;
   checked?: boolean;
   onChange?: () => {};
-  error?: string;
+  error?: boolean;
   disabled?: boolean;
   className?: string;
   style?: CSSProperties;
@@ -24,7 +24,7 @@ const Checkbox = (props: Props) => {
     value,
     checked = false,
     onChange = () => {},
-    error,
+    error = false,
     disabled = false,
     className = 'checkbox',
     style,

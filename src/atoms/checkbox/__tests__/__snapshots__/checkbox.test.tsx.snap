@@ -3,9 +3,11 @@
 exports[`Checkbox renders 1`] = `
 <DocumentFragment>
   .c0 {
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
-  height: 1.5rem;
   padding-left: 0;
   cursor: pointer;
   -webkit-user-select: none;
@@ -22,13 +24,13 @@ exports[`Checkbox renders 1`] = `
 }
 
 .c1 {
-  padding-left: 1.875rem;
+  margin-left: 1.875rem;
   line-height: 1.5rem;
-  vertical-align: middle;
 }
 
 .c2 {
   position: absolute;
+  left: 0;
   opacity: 0;
   cursor: pointer;
 }
@@ -43,6 +45,7 @@ exports[`Checkbox renders 1`] = `
 }
 
 .c2:checked:disabled ~ span {
+  border-color: transparent;
   background-color: #e0e0e0;
   color: hsl(0,0%,48%);
 }
@@ -52,7 +55,12 @@ exports[`Checkbox renders 1`] = `
 }
 
 .c2:not(:checked):disabled ~ span {
+  border-color: #e0e0e0;
   background-color: hsl(0,0%,100%);
+}
+
+.c2:hover:not(:disabled) {
+  border-color: #2ba8b6;
 }
 
 .c2:hover:not(:disabled):checked ~ span {
