@@ -16,6 +16,7 @@ interface Props {
   className?: string;
   style?: CSSProperties;
   dataTestId?: string;
+  required?: boolean;
 }
 
 const Checkbox = (props: Props) => {
@@ -29,6 +30,7 @@ const Checkbox = (props: Props) => {
     className = 'checkbox',
     style,
     dataTestId,
+    required = false,
   } = props;
 
   return (
@@ -48,6 +50,7 @@ const Checkbox = (props: Props) => {
         error={error}
         disabled={disabled}
         data-testid={dataTestId}
+        required={required}
       />
       <Checkmark />
     </CheckboxWrapper>
