@@ -1,0 +1,548 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slideshow renders 1`] = `
+<DocumentFragment>
+  .c1 {
+  --button: hsl(186,62%,59%);
+  --txt: hsl(0,0%,100%);
+  --hover: #2ba8b6;
+  --button: hsl(186,62%,59%);
+  --hover: #2798a5;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--button);
+  border-radius: 0;
+  background-color: transparent;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.c1:hover {
+  border-color: var(--hover);
+  background-color: transparent;
+}
+
+.c1:hover span {
+  color: var(--hover);
+}
+
+.c1:hover svg {
+  fill: var(--hover);
+}
+
+.c1:disabled {
+  cursor: inherit;
+  opacity: 0.5;
+}
+
+.c1:disabled:hover {
+  pointer-events: none;
+}
+
+.c1 > *:not(:last-child) {
+  margin-right: 5px;
+}
+
+.c1 .spinner {
+  border-top-color: var(--button);
+}
+
+.c1 span {
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--button);
+  pointer-events: none;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c1 svg {
+  width: auto;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  fill: var(--button);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0 .carousel .control-arrow,
+.c0 .carousel.carousel-slider .control-arrow {
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  opacity: 0.4;
+  -webkit-filter: alpha(opacity=40);
+  filter: alpha(opacity=40);
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  background: none;
+  border: 0;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.c0 .carousel .control-arrow:hover {
+  opacity: 1;
+  -webkit-filter: alpha(opacity=100);
+  filter: alpha(opacity=100);
+}
+
+.c0 .carousel .control-arrow:before,
+.c0 .carousel.carousel-slider .control-arrow:before {
+  margin: 0 5px;
+  display: inline-block;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  content: "";
+}
+
+.c0 .carousel .control-disabled.control-arrow {
+  opacity: 0;
+  -webkit-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
+  cursor: inherit;
+  display: none;
+}
+
+.c0 .carousel .control-prev.control-arrow {
+  left: 0;
+}
+
+.c0 .carousel .control-prev.control-arrow:before {
+  border-right: 8px solid #fff;
+}
+
+.c0 .carousel .control-next.control-arrow {
+  right: 0;
+}
+
+.c0 .carousel .control-next.control-arrow:before {
+  border-left: 8px solid #fff;
+}
+
+.c0 .carousel-root {
+  outline: none;
+}
+
+.c0 .carousel {
+  position: relative;
+  width: 100%;
+}
+
+.c0 .carousel * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.c0 .carousel img {
+  width: 100%;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.c0 .carousel .carousel {
+  position: relative;
+}
+
+.c0 .carousel .control-arrow {
+  outline: 0;
+  border: 0;
+  background: none;
+  top: 50%;
+  margin-top: -13px;
+  font-size: 18px;
+}
+
+.c0 .carousel .thumbs-wrapper {
+  margin: 20px;
+  overflow: hidden;
+}
+
+.c0 .carousel .thumbs {
+  -webkit-transition: all 0.15s ease-in;
+  -moz-transition: all 0.15s ease-in;
+  -ms-transition: all 0.15s ease-in;
+  -o-transition: all 0.15s ease-in;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  position: relative;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.c0 .carousel .thumb {
+  -webkit-transition: border 0.15s ease-in;
+  -moz-transition: border 0.15s ease-in;
+  -ms-transition: border 0.15s ease-in;
+  -o-transition: border 0.15s ease-in;
+  -webkit-transition: border 0.15s ease-in;
+  transition: border 0.15s ease-in;
+  display: inline-block;
+  margin-right: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 3px solid #fff;
+  padding: 2px;
+}
+
+.c0 .carousel .thumb:focus {
+  border: 3px solid #ccc;
+  outline: none;
+}
+
+.c0 .carousel .thumb.selected,
+.c0 .carousel .thumb:hover {
+  border: 3px solid #333;
+}
+
+.c0 .carousel .thumb img {
+  vertical-align: top;
+}
+
+.c0 .carousel.carousel-slider {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+
+.c0 .carousel.carousel-slider .control-arrow {
+  top: 0;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  margin-top: 0;
+  padding: 5px;
+}
+
+.c0 .carousel.carousel-slider .control-arrow:hover {
+  background: rgba(0,0,0,0.2);
+}
+
+.c0 .carousel .slider-wrapper {
+  overflow: hidden;
+  margin: auto;
+  width: 100%;
+  -webkit-transition: height 0.15s ease-in;
+  -moz-transition: height 0.15s ease-in;
+  -ms-transition: height 0.15s ease-in;
+  -o-transition: height 0.15s ease-in;
+  -webkit-transition: height 0.15s ease-in;
+  transition: height 0.15s ease-in;
+}
+
+.c0 .carousel .slider-wrapper.axis-horizontal .slider {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .carousel .slider-wrapper.axis-horizontal .slider .slide {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+}
+
+.c0 .carousel .slider-wrapper.axis-vertical {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .carousel .slider-wrapper.axis-vertical .slider {
+  -webkit-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 .carousel .slider {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+  width: 100%;
+}
+
+.c0 .carousel .slider.animated {
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -ms-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.c0 .carousel .slide {
+  min-width: 100%;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  background: #000;
+}
+
+.c0 .carousel .slide img {
+  width: 100%;
+  vertical-align: top;
+  border: 0;
+}
+
+.c0 .carousel .carousel-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  font-size: 10px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+  color: #fff;
+}
+
+.c0 > div > div > button {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  opacity: 0.25;
+  z-index: 2;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0 > div > div > button svg {
+  width: 36px;
+  height: 36px;
+  fill: hsl(0,0%,100%);
+}
+
+.c0 > div > div > button.next {
+  margin-left: 46px;
+}
+
+.c0 > div > div > button:hover {
+  opacity: 1;
+}
+
+.c0 > div > div > button:hover svg {
+  fill: hsl(0,0%,100%);
+}
+
+.c0 .control-dots {
+  position: absolute;
+  right: 30px;
+  bottom: 42px !important;
+  margin: 0 !important;
+  width: initial !important;
+  height: 15px;
+  display: inherit;
+  padding: 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.c0 .control-dots li {
+  display: inline-block;
+  border-radius: 999px;
+  background-color: hsl(0,0%,100%);
+  width: 15px;
+  height: 15px;
+  opacity: 0.25;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+  cursor: pointer;
+}
+
+.c0 .control-dots li.selected {
+  width: 30px;
+  opacity: 1;
+}
+
+.c0 .control-dots li:hover {
+  opacity: 1;
+}
+
+.c0 .control-dots li:not(:last-child) {
+  margin-right: 5px;
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    min-width: 2.25rem;
+  }
+}
+
+@media (min-width:900px) {
+  .c0 > div > div > button {
+    left: 3.5vw;
+  }
+}
+
+@media (min-width:900px) {
+  .c0 .control-dots {
+    right: 3.5vw;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="carousel-root"
+      tabindex="0"
+    >
+      <div
+        class="carousel carousel-slider"
+        style="width: 100%;"
+      >
+        <ul
+          class="control-dots"
+        >
+          <li
+            aria-label="Slide 1 selected"
+            class="selected"
+            title="Slide 1 selected"
+          />
+          <li
+            aria-label="Slide 2"
+            role="button"
+            tabindex="0"
+            title="Slide 2"
+            value="1"
+          />
+          <li
+            aria-label="Slide 3"
+            role="button"
+            tabindex="0"
+            title="Slide 3"
+            value="2"
+          />
+        </ul>
+        <button
+          aria-label="Previous"
+          class="c1 previous"
+          color="primary"
+          value=""
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 32 32"
+          >
+            <path
+              d="M25.333 14.667h-14.893l6.507-6.507c0.52-0.52 0.52-1.373 0-1.893s-1.36-0.52-1.88 0l-8.787 8.787c-0.52 0.52-0.52 1.36 0 1.88l8.787 8.787c0.52 0.52 1.36 0.52 1.88 0s0.52-1.36 0-1.88l-6.507-6.507h14.893c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333z"
+            />
+          </svg>
+        </button>
+        <div
+          class="slider-wrapper axis-horizontal"
+          style="height: auto;"
+        >
+          <ul
+            class="slider animated"
+            style="transform: translate3d(-100%,0,0); transition-duration: 1000ms; height: auto;"
+          >
+            <li
+              class="slide"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=640&h=426&q=80"
+              />
+            </li>
+            <li
+              class="slide selected"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&h=426&q=80"
+              />
+            </li>
+            <li
+              class="slide"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1561350111-7daa4f284bc6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=640&h=426&q=80"
+              />
+            </li>
+            <li
+              class="slide"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=640&h=426&q=80"
+              />
+            </li>
+            <li
+              class="slide selected"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&h=426&q=80"
+              />
+            </li>
+          </ul>
+        </div>
+        <button
+          aria-label="Next"
+          class="c1 next"
+          color="primary"
+          value=""
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 32 32"
+          >
+            <path
+              d="M6.667 17.333h14.893l-6.507 6.507c-0.52 0.52-0.52 1.373 0 1.893s1.36 0.52 1.88 0l8.787-8.787c0.52-0.52 0.52-1.36 0-1.88l-8.773-8.8c-0.52-0.52-1.36-0.52-1.88 0s-0.52 1.36 0 1.88l6.493 6.52h-14.893c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

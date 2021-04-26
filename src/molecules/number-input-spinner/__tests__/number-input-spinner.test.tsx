@@ -21,7 +21,7 @@ describe('NumberInputSpinner', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it('decrease button in disabled when min is reached', () => {
+  it('decrease button is disabled when min is reached', () => {
     render(
       <NumberInputSpinner
         increment={2}
@@ -37,7 +37,7 @@ describe('NumberInputSpinner', () => {
     });
     expect(decreaseButton).toBeDisabled();
   });
-  it('increase button in disabled when max is reached', () => {
+  it('increase button is disabled when max is reached', () => {
     render(
       <NumberInputSpinner
         increment={2}
