@@ -51,13 +51,13 @@ export const TagWrapper = styled.span<TagWrapperProps>`
       color: ${props.variant === 'solid' ? light : danger};
     `}
 
-    ${props =>
-      props.color === 'info' &&
-      css`
-        border-color: ${info};
-        background-color: ${info};
-        color: ${props.variant === 'solid' ? light : info};
-      `}
+  ${props =>
+    props.color === 'info' &&
+    css`
+      border-color: ${info};
+      background-color: ${info};
+      color: ${props.variant === 'solid' ? light : info};
+    `}
 
   ${props =>
     props.variant === 'outline' &&

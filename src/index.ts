@@ -12,6 +12,7 @@ export { default as TagNumber } from './atoms/tag-number';
 export { default as TextField } from './atoms/text-field';
 export { default as TextFieldAppendix } from './atoms/text-field-appendix';
 export { default as TruncateLine } from './atoms/truncate-line';
+export { default as Slideshow } from './atoms/slideshow';
 
 // Molecules
 export { default as ActionsMenu } from './molecules/actions-menu';
