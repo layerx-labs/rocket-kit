@@ -36,10 +36,11 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
   }, [value]);
 
   const updateValue = (value: number)=> {
-    setNumber(value);
     if (onChange) {
       onChange(value);
     }
+
+    setNumber(value);    
   }
   return (
     <Styles.Wrapper>
@@ -48,7 +49,7 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
         aria-label={decreaseAriaLabel}
         onClick={evt => {
           evt.preventDefault();
-          setNumber(number - increment > min ? number - increment : min);
+          updateValue(number - increment > min ? number - increment : min);
         }}
         disabled={number <= min || disabled}
       >
