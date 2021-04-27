@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { device } from '../../ions/breakpoints';
 import { colors } from '../../ions/variables';
 
 const { light } = colors;
 
 interface SlideshowProps {
-  slidesNumber: number,
+  slidesNumber: number;
 }
 
 export const Wrapper = styled.div<SlideshowProps>`
@@ -40,7 +40,7 @@ export const Wrapper = styled.div<SlideshowProps>`
     display: inline-block;
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
-    content: "";
+    content: '';
   }
 
   .carousel .control-disabled.control-arrow {
@@ -287,7 +287,7 @@ export const Wrapper = styled.div<SlideshowProps>`
     margin: 0 !important;
     width: initial !important;
     height: 15px;
-    display: ${props => (props.slidesNumber > 1 ? "inherit" : "none")};
+    display: ${props => (props.slidesNumber > 1 ? 'inherit' : 'none')};
     padding: 0;
     text-align: center;
     z-index: 1;
@@ -299,7 +299,7 @@ export const Wrapper = styled.div<SlideshowProps>`
       width: 15px;
       height: 15px;
       opacity: 0.25;
-      transition-duration: .3s;
+      transition-duration: 0.3s;
       cursor: pointer;
 
       &.selected {
