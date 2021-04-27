@@ -120,7 +120,7 @@ exports[`Slideshow renders 1`] = `
   display: inline-block;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  content: "";
+  content: '';
 }
 
 .c0 .carousel .control-disabled.control-arrow {
@@ -396,8 +396,8 @@ exports[`Slideshow renders 1`] = `
   width: 15px;
   height: 15px;
   opacity: 0.25;
-  -webkit-transition-duration: .3s;
-  transition-duration: .3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   cursor: pointer;
 }
 
