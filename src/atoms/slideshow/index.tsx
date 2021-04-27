@@ -81,7 +81,6 @@ const Slideshow = (props: SlideshowProps) => {
               onKeyDown={onClickHandler}
               value={index}
               key={index}
-              role="button"
               tabIndex={0}
               title={`Slide ${index + 1}`}
               aria-label={`Slide ${index + 1}`}

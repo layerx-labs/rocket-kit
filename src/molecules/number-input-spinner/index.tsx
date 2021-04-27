@@ -26,22 +26,22 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
   } = props;
   const isFirstRender = useRef(true);
   const [number, setNumber] = useState(value);
-  
+
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;
     }
-    setNumber(value);  
+    setNumber(value);
   }, [value]);
 
-  const updateValue = (value: number)=> {
+  const updateValue = (value: number) => {
     if (onChange) {
       onChange(value);
     }
+    setNumber(value);
+  };
 
-    setNumber(value);    
-  }
   return (
     <Styles.Wrapper>
       <Styles.Button

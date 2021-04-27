@@ -25,7 +25,7 @@ export const SlideshowComponent = (args: SlideshowProps) => {
   return (
     <Slideshow {...args}>
       {slides.map((slide, index) => (
-        <img key={index} src={slide.img} />
+        <img key={index} src={slide.img} alt="img" />
       ))}
     </Slideshow>
   );

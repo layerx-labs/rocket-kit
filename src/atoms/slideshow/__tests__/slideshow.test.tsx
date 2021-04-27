@@ -23,7 +23,7 @@ describe('Slideshow', () => {
     const { asFragment } = render(
       <Slideshow slidesNumber={3}>
         {slides.map((slide, index) => (
-          <img key={index} src={slide.img} />
+          <img key={index} src={slide.img} alt="img" />
         ))}
       </Slideshow>
     );
