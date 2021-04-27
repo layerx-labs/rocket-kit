@@ -24,21 +24,23 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
     onChange,
     disabled = false,
   } = props;
-
-  const [number, setNumber] = useState(value);
   const isFirstRender = useRef(true);
-
+  const [number, setNumber] = useState(value);
+  
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;
     }
+    setNumber(value);  
+  }, [value]);
 
+  const updateValue = (value: number)=> {
+    setNumber(value);
     if (onChange) {
-      onChange(number);
+      onChange(value);
     }
-  }, [number]);
-
+  }
   return (
     <Styles.Wrapper>
       <Styles.Button
@@ -59,7 +61,7 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
         value={number}
         onChange={evt => {
           evt.preventDefault();
-          setNumber(parseInt(evt.target.value));
+          updateValue(parseInt(evt.target.value));
         }}
         disabled={disabled}
       />
@@ -68,7 +70,7 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
         aria-label={increaseAriaLabel}
         onClick={evt => {
           evt.preventDefault();
-          setNumber(number + increment < max ? number + increment : max);
+          updateValue(number + increment < max ? number + increment : max);
         }}
         disabled={number >= max || disabled}
       >
