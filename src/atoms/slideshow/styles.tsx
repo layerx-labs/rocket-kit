@@ -293,6 +293,7 @@ export const Wrapper = styled.div<SlideshowProps>`
     z-index: 1;
 
     li {
+      position: relative;
       display: inline-block;
       border-radius: 999px;
       background-color: ${light};
@@ -301,6 +302,17 @@ export const Wrapper = styled.div<SlideshowProps>`
       opacity: 0.25;
       transition-duration: 0.3s;
       cursor: pointer;
+
+      button {
+        position: absolute;
+        left: 0;
+        border: 0;
+        border-radius: 999px;
+        background-color: transparent;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+      }
 
       &.selected {
         width: 30px;

@@ -390,6 +390,7 @@ exports[`Slideshow renders 1`] = `
 }
 
 .c0 .control-dots li {
+  position: relative;
   display: inline-block;
   border-radius: 999px;
   background-color: hsl(0,0%,100%);
@@ -398,6 +399,17 @@ exports[`Slideshow renders 1`] = `
   opacity: 0.25;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.c0 .control-dots li button {
+  position: absolute;
+  left: 0;
+  border: 0;
+  border-radius: 999px;
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
 }
 
@@ -451,20 +463,22 @@ exports[`Slideshow renders 1`] = `
             class="selected"
             title="Slide 1 selected"
           />
-          <li
-            aria-label="Slide 2"
-            role="button"
-            tabindex="0"
-            title="Slide 2"
-            value="1"
-          />
-          <li
-            aria-label="Slide 3"
-            role="button"
-            tabindex="0"
-            title="Slide 3"
-            value="2"
-          />
+          <li>
+            <button
+              aria-label="Slide 2"
+              tabindex="0"
+              title="Slide 2"
+              value="1"
+            />
+          </li>
+          <li>
+            <button
+              aria-label="Slide 3"
+              tabindex="0"
+              title="Slide 3"
+              value="2"
+            />
+          </li>
         </ul>
         <button
           aria-label="Previous"
@@ -493,6 +507,7 @@ exports[`Slideshow renders 1`] = `
               class="slide"
             >
               <img
+                alt="img"
                 src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=640&h=426&q=80"
               />
             </li>
@@ -500,6 +515,7 @@ exports[`Slideshow renders 1`] = `
               class="slide selected"
             >
               <img
+                alt="img"
                 src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&h=426&q=80"
               />
             </li>
@@ -507,6 +523,7 @@ exports[`Slideshow renders 1`] = `
               class="slide"
             >
               <img
+                alt="img"
                 src="https://images.unsplash.com/photo-1561350111-7daa4f284bc6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=640&h=426&q=80"
               />
             </li>
@@ -514,6 +531,7 @@ exports[`Slideshow renders 1`] = `
               class="slide"
             >
               <img
+                alt="img"
                 src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=640&h=426&q=80"
               />
             </li>
@@ -521,6 +539,7 @@ exports[`Slideshow renders 1`] = `
               class="slide selected"
             >
               <img
+                alt="img"
                 src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&h=426&q=80"
               />
             </li>

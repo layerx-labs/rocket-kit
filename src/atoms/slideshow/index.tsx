@@ -76,15 +76,17 @@ const Slideshow = (props: SlideshowProps) => {
             );
           }
           return (
-            <li
-              onClick={onClickHandler}
-              onKeyDown={onClickHandler}
-              value={index}
-              key={index}
-              tabIndex={0}
-              title={`Slide ${index + 1}`}
-              aria-label={`Slide ${index + 1}`}
-            />
+            <li>
+              <button
+                onClick={onClickHandler}
+                onKeyDown={onClickHandler}
+                value={index}
+                key={index}
+                tabIndex={0}
+                title={`Slide ${index + 1}`}
+                aria-label={`Slide ${index + 1}`}
+              />
+            </li>
           );
         }}
       >

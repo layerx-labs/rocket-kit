@@ -64,8 +64,8 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
     css`
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32">
         <path style="fill:${info}" d=${JSON.stringify(
-      icons[props.icon]
-    )} /></svg>');
+        icons[props.icon]
+      )} /></svg>');
       padding-left: ${props.minimal ? '40px' : '50px'};
       background-repeat: no-repeat;
       background-size: 30px 30px;
@@ -74,8 +74,8 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
       &:focus {
         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32">
         <path style="fill:${purple}" d=${JSON.stringify(
-      icons[props.icon]
-    )} /></svg>');
-  }
+          icons[props.icon]
+        )} /></svg>');
+      }
     `}
 `;
