@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxButton renders 1`] = `
+<DocumentFragment>
+  .c0 {
+  border: 3px solid #2ba8b6;
+  border-radius: 6px;
+  background-color: hsl(186,62%,59%);
+  height: 3.125rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0:hover input:not(:disabled) ~ span {
+  border-color: hsl(0,0%,48%);
+}
+
+.c0:hover {
+  background-color: hsl(186,62%,59%);
+}
+
+.c0 span {
+  color: hsl(0,0%,100%);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c1 {
+  margin-left: 2.5rem;
+  line-height: 1.5rem;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.c2:checked:not(:disabled) ~ span {
+  background-color: hsl(0,0%,100%);
+  border-color: hsl(0,0%,100%);
+}
+
+.c2:checked:not(:disabled) ~ span:after {
+  display: block;
+}
+
+.c2:checked:disabled ~ span {
+  border-color: transparent;
+  background-color: hsl(0,0%,48%);
+  color: hsl(0,0%,48%);
+}
+
+.c2:checked:disabled ~ span:after {
+  display: block;
+}
+
+.c2:not(:checked):disabled ~ span {
+  border-color: hsl(0,0%,48%);
+  background-color: #e0e0e0;
+}
+
+.c2:hover:not(:disabled):checked ~ span {
+  border-color: hsl(0,0%,100%);
+}
+
+.c3 {
+  position: absolute;
+  left: 0.625rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 999px;
+  background-color: hsl(0,0%,100%);
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c3:after {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 3px;
+  left: 6px;
+  width: 5px;
+  height: 9px;
+  border: solid hsl(186,62%,59%);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+<label
+    class="c0 checkbox-button"
+  >
+    <span
+      class="c1"
+    >
+      hello
+    </span>
+    <input
+      aria-checked="true"
+      checked=""
+      class="c2"
+      name="check"
+      type="checkbox"
+    />
+    <span
+      class="c3"
+    />
+  </label>
+</DocumentFragment>
+`;
