@@ -11,6 +11,7 @@ export { default as Spinner } from './atoms/spinner';
 export { default as Tag } from './atoms/tag';
 export { default as TagNumber } from './atoms/tag-number';
 export { default as TextField } from './atoms/text-field';
+export { default as Select } from './atoms/select';
 export { default as SelectInteractive } from './atoms/select-interactive';
 export { default as TextFieldAppendix } from './atoms/text-field-appendix';
 export { default as TruncateLine } from './atoms/truncate-line';
