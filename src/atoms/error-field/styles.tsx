@@ -4,6 +4,7 @@ import { colors } from '../../ions/variables';
 import { rem } from 'polished';
 
 import { TextFieldInputStyle as Input } from '../text-field/styles';
+import { SelectStyle as Select } from '../select/styles';
 
 interface ErrorStyleProps {
   color: ErrorFieldColor;
@@ -16,7 +17,7 @@ export const ErrorStyle = styled.span<ErrorStyleProps>`
   font-size: 0.7rem;
   color: ${props => (props.color === 'success' ? primary : danger)};
 
-  ${Input} + & {
+  ${Input} + &, ${Select} + & {
     margin-top: ${rem('5px')};
   }
 `;
