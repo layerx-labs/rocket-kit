@@ -27,6 +27,7 @@ export { default as Table } from './molecules/table';
 export { default as FormGroup } from './molecules/form-group';
 export { default as NumberInputSpinner } from './molecules/number-input-spinner';
 export { default as WizardSteps } from './molecules/wizard-steps';
+export { default as AlertNotification } from './molecules/alert-notification';
 
 // Organisms
 export { default as HorizontalNav } from './organisms/horizontal-nav';
