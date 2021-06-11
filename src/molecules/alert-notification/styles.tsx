@@ -1,24 +1,30 @@
 import styled, { css } from 'styled-components';
+import { rem, darken } from 'polished';
+import { colors } from '../../ions/variables';
 
 interface AlertNotificationProps {
   variant?: 'success' | 'warning' | 'danger';
 }
 
+const { light, primary, danger, warning } = colors;
+
 export const Wrapper = styled.div<AlertNotificationProps>`
+  --shadow: 0 0 ${rem('25px')} 0 rgba(40, 40, 40, 0.2);
+
   position: fixed;
-  top: 15px;
+  top: ${rem('15px')};
   right: 0;
-  border: 1px solid hsl(186, 62%, 49%);
+  border: 2px solid ${darken(0.15, primary)};
   border-radius: 6px;
-  background-color: var(--green, hsl(186, 62%, 59%));
-  width: 300px;
+  background-color: ${primary};
+  width: ${rem('300px')};
   max-height: min-content;
   display: flex;
-  padding: 15px;
-  color: var(--white, hsl(0, 0%, 100%));
-  -moz-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
-  -webkit-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
-  box-shadow: 0 0 25px 0 rgba(40, 40, 40, 0.4);
+  padding: ${rem('15px')};
+  color: ${light};
+  -moz-box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--shadow);
+  box-shadow: var(--shadow);
   z-index: 999;
   opacity: 0;
 
@@ -26,7 +32,7 @@ export const Wrapper = styled.div<AlertNotificationProps>`
     background-color: transparent;
 
     svg {
-      fill: hsl(186, 62%, 39%);
+      fill: ${darken(0.15, primary)};
     }
   }
 
@@ -42,7 +48,7 @@ export const Wrapper = styled.div<AlertNotificationProps>`
       opacity: 0;
     }
     100% {
-      right: 15px;
+      right: ${rem('15px')};
       opacity: 1;
     }
   }
@@ -50,12 +56,12 @@ export const Wrapper = styled.div<AlertNotificationProps>`
   ${props =>
     props.variant === 'warning' &&
     css`
-      border: 1px solid hsl(36, 100%, 47%);
-      background-color: var(--orange, hsl(36, 100%, 57%));
+      border: 2px solid ${darken(0.1, warning)};
+      background-color: ${warning};
 
       button {
         svg {
-          fill: hsl(36, 100%, 37%);
+          fill: ${darken(0.1, warning)};
         }
       }
     `}
@@ -63,28 +69,28 @@ export const Wrapper = styled.div<AlertNotificationProps>`
   ${props =>
     props.variant === 'danger' &&
     css`
-      border: 1px solid hsl(354, 83%, 54%);
-      background-color: var(--red, hsl(354, 83%, 64%));
+      border: 2px solid ${darken(0.19, danger)};
+      background-color: ${danger};
 
       button {
         svg {
-          fill: hsl(354, 83%, 44%);
+          fill: ${darken(0.19, danger)};
         }
       }
     `}
 
   span {
     flex: 1;
-    margin-right: 5px;
+    margin-right: ${rem('5px')};
     font-size: 0.85rem;
   }
 
   button {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: ${rem('4px')};
+    right: 0;
     margin: 0 !important;
-    width: 20px;
-    height: 20px;
+    width: ${rem('20px')};
+    height: ${rem('20px')};
   }
 `;

@@ -25,7 +25,7 @@ const AlertNotification = (props: AlertNotificationProps) => {
   return (
     <Styles.Wrapper className={className} variant={variant}>
       <div>{value ? <span>{value}</span> : children}</div>
-      <Button icon="cross" action={closeAction} />
+      <Button variant="text" icon="cross" action={closeAction} />
     </Styles.Wrapper>
   );
 };
