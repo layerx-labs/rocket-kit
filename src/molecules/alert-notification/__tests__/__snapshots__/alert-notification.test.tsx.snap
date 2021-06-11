@@ -11,8 +11,8 @@ exports[`AlertNotification renders 1`] = `
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
-  border-radius: 999px;
-  background-color: var(--button);
+  border-radius: 0;
+  background-color: transparent;
   width: 2.25rem;
   height: 2.25rem;
   display: -webkit-box;
@@ -36,7 +36,16 @@ exports[`AlertNotification renders 1`] = `
 }
 
 .c1:hover {
-  background-color: var(--hover);
+  border-color: var(--hover);
+  background-color: transparent;
+}
+
+.c1:hover span {
+  color: var(--hover);
+}
+
+.c1:hover svg {
+  fill: var(--hover);
 }
 
 .c1:disabled {
@@ -52,11 +61,15 @@ exports[`AlertNotification renders 1`] = `
   margin-right: 5px;
 }
 
+.c1 .spinner {
+  border-top-color: var(--button);
+}
+
 .c1 span {
   position: relative;
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--txt);
+  color: var(--button);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -66,19 +79,20 @@ exports[`AlertNotification renders 1`] = `
   width: auto;
   min-width: 1.25rem;
   height: 1.25rem;
-  fill: var(--txt);
+  fill: var(--button);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .c0 {
+  --shadow: 0 0 1.5625rem 0 rgba(40,40,40,0.2);
   position: fixed;
-  top: 15px;
+  top: 0.9375rem;
   right: 0;
-  border: 1px solid hsl(186,62%,49%);
+  border: 2px solid #2ba8b6;
   border-radius: 6px;
-  background-color: var(--green,hsl(186,62%,59%));
-  width: 300px;
+  background-color: hsl(186,62%,59%);
+  width: 18.75rem;
   max-height: -webkit-min-content;
   max-height: -moz-min-content;
   max-height: min-content;
@@ -86,11 +100,11 @@ exports[`AlertNotification renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 15px;
-  color: var(--white,hsl(0,0%,100%));
-  -moz-box-shadow: 0 0 15px 0 rgba(40,40,40,0.2);
-  -webkit-box-shadow: 0 0 15px 0 rgba(40,40,40,0.2);
-  box-shadow: 0 0 25px 0 rgba(40,40,40,0.4);
+  padding: 0.9375rem;
+  color: hsl(0,0%,100%);
+  -moz-box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--shadow);
+  box-shadow: var(--shadow);
   z-index: 999;
   opacity: 0;
 }
@@ -100,7 +114,7 @@ exports[`AlertNotification renders 1`] = `
 }
 
 .c0 button svg {
-  fill: hsl(186,62%,39%);
+  fill: #2ba8b6;
 }
 
 .c0.open {
@@ -116,17 +130,17 @@ exports[`AlertNotification renders 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin-right: 5px;
+  margin-right: 0.3125rem;
   font-size: 0.85rem;
 }
 
 .c0 button {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 0.25rem;
+  right: 0;
   margin: 0 !important;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 @media (min-width:1280px) {
