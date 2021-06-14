@@ -30,6 +30,7 @@ export { default as WizardSteps } from './molecules/wizard-steps';
 export { default as AlertNotification } from './molecules/alert-notification';
 export { default as PaginationControl } from './molecules/pagination-control';
 export { default as Error } from './molecules/error';
+export { default as DataWarning } from './molecules/data-warning';
 
 // Organisms
 export { default as HorizontalNav } from './organisms/horizontal-nav';
