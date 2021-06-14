@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error renders 1`] = `
+<DocumentFragment>
+  .c0 {
+  min-height: 50vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 1.875rem;
+  text-align: center;
+}
+
+.c0 svg {
+  width: auto;
+  height: 6.25rem;
+}
+
+.c0 > span {
+  margin-top: 0.9375rem;
+  font-weight: 700;
+  color: hsl(0,0%,16%);
+}
+
+.c0 > span a {
+  color: hsl(0,0%,16%);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0 > span a:hover {
+  color: hsl(186,62%,59%);
+}
+
+<div
+    class="c0"
+  >
+    <svg
+      class="icon"
+      viewBox="0 0 32 32"
+    >
+      <path
+        d="M5.466 27.792h21.067c1.544-0.001 2.796-1.253 2.796-2.797 0-0.515-0.139-0.998-0.383-1.413l0.007 0.013-10.533-18.199c-0.493-0.84-1.392-1.395-2.42-1.395s-1.927 0.555-2.413 1.382l-0.007 0.013-10.534 18.2c-0.236 0.401-0.375 0.884-0.375 1.4 0 1.544 1.251 2.796 2.795 2.797h0zM16 18c-0.772-0.002-1.397-0.627-1.399-1.399v-2.798c-0-0.006-0-0.014-0-0.021 0-0.773 0.626-1.399 1.399-1.399s1.399 0.626 1.399 1.399c0 0.007-0 0.015-0 0.022v-0.001 2.798c-0.002 0.772-0.627 1.397-1.399 1.399h-0zM17.399 23.595h-2.798v-2.798h2.798z"
+        style="fill: hsl(354, 83%, 64%);"
+      />
+    </svg>
+    <span>
+      This is an awesome error
+    </span>
+  </div>
+</DocumentFragment>
+`;

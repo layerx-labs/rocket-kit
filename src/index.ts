@@ -29,6 +29,7 @@ export { default as NumberInputSpinner } from './molecules/number-input-spinner'
 export { default as WizardSteps } from './molecules/wizard-steps';
 export { default as AlertNotification } from './molecules/alert-notification';
 export { default as PaginationControl } from './molecules/pagination-control';
+export { default as Error } from './molecules/error';
 
 // Organisms
 export { default as HorizontalNav } from './organisms/horizontal-nav';
