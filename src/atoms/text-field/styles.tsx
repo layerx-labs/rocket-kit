@@ -62,8 +62,7 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
   ${props =>
     props.icon &&
     css`
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32">
-        <path style="fill:${info}" d=${JSON.stringify(
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path style="fill:${info}" d=${JSON.stringify(
         icons[props.icon]
       )} /></svg>');
       padding-left: ${props.minimal ? '40px' : '50px'};

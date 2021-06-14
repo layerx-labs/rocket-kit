@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingState renders 1`] = `
+<DocumentFragment>
+  .c0 div {
+  width: 100%;
+  height: 100%;
+}
+
+.c0 > div > div > div {
+  background: #f6f7f8;
+  background-image: -webkit-linear-gradient( left, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100% );
+  background-repeat: no-repeat;
+  background-size: 800px 100%;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: placeholderSkeleton;
+  animation-name: placeholderSkeleton;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+.c0 > div > div > div.title {
+  margin-bottom: 0.625rem;
+  width: 50%;
+  height: 1.875rem;
+}
+
+.c0 > div > div > div.subtitle {
+  margin-bottom: 1.875rem;
+  width: 25%;
+  height: 0.9375rem;
+}
+
+.c0 > div > div > div.paragraph {
+  width: 100%;
+  height: 0.9375rem;
+}
+
+.c0 > div > div > div.paragraph:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+
+.c0 > div > div > div.value {
+  width: 50%;
+  height: 1.875rem;
+}
+
+.c0 .card {
+  position: relative;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  width: 18.75rem;
+  overflow: hidden;
+}
+
+.c0 .card .cover {
+  width: 100%;
+  height: 10.3125rem;
+}
+
+.c0 .card .avatar {
+  position: absolute;
+  margin: -2.8125rem 0 0 1.25rem;
+  width: 5.625rem;
+  height: 5.625rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+}
+
+.c0 .card .title {
+  margin: 4.6875rem 0 1.875rem 1.5625rem;
+}
+
+.c0 .card .paragraph {
+  margin: 0 auto 20px auto;
+  width: calc(100% - 2.5rem);
+}
+
+.c0 .card .paragraph:last-child {
+  width: 40%;
+  margin-left: 1.25rem;
+}
+
+<div
+    class="c0"
+    type="text"
+  >
+    <div>
+      <div>
+        <div
+          class="title"
+        />
+        <div
+          class="subtitle"
+        />
+        <div
+          class="paragraph"
+        />
+        <div
+          class="paragraph"
+        />
+        <div
+          class="paragraph"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
