@@ -1,12 +1,11 @@
 import React from 'react';
 
-const IconEmptyData = props => (
+const IconEmptyData = () => (
   <svg
     id="design-dev-circular-icon"
     width={100}
     height={100}
     viewBox="0 0 100 100"
-    {...props}
   >
     <defs>
       <clipPath id="clip-path">

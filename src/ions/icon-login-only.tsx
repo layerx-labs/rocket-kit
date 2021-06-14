@@ -1,13 +1,12 @@
 import React from 'react';
 
-const IconLoginOnly = props => (
+const IconLoginOnly = () => (
   <svg
     id="login-only-icon"
     width={100}
     height={100}
     data-name="login-only-icon \u2013 1"
     viewBox="0 0 100 100"
-    {...props}
   >
     <circle
       id="Ellipse_30"
