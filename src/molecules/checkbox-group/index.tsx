@@ -7,7 +7,7 @@ export type CheckboxItem = {
   value: string;
   label?: string | React.ReactNode;
   checked?: boolean;
-  onChange?: () => {};
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   disabled?: boolean;
   className?: string;

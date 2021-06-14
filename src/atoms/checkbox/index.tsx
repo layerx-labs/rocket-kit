@@ -10,7 +10,7 @@ interface Props {
   value: string;
   label?: string | React.ReactNode;
   checked?: boolean;
-  onChange?: () => {};
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error?: boolean;
   disabled?: boolean;
   className?: string;
