@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox renders 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c0 li:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+
+.c0 input[type='radio']:checked ~ .check {
+  border-color: #2ba8b6;
+}
+
+.c0 input[type='radio']:checked ~ .check::before {
+  background-color: hsl(186,62%,59%);
+}
+
+.c0 + span {
+  margin-top: 0.3125rem;
+}
+
+.c1 {
+  position: relative;
+  height: 1.5rem;
+}
+
+.c1 input[type='radio'] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.c1 label {
+  position: relative;
+  padding-left: 1.875rem;
+  line-height: 1.5rem;
+  vertical-align: middle;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.c1 .check {
+  position: absolute;
+  top: 0;
+  border: 2px solid hsl(0,0%,48%);
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c1 .check::before {
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 100%;
+  height: 1rem;
+  width: 1rem;
+  top: 2px;
+  left: 2px;
+}
+
+.c1:hover .check {
+  border-color: hsl(256,55%,43%);
+}
+
+<div>
+    <ul
+      class="c0"
+      type="column"
+    >
+      <li
+        class="c1"
+      >
+        <input
+          id="option_1"
+          name="test-group"
+          type="radio"
+          value="option_1"
+        />
+        <label
+          for="option_1"
+        >
+          Option 1
+        </label>
+        <div
+          class="check"
+        />
+      </li>
+      <li
+        class="c1"
+      >
+        <input
+          id="option_2"
+          name="test-group"
+          type="radio"
+          value="option_2"
+        />
+        <label
+          for="option_2"
+        >
+          Option 2
+        </label>
+        <div
+          class="check"
+        />
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

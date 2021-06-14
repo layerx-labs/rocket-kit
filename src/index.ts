@@ -31,6 +31,7 @@ export { default as AlertNotification } from './molecules/alert-notification';
 export { default as PaginationControl } from './molecules/pagination-control';
 export { default as Error } from './molecules/error';
 export { default as DataWarning } from './molecules/data-warning';
+export { default as RadioGroup } from './molecules/radio-group';
 
 // Organisms
 export { default as HorizontalNav } from './organisms/horizontal-nav';
