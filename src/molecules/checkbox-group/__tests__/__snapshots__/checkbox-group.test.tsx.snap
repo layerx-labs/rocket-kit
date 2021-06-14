@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxGroup renders 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-left: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1:hover input:not(:disabled) ~ span {
+  border-color: hsl(0,0%,48%);
+}
+
+.c2 {
+  margin-left: 1.875rem;
+  line-height: 1.5rem;
+}
+
+.c3 {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.c3:checked:not(:disabled) ~ span {
+  background-color: hsl(186,62%,59%);
+  border-color: #2ba8b6;
+}
+
+.c3:checked:not(:disabled) ~ span:after {
+  display: block;
+}
+
+.c3:checked:disabled ~ span {
+  border-color: transparent;
+  background-color: #e0e0e0;
+  color: hsl(0,0%,48%);
+}
+
+.c3:checked:disabled ~ span:after {
+  display: block;
+}
+
+.c3:not(:checked):disabled ~ span {
+  border-color: #e0e0e0;
+  background-color: hsl(0,0%,100%);
+}
+
+.c3:hover:not(:disabled) {
+  border-color: #2ba8b6;
+}
+
+.c3:hover:not(:disabled):checked ~ span {
+  border-color: #2ba8b6;
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c4:after {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 3px;
+  left: 6px;
+  width: 5px;
+  height: 9px;
+  border: solid hsl(0,0%,100%);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c0 li {
+  position: relative;
+  height: 1.5rem;
+}
+
+<ul
+    class="c0"
+  >
+    <li>
+      <label
+        class="c1 checkbox"
+      >
+        <span
+          class="c2"
+        >
+          Option 1
+        </span>
+        <input
+          aria-checked="false"
+          class="c3"
+          name="option_1"
+          type="checkbox"
+        />
+        <span
+          class="c4"
+        />
+      </label>
+    </li>
+    <li>
+      <label
+        class="c1 checkbox"
+      >
+        <span
+          class="c2"
+        >
+          Option 2
+        </span>
+        <input
+          aria-checked="false"
+          class="c3"
+          name="option_2"
+          type="checkbox"
+        />
+        <span
+          class="c4"
+        />
+      </label>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
