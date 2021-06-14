@@ -9,7 +9,7 @@ const radioButtons = [
   { value: 'option_2', label: 'Option 2', disabled: false, checked: undefined },
 ];
 
-describe('Checkbox', () => {
+describe('RadioGroup', () => {
   it('renders', () => {
     const { asFragment } = render(
       <RadioGroup group="test-group" options={radioButtons} />

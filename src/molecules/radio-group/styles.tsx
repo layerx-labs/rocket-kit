@@ -49,7 +49,7 @@ export const Wrapper = styled.ul<WrapperProps>`
   }
 
   & + span {
-    margin-top: ${rem('5px')};
+    margin-top: ${rem('10px')};
   }
 `;
 

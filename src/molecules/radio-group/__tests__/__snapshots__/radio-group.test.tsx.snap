@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox renders 1`] = `
+exports[`RadioGroup renders 1`] = `
 <DocumentFragment>
   .c0 {
   display: -webkit-box;
@@ -29,7 +29,7 @@ exports[`Checkbox renders 1`] = `
 }
 
 .c0 + span {
-  margin-top: 0.3125rem;
+  margin-top: 0.625rem;
 }
 
 .c1 {
