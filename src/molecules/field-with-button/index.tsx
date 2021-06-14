@@ -18,7 +18,7 @@ export interface FieldWidthButtonProps {
   required?: boolean;
   buttonIcon: string;
   buttonValue?: string;
-  buttonAction?: () => {};
+  buttonAction?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   buttonDisabled?: boolean;
 }
 
