@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationControl renders 1`] = `
+<DocumentFragment>
+  .c0 ul.pagination {
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+
+.c0 ul.pagination li {
+  width: 3.125rem;
+  height: 3.125rem;
+  background-color: hsl(0,0%,100%);
+  cursor: pointer;
+}
+
+.c0 ul.pagination li.previous,
+.c0 ul.pagination li.next {
+  margin: 0 0.9375rem;
+  background-color: hsl(0,0%,100%);
+  border-radius: 1.5625rem;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0 ul.pagination li.previous a svg,
+.c0 ul.pagination li.next a svg {
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0 ul.pagination li.page:nth-child(2) {
+  border-radius: 1.5625rem 0 0 1.5625rem;
+}
+
+.c0 ul.pagination li.page:nth-last-child(2) {
+  border-radius: 0 1.5625rem 1.5625rem 0;
+}
+
+.c0 ul.pagination li a,
+.c0 ul.pagination li .break {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 999px;
+  z-index: 1;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0 ul.pagination li a:hover,
+.c0 ul.pagination li .break:hover {
+  -moz-box-shadow: 0 0 15px 0 rgba(40,40,40,0.1);
+  -webkit-box-shadow: 0 0 15px 0 rgba(40,40,40,0.1);
+  box-shadow: 0 0 15px 0 rgba(40,40,40,0.1);
+  -webkit-filter: drop-shadow(0 0 5px transparent);
+  filter: drop-shadow(0 0 5px transparent);
+  z-index: 2;
+}
+
+.c0 ul.pagination li a {
+  width: 3.125rem;
+  height: 3.125rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: hsl(0,0%,16%);
+}
+
+.c0 ul.pagination li a svg {
+  width: 1.875rem;
+  height: auto;
+  fill: hsl(0,0%,48%);
+}
+
+.c0 ul.pagination li.active {
+  border-radius: 0;
+  pointer-events: none;
+}
+
+.c0 ul.pagination li.active a {
+  --shadow: drop-shadow(0 0 5px rgba(40,40,40,0.4));
+  border-radius: 1.5625rem;
+  background-color: hsl(256,55%,43%);
+  font-weight: 700;
+  color: hsl(0,0%,100%);
+  -webkit-filter: var(--shadow);
+  filter: var(--shadow);
+}
+
+<div
+    class="c0"
+  >
+    <ul
+      class="pagination"
+    >
+      <li
+        class="previous disabled"
+      >
+        <a
+          aria-disabled="true"
+          aria-label="Previous page"
+          rel="prev"
+          role="button"
+          tabindex="0"
+        >
+          <svg
+            viewBox="0 0 32 32"
+          >
+            <path
+              d="M24.956 14.574h-14.894l6.507-6.507c0.241-0.243 0.39-0.577 0.39-0.947s-0.149-0.704-0.39-0.947l0 0c-0.24-0.241-0.573-0.39-0.94-0.39s-0.699 0.149-0.94 0.39l-8.787 8.787c-0.241 0.24-0.39 0.573-0.39 0.94s0.149 0.699 0.39 0.94l8.787 8.787c0.242 0.247 0.578 0.4 0.95 0.4 0.734 0 1.329-0.595 1.329-1.329 0-0.372-0.153-0.709-0.4-0.95l-0-0-6.507-6.507h14.894c0.736 0 1.333-0.597 1.333-1.333s-0.597-1.333-1.333-1.333v0z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="page active"
+      >
+        <a
+          aria-current="page"
+          aria-label="Page 1 is your current page"
+          role="button"
+          tabindex="0"
+        >
+          1
+        </a>
+      </li>
+      <li
+        class="page"
+      >
+        <a
+          aria-label="Page 2"
+          role="button"
+          tabindex="0"
+        >
+          2
+        </a>
+      </li>
+      <li
+        class="page"
+      >
+        <a
+          aria-label="Page 3"
+          role="button"
+          tabindex="0"
+        >
+          3
+        </a>
+      </li>
+      <li
+        class="page"
+      >
+        <a
+          aria-label="Page 4"
+          role="button"
+          tabindex="0"
+        >
+          4
+        </a>
+      </li>
+      <li
+        class="break"
+      >
+        <a
+          class="break"
+          role="button"
+          tabindex="0"
+        >
+          ...
+        </a>
+      </li>
+      <li
+        class="page"
+      >
+        <a
+          aria-label="Page 10"
+          role="button"
+          tabindex="0"
+        >
+          10
+        </a>
+      </li>
+      <li
+        class="next"
+      >
+        <a
+          aria-disabled="false"
+          aria-label="Next page"
+          rel="next"
+          role="button"
+          tabindex="0"
+        >
+          <svg
+            viewBox="0 0 32 32"
+          >
+            <path
+              d="M7.044 17.425h14.893l-6.507 6.507c-0.241 0.243-0.39 0.577-0.39 0.947s0.149 0.704 0.39 0.947l-0-0c0.241 0.242 0.574 0.392 0.942 0.392s0.701-0.15 0.942-0.392l8.783-8.783c0.241-0.24 0.39-0.573 0.39-0.94s-0.149-0.699-0.39-0.94l-8.783-8.787c-0.239-0.234-0.567-0.379-0.929-0.379-0.734 0-1.329 0.595-1.329 1.329 0 0.362 0.145 0.69 0.379 0.929l-0-0 6.507 6.507h-14.897c-0.736 0-1.333 0.597-1.333 1.333s0.597 1.333 1.333 1.333v0z"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
