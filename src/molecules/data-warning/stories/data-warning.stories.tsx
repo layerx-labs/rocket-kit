@@ -2,7 +2,7 @@ import React from 'react';
 import DataWarning, { DataWarningProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/Data Warning',
+  title: 'Design System/Molecules/DataWarning',
   component: DataWarning,
   argTypes: {
     type: {
@@ -19,6 +19,8 @@ export const DataWarningComponent = (args: DataWarningProps) => (
     <span>Please login to read the project description.</span>
   </DataWarning>
 );
+
+DataWarningComponent.storyName = 'DataWarning';
 
 DataWarningComponent.args = {
   type: 'login',

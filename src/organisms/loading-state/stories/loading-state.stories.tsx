@@ -18,7 +18,7 @@ export const LoadingStateComponent = (args: LoadingStateProps) => (
   <LoadingState {...args} />
 );
 
-LoadingStateComponent.storyName = 'Loading State';
+LoadingStateComponent.storyName = 'LoadingState';
 LoadingStateComponent.args = {
   type: 'text',
   lines: 3,
