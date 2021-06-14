@@ -33,6 +33,7 @@ export { default as Error } from './molecules/error';
 export { default as DataWarning } from './molecules/data-warning';
 export { default as RadioGroup } from './molecules/radio-group';
 export { default as CheckboxGroup } from './molecules/checkbox-group';
+export { default as FieldWidthButton } from './molecules/field-with-button';
 
 // Organisms
 export { default as HorizontalNav } from './organisms/horizontal-nav';
