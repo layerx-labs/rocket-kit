@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea renders 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+}
+
+.c1 {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: hsl(0,0%,48%);
+  border-radius: 0;
+  width: 100%;
+  height: 6.25rem;
+  min-height: rem('40px');
+  padding: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  word-break: break-word;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  resize: none;
+}
+
+.c1:focus {
+  border-color: hsl(256,55%,43%);
+  outline: none;
+}
+
+.c1:disabled {
+  background-color: #ededed;
+  color: hsl(0,0%,48%);
+}
+
+.c1:invalid {
+  border-color: hsl(354,83%,64%);
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+.c1:required {
+  border-color: hsl(0,0%,48%);
+}
+
+.c1::-webkit-input-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c1::-moz-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c1:-ms-input-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c1::placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c1:-ms-input-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+.c1::-ms-input-placeholder {
+  color: hsl(0,0%,48%);
+  opacity: 1;
+}
+
+<div
+    class="c0 text-field"
+  >
+    <textarea
+      class="c1 text-area"
+    >
+      this is my text
+    </textarea>
+  </div>
+</DocumentFragment>
+`;
