@@ -32,7 +32,6 @@ TextAreaComponent.args = {
 export const TextAreaCharactersCountComponent = (args: TextAreaProps) => {
   const [text, setText] = useState('');
   const textLength = 280 - text.length;
-  console.log(textLength);
 
   return (
     <TextArea
