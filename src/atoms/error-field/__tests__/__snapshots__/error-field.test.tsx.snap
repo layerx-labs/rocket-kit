@@ -9,7 +9,8 @@ exports[`ErrorField renders 1`] = `
 }
 
 .styles__TextFieldInputStyle-sc-1jl38sp-0 + .c0,
-.sc-bdfBwQ + .c1 {
+.sc-gsTCUz + .c1,
+.sc-hKgILt + .c1 {
   margin-top: 0.3125rem;
 }
 
