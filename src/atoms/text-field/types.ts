@@ -4,4 +4,5 @@ export type TextFieldType =
   | 'password'
   | 'date'
   | 'time'
-  | 'number';
+  | 'number'
+  | 'email';
