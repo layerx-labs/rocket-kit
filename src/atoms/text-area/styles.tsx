@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lighten, rem } from 'polished';
+import { lighten, rem, transparentize } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface TextAreaProps {
@@ -10,7 +10,7 @@ interface TextAreaProps {
   maxlength?: number;
 }
 
-const { info, danger, purple } = colors;
+const { light, info, danger, purple } = colors;
 
 export const Wrapper = styled.div`
   position: relative;
@@ -73,6 +73,8 @@ export const Count = styled.div<TextAreaProps>`
   position: absolute;
   top: ${props => (props.minimal ? 0 : rem('5px'))};
   right: ${props => (props.minimal ? 0 : rem('10px'))};
+  background-color: ${transparentize(0.15, light)};
+  padding: 0 ${rem('5px')};
 
   span {
     font-size: 0.75rem;
