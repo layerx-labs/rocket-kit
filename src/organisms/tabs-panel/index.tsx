@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-responsive-tabs/styles.css';
 import Tabs from 'react-responsive-tabs';
 import * as Styles from './styles';
 
