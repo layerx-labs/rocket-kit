@@ -41,3 +41,4 @@ export { default as HorizontalNav } from './organisms/horizontal-nav';
 export { default as Modal } from './organisms/modal';
 export { default as ModalDrawer } from './organisms/modal-drawer';
 export { default as LoadingState } from './organisms/loading-state';
+export { default as TabsPanel } from './organisms/tabs-panel';
