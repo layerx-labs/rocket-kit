@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { rem, lighten } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { normal, info } = colors;
+const { normal, info, light } = colors;
 
 export const Wrapper = styled.div`
   .tab {
@@ -34,6 +34,7 @@ export const Wrapper = styled.div`
   .panel {
     border-radius: 0 6px 6px 6px;
     border-color: ${lighten(0.4, info)};
+    background-color: ${light};
     padding: ${rem('30px')};
   }
 
