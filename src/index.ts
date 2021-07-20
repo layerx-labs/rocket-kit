@@ -1,5 +1,5 @@
 // Atoms
-export { default as Avatar } from './atoms/avatar';
+export { default as AvatarImage } from './atoms/avatar-image';
 export { default as Button } from './atoms/button';
 export { default as ButtonLink } from './atoms/button-link';
 export { default as Checkbox } from './atoms/checkbox';
