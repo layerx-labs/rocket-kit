@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar renders 1`] = `
+<DocumentFragment>
+  .c0 {
+  position: relative;
+  border: 1px solid hsl(0,0%,16%);
+  border-radius: 999px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.c0 > * {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  z-index: -1;
+}
+
+.c1 {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+<div
+    class="c0"
+    size="30"
+  >
+    <img
+      alt="avatar alt"
+      class="c1 tk-avatar"
+      size="30"
+      src="/dummy.png"
+    />
+  </div>
+</DocumentFragment>
+`;

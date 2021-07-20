@@ -3,15 +3,31 @@
 exports[`Table renders 1`] = `
 <DocumentFragment>
   .c1 {
+  position: relative;
   border: 1px solid hsl(0,0%,16%);
   border-radius: 999px;
-  width: 1.875rem;
-  height: 1.875rem;
-  object-fit: cover;
+  width: 30px;
+  height: 30px;
   overflow: hidden;
+  z-index: 0;
 }
 
-.c3 {
+.c1 > * {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  z-index: -1;
+}
+
+.c2 {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.c4 {
   --button: hsl(186,62%,59%);
   --txt: hsl(0,0%,100%);
   --hover: #2ba8b6;
@@ -44,37 +60,37 @@ exports[`Table renders 1`] = `
   cursor: pointer;
 }
 
-.c3:hover {
+.c4:hover {
   border-color: var(--hover);
   background-color: transparent;
 }
 
-.c3:hover span {
+.c4:hover span {
   color: var(--hover);
 }
 
-.c3:hover svg {
+.c4:hover svg {
   fill: var(--hover);
 }
 
-.c3:disabled {
+.c4:disabled {
   cursor: inherit;
   opacity: 0.5;
 }
 
-.c3:disabled:hover {
+.c4:disabled:hover {
   pointer-events: none;
 }
 
-.c3 > *:not(:last-child) {
+.c4 > *:not(:last-child) {
   margin-right: 5px;
 }
 
-.c3 .spinner {
+.c4 .spinner {
   border-top-color: var(--button);
 }
 
-.c3 span {
+.c4 span {
   position: relative;
   font-size: 0.75rem;
   font-weight: 700;
@@ -84,7 +100,7 @@ exports[`Table renders 1`] = `
   transition-duration: 0.3s;
 }
 
-.c3 svg {
+.c4 svg {
   width: auto;
   min-width: 1.25rem;
   height: 1.25rem;
@@ -93,15 +109,15 @@ exports[`Table renders 1`] = `
   transition: 0.3s;
 }
 
-.c2 {
+.c3 {
   height: 50px;
 }
 
-.c2 button {
+.c3 button {
   margin-top: 7px;
 }
 
-.c2 ul {
+.c3 ul {
   position: absolute;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
@@ -116,7 +132,7 @@ exports[`Table renders 1`] = `
   z-index: 1;
 }
 
-.c2 ul li {
+.c3 ul li {
   list-style: none;
   min-height: 45px;
   display: -webkit-box;
@@ -127,28 +143,28 @@ exports[`Table renders 1`] = `
   transition-duration: 0.3s;
 }
 
-.c2 ul li:hover {
+.c3 ul li:hover {
   background-color: #e0e0e0;
   cursor: pointer;
 }
 
-.c2 ul li:first-child {
+.c3 ul li:first-child {
   border-radius: 4px 4px 0 0;
 }
 
-.c2 ul li:last-child {
+.c3 ul li:last-child {
   border-radius: 0 0 4px 4px;
 }
 
-.c2 ul li.danger {
+.c3 ul li.danger {
   border-top: 1px solid #e0e0e0;
 }
 
-.c2 ul li.danger a {
+.c3 ul li.danger a {
   color: hsl(354,83%,64%);
 }
 
-.c2 ul li a {
+.c3 ul li a {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -165,7 +181,7 @@ exports[`Table renders 1`] = `
   white-space: nowrap;
 }
 
-.c2 ul li a span {
+.c3 ul li a span {
   display: table-cell;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -403,7 +419,7 @@ exports[`Table renders 1`] = `
 }
 
 @media (min-width:1280px) {
-  .c3 {
+  .c4 {
     min-width: 2.25rem;
   }
 }
@@ -526,11 +542,17 @@ exports[`Table renders 1`] = `
           data-testid="td-undefined"
         >
           <div>
-            <img
-              alt="To the Moon"
-              class="c1 tk-avatar"
-              src="./images/default-avatar.svg"
-            />
+            <div
+              class="c1"
+              size="30"
+            >
+              <img
+                alt="To the Moon"
+                class="c2 tk-avatar"
+                size="30"
+                src="./images/default-avatar.svg"
+              />
+            </div>
              To the Moon
           </div>
         </td>
@@ -557,11 +579,11 @@ exports[`Table renders 1`] = `
           data-testid="table-action-menu"
         >
           <div
-            class="c2"
+            class="c3"
           >
             <button
               aria-label=""
-              class="c3 button"
+              class="c4 button"
               color="dark"
               data-testid="icon-button"
               value=""
