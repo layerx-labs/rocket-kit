@@ -17,6 +17,7 @@ export default {
 export const PNG = (args: AvatarProps) => <AvatarImage {...args} />;
 
 PNG.args = {
+  size: 30,
   boring: false,
   boringType: 'beam',
   alt: 'Maria Rincon',
@@ -27,6 +28,7 @@ PNG.args = {
 export const SVG = (args: AvatarProps) => <AvatarImage {...args} />;
 
 SVG.args = {
+  size: 30,
   boring: false,
   boringType: 'beam',
   alt: 'Default Avatar',
@@ -36,6 +38,7 @@ SVG.args = {
 export const BoringAvatar = (args: AvatarProps) => <AvatarImage {...args} />;
 
 BoringAvatar.args = {
+  size: 30,
   boring: true,
   boringType: 'beam',
   alt: 'Maria Rincon',
