@@ -58,7 +58,7 @@ export const TableWrapper = styled.table<BorderProps>`
       display: flex;
       align-items: center;
 
-      img {
+      .avatar-img {
         margin-right: ${rem('15px')};
       }
     }
