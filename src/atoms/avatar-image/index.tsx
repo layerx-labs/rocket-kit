@@ -10,36 +10,33 @@ export interface AvatarProps {
   alt: string;
   boring?: boolean;
   boringType?: 'marble' | 'beam' | 'pixel' | 'sunset' | 'ring' | 'bauhaus';
+  square?: boolean;
 }
 
 const AvatarImage = (props: AvatarProps) => {
   const {
     style,
-    className = 'tk-avatar',
+    className = 'avatar-img',
     size = 30,
     url,
     alt,
     boring = true,
-    boringType = 'beam',
+    boringType = 'pixel',
+    square = false,
   } = props;
 
   return (
-    <Styles.Wrapper size={size}>
+    <Styles.Wrapper className={className} size={size} square={square}>
       {boring && !url ? (
         <Avatar
           size={size}
           name={alt}
           variant={boringType}
+          square={square}
           colors={['#55cad7', '#5031a9', '#f9c543', '#ef5766', '#7a7a7a']}
         />
       ) : (
-        <Styles.Image
-          className={className}
-          style={style}
-          size={size}
-          alt={alt}
-          src={url}
-        />
+        <img style={style} src={url} alt={alt} />
       )}
     </Styles.Wrapper>
   );

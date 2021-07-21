@@ -17,9 +17,10 @@ export default {
 export const PNG = (args: AvatarProps) => <AvatarImage {...args} />;
 
 PNG.args = {
-  size: 30,
+  size: 100,
   boring: false,
-  boringType: 'beam',
+  boringType: 'pixel',
+  square: false,
   alt: 'Maria Rincon',
   url:
     'https://taikai.azureedge.net/O4f7yrc0ecq0JUEirIk1sZ2XItEpJ-xrIr2W03kRrJs/rs:fit:400:400:0/g:no/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3RhaWthaS1zdG9yYWdlL2ltYWdlcy90YWlrYWkvbWFyaWFfNDAwXzQwMC5qcGc.jpg',
@@ -28,9 +29,10 @@ PNG.args = {
 export const SVG = (args: AvatarProps) => <AvatarImage {...args} />;
 
 SVG.args = {
-  size: 30,
+  size: 100,
   boring: false,
-  boringType: 'beam',
+  boringType: 'pixel',
+  square: false,
   alt: 'Default Avatar',
   url: './images/default-avatar.svg',
 };
@@ -38,9 +40,10 @@ SVG.args = {
 export const BoringAvatar = (args: AvatarProps) => <AvatarImage {...args} />;
 
 BoringAvatar.args = {
-  size: 30,
+  size: 100,
   boring: true,
-  boringType: 'beam',
+  boringType: 'pixel',
+  square: false,
   alt: 'Maria Rincon',
   url: '',
 };
