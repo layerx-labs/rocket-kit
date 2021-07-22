@@ -3,12 +3,24 @@
 exports[`Table renders 1`] = `
 <DocumentFragment>
   .c1 {
+  position: relative;
   border: 1px solid hsl(0,0%,16%);
   border-radius: 999px;
-  width: 1.875rem;
-  height: 1.875rem;
-  object-fit: cover;
+  width: 30px;
+  height: 30px;
   overflow: hidden;
+  z-index: 0;
+}
+
+.c1 > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.c1 img {
+  object-fit: cover;
 }
 
 .c3 {
@@ -238,8 +250,8 @@ exports[`Table renders 1`] = `
   align-items: center;
 }
 
-.c0 th.avatar > div img,
-.c0 td.avatar > div img {
+.c0 th.avatar > div .avatar-img,
+.c0 td.avatar > div .avatar-img {
   margin-right: 0.9375rem;
 }
 
@@ -375,7 +387,7 @@ exports[`Table renders 1`] = `
   max-height: 1.25rem;
 }
 
-.c0 tbody td img {
+.c0 tbody td .avatar-img {
   display: none;
 }
 
@@ -477,7 +489,7 @@ exports[`Table renders 1`] = `
     max-width: 6.25rem;
   }
 
-  .c0 tbody td img {
+  .c0 tbody td .avatar-img {
     display: inherit;
   }
 
@@ -526,11 +538,15 @@ exports[`Table renders 1`] = `
           data-testid="td-undefined"
         >
           <div>
-            <img
-              alt="To the Moon"
-              class="c1 tk-avatar"
-              src="./images/default-avatar.svg"
-            />
+            <div
+              class="c1 avatar-img"
+              size="30"
+            >
+              <img
+                alt="To the Moon"
+                src="./images/default-avatar.svg"
+              />
+            </div>
              To the Moon
           </div>
         </td>

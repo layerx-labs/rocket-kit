@@ -58,7 +58,7 @@ export const TableWrapper = styled.table<BorderProps>`
       display: flex;
       align-items: center;
 
-      img {
+      .avatar-img {
         margin-right: ${rem('15px')};
       }
     }
@@ -190,7 +190,7 @@ export const TableWrapper = styled.table<BorderProps>`
         }
       }
 
-      img {
+      .avatar-img {
         display: none;
       }
 
@@ -246,7 +246,7 @@ export const TableWrapper = styled.table<BorderProps>`
           max-width: ${rem('100px')};
         }
 
-        img {
+        .avatar-img {
           display: inherit;
         }
 

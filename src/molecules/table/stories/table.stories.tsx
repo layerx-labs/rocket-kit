@@ -1,6 +1,6 @@
 import React from 'react';
 import Table from '..';
-import { Avatar } from '../../..';
+import { AvatarImage } from '../../..';
 import { ActionMenu } from '../../actions-menu/types';
 
 export interface TableProps {
@@ -49,7 +49,7 @@ const columns = {
       dataKey: 'transactionName',
       renderer: (transactionName: string, { avatar }: { avatar: string }) => (
         <>
-          <Avatar url={avatar} alt={transactionName} /> {transactionName}
+          <AvatarImage url={avatar} alt={transactionName} /> {transactionName}
         </>
       ),
       className: 'avatar',
@@ -82,7 +82,7 @@ const rows: Transaction[] = [
     amount: '2700',
     type: 'Back',
     createdAt: '2018-07-7 16:21:13',
-    avatar: './images/default-avatar.svg',
+    avatar: '',
   },
   {
     id: '2',
@@ -90,7 +90,7 @@ const rows: Transaction[] = [
     amount: '2000',
     type: 'Back',
     createdAt: '2018-07-7 15:46:19',
-    avatar: './images/default-avatar.svg',
+    avatar: '',
   },
   {
     id: '3',
@@ -98,7 +98,7 @@ const rows: Transaction[] = [
     amount: '5000',
     type: 'Back',
     createdAt: '2018-07-7 14:47:50',
-    avatar: './images/default-avatar.svg',
+    avatar: '',
   },
   {
     id: '4',

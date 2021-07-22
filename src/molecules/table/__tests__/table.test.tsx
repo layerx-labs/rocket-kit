@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import { ActionMenu } from '../../actions-menu/types';
-import { Avatar, Table } from '../../..';
+import { AvatarImage, Table } from '../../..';
 
 describe('Table', () => {
   it('renders', () => {
@@ -47,7 +47,7 @@ describe('Table', () => {
           dataKey: 'transactionName',
           renderer: (transactionName: string, cell: CellData) => (
             <>
-              <Avatar url={cell.avatar} alt={transactionName} />{' '}
+              <AvatarImage url={cell.avatar} alt={transactionName} />{' '}
               {transactionName}
             </>
           ),
