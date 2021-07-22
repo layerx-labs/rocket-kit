@@ -387,7 +387,7 @@ exports[`Table renders 1`] = `
   max-height: 1.25rem;
 }
 
-.c0 tbody td img {
+.c0 tbody td .avatar-img {
   display: none;
 }
 
@@ -489,7 +489,7 @@ exports[`Table renders 1`] = `
     max-width: 6.25rem;
   }
 
-  .c0 tbody td img {
+  .c0 tbody td .avatar-img {
     display: inherit;
   }
 
