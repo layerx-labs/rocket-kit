@@ -9,6 +9,7 @@ interface ButtonProps {
   circle?: boolean;
   color?: ButtonColor;
   value?: String;
+  iconPosition?: 'left' | 'right';
 }
 
 const { normal, light, info, primary, danger, purple } = colors;
@@ -136,7 +137,8 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   }
 
   > *:not(:last-child) {
-    margin-right: 5px;
+    margin-left: ${props => (props.iconPosition === 'right' ? '5px' : 0)};
+    margin-right: ${props => (props.iconPosition === 'left' ? '5px' : 0)};
   }
 
   .spinner {
@@ -152,9 +154,11 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       props.variant === 'solid' ? 'var(--txt)' : 'var(--button)'};
     pointer-events: none;
     transition-duration: 0.3s;
+    order: ${props => (props.iconPosition === 'left' ? 2 : 1)};
   }
 
   svg {
+    order: ${props => (props.iconPosition === 'left' ? 1 : 2)};
     width: auto;
     min-width: ${rem('20px')};
     height: ${rem('20px')};

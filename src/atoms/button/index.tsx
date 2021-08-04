@@ -18,6 +18,7 @@ export interface ButtonProps {
   dataTestId?: string;
   eventId?: string;
   icon?: string;
+  iconPosition?: 'left' | 'right';
   style?: CSSProperties;
   type?: 'submit' | 'reset' | 'button';
 }
@@ -37,6 +38,7 @@ const Button = (props: ButtonProps) => {
     dataTestId,
     eventId,
     icon = '',
+    iconPosition = 'left',
     style,
     type,
   } = props;
@@ -57,6 +59,7 @@ const Button = (props: ButtonProps) => {
       data-event={eventId}
       style={style}
       type={type}
+      iconPosition={iconPosition}
     >
       {loading ? <Spinner /> : icon ? <Icon icon={icon} /> : null}
       {value && <span>{value}</span>}

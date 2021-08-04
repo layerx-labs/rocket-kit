@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonLink } from '../../src';
+import { Button, ButtonDropdown, ButtonLink } from '../../src';
 import icons from '../../src/ions/icons';
 
 export default {
@@ -33,6 +33,12 @@ export default {
         options: Object.keys(icons),
       },
     },
+    iconPosition: {
+      control: {
+        type: 'select',
+        options: ['left', 'right'],
+      },
+    },
   },
 };
 
@@ -50,6 +56,37 @@ ButtonComponent.args = {
   disabled: false,
   loading: false,
   icon: 'rocket',
+  iconPosition: 'left',
+};
+
+export const ButtonDropdownComponent = args => <ButtonDropdown {...args} />;
+
+const actions = [
+  {
+    id: 'createChallenge',
+    value: 'Challenge',
+    url: null,
+    action: () => {},
+  },
+  {
+    id: 'createHiringChallenge',
+    value: 'Hiring Challenge',
+    url: null,
+    action: () => {},
+  },
+];
+
+ButtonDropdownComponent.storyName = 'Dropdown';
+ButtonDropdownComponent.args = {
+  variant: 'solid',
+  color: 'primary',
+  value: 'Create',
+  icon: 'add',
+  ariaLabel: 'Create Challenge',
+  actions,
+  dataTestId: 'action-button-dropdown',
+  startsOpen: false,
+  disabled: false,
 };
 
 export const ButtonLinkComponent = args => <ButtonLink {...args} />;
@@ -57,6 +94,7 @@ export const ButtonLinkComponent = args => <ButtonLink {...args} />;
 ButtonLinkComponent.storyName = 'Link';
 ButtonLinkComponent.args = {
   ...ButtonComponent.args,
+  iconPosition: 'left',
   url: 'https://github.com/taikai/taikai-design-system',
   blank: true,
 };

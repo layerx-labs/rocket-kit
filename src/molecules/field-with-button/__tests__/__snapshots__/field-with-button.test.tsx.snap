@@ -49,6 +49,7 @@ exports[`FieldWidthButton renders 1`] = `
 }
 
 .c3 > *:not(:last-child) {
+  margin-left: 0;
   margin-right: 5px;
 }
 
@@ -60,9 +61,15 @@ exports[`FieldWidthButton renders 1`] = `
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
 }
 
 .c3 svg {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
   width: auto;
   min-width: 1.25rem;
   height: 1.25rem;
