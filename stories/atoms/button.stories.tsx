@@ -33,6 +33,12 @@ export default {
         options: Object.keys(icons),
       },
     },
+    iconPosition: {
+      control: {
+        type: 'select',
+        options: ['left', 'right'],
+      },
+    },
   },
 };
 
@@ -50,6 +56,7 @@ ButtonComponent.args = {
   disabled: false,
   loading: false,
   icon: 'rocket',
+  iconPosition: 'left',
 };
 
 export const ButtonLinkComponent = args => <ButtonLink {...args} />;
