@@ -18,6 +18,7 @@ export interface ButtonLinkProps {
   dataTestId?: string;
   eventId?: string;
   icon?: string;
+  iconPosition?: 'left' | 'right';
   style?: CSSProperties;
 }
 
@@ -30,6 +31,7 @@ const ButtonLink = (props: ButtonLinkProps) => {
     url,
     blank = false,
     icon = '',
+    iconPosition = 'left',
     value = '',
     action = () => {},
     dataTestId = '',
@@ -52,6 +54,7 @@ const ButtonLink = (props: ButtonLinkProps) => {
       data-testid={dataTestId}
       data-event={eventId}
       style={style}
+      iconPosition={iconPosition}
     >
       {icon && <Icon icon={icon} />}
       {value && <span>{value}</span>}
