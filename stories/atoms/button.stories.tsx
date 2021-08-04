@@ -59,7 +59,7 @@ ButtonComponent.args = {
   iconPosition: 'left',
 };
 
-export const ButtonDrodownComponent = args => <ButtonDropdown {...args} />;
+export const ButtonDropdownComponent = args => <ButtonDropdown {...args} />;
 
 const actions = [
   {
@@ -76,8 +76,8 @@ const actions = [
   },
 ];
 
-ButtonDrodownComponent.storyName = 'Dropdown';
-ButtonDrodownComponent.args = {
+ButtonDropdownComponent.storyName = 'Dropdown';
+ButtonDropdownComponent.args = {
   variant: 'solid',
   color: 'primary',
   value: 'Create',
