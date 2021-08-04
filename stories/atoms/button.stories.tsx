@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonLink } from '../../src';
+import { Button, ButtonDropdown, ButtonLink } from '../../src';
 import icons from '../../src/ions/icons';
 
 export default {
@@ -59,11 +59,42 @@ ButtonComponent.args = {
   iconPosition: 'left',
 };
 
+export const ButtonDrodownComponent = args => <ButtonDropdown {...args} />;
+
+const actions = [
+  {
+    id: 'createChallenge',
+    value: 'Challenge',
+    url: null,
+    action: () => {},
+  },
+  {
+    id: 'createHiringChallenge',
+    value: 'Hiring Challenge',
+    url: null,
+    action: () => {},
+  },
+];
+
+ButtonDrodownComponent.storyName = 'Dropdown';
+ButtonDrodownComponent.args = {
+  variant: 'solid',
+  color: 'primary',
+  value: 'Create',
+  icon: 'add',
+  ariaLabel: 'Create Challenge',
+  actions,
+  dataTestId: 'action-button-dropdown',
+  startsOpen: false,
+  disabled: false,
+};
+
 export const ButtonLinkComponent = args => <ButtonLink {...args} />;
 
 ButtonLinkComponent.storyName = 'Link';
 ButtonLinkComponent.args = {
   ...ButtonComponent.args,
+  iconPosition: 'left',
   url: 'https://github.com/taikai/taikai-design-system',
   blank: true,
 };
