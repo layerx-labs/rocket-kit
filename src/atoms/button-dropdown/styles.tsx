@@ -9,10 +9,13 @@ interface ActionsMenuInterface {
 }
 
 export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
+  position: relative;
+
   ul {
     position: absolute;
     opacity: 0;
     top: 0;
+    margin: 0;
     border: 1px solid ${lighten(0.4, info)};
     border-radius: 4px;
     background-color: ${light};
