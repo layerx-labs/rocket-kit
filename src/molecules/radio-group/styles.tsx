@@ -54,8 +54,9 @@ export const Wrapper = styled.ul<WrapperProps>`
 `;
 
 export const Item = styled.li<ItemProps>`
+  --size: 24px;
   position: relative;
-  height: ${rem('24px')};
+  height: var(--size);
 
   input[type='radio'] {
     position: absolute;
@@ -64,8 +65,8 @@ export const Item = styled.li<ItemProps>`
 
   label {
     position: relative;
-    padding-left: ${rem('30px')};
-    line-height: ${rem('24px')};
+    padding-left: calc(var(--size) + 5px);
+    line-height: var(--size);
     vertical-align: middle;
     color: ${props => (props.error ? danger : null)};
     cursor: pointer;
@@ -77,19 +78,19 @@ export const Item = styled.li<ItemProps>`
     top: 0;
     border: 2px solid ${props => (props.error ? danger : info)};
     border-radius: 100%;
-    width: ${rem('24px')};
-    height: ${rem('24px')};
+    width: var(--size);
+    height: var(--size);
     transition-duration: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &::before {
       content: '';
-      position: absolute;
       display: block;
       border-radius: 100%;
-      height: ${rem('16px')};
-      width: ${rem('16px')};
-      top: 2px;
-      left: 2px;
+      height: calc(var(--size) / 1.5);
+      width: calc(var(--size) / 1.5);
     }
   }
 
