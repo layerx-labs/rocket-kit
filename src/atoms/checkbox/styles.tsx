@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { lighten, darken, rem } from 'polished';
+import { lighten, darken } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface CheckboxErrorProps {
@@ -32,8 +32,8 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
 `;
 
 export const CheckboxLabel = styled.span`
-  margin-left: ${rem('30px')};
-  line-height: ${rem('24px')};
+  margin-left: calc(24px + 5px);
+  line-height: 24px;
 `;
 
 export const CheckboxInput = styled.input<CheckboxWrapperProps>`
@@ -84,8 +84,8 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   left: 0;
   border: 2px solid ${props => (props.error ? danger : lighten(0.4, info))};
   border-radius: 100%;
-  width: ${rem('24px')};
-  height: ${rem('24px')};
+  width: 24px;
+  height: 24px;
   transition-duration: 0.3s;
 
   &:after {

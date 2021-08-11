@@ -11,7 +11,7 @@ interface WrapperProps {
 export const Wrapper = styled.div<WrapperProps>`
   display: inline-block;
 
-  label {
+  > label {
     margin-bottom: ${rem('5px')};
     color: ${props => (props.error ? danger : info)};
   }

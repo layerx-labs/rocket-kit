@@ -13,7 +13,7 @@ export interface RadioGroupProps {
   options: Item[];
   type?: 'row' | 'column';
   group: string;
-  onChange?: () => {};
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   disabled?: boolean;
   dataTestId?: string;
@@ -24,7 +24,7 @@ const RadioGroup = (props: RadioGroupProps) => {
     options,
     type = 'column',
     group,
-    onChange,
+    onChange = () => {},
     error,
     disabled = false,
     dataTestId,
@@ -35,7 +35,6 @@ const RadioGroup = (props: RadioGroupProps) => {
       <Styles.Wrapper
         type={type}
         group={group}
-        onChange={onChange}
         error={error}
         data-testid={dataTestId}
       >

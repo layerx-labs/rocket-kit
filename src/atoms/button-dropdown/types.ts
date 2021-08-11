@@ -4,7 +4,7 @@ export interface ActionMenu<T> {
   visibilityFunc?: (data: T) => boolean;
   url?: string;
   action?: (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent> | React.ChangeEvent<HTMLSelectElement>,
     data: T | null
   ) => void;
 }
