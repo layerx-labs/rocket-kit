@@ -91,7 +91,7 @@ exports[`FormGroup renders 1`] = `
   display: inline-block;
 }
 
-.c0 label {
+.c0 > label {
   margin-bottom: 0.3125rem;
   color: hsl(0,0%,48%);
 }

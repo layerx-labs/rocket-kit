@@ -24,8 +24,8 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c2 {
-  margin-left: 1.875rem;
-  line-height: 1.5rem;
+  margin-left: calc(24px + 5px);
+  line-height: 24px;
 }
 
 .c3 {
@@ -73,8 +73,8 @@ exports[`CheckboxGroup renders 1`] = `
   left: 0;
   border: 2px solid #e0e0e0;
   border-radius: 100%;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
