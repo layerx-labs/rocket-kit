@@ -9,7 +9,7 @@ import {
 interface Props {
   value: string;
   label?: string | React.ReactNode;
-  checked?: boolean;
+  checked?: boolean | undefined;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error?: boolean;
   disabled?: boolean;

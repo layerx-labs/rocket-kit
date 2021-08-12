@@ -5,6 +5,7 @@ import * as Styles from './styles';
 export interface SelectProps {
   minimal?: boolean;
   options: any;
+  defaultValue?: string | number;
   value?: string | number;
   name?: string;
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -19,6 +20,7 @@ const Select = (props: SelectProps) => {
   const {
     minimal = false,
     options,
+    defaultValue,
     value,
     name,
     onChange = () => {},
@@ -40,6 +42,7 @@ const Select = (props: SelectProps) => {
       <Styles.SelectStyle
         minimal={minimal}
         name={name}
+        defaultValue={defaultValue}
         value={value}
         onChange={onChange}
         error={error}
