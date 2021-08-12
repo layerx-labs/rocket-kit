@@ -96,6 +96,10 @@ exports[`FormGroup renders 1`] = `
   color: hsl(0,0%,48%);
 }
 
+.c0 > label span {
+  color: hsl(0,0%,16%);
+}
+
 .c0:not(:last-child) {
   margin-bottom: 0.9375rem;
 }

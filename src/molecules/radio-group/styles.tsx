@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { rem, darken } from 'polished';
+import { rem, darken, lighten } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface WrapperProps {
@@ -14,7 +14,7 @@ interface ItemProps {
   disabled?: boolean;
 }
 
-const { light, primary, info, purple, danger } = colors;
+const { primary, info, purple, danger } = colors;
 
 export const Wrapper = styled.ul<WrapperProps>`
   display: flex;
@@ -105,12 +105,13 @@ export const Item = styled.li<ItemProps>`
         color: ${info};
       }
 
+      input[type='radio'] ~ .check,
       input[type='radio']:checked ~ .check {
-        border-color: ${primary};
+        border-color: ${lighten(0.4, info)};
       }
 
       input[type='radio']:checked ~ .check::before {
-        background-color: ${light};
+        background-color: ${lighten(0.4, info)};
       }
 
       &:hover {
