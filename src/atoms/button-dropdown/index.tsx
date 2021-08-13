@@ -22,6 +22,7 @@ interface ActionsMenuInterface<T> {
 
 const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
   const {
+    className = 'button-dropdown',
     variant = 'solid',
     color = 'primary',
     value = '',
@@ -47,7 +48,11 @@ const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
   if (visibleActions.length === 0) return <></>;
 
   return (
-    <Styles.ActionsMenuStyle visibleActions={visibleActions.length} ref={ref}>
+    <Styles.ActionsMenuStyle
+      className={className}
+      visibleActions={visibleActions.length}
+      ref={ref}
+    >
       <Button
         variant={variant}
         color={color}
