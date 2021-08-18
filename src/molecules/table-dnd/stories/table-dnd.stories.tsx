@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TableDnD from '..';
 import { AvatarImage } from '../../..';
 import { ActionMenu } from '../../actions-menu/types';
@@ -110,9 +110,18 @@ const rows: Transaction[] = [
   },
 ];
 
-export const TableDnDComponent = (args: TableProps) => (
-  <TableDnD options={columns} values={rows} actions={actions} {...args} />
-);
+export const TableDnDComponent = (args: TableProps) => {
+  const [tableRows, setTableRows] = useState(rows);
+  return (
+    <TableDnD
+      options={columns}
+      values={tableRows}
+      actions={actions}
+      {...args}
+      onChange={(newRows) => setTableRows(newRows)}
+    />
+  );
+};
 
 TableDnDComponent.storyName = 'Table DnD';
 TableDnDComponent.args = {
