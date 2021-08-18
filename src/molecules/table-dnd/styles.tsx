@@ -116,13 +116,22 @@ export const TableWrapper = styled.table<BorderProps>`
     tr {
       display: block;
       transition-duration: 0.3s;
+      background-color: ${light};
 
       &:hover {
         background-color: ${lighten(0.4, info)};
 
-        td.menu {
-          button {
-            opacity: 1;
+        td {
+          &.drag-handle {
+            svg {
+              fill: ${info};
+            }
+          }
+
+          &.menu {
+            button {
+              opacity: 1;
+            }
           }
         }
       }
@@ -140,18 +149,16 @@ export const TableWrapper = styled.table<BorderProps>`
       display: flex;
       justify-content: flex-end;
 
-      &.cenas {
-        /* background-color: red; */
-
+      &.drag-handle {
         > div {
           width: min-content;
-          /* border: 1px solid red; */
         }
 
         svg {
           width: ${rem('30px')};
           height: ${rem('30px')};
           fill: ${lighten(0.4, info)};
+          transition-duration: 0.3s;
         }
       }
 

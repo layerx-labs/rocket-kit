@@ -78,12 +78,6 @@ const TableDnD = <CellData extends CellBaseType>(
     );
   }
 
-  // const onBeforeDragStart = () => {
-  //   this.setState({
-  //     isDragging: true,
-  //   });
-  // };
-
   const reorder = (list: any[], startIndex: number, endIndex: number) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -98,7 +92,6 @@ const TableDnD = <CellData extends CellBaseType>(
   const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
     userSelect: 'none',
     background: isDragging ? light : 'transparent',
-    width: '100%',
     ...draggableStyle,
   });
 
@@ -108,7 +101,9 @@ const TableDnD = <CellData extends CellBaseType>(
 
   return (
     <DragDropContext
-      // onBeforeDragStart={onBeforeDragStart}
+      onBeforeDragStart={() => {
+        console.log('drag start');
+      }}
       onDragEnd={result => {
         if (!result.destination) {
           return;
@@ -119,6 +114,7 @@ const TableDnD = <CellData extends CellBaseType>(
           result.destination.index
         );
         onChange(newValues);
+        console.log('drag end');
       }}
     >
       <Styles.TableWrapper
@@ -164,16 +160,16 @@ const TableDnD = <CellData extends CellBaseType>(
                 >
                   {(provided, snapshot) => (
                     <tr
+                      ref={provided.innerRef}
                       key={row.id}
                       data-testid={`row-${dataTestId}`}
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
                       style={getItemStyle(
                         snapshot.isDragging,
                         provided.draggableProps.style
                       )}
+                      {...provided.draggableProps}
                     >
-                      <td className="thin cenas">
+                      <td className="thin drag-handle">
                         <div {...provided.dragHandleProps}>
                           <Icon icon="drag-handle" />
                         </div>
@@ -218,6 +214,7 @@ const TableDnD = <CellData extends CellBaseType>(
                   )}
                 </Draggable>
               ))}
+              {provided.placeholder}
             </tbody>
           )}
         </Droppable>

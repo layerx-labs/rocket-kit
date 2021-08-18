@@ -3,7 +3,7 @@ import TableDnD from '..';
 import { AvatarImage } from '../../..';
 import { ActionMenu } from '../../actions-menu/types';
 
-export interface TableProps {
+export interface TableDnDProps {
   border?: boolean;
 }
 
@@ -110,15 +110,15 @@ const rows: Transaction[] = [
   },
 ];
 
-export const TableDnDComponent = (args: TableProps) => {
+export const TableDnDComponent = (args: TableDnDProps) => {
   const [tableRows, setTableRows] = useState(rows);
   return (
     <TableDnD
       options={columns}
       values={tableRows}
       actions={actions}
+      onChange={(newRows: any) => setTableRows(newRows)}
       {...args}
-      onChange={(newRows) => setTableRows(newRows)}
     />
   );
 };
