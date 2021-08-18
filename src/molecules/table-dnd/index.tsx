@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ActionsMenu, EmptyTable, Icon } from '../..';
 import { hasValue } from '../../utils/filters/has-value';
 import { ActionMenu } from '../actions-menu/types';
@@ -62,6 +62,7 @@ const TableDnD = <CellData extends CellBaseType>(
     onChange,
   } = props;
 
+  const [draggableId, setDraggableId] = useState('');
   const { columns = [] } = options;
   const hasActionMenu = actions.length > 0;
   const validValues = values.filter(hasValue);
@@ -101,8 +102,8 @@ const TableDnD = <CellData extends CellBaseType>(
 
   return (
     <DragDropContext
-      onBeforeDragStart={() => {
-        console.log('drag start');
+      onBeforeDragStart={result => {
+        setDraggableId(result.draggableId);
       }}
       onDragEnd={result => {
         if (!result.destination) {
@@ -114,7 +115,7 @@ const TableDnD = <CellData extends CellBaseType>(
           result.destination.index
         );
         onChange(newValues);
-        console.log('drag end');
+        setDraggableId('');
       }}
     >
       <Styles.TableWrapper
@@ -159,10 +160,11 @@ const TableDnD = <CellData extends CellBaseType>(
                   index={index}
                 >
                   {(provided, snapshot) => (
-                    <tr
+                    <Styles.TableRow
                       ref={provided.innerRef}
                       key={row.id}
                       data-testid={`row-${dataTestId}`}
+                      draggableId={draggableId}
                       style={getItemStyle(
                         snapshot.isDragging,
                         provided.draggableProps.style
@@ -210,7 +212,7 @@ const TableDnD = <CellData extends CellBaseType>(
                           />
                         </td>
                       )}
-                    </tr>
+                    </Styles.TableRow>
                   )}
                 </Draggable>
               ))}

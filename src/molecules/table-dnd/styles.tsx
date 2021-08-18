@@ -6,12 +6,14 @@ import { device } from '../../ions/breakpoints';
 const { normal, light, info } = colors;
 const { bold } = fontWeigth;
 
-interface BorderProps {
+interface TableDnDProps {
   border?: boolean;
   layout?: 'fixed' | 'auto';
+  draggableId?: string;
 }
 
-export const TableWrapper = styled.table<BorderProps>`
+export const TableWrapper = styled.table<TableDnDProps>`
+  position: relative;
   width: 100%;
   border-width: ${props => (props.border ? '1px' : '0')};
   border-style: solid;
@@ -293,5 +295,13 @@ export const TableWrapper = styled.table<BorderProps>`
         }
       }
     }
+  }
+`;
+
+export const TableRow = styled.tr<TableDnDProps>`
+  &[data-rbd-draggable-id='${props => props.draggableId}'] {
+    position: absolute;
+    display: table;
+    width: 100%;
   }
 `;
