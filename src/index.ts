@@ -26,6 +26,7 @@ export { default as EmptyTable } from './molecules/empty-table';
 export { default as ModalFooter } from './molecules/modal-footer';
 export { default as NoteCard } from './molecules/note-card';
 export { default as Table } from './molecules/table';
+export { default as TableDnD } from './molecules/table-dnd';
 export { default as FormGroup } from './molecules/form-group';
 export { default as NumberInputSpinner } from './molecules/number-input-spinner';
 export { default as WizardSteps } from './molecules/wizard-steps';

@@ -1,0 +1,665 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableDnD renders 1`] = `
+<DocumentFragment>
+  .c2 {
+  position: relative;
+  border: 1px solid hsl(0,0%,16%);
+  border-radius: 999px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.c2 > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.c2 img {
+  object-fit: cover;
+}
+
+.c4 {
+  --button: hsl(186,62%,59%);
+  --txt: hsl(0,0%,100%);
+  --hover: #2ba8b6;
+  --button: hsl(0,0%,16%);
+  --hover: #000;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--button);
+  border-radius: 0;
+  background-color: transparent;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.c4:hover {
+  border-color: var(--hover);
+  background-color: transparent;
+}
+
+.c4:hover span {
+  color: var(--hover);
+}
+
+.c4:hover svg {
+  fill: var(--hover);
+}
+
+.c4:disabled {
+  cursor: inherit;
+  opacity: 0.5;
+}
+
+.c4:disabled:hover {
+  pointer-events: none;
+}
+
+.c4 > *:not(:last-child) {
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+.c4 .spinner {
+  border-top-color: var(--button);
+}
+
+.c4 span {
+  position: relative;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--button);
+  pointer-events: none;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.c4 svg {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  width: auto;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  fill: var(--button);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c3 {
+  height: 50px;
+}
+
+.c3 button {
+  margin-top: 7px;
+}
+
+.c3 ul {
+  position: absolute;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: hsl(0,0%,100%);
+  margin-top: 5px;
+  min-width: 200px;
+  max-width: 250px;
+  padding: 0;
+  -moz-box-shadow: 0 0 15px 0 #dbdbdb;
+  -webkit-box-shadow: 0 0 15px 0 #dbdbdb;
+  box-shadow: 0 0 15px 0 #dbdbdb;
+  z-index: 1;
+}
+
+.c3 ul li {
+  list-style: none;
+  min-height: 45px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c3 ul li:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.c3 ul li:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.c3 ul li:last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+.c3 ul li.danger {
+  border-top: 1px solid #e0e0e0;
+}
+
+.c3 ul li.danger a {
+  color: hsl(354,83%,64%);
+}
+
+.c3 ul li a {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 20px;
+  color: hsl(0,0%,16%);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.c3 ul li a span {
+  display: table-cell;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e0e0e0;
+  border-radius: 6px;
+  border-spacing: 0;
+  white-space: nowrap;
+  table-layout: auto;
+}
+
+.c0 th,
+.c0 td {
+  height: 3.125rem;
+  padding: 0 0.9375rem;
+}
+
+.c0 th.center,
+.c0 td.center {
+  text-align: center;
+}
+
+.c0 th.center > div,
+.c0 td.center > div {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c0 th.right,
+.c0 td.right {
+  text-align: right;
+}
+
+.c0 th.right > div,
+.c0 td.right > div {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c0 th.kai,
+.c0 td.kai {
+  text-align: right;
+}
+
+.c0 th.kai > div,
+.c0 td.kai > div {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c0 th.avatar > div,
+.c0 td.avatar > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 th.avatar > div .avatar-img,
+.c0 td.avatar > div .avatar-img {
+  margin-right: 0.9375rem;
+}
+
+.c0 th {
+  font-size: 0.85rem;
+  background-color: hsl(0,0%,100%);
+}
+
+.c0 th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.c0 th:last-child {
+  border-top-right-radius: 6px;
+}
+
+.c0 tr {
+  border: 1px solid hsl(0,0%,48%);
+  border-radius: 6px;
+  position: relative;
+}
+
+.c0 tr:not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+
+.c0 thead {
+  border: none;
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.c0 tbody tr {
+  display: block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background-color: hsl(0,0%,100%);
+}
+
+.c0 tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.c0 tbody tr:hover td.drag-handle svg {
+  fill: hsl(0,0%,48%);
+}
+
+.c0 tbody tr:hover td.menu button {
+  opacity: 1;
+}
+
+.c0 tbody td {
+  border-top: 1px solid #e0e0e0;
+  height: inherit;
+  min-height: 3.125rem;
+  padding: 0.9375rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c0 tbody td.drag-handle > div {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.c0 tbody td.drag-handle svg {
+  width: 1.875rem;
+  height: 1.875rem;
+  fill: #e0e0e0;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.c0 tbody td > div {
+  margin-left: 100px;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  text-align: right;
+}
+
+.c0 tbody td > div > span {
+  display: none;
+}
+
+.c0 tbody td > div > span:first-child,
+.c0 tbody td > div > span:last-child {
+  display: inherit;
+}
+
+.c0 tbody td img {
+  min-width: 1.875rem;
+  min-height: 1.875rem;
+}
+
+.c0 tbody td a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: hsl(0,0%,16%);
+  -webkit-text-decoration-color: hsl(0,0%,48%);
+  text-decoration-color: hsl(0,0%,48%);
+}
+
+.c0 tbody td:first-child {
+  border: 0;
+}
+
+.c0 tbody td:before {
+  position: absolute;
+  left: 0.9375rem;
+  content: attr(data-label);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.c0 tbody td.kai svg {
+  float: right;
+  width: auto;
+  min-width: 1.25rem;
+  max-height: 1.25rem;
+}
+
+.c0 tbody td .avatar-img {
+  display: none;
+}
+
+.c0 tbody td .tag {
+  margin: 0;
+}
+
+.c0 tbody td .tag:not(:first-child) {
+  display: none;
+}
+
+.c0 tbody td.menu {
+  padding: 0 0.625rem 0 0;
+}
+
+.c0 tbody td.menu button {
+  margin-top: 0.3125rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.c0 tbody td.menu ul {
+  top: 2.25rem;
+  margin-left: -10.625rem;
+}
+
+.c1[data-rbd-draggable-id=''] {
+  position: absolute;
+  display: table;
+  width: 100%;
+}
+
+@media (min-width:1280px) {
+  .c4 {
+    min-width: 2.25rem;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 th.thin,
+  .c0 td.thin {
+    max-width: -webkit-min-content;
+    max-width: -moz-min-content;
+    max-width: min-content;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 tr {
+    border: 0;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 thead {
+    display: contents;
+    font-weight: 700;
+    color: hsl(0,0%,48%);
+    text-transform: uppercase;
+    text-align: left;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 tbody tr {
+    display: table-row;
+  }
+}
+
+@media (min-width:700px) {
+  .c0 tbody td {
+    display: table-cell;
+    height: 3.125rem;
+    padding: 0 0.9375rem;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .c0 tbody td > div {
+    position: relative;
+    margin-left: 0;
+    display: flex-start;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .c0 tbody td > div > span {
+    display: inherit;
+  }
+
+  .c0 tbody td:first-child {
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .c0 tbody td:before {
+    content: '';
+  }
+
+  .c0 tbody td.kai {
+    max-width: 6.25rem;
+  }
+
+  .c0 tbody td .avatar-img {
+    display: inherit;
+  }
+
+  .c0 tbody td .tag:not(:first-child) {
+    display: inherit;
+  }
+
+  .c0 tbody td .tag:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  .c0 tbody td.menu {
+    width: 2.5rem;
+  }
+
+  .c0 tbody td.menu button {
+    opacity: 0;
+  }
+}
+
+<table
+    class="c0 table"
+    data-testid="table-test-id"
+  >
+    <thead>
+      <tr>
+        <th
+          class="thin"
+        />
+        <th
+          class="avatar"
+        >
+          Last Transaction
+        </th>
+        <th
+          class="kai"
+        >
+          Amount
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      data-rbd-droppable-context-id="0"
+      data-rbd-droppable-id="droppable"
+      style="background: transparent;"
+    >
+      <tr
+        class="c1"
+        data-rbd-draggable-context-id="0"
+        data-rbd-draggable-id="0"
+        data-testid="row-table-test-id"
+      >
+        <td
+          class="thin drag-handle"
+        >
+          <div
+            aria-describedby="rbd-hidden-text-0-hidden-text-0"
+            data-rbd-drag-handle-context-id="0"
+            data-rbd-drag-handle-draggable-id="0"
+            draggable="false"
+            role="button"
+            tabindex="0"
+          >
+            <svg
+              class="icon"
+              viewBox="0 0 32 32"
+            >
+              <path
+                d="M25.333 12h-18.667c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333h18.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333zM6.667 20h18.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333h-18.667c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333z"
+              />
+            </svg>
+          </div>
+        </td>
+        <td
+          class="avatar"
+          data-label="Last Transaction"
+          data-testid="td-undefined"
+        >
+          <div>
+            <div
+              class="c2 avatar-img"
+              size="30"
+            >
+              <img
+                alt="To the Moon"
+                src="./images/default-avatar.svg"
+              />
+            </div>
+             To the Moon
+          </div>
+        </td>
+        <td
+          class="kai"
+          data-label="Amount"
+          data-testid="td-undefined"
+        >
+          <div>
+            2700
+            <svg
+              class="icon"
+              viewBox="0 0 32 32"
+            >
+              <path
+                d="M9.451 5.76c0.973 0.012 1.76 0.798 1.771 1.77v7.755l10.043-9.085c0.127-0.102 0.272-0.191 0.427-0.261l0.013-0.005c0.217-0.105 0.473-0.166 0.742-0.166 0.001 0 0.002 0 0.003 0h-0c0.492 0.012 0.934 0.214 1.258 0.536l-0-0 0.002-0.002c0.037 0.033 0.071 0.067 0.103 0.102l0.001 0.001c0.255 0.305 0.41 0.701 0.41 1.134 0 0.346-0.099 0.669-0.271 0.942l0.004-0.007c-0.053 0.076-0.107 0.143-0.166 0.205l0.001-0.001c-0.068 0.080-0.141 0.151-0.221 0.215l-0.003 0.002-7.656 6.915 1.961 1.947 1.782-1.605c0.314-0.277 0.729-0.446 1.183-0.446 0.521 0 0.989 0.222 1.317 0.576l0.001 0.001c0.273 0.296 0.44 0.693 0.44 1.129 0 0.052-0.002 0.103-0.007 0.153l0-0.006c-0.029 0.48-0.248 0.904-0.583 1.201l-0.002 0.002-1.635 1.472 3.283 3.26 0.069 0.1 0.036 0.036c0.279 0.299 0.45 0.701 0.45 1.143 0 0.026-0.001 0.052-0.002 0.077l0-0.004c-0.012 0.472-0.21 0.895-0.524 1.201l-0 0c-0.284 0.291-0.671 0.48-1.102 0.508l-0.005 0c-0.041 0.003-0.089 0.005-0.137 0.005-0.37 0-0.713-0.112-0.998-0.305l0.006 0.004-0.061-0.048-0.028-0.026c-0.032-0.022-0.010-0.007-0.066-0.047-0.028-0.022-0.055-0.047-0.102-0.092l-3.453-3.443-1.782 1.605c-0.309 0.284-0.722 0.458-1.176 0.458-0.028 0-0.057-0.001-0.085-0.002l0.004 0c-0.487-0.008-0.922-0.224-1.222-0.562l-0.002-0.002c-0.277-0.314-0.446-0.729-0.446-1.184 0-0.52 0.222-0.989 0.576-1.316l0.001-0.001 1.64-1.477-1.952-1.946-2.070 1.876v4.73c0 0.003 0 0.006 0 0.010 0 0.974-0.789 1.763-1.763 1.763-0.491 0-0.935-0.201-1.255-0.524l-0-0c-0.324-0.313-0.525-0.752-0.525-1.237 0-0.004 0-0.008 0-0.011v0.001-17.254c0.012-0.973 0.798-1.76 1.77-1.771h0.001z"
+                style="fill: hsl(0, 0%, 16%);"
+              />
+            </svg>
+          </div>
+        </td>
+        <td
+          class="menu"
+          data-testid="table-action-menu"
+        >
+          <div
+            class="c3"
+          >
+            <button
+              aria-label=""
+              class="c4 button"
+              color="dark"
+              data-testid="icon-button"
+              value=""
+            >
+              <svg
+                class="icon"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  d="M16 10.667c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.666 1.194-2.667 2.666v0c0.004 1.471 1.196 2.662 2.666 2.667h0zM16 13.333c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667c1.473 0 2.667-1.194 2.667-2.667v0c-0.005-1.471-1.196-2.662-2.666-2.667h-0zM16 21.333c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667c1.473 0 2.667-1.194 2.667-2.667v0c-0.005-1.471-1.196-2.662-2.666-2.667h-0z"
+                />
+              </svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
