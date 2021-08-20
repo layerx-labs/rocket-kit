@@ -101,9 +101,9 @@ exports[`CheckboxGroup renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: relative;
   margin: 0;
   padding: 0;
@@ -112,11 +112,16 @@ exports[`CheckboxGroup renders 1`] = `
 
 .c0 li {
   position: relative;
-  height: 1.5rem;
+  min-height: 1.5rem;
+}
+
+.c0 li:not(:last-child) {
+  margin-bottom: 0.625rem;
 }
 
 <ul
     class="c0"
+    type="column"
   >
     <li>
       <label
