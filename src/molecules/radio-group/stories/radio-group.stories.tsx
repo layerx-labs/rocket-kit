@@ -18,7 +18,7 @@ export default {
 const radioButtons = [
   {
     value: 'option_1',
-    label: 'Option 1 sçdajf çasdjf lçasjf çajfçasdjf lçasdjfçldsj',
+    label: 'Option 1',
     disabled: false,
     checked: undefined,
   },
