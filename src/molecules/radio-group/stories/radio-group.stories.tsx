@@ -16,7 +16,12 @@ export default {
 };
 
 const radioButtons = [
-  { value: 'option_1', label: 'Option 1', disabled: false, checked: undefined },
+  {
+    value: 'option_1',
+    label: 'Option 1',
+    disabled: false,
+    checked: undefined,
+  },
   { value: 'option_2', label: 'Option 2', disabled: false, checked: undefined },
 ];
 

@@ -16,7 +16,12 @@ export default {
 };
 
 const checkboxButtons = [
-  { label: 'Option 1', value: 'option_1', checked: null, disabled: false },
+  {
+    label: 'Option 1',
+    value: 'option_1',
+    checked: null,
+    disabled: false,
+  },
   { label: 'Option 2', value: 'option_2', checked: null, disabled: false },
 ];
 

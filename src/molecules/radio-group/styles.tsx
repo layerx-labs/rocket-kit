@@ -14,7 +14,7 @@ interface ItemProps {
   disabled?: boolean;
 }
 
-const { primary, info, purple, danger } = colors;
+const { primary, info, danger } = colors;
 
 export const Wrapper = styled.ul<WrapperProps>`
   display: flex;
@@ -55,8 +55,9 @@ export const Wrapper = styled.ul<WrapperProps>`
 
 export const Item = styled.li<ItemProps>`
   --size: 24px;
+  display: flex;
   position: relative;
-  height: var(--size);
+  min-height: var(--size);
 
   input[type='radio'] {
     position: absolute;
@@ -76,7 +77,7 @@ export const Item = styled.li<ItemProps>`
   .check {
     position: absolute;
     top: 0;
-    border: 2px solid ${props => (props.error ? danger : info)};
+    border: 2px solid ${props => (props.error ? danger : lighten(0.4, info))};
     border-radius: 100%;
     width: var(--size);
     height: var(--size);
@@ -95,7 +96,7 @@ export const Item = styled.li<ItemProps>`
   }
 
   &:hover .check {
-    border-color: ${purple};
+    border-color: ${info};
   }
 
   ${props =>
