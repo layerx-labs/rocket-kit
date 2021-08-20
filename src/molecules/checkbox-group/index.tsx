@@ -26,7 +26,14 @@ export interface CheckboxGroupProps {
 }
 
 const CheckboxGroup = (props: CheckboxGroupProps) => {
-  const { children, options, type, onChange, error, disabled } = props;
+  const {
+    children,
+    options,
+    type = 'column',
+    onChange,
+    error,
+    disabled,
+  } = props;
 
   return (
     <Styles.Wrapper type={type} error={error}>

@@ -16,7 +16,7 @@ export const Wrapper = styled.ul<CheckboxGroupProps>`
 
   li {
     position: relative;
-    height: ${rem('24px')};
+    min-height: ${rem('24px')};
 
     &:not(:last-child) {
       ${props =>
