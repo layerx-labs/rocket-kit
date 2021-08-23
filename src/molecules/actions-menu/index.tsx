@@ -45,6 +45,7 @@ const ActionsMenu = <T,>(props: ActionsMenuInterface<T>) => {
         action={evt => {
           evt.preventDefault();
           setIsVisible(!isVisible);
+          evt.stopPropagation();
         }}
         dataTestId={dataTestId}
       />
@@ -69,6 +70,7 @@ const ActionsMenu = <T,>(props: ActionsMenuInterface<T>) => {
                   onClick={e => {
                     setIsVisible(false);
                     action(e, data);
+                    e.stopPropagation();
                   }}
                 >
                   <span>{value}</span>
