@@ -24,7 +24,7 @@ const RadioGroup = (props: RadioGroupProps) => {
     options,
     type = 'column',
     group,
-    onChange = () => {},
+    onChange,
     error,
     disabled = false,
     dataTestId,
