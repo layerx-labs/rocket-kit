@@ -91,7 +91,9 @@ exports[`RadioGroup renders 1`] = `
   border-color: hsl(0,0%,48%);
 }
 
-<div>
+<div
+    class="radio-group"
+  >
     <ul
       class="c0"
       type="column"
