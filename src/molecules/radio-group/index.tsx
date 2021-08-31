@@ -10,6 +10,8 @@ export type Item = {
 };
 
 export interface RadioGroupProps {
+  className?: string;
+  style?: React.CSSProperties;
   options: Item[];
   type?: 'row' | 'column';
   group: string;
@@ -21,6 +23,8 @@ export interface RadioGroupProps {
 
 const RadioGroup = (props: RadioGroupProps) => {
   const {
+    className = 'radio-group',
+    style,
     options,
     type = 'column',
     group,
@@ -31,7 +35,7 @@ const RadioGroup = (props: RadioGroupProps) => {
   } = props;
 
   return (
-    <div>
+    <div style={style} className={className}>
       <Styles.Wrapper
         type={type}
         group={group}
