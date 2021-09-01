@@ -45,15 +45,15 @@ const RadioGroup = (props: RadioGroupProps) => {
         {options.map((value, index) => (
           <Styles.Item key={index} disabled={value.disabled || disabled}>
             <input
+              id={`radio-${group}-${index}`}
               type="radio"
-              id={value.value}
               name={group}
               value={value.value}
               checked={value.checked}
               onChange={onChange}
               disabled={value.disabled || disabled}
             />
-            <label htmlFor={value.value}>{value.label}</label>
+            <label htmlFor={`radio-${group}-${index}`}>{value.label}</label>
             <div className="check" />
           </Styles.Item>
         ))}
