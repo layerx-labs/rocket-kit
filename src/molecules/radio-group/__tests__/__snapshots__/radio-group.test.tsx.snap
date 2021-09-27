@@ -102,13 +102,13 @@ exports[`RadioGroup renders 1`] = `
         class="c1"
       >
         <input
-          id="option_1"
+          id="radio-test-group-0"
           name="test-group"
           type="radio"
           value="option_1"
         />
         <label
-          for="option_1"
+          for="radio-test-group-0"
         >
           Option 1
         </label>
@@ -120,13 +120,13 @@ exports[`RadioGroup renders 1`] = `
         class="c1"
       >
         <input
-          id="option_2"
+          id="radio-test-group-1"
           name="test-group"
           type="radio"
           value="option_2"
         />
         <label
-          for="option_2"
+          for="radio-test-group-1"
         >
           Option 2
         </label>
