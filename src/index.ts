@@ -18,6 +18,7 @@ export { default as SelectInteractive } from './atoms/select-interactive';
 export { default as TextFieldAppendix } from './atoms/text-field-appendix';
 export { default as TruncateLine } from './atoms/truncate-line';
 export { default as Slideshow } from './atoms/slideshow';
+export { default as VideoPlayer } from './atoms/video-player';
 
 // Molecules
 export { default as ActionsMenu } from './molecules/actions-menu';
