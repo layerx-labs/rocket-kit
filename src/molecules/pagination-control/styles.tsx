@@ -64,6 +64,7 @@ export const PaginationWrapper = styled.div`
         justify-content: center;
         align-items: center;
         color: ${normal};
+        text-decoration: none;
 
         svg {
           width: ${rem('30px')};

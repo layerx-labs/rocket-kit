@@ -5,14 +5,23 @@ import * as Styles from './styles';
 export interface PageControlProps {
   page: number;
   pageCount: number;
+  hrefBuilder?: any;
   onPageChange?: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
+  ariaLabelBuilder?: any;
 }
 
 const PaginationControl = (props: PageControlProps) => {
   const [pageDisplayed, setPageDisplayed] = useState(3);
-  const { page = 0, pageCount, onPageChange = () => {} } = props;
+
+  const {
+    page = 0,
+    pageCount,
+    hrefBuilder = () => {},
+    onPageChange = () => {},
+    ariaLabelBuilder = () => {},
+  } = props;
 
   useEffect(() => {
     function updateDimensions() {
@@ -49,9 +58,11 @@ const PaginationControl = (props: PageControlProps) => {
         marginPagesDisplayed={1}
         forcePage={page}
         pageCount={pageCount}
+        hrefBuilder={hrefBuilder}
         onPageChange={(pageObj: any) => {
           onPageChange(pageObj.selected);
         }}
+        ariaLabelBuilder={ariaLabelBuilder}
       />
     </Styles.PaginationWrapper>
   );
