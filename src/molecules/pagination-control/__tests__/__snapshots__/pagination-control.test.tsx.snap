@@ -86,6 +86,8 @@ exports[`PaginationControl renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: hsl(0,0%,16%);
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .c0 ul.pagination li a svg {
