@@ -34,6 +34,7 @@ SelectComponent.storyName = 'Default';
 SelectComponent.args = {
   minimal: false,
   name: 'title',
+  placeholder: 'Select One',
   options: options,
   error: '',
   disabled: false,
