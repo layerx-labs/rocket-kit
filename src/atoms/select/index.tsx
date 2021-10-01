@@ -4,6 +4,7 @@ import * as Styles from './styles';
 
 export interface SelectProps {
   minimal?: boolean;
+  placeholder?: string;
   options: any;
   defaultValue?: string | number;
   value?: string | number;
@@ -19,6 +20,7 @@ export interface SelectProps {
 const Select = (props: SelectProps) => {
   const {
     minimal = false,
+    placeholder,
     options,
     defaultValue,
     value,
@@ -49,6 +51,11 @@ const Select = (props: SelectProps) => {
         disabled={disabled}
         data-testid={dataTestId}
       >
+        {placeholder && (
+          <option value="" disabled selected hidden>
+            {placeholder}
+          </option>
+        )}
         {selectOptions}
       </Styles.SelectStyle>
       {error ? <ErrorField error={error} /> : null}
