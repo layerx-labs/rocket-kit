@@ -102,18 +102,21 @@ exports[`Horizontal Nav renders 1`] = `
   align-items: center;
 }
 
-.c0 ul {
-  margin: 0;
+.c0 ul.menu {
   width: 0;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  padding: 0;
-  overflow: hidden;
   -webkit-animation: showAnimation 1s forwards;
   animation: showAnimation 1s forwards;
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
+  overflow: hidden;
+}
+
+.c0 ul {
+  margin: 0;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  padding: 0;
 }
 
 .c0 ul.menu {
