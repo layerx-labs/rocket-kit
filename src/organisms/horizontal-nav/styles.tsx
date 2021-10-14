@@ -10,9 +10,22 @@ export const Wrapper = styled.div`
   align-items: center;
 
   ul {
-    max-width: max-content;
     margin: 0;
+    width: 0;
+    max-width: max-content;
     padding: 0;
+    overflow: hidden;
+    animation: showAnimation 1s forwards;
+    animation-delay: 0.5s;
+
+    @keyframes showAnimation {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
 
     &.menu {
       display: flex;
