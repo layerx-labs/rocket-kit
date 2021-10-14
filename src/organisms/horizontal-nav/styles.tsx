@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
     padding: 0;
     overflow: hidden;
     animation: showAnimation 1s forwards;
+    animation-delay: 0.5s;
 
     @keyframes showAnimation {
       0% {
