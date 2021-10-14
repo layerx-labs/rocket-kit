@@ -112,6 +112,8 @@ exports[`Horizontal Nav renders 1`] = `
   overflow: hidden;
   -webkit-animation: showAnimation 1s forwards;
   animation: showAnimation 1s forwards;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .c0 ul.menu {
