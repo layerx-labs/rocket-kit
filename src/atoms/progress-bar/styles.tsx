@@ -20,6 +20,7 @@ export const Bar = styled.div`
   border-radius: 999px;
   background-color: ${lighten(0.4, info)};
   height: ${rem('10px')};
+  overflow: hidden;
 `;
 
 export const Progress = styled.div<ProgressBarProps>`
