@@ -19,7 +19,7 @@ FieldWidthButtonComponent.storyName = 'FieldWidthButton';
 FieldWidthButtonComponent.args = {
   label: 'Copy Link',
   value: 'https://taikai.network',
-  disabled: true,
+  disabled: false,
   buttonIcon: 'copy',
   buttonValue: '',
 };

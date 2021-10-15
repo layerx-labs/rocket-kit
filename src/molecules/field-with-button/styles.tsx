@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-const { info, light } = colors;
+const { info, light, purple } = colors;
 
 export const Field = styled.div`
   display: flex;
@@ -20,6 +20,10 @@ export const Field = styled.div`
 
     &:focus {
       outline: none;
+
+      + button {
+        background-color: ${purple};
+      }
     }
   }
 

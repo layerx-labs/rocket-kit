@@ -168,6 +168,10 @@ exports[`FieldWidthButton renders 1`] = `
   outline: none;
 }
 
+.c1 input:focus + button {
+  background-color: hsl(256,55%,43%);
+}
+
 .c1 span {
   -webkit-order: 3;
   -ms-flex-order: 3;
