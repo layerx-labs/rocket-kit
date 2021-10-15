@@ -14,7 +14,7 @@ const ProgressBar = (props: ProgressBarProps) => {
       <Styles.Bar>
         <Styles.Progress progress={progress} />
       </Styles.Bar>
-      <Styles.Value>{value}</Styles.Value>
+      {value && <Styles.Value>{value}</Styles.Value>}
     </Styles.Wrapper>
   );
 };
