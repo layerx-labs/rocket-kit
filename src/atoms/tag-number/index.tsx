@@ -3,7 +3,7 @@ import * as Styles from './styles';
 
 export interface TagNumberProps {
   label: string;
-  value: number;
+  value: number | string;
   className?: string;
   style?: CSSProperties;
 }
