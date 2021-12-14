@@ -41,7 +41,6 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
       opacity: 1;
       height: calc(${rem('45px')} * ${props => props.visibleActions} + 2px);
       max-height: 1280px;
-      overflow-y: auto;
     }
 
     li {
