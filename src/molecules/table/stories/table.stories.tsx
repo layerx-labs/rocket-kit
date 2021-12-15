@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from '..';
+import Tag from '../../../atoms/tag';
 import { AvatarImage } from '../../..';
 import { ActionMenu } from '../../actions-menu/types';
 
@@ -12,6 +13,7 @@ interface Transaction {
   transactionName: string;
   amount: string;
   type: string;
+  status: string;
   createdAt: string;
   avatar: string;
 }
@@ -68,6 +70,12 @@ const columns = {
       className: 'center',
     },
     {
+      id: 'status',
+      value: 'Status',
+      dataKey: 'status',
+      renderer: (status: string) => <Tag value={status} />,
+    },
+    {
       id: 'created',
       value: 'Created',
       dataKey: 'createdAt',
@@ -78,9 +86,10 @@ const columns = {
 const rows: Transaction[] = [
   {
     id: '1',
-    transactionName: 'To the Moon',
+    transactionName: 'A Triumph of Softwares',
     amount: '2700',
     type: 'Back',
+    status: 'Published',
     createdAt: '2018-07-7 16:21:13',
     avatar: '',
   },
@@ -89,23 +98,26 @@ const rows: Transaction[] = [
     transactionName: 'To the Moon',
     amount: '2000',
     type: 'Back',
+    status: 'Draft',
     createdAt: '2018-07-7 15:46:19',
     avatar: '',
   },
   {
     id: '3',
-    transactionName: 'To the Moon',
+    transactionName: 'The Wonders of Geek',
     amount: '5000',
     type: 'Back',
+    status: 'Draft',
     createdAt: '2018-07-7 14:47:50',
     avatar: '',
   },
   {
     id: '4',
-    transactionName: '@Caneco',
+    transactionName: 'Meetup for the Good',
     avatar: './images/avatar.png',
     amount: '900',
     type: 'Transfer',
+    status: 'Published',
     createdAt: '2018-07-7 12:53:29',
   },
 ];
