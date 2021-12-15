@@ -10,7 +10,41 @@ interface BorderProps {
   border?: boolean;
 }
 
-export const TableWrapper = styled.table<BorderProps>`
+export const TableWrapper = styled.div`
+  @media ${device.s} {
+    display: block;
+    border-radius: 6px;
+    background: linear-gradient(to right, ${light} 30%, rgba(255, 255, 255, 0)),
+      linear-gradient(to right, rgba(255, 255, 255, 0), ${light} 70%) 0 100%,
+      radial-gradient(
+        farthest-side at 0% 50%,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0)
+      ),
+      radial-gradient(
+          farthest-side at 100% 50%,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0)
+        )
+        0 100%;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size: ${rem('40px')} 100%, ${rem('40px')} 100%,
+      ${rem('14px')} 100%, ${rem('14px')} 100%;
+    background-position: 0 0, 100%, 0 0, 100%;
+    background-attachment: local, local, scroll, scroll;
+
+    overflow-x: auto;
+    -webkit-scrollbar-width: none;
+    -moz-scrollbar-width: none;
+    -ms-scrollbar-width: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+`;
+
+export const Table = styled.table<BorderProps>`
   width: 100%;
   border-width: ${props => (props.border ? '1px' : '0')};
   border-style: solid;
@@ -66,7 +100,6 @@ export const TableWrapper = styled.table<BorderProps>`
 
   th {
     font-size: 0.85rem;
-    background-color: ${light};
 
     &:first-child {
       border-top-left-radius: 6px;

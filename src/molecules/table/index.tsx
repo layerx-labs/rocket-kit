@@ -71,74 +71,77 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
   }
 
   return (
-    <Styles.TableWrapper
-      border={border}
-      data-testid={dataTestId}
-      className={className}
-      style={style}
-    >
-      <thead>
-        <tr>
-          {columns.map(
-            ({
-              id = '',
-              className = '',
-              value = '',
-              dataTestId: colDataTestId = null,
-            }) => (
-              <th
-                key={id}
-                className={className}
-                data-testid={colDataTestId ? `th-${colDataTestId}` : null}
-              >
-                {value}
-              </th>
-            )
-          )}
-        </tr>
-      </thead>
-      <tbody>
-        {validValues.map(row => (
-          <tr key={row.id} data-testid={`row-${dataTestId}`}>
+    <Styles.TableWrapper>
+      <Styles.Table
+        border={border}
+        data-testid={dataTestId}
+        className={className}
+        style={style}
+      >
+        <thead>
+          <tr>
             {columns.map(
               ({
                 id = '',
-                dataKey = '',
                 className = '',
                 value = '',
-                renderer = null,
-                dataTestId,
+                dataTestId: colDataTestId = null,
               }) => (
-                <td
+                <th
                   key={id}
                   className={className}
-                  data-label={value}
-                  data-testid={`td-${dataTestId}`}
+                  data-testid={colDataTestId ? `th-${colDataTestId}` : null}
                 >
-                  <div>
-                    {renderer
-                      ? renderer(row[dataKey as keyof CellData], row)
-                      : row[dataKey as keyof CellData]}
-                    {className === 'kai' ? (
-                      <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
-                    ) : null}
-                  </div>
-                </td>
+                  {value}
+                </th>
               )
             )}
-
-            {hasActionMenu && (
-              <td className="menu" data-testid={menuDataTestId}>
-                <ActionsMenu
-                  actions={actions}
-                  data={row}
-                  dataTestId={actionMenuTestId}
-                />
-              </td>
-            )}
+            {hasActionMenu && <th />}
           </tr>
-        ))}
-      </tbody>
+        </thead>
+        <tbody>
+          {validValues.map(row => (
+            <tr key={row.id} data-testid={`row-${dataTestId}`}>
+              {columns.map(
+                ({
+                  id = '',
+                  dataKey = '',
+                  className = '',
+                  value = '',
+                  renderer = null,
+                  dataTestId,
+                }) => (
+                  <td
+                    key={id}
+                    className={className}
+                    data-label={value}
+                    data-testid={`td-${dataTestId}`}
+                  >
+                    <div>
+                      {renderer
+                        ? renderer(row[dataKey as keyof CellData], row)
+                        : row[dataKey as keyof CellData]}
+                      {className === 'kai' ? (
+                        <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
+                      ) : null}
+                    </div>
+                  </td>
+                )
+              )}
+
+              {hasActionMenu && (
+                <td className="menu" data-testid={menuDataTestId}>
+                  <ActionsMenu
+                    actions={actions}
+                    data={row}
+                    dataTestId={actionMenuTestId}
+                  />
+                </td>
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </Styles.Table>
     </Styles.TableWrapper>
   );
 };
