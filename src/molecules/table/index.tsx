@@ -1,7 +1,9 @@
-import React from 'react';
-import { ActionsMenu, EmptyTable, Icon } from '../..';
+import React, { useState } from 'react';
+import { Button, EmptyTable, Icon } from '../..';
 import { hasValue } from '../../utils/filters/has-value';
 import { ActionMenu } from '../actions-menu/types';
+import { ActionMenuList } from '../actions-menu';
+import useVisible from '../../utils/hooks/use-visible';
 import * as Styles from './styles';
 
 interface TableOption<CellDataType> {
@@ -32,6 +34,7 @@ export interface TableProps<CellDataType> {
   emptyValue?: string;
   className?: string;
   style?: React.CSSProperties;
+  startsOpen?: boolean;
 }
 
 export interface CellBaseType {
@@ -51,11 +54,13 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
     emptyValue = 'No Data',
     className = 'table',
     style,
+    startsOpen = false,
   } = props;
 
+  const [rowData, setRowData] = useState({});
+  const [rowIndex, setRowIndex] = useState<number | undefined>(undefined);
   const { columns = [] } = options;
   const hasActionMenu = actions.length > 0;
-
   const validValues = values.filter(hasValue);
 
   const hasValues = Array.isArray(values) && values.length > 0;
@@ -70,78 +75,101 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
     );
   }
 
+  const { ref, isVisible, setIsVisible } =
+    useVisible<HTMLDivElement>(startsOpen);
+
   return (
     <Styles.TableWrapper>
-      <Styles.Table
-        border={border}
-        data-testid={dataTestId}
-        className={className}
-        style={style}
-      >
-        <thead>
-          <tr>
-            {columns.map(
-              ({
-                id = '',
-                className = '',
-                value = '',
-                dataTestId: colDataTestId = null,
-              }) => (
-                <th
-                  key={id}
-                  className={className}
-                  data-testid={colDataTestId ? `th-${colDataTestId}` : null}
-                >
-                  {value}
-                </th>
-              )
-            )}
-            {hasActionMenu && <th />}
-          </tr>
-        </thead>
-        <tbody>
-          {validValues.map(row => (
-            <tr key={row.id} data-testid={`row-${dataTestId}`}>
+      <Styles.OverflowWrapper>
+        <Styles.Table
+          border={border}
+          data-testid={dataTestId}
+          className={className}
+          style={style}
+        >
+          <thead>
+            <tr>
               {columns.map(
                 ({
                   id = '',
-                  dataKey = '',
                   className = '',
                   value = '',
-                  renderer = null,
-                  dataTestId,
+                  dataTestId: colDataTestId = null,
                 }) => (
-                  <td
+                  <th
                     key={id}
                     className={className}
-                    data-label={value}
-                    data-testid={`td-${dataTestId}`}
+                    data-testid={colDataTestId ? `th-${colDataTestId}` : null}
                   >
-                    <div>
-                      {renderer
-                        ? renderer(row[dataKey as keyof CellData], row)
-                        : row[dataKey as keyof CellData]}
-                      {className === 'kai' ? (
-                        <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
-                      ) : null}
-                    </div>
-                  </td>
+                    {value}
+                  </th>
                 )
               )}
-
-              {hasActionMenu && (
-                <td className="menu" data-testid={menuDataTestId}>
-                  <ActionsMenu
-                    actions={actions}
-                    data={row}
-                    dataTestId={actionMenuTestId}
-                  />
-                </td>
-              )}
+              {hasActionMenu && <th />}
             </tr>
-          ))}
-        </tbody>
-      </Styles.Table>
+          </thead>
+          <tbody>
+            {validValues.map((row, index) => (
+              <tr key={row.id} data-testid={`row-${dataTestId}`}>
+                {columns.map(
+                  ({
+                    id = '',
+                    dataKey = '',
+                    className = '',
+                    value = '',
+                    renderer = null,
+                    dataTestId,
+                  }) => (
+                    <td
+                      key={id}
+                      className={className}
+                      data-label={value}
+                      data-testid={`td-${dataTestId}`}
+                    >
+                      <div>
+                        {renderer
+                          ? renderer(row[dataKey as keyof CellData], row)
+                          : row[dataKey as keyof CellData]}
+                        {className === 'kai' ? (
+                          <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
+                        ) : null}
+                      </div>
+                    </td>
+                  )
+                )}
+
+                {hasActionMenu && (
+                  <td className="menu" data-testid={menuDataTestId}>
+                    <div ref={ref}>
+                      <Button
+                        variant="text"
+                        color="dark"
+                        icon="menuVert"
+                        action={evt => {
+                          evt.preventDefault();
+                          setRowData(row);
+                          setRowIndex(index);
+                          setIsVisible(!isVisible);
+                          evt.stopPropagation();
+                        }}
+                        dataTestId={actionMenuTestId}
+                      />
+                    </div>
+                  </td>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </Styles.Table>
+
+        {isVisible && (
+          <ActionMenuList
+            actions={actions}
+            data={rowData}
+            rowIndex={rowIndex}
+          />
+        )}
+      </Styles.OverflowWrapper>
     </Styles.TableWrapper>
   );
 };

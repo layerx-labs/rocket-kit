@@ -11,6 +11,10 @@ interface BorderProps {
 }
 
 export const TableWrapper = styled.div`
+  position: relative;
+`;
+
+export const OverflowWrapper = styled.div`
   @media ${device.s} {
     display: block;
     border-radius: 6px;
