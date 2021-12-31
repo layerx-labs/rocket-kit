@@ -33,7 +33,9 @@ export const List = styled.ul<ListInterface>`
   ${props =>
     props.rowIndex != undefined &&
     css`
-      --margin: ${`calc(45px + 50px * ${props.rowIndex} + 42px)`};
+      --margin: ${`calc(${rem('45px')} + ${rem('50px')} * ${
+        props.rowIndex
+      } + ${rem('42px')})`};
       top: var(--margin);
       right: ${rem('5px')};
     `}
