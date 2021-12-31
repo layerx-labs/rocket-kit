@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { ActionsMenu, EmptyTable, Icon } from '../..';
+import { Button, EmptyTable, Icon } from '../..';
 import { hasValue } from '../../utils/filters/has-value';
 import { ActionMenu } from '../actions-menu/types';
 import { colors } from '../../ions/variables';
+
+import { TableWrapper, OverflowWrapper } from '../table/styles';
+import { ActionMenuList } from '../actions-menu';
+import useVisible from '../../utils/hooks/use-visible';
 import * as Styles from './styles';
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -38,6 +42,7 @@ export interface TableProps<CellDataType> {
   className?: string;
   style?: React.CSSProperties;
   onChange?: any;
+  startsOpen?: boolean;
 }
 
 export interface CellBaseType {
@@ -60,9 +65,16 @@ const TableDnD = <CellData extends CellBaseType>(
     className = 'table',
     style,
     onChange,
+    startsOpen = false,
   } = props;
 
+  const { ref, isVisible, setIsVisible } =
+    useVisible<HTMLDivElement>(startsOpen);
+
   const [draggableId, setDraggableId] = useState('');
+  const [rowData, setRowData] = useState({});
+  const [rowIndex, setRowIndex] = useState<number | undefined>(undefined);
+
   const { columns = [] } = options;
   const hasActionMenu = actions.length > 0;
   const validValues = values.filter(hasValue);
@@ -118,109 +130,134 @@ const TableDnD = <CellData extends CellBaseType>(
         setDraggableId('');
       }}
     >
-      <Styles.TableWrapper
-        border={border}
-        data-testid={dataTestId}
-        className={className}
-        style={style}
-        layout="auto"
-      >
-        <thead>
-          <tr>
-            <th className="thin" />
-            {columns.map(
-              ({
-                id = '',
-                className = '',
-                value = '',
-                dataTestId: colDataTestId = null,
-              }) => (
-                <th
-                  key={id}
-                  className={className}
-                  data-testid={colDataTestId ? `th-${colDataTestId}` : null}
-                >
-                  {value}
-                </th>
-              )
-            )}
-          </tr>
-        </thead>
-        <Droppable droppableId="droppable">
-          {(provided, snapshot) => (
-            <tbody
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-              style={getListStyle(snapshot.isDraggingOver)}
-            >
-              {validValues.map((row, index) => (
-                <Draggable
-                  key={`${index}`}
-                  draggableId={`${index}`}
-                  index={index}
-                >
-                  {(provided, snapshot) => (
-                    <Styles.TableRow
-                      ref={provided.innerRef}
-                      key={row.id}
-                      data-testid={`row-${dataTestId}`}
-                      draggableId={draggableId}
-                      style={getItemStyle(
-                        snapshot.isDragging,
-                        provided.draggableProps.style
-                      )}
-                      {...provided.draggableProps}
+      <TableWrapper>
+        <OverflowWrapper>
+          <Styles.Table
+            border={border}
+            data-testid={dataTestId}
+            className={className}
+            style={style}
+            layout="auto"
+          >
+            <thead>
+              <tr>
+                <th className="thin" />
+                {columns.map(
+                  ({
+                    id = '',
+                    className = '',
+                    value = '',
+                    dataTestId: colDataTestId = null,
+                  }) => (
+                    <th
+                      key={id}
+                      className={className}
+                      data-testid={colDataTestId ? `th-${colDataTestId}` : null}
                     >
-                      <td className="thin drag-handle">
-                        <div {...provided.dragHandleProps}>
-                          <Icon icon="drag-handle" />
-                        </div>
-                      </td>
-                      {columns.map(
-                        ({
-                          id = '',
-                          dataKey = '',
-                          className = '',
-                          value = '',
-                          renderer = null,
-                          dataTestId,
-                        }) => (
-                          <td
-                            key={id}
-                            className={className}
-                            data-label={value}
-                            data-testid={`td-${dataTestId}`}
-                          >
-                            <div>
-                              {renderer
-                                ? renderer(row[dataKey as keyof CellData], row)
-                                : row[dataKey as keyof CellData]}
-                              {className === 'kai' ? (
-                                <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
-                              ) : null}
+                      {value}
+                    </th>
+                  )
+                )}
+              </tr>
+            </thead>
+            <Droppable droppableId="droppable">
+              {(provided, snapshot) => (
+                <tbody
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                  style={getListStyle(snapshot.isDraggingOver)}
+                >
+                  {validValues.map((row, index) => (
+                    <Draggable
+                      key={`${index}`}
+                      draggableId={`${index}`}
+                      index={index}
+                    >
+                      {(provided, snapshot) => (
+                        <Styles.TableRow
+                          ref={provided.innerRef}
+                          key={row.id}
+                          data-testid={`row-${dataTestId}`}
+                          draggableId={draggableId}
+                          style={getItemStyle(
+                            snapshot.isDragging,
+                            provided.draggableProps.style
+                          )}
+                          {...provided.draggableProps}
+                        >
+                          <td className="thin drag-handle">
+                            <div {...provided.dragHandleProps}>
+                              <Icon icon="drag-handle" />
                             </div>
                           </td>
-                        )
-                      )}
+                          {columns.map(
+                            ({
+                              id = '',
+                              dataKey = '',
+                              className = '',
+                              value = '',
+                              renderer = null,
+                              dataTestId,
+                            }) => (
+                              <td
+                                key={id}
+                                className={className}
+                                data-label={value}
+                                data-testid={`td-${dataTestId}`}
+                              >
+                                <div>
+                                  {renderer
+                                    ? renderer(
+                                        row[dataKey as keyof CellData],
+                                        row
+                                      )
+                                    : row[dataKey as keyof CellData]}
+                                  {className === 'kai' ? (
+                                    <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
+                                  ) : null}
+                                </div>
+                              </td>
+                            )
+                          )}
 
-                      {hasActionMenu && (
-                        <td className="menu" data-testid={menuDataTestId}>
-                          <ActionsMenu
-                            actions={actions}
-                            data={row}
-                            dataTestId={actionMenuTestId}
-                          />
-                        </td>
+                          {hasActionMenu && (
+                            <td className="menu" data-testid={menuDataTestId}>
+                              <div ref={ref}>
+                                <Button
+                                  variant="text"
+                                  color="dark"
+                                  icon="menuVert"
+                                  action={evt => {
+                                    evt.preventDefault();
+                                    setRowData(row);
+                                    setRowIndex(index);
+                                    setIsVisible(!isVisible);
+                                    evt.stopPropagation();
+                                  }}
+                                  dataTestId={actionMenuTestId}
+                                />
+                              </div>
+                            </td>
+                          )}
+                        </Styles.TableRow>
                       )}
-                    </Styles.TableRow>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </tbody>
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                </tbody>
+              )}
+            </Droppable>
+          </Styles.Table>
+
+          {isVisible && (
+            <ActionMenuList
+              actions={actions}
+              data={rowData}
+              rowIndex={rowIndex}
+            />
           )}
-        </Droppable>
-      </Styles.TableWrapper>
+        </OverflowWrapper>
+      </TableWrapper>
     </DragDropContext>
   );
 };

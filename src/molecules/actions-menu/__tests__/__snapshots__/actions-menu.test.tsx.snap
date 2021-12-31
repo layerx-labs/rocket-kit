@@ -92,81 +92,11 @@ exports[`Actions Menu renders closed menu 1`] = `
 }
 
 .c0 {
-  height: 50px;
+  height: 3.125rem;
 }
 
 .c0 button {
-  margin-top: 7px;
-}
-
-.c0 ul {
-  position: absolute;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  background-color: hsl(0,0%,100%);
-  margin-top: 5px;
-  min-width: 200px;
-  max-width: 250px;
-  padding: 0;
-  -moz-box-shadow: 0 0 15px 0 #dbdbdb;
-  -webkit-box-shadow: 0 0 15px 0 #dbdbdb;
-  box-shadow: 0 0 15px 0 #dbdbdb;
-  z-index: 1;
-}
-
-.c0 ul li {
-  list-style: none;
-  min-height: 45px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0 ul li:hover {
-  background-color: #e0e0e0;
-  cursor: pointer;
-}
-
-.c0 ul li:first-child {
-  border-radius: 4px 4px 0 0;
-}
-
-.c0 ul li:last-child {
-  border-radius: 0 0 4px 4px;
-}
-
-.c0 ul li.danger {
-  border-top: 1px solid #e0e0e0;
-}
-
-.c0 ul li.danger a {
-  color: hsl(354,83%,64%);
-}
-
-.c0 ul li a {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 20px;
-  color: hsl(0,0%,16%);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c0 ul li a span {
-  display: table-cell;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-top: 0.4375rem;
 }
 
 @media (min-width:1280px) {
@@ -290,31 +220,31 @@ exports[`Actions Menu renders open menu 1`] = `
 }
 
 .c0 {
-  height: 50px;
+  height: 3.125rem;
 }
 
 .c0 button {
-  margin-top: 7px;
+  margin-top: 0.4375rem;
 }
 
-.c0 ul {
+.c2 {
   position: absolute;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   background-color: hsl(0,0%,100%);
   margin-top: 5px;
-  min-width: 200px;
-  max-width: 250px;
+  min-width: 12.5rem;
+  max-width: 15.625rem;
   padding: 0;
-  -moz-box-shadow: 0 0 15px 0 #dbdbdb;
-  -webkit-box-shadow: 0 0 15px 0 #dbdbdb;
-  box-shadow: 0 0 15px 0 #dbdbdb;
+  -moz-box-shadow: 0 0 0.9375rem 0 #dbdbdb;
+  -webkit-box-shadow: 0 0 0.9375rem 0 #dbdbdb;
+  box-shadow: 0 0 0.9375rem 0 #dbdbdb;
   z-index: 1;
 }
 
-.c0 ul li {
+.c2 li {
   list-style: none;
-  min-height: 45px;
+  min-height: 2.8125rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -323,28 +253,28 @@ exports[`Actions Menu renders open menu 1`] = `
   transition-duration: 0.3s;
 }
 
-.c0 ul li:hover {
+.c2 li:hover {
   background-color: #e0e0e0;
   cursor: pointer;
 }
 
-.c0 ul li:first-child {
-  border-radius: 4px 4px 0 0;
+.c2 li:first-child {
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
-.c0 ul li:last-child {
-  border-radius: 0 0 4px 4px;
+.c2 li:last-child {
+  border-radius: 0 0 0.25rem 0.25rem;
 }
 
-.c0 ul li.danger {
+.c2 li.danger {
   border-top: 1px solid #e0e0e0;
 }
 
-.c0 ul li.danger a {
+.c2 li.danger a {
   color: hsl(354,83%,64%);
 }
 
-.c0 ul li a {
+.c2 li a {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -354,14 +284,14 @@ exports[`Actions Menu renders open menu 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 1.25rem;
   color: hsl(0,0%,16%);
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.c0 ul li a span {
+.c2 li a span {
   display: table-cell;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -393,6 +323,7 @@ exports[`Actions Menu renders open menu 1`] = `
       </svg>
     </button>
     <ul
+      class="c2"
       data-testid="ul-action-menu"
     >
       <li

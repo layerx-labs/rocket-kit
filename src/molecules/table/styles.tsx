@@ -11,6 +11,10 @@ interface BorderProps {
 }
 
 export const TableWrapper = styled.div`
+  position: relative;
+`;
+
+export const OverflowWrapper = styled.div`
   @media ${device.s} {
     display: block;
     border-radius: 6px;
@@ -33,14 +37,13 @@ export const TableWrapper = styled.div`
       ${rem('14px')} 100%, ${rem('14px')} 100%;
     background-position: 0 0, 100%, 0 0, 100%;
     background-attachment: local, local, scroll, scroll;
-
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-scrollbar-width: none;
     -moz-scrollbar-width: none;
     -ms-scrollbar-width: none;
     scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 `;
 

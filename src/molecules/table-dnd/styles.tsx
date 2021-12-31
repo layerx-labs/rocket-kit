@@ -3,7 +3,7 @@ import { rem, lighten } from 'polished';
 import { colors, fontWeigth } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
-const { normal, light, info } = colors;
+const { normal, info } = colors;
 const { bold } = fontWeigth;
 
 interface TableDnDProps {
@@ -12,7 +12,7 @@ interface TableDnDProps {
   draggableId?: string;
 }
 
-export const TableWrapper = styled.table<TableDnDProps>`
+export const Table = styled.table<TableDnDProps>`
   position: relative;
   width: 100%;
   border-width: ${props => (props.border ? '1px' : '0')};
@@ -70,7 +70,6 @@ export const TableWrapper = styled.table<TableDnDProps>`
 
   th {
     font-size: 0.85rem;
-    background-color: ${light};
 
     &:first-child {
       border-top-left-radius: 6px;
@@ -118,7 +117,6 @@ export const TableWrapper = styled.table<TableDnDProps>`
     tr {
       display: block;
       transition-duration: 0.3s;
-      background-color: ${light};
 
       &:hover {
         background-color: ${lighten(0.4, info)};
