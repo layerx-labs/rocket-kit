@@ -68,6 +68,9 @@ const TableDnD = <CellData extends CellBaseType>(
     startsOpen = false,
   } = props;
 
+  const { ref, isVisible, setIsVisible } =
+    useVisible<HTMLDivElement>(startsOpen);
+
   const [draggableId, setDraggableId] = useState('');
   const [rowData, setRowData] = useState({});
   const [rowIndex, setRowIndex] = useState<number | undefined>(undefined);
@@ -87,9 +90,6 @@ const TableDnD = <CellData extends CellBaseType>(
       />
     );
   }
-
-  const { ref, isVisible, setIsVisible } =
-    useVisible<HTMLDivElement>(startsOpen);
 
   const reorder = (list: any[], startIndex: number, endIndex: number) => {
     const result = Array.from(list);
