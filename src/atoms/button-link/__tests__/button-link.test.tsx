@@ -37,6 +37,20 @@ describe('Button Link', () => {
     expect(anchorElem).toHaveProperty('rel', 'noopener noreferrer');
   });
 
+  it('has a custom relationship attribute', () => {
+    render(<ButtonLink url={URL} value={TEXT} rel="nofollow" />);
+
+    const anchorElem = screen.getByText(TEXT).closest('a');
+    expect(anchorElem).not.toHaveProperty('target', '_blank');
+    expect(anchorElem).toHaveProperty('rel', 'nofollow');
+
+    // it does have a custom REL and a BLANK attribute
+    render(<ButtonLink url={URL} value="example" rel="nofollow" blank />);
+    const anchorElem2 = screen.getByText('example').closest('a');
+    expect(anchorElem2).toHaveProperty('target', '_blank');
+    expect(anchorElem2).toHaveProperty('rel', 'nofollow');
+  });
+
   it('has empty target if not defined', () => {
     makeSut();
 
@@ -49,7 +63,6 @@ describe('Button Link', () => {
     makeSut(onClickAction);
 
     const button = screen.getByRole('link', { name: TEXT });
-    screen.logTestingPlaygroundURL();
     userEvent.click(button);
     expect(onClickAction).toBeCalledTimes(1);
   });

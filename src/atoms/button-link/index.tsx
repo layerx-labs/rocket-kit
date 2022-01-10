@@ -20,6 +20,7 @@ export interface ButtonLinkProps {
   icon?: string;
   iconPosition?: 'left' | 'right';
   style?: CSSProperties;
+  rel?: string;
 }
 
 const ButtonLink = (props: ButtonLinkProps) => {
@@ -37,7 +38,13 @@ const ButtonLink = (props: ButtonLinkProps) => {
     dataTestId = '',
     eventId = '',
     style,
+    rel = undefined,
   } = props;
+
+  const getRelationshipAttributes = () => {
+    if (rel && rel !== '') return rel;
+    return blank ? 'noopener noreferrer' : '';
+  };
 
   useMouseMoveEffect({ querySelector });
 
@@ -48,13 +55,13 @@ const ButtonLink = (props: ButtonLinkProps) => {
       className={`button ${className}`}
       href={url}
       target={blank ? '_blank' : ''}
-      rel={blank ? 'noopener noreferrer' : ''}
       value={value}
       onClick={action}
       data-testid={dataTestId}
       data-event={eventId}
       style={style}
       iconPosition={iconPosition}
+      rel={getRelationshipAttributes()}
     >
       {icon && <Icon icon={icon} />}
       {value && <span>{value}</span>}
