@@ -94,7 +94,8 @@ export const ButtonLinkComponent = args => <ButtonLink {...args} />;
 ButtonLinkComponent.storyName = 'Link';
 ButtonLinkComponent.args = {
   ...ButtonComponent.args,
+  rel: 'noopener',
   iconPosition: 'left',
   url: 'https://github.com/taikai/taikai-design-system',
-  blank: true,
+  blank: false,
 };
