@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components/macro';
 import { NoteColor } from './types';
-import { rem, lighten, darken } from 'polished';
+import { rem } from 'polished';
 import { device } from '../../ions/breakpoints';
 import { colors } from '../../ions/variables';
 
@@ -9,35 +9,45 @@ interface NoteCardProps {
   buttonValue?: string;
 }
 
-const { primary, info, danger } = colors;
+const {
+  green,
+  lightGreen,
+  darkGreen,
+  grey,
+  lightGrey,
+  darkGrey,
+  red,
+  lightRed,
+  darkRed,
+} = colors;
 
 export const Wrapper = styled.div<NoteCardProps>`
-  --default: ${info};
-  --light: ${lighten(0.4, info)};
-  --dark: ${darken(0.1, info)};
+  --default: ${grey};
+  --light: ${lightGrey};
+  --dark: ${darkGrey};
 
   ${props =>
-    props.color === 'info' &&
+    props.color === 'grey' &&
     css`
-      --default: ${info};
-      --light: ${lighten(0.4, info)};
-      --dark: ${darken(0.1, info)};
+      --default: ${grey};
+      --light: ${lightGrey};
+      --dark: ${darkGrey};
     `}
 
   ${props =>
-    props.color === 'primary' &&
+    props.color === 'green' &&
     css`
-      --default: ${primary};
-      --light: ${lighten(0.3, primary)};
-      --dark: ${darken(0.15, primary)};
+      --default: ${green};
+      --light: ${lightGreen};
+      --dark: ${darkGreen};
     `}
 
   ${props =>
-    props.color === 'danger' &&
+    props.color === 'red' &&
     css`
-      --default: ${danger};
-      --light: ${lighten(0.25, danger)};
-      --dark: ${darken(0.19, danger)};
+      --default: ${red};
+      --light: ${lightRed};
+      --dark: ${darkRed};
     `}
 
   border-width: 2px;

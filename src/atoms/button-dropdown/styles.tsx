@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import { rem, lighten } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { normal, light, info } = colors;
+const { normal, light, lightGrey } = colors;
 
 interface ActionsMenuInterface {
   visibleActions: number;
@@ -16,7 +16,7 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
     opacity: 0;
     top: 0;
     margin: 0;
-    border: 1px solid ${lighten(0.4, info)};
+    border: 1px solid ${lightGrey};
     border-radius: 4px;
     background-color: ${light};
     min-width: ${rem('200px')};
@@ -50,7 +50,7 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: ${lighten(0.4, info)};
+        background-color: ${lightGrey};
         cursor: pointer;
       }
 

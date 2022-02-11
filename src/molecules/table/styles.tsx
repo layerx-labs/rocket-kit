@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
-import { rem, lighten } from 'polished';
+import { rem } from 'polished';
 import { colors, fontWeigth } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
-const { normal, light, info } = colors;
+const { normal, light, grey, lightGrey } = colors;
 const { bold } = fontWeigth;
 
 interface BorderProps {
@@ -51,7 +51,7 @@ export const Table = styled.table<BorderProps>`
   width: 100%;
   border-width: ${props => (props.border ? '1px' : '0')};
   border-style: solid;
-  border-color: ${lighten(0.4, info)};
+  border-color: ${lightGrey};
   border-radius: 6px;
   border-spacing: 0;
   white-space: nowrap;
@@ -114,7 +114,7 @@ export const Table = styled.table<BorderProps>`
   }
 
   tr {
-    border: 1px solid ${info};
+    border: 1px solid ${grey};
     border-radius: 6px;
     position: relative;
 
@@ -140,7 +140,7 @@ export const Table = styled.table<BorderProps>`
     @media ${device.s} {
       display: contents;
       font-weight: ${bold};
-      color: ${info};
+      color: ${grey};
       text-transform: uppercase;
       text-align: left;
     }
@@ -152,7 +152,7 @@ export const Table = styled.table<BorderProps>`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: ${lighten(0.4, info)};
+        background-color: ${lightGrey};
 
         td.menu {
           button {
@@ -167,7 +167,7 @@ export const Table = styled.table<BorderProps>`
     }
 
     td {
-      border-top: 1px solid ${lighten(0.4, info)};
+      border-top: 1px solid ${lightGrey};
       height: inherit;
       min-height: ${rem('50px')};
       padding: ${rem('15px')};
@@ -202,7 +202,7 @@ export const Table = styled.table<BorderProps>`
         display: flex;
         align-items: center;
         color: ${normal};
-        text-decoration-color: ${info};
+        text-decoration-color: ${grey};
       }
 
       &:first-child {
@@ -271,7 +271,7 @@ export const Table = styled.table<BorderProps>`
         }
 
         &:first-child {
-          border-top: 1px solid ${lighten(0.4, info)};
+          border-top: 1px solid ${lightGrey};
         }
 
         &:before {

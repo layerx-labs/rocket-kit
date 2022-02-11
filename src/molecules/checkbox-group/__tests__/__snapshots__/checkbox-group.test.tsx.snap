@@ -20,7 +20,7 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c1:hover input:not(:disabled) ~ span {
-  border-color: hsl(0,0%,48%);
+  border-color: #939393;
 }
 
 .c2 {
@@ -36,7 +36,7 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c3:checked:not(:disabled) ~ span {
-  background-color: hsl(186,62%,59%);
+  background-color: #56cad7;
   border-color: #2ba8b6;
 }
 
@@ -46,8 +46,8 @@ exports[`CheckboxGroup renders 1`] = `
 
 .c3:checked:disabled ~ span {
   border-color: transparent;
-  background-color: #e0e0e0;
-  color: hsl(0,0%,48%);
+  background-color: #f4f4f4;
+  color: #939393;
 }
 
 .c3:checked:disabled ~ span:after {
@@ -55,8 +55,8 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c3:not(:checked):disabled ~ span {
-  border-color: #e0e0e0;
-  background-color: hsl(0,0%,100%);
+  border-color: #f4f4f4;
+  background-color: #ffffff;
 }
 
 .c3:hover:not(:disabled) {
@@ -71,7 +71,7 @@ exports[`CheckboxGroup renders 1`] = `
   position: absolute;
   top: 0;
   left: 0;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #f4f4f4;
   border-radius: 100%;
   width: 24px;
   height: 24px;
@@ -87,7 +87,7 @@ exports[`CheckboxGroup renders 1`] = `
   left: 6px;
   width: 5px;
   height: 9px;
-  border: solid hsl(0,0%,100%);
+  border: solid #ffffff;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);

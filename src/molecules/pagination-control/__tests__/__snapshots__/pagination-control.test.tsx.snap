@@ -23,14 +23,14 @@ exports[`PaginationControl renders 1`] = `
 .c0 ul.pagination li {
   width: 3.125rem;
   height: 3.125rem;
-  background-color: hsl(0,0%,100%);
+  background-color: #ffffff;
   cursor: pointer;
 }
 
 .c0 ul.pagination li.previous,
 .c0 ul.pagination li.next {
   margin: 0 0.9375rem;
-  background-color: hsl(0,0%,100%);
+  background-color: #ffffff;
   border-radius: 1.5625rem;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -85,7 +85,7 @@ exports[`PaginationControl renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: hsl(0,0%,16%);
+  color: #000000;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -93,7 +93,7 @@ exports[`PaginationControl renders 1`] = `
 .c0 ul.pagination li a svg {
   width: 1.875rem;
   height: auto;
-  fill: hsl(0,0%,48%);
+  fill: #939393;
 }
 
 .c0 ul.pagination li.active {
@@ -104,9 +104,9 @@ exports[`PaginationControl renders 1`] = `
 .c0 ul.pagination li.active a {
   --shadow: drop-shadow(0 0 5px rgba(40,40,40,0.4));
   border-radius: 1.5625rem;
-  background-color: hsl(256,55%,43%);
+  background-color: #4329a6;
   font-weight: 700;
-  color: hsl(0,0%,100%);
+  color: #ffffff;
   -webkit-filter: var(--shadow);
   filter: var(--shadow);
 }

@@ -7,7 +7,7 @@ exports[`Tag Number renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #f4f4f4;
   border-radius: 6px;
   font-size: 0.85rem;
   max-width: 100%;
@@ -31,7 +31,7 @@ exports[`Tag Number renders 1`] = `
 }
 
 .c0 span.value {
-  background-color: #e0e0e0;
+  background-color: #f4f4f4;
   font-weight: 700;
 }
 

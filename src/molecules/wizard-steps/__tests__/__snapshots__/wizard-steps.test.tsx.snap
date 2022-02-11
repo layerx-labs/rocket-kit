@@ -40,7 +40,7 @@ exports[`Wizard Steps renders wizard 1`] = `
   content: '';
   position: absolute;
   top: 0;
-  border: 0 solid hsl(186,62%,59%);
+  border: 0 solid #56cad7;
   border-width: 1.375rem 0.9375rem;
   width: 0;
   height: 0;
@@ -54,7 +54,7 @@ exports[`Wizard Steps renders wizard 1`] = `
 .c1:after {
   left: calc(100% - 1.125rem);
   border-color: transparent;
-  border-left-color: hsl(186,62%,59%);
+  border-left-color: #56cad7;
 }
 
 .c1:first-child:before {
@@ -82,7 +82,7 @@ exports[`Wizard Steps renders wizard 1`] = `
 }
 
 .c1 > div {
-  background-color: hsl(186,62%,59%);
+  background-color: #56cad7;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -104,7 +104,7 @@ exports[`Wizard Steps renders wizard 1`] = `
   width: -moz-min-content;
   width: min-content;
   font-size: 0.75rem;
-  color: hsl(0,0%,100%);
+  color: #ffffff;
 }
 
 .c2 {
@@ -135,7 +135,7 @@ exports[`Wizard Steps renders wizard 1`] = `
   content: '';
   position: absolute;
   top: 0;
-  border: 0 solid #e0e0e0;
+  border: 0 solid #f4f4f4;
   border-width: 1.375rem 0.9375rem;
   width: 0;
   height: 0;
@@ -149,7 +149,7 @@ exports[`Wizard Steps renders wizard 1`] = `
 .c2:after {
   left: calc(100% - 1.125rem);
   border-color: transparent;
-  border-left-color: #e0e0e0;
+  border-left-color: #f4f4f4;
 }
 
 .c2:first-child:before {
@@ -177,7 +177,7 @@ exports[`Wizard Steps renders wizard 1`] = `
 }
 
 .c2 > div {
-  background-color: #e0e0e0;
+  background-color: #f4f4f4;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -199,7 +199,7 @@ exports[`Wizard Steps renders wizard 1`] = `
   width: -moz-min-content;
   width: min-content;
   font-size: 0.75rem;
-  color: hsl(0,0%,48%);
+  color: #939393;
 }
 
 @media (min-width:700px) {

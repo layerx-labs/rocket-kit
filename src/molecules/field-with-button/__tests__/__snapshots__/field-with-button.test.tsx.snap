@@ -3,11 +3,11 @@
 exports[`FieldWidthButton renders 1`] = `
 <DocumentFragment>
   .c3 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(186,62%,59%);
-  --hover: #2798a5;
+  --button: #56cad7;
+  --hover: #2ba8b6;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
@@ -81,7 +81,7 @@ exports[`FieldWidthButton renders 1`] = `
 .c2 {
   border-width: 1px;
   border-style: solid;
-  border-color: hsl(0,0%,48%);
+  border-color: #939393;
   border-radius: 6px;
   height: 3.125rem;
   padding: 0.625rem;
@@ -92,17 +92,17 @@ exports[`FieldWidthButton renders 1`] = `
 }
 
 .c2:focus {
-  border-color: hsl(256,55%,43%);
+  border-color: #4329a6;
   outline: none;
 }
 
 .c2:disabled {
-  background-color: #ededed;
-  color: hsl(0,0%,48%);
+  background-color: #f4f4f4;
+  color: #939393;
 }
 
 .c2:invalid {
-  border-color: hsl(354,83%,64%);
+  border-color: #ef5766;
   outline: none;
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -110,36 +110,36 @@ exports[`FieldWidthButton renders 1`] = `
 }
 
 .c2:required {
-  border-color: hsl(0,0%,48%);
+  border-color: #939393;
 }
 
 .c2::-webkit-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2::-moz-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2:-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2::placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2:-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2::-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
@@ -169,7 +169,7 @@ exports[`FieldWidthButton renders 1`] = `
 }
 
 .c1 input:focus + button {
-  background-color: hsl(256,55%,43%);
+  background-color: #4329a6;
 }
 
 .c1 span {
@@ -182,7 +182,7 @@ exports[`FieldWidthButton renders 1`] = `
 .c1 button {
   border: 0;
   border-radius: 0 6px 6px 0;
-  background-color: hsl(0,0%,48%);
+  background-color: #939393;
   min-width: 3.125rem;
   height: 3.125rem;
   display: -webkit-box;
@@ -209,13 +209,13 @@ exports[`FieldWidthButton renders 1`] = `
   width: auto;
   min-width: 1.25rem;
   height: 1.25rem;
-  fill: hsl(0,0%,100%);
+  fill: #ffffff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .c1 button:hover {
-  background-color: #616161;
+  background-color: #7a7a7a;
 }
 
 .c1 button:disabled {
@@ -224,7 +224,7 @@ exports[`FieldWidthButton renders 1`] = `
 }
 
 .c1 button:disabled:hover {
-  background-color: hsl(0,0%,48%);
+  background-color: #939393;
   pointer-events: none;
 }
 
@@ -248,7 +248,7 @@ exports[`FieldWidthButton renders 1`] = `
       />
       <button
         class="c3 button"
-        color="primary"
+        color="green"
         value=""
       >
         <svg

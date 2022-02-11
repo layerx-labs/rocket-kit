@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { rem, darken } from 'polished';
+import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
 export const Wrapper = styled.div`
@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-const { info, light, purple } = colors;
+const { grey, darkGrey, light, purple } = colors;
 
 export const Field = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ export const Field = styled.div`
   button {
     border: 0;
     border-radius: 0 6px 6px 0;
-    background-color: ${info};
+    background-color: ${grey};
     min-width: ${rem('50px')};
     height: ${rem('50px')};
     display: flex;
@@ -56,7 +56,7 @@ export const Field = styled.div`
     }
 
     &:hover {
-      background-color: ${darken(0.1, info)};
+      background-color: ${darkGrey};
     }
 
     &:disabled {
@@ -64,7 +64,7 @@ export const Field = styled.div`
       opacity: 0.5;
 
       &:hover {
-        background-color: ${info};
+        background-color: ${grey};
         pointer-events: none;
       }
     }

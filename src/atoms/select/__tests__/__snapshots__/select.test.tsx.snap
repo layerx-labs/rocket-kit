@@ -3,7 +3,7 @@
 exports[`Select Default renders 1`] = `
 <DocumentFragment>
   .c0 {
-  border: 1px solid hsl(0,0%,48%);
+  border: 1px solid #939393;
   border-radius: 6px;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='hsl(0, 0%, 85%)' d='M10.827 12.387l5.173 5.173 5.173-5.173c0.52-0.52 1.36-0.52 1.88 0v0c0.52 0.52 0.52 1.36 0 1.88l-6.12 6.12c-0.52 0.52-1.36 0.52-1.88 0l-6.12-6.12c-0.52-0.52-0.52-1.36 0-1.88v0c0.52-0.507 1.373-0.52 1.893 0z'></path></svg>");
   background-position: calc(100% - 15px) center;
@@ -22,17 +22,17 @@ exports[`Select Default renders 1`] = `
 }
 
 .c0:hover {
-  border-color: hsl(256,55%,43%);
+  border-color: #4329a6;
 }
 
 .c0:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 hsl(0,0%,16%);
+  text-shadow: 0 0 0 #000000;
 }
 
 .c0:disabled {
-  background-color: #ededed;
-  color: hsl(0,0%,48%);
+  background-color: #f4f4f4;
+  color: #939393;
   pointer-events: none;
 }
 

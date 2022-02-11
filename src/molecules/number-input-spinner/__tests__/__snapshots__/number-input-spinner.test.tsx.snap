@@ -3,7 +3,7 @@
 exports[`NumberInputSpinner renders 1`] = `
 <DocumentFragment>
   .c0 {
-  border: 1px solid hsl(0,0%,48%);
+  border: 1px solid #939393;
   border-radius: 6px;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
@@ -20,12 +20,12 @@ exports[`NumberInputSpinner renders 1`] = `
 .c0 input:disabled {
   cursor: inherit;
   background-color: #f4f4f4;
-  color: #d3d3d3;
+  color: #f4f4f4;
 }
 
 .c0 button:disabled svg,
 .c0 input:disabled svg {
-  fill: #d3d3d3;
+  fill: #f4f4f4;
 }
 
 .c0 button:disabled:hover,
@@ -56,35 +56,35 @@ exports[`NumberInputSpinner renders 1`] = `
 
 .c2:invalid {
   box-shadow: none;
-  background-color: #f8b4bb;
+  background-color: #facbd0;
 }
 
 .c1 {
   width: 50px;
   height: 50px;
   border: 0;
-  background-color: #e0e0e0;
+  background-color: #f4f4f4;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
 .c1.remove-button {
-  border-right: 1px solid hsl(0,0%,48%);
+  border-right: 1px solid #939393;
 }
 
 .c1.add-button {
-  border-left: 1px solid hsl(0,0%,48%);
+  border-left: 1px solid #939393;
 }
 
 .c1 svg {
   width: auto;
   height: 20px;
-  fill: hsl(0,0%,48%);
+  fill: #939393;
 }
 
 .c1:hover {
-  background-color: #c7c7c7;
+  background-color: #f4f4f4;
 }
 
 <div

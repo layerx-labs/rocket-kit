@@ -1,20 +1,20 @@
 import styled from 'styled-components';
-import { rem, lighten } from 'polished';
+import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { normal, info, light } = colors;
+const { normal, grey, lightGrey, light } = colors;
 
 export const Wrapper = styled.div`
   .tab {
-    border-color: ${lighten(0.4, info)};
+    border-color: ${lightGrey};
 
     &[aria-selected='true'] {
       border-bottom: 0;
     }
 
     &[aria-selected='false'] {
-      background-color: ${lighten(0.45, info)};
-      color: ${info};
+      background-color: ${lightGrey};
+      color: ${grey};
       transition-duration: 0.3s;
 
       &:hover {
@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
 
   .panel {
     border-radius: 0 6px 6px 6px;
-    border-color: ${lighten(0.4, info)};
+    border-color: ${lightGrey};
     background-color: ${light};
     padding: ${rem('30px')};
   }

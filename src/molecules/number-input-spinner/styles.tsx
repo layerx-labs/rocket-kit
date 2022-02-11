@@ -1,15 +1,14 @@
 import styled from 'styled-components/macro';
-import { lighten } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { info, danger } = colors;
+const { grey, lightGrey, lightRed } = colors;
 
 interface NumberInputSpinnerProps {
   max?: number;
 }
 
 export const Wrapper = styled.div`
-  border: 1px solid ${info};
+  border: 1px solid ${grey};
   border-radius: 6px;
   max-width: max-content;
   height: 50px;
@@ -20,11 +19,11 @@ export const Wrapper = styled.div`
   input {
     &:disabled {
       cursor: inherit;
-      background-color: ${lighten(0.48, info)};
-      color: ${lighten(0.35, info)};
+      background-color: ${lightGrey};
+      color: ${lightGrey};
 
       svg {
-        fill: ${lighten(0.35, info)};
+        fill: ${lightGrey};
       }
 
       &:hover {
@@ -59,7 +58,7 @@ export const Input = styled.input<NumberInputSpinnerProps>`
 
   &:invalid {
     box-shadow: none;
-    background-color: ${lighten(0.2, danger)};
+    background-color: ${lightRed};
   }
 `;
 
@@ -67,25 +66,25 @@ export const Button = styled.button`
   width: 50px;
   height: 50px;
   border: 0;
-  background-color: ${lighten(0.4, info)};
+  background-color: ${lightGrey};
   cursor: pointer;
   transition-duration: 0.3s;
 
   &.remove-button {
-    border-right: 1px solid ${info};
+    border-right: 1px solid ${grey};
   }
 
   &.add-button {
-    border-left: 1px solid ${info};
+    border-left: 1px solid ${grey};
   }
 
   svg {
     width: auto;
     height: 20px;
-    fill: ${info};
+    fill: ${grey};
   }
 
   &:hover {
-    background-color: ${lighten(0.3, info)};
+    background-color: ${lightGrey};
   }
 `;

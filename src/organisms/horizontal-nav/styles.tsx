@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro';
-import { rem, lighten } from 'polished';
+import { rem } from 'polished';
 import { colors, fontWeigth } from '../../ions/variables';
 
-const { normal, primary, info, light } = colors;
+const { normal, green, lightGrey, light } = colors;
 const { bold } = fontWeigth;
 
 export const Wrapper = styled.div`
@@ -57,15 +57,15 @@ export const Wrapper = styled.div`
           width: auto;
           height: ${rem('24px')};
           min-width: ${rem('24px')};
-          fill: ${lighten(0.4, info)};
+          fill: ${lightGrey};
           transition-duration: 0.3s;
         }
 
         &:hover {
-          color: ${primary};
+          color: ${green};
 
           svg {
-            fill: ${primary};
+            fill: ${green};
           }
         }
       }
@@ -77,7 +77,7 @@ export const Wrapper = styled.div`
           pointer-events: none;
 
           svg {
-            fill: ${primary};
+            fill: ${green};
           }
         }
       }
@@ -96,7 +96,7 @@ export const More = styled.div`
   ul {
     position: absolute;
     right: 0;
-    border: 1px solid ${lighten(0.4, info)};
+    border: 1px solid ${lightGrey};
     border-radius: 4px;
     background-color: ${light};
     margin-top: 5px;
@@ -124,7 +124,7 @@ export const More = styled.div`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: ${lighten(0.4, info)};
+        background-color: ${lightGrey};
         cursor: pointer;
 
         a {

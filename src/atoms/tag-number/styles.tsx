@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro';
-import { rem, lighten } from 'polished';
+import { rem } from 'polished';
 import { colors, fontWeigth } from '../../ions/variables';
 
-const { info } = colors;
+const { lightGrey } = colors;
 const { bold } = fontWeigth;
 
 export const TagWrapper = styled.div`
   display: flex;
-  border: 2px solid ${lighten(0.4, info)};
+  border: 2px solid ${lightGrey};
   border-radius: 6px;
   font-size: 0.85rem;
   max-width: 100%;
@@ -25,7 +25,7 @@ export const TagWrapper = styled.div`
     }
 
     &.value {
-      background-color: ${lighten(0.4, info)};
+      background-color: ${lightGrey};
       font-weight: ${bold};
     }
   }

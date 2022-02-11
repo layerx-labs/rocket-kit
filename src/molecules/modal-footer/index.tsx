@@ -31,7 +31,7 @@ const ModalFooter = (props: ModalFooterProps) => {
     >
       <Button
         variant="outline"
-        color="info"
+        color="grey"
         action={closeAction}
         value={closeValue}
       />

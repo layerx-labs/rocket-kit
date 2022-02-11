@@ -11,14 +11,14 @@ interface LabelProps {
   style?: React.CSSProperties;
 }
 
-const { info } = colors;
+const { grey } = colors;
 
 const Label = (props: LabelProps) => {
   const { value, kai = false, className = 'label', style } = props;
   return (
     <Styles.LabelStyle className={className} style={style}>
       {value}
-      {kai ? <Icon icon="kai" fill={info} /> : null}
+      {kai ? <Icon icon="kai" fill={grey} /> : null}
     </Styles.LabelStyle>
   );
 };

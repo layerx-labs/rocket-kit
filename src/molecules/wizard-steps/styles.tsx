@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
-import { rem, lighten } from 'polished';
+import { rem } from 'polished';
 import { device } from '../../ions/breakpoints';
 import { colors } from '../../ions/variables';
 
-const { primary, info, light } = colors;
+const { green, grey, lightGrey, light } = colors;
 
 interface WizardStepProps {
   active?: boolean;
@@ -32,7 +32,7 @@ export const Step = styled.li<WizardStepProps>`
     content: '';
     position: absolute;
     top: 0;
-    border: 0 solid ${props => (props.active ? primary : lighten(0.4, info))};
+    border: 0 solid ${props => (props.active ? green : lightGrey)};
     border-width: ${rem('22px')} ${rem('15px')};
     width: 0;
     height: 0;
@@ -46,8 +46,7 @@ export const Step = styled.li<WizardStepProps>`
   &:after {
     left: calc(100% - ${rem('18px')});
     border-color: transparent;
-    border-left-color: ${props =>
-      props.active ? primary : lighten(0.4, info)};
+    border-left-color: ${props => (props.active ? green : lightGrey)};
   }
 
   &:first-child:before {
@@ -75,7 +74,7 @@ export const Step = styled.li<WizardStepProps>`
   }
 
   > div {
-    background-color: ${props => (props.active ? primary : lighten(0.4, info))};
+    background-color: ${props => (props.active ? green : lightGrey)};
     width: 100%;
     height: 100%;
     display: flex;
@@ -85,7 +84,7 @@ export const Step = styled.li<WizardStepProps>`
     span {
       width: min-content;
       font-size: 0.75rem;
-      color: ${props => (props.active ? light : info)};
+      color: ${props => (props.active ? light : grey)};
 
       @media ${device.s} {
         width: 100%;

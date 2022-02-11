@@ -8,7 +8,7 @@ export default {
     color: {
       control: {
         type: 'inline-radio',
-        options: ['success', 'danger'],
+        options: ['success', 'red'],
       },
     },
   },
@@ -19,7 +19,7 @@ export const ErrorComponent = args => <ErrorField {...args} />;
 ErrorComponent.storyName = 'Error';
 ErrorComponent.args = {
   error: 'Please insert valid name',
-  color: 'danger',
+  color: 'red',
 };
 
 export const SuccessComponent = args => <ErrorField {...args} />;

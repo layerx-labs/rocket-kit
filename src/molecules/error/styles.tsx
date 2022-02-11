@@ -6,7 +6,7 @@ interface ErrorProps {
   variant: 'default' | 'minimal';
 }
 
-const { normal, primary } = colors;
+const { normal, green } = colors;
 const { bold } = fontWeigth;
 
 export const Wrapper = styled.div<ErrorProps>`
@@ -33,7 +33,7 @@ export const Wrapper = styled.div<ErrorProps>`
       transition-duration: 0.3s;
 
       &:hover {
-        color: ${primary};
+        color: ${green};
       }
     }
   }

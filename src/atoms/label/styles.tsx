@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import { rem } from 'polished';
 import { colors, fontWeigth } from '../../ions/variables';
 
-const { info } = colors;
+const { grey } = colors;
 const { bold } = fontWeigth;
 
 export const LabelStyle = styled.label`
@@ -10,7 +10,7 @@ export const LabelStyle = styled.label`
   align-items: center;
   font-size: 0.75rem;
   font-weight: ${bold};
-  color: ${info};
+  color: ${grey};
   text-transform: uppercase;
 
   svg {

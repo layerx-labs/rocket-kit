@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { rem, darken, lighten } from 'polished';
+import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface WrapperProps {
@@ -14,7 +14,7 @@ interface ItemProps {
   disabled?: boolean;
 }
 
-const { primary, info, danger } = colors;
+const { green, darkGreen, grey, lightGrey, red } = colors;
 
 export const Wrapper = styled.ul<WrapperProps>`
   display: flex;
@@ -41,11 +41,11 @@ export const Wrapper = styled.ul<WrapperProps>`
   }
 
   input[type='radio']:checked ~ .check {
-    border-color: ${darken(0.15, primary)};
+    border-color: ${darkGreen};
   }
 
   input[type='radio']:checked ~ .check::before {
-    background-color: ${primary};
+    background-color: ${green};
   }
 
   & + span {
@@ -69,7 +69,7 @@ export const Item = styled.li<ItemProps>`
     padding-left: calc(var(--size) + 5px);
     line-height: var(--size);
     vertical-align: middle;
-    color: ${props => (props.error ? danger : null)};
+    color: ${props => (props.error ? red : null)};
     cursor: pointer;
     z-index: 1;
   }
@@ -77,7 +77,7 @@ export const Item = styled.li<ItemProps>`
   .check {
     position: absolute;
     top: 0;
-    border: 2px solid ${props => (props.error ? danger : lighten(0.4, info))};
+    border: 2px solid ${props => (props.error ? red : lightGrey)};
     border-radius: 100%;
     width: var(--size);
     height: var(--size);
@@ -96,23 +96,23 @@ export const Item = styled.li<ItemProps>`
   }
 
   &:hover .check {
-    border-color: ${info};
+    border-color: ${grey};
   }
 
   ${props =>
     props.disabled &&
     css`
       label {
-        color: ${info};
+        color: ${grey};
       }
 
       input[type='radio'] ~ .check,
       input[type='radio']:checked ~ .check {
-        border-color: ${lighten(0.4, info)};
+        border-color: ${lightGrey};
       }
 
       input[type='radio']:checked ~ .check::before {
-        background-color: ${lighten(0.4, info)};
+        background-color: ${lightGrey};
       }
 
       &:hover {

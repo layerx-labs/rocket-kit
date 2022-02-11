@@ -31,17 +31,17 @@ exports[`DataWarning renders 1`] = `
 .c0 > div {
   margin-top: 15px;
   font-weight: 700;
-  color: hsl(0,0%,16%);
+  color: #000000;
 }
 
 .c0 > div a {
-  color: hsl(0,0%,16%);
+  color: #000000;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
 .c0 > div a:hover {
-  color: hsl(186,62%,59%);
+  color: #56cad7;
 }
 
 <div

@@ -5,7 +5,7 @@ exports[`FormGroup renders 1`] = `
   .c2 {
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-color: hsl(0,0%,48%);
+  border-color: #939393;
   border-radius: 0;
   height: 2.5rem;
   padding: 0;
@@ -16,17 +16,17 @@ exports[`FormGroup renders 1`] = `
 }
 
 .c2:focus {
-  border-color: hsl(256,55%,43%);
+  border-color: #4329a6;
   outline: none;
 }
 
 .c2:disabled {
-  background-color: #ededed;
-  color: hsl(0,0%,48%);
+  background-color: #f4f4f4;
+  color: #939393;
 }
 
 .c2:invalid {
-  border-color: hsl(354,83%,64%);
+  border-color: #ef5766;
   outline: none;
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -34,36 +34,36 @@ exports[`FormGroup renders 1`] = `
 }
 
 .c2:required {
-  border-color: hsl(0,0%,48%);
+  border-color: #939393;
 }
 
 .c2::-webkit-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2::-moz-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2:-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2::placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2:-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2::-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
@@ -78,7 +78,7 @@ exports[`FormGroup renders 1`] = `
   align-items: center;
   font-size: 0.75rem;
   font-weight: 700;
-  color: hsl(0,0%,48%);
+  color: #939393;
   text-transform: uppercase;
 }
 
@@ -93,11 +93,11 @@ exports[`FormGroup renders 1`] = `
 
 .c0 > label {
   margin-bottom: 0.3125rem;
-  color: hsl(0,0%,48%);
+  color: #939393;
 }
 
 .c0 > label span {
-  color: hsl(0,0%,16%);
+  color: #000000;
 }
 
 .c0:not(:last-child) {

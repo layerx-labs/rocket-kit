@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
-import { rem, lighten, rgba } from 'polished';
+import { rem, rgba } from 'polished';
 import { colors, fontWeigth } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
-const { info, light } = colors;
+const { grey, lightGrey, light } = colors;
 const { bold } = fontWeigth;
 
 interface BorderProps {
@@ -17,14 +17,14 @@ export const EmptyTableWrapper = styled.div`
 export const EmptyTableHead = styled.div<BorderProps>`
   border-width: ${props => (props.border ? '1px' : '0 0 1px 0')};
   border-style: solid;
-  border-color: ${lighten(0.4, info)};
+  border-color: ${lightGrey};
   border-radius: 6px 6px 0 0;
   height: ${rem('50px')};
   display: flex;
   align-items: center;
   font-size: 0.85rem;
   font-weight: ${bold};
-  color: ${info};
+  color: ${grey};
   text-transform: uppercase;
 
   > div {
@@ -36,7 +36,7 @@ export const EmptyTableHead = styled.div<BorderProps>`
     padding: 0 ${rem('15px')};
     font-size: 0.85rem;
     font-weight: ${bold};
-    color: ${info};
+    color: ${grey};
     text-transform: uppercase;
 
     &:first-child,
@@ -65,7 +65,7 @@ export const EmptyTableHead = styled.div<BorderProps>`
 export const EmptyTableBody = styled.div<BorderProps>`
   border-width: ${props => (props.border ? '0 1px 1px 1px' : 0)};
   border-style: solid;
-  border-color: ${lighten(0.4, info)};
+  border-color: ${lightGrey};
   border-radius: 0 0 6px 6px;
 `;
 
@@ -75,7 +75,7 @@ export const EmptyTableRow = styled.div`
   align-items: center;
 
   &:not(:last-child) {
-    border-bottom: 1px solid ${lighten(0.4, info)};
+    border-bottom: 1px solid ${lightGrey};
   }
 
   > div {
@@ -127,5 +127,5 @@ export const EmptyTableOverlay = styled.div`
   align-items: flex-end;
   padding: 0 ${rem('15px')} ${rem('15px')} ${rem('15px')};
   text-align: center;
-  color: ${info};
+  color: ${grey};
 `;

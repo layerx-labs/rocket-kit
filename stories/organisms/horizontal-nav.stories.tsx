@@ -82,7 +82,7 @@ export const HorizontalNavComponent = () => {
 HorizontalNavComponent.storyName = 'Horizontal Nav';
 
 HorizontalNavComponent.args = {
-  color: 'info',
+  color: 'grey',
   variant: 'solid',
   value: 'Burgdoggen',
 };

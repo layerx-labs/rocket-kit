@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
-import { rem, darken } from 'polished';
+import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface AlertNotificationProps {
-  variant?: 'success' | 'warning' | 'danger';
+  variant?: 'success' | 'orange' | 'red';
 }
 
-const { light, primary, danger, warning } = colors;
+const { light, green, darkGreen, red, darkRed, orange, darkOrange } = colors;
 
 export const Wrapper = styled.div<AlertNotificationProps>`
   --shadow: 0 0 ${rem('25px')} 0 rgba(40, 40, 40, 0.2);
@@ -14,9 +14,9 @@ export const Wrapper = styled.div<AlertNotificationProps>`
   position: fixed;
   top: ${rem('15px')};
   right: 0;
-  border: 2px solid ${darken(0.15, primary)};
+  border: 2px solid ${darkGreen};
   border-radius: 6px;
-  background-color: ${primary};
+  background-color: ${green};
   width: ${rem('300px')};
   max-height: min-content;
   display: flex;
@@ -32,7 +32,7 @@ export const Wrapper = styled.div<AlertNotificationProps>`
     background-color: transparent;
 
     svg {
-      fill: ${darken(0.15, primary)};
+      fill: ${darkGreen};
     }
   }
 
@@ -54,27 +54,27 @@ export const Wrapper = styled.div<AlertNotificationProps>`
   }
 
   ${props =>
-    props.variant === 'warning' &&
+    props.variant === 'orange' &&
     css`
-      border: 2px solid ${darken(0.1, warning)};
-      background-color: ${warning};
+      border: 2px solid ${darkOrange};
+      background-color: ${orange};
 
       button {
         svg {
-          fill: ${darken(0.1, warning)};
+          fill: ${darkOrange};
         }
       }
     `}
 
   ${props =>
-    props.variant === 'danger' &&
+    props.variant === 'red' &&
     css`
-      border: 2px solid ${darken(0.19, danger)};
-      background-color: ${danger};
+      border: 2px solid ${darkRed};
+      background-color: ${red};
 
       button {
         svg {
-          fill: ${darken(0.19, danger)};
+          fill: ${darkRed};
         }
       }
     `}

@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro';
-import { lighten, darken } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface CheckboxErrorProps {
@@ -9,7 +8,7 @@ interface CheckboxWrapperProps extends CheckboxErrorProps {
   disabled?: boolean;
 }
 
-const { light, primary, danger, info } = colors;
+const { light, green, darkGreen, red, darkRed, grey, lightGrey } = colors;
 
 export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   display: flex;
@@ -22,12 +21,12 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   user-select: none;
 
   &:hover input:not(:disabled) ~ span {
-    border-color: ${props => (props.error ? darken(0.19, danger) : info)};
+    border-color: ${props => (props.error ? darkRed : grey)};
   }
 
   span {
-    color: ${props => (props.disabled ? info : props.error ? danger : null)};
-    border-color: ${props => (props.error ? danger : null)};
+    color: ${props => (props.disabled ? grey : props.error ? red : null)};
+    border-color: ${props => (props.error ? red : null)};
   }
 `;
 
@@ -43,9 +42,8 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   cursor: pointer;
 
   &:checked:not(:disabled) ~ span {
-    background-color: ${props => (props.error ? danger : primary)};
-    border-color: ${props =>
-      props.error ? darken(0.19, danger) : darken(0.15, primary)};
+    background-color: ${props => (props.error ? red : green)};
+    border-color: ${props => (props.error ? darkRed : darkGreen)};
 
     &:after {
       display: block;
@@ -54,8 +52,8 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
 
   &:checked:disabled ~ span {
     border-color: transparent;
-    background-color: ${lighten(0.4, info)};
-    color: ${info};
+    background-color: ${lightGrey};
+    color: ${grey};
 
     &:after {
       display: block;
@@ -63,17 +61,15 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   }
 
   &:not(:checked):disabled ~ span {
-    border-color: ${lighten(0.4, info)};
+    border-color: ${lightGrey};
     background-color: ${light};
   }
 
   &:hover:not(:disabled) {
-    border-color: ${props =>
-      props.error ? darken(0.19, danger) : darken(0.15, primary)};
+    border-color: ${props => (props.error ? darkRed : darkGreen)};
 
     &:checked ~ span {
-      border-color: ${props =>
-        props.error ? darken(0.19, danger) : darken(0.15, primary)};
+      border-color: ${props => (props.error ? darkRed : darkGreen)};
     }
   }
 `;
@@ -82,7 +78,7 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   position: absolute;
   top: 0;
   left: 0;
-  border: 2px solid ${props => (props.error ? danger : lighten(0.4, info))};
+  border: 2px solid ${props => (props.error ? red : lightGrey)};
   border-radius: 100%;
   width: 24px;
   height: 24px;

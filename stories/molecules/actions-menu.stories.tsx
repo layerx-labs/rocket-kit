@@ -19,7 +19,7 @@ const actions = [
   },
   {
     id: 'actionDelete',
-    type: 'danger',
+    type: 'red',
     value: 'Delete',
     url: null,
     action: () => {},

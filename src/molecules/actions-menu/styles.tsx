@@ -6,7 +6,7 @@ interface ListInterface {
   rowIndex?: number;
 }
 
-const { normal, light, info, danger } = colors;
+const { normal, light, lightGrey, red } = colors;
 
 export const ActionsMenuStyle = styled.div`
   height: ${rem('50px')};
@@ -18,7 +18,7 @@ export const ActionsMenuStyle = styled.div`
 
 export const List = styled.ul<ListInterface>`
   position: absolute;
-  border: 1px solid ${lighten(0.4, info)};
+  border: 1px solid ${lightGrey};
   border-radius: 4px;
   background-color: ${light};
   margin-top: 5px;
@@ -47,7 +47,7 @@ export const List = styled.ul<ListInterface>`
     transition-duration: 0.3s;
 
     &:hover {
-      background-color: ${lighten(0.4, info)};
+      background-color: ${lightGrey};
       cursor: pointer;
     }
 
@@ -59,11 +59,11 @@ export const List = styled.ul<ListInterface>`
       border-radius: 0 0 ${rem('4px')} ${rem('4px')};
     }
 
-    &.danger {
-      border-top: 1px solid ${lighten(0.4, info)};
+    &.red {
+      border-top: 1px solid ${lightGrey};
 
       a {
-        color: ${danger};
+        color: ${red};
       }
     }
 

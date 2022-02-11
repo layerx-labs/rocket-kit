@@ -5,7 +5,7 @@ exports[`ErrorField renders 1`] = `
   .c1 {
   display: block;
   font-size: 0.7rem;
-  color: hsl(354,83%,64%);
+  color: #ef5766;
 }
 
 .styles__TextFieldInputStyle-sc-1jl38sp-0 + .c0,
@@ -16,7 +16,7 @@ exports[`ErrorField renders 1`] = `
 
 <span
     class="c0 c1 error-field"
-    color="danger"
+    color="red"
   >
     operation failed.
   </span>

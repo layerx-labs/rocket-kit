@@ -8,13 +8,13 @@ interface TagWrapperProps {
   color?: TagColor;
 }
 
-const { light, info, primary, warning, danger } = colors;
+const { light, grey, green, orange, red } = colors;
 
 export const TagWrapper = styled.span<TagWrapperProps>`
   display: inline-block;
-  border: 2px solid ${info};
+  border: 2px solid ${grey};
   border-radius: 999px;
-  background-color: ${info};
+  background-color: ${grey};
   max-width: ${rem('150px')};
   padding: ${rem('2px')} ${rem('10px')};
   font-size: 0.85rem;
@@ -28,35 +28,35 @@ export const TagWrapper = styled.span<TagWrapperProps>`
   }
 
   ${props =>
-    props.color === 'primary' &&
+    props.color === 'green' &&
     css`
-      border-color: ${primary};
-      background-color: ${primary};
-      color: ${props.variant === 'solid' ? light : primary};
+      border-color: ${green};
+      background-color: ${green};
+      color: ${props.variant === 'solid' ? light : green};
     `}
 
   ${props =>
-    props.color === 'warning' &&
+    props.color === 'orange' &&
     css`
-      border-color: ${warning};
-      background-color: ${warning};
-      color: ${props.variant === 'solid' ? light : warning};
+      border-color: ${orange};
+      background-color: ${orange};
+      color: ${props.variant === 'solid' ? light : orange};
     `}
 
   ${props =>
-    props.color === 'danger' &&
+    props.color === 'red' &&
     css`
-      border-color: ${danger};
-      background-color: ${danger};
-      color: ${props.variant === 'solid' ? light : danger};
+      border-color: ${red};
+      background-color: ${red};
+      color: ${props.variant === 'solid' ? light : red};
     `}
 
   ${props =>
-    props.color === 'info' &&
+    props.color === 'grey' &&
     css`
-      border-color: ${info};
-      background-color: ${info};
-      color: ${props.variant === 'solid' ? light : info};
+      border-color: ${grey};
+      background-color: ${grey};
+      color: ${props.variant === 'solid' ? light : grey};
     `}
 
   ${props =>

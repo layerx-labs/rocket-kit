@@ -3,11 +3,11 @@
 exports[`Modal Footer renders 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(0,0%,48%);
-  --hover: #616161;
+  --button: #939393;
+  --hover: #7a7a7a;
   border-width: 3px;
   border-style: solid;
   border-color: var(--button);
@@ -94,11 +94,11 @@ exports[`Modal Footer renders 1`] = `
 }
 
 .c2 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(186,62%,59%);
-  --hover: #2798a5;
+  --button: #56cad7;
+  --hover: #2ba8b6;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
@@ -219,7 +219,7 @@ exports[`Modal Footer renders 1`] = `
   >
     <button
       class="c1 button"
-      color="info"
+      color="grey"
       value="Cancel"
     >
       <span>
@@ -228,7 +228,7 @@ exports[`Modal Footer renders 1`] = `
     </button>
     <button
       class="c2 button"
-      color="primary"
+      color="green"
       type="submit"
       value="save"
     >

@@ -18,14 +18,14 @@ exports[`ProgressBar renders 1`] = `
   -ms-flex: 1;
   flex: 1;
   border-radius: 999px;
-  background-color: #e0e0e0;
+  background-color: #f4f4f4;
   height: 0.625rem;
   overflow: hidden;
 }
 
 .c2 {
   border-radius: 999px;
-  background-color: hsl(186,62%,59%);
+  background-color: #56cad7;
   height: 100%;
   width: 10%;
   -webkit-transition-duration: 2s;

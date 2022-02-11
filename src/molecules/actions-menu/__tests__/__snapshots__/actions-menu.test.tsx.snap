@@ -3,11 +3,11 @@
 exports[`Actions Menu renders closed menu 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(0,0%,16%);
-  --hover: #000;
+  --button: #000000;
+  --hover: #7a7a7a;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
@@ -131,11 +131,11 @@ exports[`Actions Menu renders closed menu 1`] = `
 exports[`Actions Menu renders open menu 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(0,0%,16%);
-  --hover: #000;
+  --button: #000000;
+  --hover: #7a7a7a;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
@@ -229,16 +229,16 @@ exports[`Actions Menu renders open menu 1`] = `
 
 .c2 {
   position: absolute;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #f4f4f4;
   border-radius: 4px;
-  background-color: hsl(0,0%,100%);
+  background-color: #ffffff;
   margin-top: 5px;
   min-width: 12.5rem;
   max-width: 15.625rem;
   padding: 0;
-  -moz-box-shadow: 0 0 0.9375rem 0 #dbdbdb;
-  -webkit-box-shadow: 0 0 0.9375rem 0 #dbdbdb;
-  box-shadow: 0 0 0.9375rem 0 #dbdbdb;
+  -moz-box-shadow: 0 0 0.9375rem 0 #b3b3b3;
+  -webkit-box-shadow: 0 0 0.9375rem 0 #b3b3b3;
+  box-shadow: 0 0 0.9375rem 0 #b3b3b3;
   z-index: 1;
 }
 
@@ -254,7 +254,7 @@ exports[`Actions Menu renders open menu 1`] = `
 }
 
 .c2 li:hover {
-  background-color: #e0e0e0;
+  background-color: #f4f4f4;
   cursor: pointer;
 }
 
@@ -266,12 +266,12 @@ exports[`Actions Menu renders open menu 1`] = `
   border-radius: 0 0 0.25rem 0.25rem;
 }
 
-.c2 li.danger {
-  border-top: 1px solid #e0e0e0;
+.c2 li.red {
+  border-top: 1px solid #f4f4f4;
 }
 
-.c2 li.danger a {
-  color: hsl(354,83%,64%);
+.c2 li.red a {
+  color: #ef5766;
 }
 
 .c2 li a {
@@ -285,7 +285,7 @@ exports[`Actions Menu renders open menu 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0 1.25rem;
-  color: hsl(0,0%,16%);
+  color: #000000;
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;

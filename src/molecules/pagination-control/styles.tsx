@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import { colors, fontWeigth } from '../../ions/variables';
 
-const { normal, light, purple, info } = colors;
+const { normal, light, purple, grey } = colors;
 const { bold } = fontWeigth;
 
 export const PaginationWrapper = styled.div`
@@ -69,7 +69,7 @@ export const PaginationWrapper = styled.div`
         svg {
           width: ${rem('30px')};
           height: auto;
-          fill: ${info};
+          fill: ${grey};
         }
       }
 

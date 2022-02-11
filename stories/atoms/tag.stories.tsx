@@ -8,7 +8,7 @@ export default {
     color: {
       control: {
         type: 'select',
-        options: ['primary', 'warning', 'danger', 'info'],
+        options: ['green', 'orange', 'red', 'grey'],
       },
     },
     variant: {
@@ -25,7 +25,7 @@ export const TagPrimaryComponent = args => <Tag {...args} />;
 TagPrimaryComponent.storyName = 'Simple';
 
 TagPrimaryComponent.args = {
-  color: 'info',
+  color: 'grey',
   variant: 'solid',
   value: 'Burgdoggen',
 };

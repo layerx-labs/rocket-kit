@@ -26,7 +26,7 @@ export interface ButtonLinkProps {
 const ButtonLink = (props: ButtonLinkProps) => {
   const {
     variant = 'solid',
-    color = 'primary',
+    color = 'green',
     querySelector = '.button-link',
     className = 'button-link',
     url,

@@ -3,11 +3,11 @@
 exports[`Slideshow renders 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(186,62%,59%);
-  --hover: #2798a5;
+  --button: #56cad7;
+  --hover: #2ba8b6;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
@@ -368,7 +368,7 @@ exports[`Slideshow renders 1`] = `
 .c0 > div > div > button svg {
   width: 36px;
   height: 36px;
-  fill: hsl(0,0%,100%);
+  fill: #ffffff;
 }
 
 .c0 > div > div > button.next {
@@ -380,7 +380,7 @@ exports[`Slideshow renders 1`] = `
 }
 
 .c0 > div > div > button:hover svg {
-  fill: hsl(0,0%,100%);
+  fill: #ffffff;
 }
 
 .c0 .control-dots {
@@ -400,7 +400,7 @@ exports[`Slideshow renders 1`] = `
   position: relative;
   display: inline-block;
   border-radius: 999px;
-  background-color: hsl(0,0%,100%);
+  background-color: #ffffff;
   width: 15px;
   height: 15px;
   opacity: 0.25;
@@ -490,7 +490,7 @@ exports[`Slideshow renders 1`] = `
         <button
           aria-label="Previous"
           class="c1 previous"
-          color="primary"
+          color="green"
           value=""
         >
           <svg
@@ -555,7 +555,7 @@ exports[`Slideshow renders 1`] = `
         <button
           aria-label="Next"
           class="c1 next"
-          color="primary"
+          color="green"
           value=""
         >
           <svg

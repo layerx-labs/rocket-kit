@@ -4,7 +4,7 @@ exports[`Table renders 1`] = `
 <DocumentFragment>
   .c3 {
   position: relative;
-  border: 1px solid hsl(0,0%,16%);
+  border: 1px solid #000000;
   border-radius: 999px;
   width: 30px;
   height: 30px;
@@ -24,11 +24,11 @@ exports[`Table renders 1`] = `
 }
 
 .c4 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(0,0%,16%);
-  --hover: #000;
+  --button: #000000;
+  --hover: #7a7a7a;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
@@ -120,7 +120,7 @@ exports[`Table renders 1`] = `
   width: 100%;
   border-width: 0;
   border-style: solid;
-  border-color: #e0e0e0;
+  border-color: #f4f4f4;
   border-radius: 6px;
   border-spacing: 0;
   white-space: nowrap;
@@ -201,7 +201,7 @@ exports[`Table renders 1`] = `
 }
 
 .c2 tr {
-  border: 1px solid hsl(0,0%,48%);
+  border: 1px solid #939393;
   border-radius: 6px;
   position: relative;
 }
@@ -229,7 +229,7 @@ exports[`Table renders 1`] = `
 }
 
 .c2 tbody tr:hover {
-  background-color: #e0e0e0;
+  background-color: #f4f4f4;
 }
 
 .c2 tbody tr:hover td.menu button {
@@ -237,7 +237,7 @@ exports[`Table renders 1`] = `
 }
 
 .c2 tbody td {
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #f4f4f4;
   height: inherit;
   min-height: 3.125rem;
   padding: 0.9375rem;
@@ -295,9 +295,9 @@ exports[`Table renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: hsl(0,0%,16%);
-  -webkit-text-decoration-color: hsl(0,0%,48%);
-  text-decoration-color: hsl(0,0%,48%);
+  color: #000000;
+  -webkit-text-decoration-color: #939393;
+  text-decoration-color: #939393;
 }
 
 .c2 tbody td:first-child {
@@ -356,7 +356,7 @@ exports[`Table renders 1`] = `
   .c1 {
     display: block;
     border-radius: 6px;
-    background: linear-gradient(to right,hsl(0,0%,100%) 30%,rgba(255,255,255,0)), linear-gradient(to right,rgba(255,255,255,0),hsl(0,0%,100%) 70%) 0 100%, radial-gradient( farthest-side at 0% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ), radial-gradient( farthest-side at 100% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ) 0 100%;
+    background: linear-gradient(to right,#ffffff 30%,rgba(255,255,255,0)), linear-gradient(to right,rgba(255,255,255,0),#ffffff 70%) 0 100%, radial-gradient( farthest-side at 0% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ), radial-gradient( farthest-side at 100% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ) 0 100%;
     background-repeat: no-repeat;
     background-color: #fff;
     background-size: 2.5rem 100%,2.5rem 100%, 0.875rem 100%,0.875rem 100%;
@@ -394,7 +394,7 @@ exports[`Table renders 1`] = `
   .c2 thead {
     display: contents;
     font-weight: 700;
-    color: hsl(0,0%,48%);
+    color: #939393;
     text-transform: uppercase;
     text-align: left;
   }
@@ -433,7 +433,7 @@ exports[`Table renders 1`] = `
   }
 
   .c2 tbody td:first-child {
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #f4f4f4;
   }
 
   .c2 tbody td:before {

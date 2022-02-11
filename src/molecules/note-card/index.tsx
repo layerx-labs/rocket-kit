@@ -13,7 +13,7 @@ interface NoteCardProps {
 
 const NoteCard = (props: NoteCardProps) => {
   const {
-    color = 'info',
+    color = 'grey',
     value = '',
     buttonValue = '',
     onClick,

@@ -3,11 +3,11 @@
 exports[`AlertNotification renders 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(186,62%,59%);
-  --hover: #2798a5;
+  --button: #56cad7;
+  --hover: #2ba8b6;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
@@ -98,7 +98,7 @@ exports[`AlertNotification renders 1`] = `
   right: 0;
   border: 2px solid #2ba8b6;
   border-radius: 6px;
-  background-color: hsl(186,62%,59%);
+  background-color: #56cad7;
   width: 18.75rem;
   max-height: -webkit-min-content;
   max-height: -moz-min-content;
@@ -108,7 +108,7 @@ exports[`AlertNotification renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   padding: 0.9375rem;
-  color: hsl(0,0%,100%);
+  color: #ffffff;
   -moz-box-shadow: var(--shadow);
   -webkit-box-shadow: var(--shadow);
   box-shadow: var(--shadow);
@@ -166,7 +166,7 @@ exports[`AlertNotification renders 1`] = `
     </div>
     <button
       class="c1 button"
-      color="primary"
+      color="green"
       value=""
     >
       <svg

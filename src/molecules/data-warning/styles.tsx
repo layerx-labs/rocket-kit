@@ -6,7 +6,7 @@ interface DataWarningProps {
   type: 'login' | 'data';
 }
 
-const { normal, primary } = colors;
+const { normal, green } = colors;
 const { bold } = fontWeigth;
 
 export const Wrapper = styled.div<DataWarningProps>`
@@ -33,7 +33,7 @@ export const Wrapper = styled.div<DataWarningProps>`
       transition-duration: 0.3s;
 
       &:hover {
-        color: ${primary};
+        color: ${green};
       }
     }
   }
