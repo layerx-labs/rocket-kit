@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 
 const { normal, green, grey, lightGrey, light } = colors;
-const { bold } = fontWeigth;
+const { bold } = fontWeight;
 
 export const Wrapper = styled.div`
   display: flex;

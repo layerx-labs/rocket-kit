@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 
 const { grey, light } = colors;
-const { bold } = fontWeigth;
+const { bold } = fontWeight;
 
 export const TagWrapper = styled.div`
   display: flex;

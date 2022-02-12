@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/macro';
 import { device } from '../../ions/breakpoints';
 import { ButtonColor, ButtonVariant } from '../button/types';
-import { colors, fontWeigth } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 import { rem } from 'polished';
 import { pulseKeyframes } from '../button/styles';
 
@@ -27,7 +27,7 @@ const {
   darkPurple,
 } = colors;
 
-const { bold, black } = fontWeigth;
+const { bold } = fontWeight;
 
 export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
   --button: ${green};
@@ -166,7 +166,7 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
 
       span {
         font-size: 1rem;
-        font-weight: ${black};
+        font-weight: ${bold};
       }
 
       &:before {

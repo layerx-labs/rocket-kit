@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components/macro';
 import { device } from '../../ions/breakpoints';
 import { ButtonColor, ButtonVariant } from './types';
-import { colors, fontWeigth } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 import { rem } from 'polished';
 
 interface ButtonProps {
@@ -26,7 +26,7 @@ const {
   darkPurple,
 } = colors;
 
-const { bold, black } = fontWeigth;
+const { bold } = fontWeight;
 
 export const pulseKeyframes = keyframes`
   0% {
@@ -191,7 +191,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
 
       span {
         font-size: 1rem;
-        font-weight: ${black};
+        font-weight: ${bold};
       }
 
       &:before {

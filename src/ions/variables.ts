@@ -20,8 +20,8 @@ export const colors = {
   darkGrey: darken(0.1, '#939393'),
 };
 
-export const fontWeigth = {
+export const fontWeight = {
   regular: 400,
+  medium: 500,
   bold: 700,
-  black: 900,
 };

@@ -1,10 +1,10 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
 const { normal, grey, lightGrey } = colors;
-const { bold } = fontWeigth;
+const { bold } = fontWeight;
 
 interface TableDnDProps {
   border?: boolean;

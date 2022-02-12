@@ -16,7 +16,7 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
     opacity: 0;
     top: 0;
     margin: 0;
-    border: 1px solid ${lightGrey};
+    border: ${rem('1px')} solid ${lightGrey};
     border-radius: ${rem('4px')};
     background-color: ${light};
     min-width: ${rem('200px')};

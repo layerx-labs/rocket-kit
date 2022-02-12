@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 
 const { normal, light, purple, grey } = colors;
-const { bold } = fontWeigth;
+const { bold } = fontWeight;
 
 export const PaginationWrapper = styled.div`
   ul.pagination {
