@@ -62,11 +62,11 @@ exports[`PaginationControl renders 1`] = `
 
 .c0 ul.pagination li a:hover,
 .c0 ul.pagination li .break:hover {
-  -moz-box-shadow: 0 0 15px 0 rgba(40,40,40,0.1);
-  -webkit-box-shadow: 0 0 15px 0 rgba(40,40,40,0.1);
-  box-shadow: 0 0 15px 0 rgba(40,40,40,0.1);
-  -webkit-filter: drop-shadow(0 0 5px transparent);
-  filter: drop-shadow(0 0 5px transparent);
+  -moz-box-shadow: 0 0 0.9375rem 0 rgba(40,40,40,0.1);
+  -webkit-box-shadow: 0 0 0.9375rem 0 rgba(40,40,40,0.1);
+  box-shadow: 0 0 0.9375rem 0 rgba(40,40,40,0.1);
+  -webkit-filter: drop-shadow(0 0 0.3125rem transparent);
+  filter: drop-shadow(0 0 0.3125rem transparent);
   z-index: 2;
 }
 
@@ -102,7 +102,7 @@ exports[`PaginationControl renders 1`] = `
 }
 
 .c0 ul.pagination li.active a {
-  --shadow: drop-shadow(0 0 5px rgba(40,40,40,0.4));
+  --shadow: drop-shadow(0 0 0.3125rem rgba(40,40,40,0.4));
   border-radius: 1.5625rem;
   background-color: #4329a6;
   font-weight: 700;

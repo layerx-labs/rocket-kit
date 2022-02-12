@@ -33,7 +33,7 @@ exports[`RadioGroup renders 1`] = `
 }
 
 .c1 {
-  --size: 24px;
+  --size: 1.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -59,7 +59,7 @@ exports[`RadioGroup renders 1`] = `
 .c1 .check {
   position: absolute;
   top: 0;
-  border: 2px solid #f4f4f4;
+  border: 0.125rem solid #939393;
   border-radius: 100%;
   width: var(--size);
   height: var(--size);
@@ -88,7 +88,7 @@ exports[`RadioGroup renders 1`] = `
 }
 
 .c1:hover .check {
-  border-color: #939393;
+  border-color: #000000;
 }
 
 <div

@@ -11,7 +11,7 @@ exports[`LoadingState renders 1`] = `
   background: #f6f7f8;
   background-image: -webkit-linear-gradient( left, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100% );
   background-repeat: no-repeat;
-  background-size: 800px 100%;
+  background-size: 50rem 100%;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   -webkit-animation-name: placeholderSkeleton;
@@ -52,8 +52,8 @@ exports[`LoadingState renders 1`] = `
 
 .c0 .card {
   position: relative;
-  border: 2px solid #f4f4f4;
-  border-radius: 6px;
+  border: 0.125rem solid #f4f4f4;
+  border-radius: 0.375rem;
   width: 18.75rem;
   overflow: hidden;
 }
@@ -68,7 +68,7 @@ exports[`LoadingState renders 1`] = `
   margin: -2.8125rem 0 0 1.25rem;
   width: 5.625rem;
   height: 5.625rem;
-  border: 1px solid #f4f4f4;
+  border: 0.0625rem solid #f4f4f4;
   border-radius: 999px;
 }
 
@@ -77,7 +77,7 @@ exports[`LoadingState renders 1`] = `
 }
 
 .c0 .card .paragraph {
-  margin: 0 auto 20px auto;
+  margin: 0 auto 1.25rem auto;
   width: calc(100% - 2.5rem);
 }
 

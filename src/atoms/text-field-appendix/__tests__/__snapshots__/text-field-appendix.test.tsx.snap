@@ -3,7 +3,7 @@
 exports[`TextField Appendix renders 1`] = `
 <DocumentFragment>
   .c2 {
-  border-width: 1px;
+  border-width: 0.0625rem;
   border-style: solid;
   border-color: #939393;
   border-radius: 6px;
@@ -68,10 +68,10 @@ exports[`TextField Appendix renders 1`] = `
 }
 
 .c0 {
-  border-width: 1px;
+  border-width: 0.0625rem;
   border-style: solid;
   border-color: #939393;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -92,7 +92,7 @@ exports[`TextField Appendix renders 1`] = `
 }
 
 .c1 {
-  border-width: 0 1px 0 0;
+  border-width: 0 0.0625rem 0 0;
   border-style: solid;
   border-color: #939393;
   background-color: #f4f4f4;

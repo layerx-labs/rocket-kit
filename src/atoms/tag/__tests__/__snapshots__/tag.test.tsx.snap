@@ -4,7 +4,7 @@ exports[`Tag renders 1`] = `
 <DocumentFragment>
   .c0 {
   display: inline-block;
-  border: 2px solid #939393;
+  border: 0.125rem solid #939393;
   border-radius: 999px;
   background-color: #939393;
   max-width: 9.375rem;
@@ -20,7 +20,7 @@ exports[`Tag renders 1`] = `
 }
 
 .c0:not(:first-child) {
-  margin-left: 5px;
+  margin-left: 0.3125rem;
 }
 
 <span

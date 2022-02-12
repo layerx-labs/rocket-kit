@@ -23,8 +23,8 @@ exports[`Card Value renders 1`] = `
 }
 
 .c0 {
-  border: 1px solid #f4f4f4;
-  border-radius: 6px;
+  border: 0.0625rem solid #939393;
+  border-radius: 0.375rem;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;

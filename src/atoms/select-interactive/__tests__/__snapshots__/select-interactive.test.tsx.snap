@@ -106,7 +106,7 @@ exports[`Select Interactive renders 1`] = `
 .c0 .select__option svg,
 .c0 .select__value-container img,
 .c0 .select__option img {
-  margin: 0px 0.3125rem 0 0;
+  margin: 0 0.3125rem 0 0;
   width: 1.25rem;
   height: auto;
   -webkit-transition-duration: 0.3s;

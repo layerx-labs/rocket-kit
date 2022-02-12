@@ -229,10 +229,10 @@ exports[`Actions Menu renders open menu 1`] = `
 
 .c2 {
   position: absolute;
-  border: 1px solid #f4f4f4;
-  border-radius: 4px;
+  border: 0.0625rem solid #f4f4f4;
+  border-radius: 0.25rem;
   background-color: #ffffff;
-  margin-top: 5px;
+  margin-top: 0.3125rem;
   min-width: 12.5rem;
   max-width: 15.625rem;
   padding: 0;
@@ -267,7 +267,7 @@ exports[`Actions Menu renders open menu 1`] = `
 }
 
 .c2 li.red {
-  border-top: 1px solid #f4f4f4;
+  border-top: 0.0625rem solid #f4f4f4;
 }
 
 .c2 li.red a {

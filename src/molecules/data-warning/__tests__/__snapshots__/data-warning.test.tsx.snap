@@ -29,7 +29,7 @@ exports[`DataWarning renders 1`] = `
 }
 
 .c0 > div {
-  margin-top: 15px;
+  margin-top: 0.9375rem;
   font-weight: 700;
   color: #000000;
 }

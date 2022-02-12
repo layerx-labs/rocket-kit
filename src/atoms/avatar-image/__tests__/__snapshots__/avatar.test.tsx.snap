@@ -4,7 +4,7 @@ exports[`Avatar renders 1`] = `
 <DocumentFragment>
   .c0 {
   position: relative;
-  border: 1px solid #000000;
+  border: 0.125rem solid #939393;
   border-radius: 999px;
   width: 30px;
   height: 30px;
