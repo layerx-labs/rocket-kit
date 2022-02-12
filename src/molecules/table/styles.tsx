@@ -51,7 +51,7 @@ export const Table = styled.table<BorderProps>`
   width: 100%;
   border-width: ${props => (props.border ? '1px' : '0')};
   border-style: solid;
-  border-color: ${lightGrey};
+  border-color: ${grey};
   border-radius: 6px;
   border-spacing: 0;
   white-space: nowrap;
@@ -167,7 +167,7 @@ export const Table = styled.table<BorderProps>`
     }
 
     td {
-      border-top: 1px solid ${lightGrey};
+      border-top: 1px solid ${grey};
       height: inherit;
       min-height: ${rem('50px')};
       padding: ${rem('15px')};
@@ -271,7 +271,7 @@ export const Table = styled.table<BorderProps>`
         }
 
         &:first-child {
-          border-top: 1px solid ${lightGrey};
+          border-top: 1px solid ${grey};
         }
 
         &:before {

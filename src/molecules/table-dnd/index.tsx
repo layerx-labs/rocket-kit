@@ -225,7 +225,7 @@ const TableDnD = <CellData extends CellBaseType>(
                               <div ref={ref}>
                                 <Button
                                   variant="text"
-                                  color="dark"
+                                  color="grey"
                                   icon="menuVert"
                                   action={evt => {
                                     evt.preventDefault();

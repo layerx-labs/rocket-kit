@@ -14,7 +14,7 @@ interface ItemProps {
   disabled?: boolean;
 }
 
-const { green, darkGreen, grey, lightGrey, red } = colors;
+const { normal, green, darkGreen, grey, lightGrey, red } = colors;
 
 export const Wrapper = styled.ul<WrapperProps>`
   display: flex;
@@ -77,7 +77,7 @@ export const Item = styled.li<ItemProps>`
   .check {
     position: absolute;
     top: 0;
-    border: 2px solid ${props => (props.error ? red : lightGrey)};
+    border: 2px solid ${props => (props.error ? red : grey)};
     border-radius: 100%;
     width: var(--size);
     height: var(--size);
@@ -96,7 +96,7 @@ export const Item = styled.li<ItemProps>`
   }
 
   &:hover .check {
-    border-color: ${grey};
+    border-color: ${normal};
   }
 
   ${props =>

@@ -20,10 +20,9 @@ export const Wrapper = styled.div`
     &:disabled {
       cursor: inherit;
       background-color: ${lightGrey};
-      color: ${lightGrey};
 
       svg {
-        fill: ${lightGrey};
+        opacity: 0.25;
       }
 
       &:hover {

@@ -17,7 +17,7 @@ export const Table = styled.table<TableDnDProps>`
   width: 100%;
   border-width: ${props => (props.border ? '1px' : '0')};
   border-style: solid;
-  border-color: ${lightGrey};
+  border-color: ${grey};
   border-radius: 6px;
   border-spacing: 0;
   white-space: nowrap;
@@ -142,7 +142,7 @@ export const Table = styled.table<TableDnDProps>`
     }
 
     td {
-      border-top: 1px solid ${lightGrey};
+      border-top: 1px solid ${grey};
       height: inherit;
       min-height: ${rem('50px')};
       padding: ${rem('15px')};
@@ -157,7 +157,7 @@ export const Table = styled.table<TableDnDProps>`
         svg {
           width: ${rem('30px')};
           height: ${rem('30px')};
-          fill: ${lightGrey};
+          fill: ${grey};
           transition-duration: 0.3s;
         }
       }
@@ -259,7 +259,7 @@ export const Table = styled.table<TableDnDProps>`
         }
 
         &:first-child {
-          border-top: 1px solid ${lightGrey};
+          border-top: 1px solid ${grey};
         }
 
         &:before {

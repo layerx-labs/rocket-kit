@@ -8,7 +8,8 @@ interface CheckboxWrapperProps extends CheckboxErrorProps {
   disabled?: boolean;
 }
 
-const { light, green, darkGreen, red, darkRed, grey, lightGrey } = colors;
+const { normal, light, green, darkGreen, red, darkRed, grey, lightGrey } =
+  colors;
 
 export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   display: flex;
@@ -21,7 +22,7 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   user-select: none;
 
   &:hover input:not(:disabled) ~ span {
-    border-color: ${props => (props.error ? darkRed : grey)};
+    border-color: ${props => (props.error ? darkRed : normal)};
   }
 
   span {
@@ -78,7 +79,7 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   position: absolute;
   top: 0;
   left: 0;
-  border: 2px solid ${props => (props.error ? red : lightGrey)};
+  border: 2px solid ${props => (props.error ? red : grey)};
   border-radius: 100%;
   width: 24px;
   height: 24px;

@@ -62,7 +62,7 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
   ${props =>
     props.icon &&
     css`
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path style="fill:${grey}" d=${JSON.stringify(
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path style="fill:hsl(0, 0%, 58%)" d=${JSON.stringify(
         icons[props.icon]
       )} /></svg>');
       padding-left: ${props.minimal ? '40px' : '50px'};
@@ -72,7 +72,7 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
 
       &:focus {
         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32">
-        <path style="fill:${purple}" d=${JSON.stringify(
+        <path style="fill:hsl(252, 60%, 41%)" d=${JSON.stringify(
           icons[props.icon]
         )} /></svg>');
       }

@@ -3,7 +3,7 @@ import { rem, rgba } from 'polished';
 import { colors, fontWeigth } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
-const { grey, lightGrey, light } = colors;
+const { grey, light } = colors;
 const { bold } = fontWeigth;
 
 interface BorderProps {
@@ -17,7 +17,7 @@ export const EmptyTableWrapper = styled.div`
 export const EmptyTableHead = styled.div<BorderProps>`
   border-width: ${props => (props.border ? '1px' : '0 0 1px 0')};
   border-style: solid;
-  border-color: ${lightGrey};
+  border-color: ${grey};
   border-radius: 6px 6px 0 0;
   height: ${rem('50px')};
   display: flex;
@@ -65,7 +65,7 @@ export const EmptyTableHead = styled.div<BorderProps>`
 export const EmptyTableBody = styled.div<BorderProps>`
   border-width: ${props => (props.border ? '0 1px 1px 1px' : 0)};
   border-style: solid;
-  border-color: ${lightGrey};
+  border-color: ${grey};
   border-radius: 0 0 6px 6px;
 `;
 
@@ -75,7 +75,7 @@ export const EmptyTableRow = styled.div`
   align-items: center;
 
   &:not(:last-child) {
-    border-bottom: 1px solid ${lightGrey};
+    border-bottom: 1px solid ${grey};
   }
 
   > div {

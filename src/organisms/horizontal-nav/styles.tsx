@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import { rem } from 'polished';
 import { colors, fontWeigth } from '../../ions/variables';
 
-const { normal, green, lightGrey, light } = colors;
+const { normal, green, grey, lightGrey, light } = colors;
 const { bold } = fontWeigth;
 
 export const Wrapper = styled.div`
@@ -57,7 +57,7 @@ export const Wrapper = styled.div`
           width: auto;
           height: ${rem('24px')};
           min-width: ${rem('24px')};
-          fill: ${lightGrey};
+          fill: ${grey};
           transition-duration: 0.3s;
         }
 

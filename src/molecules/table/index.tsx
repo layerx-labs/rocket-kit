@@ -143,7 +143,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
                     <div ref={ref}>
                       <Button
                         variant="text"
-                        color="dark"
+                        color="grey"
                         icon="menuVert"
                         action={evt => {
                           evt.preventDefault();
