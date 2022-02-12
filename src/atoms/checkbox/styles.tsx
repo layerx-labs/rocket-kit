@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface CheckboxErrorProps {
@@ -32,8 +33,8 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
 `;
 
 export const CheckboxLabel = styled.span`
-  margin-left: calc(24px + 5px);
-  line-height: 24px;
+  margin-left: calc(${rem('24px')} + ${rem('5px')});
+  line-height: ${rem('24px')};
 `;
 
 export const CheckboxInput = styled.input<CheckboxWrapperProps>`
@@ -79,22 +80,22 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   position: absolute;
   top: 0;
   left: 0;
-  border: 2px solid ${props => (props.error ? red : grey)};
+  border: ${rem('2px')} solid ${props => (props.error ? red : grey)};
   border-radius: 100%;
-  width: 24px;
-  height: 24px;
+  width: ${rem('24px')};
+  height: ${rem('24px')};
   transition-duration: 0.3s;
 
   &:after {
     content: '';
     position: absolute;
     display: none;
-    top: 3px;
-    left: 6px;
-    width: 5px;
-    height: 9px;
+    top: ${rem('3px')};
+    left: ${rem('6px')};
+    width: ${rem('5px')};
+    height: ${rem('9px')};
     border: solid ${light};
-    border-width: 0 3px 3px 0;
+    border-width: 0 ${rem('3px')} ${rem('3px')} 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);

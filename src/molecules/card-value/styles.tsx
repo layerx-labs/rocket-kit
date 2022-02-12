@@ -3,11 +3,11 @@ import { rem } from 'polished';
 import { device } from '../../ions/breakpoints';
 import { colors } from '../../ions/variables';
 
-const { light, lightGrey } = colors;
+const { light, grey } = colors;
 
 export const CardValueStyle = styled.div`
-  border: 1px solid ${lightGrey};
-  border-radius: 6px;
+  border: ${rem('1px')} solid ${grey};
+  border-radius: ${rem('6px')};
   background-color: ${light};
   display: flex;
   flex-direction: column;

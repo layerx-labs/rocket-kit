@@ -14,8 +14,8 @@ export const Wrapper = styled.div<AlertNotificationProps>`
   position: fixed;
   top: ${rem('15px')};
   right: 0;
-  border: 2px solid ${darkGreen};
-  border-radius: 6px;
+  border: ${rem('2px')} solid ${darkGreen};
+  border-radius: ${rem('6px')};
   background-color: ${green};
   width: ${rem('300px')};
   max-height: min-content;
@@ -56,7 +56,7 @@ export const Wrapper = styled.div<AlertNotificationProps>`
   ${props =>
     props.variant === 'orange' &&
     css`
-      border: 2px solid ${darkOrange};
+      border: ${rem('2px')} solid ${darkOrange};
       background-color: ${orange};
 
       button {
@@ -69,7 +69,7 @@ export const Wrapper = styled.div<AlertNotificationProps>`
   ${props =>
     props.variant === 'red' &&
     css`
-      border: 2px solid ${darkRed};
+      border: ${rem('2px')} solid ${darkRed};
       background-color: ${red};
 
       button {
@@ -88,7 +88,7 @@ export const Wrapper = styled.div<AlertNotificationProps>`
   button {
     position: absolute;
     top: ${rem('4px')};
-    right: 0;
+    right: ${rem('4px')};
     margin: 0 !important;
     width: ${rem('20px')};
     height: ${rem('20px')};

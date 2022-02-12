@@ -24,7 +24,7 @@ export const Wrapper = styled.div<DataWarningProps>`
   }
 
   > div {
-    margin-top: 15px;
+    margin-top: ${rem('15px')};
     font-weight: ${bold};
     color: ${normal};
 

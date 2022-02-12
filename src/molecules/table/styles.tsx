@@ -17,7 +17,7 @@ export const TableWrapper = styled.div`
 export const OverflowWrapper = styled.div`
   @media ${device.s} {
     display: block;
-    border-radius: 6px;
+    border-radius: ${rem('6px')};
     background: linear-gradient(to right, ${light} 30%, rgba(255, 255, 255, 0)),
       linear-gradient(to right, rgba(255, 255, 255, 0), ${light} 70%) 0 100%,
       radial-gradient(
@@ -52,7 +52,7 @@ export const Table = styled.table<BorderProps>`
   border-width: ${props => (props.border ? '1px' : '0')};
   border-style: solid;
   border-color: ${grey};
-  border-radius: 6px;
+  border-radius: ${rem('6px')};
   border-spacing: 0;
   white-space: nowrap;
 
@@ -105,17 +105,17 @@ export const Table = styled.table<BorderProps>`
     font-size: 0.85rem;
 
     &:first-child {
-      border-top-left-radius: 6px;
+      border-top-left-radius: ${rem('6px')};
     }
 
     &:last-child {
-      border-top-right-radius: 6px;
+      border-top-right-radius: ${rem('6px')};
     }
   }
 
   tr {
-    border: 1px solid ${grey};
-    border-radius: 6px;
+    border: ${rem('1px')} solid ${grey};
+    border-radius: ${rem('6px')};
     position: relative;
 
     &:not(:last-child) {
@@ -130,12 +130,12 @@ export const Table = styled.table<BorderProps>`
   thead {
     border: none;
     clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
+    height: ${rem('1px')};
+    margin: ${rem('-1px')};
     overflow: hidden;
     padding: 0;
     position: absolute;
-    width: 1px;
+    width: ${rem('1px')};
 
     @media ${device.s} {
       display: contents;
@@ -167,7 +167,7 @@ export const Table = styled.table<BorderProps>`
     }
 
     td {
-      border-top: 1px solid ${grey};
+      border-top: ${rem('1px')} solid ${grey};
       height: inherit;
       min-height: ${rem('50px')};
       padding: ${rem('15px')};
@@ -175,7 +175,7 @@ export const Table = styled.table<BorderProps>`
       justify-content: flex-end;
 
       > div {
-        margin-left: 100px;
+        margin-left: ${rem('100px')};
         height: 100%;
         display: flex;
         justify-content: flex-end;
@@ -271,7 +271,7 @@ export const Table = styled.table<BorderProps>`
         }
 
         &:first-child {
-          border-top: 1px solid ${grey};
+          border-top: ${rem('1px')} solid ${grey};
         }
 
         &:before {
@@ -292,7 +292,7 @@ export const Table = styled.table<BorderProps>`
           }
 
           &:not(:last-child) {
-            margin-right: 5px;
+            margin-right: ${rem('5px')};
           }
         }
 

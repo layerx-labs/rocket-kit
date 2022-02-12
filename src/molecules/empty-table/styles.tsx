@@ -15,10 +15,10 @@ export const EmptyTableWrapper = styled.div`
 `;
 
 export const EmptyTableHead = styled.div<BorderProps>`
-  border-width: ${props => (props.border ? '1px' : '0 0 1px 0')};
+  border-width: ${props => (props.border ? rem('1px') : `0 0 ${rem('1px')} 0`)};
   border-style: solid;
   border-color: ${grey};
-  border-radius: 6px 6px 0 0;
+  border-radius: ${rem('6px')} ${rem('6px')} 0 0;
   height: ${rem('50px')};
   display: flex;
   align-items: center;
@@ -63,10 +63,11 @@ export const EmptyTableHead = styled.div<BorderProps>`
 `;
 
 export const EmptyTableBody = styled.div<BorderProps>`
-  border-width: ${props => (props.border ? '0 1px 1px 1px' : 0)};
+  border-width: ${props =>
+    props.border ? `0 ${rem('1px')} ${rem('1px')} ${rem('1px')}` : 0};
   border-style: solid;
   border-color: ${grey};
-  border-radius: 0 0 6px 6px;
+  border-radius: 0 0 ${rem('6px')} ${rem('6px')};
 `;
 
 export const EmptyTableRow = styled.div`
@@ -75,7 +76,7 @@ export const EmptyTableRow = styled.div`
   align-items: center;
 
   &:not(:last-child) {
-    border-bottom: 1px solid ${grey};
+    border-bottom: ${rem('1px')} solid ${grey};
   }
 
   > div {

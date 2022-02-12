@@ -54,7 +54,7 @@ export const Wrapper = styled.ul<WrapperProps>`
 `;
 
 export const Item = styled.li<ItemProps>`
-  --size: 24px;
+  --size: ${rem('24px')};
   display: flex;
   position: relative;
   min-height: var(--size);
@@ -77,7 +77,7 @@ export const Item = styled.li<ItemProps>`
   .check {
     position: absolute;
     top: 0;
-    border: 2px solid ${props => (props.error ? red : grey)};
+    border: ${rem('2px')} solid ${props => (props.error ? red : grey)};
     border-radius: 100%;
     width: var(--size);
     height: var(--size);

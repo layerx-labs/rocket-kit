@@ -61,7 +61,7 @@ export const Step = styled.li<WizardStepProps>`
     overflow: hidden;
 
     > div {
-      border-radius: 6px 0 0 6px;
+      border-radius: ${rem('6px')} 0 0 ${rem('6px')};
     }
   }
 
@@ -69,7 +69,7 @@ export const Step = styled.li<WizardStepProps>`
     padding-right: 0;
 
     > div {
-      border-radius: 0 6px 6px 0;
+      border-radius: 0 ${rem('6px')} ${rem('6px')} 0;
     }
   }
 

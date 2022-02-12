@@ -30,13 +30,13 @@ const { bold, black } = fontWeigth;
 
 export const pulseKeyframes = keyframes`
   0% {
-    box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0.3);
+    box-shadow: 0 0 ${rem('10px')} 0 rgba(40, 40, 40, 0.3);
   }
   50% {
-    box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0);
+    box-shadow: 0 0 ${rem('10px')} 0 rgba(40, 40, 40, 0);
   }
   100% {
-    box-shadow: 0 0 10px 0 rgba(40, 40, 40, 0.3);
+    box-shadow: 0 0 ${rem('10px')} 0 rgba(40, 40, 40, 0.3);
   }
 `;
 
@@ -211,7 +211,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       }
 
       &:hover:before {
-        --size: 200px;
+        --size: ${rem('200px')};
       }
     `}
 `;

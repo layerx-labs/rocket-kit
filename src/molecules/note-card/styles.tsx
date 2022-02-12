@@ -50,10 +50,10 @@ export const Wrapper = styled.div<NoteCardProps>`
       --dark: ${darkRed};
     `}
 
-  border-width: 2px;
+  border-width: ${rem('2px')};
   border-style: solid;
   border-color: var(--default);
-  border-radius: 6px;
+  border-radius: ${rem('6px')};
   background-color: var(--light);
   padding: ${rem('15px')};
 

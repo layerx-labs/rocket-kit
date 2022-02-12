@@ -186,7 +186,7 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
       }
 
       &:hover:before {
-        --size: 200px;
+        --size: ${rem('200px')};
       }
     `}
 `;

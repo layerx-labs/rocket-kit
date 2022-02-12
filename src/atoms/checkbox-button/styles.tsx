@@ -10,9 +10,9 @@ interface CheckboxWrapperProps {
 const { light, green, darkGreen, grey, lightGrey } = colors;
 
 export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
-  border: 3px solid
+  border: ${rem('3px')} solid
     ${props => (props.disabled ? grey : props.checked ? darkGreen : grey)};
-  border-radius: 6px;
+  border-radius: ${rem('6px')};
   background-color: ${props =>
     props.disabled ? lightGrey : props.checked ? green : light};
   height: ${rem('50px')};
@@ -86,7 +86,7 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
 export const Checkmark = styled.span<CheckboxWrapperProps>`
   position: absolute;
   left: ${rem('10px')};
-  border: 2px solid ${lightGrey};
+  border: ${rem('2px')} solid ${grey};
   border-radius: 999px;
   background-color: ${light};
   width: ${rem('24px')};
@@ -97,12 +97,12 @@ export const Checkmark = styled.span<CheckboxWrapperProps>`
     content: '';
     position: absolute;
     display: none;
-    top: 3px;
-    left: 6px;
-    width: 5px;
-    height: 9px;
+    top: ${rem('3px')};
+    left: ${rem('6px')};
+    width: ${rem('5px')};
+    height: ${rem('9px')};
     border: solid ${props => (props.disabled ? light : green)};
-    border-width: 0 3px 3px 0;
+    border-width: 0 ${rem('3px')} ${rem('3px')} 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);

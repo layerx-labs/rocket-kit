@@ -16,7 +16,7 @@ export const Field = styled.div`
 
   input {
     flex: 1;
-    border-radius: 6px 0 0 6px;
+    border-radius: ${rem('6px')} 0 0 ${rem('6px')};
 
     &:focus {
       outline: none;
@@ -34,7 +34,7 @@ export const Field = styled.div`
 
   button {
     border: 0;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 ${rem('6px')} ${rem('6px')} 0;
     background-color: ${grey};
     min-width: ${rem('50px')};
     height: ${rem('50px')};

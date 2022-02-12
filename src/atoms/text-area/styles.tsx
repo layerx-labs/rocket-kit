@@ -17,7 +17,8 @@ export const Wrapper = styled.div`
 `;
 
 export const TextAreaStyle = styled.textarea<TextAreaProps>`
-  border-width: ${props => (props.minimal ? '0 0 1px 0' : '1px')};
+  border-width: ${props =>
+    props.minimal ? `0 0 ${rem('1px')} 0` : rem('1px')};
   border-style: solid;
   border-color: ${props => (props.error ? red : grey)};
   border-radius: ${props => (props.minimal ? 0 : '6px')};

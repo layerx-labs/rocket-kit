@@ -12,7 +12,8 @@ interface InputStyleProps {
 const { grey, lightGrey, red, purple } = colors;
 
 export const TextFieldInputStyle = styled.input<InputStyleProps>`
-  border-width: ${props => (props.minimal ? '0 0 1px 0' : '1px')};
+  border-width: ${props =>
+    props.minimal ? `0 0 ${rem('1px')} 0` : rem('1px')};
   border-style: solid;
   border-color: ${props => (props.error ? red : grey)};
   border-radius: ${props => (props.minimal ? 0 : '6px')};
@@ -67,7 +68,7 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
       )} /></svg>');
       padding-left: ${props.minimal ? '40px' : '50px'};
       background-repeat: no-repeat;
-      background-size: 30px 30px;
+      background-size: ${rem('30px')} ${rem('30px')};
       background-position: ${props.minimal ? 0 : '10px'} 50%;
 
       &:focus {

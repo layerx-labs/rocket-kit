@@ -97,7 +97,7 @@ export const SelectWrapper = styled.div`
   .select__option {
     svg,
     img {
-      margin: 0px ${rem('5px')} 0 0;
+      margin: 0 ${rem('5px')} 0 0;
       width: ${rem('20px')};
       height: auto;
       transition-duration: 0.3s;

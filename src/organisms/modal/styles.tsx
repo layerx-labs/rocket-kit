@@ -55,7 +55,7 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
   @media ${device.s} {
     --spacing: ${rem('30px')};
     margin: var(--spacing);
-    border-radius: 6px;
+    border-radius: ${rem('6px')};
     max-width: ${rem('860px')};
     padding: var(--spacing);
 
@@ -63,7 +63,7 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
       content: '';
       position: absolute;
       bottom: calc(var(--spacing) * -1);
-      width: 1px;
+      width: ${rem('1px')};
       height: var(--spacing);
     }
   }

@@ -49,10 +49,10 @@ export const PaginationWrapper = styled.div`
         transition-duration: 0.3s;
 
         &:hover {
-          -moz-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.1);
-          -webkit-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.1);
-          box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.1);
-          filter: drop-shadow(0 0 5px transparent);
+          -moz-box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.1);
+          -webkit-box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.1);
+          box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.1);
+          filter: drop-shadow(0 0 ${rem('5px')} transparent);
           z-index: 2;
         }
       }
@@ -78,7 +78,7 @@ export const PaginationWrapper = styled.div`
         pointer-events: none;
 
         a {
-          --shadow: drop-shadow(0 0 5px rgba(40, 40, 40, 0.4));
+          --shadow: drop-shadow(0 0 ${rem('5px')} rgba(40, 40, 40, 0.4));
 
           border-radius: ${rem('25px')};
           background-color: ${purple};

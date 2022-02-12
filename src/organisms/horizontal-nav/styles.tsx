@@ -96,14 +96,14 @@ export const More = styled.div`
   ul {
     position: absolute;
     right: 0;
-    border: 1px solid ${lightGrey};
-    border-radius: 4px;
+    border: ${rem('1px')} solid ${lightGrey};
+    border-radius: ${rem('4px')};
     background-color: ${light};
-    margin-top: 5px;
+    margin-top: ${rem('5px')};
     padding: 0;
-    -moz-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
-    -webkit-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
-    box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
+    -moz-box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.2);
+    -webkit-box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.2);
+    box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.2);
     z-index: 1;
     overflow-x: hidden;
     overflow-y: auto;
@@ -137,17 +137,17 @@ export const More = styled.div`
       }
 
       &:first-child {
-        border-radius: 4px 4px 0 0;
+        border-radius: ${rem('4px')} ${rem('4px')} 0 0;
       }
 
       &:last-child {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 ${rem('4px')} ${rem('4px')};
       }
 
       a {
         width: 100%;
         height: 100%;
-        padding: 15px;
+        padding: ${rem('15px')};
       }
     }
   }

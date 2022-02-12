@@ -18,10 +18,10 @@ export const ActionsMenuStyle = styled.div`
 
 export const List = styled.ul<ListInterface>`
   position: absolute;
-  border: 1px solid ${lightGrey};
-  border-radius: 4px;
+  border: ${rem('1px')} solid ${lightGrey};
+  border-radius: ${rem('4px')};
   background-color: ${light};
-  margin-top: 5px;
+  margin-top: ${rem('5px')};
   min-width: ${rem('200px')};
   max-width: ${rem('250px')};
   padding: 0;
@@ -60,7 +60,7 @@ export const List = styled.ul<ListInterface>`
     }
 
     &.red {
-      border-top: 1px solid ${lightGrey};
+      border-top: ${rem('1px')} solid ${lightGrey};
 
       a {
         color: ${red};

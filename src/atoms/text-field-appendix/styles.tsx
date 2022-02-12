@@ -14,10 +14,10 @@ interface AppendixProps {
 const { normal, grey, lightGrey, red, lightRed } = colors;
 
 export const Wrapper = styled.div<TextFieldAppendixProps>`
-  border-width: 1px;
+  border-width: ${rem('1px')};
   border-style: solid;
   border-color: ${props => (props.error ? red : grey)};
-  border-radius: 6px;
+  border-radius: ${rem('6px')};
   display: flex;
   overflow: hidden;
 
@@ -34,7 +34,7 @@ export const Wrapper = styled.div<TextFieldAppendixProps>`
 
 export const Appendix = styled.div<AppendixProps>`
   border-width: ${props =>
-    props.position === 'left' ? '0 1px 0 0' : '0 0 0 1px'};
+    props.position === 'left' ? `0 ${rem('1px')} 0 0` : `0 0 0 ${rem('1px')}`};
   border-style: solid;
   border-color: ${props => (props.error ? red : grey)};
   background-color: ${props => (props.error ? lightRed : lightGrey)};

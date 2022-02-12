@@ -1,7 +1,8 @@
 import styled from 'styled-components/macro';
+import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { normal } = colors;
+const { grey } = colors;
 
 interface AvatarProps {
   size?: number;
@@ -10,7 +11,7 @@ interface AvatarProps {
 
 export const Wrapper = styled.div<AvatarProps>`
   position: relative;
-  border: 1px solid ${normal};
+  border: ${rem('2px')} solid ${grey};
   border-radius: ${props => (props.square ? 0 : '999px')};
   width: ${props => props.size}px;
   height: ${props => props.size}px;

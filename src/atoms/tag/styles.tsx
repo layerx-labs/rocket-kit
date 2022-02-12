@@ -12,7 +12,7 @@ const { light, grey, green, orange, red } = colors;
 
 export const TagWrapper = styled.span<TagWrapperProps>`
   display: inline-block;
-  border: 2px solid ${grey};
+  border: ${rem('2px')} solid ${grey};
   border-radius: 999px;
   background-color: ${grey};
   max-width: ${rem('150px')};
@@ -24,7 +24,7 @@ export const TagWrapper = styled.span<TagWrapperProps>`
   text-overflow: ellipsis;
 
   &:not(:first-child) {
-    margin-left: 5px;
+    margin-left: ${rem('5px')};
   }
 
   ${props =>

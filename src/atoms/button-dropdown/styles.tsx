@@ -17,7 +17,7 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
     top: 0;
     margin: 0;
     border: 1px solid ${lightGrey};
-    border-radius: 4px;
+    border-radius: ${rem('4px')};
     background-color: ${light};
     min-width: ${rem('200px')};
     max-width: ${rem('250px')};
@@ -40,7 +40,7 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
     &.isOpen {
       opacity: 1;
       height: calc(${rem('45px')} * ${props => props.visibleActions} + 2px);
-      max-height: 1280px;
+      max-height: ${rem('1280px')};
     }
 
     li {
@@ -55,11 +55,11 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
       }
 
       &:first-child {
-        border-radius: 4px 4px 0 0;
+        border-radius: ${rem('4px')} ${rem('4px')} 0 0;
       }
 
       &:last-child {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 ${rem('4px')} ${rem('4px')};
       }
 
       a {
