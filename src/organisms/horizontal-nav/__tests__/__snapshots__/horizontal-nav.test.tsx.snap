@@ -165,11 +165,11 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 .c0 ul li a:hover {
-  color: #56cad7;
+  color: #4329a6;
 }
 
 .c0 ul li a:hover svg {
-  fill: #56cad7;
+  fill: #4329a6;
 }
 
 .c0 ul li.active {
@@ -181,7 +181,7 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 .c0 ul li.active a svg {
-  fill: #56cad7;
+  fill: #4329a6;
 }
 
 .c1 {
