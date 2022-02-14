@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components/macro';
 import { rem, rgba, timingFunctions } from 'polished';
-import { colors } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
 interface ModalStyleBaseProps {
@@ -8,6 +8,7 @@ interface ModalStyleBaseProps {
 }
 
 const { light } = colors;
+const { bold } = fontWeight;
 
 const slideInLeft = keyframes`
   from {
@@ -67,6 +68,8 @@ export const ModalHeader = styled.div`
 
   h2 {
     margin: 0 0 ${rem('30px')} 0;
+    font-size: 2rem;
+    font-weight: ${bold};
   }
 `;
 

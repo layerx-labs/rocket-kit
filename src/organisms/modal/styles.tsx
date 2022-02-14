@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import { rem, rgba } from 'polished';
-import { colors } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
 interface ModalStyleBaseProps {
@@ -9,6 +9,7 @@ interface ModalStyleBaseProps {
 }
 
 const { light } = colors;
+const { bold } = fontWeight;
 
 export const ModalOverlay = styled.div<ModalStyleBaseProps>`
   position: fixed;
@@ -74,6 +75,8 @@ export const ModalHeader = styled.div`
 
   h2 {
     margin: 0 0 ${rem('30px')} 0;
+    font-size: 2rem;
+    font-weight: ${bold};
   }
 
   button {
