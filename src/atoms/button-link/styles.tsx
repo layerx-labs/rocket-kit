@@ -21,6 +21,8 @@ const {
   darkGrey,
   green,
   darkGreen,
+  orange,
+  darkOrange,
   red,
   darkRed,
   purple,
@@ -39,6 +41,13 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
     css`
       --button: ${green};
       --hover: ${darkGreen};
+    `}
+
+  ${props =>
+    props.color === 'orange' &&
+    css`
+      --button: ${orange};
+      --hover: ${darkOrange};
     `}
 
   ${props =>

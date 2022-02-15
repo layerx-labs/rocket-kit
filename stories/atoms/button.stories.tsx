@@ -11,6 +11,7 @@ export default {
         type: 'select',
         options: [
           'green',
+          'orange',
           'red',
           'grey',
           'purple',

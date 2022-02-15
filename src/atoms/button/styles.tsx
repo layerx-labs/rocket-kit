@@ -20,6 +20,8 @@ const {
   darkGrey,
   green,
   darkGreen,
+  orange,
+  darkOrange,
   red,
   darkRed,
   purple,
@@ -50,6 +52,13 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     css`
       --button: ${green};
       --hover: ${darkGreen};
+    `}
+
+  ${props =>
+    props.color === 'orange' &&
+    css`
+      --button: ${orange};
+      --hover: ${darkOrange};
     `}
 
   ${props =>
