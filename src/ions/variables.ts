@@ -16,7 +16,7 @@ export const colors = {
   lightGreen: lighten(0.3, '#56cad7'),
   darkGreen: darken(0.15, '#56cad7'),
   grey: '#939393',
-  lightGrey: lighten(0.38, '#939393'),
+  lightGrey: '#c4c7d3',
   darkGrey: darken(0.1, '#939393'),
 };
 
