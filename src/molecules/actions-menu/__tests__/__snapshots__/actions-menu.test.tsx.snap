@@ -229,7 +229,7 @@ exports[`Actions Menu renders open menu 1`] = `
 
 .c2 {
   position: absolute;
-  border: 0.0625rem solid #f4f4f4;
+  border: 0.0625rem solid #c4c7d3;
   border-radius: 0.25rem;
   background-color: #ffffff;
   margin-top: 0.3125rem;
@@ -254,7 +254,7 @@ exports[`Actions Menu renders open menu 1`] = `
 }
 
 .c2 li:hover {
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   cursor: pointer;
 }
 
@@ -267,7 +267,7 @@ exports[`Actions Menu renders open menu 1`] = `
 }
 
 .c2 li.red {
-  border-top: 0.0625rem solid #f4f4f4;
+  border-top: 0.0625rem solid #c4c7d3;
 }
 
 .c2 li.red a {

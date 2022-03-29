@@ -196,7 +196,7 @@ exports[`Horizontal Nav renders 1`] = `
 .c1 ul {
   position: absolute;
   right: 0;
-  border: 0.0625rem solid #f4f4f4;
+  border: 0.0625rem solid #c4c7d3;
   border-radius: 0.25rem;
   background-color: #ffffff;
   margin-top: 0.3125rem;
@@ -230,7 +230,7 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 .c1 ul li:hover {
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   cursor: pointer;
 }
 

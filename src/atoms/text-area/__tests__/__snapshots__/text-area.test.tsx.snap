@@ -29,7 +29,7 @@ exports[`TextArea renders 1`] = `
 }
 
 .c1:disabled {
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   color: #939393;
 }
 

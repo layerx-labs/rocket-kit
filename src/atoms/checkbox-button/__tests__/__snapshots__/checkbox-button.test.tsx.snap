@@ -75,7 +75,7 @@ exports[`CheckboxButton renders 1`] = `
 
 .c2:not(:checked):disabled ~ span {
   border-color: #939393;
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
 }
 
 .c2:hover:not(:disabled):checked ~ span {

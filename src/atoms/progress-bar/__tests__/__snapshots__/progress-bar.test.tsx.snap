@@ -18,7 +18,7 @@ exports[`ProgressBar renders 1`] = `
   -ms-flex: 1;
   flex: 1;
   border-radius: 999px;
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   height: 0.625rem;
   overflow: hidden;
 }

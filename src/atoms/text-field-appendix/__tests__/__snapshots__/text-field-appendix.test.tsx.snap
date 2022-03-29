@@ -21,7 +21,7 @@ exports[`TextField Appendix renders 1`] = `
 }
 
 .c2:disabled {
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   color: #939393;
 }
 
@@ -95,7 +95,7 @@ exports[`TextField Appendix renders 1`] = `
   border-width: 0 0.0625rem 0 0;
   border-style: solid;
   border-color: #939393;
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   padding: 0 0.9375rem;
   color: #939393;
   line-height: 3rem;

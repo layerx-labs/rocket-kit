@@ -46,7 +46,7 @@ exports[`Checkbox renders 1`] = `
 
 .c2:checked:disabled ~ span {
   border-color: transparent;
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   color: #939393;
 }
 
@@ -55,7 +55,7 @@ exports[`Checkbox renders 1`] = `
 }
 
 .c2:not(:checked):disabled ~ span {
-  border-color: #f4f4f4;
+  border-color: #c4c7d3;
   background-color: #ffffff;
 }
 

@@ -2,7 +2,11 @@
 
 exports[`PaginationControl renders 1`] = `
 <DocumentFragment>
-  .c0 ul.pagination {
+  .c0 {
+  --size: 1.875rem;
+}
+
+.c0 ul.pagination {
   margin: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -21,17 +25,13 @@ exports[`PaginationControl renders 1`] = `
 }
 
 .c0 ul.pagination li {
-  width: 3.125rem;
-  height: 3.125rem;
-  background-color: #ffffff;
+  min-width: var(--size);
+  height: var(--size);
   cursor: pointer;
 }
 
 .c0 ul.pagination li.previous,
 .c0 ul.pagination li.next {
-  margin: 0 0.9375rem;
-  background-color: #ffffff;
-  border-radius: 1.5625rem;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
@@ -42,37 +42,19 @@ exports[`PaginationControl renders 1`] = `
   transition-duration: 0.3s;
 }
 
-.c0 ul.pagination li.page:nth-child(2) {
-  border-radius: 1.5625rem 0 0 1.5625rem;
-}
-
-.c0 ul.pagination li.page:nth-last-child(2) {
-  border-radius: 0 1.5625rem 1.5625rem 0;
-}
-
 .c0 ul.pagination li a,
 .c0 ul.pagination li .break {
-  width: 3.125rem;
-  height: 3.125rem;
-  border-radius: 999px;
-  z-index: 1;
+  min-width: var(--size);
+  height: var(--size);
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
-.c0 ul.pagination li a:hover,
-.c0 ul.pagination li .break:hover {
-  -moz-box-shadow: 0 0 0.9375rem 0 rgba(40,40,40,0.1);
-  -webkit-box-shadow: 0 0 0.9375rem 0 rgba(40,40,40,0.1);
-  box-shadow: 0 0 0.9375rem 0 rgba(40,40,40,0.1);
-  -webkit-filter: drop-shadow(0 0 0.3125rem transparent);
-  filter: drop-shadow(0 0 0.3125rem transparent);
-  z-index: 2;
-}
-
 .c0 ul.pagination li a {
-  width: 3.125rem;
-  height: 3.125rem;
+  border-radius: 0.5rem;
+  min-width: var(--size);
+  height: var(--size);
+  padding: 0 0.3125rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -85,30 +67,37 @@ exports[`PaginationControl renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #000000;
+  color: #939393;
+  font-weight: 700;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
+.c0 ul.pagination li a:hover {
+  color: #000000;
+}
+
 .c0 ul.pagination li a svg {
-  width: 1.875rem;
+  width: 1.125rem;
   height: auto;
-  fill: #939393;
+  fill: #4250e4;
 }
 
 .c0 ul.pagination li.active {
-  border-radius: 0;
   pointer-events: none;
 }
 
 .c0 ul.pagination li.active a {
-  --shadow: drop-shadow(0 0 0.3125rem rgba(40,40,40,0.4));
-  border-radius: 1.5625rem;
-  background-color: #4329a6;
-  font-weight: 700;
+  background-color: #4250e4;
   color: #ffffff;
-  -webkit-filter: var(--shadow);
-  filter: var(--shadow);
+}
+
+.c0 ul.pagination.dark a {
+  color: #c4c7d3;
+}
+
+.c0 ul.pagination.dark a:hover {
+  color: #ffffff;
 }
 
 <div
@@ -131,7 +120,7 @@ exports[`PaginationControl renders 1`] = `
             viewBox="0 0 32 32"
           >
             <path
-              d="M24.956 14.574h-14.894l6.507-6.507c0.241-0.243 0.39-0.577 0.39-0.947s-0.149-0.704-0.39-0.947l0 0c-0.24-0.241-0.573-0.39-0.94-0.39s-0.699 0.149-0.94 0.39l-8.787 8.787c-0.241 0.24-0.39 0.573-0.39 0.94s0.149 0.699 0.39 0.94l8.787 8.787c0.242 0.247 0.578 0.4 0.95 0.4 0.734 0 1.329-0.595 1.329-1.329 0-0.372-0.153-0.709-0.4-0.95l-0-0-6.507-6.507h14.894c0.736 0 1.333-0.597 1.333-1.333s-0.597-1.333-1.333-1.333v0z"
+              d="M22.6986 26.027C22.0701 26.7812 20.9491 26.8832 20.1948 26.2546L9.52814 17.3657C9.12282 17.0279 8.88847 16.5276 8.88847 16C8.88847 15.4724 9.12282 14.972 9.52814 14.6342L20.1948 5.74536C20.9491 5.1168 22.0701 5.21871 22.6986 5.97298C23.3272 6.72725 23.2253 7.84826 22.471 8.47682L13.4432 16L22.471 23.5231C23.2253 24.1517 23.3272 25.2727 22.6986 26.027Z"
             />
           </svg>
         </a>
@@ -217,7 +206,7 @@ exports[`PaginationControl renders 1`] = `
             viewBox="0 0 32 32"
           >
             <path
-              d="M7.044 17.425h14.893l-6.507 6.507c-0.241 0.243-0.39 0.577-0.39 0.947s0.149 0.704 0.39 0.947l-0-0c0.241 0.242 0.574 0.392 0.942 0.392s0.701-0.15 0.942-0.392l8.783-8.783c0.241-0.24 0.39-0.573 0.39-0.94s-0.149-0.699-0.39-0.94l-8.783-8.787c-0.239-0.234-0.567-0.379-0.929-0.379-0.734 0-1.329 0.595-1.329 1.329 0 0.362 0.145 0.69 0.379 0.929l-0-0 6.507 6.507h-14.897c-0.736 0-1.333 0.597-1.333 1.333s0.597 1.333 1.333 1.333v0z"
+              d="M9.30048 5.97303C9.92904 5.21876 11.05 5.11685 11.8043 5.74541L22.471 14.6343C22.8763 14.9721 23.1106 15.4724 23.1106 16C23.1106 16.5276 22.8763 17.028 22.471 17.3658L11.8043 26.2546C11.05 26.8832 9.92904 26.7813 9.30048 26.027C8.67192 25.2727 8.77383 24.1517 9.5281 23.5232L18.5559 16L9.5281 8.47686C8.77383 7.8483 8.67192 6.7273 9.30048 5.97303Z"
             />
           </svg>
         </a>

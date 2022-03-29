@@ -135,7 +135,7 @@ exports[`Wizard Steps renders wizard 1`] = `
   content: '';
   position: absolute;
   top: 0;
-  border: 0 solid #f4f4f4;
+  border: 0 solid #c4c7d3;
   border-width: 1.375rem 0.9375rem;
   width: 0;
   height: 0;
@@ -149,7 +149,7 @@ exports[`Wizard Steps renders wizard 1`] = `
 .c2:after {
   left: calc(100% - 1.125rem);
   border-color: transparent;
-  border-left-color: #f4f4f4;
+  border-left-color: #c4c7d3;
 }
 
 .c2:first-child:before {
@@ -177,7 +177,7 @@ exports[`Wizard Steps renders wizard 1`] = `
 }
 
 .c2 > div {
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   width: 100%;
   height: 100%;
   display: -webkit-box;

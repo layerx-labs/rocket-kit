@@ -19,7 +19,7 @@ exports[`NumberInputSpinner renders 1`] = `
 .c0 button:disabled,
 .c0 input:disabled {
   cursor: inherit;
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
 }
 
 .c0 button:disabled svg,
@@ -62,7 +62,7 @@ exports[`NumberInputSpinner renders 1`] = `
   width: 3.125rem;
   height: 3.125rem;
   border: 0;
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -83,7 +83,7 @@ exports[`NumberInputSpinner renders 1`] = `
 }
 
 .c1:hover {
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
 }
 
 <div

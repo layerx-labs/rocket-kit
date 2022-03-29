@@ -31,7 +31,7 @@ exports[`Select Default renders 1`] = `
 }
 
 .c0:disabled {
-  background-color: #f4f4f4;
+  background-color: #c4c7d3;
   color: #939393;
   pointer-events: none;
 }
