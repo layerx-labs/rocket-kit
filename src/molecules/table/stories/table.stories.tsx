@@ -38,7 +38,7 @@ const actions: ActionMenu<Transaction>[] = [
   },
   {
     id: 'actionDelete',
-    type: 'red',
+    type: 'danger',
     value: 'Delete',
   },
 ];

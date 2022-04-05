@@ -275,7 +275,7 @@ describe('Table', () => {
       },
       {
         id: 'actionDelete',
-        type: 'red',
+        type: 'danger',
         value: 'Delete',
       },
     ];

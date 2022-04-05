@@ -274,6 +274,15 @@ exports[`Actions Menu renders open menu 1`] = `
   color: #ef5766;
 }
 
+.c2 li.disabled a {
+  color: #c4c7d3;
+  pointer-events: none;
+}
+
+.c2 li.disabled:hover {
+  background-color: transparent;
+}
+
 .c2 li a {
   width: 100%;
   display: -webkit-box;
@@ -327,6 +336,7 @@ exports[`Actions Menu renders open menu 1`] = `
       data-testid="ul-action-menu"
     >
       <li
+        class="default"
         data-testid="li-action-menu"
       >
         <a

@@ -68,7 +68,7 @@ describe('Actions Menu', () => {
       },
       {
         id: 'action3',
-        type: 'red',
+        type: 'danger',
         value: 'Delete',
         action: () => {},
       },
