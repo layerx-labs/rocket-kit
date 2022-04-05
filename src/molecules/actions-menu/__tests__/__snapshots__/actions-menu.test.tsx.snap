@@ -266,11 +266,11 @@ exports[`Actions Menu renders open menu 1`] = `
   border-radius: 0 0 0.25rem 0.25rem;
 }
 
-.c2 li.red {
+.c2 li.danger {
   border-top: 0.0625rem solid #c4c7d3;
 }
 
-.c2 li.red a {
+.c2 li.danger a {
   color: #ef5766;
 }
 
