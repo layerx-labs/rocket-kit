@@ -59,11 +59,22 @@ export const List = styled.ul<ListInterface>`
       border-radius: 0 0 ${rem('4px')} ${rem('4px')};
     }
 
-    &.red {
+    &.danger {
       border-top: ${rem('1px')} solid ${lightGrey};
 
       a {
         color: ${red};
+      }
+    }
+
+    &.disabled {
+      a {
+        color: ${lightGrey};
+        pointer-events: none;
+      }
+
+      &:hover {
+        background-color: transparent;
       }
     }
 

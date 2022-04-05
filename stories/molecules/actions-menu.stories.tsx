@@ -18,8 +18,15 @@ const actions = [
     action: () => {},
   },
   {
+    id: 'disabledAction',
+    type: 'disabled',
+    value: 'Disabled Action',
+    url: null,
+    action: () => {},
+  },
+  {
     id: 'actionDelete',
-    type: 'red',
+    type: 'danger',
     value: 'Delete',
     url: null,
     action: () => {},
