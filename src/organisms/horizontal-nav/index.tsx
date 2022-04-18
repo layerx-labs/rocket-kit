@@ -15,9 +15,8 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
 
   const { items, startsOpen = false } = props;
 
-  const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
-    startsOpen
-  );
+  const { ref, isVisible, setIsVisible } =
+    useVisible<HTMLDivElement>(startsOpen);
 
   useEffect(() => {
     if (!ref || !ref.current) return;
