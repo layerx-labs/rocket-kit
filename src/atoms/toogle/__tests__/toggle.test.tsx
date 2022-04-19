@@ -14,7 +14,7 @@ const INITIAL_STATE: ToggleProps = {
 const makeSut = (args: ToggleProps = INITIAL_STATE) =>
   render(<Toggle {...args} />);
 
-describe(`${Toggle.name}`, () => {
+describe(`${Toggle.name} atom`, () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
