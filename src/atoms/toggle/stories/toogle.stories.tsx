@@ -7,10 +7,10 @@ export default {
   component: Toggle,
 };
 
-export const ToogleComponent = (args: ToggleProps) => <Toggle {...args} />;
+export const ToggleComponent = (args: ToggleProps) => <Toggle {...args} />;
 
-ToogleComponent.storyName = 'Toggle';
-ToogleComponent.args = {
+ToggleComponent.storyName = 'Toggle';
+ToggleComponent.args = {
   checked: true,
   isLabelVisible: true,
   labelLeft: 'Off',

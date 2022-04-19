@@ -10,6 +10,7 @@ const Toggle = ({
   labelLeft = 'Off',
   labelRight = 'On',
   onClick = () => {},
+  ...rest
 }: ToggleProps) => {
   // tracks the active state so it's easier to test
   const [state, setState] = useState(checked);
@@ -27,7 +28,7 @@ const Toggle = ({
       role="radiogroup"
       aria-label="toggle switcher"
     >
-      <div>
+      <div {...rest}>
         {labelLeft && isLabelVisible && (
           <label htmlFor="switch-off">{labelLeft}</label>
         )}
