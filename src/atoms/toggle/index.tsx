@@ -43,7 +43,6 @@ const Toggle = ({
             defaultChecked={!checked}
             onClick={() => handleClick(false)}
           />
-
           <input
             type="radio"
             name="theme"
@@ -53,9 +52,14 @@ const Toggle = ({
             defaultChecked={checked}
             onClick={() => handleClick(true)}
           />
-
           <span aria-hidden="true" className="bg" />
-          <span aria-hidden="true" className="switcher" />
+          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+          <label
+            aria-hidden="true"
+            className="switcher"
+            htmlFor={`switch-${state ? 'off' : 'on'}`}
+            style={{ cursor: `${disabled ? 'not-allowed' : 'pointer'}` }}
+          />
         </span>
 
         {labelRight && isLabelVisible && (
