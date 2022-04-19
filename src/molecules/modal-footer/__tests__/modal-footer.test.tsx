@@ -23,7 +23,9 @@ describe('Modal Footer', () => {
       </ModalFooter>
     );
 
-    userEvent.click(screen.getByText(/close/i));
+    const closeButton = screen.getByRole('button', { name: /close/i });
+
+    userEvent.click(closeButton);
     expect(mockAction).toBeCalledTimes(1);
   });
 
@@ -35,7 +37,9 @@ describe('Modal Footer', () => {
       </ModalFooter>
     );
 
-    userEvent.click(screen.getByText(/save/i));
+    const saveButton = screen.getByRole('button', { name: /save/i });
+
+    userEvent.click(saveButton);
     expect(mockAction).toBeCalledTimes(1);
   });
 });
