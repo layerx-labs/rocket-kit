@@ -6,7 +6,7 @@ import { ToggleProps } from './types';
 const Toggle = ({
   isLabelVisible = false,
   disabled = false,
-  checked = true,
+  checked = false,
   labelLeft = 'Off',
   labelRight = 'On',
   onClick = () => {},
