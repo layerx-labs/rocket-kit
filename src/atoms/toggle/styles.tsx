@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { light, primary, info } = colors;
+const { light, green, lightGrey } = colors;
 
 export const Switcher = styled.fieldset`
   margin: 0;
@@ -53,7 +53,7 @@ export const Switcher = styled.fieldset`
         }
 
         &#switch-on:checked ~ .bg {
-          background-color: ${primary};
+          background-color: ${green};
         }
 
         &#switch-off:checked ~ .switcher {
@@ -61,7 +61,7 @@ export const Switcher = styled.fieldset`
         }
 
         &#switch-off:checked ~ .bg {
-          background-color: ${info};
+          background-color: ${lightGrey};
         }
       }
 
