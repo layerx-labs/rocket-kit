@@ -11,7 +11,7 @@ export const Switcher = styled.fieldset`
 
   > div {
     > label {
-      cursor: pointer;
+      cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
 
       &:first-child {
         margin-right: ${rem('10px')};
@@ -33,7 +33,8 @@ export const Switcher = styled.fieldset`
       opacity: ${props => (props.disabled ? '0.5' : '1')};
 
       input,
-      span {
+      span,
+      label {
         cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
       }
 

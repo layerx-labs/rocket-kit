@@ -58,7 +58,6 @@ const Toggle = ({
             aria-hidden="true"
             className="switcher"
             htmlFor={`switch-${state ? 'off' : 'on'}`}
-            style={{ cursor: `${disabled ? 'not-allowed' : 'pointer'}` }}
           />
         </span>
 
