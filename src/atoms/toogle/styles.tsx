@@ -10,12 +10,19 @@ export const Switcher = styled.fieldset`
   padding: 0;
 
   > div {
-    label {
+    > label {
       cursor: pointer;
+
+      &:first-child {
+        margin-right: ${rem('10px')};
+      }
+
+      &:last-child {
+        margin-left: ${rem('10px')};
+      }
     }
 
     .wrapper {
-      margin: 0 ${rem('10px')};
       display: inline-block;
       vertical-align: middle;
       width: ${rem('48px')};
