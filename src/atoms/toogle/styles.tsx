@@ -18,8 +18,8 @@ export const Switcher = styled.fieldset`
       margin: 0 ${rem('10px')};
       display: inline-block;
       vertical-align: middle;
-      width: ${rem('80px')};
-      height: ${rem('40px')};
+      width: ${rem('48px')};
+      height: ${rem('24px')};
       border-radius: 999px;
       border: 2px solid ${light};
       position: relative;
