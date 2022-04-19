@@ -19,10 +19,10 @@ describe(`${Toggle.name}`, () => {
     jest.clearAllMocks();
   });
 
-  it('renders as expected', () => {
+  it('renders as expected (without accessibility)', () => {
     makeSut();
 
-    expect(screen.getAllByRole('radio').length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByRole('radio').length).toEqual(2);
     expect(screen.getAllByRole('radio')[0]).not.toBeChecked();
     expect(screen.getAllByRole('radio')[1]).toBeChecked();
   });
@@ -40,7 +40,7 @@ describe(`${Toggle.name}`, () => {
 
     expect(labelOff).toBeInTheDocument();
     expect(labelOn).toBeInTheDocument();
-    expect(screen.getAllByRole('radio').length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByRole('radio').length).toEqual(2);
   });
 
   it('activates/disactivates and invokes the onClick method', () => {
@@ -54,23 +54,25 @@ describe(`${Toggle.name}`, () => {
     const labelOff = screen.getByRole('radio', { name: /off/i });
     const labelOn = screen.getByRole('radio', { name: /on/i });
 
-    // it is checked by default
+    // it is checked/activated by default
     expect(labelOn).toBeChecked();
 
-    // it sets to false
+    // it tries to disactivate it (off)
     userEvent.click(labelOff);
     expect(mockOnClick).toBeCalledTimes(1);
+    expect(mockOnClick).toBeCalledWith(false);
     expect(labelOff).toBeChecked();
     expect(labelOn).not.toBeChecked();
 
-    // it sets to true
+    // it tries do activate it (on)
     userEvent.click(labelOn);
     expect(mockOnClick).toBeCalledTimes(2);
+    expect(mockOnClick).toBeCalledWith(true);
     expect(labelOn).toBeChecked();
     expect(labelOff).not.toBeChecked();
   });
 
-  it('is disable and does not allow interactivity', () => {
+  it('is disabled and does not allow interactivity', () => {
     makeSut({
       ...INITIAL_STATE,
       isLabelVisible: true,
@@ -88,7 +90,7 @@ describe(`${Toggle.name}`, () => {
     expect(labelOff).not.toBeChecked();
     expect(labelOff).toBeDisabled();
 
-    // it tries setting it to false
+    // it tries to disactivate it (off)
     userEvent.click(labelOff);
     expect(mockOnClick).toBeCalledTimes(0);
     expect(labelOn).toBeChecked();
@@ -96,7 +98,7 @@ describe(`${Toggle.name}`, () => {
     expect(labelOff).not.toBeChecked();
     expect(labelOff).toBeDisabled();
 
-    // it tries setting it to true
+    // it tries do activate it (on)
     userEvent.click(labelOn);
     expect(mockOnClick).toBeCalledTimes(0);
     expect(labelOn).toBeChecked();

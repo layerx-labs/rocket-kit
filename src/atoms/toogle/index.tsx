@@ -11,13 +11,11 @@ const Toggle = ({
   labelRight = 'On',
   onClick = () => {},
 }: ToggleProps) => {
-  // tracks the activate state so it's easier to test
+  // tracks the active state so it's easier to test
   const [state, setState] = useState(checked);
 
   const handleClick = (value: boolean) => {
     if (disabled) return;
-
-    console.log(disabled);
 
     setState(value);
     return onClick(value);
@@ -33,6 +31,7 @@ const Toggle = ({
         {labelLeft && isLabelVisible && (
           <label htmlFor="switch-off">{labelLeft}</label>
         )}
+
         <span className="wrapper">
           <input
             type="radio"
@@ -43,6 +42,7 @@ const Toggle = ({
             defaultChecked={!checked}
             onClick={() => handleClick(false)}
           />
+
           <input
             type="radio"
             name="theme"
@@ -52,9 +52,11 @@ const Toggle = ({
             defaultChecked={checked}
             onClick={() => handleClick(true)}
           />
+
           <span aria-hidden="true" className="bg" />
           <span aria-hidden="true" className="switcher" />
         </span>
+
         {labelRight && isLabelVisible && (
           <label htmlFor="switch-on">{labelRight}</label>
         )}
