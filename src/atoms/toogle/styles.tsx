@@ -63,8 +63,8 @@ export const Switcher = styled.fieldset`
         top: ${rem('2px')};
         left: ${rem('2px')};
         right: 100%;
-        width: ${rem('32px')};
-        height: ${rem('32px')};
+        width: ${rem('16px')};
+        height: ${rem('16px')};
         border-radius: 50%;
         background-color: ${light};
         transition: all 0.3s ease-out;
