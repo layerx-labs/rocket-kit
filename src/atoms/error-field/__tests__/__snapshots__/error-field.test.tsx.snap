@@ -2,20 +2,14 @@
 
 exports[`ErrorField renders 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c0 {
   display: block;
   font-size: 0.7rem;
   color: #ef5766;
 }
 
-.styles__TextFieldInputStyle-sc-1jl38sp-0 + .c0,
-.sc-gsTCUz + .c1,
-.sc-hKgILt + .c1 {
-  margin-top: 0.3125rem;
-}
-
 <span
-    class="c0 c1 error-field"
+    class="c0 error-field"
     color="red"
   >
     operation failed.
