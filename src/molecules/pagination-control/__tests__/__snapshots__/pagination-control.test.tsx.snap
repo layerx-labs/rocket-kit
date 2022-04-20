@@ -67,14 +67,14 @@ exports[`PaginationControl renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #939393;
+  color: #000000;
   font-weight: 700;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c0 ul.pagination li a:hover {
-  color: #000000;
+  color: #4250e4;
 }
 
 .c0 ul.pagination li a svg {

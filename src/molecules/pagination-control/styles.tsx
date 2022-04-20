@@ -6,7 +6,7 @@ interface PageControlProps {
   dark?: boolean;
 }
 
-const { normal, light, blue, grey, lightGrey } = colors;
+const { normal, light, blue, lightGrey } = colors;
 const { bold } = fontWeight;
 
 export const PaginationWrapper = styled.div<PageControlProps>`
@@ -49,12 +49,12 @@ export const PaginationWrapper = styled.div<PageControlProps>`
         display: flex;
         justify-content: center;
         align-items: center;
-        color: ${grey};
+        color: ${normal};
         font-weight: ${bold};
         text-decoration: none;
 
         &:hover {
-          color: ${normal};
+          color: ${blue};
         }
 
         svg {
