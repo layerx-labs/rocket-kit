@@ -13,4 +13,6 @@ export interface ToggleProps
   disabled?: boolean;
   /** Activates or disactivates the labels */
   isLabelVisible: boolean;
+  ariaLabelOn?: string;
+  ariaLabelOff?: string;
 }

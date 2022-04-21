@@ -5,11 +5,13 @@ import { ToggleProps } from './types';
 import { v4 } from 'uuid';
 
 const Toggle = ({
-  isLabelVisible = false,
-  disabled = false,
-  checked = false,
+  ariaLabelOn,
+  ariaLabelOff,
   labelLeft = 'Off',
   labelRight = 'On',
+  checked = false,
+  disabled = false,
+  isLabelVisible = false,
   onClick = () => {},
   ...rest
 }: ToggleProps) => {
@@ -54,6 +56,7 @@ const Toggle = ({
             name={`toggle-id-${id}`}
             id={`${id}-switch-off`}
             className="switch-off"
+            aria-label={ariaLabelOff}
             disabled={disabled}
             aria-checked={!state}
             defaultChecked={!checked}
@@ -64,6 +67,7 @@ const Toggle = ({
             name={`toggle-id-${id}`}
             className="switch-on"
             id={`${id}-switch-on`}
+            aria-label={ariaLabelOn}
             disabled={disabled}
             aria-checked={state}
             defaultChecked={checked}

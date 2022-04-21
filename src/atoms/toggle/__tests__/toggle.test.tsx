@@ -10,6 +10,8 @@ const mockOnClick = jest.fn();
 const INITIAL_STATE: ToggleProps = {
   isLabelVisible: false,
   onClick: mockOnClick,
+  ariaLabelOn: 'on',
+  ariaLabelOff: 'off',
 };
 const makeSut = (args: ToggleProps = INITIAL_STATE) =>
   render(<Toggle {...args} />);
@@ -115,6 +117,8 @@ describe(`${Toggle.name} atom`, () => {
       isLabelVisible: true,
       labelLeft: 'off',
       labelRight: 'on',
+      ariaLabelOn: 'on',
+      ariaLabelOff: 'off',
     });
 
     makeSut({
@@ -122,6 +126,8 @@ describe(`${Toggle.name} atom`, () => {
       isLabelVisible: true,
       labelLeft: 'off2',
       labelRight: 'on2',
+      ariaLabelOn: 'on2',
+      ariaLabelOff: 'off2',
     });
 
     makeSut({
@@ -129,6 +135,8 @@ describe(`${Toggle.name} atom`, () => {
       isLabelVisible: true,
       labelLeft: 'off3',
       labelRight: 'on3',
+      ariaLabelOn: 'on3',
+      ariaLabelOff: 'off3',
     });
 
     const labelOff = screen.getByRole('radio', { name: 'off' });
