@@ -108,4 +108,105 @@ describe(`${Toggle.name} atom`, () => {
     expect(labelOff).toBeChecked();
     expect(labelOff).toBeDisabled();
   });
+
+  it('instatiates (n) numbers of components without clashing each other', () => {
+    makeSut({
+      ...INITIAL_STATE,
+      isLabelVisible: true,
+      labelLeft: 'off',
+      labelRight: 'on',
+    });
+
+    makeSut({
+      ...INITIAL_STATE,
+      isLabelVisible: true,
+      labelLeft: 'off2',
+      labelRight: 'on2',
+    });
+
+    makeSut({
+      ...INITIAL_STATE,
+      isLabelVisible: true,
+      labelLeft: 'off3',
+      labelRight: 'on3',
+    });
+
+    const labelOff = screen.getByRole('radio', { name: 'off' });
+    const labelOn = screen.getByRole('radio', { name: 'on' });
+
+    const labelOff2 = screen.getByRole('radio', { name: 'off2' });
+    const labelOn2 = screen.getByRole('radio', { name: 'on2' });
+
+    const labelOff3 = screen.getByRole('radio', { name: 'off3' });
+    const labelOn3 = screen.getByRole('radio', { name: 'on3' });
+
+    ///#region Activating the states
+    // it tries do activate it (on) - 1st
+    userEvent.click(labelOn);
+    expect(mockOnClick).toBeCalledTimes(1);
+    expect(labelOn).toBeChecked();
+    expect(labelOff).not.toBeChecked();
+    // checks if the other components state are intact
+    expect(labelOn2).not.toBeChecked();
+    expect(labelOff2).toBeChecked();
+    expect(labelOn3).not.toBeChecked();
+    expect(labelOff3).toBeChecked();
+
+    // it tries do activate it (on) - 2nd
+    userEvent.click(labelOn2);
+    expect(mockOnClick).toBeCalledTimes(2);
+    expect(labelOn2).toBeChecked();
+    expect(labelOff2).not.toBeChecked();
+    // checks if the other components state are intact
+    expect(labelOn).toBeChecked();
+    expect(labelOff).not.toBeChecked();
+    expect(labelOn3).not.toBeChecked();
+    expect(labelOff3).toBeChecked();
+
+    // it tries do activate it (on) - 3rd
+    userEvent.click(labelOn3);
+    expect(mockOnClick).toBeCalledTimes(3);
+    expect(labelOn3).toBeChecked();
+    expect(labelOff3).not.toBeChecked();
+    // checks if the other components state are intact
+    expect(labelOn).toBeChecked();
+    expect(labelOff).not.toBeChecked();
+    expect(labelOn2).toBeChecked();
+    expect(labelOff2).not.toBeChecked();
+    ///#endregion
+
+    ///#region Disabling the states
+    // it tries do disactivate it (off) - 1st
+    userEvent.click(labelOff);
+    expect(mockOnClick).toBeCalledTimes(4);
+    expect(labelOn).not.toBeChecked();
+    expect(labelOff).toBeChecked();
+    // checks if the other components state are intact
+    expect(labelOn2).toBeChecked();
+    expect(labelOff2).not.toBeChecked();
+    expect(labelOn3).toBeChecked();
+    expect(labelOff3).not.toBeChecked();
+
+    // it tries do disactivate it (off) - 2nd
+    userEvent.click(labelOff2);
+    expect(mockOnClick).toBeCalledTimes(5);
+    expect(labelOn2).not.toBeChecked();
+    expect(labelOff2).toBeChecked();
+    // checks if the other components state are intact
+    expect(labelOn).not.toBeChecked();
+    expect(labelOff).toBeChecked();
+    expect(labelOn3).toBeChecked();
+    expect(labelOff3).not.toBeChecked();
+
+    // it tries do disactivate it (off) - 3rd
+    userEvent.click(labelOff3);
+    expect(mockOnClick).toBeCalledTimes(6);
+    expect(labelOn3).not.toBeChecked();
+    expect(labelOff3).toBeChecked();
+    // checks if the other components state are intact
+    expect(labelOn).not.toBeChecked();
+    expect(labelOff).toBeChecked();
+    expect(labelOn2).not.toBeChecked();
+    expect(labelOff2).toBeChecked();
+  });
 });

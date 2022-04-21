@@ -41,8 +41,9 @@ const Toggle = ({
       disabled={disabled}
       role="radiogroup"
       aria-label="toggle switcher"
+      {...rest}
     >
-      <div {...rest}>
+      <div>
         {labelLeft && isLabelVisible && (
           <label htmlFor={`${id}-switch-off`}>{labelLeft}</label>
         )}

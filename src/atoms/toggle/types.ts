@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react';
 
 export interface ToggleProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, 'onClick'> {
+  extends Omit<HTMLAttributes<HTMLFieldSetElement>, 'onClick'> {
   /** The value that is called
    * when one of the fields is clicked
    */
