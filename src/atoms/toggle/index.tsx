@@ -38,6 +38,10 @@ const Toggle = ({
     setId(id);
   }, []);
 
+  useEffect(() => {
+    setState(checked);
+  }, [checked]);
+
   return (
     <Styles.Switcher
       disabled={disabled}
@@ -56,22 +60,22 @@ const Toggle = ({
             name={`toggle-id-${id}`}
             id={`${id}-switch-off`}
             className="switch-off"
-            aria-label={ariaLabelOff}
+            checked={!state}
             disabled={disabled}
             aria-checked={!state}
-            defaultChecked={!checked}
-            onClick={() => handleClick(false)}
+            aria-label={ariaLabelOff}
+            onChange={() => handleClick(false)}
           />
           <input
             type="radio"
             name={`toggle-id-${id}`}
             className="switch-on"
             id={`${id}-switch-on`}
-            aria-label={ariaLabelOn}
+            checked={state}
             disabled={disabled}
             aria-checked={state}
-            defaultChecked={checked}
-            onClick={() => handleClick(true)}
+            aria-label={ariaLabelOn}
+            onChange={() => handleClick(true)}
           />
           <span aria-hidden="true" className="bg" />
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
