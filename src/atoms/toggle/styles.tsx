@@ -25,7 +25,7 @@ export const Switcher = styled.fieldset`
     .wrapper {
       display: inline-block;
       vertical-align: middle;
-      width: ${rem('48px')};
+      width: ${rem('40px')};
       height: ${rem('24px')};
       border-radius: 999px;
       border: 2px solid ${light};
@@ -47,20 +47,20 @@ export const Switcher = styled.fieldset`
         position: relative;
         z-index: 1;
 
-        &#switch-on:checked ~ .switcher {
+        &.switch-on:checked ~ .switcher {
           right: 0;
-          left: calc(50% + ${rem('4px')});
+          left: 50%;
         }
 
-        &#switch-on:checked ~ .bg {
+        &.switch-on:checked ~ .bg {
           background-color: ${green};
         }
 
-        &#switch-off:checked ~ .switcher {
+        &.switch-off:checked ~ .switcher {
           right: 0;
         }
 
-        &#switch-off:checked ~ .bg {
+        &.switch-off:checked ~ .bg {
           background-color: ${lightGrey};
         }
       }
@@ -89,6 +89,7 @@ export const Switcher = styled.fieldset`
         border-radius: 999px;
         background-color: transparent;
         transition: all 0.3s ease-out;
+        background-color: ${lightGrey};
       }
     }
   }
