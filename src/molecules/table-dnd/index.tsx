@@ -113,6 +113,7 @@ const TableDnD = <CellData extends CellBaseType>(
   });
 
   return (
+    // @ts-ignore
     <DragDropContext
       onBeforeDragStart={result => {
         setDraggableId(result.draggableId);
@@ -160,6 +161,7 @@ const TableDnD = <CellData extends CellBaseType>(
                 )}
               </tr>
             </thead>
+            {/* @ts-ignore */}
             <Droppable droppableId="droppable">
               {(provided, snapshot) => (
                 <tbody
@@ -168,6 +170,7 @@ const TableDnD = <CellData extends CellBaseType>(
                   style={getListStyle(snapshot.isDraggingOver)}
                 >
                   {validValues.map((row, index) => (
+                    // @ts-ignore
                     <Draggable
                       key={`${index}`}
                       draggableId={`${index}`}

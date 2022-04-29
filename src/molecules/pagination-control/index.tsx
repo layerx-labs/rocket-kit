@@ -41,6 +41,7 @@ const PaginationControl = (props: PageControlProps) => {
 
   return (
     <Styles.PaginationWrapper>
+      {/* @ts-ignore */}
       <ReactPaginate
         containerClassName={dark ? 'dark pagination' : 'pagination'}
         pageClassName="page"
