@@ -47,7 +47,7 @@ exports[`GridContainer renders 1`] = `
         class="c2 grid-col"
         size="1"
       >
-        Col 1ldhf lasdjfh lkjasdhflkasd fklahds fkljahs dklfjh asdklfh asl
+        Col 1
       </div>
       <div
         class="c2 grid-col"
