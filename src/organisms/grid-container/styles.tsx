@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../ions/breakpoints';
 
 export interface GridProps {
   size?: number;
@@ -10,9 +11,13 @@ export const Wrapper = styled.div`
 `;
 
 export const GridRow = styled.div`
-  display: flex;
+  @media ${device.m} {
+    display: flex;
+  }
 `;
 
 export const GridCol = styled.div<GridProps>`
-  flex: ${props => props.size};
+  @media ${device.m} {
+    flex: ${props => props.size};
+  }
 `;

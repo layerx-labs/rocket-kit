@@ -12,7 +12,9 @@ export const GridContainerComponent = () => {
   return (
     <GridContainer>
       <GridRow>
-        <GridCol>Col 1</GridCol>
+        <GridCol>
+          Col 1ldhf lasdjfh lkjasdhflkasd fklahds fkljahs dklfjh asdklfh asl
+        </GridCol>
         <GridCol>Col 2</GridCol>
         <GridCol size={2}>Col 3</GridCol>
       </GridRow>
