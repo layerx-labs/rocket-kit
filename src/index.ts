@@ -47,3 +47,6 @@ export { default as Modal } from './organisms/modal';
 export { default as ModalDrawer } from './organisms/modal-drawer';
 export { default as LoadingState } from './organisms/loading-state';
 export { default as TabsPanel } from './organisms/tabs-panel';
+export { default as GridContainer } from './organisms/grid-container';
+export { default as GridRow } from './organisms/grid-container/grid-row';
+export { default as GridCol } from './organisms/grid-container/grid-col';
