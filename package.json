@@ -1,10 +1,12 @@
 {
   "version": "2.0.0-beta.5",
+  "name": "@taikai/taikai-rocket-kit",
+  "author": "taikai",
   "description": "TAIKAI Design System",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/taikai/taikai-design-system.git"
+    "url": "https://github.com/taikai/taikai-rocket-kit.git"
   },
   "keywords": [
     "react",
@@ -16,8 +18,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
@@ -49,8 +50,6 @@
     "trailingComma": "es5",
     "arrowParens": "avoid"
   },
-  "name": "@taikai/taikai-design-system",
-  "author": "taikai",
   "module": "dist/taikai-design-system.esm.js",
   "size-limit": [
     {
@@ -102,7 +101,6 @@
     "typescript": "^4.2.3"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "@types/uuid": "^8.3.4",
