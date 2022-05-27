@@ -167,6 +167,9 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
             actions={actions}
             data={rowData}
             rowIndex={rowIndex}
+            handleOptionClick={() => {
+              setIsVisible(false);
+            }}
           />
         )}
       </Styles.OverflowWrapper>
