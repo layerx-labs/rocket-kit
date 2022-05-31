@@ -1,5 +1,15 @@
 import styled from 'styled-components';
-import { FilePickerProps } from '.';
+import { rem } from 'polished';
+import { colors } from '../../ions/variables';
+
+interface FilePickerProps {
+  minimal?: boolean;
+  error?: boolean;
+  disabled?: boolean;
+}
+
+const { red, grey, lightGrey, darkGrey, green, darkGreen, light, normal } =
+  colors;
 
 export const Wrapper = styled.div<FilePickerProps>`
   input {
@@ -13,24 +23,22 @@ export const Wrapper = styled.div<FilePickerProps>`
 
   label {
     margin-bottom: 0 !important;
-    border-width: ${props => (props.minimal ? '0 0 1px 0' : '1px')};
+    border-width: ${props =>
+      props.minimal ? `0 0 ${rem('1px')} 0` : rem('1px')};
     border-style: solid;
-    border-color: ${props =>
-      props.error
-        ? 'var(--red, hsl(354, 83%, 64%))'
-        : 'var(--grey, hsl(0, 0%, 85%))'};
-    border-radius: ${props => (props.minimal ? 0 : '6px')};
-    background-color: ${props =>
-      props.disabled ? 'hsl(0, 0%, 98%)' : 'transparent'};
+    border-color: ${props => (props.error ? red : grey)};
+    border-radius: ${props => (props.minimal ? 0 : rem('6px'))};
+    background-color: ${props => (props.disabled ? lightGrey : 'transparent')};
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height: ${rem('50px')};
     -webkit-appearance: none;
     outline: none;
     cursor: ${props => (props.disabled ? 'default' : 'pointer')};
     pointer-events: ${props => (props.disabled ? 'none' : '')};
+    overflow: hidden;
 
     span {
       display: flex;
@@ -39,11 +47,8 @@ export const Wrapper = styled.div<FilePickerProps>`
       &.file-name {
         flex: 1;
         display: block;
-        padding: ${props => (props.minimal ? 0 : '0 10px')};
-        color: ${props =>
-          props.disabled
-            ? 'var(--grey, hsl(0, 0%, 48%))'
-            : 'var(--default, hsl(0, 0%, 16%))'};
+        padding: ${props => (props.minimal ? 0 : `0 ${rem('10px')}`)};
+        color: ${props => (props.disabled ? grey : normal)};
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -51,38 +56,36 @@ export const Wrapper = styled.div<FilePickerProps>`
 
       &.button {
         border-left: ${props =>
-          props.minimal ? 0 : '1px solid var(--grey, hsl(0, 0%, 85%))'};
-        border-radius: ${props => (props.minimal ? 0 : '0 6px 6px 0')};
+          props.minimal ? 0 : `${rem('1px')} solid ${grey}`};
         background-color: ${props =>
-          props.minimal
-            ? 'transparent'
-            : props.disabled
-            ? 'hsl(0, 0%, 98%)'
-            : 'var(--green, hsl(186, 62%, 59%))'};
+          props.minimal ? 'transparent' : props.disabled ? lightGrey : green};
         height: 100%;
-        padding: 0 20px;
-        color: ${props =>
+        padding: ${props =>
           props.minimal
-            ? 'var(--darkGrey, hsl(0, 0%, 48%))'
-            : 'var(--white, hsl(0, 0%, 100%))'};
+            ? `0 ${rem('5px')} 0 ${rem('20px')}`
+            : `0 ${rem('20px')}`};
+        color: ${props =>
+          props.disabled ? grey : props.minimal ? darkGrey : light};
         transition-duration: 0.3s;
 
         svg {
+          margin-right: ${rem('8px')};
           width: auto;
-          height: 24px;
+          height: ${rem('24px')};
           fill: ${props =>
-            props.disabled
-              ? 'var(--grey, hsl(0, 0%, 48%))'
-              : props.minimal
-              ? 'var(--darkGrey, hsl(0, 0%, 48%))'
-              : 'var(--white, hsl(0, 0%, 100%))'};
+            props.disabled ? grey : props.minimal ? darkGrey : light};
+          transition-duration: 0.3s;
         }
 
         &:hover {
           background-color: ${props =>
-            props.minimal
-              ? 'var(--grey, hsl(0, 0%, 85%))'
-              : 'hsl(186, 62%, 49%)'};
+            props.minimal ? 'transparent' : darkGreen};
+          color: ${props => (props.minimal ? darkGreen : light)};
+
+          svg {
+            fill: ${props =>
+              props.disabled ? grey : props.minimal ? darkGreen : light};
+          }
         }
       }
     }

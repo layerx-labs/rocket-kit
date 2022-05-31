@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import ErrorField from '../error-field';
 import Icon from '../icon';
 import * as Styles from './styles';
 
 export interface FilePickerProps {
-  minimal: boolean;
+  minimal?: boolean;
   name: string;
-  accept: string;
-  multiple: boolean;
-  placeholder: string;
-  pluralText: string;
-  error: string;
-  dataTestId: string;
-  onChange: PropTypes.func;
-  value: string;
-  buttonText: string;
-  disabled: boolean;
+  accept?: string;
+  multiple?: boolean;
+  placeholder?: string;
+  pluralText?: string;
+  error?: string;
+  dataTestId?: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  buttonText?: string;
+  disabled?: boolean;
 }
 
 const FilePicker = (props: FilePickerProps) => {
@@ -37,7 +36,7 @@ const FilePicker = (props: FilePickerProps) => {
 
   const [fileName, setFileName] = useState(value ? value : placeholder);
 
-  const getUploadedFileName = e => {
+  const getUploadedFileName = (e: React.ChangeEvent<HTMLInputElement>) => {
     let files = e.target.files,
       value = e.target.value,
       fileName;
@@ -47,7 +46,7 @@ const FilePicker = (props: FilePickerProps) => {
   };
 
   return (
-    <Styles.Wrapper disabled={disabled} minimal={minimal} error={error}>
+    <Styles.Wrapper disabled={disabled} minimal={minimal} error={!!error}>
       <input
         id={name}
         type="file"
@@ -58,17 +57,17 @@ const FilePicker = (props: FilePickerProps) => {
           getUploadedFileName(evt);
           onChange(evt);
         }}
-        data-testid={dataTestId || null}
+        data-testid={dataTestId}
       />
 
-      <label htmlFor={name} error={error}>
+      <label htmlFor={name}>
         <span className="file-name">{fileName}</span>
         <span className="button">
           <Icon icon="upload" />
           {buttonText}
         </span>
       </label>
-      {error ? <ErrorField error={error} /> : null}
+      {error && <ErrorField error={error} />}
     </Styles.Wrapper>
   );
 };

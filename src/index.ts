@@ -21,6 +21,7 @@ export { default as Slideshow } from './atoms/slideshow';
 export { default as VideoPlayer } from './atoms/video-player';
 export { default as ProgressBar } from './atoms/progress-bar';
 export { default as Toggle } from './atoms/toggle';
+export { default as FilePicker } from './atoms/file-picker';
 
 // Molecules
 export { default as ActionsMenu } from './molecules/actions-menu';
