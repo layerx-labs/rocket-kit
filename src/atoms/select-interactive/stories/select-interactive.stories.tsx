@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import SelectInteractive from '..';
+import SelectInteractive from '../';
+import { SelectInteractiveProps, TSelectInteractiveOption } from '../types';
 
 export default {
   title: 'Design System/Atoms/Select',
@@ -18,14 +19,8 @@ export default {
   },
 };
 
-interface SelectInteractiveProps {
-  multi: boolean;
-  search: boolean;
-  placeholder: string;
-}
-
 export const SelectInteractiveSimpleComponent = (
-  args: SelectInteractiveProps
+  args: SelectInteractiveProps<TSelectInteractiveOption>
 ) => {
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -53,6 +48,106 @@ export const SelectInteractiveSimpleComponent = (
 
 SelectInteractiveSimpleComponent.storyName = 'Interactive Simple';
 
+export const SelectInteractiveGroupedOptionsNotFormattedComponent = (
+  args: SelectInteractiveProps<TSelectInteractiveOption>
+) => {
+  const options = [
+    {
+      label: 'Chocolates',
+      options: [
+        { value: 'white-chocolate', label: 'White Chocolate' },
+        { value: 'black-chocolate', label: 'Black Chocolate' },
+      ],
+    },
+    {
+      label: 'Meats',
+      options: [
+        { value: 'fish', label: 'Fish' },
+        { value: 'chicken', label: 'Chicken' },
+      ],
+    },
+    {
+      label: 'Fruits',
+      options: [
+        { value: 'mango', label: 'Mambo' },
+        { value: 'peach', label: 'Peach' },
+        { value: 'orange', label: 'Orange' },
+      ],
+    },
+  ];
+
+  const [selectOptions, setSelectOptions] =
+    useState<TSelectInteractiveOption | null>(options[1].options[1]);
+
+  const handleChange: SelectInteractiveProps<TSelectInteractiveOption>['onChange'] =
+    selectedOption => {
+      console.log(selectedOption);
+      setSelectOptions(selectedOption);
+    };
+
+  return (
+    <SelectInteractive
+      {...args}
+      options={options}
+      onChange={handleChange}
+      value={selectOptions}
+    />
+  );
+};
+
+SelectInteractiveGroupedOptionsNotFormattedComponent.storyName =
+  'Interactive Grouped Options';
+
+export const SelectInteractiveFormatedGroupedOptionsComponent = (
+  args: SelectInteractiveProps<TSelectInteractiveOption>
+) => {
+  const options = [
+    {
+      label: 'Chocolates',
+      options: [
+        { value: 'white-chocolate', label: 'White Chocolate' },
+        { value: 'black-chocolate', label: 'Black Chocolate' },
+      ],
+    },
+    {
+      label: 'Meat',
+      options: [
+        { value: 'fish', label: 'Fish' },
+        { value: 'chicken', label: 'Chicken' },
+      ],
+    },
+    {
+      label: 'fruits',
+      options: [
+        { value: 'mango', label: 'Mambo' },
+        { value: 'peach', label: 'Peach' },
+        { value: 'orange', label: 'Orange' },
+      ],
+    },
+  ];
+
+  const [selectOptions, setSelectOptions] =
+    useState<TSelectInteractiveOption | null>(options[1].options[1]);
+
+  const handleChange: SelectInteractiveProps<TSelectInteractiveOption>['onChange'] =
+    selectedOption => {
+      setSelectOptions(selectedOption);
+    };
+
+  return (
+    <SelectInteractive
+      {...args}
+      formatGroupLabel
+      options={options}
+      onChange={handleChange}
+      value={selectOptions}
+    />
+  );
+};
+
+SelectInteractiveFormatedGroupedOptionsComponent.storyName =
+  'Interactive and Formatted Grouped Options';
+
 SelectInteractiveSimpleComponent.args = {
   multi: false,
   search: true,
@@ -60,7 +155,7 @@ SelectInteractiveSimpleComponent.args = {
 };
 
 export const SelectInteractiveIconsComponent = (
-  args: SelectInteractiveProps
+  args: SelectInteractiveProps<TSelectInteractiveOption>
 ) => {
   const options = [
     { value: 'chocolate', label: 'Chocolate', icon: 'image' },
@@ -93,7 +188,7 @@ SelectInteractiveIconsComponent.args = {
 };
 
 export const SelectInteractiveCustomComponent = (
-  args: SelectInteractiveProps
+  args: SelectInteractiveProps<TSelectInteractiveOption>
 ) => {
   const options = [
     {

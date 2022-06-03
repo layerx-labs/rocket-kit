@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem, lighten } from 'polished';
-import { colors } from '../../ions/variables';
+import { colors, fontWeigth } from '../../ions/variables';
 
 const { normal, light, info, purple } = colors;
 
@@ -117,4 +117,27 @@ export const SelectWrapper = styled.div`
       transition-duration: 0.3s;
     }
   }
+`;
+
+export const SelectGroup = styled.div`
+  display: 'flex';
+  justify-content: 'space-between';
+`;
+
+export const SelectGroupLabel = styled.span`
+  color: 000000;
+  font-weight: ${fontWeigth.bold};
+`;
+
+export const SelectGroupTotal = styled.span`
+  background-color: '#EBECF0';
+  border-radius: '2em';
+  color: '#172B4D';
+  display: 'inline-block';
+  font-size: 12;
+  font-weight: 'normal';
+  line-height: '1';
+  min-width: 1;
+  padding: '0.16666666666667em 0.5em';
+  text-align: 'center';
 `;
