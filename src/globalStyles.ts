@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: ${regular};
     color: ${normal};
     font-feature-settings: 'ss04' on;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1,
