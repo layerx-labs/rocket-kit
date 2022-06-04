@@ -15,6 +15,7 @@ export default {
           'red',
           'grey',
           'purple',
+          'blue',
           'white',
           'dark',
           'magic',

@@ -26,9 +26,11 @@ const {
   darkRed,
   purple,
   darkPurple,
+  blue,
+  darkBlue,
 } = colors;
 
-const { bold } = fontWeight;
+const { bold, medium } = fontWeight;
 
 export const pulseKeyframes = keyframes`
   0% {
@@ -73,6 +75,13 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     css`
       --button: ${grey};
       --hover: ${darkGrey};
+    `}
+
+    ${props =>
+    props.color === 'blue' &&
+    css`
+      --button: ${blue};
+      --hover: ${darkBlue};
     `}
 
   ${props =>
@@ -120,7 +129,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     props.variant === 'solid' ? 'var(--button)' : 'transparent'};
   width: ${props =>
     props.value ? (props.circle ? rem('36px') : 'min-content') : rem('36px')};
-  height: ${rem('36px')};
+  height: ${rem('32px')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,7 +180,8 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   span {
     position: relative;
     font-size: 0.75rem;
-    font-weight: ${bold};
+    font-weight: ${medium};
+    letter-spacing: 1px;
     color: ${props =>
       props.variant === 'solid' ? 'var(--txt)' : 'var(--button)'};
     pointer-events: none;

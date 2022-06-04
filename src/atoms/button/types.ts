@@ -8,5 +8,6 @@ export type ButtonColor =
   | 'purple'
   | 'white'
   | 'dark'
+  | 'blue'
   | 'magic'
   | 'pulse';
