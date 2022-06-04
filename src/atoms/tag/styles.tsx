@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/macro';
 import { rem } from 'polished';
 import { TagVariant, TagColor } from './types';
-import { colors } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 
 interface TagWrapperProps {
   variant?: TagVariant;
@@ -9,19 +9,24 @@ interface TagWrapperProps {
 }
 
 const { light, grey, green, orange, red } = colors;
+const { bold } = fontWeight;
 
 export const TagWrapper = styled.span<TagWrapperProps>`
   display: inline-block;
   border: ${rem('2px')} solid ${grey};
-  border-radius: 999px;
+  border-radius: ${rem('3px')};
   background-color: ${grey};
   max-width: ${rem('150px')};
-  padding: ${rem('2px')} ${rem('10px')};
-  font-size: 0.85rem;
+  padding: ${rem('3px')} ${rem('8px')};
+  font-size: ${rem('12px')};
+  font-weight: ${bold};
+  letter-spacing: 0.1em;
+  line-height: 1;
   color: ${light};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-transform: uppercase;
 
   &:not(:first-child) {
     margin-left: ${rem('5px')};
