@@ -114,6 +114,13 @@ netlify init
 # pick yes for netlify.toml
 ```
 
+## Compiling Locally
+When it is published or compiled locally, it allows to rapidly test the design system as would the final developer
+
+* Change the `package.json` version property. For instance, if the version is currently at `2.0.0-beta.10`, change it to `2.0.0-beta.11`
+* Run the command `npm run pack`, and you will find a file with the name `taikai-taikai-design-system-2.0.0-beta.11.tgz` at the root of your project. Copy the filepath of this file and move to the next step
+* Now, in one of your separated projects, run `npm i [filepath-copied-above]`
+
 ## Publishing to Github Package Registry
 
 We are using [np](https://github.com/sindresorhus/np)
@@ -122,14 +129,14 @@ We are using [np](https://github.com/sindresorhus/np)
 npm install --global np
 ```
 
-### Get Github Personnal Access Token 
+### Get Github Personnal Access Token
 
-Follow this guide: 
-https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token 
+Follow this guide:
+https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
 
-you need the following scopes (read:packages, write:packages, delete:packages, repo). 
+you need the following scopes (read:packages, write:packages, delete:packages, repo).
 
-Once you get the TOKEN, you can login: 
+Once you get the TOKEN, you can login:
 
 ```
 $ npm login --scope=@OWNER --registry=https://npm.pkg.github.com
