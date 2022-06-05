@@ -37,7 +37,7 @@ export interface SelectInteractiveProps<T extends Options>
   disabled?: boolean;
   placeholder: string;
   formatGroupLabel?: boolean;
-  value: ReadonlyArray<TOptions> | TOptions | null | undefined;
-  onChange: (values: ReadonlyArray<TOptions> | TOptions) => void;
+  value?: ReadonlyArray<TOptions> | TOptions | null | undefined;
+  onChange: (values: Array<TOptions> | TOptions) => void;
   options: ReadonlyArray<TOptions | OptionsGroup<TOptions>>;
 }

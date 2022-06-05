@@ -38,10 +38,8 @@ const SelectInteractive = ({
         classNamePrefix="select"
         placeholder={placeholder}
         className="select-interactive"
-        onChange={e => {
-          if (!e) return;
-          onChange(e);
-        }}
+        // @ts-ignore
+        onChange={e => onChange(e ?? [])}
         defaultMenuIsOpen={false}
         onInputChange={onInputChange}
         components={{
