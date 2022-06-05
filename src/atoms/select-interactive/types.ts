@@ -1,3 +1,4 @@
+import { MapHTMLAttributes } from 'react';
 import { NamedProps } from 'react-select/src/Select';
 
 export interface TSelectInteractiveOption {
@@ -19,7 +20,15 @@ export interface OptionsGroup<T extends TSelectInteractiveOption> {
   options: ReadonlyArray<T>;
 }
 
-export interface SelectInteractiveProps<T extends TSelectInteractiveOption> {
+type TDivElement = Omit<MapHTMLAttributes<HTMLDivElement>, 'onChange'>;
+
+type Options =
+  | TSelectInteractiveOption
+  | ReadonlyArray<TSelectInteractiveOption>;
+
+export interface SelectInteractiveProps<T extends Options>
+  extends TDivElement,
+    Pick<NamedProps<T>, 'onInputChange'> {
   name?: string;
   error?: string;
   clear?: boolean;
@@ -28,8 +37,7 @@ export interface SelectInteractiveProps<T extends TSelectInteractiveOption> {
   disabled?: boolean;
   placeholder: string;
   formatGroupLabel?: boolean;
-  onInputChange?: () => void;
-  onChange?: NamedProps<T>['onChange'];
-  value: TOptions[] | TOptions | null | undefined;
+  value: ReadonlyArray<TOptions> | TOptions | null | undefined;
+  onChange: (values: ReadonlyArray<TOptions> | TOptions) => void;
   options: ReadonlyArray<TOptions | OptionsGroup<TOptions>>;
 }

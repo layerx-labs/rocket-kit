@@ -76,8 +76,9 @@ export const SelectInteractiveGroupedOptionsNotFormattedComponent = (
     },
   ];
 
-  const [selectOptions, setSelectOptions] =
-    useState<TSelectInteractiveOption | null>(options[1].options[1]);
+  const [selectOptions, setSelectOptions] = useState<
+    TSelectInteractiveOption | ReadonlyArray<TSelectInteractiveOption> | null
+  >(options[1].options[1]);
 
   const handleChange: SelectInteractiveProps<TSelectInteractiveOption>['onChange'] =
     selectedOption => {
@@ -126,17 +127,20 @@ export const SelectInteractiveFormatedGroupedOptionsComponent = (
     },
   ];
 
-  const [selectOptions, setSelectOptions] =
-    useState<TSelectInteractiveOption | null>(options[1].options[1]);
+  const [selectOptions, setSelectOptions] = useState<
+    TSelectInteractiveOption | ReadonlyArray<TSelectInteractiveOption> | null
+  >(options[1].options[1]);
 
   const handleChange: SelectInteractiveProps<TSelectInteractiveOption>['onChange'] =
     selectedOption => {
+      console.log(selectedOption);
       setSelectOptions(selectedOption);
     };
 
   return (
     <SelectInteractive
       {...args}
+      multi
       formatGroupLabel
       options={options}
       onChange={handleChange}

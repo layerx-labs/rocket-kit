@@ -10,7 +10,7 @@ import {
 import * as Styles from './styles';
 import { SelectInteractiveProps, TSelectInteractiveOption } from './types';
 
-const SelectInteractive = <T extends TSelectInteractiveOption>({
+const SelectInteractive = ({
   name,
   multi = false,
   search = true,
@@ -23,9 +23,10 @@ const SelectInteractive = <T extends TSelectInteractiveOption>({
   formatGroupLabel,
   onChange = () => {},
   onInputChange = () => {},
-}: SelectInteractiveProps<T>) => {
+  ...rest
+}: SelectInteractiveProps<TSelectInteractiveOption>) => {
   return (
-    <Styles.SelectWrapper>
+    <Styles.SelectWrapper {...rest}>
       <Select
         name={name}
         value={value}
@@ -37,7 +38,10 @@ const SelectInteractive = <T extends TSelectInteractiveOption>({
         classNamePrefix="select"
         placeholder={placeholder}
         className="select-interactive"
-        onChange={() => onChange}
+        onChange={e => {
+          if (!e) return;
+          onChange(e);
+        }}
         defaultMenuIsOpen={false}
         onInputChange={onInputChange}
         components={{
