@@ -5,15 +5,22 @@ exports[`Tag renders 1`] = `
   .c0 {
   display: inline-block;
   border: 0.125rem solid #939393;
-  border-radius: 999px;
+  border-radius: 0.1875rem;
   background-color: #939393;
   max-width: 9.375rem;
-  padding: 0.125rem 0.625rem;
-  font-size: 0.85rem;
+  padding: 0.1875rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.1em;
+  -moz-letter-spacing: 0.1em;
+  -ms-letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
+  line-height: 1;
   color: #ffffff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-transform: uppercase;
   border-color: #ef5766;
   background-color: #ef5766;
   color: #ffffff;

@@ -14,7 +14,7 @@ exports[`FieldWidthButton renders 1`] = `
   border-radius: 999px;
   background-color: var(--button);
   width: 2.25rem;
-  height: 2.25rem;
+  height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -56,7 +56,11 @@ exports[`FieldWidthButton renders 1`] = `
 .c3 span {
   position: relative;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   color: var(--txt);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;

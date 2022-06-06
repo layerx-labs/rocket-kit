@@ -16,7 +16,7 @@ exports[`Modal Footer renders 1`] = `
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: 2.25rem;
+  height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -71,7 +71,11 @@ exports[`Modal Footer renders 1`] = `
 .c1 span {
   position: relative;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   color: var(--button);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
@@ -107,7 +111,7 @@ exports[`Modal Footer renders 1`] = `
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: 2.25rem;
+  height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -149,7 +153,11 @@ exports[`Modal Footer renders 1`] = `
 .c2 span {
   position: relative;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   color: var(--txt);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
