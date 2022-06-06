@@ -8,7 +8,7 @@ interface TagWrapperProps {
   color?: TagColor;
 }
 
-const { light, grey, green, orange, red } = colors;
+const { normal, light, grey, green, orange, red } = colors;
 const { bold } = fontWeight;
 
 export const TagWrapper = styled.span<TagWrapperProps>`
@@ -62,6 +62,14 @@ export const TagWrapper = styled.span<TagWrapperProps>`
       border-color: ${grey};
       background-color: ${grey};
       color: ${props.variant === 'solid' ? light : grey};
+    `}
+
+  ${props =>
+    props.color === 'light' &&
+    css`
+      border-color: ${light};
+      background-color: ${light};
+      color: ${props.variant === 'solid' ? normal : light};
     `}
 
   ${props =>
