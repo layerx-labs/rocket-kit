@@ -7,18 +7,25 @@ exports[`Tag Number renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border: 2px solid #e0e0e0;
-  border-radius: 6px;
-  font-size: 0.85rem;
+  border: 0.125rem solid #939393;
+  border-radius: 0.1875rem;
+  line-height: 1;
   max-width: 100%;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  overflow: hidden;
 }
 
 .c0 span {
   display: inline-block;
-  padding: 0.125rem 0.625rem;
+  padding: 0.1875rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.1em;
+  -moz-letter-spacing: 0.1em;
+  -ms-letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
 }
 
 .c0 span.label {
@@ -28,15 +35,17 @@ exports[`Tag Number renders 1`] = `
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-transform: uppercase;
 }
 
 .c0 span.value {
-  background-color: #e0e0e0;
+  background-color: #939393;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .c0:not(:first-child) {
-  margin-left: 5px;
+  margin-left: 0.3125rem;
 }
 
 <div

@@ -1,1 +1,1 @@
-export type ErrorFieldColor = 'success' | 'danger';
+export type ErrorFieldColor = 'success' | 'red';

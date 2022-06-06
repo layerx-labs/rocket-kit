@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { rem } from 'polished';
 import { device } from '../../ions/breakpoints';
 import { colors } from '../../ions/variables';
 
@@ -22,10 +23,10 @@ export const Wrapper = styled.div<SlideshowProps>`
     filter: alpha(opacity=40);
     position: absolute;
     z-index: 2;
-    top: 20px;
+    top: ${rem('20px')};
     background: none;
     border: 0;
-    font-size: 32px;
+    font-size: ${rem('32px')};
     cursor: pointer;
   }
 
@@ -36,10 +37,10 @@ export const Wrapper = styled.div<SlideshowProps>`
 
   .carousel .control-arrow:before,
   .carousel.carousel-slider .control-arrow:before {
-    margin: 0 5px;
+    margin: 0 ${rem('5px')};
     display: inline-block;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
+    border-top: ${rem('8px')} solid transparent;
+    border-bottom: ${rem('8px')} solid transparent;
     content: '';
   }
 
@@ -55,7 +56,7 @@ export const Wrapper = styled.div<SlideshowProps>`
   }
 
   .carousel .control-prev.control-arrow:before {
-    border-right: 8px solid #fff;
+    border-right: ${rem('8px')} solid #fff;
   }
 
   .carousel .control-next.control-arrow {
@@ -63,7 +64,7 @@ export const Wrapper = styled.div<SlideshowProps>`
   }
 
   .carousel .control-next.control-arrow:before {
-    border-left: 8px solid #fff;
+    border-left: ${rem('8px')} solid #fff;
   }
 
   .carousel-root {
@@ -96,12 +97,12 @@ export const Wrapper = styled.div<SlideshowProps>`
     border: 0;
     background: none;
     top: 50%;
-    margin-top: -13px;
-    font-size: 18px;
+    margin-top: ${rem('-13px')};
+    font-size: ${rem('18px')};
   }
 
   .carousel .thumbs-wrapper {
-    margin: 20px;
+    margin: ${rem('20px')};
     overflow: hidden;
   }
 
@@ -128,21 +129,21 @@ export const Wrapper = styled.div<SlideshowProps>`
     -o-transition: border 0.15s ease-in;
     transition: border 0.15s ease-in;
     display: inline-block;
-    margin-right: 6px;
+    margin-right: ${rem('6px')};
     white-space: nowrap;
     overflow: hidden;
-    border: 3px solid #fff;
-    padding: 2px;
+    border: ${rem('3px')} solid #fff;
+    padding: ${rem('2px')};
   }
 
   .carousel .thumb:focus {
-    border: 3px solid #ccc;
+    border: ${rem('3px')} solid #ccc;
     outline: none;
   }
 
   .carousel .thumb.selected,
   .carousel .thumb:hover {
-    border: 3px solid #333;
+    border: ${rem('3px')} solid #333;
   }
 
   .carousel .thumb img {
@@ -158,10 +159,10 @@ export const Wrapper = styled.div<SlideshowProps>`
   .carousel.carousel-slider .control-arrow {
     top: 0;
     color: #fff;
-    font-size: 26px;
+    font-size: ${rem('26px')};
     bottom: 0;
     margin-top: 0;
-    padding: 5px;
+    padding: ${rem('5px')};
   }
 
   .carousel.carousel-slider .control-arrow:hover {
@@ -243,28 +244,28 @@ export const Wrapper = styled.div<SlideshowProps>`
     position: absolute;
     top: 0;
     right: 0;
-    padding: 5px;
-    font-size: 10px;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+    padding: ${rem('5px')};
+    font-size: ${rem('10px')};
+    text-shadow: ${rem('1px')} ${rem('1px')} ${rem('1px')} rgba(0, 0, 0, 0.9);
     color: #fff;
   }
 
   > div > div > button {
     position: absolute;
-    left: 30px;
-    bottom: 30px;
+    left: ${rem('30px')};
+    bottom: ${rem('30px')};
     opacity: 0.25;
     z-index: 2;
     transition-duration: 0.3s;
 
     svg {
-      width: 36px;
-      height: 36px;
+      width: ${rem('36px')};
+      height: ${rem('36px')};
       fill: ${light};
     }
 
     &.next {
-      margin-left: 46px;
+      margin-left: ${rem('46px')};
     }
 
     &:hover {
@@ -282,11 +283,11 @@ export const Wrapper = styled.div<SlideshowProps>`
 
   .control-dots {
     position: absolute;
-    right: 30px;
-    bottom: 42px !important;
+    right: ${rem('30px')};
+    bottom: ${rem('42px')} !important;
     margin: 0 !important;
     width: initial !important;
-    height: 15px;
+    height: ${rem('15px')};
     display: ${props => (props.slidesNumber > 1 ? 'inherit' : 'none')};
     padding: 0;
     text-align: center;
@@ -297,8 +298,8 @@ export const Wrapper = styled.div<SlideshowProps>`
       display: inline-block;
       border-radius: 999px;
       background-color: ${light};
-      width: 15px;
-      height: 15px;
+      width: ${rem('15px')};
+      height: ${rem('15px')};
       opacity: 0.25;
       transition-duration: 0.3s;
       cursor: pointer;
@@ -309,13 +310,13 @@ export const Wrapper = styled.div<SlideshowProps>`
         border: 0;
         border-radius: 999px;
         background-color: transparent;
-        width: 15px;
-        height: 15px;
+        width: ${rem('15px')};
+        height: ${rem('15px')};
         cursor: pointer;
       }
 
       &.selected {
-        width: 30px;
+        width: ${rem('30px')};
         opacity: 1;
       }
 
@@ -324,7 +325,7 @@ export const Wrapper = styled.div<SlideshowProps>`
       }
 
       &:not(:last-child) {
-        margin-right: 5px;
+        margin-right: ${rem('5px')};
       }
     }
 

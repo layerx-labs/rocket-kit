@@ -8,18 +8,18 @@ export default {
     color: {
       control: {
         type: 'select',
-        options: ['info', 'primary', 'danger'],
+        options: ['grey', 'green', 'red'],
       },
     },
     onClick: { action: 'clicked' },
   },
 };
 
-export const NoteCardText = (args) => <NoteCard {...args} />;
+export const NoteCardText = args => <NoteCard {...args} />;
 
 NoteCardText.storyName = 'Text Only';
 NoteCardText.args = {
-  color: 'info',
+  color: 'grey',
   value:
     'Adaptogen humblebrag letterpress, plaid franzen authentic four loko street art vice succulents health goth art party offal 3 wolf moon. Synth lyft hoodie mustache blog narwhal small batch hot chicken enamel pin venmo vaporware subway tile health goth.',
 };

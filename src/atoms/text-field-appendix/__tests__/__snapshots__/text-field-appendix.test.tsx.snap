@@ -3,9 +3,9 @@
 exports[`TextField Appendix renders 1`] = `
 <DocumentFragment>
   .c2 {
-  border-width: 1px;
+  border-width: 0.0625rem;
   border-style: solid;
-  border-color: hsl(0,0%,48%);
+  border-color: #939393;
   border-radius: 6px;
   height: 3.125rem;
   padding: 0.625rem;
@@ -16,17 +16,17 @@ exports[`TextField Appendix renders 1`] = `
 }
 
 .c2:focus {
-  border-color: hsl(256,55%,43%);
+  border-color: #4329a6;
   outline: none;
 }
 
 .c2:disabled {
-  background-color: #ededed;
-  color: hsl(0,0%,48%);
+  background-color: #c4c7d3;
+  color: #939393;
 }
 
 .c2:invalid {
-  border-color: hsl(354,83%,64%);
+  border-color: #ef5766;
   outline: none;
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -34,44 +34,44 @@ exports[`TextField Appendix renders 1`] = `
 }
 
 .c2:required {
-  border-color: hsl(0,0%,48%);
+  border-color: #939393;
 }
 
 .c2::-webkit-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2::-moz-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2:-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2::placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2:-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c2::-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c0 {
-  border-width: 1px;
+  border-width: 0.0625rem;
   border-style: solid;
-  border-color: hsl(0,0%,48%);
-  border-radius: 6px;
+  border-color: #939393;
+  border-radius: 0.375rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -84,7 +84,7 @@ exports[`TextField Appendix renders 1`] = `
   -ms-flex: 1;
   flex: 1;
   border: 0;
-  color: hsl(0,0%,16%);
+  color: #000000;
 }
 
 .c0 + span {
@@ -92,12 +92,12 @@ exports[`TextField Appendix renders 1`] = `
 }
 
 .c1 {
-  border-width: 0 1px 0 0;
+  border-width: 0 0.0625rem 0 0;
   border-style: solid;
-  border-color: hsl(0,0%,48%);
-  background-color: #e0e0e0;
+  border-color: #939393;
+  background-color: #c4c7d3;
   padding: 0 0.9375rem;
-  color: hsl(0,0%,48%);
+  color: #939393;
   line-height: 3rem;
   vertical-align: center;
   overflow: hidden;

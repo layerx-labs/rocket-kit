@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { rem, lighten } from 'polished';
+import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface TextFieldAppendixProps {
@@ -11,20 +11,20 @@ interface AppendixProps {
   error?: string;
 }
 
-const { normal, info, danger } = colors;
+const { normal, grey, lightGrey, red, lightRed } = colors;
 
 export const Wrapper = styled.div<TextFieldAppendixProps>`
-  border-width: 1px;
+  border-width: ${rem('1px')};
   border-style: solid;
-  border-color: ${props => (props.error ? danger : info)};
-  border-radius: 6px;
+  border-color: ${props => (props.error ? red : grey)};
+  border-radius: ${rem('6px')};
   display: flex;
   overflow: hidden;
 
   input {
     flex: 1;
     border: 0;
-    color: ${props => (props.error ? danger : normal)};
+    color: ${props => (props.error ? red : normal)};
   }
 
   & + span {
@@ -34,13 +34,12 @@ export const Wrapper = styled.div<TextFieldAppendixProps>`
 
 export const Appendix = styled.div<AppendixProps>`
   border-width: ${props =>
-    props.position === 'left' ? '0 1px 0 0' : '0 0 0 1px'};
+    props.position === 'left' ? `0 ${rem('1px')} 0 0` : `0 0 0 ${rem('1px')}`};
   border-style: solid;
-  border-color: ${props => (props.error ? danger : info)};
-  background-color: ${props =>
-    props.error ? lighten(0.25, danger) : lighten(0.4, info)};
+  border-color: ${props => (props.error ? red : grey)};
+  background-color: ${props => (props.error ? lightRed : lightGrey)};
   padding: 0 ${rem('15px')};
-  color: ${props => (props.error ? danger : info)};
+  color: ${props => (props.error ? red : grey)};
   line-height: ${rem('48px')};
   vertical-align: center;
   overflow: hidden;

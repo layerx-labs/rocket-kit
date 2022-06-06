@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 
 interface DataWarningProps {
   type: 'login' | 'data';
 }
 
-const { normal, primary } = colors;
-const { bold } = fontWeigth;
+const { normal, green } = colors;
+const { bold } = fontWeight;
 
 export const Wrapper = styled.div<DataWarningProps>`
   min-height: 50vh;
@@ -24,7 +24,7 @@ export const Wrapper = styled.div<DataWarningProps>`
   }
 
   > div {
-    margin-top: 15px;
+    margin-top: ${rem('15px')};
     font-weight: ${bold};
     color: ${normal};
 
@@ -33,7 +33,7 @@ export const Wrapper = styled.div<DataWarningProps>`
       transition-duration: 0.3s;
 
       &:hover {
-        color: ${primary};
+        color: ${green};
       }
     }
   }

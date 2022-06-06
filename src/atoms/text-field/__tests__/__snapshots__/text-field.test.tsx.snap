@@ -3,9 +3,9 @@
 exports[`TextField renders 1`] = `
 <DocumentFragment>
   .c0 {
-  border-width: 0 0 1px 0;
+  border-width: 0 0 0.0625rem 0;
   border-style: solid;
-  border-color: hsl(0,0%,48%);
+  border-color: #939393;
   border-radius: 0;
   height: 2.5rem;
   padding: 0;
@@ -16,17 +16,17 @@ exports[`TextField renders 1`] = `
 }
 
 .c0:focus {
-  border-color: hsl(256,55%,43%);
+  border-color: #4329a6;
   outline: none;
 }
 
 .c0:disabled {
-  background-color: #ededed;
-  color: hsl(0,0%,48%);
+  background-color: #c4c7d3;
+  color: #939393;
 }
 
 .c0:invalid {
-  border-color: hsl(354,83%,64%);
+  border-color: #ef5766;
   outline: none;
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -34,36 +34,36 @@ exports[`TextField renders 1`] = `
 }
 
 .c0:required {
-  border-color: hsl(0,0%,48%);
+  border-color: #939393;
 }
 
 .c0::-webkit-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c0::-moz-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c0:-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c0::placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c0:-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 
 .c0::-ms-input-placeholder {
-  color: hsl(0,0%,48%);
+  color: #939393;
   opacity: 1;
 }
 

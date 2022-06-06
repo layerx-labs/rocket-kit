@@ -13,7 +13,7 @@ interface TagProps {
 const Tag = (props: TagProps) => {
   const {
     variant = 'solid',
-    color = 'info',
+    color = 'grey',
     value,
     className = 'tag',
     style,

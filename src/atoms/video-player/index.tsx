@@ -25,6 +25,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
 
   return (
     <Styles.Wrapper>
+      {/* @ts-ignore */}
       <ReactPlayer
         style={{ position: 'absolute', top: 0, left: 0 }}
         url={video}

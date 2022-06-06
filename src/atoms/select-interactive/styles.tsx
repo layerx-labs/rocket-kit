@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-import { rem, lighten } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { rem } from 'polished';
+import { colors, fontWeight } from '../../ions/variables';
 
-const { normal, light, info, purple } = colors;
+
+
+const { normal, light, grey, purple, lightPurple } = colors;
 
 export const SelectWrapper = styled.div`
   .select {
@@ -11,7 +13,7 @@ export const SelectWrapper = styled.div`
     }
 
     &__control {
-      border-color: ${info};
+      border-color: ${grey};
       min-height: ${rem('50px')};
       transition-duration: 0.3s;
 
@@ -31,7 +33,7 @@ export const SelectWrapper = styled.div`
     }
 
     &__placeholder {
-      color: ${info};
+      color: ${grey};
     }
 
     &__input {
@@ -59,7 +61,7 @@ export const SelectWrapper = styled.div`
       }
 
       &-separator {
-        background-color: ${info};
+        background-color: ${grey};
       }
     }
 
@@ -77,7 +79,7 @@ export const SelectWrapper = styled.div`
       }
 
       &--is-selected {
-        background-color: ${lighten(0.4, purple)};
+        background-color: ${lightPurple};
         color: ${normal};
       }
     }
@@ -97,7 +99,7 @@ export const SelectWrapper = styled.div`
   .select__option {
     svg,
     img {
-      margin: 0px ${rem('5px')} 0 0;
+      margin: 0 ${rem('5px')} 0 0;
       width: ${rem('20px')};
       height: auto;
       transition-duration: 0.3s;
@@ -126,7 +128,7 @@ export const SelectGroup = styled.div`
 
 export const SelectGroupLabel = styled.span`
   color: 000000;
-  font-weight: ${fontWeigth.bold};
+  font-weight: ${fontWeight.bold};
 `;
 
 export const SelectGroupTotal = styled.span`

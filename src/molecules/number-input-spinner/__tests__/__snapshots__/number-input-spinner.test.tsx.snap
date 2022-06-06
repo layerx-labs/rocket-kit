@@ -3,12 +3,12 @@
 exports[`NumberInputSpinner renders 1`] = `
 <DocumentFragment>
   .c0 {
-  border: 1px solid hsl(0,0%,48%);
-  border-radius: 6px;
+  border: 0.0625rem solid #939393;
+  border-radius: 0.375rem;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
-  height: 50px;
+  height: 3.125rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19,13 +19,12 @@ exports[`NumberInputSpinner renders 1`] = `
 .c0 button:disabled,
 .c0 input:disabled {
   cursor: inherit;
-  background-color: #f4f4f4;
-  color: #d3d3d3;
+  background-color: #c4c7d3;
 }
 
 .c0 button:disabled svg,
 .c0 input:disabled svg {
-  fill: #d3d3d3;
+  opacity: 0.25;
 }
 
 .c0 button:disabled:hover,
@@ -36,8 +35,8 @@ exports[`NumberInputSpinner renders 1`] = `
 .c2 {
   border: 0;
   width: 70px;
-  height: 50px;
-  padding: 10px;
+  height: 3.125rem;
+  padding: 0.625rem;
   font-family: inherit;
   font-size: 1rem;
   text-align: center;
@@ -56,35 +55,35 @@ exports[`NumberInputSpinner renders 1`] = `
 
 .c2:invalid {
   box-shadow: none;
-  background-color: #f8b4bb;
+  background-color: #facbd0;
 }
 
 .c1 {
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   border: 0;
-  background-color: #e0e0e0;
+  background-color: #c4c7d3;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
 .c1.remove-button {
-  border-right: 1px solid hsl(0,0%,48%);
+  border-right: 0.0625rem solid #939393;
 }
 
 .c1.add-button {
-  border-left: 1px solid hsl(0,0%,48%);
+  border-left: 0.0625rem solid #939393;
 }
 
 .c1 svg {
   width: auto;
-  height: 20px;
-  fill: hsl(0,0%,48%);
+  height: 1.25rem;
+  fill: #939393;
 }
 
 .c1:hover {
-  background-color: #c7c7c7;
+  background-color: #c4c7d3;
 }
 
 <div

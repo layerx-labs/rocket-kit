@@ -5,7 +5,7 @@ import * as Styles from './styles';
 export interface AlertNotificationProps {
   className?: string;
   style?: CSSProperties;
-  variant?: 'success' | 'warning' | 'danger';
+  variant?: 'success' | 'orange' | 'red';
   value: string;
   children?: React.ReactNode;
   closeAction?: (

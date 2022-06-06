@@ -1,36 +1,42 @@
 import styled from 'styled-components/macro';
-import { rem, lighten } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { rem } from 'polished';
+import { colors, fontWeight } from '../../ions/variables';
 
-const { info } = colors;
-const { bold } = fontWeigth;
+const { grey, light } = colors;
+const { bold } = fontWeight;
 
 export const TagWrapper = styled.div`
   display: flex;
-  border: 2px solid ${lighten(0.4, info)};
-  border-radius: 6px;
-  font-size: 0.85rem;
+  border: ${rem('2px')} solid ${grey};
+  border-radius: ${rem('3px')};
+  line-height: 1;
   max-width: 100%;
   width: max-content;
+  overflow: hidden;
 
   span {
     display: inline-block;
-    padding: ${rem('2px')} ${rem('10px')};
+    padding: ${rem('3px')} ${rem('8px')};
+    font-size: ${rem('12px')};
+    font-weight: ${bold};
+    letter-spacing: 0.1em;
 
     &.label {
       flex: 1;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      text-transform: uppercase;
     }
 
     &.value {
-      background-color: ${lighten(0.4, info)};
+      background-color: ${grey};
       font-weight: ${bold};
+      color: ${light};
     }
   }
 
   &:not(:first-child) {
-    margin-left: 5px;
+    margin-left: ${rem('5px')};
   }
 `;

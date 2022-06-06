@@ -4,28 +4,35 @@ exports[`Tag renders 1`] = `
 <DocumentFragment>
   .c0 {
   display: inline-block;
-  border: 2px solid hsl(0,0%,48%);
-  border-radius: 999px;
-  background-color: hsl(0,0%,48%);
+  border: 0.125rem solid #939393;
+  border-radius: 0.1875rem;
+  background-color: #939393;
   max-width: 9.375rem;
-  padding: 0.125rem 0.625rem;
-  font-size: 0.85rem;
-  color: hsl(0,0%,100%);
+  padding: 0.1875rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  -webkit-letter-spacing: 0.1em;
+  -moz-letter-spacing: 0.1em;
+  -ms-letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  color: #ffffff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-color: hsl(354,83%,64%);
-  background-color: hsl(354,83%,64%);
-  color: hsl(0,0%,100%);
+  text-transform: uppercase;
+  border-color: #ef5766;
+  background-color: #ef5766;
+  color: #ffffff;
 }
 
 .c0:not(:first-child) {
-  margin-left: 5px;
+  margin-left: 0.3125rem;
 }
 
 <span
     class="c0 tag"
-    color="danger"
+    color="red"
     title="hello"
   >
     hello

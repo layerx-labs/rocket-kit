@@ -19,7 +19,7 @@ const rotation = keyframes`
 `;
 
 export const Loading = styled.div<LoadingProps>`
-  border: 5px solid hsla(0, 0%, 48%, 0.5);
+  border: ${rem('5px')} solid hsla(0, 0%, 48%, 0.5);
   border-top-color: ${props => props.fill || light};
   border-radius: 50%;
   width: ${props => props.size || rem('20px')};

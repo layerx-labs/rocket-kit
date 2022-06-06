@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 
-const { normal, light, purple, info } = colors;
-const { bold } = fontWeigth;
+interface PageControlProps {
+  dark?: boolean;
+}
 
-export const PaginationWrapper = styled.div`
+const { normal, light, blue, lightGrey } = colors;
+const { bold } = fontWeight;
+
+export const PaginationWrapper = styled.div<PageControlProps>`
+  --size: ${rem('30px')};
+
   ul.pagination {
     margin: 0;
     display: flex;
@@ -15,16 +21,12 @@ export const PaginationWrapper = styled.div`
     list-style: none;
 
     li {
-      width: ${rem('50px')};
-      height: ${rem('50px')};
-      background-color: ${light};
+      min-width: var(--size);
+      height: var(--size);
       cursor: pointer;
 
       &.previous,
       &.next {
-        margin: 0 ${rem('15px')};
-        background-color: ${light};
-        border-radius: ${rem('25px')};
         transition-duration: 0.3s;
 
         a svg {
@@ -32,59 +34,52 @@ export const PaginationWrapper = styled.div`
         }
       }
 
-      &.page:nth-child(2) {
-        border-radius: ${rem('25px')} 0 0 ${rem('25px')};
-      }
-
-      &.page:nth-last-child(2) {
-        border-radius: 0 ${rem('25px')} ${rem('25px')} 0;
-      }
-
       a,
       .break {
-        width: ${rem('50px')};
-        height: ${rem('50px')};
-        border-radius: 999px;
-        z-index: 1;
+        min-width: var(--size);
+        height: var(--size);
         transition-duration: 0.3s;
-
-        &:hover {
-          -moz-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.1);
-          -webkit-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.1);
-          box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.1);
-          filter: drop-shadow(0 0 5px transparent);
-          z-index: 2;
-        }
       }
 
       a {
-        width: ${rem('50px')};
-        height: ${rem('50px')};
+        border-radius: ${rem('8px')};
+        min-width: var(--size);
+        height: var(--size);
+        padding: 0 ${rem('5px')};
         display: flex;
         justify-content: center;
         align-items: center;
         color: ${normal};
+        font-weight: ${bold};
         text-decoration: none;
 
+        &:hover {
+          color: ${blue};
+        }
+
         svg {
-          width: ${rem('30px')};
+          width: ${rem('18px')};
           height: auto;
-          fill: ${info};
+          fill: ${blue};
         }
       }
 
       &.active {
-        border-radius: 0;
         pointer-events: none;
 
         a {
-          --shadow: drop-shadow(0 0 5px rgba(40, 40, 40, 0.4));
-
-          border-radius: ${rem('25px')};
-          background-color: ${purple};
-          font-weight: ${bold};
+          background-color: ${blue};
           color: ${light};
-          filter: var(--shadow);
+        }
+      }
+    }
+
+    &.dark {
+      a {
+        color: ${lightGrey};
+
+        &:hover {
+          color: ${light};
         }
       }
     }

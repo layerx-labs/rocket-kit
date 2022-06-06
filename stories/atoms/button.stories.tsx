@@ -10,10 +10,12 @@ export default {
       control: {
         type: 'select',
         options: [
-          'primary',
-          'danger',
-          'info',
+          'green',
+          'orange',
+          'red',
+          'grey',
           'purple',
+          'blue',
           'white',
           'dark',
           'magic',
@@ -48,7 +50,7 @@ ButtonComponent.storyName = 'Action';
 ButtonComponent.args = {
   value: 'Dummie',
   variant: 'solid',
-  color: 'primary',
+  color: 'green',
   circle: false,
   className: 'button',
   querySelector: '.button',
@@ -79,7 +81,7 @@ const actions = [
 ButtonDropdownComponent.storyName = 'Dropdown';
 ButtonDropdownComponent.args = {
   variant: 'solid',
-  color: 'primary',
+  color: 'green',
   value: 'Create',
   icon: 'add',
   ariaLabel: 'Create Challenge',

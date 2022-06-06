@@ -24,7 +24,7 @@ const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
   const {
     className = 'button-dropdown',
     variant = 'solid',
-    color = 'primary',
+    color = 'green',
     value = '',
     icon = 'keyboardDown',
     ariaLabel = '',
@@ -35,9 +35,8 @@ const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
     disabled = false,
   } = props;
 
-  const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
-    startsOpen
-  );
+  const { ref, isVisible, setIsVisible } =
+    useVisible<HTMLDivElement>(startsOpen);
 
   if (!actions || !Array.isArray(actions) || actions.length === 0) return <></>;
 

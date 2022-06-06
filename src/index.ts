@@ -20,6 +20,8 @@ export { default as TruncateLine } from './atoms/truncate-line';
 export { default as Slideshow } from './atoms/slideshow';
 export { default as VideoPlayer } from './atoms/video-player';
 export { default as ProgressBar } from './atoms/progress-bar';
+export { default as Toggle } from './atoms/toggle';
+export { default as FilePicker } from './atoms/file-picker';
 
 // Molecules
 export { default as ActionsMenu } from './molecules/actions-menu';
@@ -46,3 +48,6 @@ export { default as Modal } from './organisms/modal';
 export { default as ModalDrawer } from './organisms/modal-drawer';
 export { default as LoadingState } from './organisms/loading-state';
 export { default as TabsPanel } from './organisms/tabs-panel';
+export { default as GridContainer } from './organisms/grid-container';
+export { default as GridRow } from './organisms/grid-container/grid-row';
+export { default as GridCol } from './organisms/grid-container/grid-col';

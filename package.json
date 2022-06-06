@@ -1,10 +1,12 @@
 {
-  "version": "1.1.5",
+  "version": "2.0.0-beta.9",
+  "name": "@taikai/rocket-kit",
+  "author": "taikai",
   "description": "TAIKAI Design System",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/taikai/taikai-design-system.git"
+    "url": "https://github.com/taikai/rocket-kit.git"
   },
   "keywords": [
     "react",
@@ -16,8 +18,7 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
@@ -49,8 +50,6 @@
     "trailingComma": "es5",
     "arrowParens": "avoid"
   },
-  "name": "@taikai/taikai-design-system",
-  "author": "taikai",
   "module": "dist/taikai-design-system.esm.js",
   "size-limit": [
     {
@@ -65,13 +64,13 @@
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@size-limit/preset-small-lib": "^4.10.0",
-    "@storybook/addon-a11y": "^6.4.9",
-    "@storybook/addon-controls": "^6.4.9",
-    "@storybook/addon-essentials": "^6.4.9",
-    "@storybook/addon-links": "^6.4.9",
-    "@storybook/addons": "^6.4.9",
-    "@storybook/react": "^6.4.9",
-    "@storybook/theming": "^6.4.9",
+    "@storybook/addon-a11y": "^6.4.22",
+    "@storybook/addon-controls": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/addons": "^6.4.22",
+    "@storybook/react": "^6.4.22",
+    "@storybook/theming": "^6.4.22",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^13.0.7",
@@ -96,14 +95,17 @@
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
     "size-limit": "^4.10.0",
+    "storybook-addon-designs": "^6.2.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
     "typescript": "^4.2.3"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
+    "@types/uuid": "^8.3.4",
     "boring-avatars": "^1.5.8",
     "jest-styled-components": "^7.0.3",
     "lodash.throttle": "^4.1.1",
@@ -114,6 +116,7 @@
     "react-responsive-carousel": "^3.2.18",
     "react-responsive-tabs": "^4.4.1",
     "react-select": "^4.3.1",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "uuid": "^8.3.2"
   }
 }

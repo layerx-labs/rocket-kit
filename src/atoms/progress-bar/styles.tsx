@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { rem, lighten } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { rem } from 'polished';
+import { colors, fontWeight } from '../../ions/variables';
 
-const { info, primary } = colors;
-const { bold } = fontWeigth;
+const { lightGrey, green } = colors;
+const { bold } = fontWeight;
 
 interface ProgressBarProps {
   progress: number;
@@ -18,14 +18,14 @@ export const Wrapper = styled.div`
 export const Bar = styled.div`
   flex: 1;
   border-radius: 999px;
-  background-color: ${lighten(0.4, info)};
+  background-color: ${lightGrey};
   height: ${rem('10px')};
   overflow: hidden;
 `;
 
 export const Progress = styled.div<ProgressBarProps>`
   border-radius: 999px;
-  background-color: ${primary};
+  background-color: ${green};
   height: 100%;
   width: ${props => (props.progress ? `${props.progress}%` : 0)};
   transition-duration: 2s;

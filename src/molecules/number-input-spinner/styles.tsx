@@ -1,18 +1,18 @@
 import styled from 'styled-components/macro';
-import { lighten } from 'polished';
+import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { info, danger } = colors;
+const { grey, lightGrey, lightRed } = colors;
 
 interface NumberInputSpinnerProps {
   max?: number;
 }
 
 export const Wrapper = styled.div`
-  border: 1px solid ${info};
-  border-radius: 6px;
+  border: ${rem('1px')} solid ${grey};
+  border-radius: ${rem('6px')};
   max-width: max-content;
-  height: 50px;
+  height: ${rem('50px')};
   display: flex;
   overflow: hidden;
 
@@ -20,11 +20,10 @@ export const Wrapper = styled.div`
   input {
     &:disabled {
       cursor: inherit;
-      background-color: ${lighten(0.48, info)};
-      color: ${lighten(0.35, info)};
+      background-color: ${lightGrey};
 
       svg {
-        fill: ${lighten(0.35, info)};
+        opacity: 0.25;
       }
 
       &:hover {
@@ -40,8 +39,8 @@ export const Input = styled.input<NumberInputSpinnerProps>`
     props.max != null && props.max.toString().length > 5
       ? props.max.toString().length * 10 + 20 + 'px'
       : '70px'};
-  height: 50px;
-  padding: 10px;
+  height: ${rem('50px')};
+  padding: ${rem('10px')};
   font-family: inherit;
   font-size: 1rem;
   text-align: center;
@@ -59,33 +58,33 @@ export const Input = styled.input<NumberInputSpinnerProps>`
 
   &:invalid {
     box-shadow: none;
-    background-color: ${lighten(0.2, danger)};
+    background-color: ${lightRed};
   }
 `;
 
 export const Button = styled.button`
-  width: 50px;
-  height: 50px;
+  width: ${rem('50px')};
+  height: ${rem('50px')};
   border: 0;
-  background-color: ${lighten(0.4, info)};
+  background-color: ${lightGrey};
   cursor: pointer;
   transition-duration: 0.3s;
 
   &.remove-button {
-    border-right: 1px solid ${info};
+    border-right: ${rem('1px')} solid ${grey};
   }
 
   &.add-button {
-    border-left: 1px solid ${info};
+    border-left: ${rem('1px')} solid ${grey};
   }
 
   svg {
     width: auto;
-    height: 20px;
-    fill: ${info};
+    height: ${rem('20px')};
+    fill: ${grey};
   }
 
   &:hover {
-    background-color: ${lighten(0.3, info)};
+    background-color: ${lightGrey};
   }
 `;

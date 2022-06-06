@@ -3,18 +3,18 @@
 exports[`Slideshow renders 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(186,62%,59%);
-  --hover: #2798a5;
+  --button: #56cad7;
+  --hover: #2ba8b6;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
   border-radius: 0;
   background-color: transparent;
   width: 2.25rem;
-  height: 2.25rem;
+  height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -69,7 +69,11 @@ exports[`Slideshow renders 1`] = `
 .c1 span {
   position: relative;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   color: var(--button);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
@@ -108,10 +112,10 @@ exports[`Slideshow renders 1`] = `
   filter: alpha(opacity=40);
   position: absolute;
   z-index: 2;
-  top: 20px;
+  top: 1.25rem;
   background: none;
   border: 0;
-  font-size: 32px;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -123,10 +127,10 @@ exports[`Slideshow renders 1`] = `
 
 .c0 .carousel .control-arrow:before,
 .c0 .carousel.carousel-slider .control-arrow:before {
-  margin: 0 5px;
+  margin: 0 0.3125rem;
   display: inline-block;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
   content: '';
 }
 
@@ -143,7 +147,7 @@ exports[`Slideshow renders 1`] = `
 }
 
 .c0 .carousel .control-prev.control-arrow:before {
-  border-right: 8px solid #fff;
+  border-right: 0.5rem solid #fff;
 }
 
 .c0 .carousel .control-next.control-arrow {
@@ -151,7 +155,7 @@ exports[`Slideshow renders 1`] = `
 }
 
 .c0 .carousel .control-next.control-arrow:before {
-  border-left: 8px solid #fff;
+  border-left: 0.5rem solid #fff;
 }
 
 .c0 .carousel-root {
@@ -184,12 +188,12 @@ exports[`Slideshow renders 1`] = `
   border: 0;
   background: none;
   top: 50%;
-  margin-top: -13px;
-  font-size: 18px;
+  margin-top: -0.8125rem;
+  font-size: 1.125rem;
 }
 
 .c0 .carousel .thumbs-wrapper {
-  margin: 20px;
+  margin: 1.25rem;
   overflow: hidden;
 }
 
@@ -220,21 +224,21 @@ exports[`Slideshow renders 1`] = `
   -webkit-transition: border 0.15s ease-in;
   transition: border 0.15s ease-in;
   display: inline-block;
-  margin-right: 6px;
+  margin-right: 0.375rem;
   white-space: nowrap;
   overflow: hidden;
-  border: 3px solid #fff;
-  padding: 2px;
+  border: 0.1875rem solid #fff;
+  padding: 0.125rem;
 }
 
 .c0 .carousel .thumb:focus {
-  border: 3px solid #ccc;
+  border: 0.1875rem solid #ccc;
   outline: none;
 }
 
 .c0 .carousel .thumb.selected,
 .c0 .carousel .thumb:hover {
-  border: 3px solid #333;
+  border: 0.1875rem solid #333;
 }
 
 .c0 .carousel .thumb img {
@@ -250,10 +254,10 @@ exports[`Slideshow renders 1`] = `
 .c0 .carousel.carousel-slider .control-arrow {
   top: 0;
   color: #fff;
-  font-size: 26px;
+  font-size: 1.625rem;
   bottom: 0;
   margin-top: 0;
-  padding: 5px;
+  padding: 0.3125rem;
 }
 
 .c0 .carousel.carousel-slider .control-arrow:hover {
@@ -349,16 +353,16 @@ exports[`Slideshow renders 1`] = `
   position: absolute;
   top: 0;
   right: 0;
-  padding: 5px;
-  font-size: 10px;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+  padding: 0.3125rem;
+  font-size: 0.625rem;
+  text-shadow: 0.0625rem 0.0625rem 0.0625rem rgba(0,0,0,0.9);
   color: #fff;
 }
 
 .c0 > div > div > button {
   position: absolute;
-  left: 30px;
-  bottom: 30px;
+  left: 1.875rem;
+  bottom: 1.875rem;
   opacity: 0.25;
   z-index: 2;
   -webkit-transition-duration: 0.3s;
@@ -366,13 +370,13 @@ exports[`Slideshow renders 1`] = `
 }
 
 .c0 > div > div > button svg {
-  width: 36px;
-  height: 36px;
-  fill: hsl(0,0%,100%);
+  width: 2.25rem;
+  height: 2.25rem;
+  fill: #ffffff;
 }
 
 .c0 > div > div > button.next {
-  margin-left: 46px;
+  margin-left: 2.875rem;
 }
 
 .c0 > div > div > button:hover {
@@ -380,16 +384,16 @@ exports[`Slideshow renders 1`] = `
 }
 
 .c0 > div > div > button:hover svg {
-  fill: hsl(0,0%,100%);
+  fill: #ffffff;
 }
 
 .c0 .control-dots {
   position: absolute;
-  right: 30px;
-  bottom: 42px !important;
+  right: 1.875rem;
+  bottom: 2.625rem !important;
   margin: 0 !important;
   width: initial !important;
-  height: 15px;
+  height: 0.9375rem;
   display: inherit;
   padding: 0;
   text-align: center;
@@ -400,9 +404,9 @@ exports[`Slideshow renders 1`] = `
   position: relative;
   display: inline-block;
   border-radius: 999px;
-  background-color: hsl(0,0%,100%);
-  width: 15px;
-  height: 15px;
+  background-color: #ffffff;
+  width: 0.9375rem;
+  height: 0.9375rem;
   opacity: 0.25;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -415,13 +419,13 @@ exports[`Slideshow renders 1`] = `
   border: 0;
   border-radius: 999px;
   background-color: transparent;
-  width: 15px;
-  height: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
   cursor: pointer;
 }
 
 .c0 .control-dots li.selected {
-  width: 30px;
+  width: 1.875rem;
   opacity: 1;
 }
 
@@ -430,7 +434,7 @@ exports[`Slideshow renders 1`] = `
 }
 
 .c0 .control-dots li:not(:last-child) {
-  margin-right: 5px;
+  margin-right: 0.3125rem;
 }
 
 @media (min-width:1280px) {
@@ -490,7 +494,7 @@ exports[`Slideshow renders 1`] = `
         <button
           aria-label="Previous"
           class="c1 previous"
-          color="primary"
+          color="green"
           value=""
         >
           <svg
@@ -508,7 +512,7 @@ exports[`Slideshow renders 1`] = `
         >
           <ul
             class="slider animated"
-            style="transform: translate3d(-100%,0,0); transition-duration: 1000ms; height: auto;"
+            style="transform: translate3d(-100%,0,0); transition-duration: 1000ms;"
           >
             <li
               class="slide"
@@ -519,7 +523,7 @@ exports[`Slideshow renders 1`] = `
               />
             </li>
             <li
-              class="slide selected"
+              class="slide selected previous"
             >
               <img
                 alt="img"
@@ -543,7 +547,7 @@ exports[`Slideshow renders 1`] = `
               />
             </li>
             <li
-              class="slide selected"
+              class="slide selected previous"
             >
               <img
                 alt="img"
@@ -555,7 +559,7 @@ exports[`Slideshow renders 1`] = `
         <button
           aria-label="Next"
           class="c1 next"
-          color="primary"
+          color="green"
           value=""
         >
           <svg

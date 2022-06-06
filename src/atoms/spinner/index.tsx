@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import { colors } from '../../ions/variables';
 import * as Styles from './styles';
 
 interface SpinnerProps {
@@ -8,13 +9,10 @@ interface SpinnerProps {
   style?: CSSProperties;
 }
 
+const { grey } = colors;
+
 const Spinner = (props: SpinnerProps) => {
-  const {
-    fill = '#7a7a7a',
-    size = '20px',
-    className = 'spinner',
-    style,
-  } = props;
+  const { fill = grey, size = '20px', className = 'spinner', style } = props;
   return (
     <Styles.Loading
       className={className}

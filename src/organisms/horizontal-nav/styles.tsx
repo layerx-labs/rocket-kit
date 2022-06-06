@@ -1,11 +1,15 @@
 import styled from 'styled-components/macro';
-import { rem, lighten } from 'polished';
-import { colors, fontWeigth } from '../../ions/variables';
+import { rem } from 'polished';
+import { colors, fontWeight } from '../../ions/variables';
 
-const { normal, primary, info, light } = colors;
-const { bold } = fontWeigth;
+const { normal, purple, grey, lightGrey, light } = colors;
+const { bold } = fontWeight;
 
-export const Wrapper = styled.div`
+interface HorizontalNavInterface {
+  customColor?: string;
+}
+
+export const Wrapper = styled.div<HorizontalNavInterface>`
   display: flex;
   align-items: center;
 
@@ -57,15 +61,15 @@ export const Wrapper = styled.div`
           width: auto;
           height: ${rem('24px')};
           min-width: ${rem('24px')};
-          fill: ${lighten(0.4, info)};
+          fill: ${grey};
           transition-duration: 0.3s;
         }
 
         &:hover {
-          color: ${primary};
+          color: ${props => (props.customColor ? props.customColor : purple)};
 
           svg {
-            fill: ${primary};
+            fill: ${props => (props.customColor ? props.customColor : purple)};
           }
         }
       }
@@ -77,7 +81,7 @@ export const Wrapper = styled.div`
           pointer-events: none;
 
           svg {
-            fill: ${primary};
+            fill: ${props => (props.customColor ? props.customColor : purple)};
           }
         }
       }
@@ -96,14 +100,14 @@ export const More = styled.div`
   ul {
     position: absolute;
     right: 0;
-    border: 1px solid ${lighten(0.4, info)};
-    border-radius: 4px;
+    border: ${rem('1px')} solid ${lightGrey};
+    border-radius: ${rem('4px')};
     background-color: ${light};
-    margin-top: 5px;
+    margin-top: ${rem('5px')};
     padding: 0;
-    -moz-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
-    -webkit-box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
-    box-shadow: 0 0 15px 0 rgba(40, 40, 40, 0.2);
+    -moz-box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.2);
+    -webkit-box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.2);
+    box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.2);
     z-index: 1;
     overflow-x: hidden;
     overflow-y: auto;
@@ -124,7 +128,7 @@ export const More = styled.div`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: ${lighten(0.4, info)};
+        background-color: ${lightGrey};
         cursor: pointer;
 
         a {
@@ -137,17 +141,17 @@ export const More = styled.div`
       }
 
       &:first-child {
-        border-radius: 4px 4px 0 0;
+        border-radius: ${rem('4px')} ${rem('4px')} 0 0;
       }
 
       &:last-child {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 ${rem('4px')} ${rem('4px')};
       }
 
       a {
         width: 100%;
         height: 100%;
-        padding: 15px;
+        padding: ${rem('15px')};
       }
     }
   }
