@@ -512,7 +512,7 @@ exports[`Slideshow renders 1`] = `
         >
           <ul
             class="slider animated"
-            style="transform: translate3d(-100%,0,0); transition-duration: 1000ms;"
+            style="transform: translate3d(-100%,0,0); transition-duration: 1000ms; height: auto;"
           >
             <li
               class="slide"
@@ -523,7 +523,7 @@ exports[`Slideshow renders 1`] = `
               />
             </li>
             <li
-              class="slide selected previous"
+              class="slide selected"
             >
               <img
                 alt="img"
@@ -547,7 +547,7 @@ exports[`Slideshow renders 1`] = `
               />
             </li>
             <li
-              class="slide selected previous"
+              class="slide selected"
             >
               <img
                 alt="img"
