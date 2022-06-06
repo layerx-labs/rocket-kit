@@ -27,7 +27,7 @@ const Button = (props: ButtonProps) => {
   const {
     variant = 'solid',
     circle = false,
-    color = 'primary',
+    color = 'green',
     value = '',
     className = 'button',
     querySelector = '.button',

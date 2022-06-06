@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import { rem, rgba } from 'polished';
-import { colors } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
 interface ModalStyleBaseProps {
@@ -9,6 +9,7 @@ interface ModalStyleBaseProps {
 }
 
 const { light } = colors;
+const { bold } = fontWeight;
 
 export const ModalOverlay = styled.div<ModalStyleBaseProps>`
   position: fixed;
@@ -55,7 +56,7 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
   @media ${device.s} {
     --spacing: ${rem('30px')};
     margin: var(--spacing);
-    border-radius: 6px;
+    border-radius: ${rem('6px')};
     max-width: ${rem('860px')};
     padding: var(--spacing);
 
@@ -63,7 +64,7 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
       content: '';
       position: absolute;
       bottom: calc(var(--spacing) * -1);
-      width: 1px;
+      width: ${rem('1px')};
       height: var(--spacing);
     }
   }
@@ -74,6 +75,8 @@ export const ModalHeader = styled.div`
 
   h2 {
     margin: 0 0 ${rem('30px')} 0;
+    font-size: 2rem;
+    font-weight: ${bold};
   }
 
   button {

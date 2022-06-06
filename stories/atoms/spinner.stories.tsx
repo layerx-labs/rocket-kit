@@ -14,6 +14,6 @@ export const SpinnerComponent = args => <Spinner {...args} />;
 SpinnerComponent.storyName = 'Spinner';
 
 SpinnerComponent.args = {
-  fill: '#7a7a7a',
+  fill: '#939393',
   size: '20px',
 };

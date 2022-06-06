@@ -38,7 +38,7 @@ export const ActionMenuList = <T,>(props: ActionsMenuListInterface<T>) => {
           <li
             key={id}
             data-testid={'li-action-menu'}
-            className={type === 'danger' ? 'danger' : undefined}
+            className={type ?? undefined}
           >
             <a
               href={url}

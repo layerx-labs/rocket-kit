@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lighten, rem, transparentize } from 'polished';
+import { rem, transparentize } from 'polished';
 import { colors } from '../../ions/variables';
 
 interface TextAreaProps {
@@ -10,16 +10,17 @@ interface TextAreaProps {
   maxlength?: number;
 }
 
-const { light, info, danger, purple } = colors;
+const { light, grey, lightGrey, red, purple } = colors;
 
 export const Wrapper = styled.div`
   position: relative;
 `;
 
 export const TextAreaStyle = styled.textarea<TextAreaProps>`
-  border-width: ${props => (props.minimal ? '0 0 1px 0' : '1px')};
+  border-width: ${props =>
+    props.minimal ? `0 0 ${rem('1px')} 0` : rem('1px')};
   border-style: solid;
-  border-color: ${props => (props.error ? danger : info)};
+  border-color: ${props => (props.error ? red : grey)};
   border-radius: ${props => (props.minimal ? 0 : '6px')};
   width: 100%;
   height: ${props => props.height || rem('100px')};
@@ -37,12 +38,12 @@ export const TextAreaStyle = styled.textarea<TextAreaProps>`
   }
 
   &:disabled {
-    background-color: ${lighten(0.45, info)};
-    color: ${info};
+    background-color: ${lightGrey};
+    color: ${grey};
   }
 
   &:invalid {
-    border-color: ${danger};
+    border-color: ${red};
     outline: none;
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -50,21 +51,21 @@ export const TextAreaStyle = styled.textarea<TextAreaProps>`
   }
 
   &:required {
-    border-color: ${props => (props.error ? danger : info)};
+    border-color: ${props => (props.error ? red : grey)};
   }
 
   &::placeholder {
-    color: ${info};
+    color: ${grey};
     opacity: 1;
   }
 
   &:-ms-input-placeholder {
-    color: ${info};
+    color: ${grey};
     opacity: 1;
   }
 
   &::-ms-input-placeholder {
-    color: ${info};
+    color: ${grey};
     opacity: 1;
   }
 `;
@@ -78,10 +79,10 @@ export const Count = styled.div<TextAreaProps>`
 
   span {
     font-size: 0.75rem;
-    color: ${info};
+    color: ${grey};
 
     &.negative {
-      color: ${danger};
+      color: ${red};
     }
   }
 `;

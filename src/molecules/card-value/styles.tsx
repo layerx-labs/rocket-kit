@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro';
-import { rem, lighten } from 'polished';
+import { rem } from 'polished';
 import { device } from '../../ions/breakpoints';
 import { colors } from '../../ions/variables';
 
-const { light, info } = colors;
+const { light, grey } = colors;
 
 export const CardValueStyle = styled.div`
-  border: 1px solid ${lighten(0.4, info)};
-  border-radius: 6px;
+  border: ${rem('1px')} solid ${grey};
+  border-radius: ${rem('6px')};
   background-color: ${light};
   display: flex;
   flex-direction: column;

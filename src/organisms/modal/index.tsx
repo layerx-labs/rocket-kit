@@ -29,9 +29,8 @@ const Modal = (props: ModalProps) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const modalHeight: HTMLElement | null = document.querySelector(
-        'div.modal'
-      );
+      const modalHeight: HTMLElement | null =
+        document.querySelector('div.modal');
 
       modalHeight && modalHeight.offsetHeight + 60 > window.innerHeight
         ? setOverflow(true)
@@ -71,7 +70,7 @@ const Modal = (props: ModalProps) => {
 
               <Button
                 variant="outline"
-                color="info"
+                color="grey"
                 icon="cross"
                 ariaLabel="Close"
                 action={hide}

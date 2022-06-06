@@ -1,4 +1,4 @@
-export type ActionMenuType = 'danger' | 'default';
+export type ActionMenuType = 'default' | 'danger' | 'disabled';
 
 export interface ActionMenu<T> {
   id: string;

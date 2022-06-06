@@ -8,7 +8,7 @@ export default {
     variant: {
       control: {
         type: 'inline-radio',
-        options: ['success', 'warning', 'danger'],
+        options: ['success', 'orange', 'red'],
       },
     },
   },

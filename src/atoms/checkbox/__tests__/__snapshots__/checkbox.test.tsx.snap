@@ -20,12 +20,12 @@ exports[`Checkbox renders 1`] = `
 }
 
 .c0:hover input:not(:disabled) ~ span {
-  border-color: hsl(0,0%,48%);
+  border-color: #000000;
 }
 
 .c1 {
-  margin-left: calc(24px + 5px);
-  line-height: 24px;
+  margin-left: calc(1.5rem + 0.3125rem);
+  line-height: 1.5rem;
 }
 
 .c2 {
@@ -36,7 +36,7 @@ exports[`Checkbox renders 1`] = `
 }
 
 .c2:checked:not(:disabled) ~ span {
-  background-color: hsl(186,62%,59%);
+  background-color: #56cad7;
   border-color: #2ba8b6;
 }
 
@@ -46,8 +46,8 @@ exports[`Checkbox renders 1`] = `
 
 .c2:checked:disabled ~ span {
   border-color: transparent;
-  background-color: #e0e0e0;
-  color: hsl(0,0%,48%);
+  background-color: #c4c7d3;
+  color: #939393;
 }
 
 .c2:checked:disabled ~ span:after {
@@ -55,8 +55,8 @@ exports[`Checkbox renders 1`] = `
 }
 
 .c2:not(:checked):disabled ~ span {
-  border-color: #e0e0e0;
-  background-color: hsl(0,0%,100%);
+  border-color: #c4c7d3;
+  background-color: #ffffff;
 }
 
 .c2:hover:not(:disabled) {
@@ -71,10 +71,10 @@ exports[`Checkbox renders 1`] = `
   position: absolute;
   top: 0;
   left: 0;
-  border: 2px solid #e0e0e0;
+  border: 0.125rem solid #939393;
   border-radius: 100%;
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
@@ -83,12 +83,12 @@ exports[`Checkbox renders 1`] = `
   content: '';
   position: absolute;
   display: none;
-  top: 3px;
-  left: 6px;
-  width: 5px;
-  height: 9px;
-  border: solid hsl(0,0%,100%);
-  border-width: 0 3px 3px 0;
+  top: 0.1875rem;
+  left: 0.375rem;
+  width: 0.3125rem;
+  height: 0.5625rem;
+  border: solid #ffffff;
+  border-width: 0 0.1875rem 0.1875rem 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);

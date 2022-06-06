@@ -3,18 +3,18 @@
 exports[`Horizontal Nav renders 1`] = `
 <DocumentFragment>
   .c2 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(0,0%,16%);
-  --hover: #000;
+  --button: #000000;
+  --hover: #7a7a7a;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
   border-radius: 0;
   background-color: transparent;
   width: 2.25rem;
-  height: 2.25rem;
+  height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -69,7 +69,11 @@ exports[`Horizontal Nav renders 1`] = `
 .c2 span {
   position: relative;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   color: var(--button);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
@@ -145,7 +149,7 @@ exports[`Horizontal Nav renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0.625rem;
-  color: hsl(0,0%,16%);
+  color: #000000;
   text-transform: capitalize;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -159,17 +163,17 @@ exports[`Horizontal Nav renders 1`] = `
   width: auto;
   height: 1.5rem;
   min-width: 1.5rem;
-  fill: #e0e0e0;
+  fill: #939393;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
 .c0 ul li a:hover {
-  color: hsl(186,62%,59%);
+  color: #4329a6;
 }
 
 .c0 ul li a:hover svg {
-  fill: hsl(186,62%,59%);
+  fill: #4329a6;
 }
 
 .c0 ul li.active {
@@ -181,7 +185,7 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 .c0 ul li.active a svg {
-  fill: hsl(186,62%,59%);
+  fill: #4329a6;
 }
 
 .c1 {
@@ -196,14 +200,14 @@ exports[`Horizontal Nav renders 1`] = `
 .c1 ul {
   position: absolute;
   right: 0;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  background-color: hsl(0,0%,100%);
-  margin-top: 5px;
+  border: 0.0625rem solid #c4c7d3;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  margin-top: 0.3125rem;
   padding: 0;
-  -moz-box-shadow: 0 0 15px 0 rgba(40,40,40,0.2);
-  -webkit-box-shadow: 0 0 15px 0 rgba(40,40,40,0.2);
-  box-shadow: 0 0 15px 0 rgba(40,40,40,0.2);
+  -moz-box-shadow: 0 0 0.9375rem 0 rgba(40,40,40,0.2);
+  -webkit-box-shadow: 0 0 0.9375rem 0 rgba(40,40,40,0.2);
+  box-shadow: 0 0 0.9375rem 0 rgba(40,40,40,0.2);
   z-index: 1;
   overflow-x: hidden;
   overflow-y: auto;
@@ -230,30 +234,30 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 .c1 ul li:hover {
-  background-color: #e0e0e0;
+  background-color: #c4c7d3;
   cursor: pointer;
 }
 
 .c1 ul li:hover a {
-  color: hsl(0,0%,16%);
+  color: #000000;
 }
 
 .c1 ul li:hover a svg {
-  fill: hsl(0,0%,16%);
+  fill: #000000;
 }
 
 .c1 ul li:first-child {
-  border-radius: 4px 4px 0 0;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .c1 ul li:last-child {
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 0.25rem 0.25rem;
 }
 
 .c1 ul li a {
   width: 100%;
   height: 100%;
-  padding: 15px;
+  padding: 0.9375rem;
 }
 
 @media (min-width:1280px) {
@@ -263,7 +267,7 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 <div
-    class="c0"
+    class="c0 horizontal-nav"
   >
     <ul
       class="menu"

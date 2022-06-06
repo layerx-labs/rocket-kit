@@ -11,7 +11,7 @@ describe('ErrorField', () => {
 
   it('has correct error text', () => {
     const fieldText = 'Failed to save name';
-    render(<ErrorField error={fieldText} color="danger" />);
+    render(<ErrorField error={fieldText} color="red" />);
     screen.getByText(fieldText);
   });
 

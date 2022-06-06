@@ -7,10 +7,10 @@ exports[`Empty Table renders 1`] = `
 }
 
 .c2 {
-  border-width: 1px;
+  border-width: 0.0625rem;
   border-style: solid;
-  border-color: #e0e0e0;
-  border-radius: 6px 6px 0 0;
+  border-color: #939393;
+  border-radius: 0.375rem 0.375rem 0 0;
   height: 3.125rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -22,7 +22,7 @@ exports[`Empty Table renders 1`] = `
   align-items: center;
   font-size: 0.85rem;
   font-weight: 700;
-  color: hsl(0,0%,48%);
+  color: #939393;
   text-transform: uppercase;
 }
 
@@ -37,7 +37,7 @@ exports[`Empty Table renders 1`] = `
   padding: 0 0.9375rem;
   font-size: 0.85rem;
   font-weight: 700;
-  color: hsl(0,0%,48%);
+  color: #939393;
   text-transform: uppercase;
 }
 
@@ -47,10 +47,10 @@ exports[`Empty Table renders 1`] = `
 }
 
 .c3 {
-  border-width: 0 1px 1px 1px;
+  border-width: 0 0.0625rem 0.0625rem 0.0625rem;
   border-style: solid;
-  border-color: #e0e0e0;
-  border-radius: 0 0 6px 6px;
+  border-color: #939393;
+  border-radius: 0 0 0.375rem 0.375rem;
 }
 
 .c4 {
@@ -66,7 +66,7 @@ exports[`Empty Table renders 1`] = `
 }
 
 .c4:not(:last-child) {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 0.0625rem solid #939393;
 }
 
 .c4 > div {
@@ -108,7 +108,7 @@ exports[`Empty Table renders 1`] = `
   align-items: flex-end;
   padding: 0 0.9375rem 0.9375rem 0.9375rem;
   text-align: center;
-  color: hsl(0,0%,48%);
+  color: #939393;
 }
 
 @media (min-width:700px) {

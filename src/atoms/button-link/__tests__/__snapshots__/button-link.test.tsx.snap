@@ -3,11 +3,11 @@
 exports[`Button Link renders 1`] = `
 <DocumentFragment>
   .c0 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(186,62%,59%);
-  --hover: #2798a5;
+  --button: #56cad7;
+  --hover: #2ba8b6;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
@@ -17,7 +17,7 @@ exports[`Button Link renders 1`] = `
   width: -moz-min-content;
   width: min-content;
   min-width: 2.25rem;
-  height: 2.25rem;
+  height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -52,7 +52,11 @@ exports[`Button Link renders 1`] = `
 .c0 span {
   position: relative;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   color: var(--txt);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
@@ -82,7 +86,7 @@ exports[`Button Link renders 1`] = `
 
 <a
     class="c0 button button-link"
-    color="primary"
+    color="green"
     data-event=""
     data-testid=""
     href="https://github.com/taikai/taikai-design-system"

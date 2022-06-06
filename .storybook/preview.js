@@ -4,6 +4,19 @@ import { addDecorator } from '@storybook/react';
 
 export const parameters = {
   actions: { argTypesRegex: '^on.*' },
+  backgrounds: {
+    default: 'light',
+    values: [
+      {
+        name: 'light',
+        value: '#ffffff',
+      },
+      {
+        name: 'dark',
+        value: '#0D0F19',
+      },
+    ],
+  },
 };
 
 export const withGlobalStyles = storyFn => {

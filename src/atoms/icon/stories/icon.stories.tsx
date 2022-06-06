@@ -36,7 +36,7 @@ export const Icons = (args: IconProps) => {
 Icons.story = {
   name: 'All',
   args: {
-    fill: 'hsl(0, 0%, 16%)',
+    fill: '#000000',
   },
 };
 

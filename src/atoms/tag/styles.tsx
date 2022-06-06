@@ -1,62 +1,75 @@
 import styled, { css } from 'styled-components/macro';
 import { rem } from 'polished';
 import { TagVariant, TagColor } from './types';
-import { colors } from '../../ions/variables';
+import { colors, fontWeight } from '../../ions/variables';
 
 interface TagWrapperProps {
   variant?: TagVariant;
   color?: TagColor;
 }
 
-const { light, info, primary, warning, danger } = colors;
+const { normal, light, grey, green, orange, red } = colors;
+const { bold } = fontWeight;
 
 export const TagWrapper = styled.span<TagWrapperProps>`
   display: inline-block;
-  border: 2px solid ${info};
-  border-radius: 999px;
-  background-color: ${info};
+  border: ${rem('2px')} solid ${grey};
+  border-radius: ${rem('3px')};
+  background-color: ${grey};
   max-width: ${rem('150px')};
-  padding: ${rem('2px')} ${rem('10px')};
-  font-size: 0.85rem;
+  padding: ${rem('3px')} ${rem('8px')};
+  font-size: ${rem('12px')};
+  font-weight: ${bold};
+  letter-spacing: 0.1em;
+  line-height: 1;
   color: ${light};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-transform: uppercase;
 
   &:not(:first-child) {
-    margin-left: 5px;
+    margin-left: ${rem('5px')};
   }
 
   ${props =>
-    props.color === 'primary' &&
+    props.color === 'green' &&
     css`
-      border-color: ${primary};
-      background-color: ${primary};
-      color: ${props.variant === 'solid' ? light : primary};
+      border-color: ${green};
+      background-color: ${green};
+      color: ${props.variant === 'solid' ? light : green};
     `}
 
   ${props =>
-    props.color === 'warning' &&
+    props.color === 'orange' &&
     css`
-      border-color: ${warning};
-      background-color: ${warning};
-      color: ${props.variant === 'solid' ? light : warning};
+      border-color: ${orange};
+      background-color: ${orange};
+      color: ${props.variant === 'solid' ? light : orange};
     `}
 
   ${props =>
-    props.color === 'danger' &&
+    props.color === 'red' &&
     css`
-      border-color: ${danger};
-      background-color: ${danger};
-      color: ${props.variant === 'solid' ? light : danger};
+      border-color: ${red};
+      background-color: ${red};
+      color: ${props.variant === 'solid' ? light : red};
     `}
 
   ${props =>
-    props.color === 'info' &&
+    props.color === 'grey' &&
     css`
-      border-color: ${info};
-      background-color: ${info};
-      color: ${props.variant === 'solid' ? light : info};
+      border-color: ${grey};
+      background-color: ${grey};
+      color: ${props.variant === 'solid' ? light : grey};
+    `}
+
+  ${props =>
+    props.color === 'light' &&
+    css`
+      border-color: ${light};
+      background-color: ${light};
+      color: ${props.variant === 'solid' ? normal : light};
     `}
 
   ${props =>

@@ -8,6 +8,7 @@ module.exports = {
     '@storybook/addon-controls',
     '@storybook/addon-a11y',
     '@storybook/addon-links',
+    'storybook-addon-designs',
   ],
   // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
   typescript: {

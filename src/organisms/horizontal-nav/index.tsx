@@ -3,7 +3,9 @@ import * as Styles from './styles';
 import useVisible from '../../utils/hooks/use-visible';
 import { Button } from '../..';
 
-interface HorizontalNavInterface {
+export interface HorizontalNavInterface {
+  className?: string;
+  customColor?: string;
   items: any;
   startsOpen?: boolean;
 }
@@ -13,11 +15,15 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
   const moreMenu = useRef(null);
   const visibleMenuRef = useRef<HTMLUListElement>(null);
 
-  const { items, startsOpen = false } = props;
+  const {
+    className = 'horizontal-nav',
+    customColor = '',
+    items,
+    startsOpen = false,
+  } = props;
 
-  const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
-    startsOpen
-  );
+  const { ref, isVisible, setIsVisible } =
+    useVisible<HTMLDivElement>(startsOpen);
 
   useEffect(() => {
     if (!ref || !ref.current) return;
@@ -63,7 +69,7 @@ const HorizontalNav = (props: HorizontalNavInterface) => {
   }, [ref]);
 
   return (
-    <Styles.Wrapper ref={ref}>
+    <Styles.Wrapper ref={ref} className={className} customColor={customColor}>
       <ul className="menu" ref={visibleMenuRef}>
         {items}
       </ul>

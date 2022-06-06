@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import { rem, lighten } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { normal, light, info } = colors;
+const { normal, light, lightGrey } = colors;
 
 interface ActionsMenuInterface {
   visibleActions: number;
@@ -16,8 +16,8 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
     opacity: 0;
     top: 0;
     margin: 0;
-    border: 1px solid ${lighten(0.4, info)};
-    border-radius: 4px;
+    border: ${rem('1px')} solid ${lightGrey};
+    border-radius: ${rem('4px')};
     background-color: ${light};
     min-width: ${rem('200px')};
     max-width: ${rem('250px')};
@@ -40,7 +40,7 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
     &.isOpen {
       opacity: 1;
       height: calc(${rem('45px')} * ${props => props.visibleActions} + 2px);
-      max-height: 1280px;
+      max-height: ${rem('1280px')};
     }
 
     li {
@@ -50,16 +50,16 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: ${lighten(0.4, info)};
+        background-color: ${lightGrey};
         cursor: pointer;
       }
 
       &:first-child {
-        border-radius: 4px 4px 0 0;
+        border-radius: ${rem('4px')} ${rem('4px')} 0 0;
       }
 
       &:last-child {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 ${rem('4px')} ${rem('4px')};
       }
 
       a {

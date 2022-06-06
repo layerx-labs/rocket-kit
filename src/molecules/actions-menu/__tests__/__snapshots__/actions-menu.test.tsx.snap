@@ -3,18 +3,18 @@
 exports[`Actions Menu renders closed menu 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(0,0%,16%);
-  --hover: #000;
+  --button: #000000;
+  --hover: #7a7a7a;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
   border-radius: 0;
   background-color: transparent;
   width: 2.25rem;
-  height: 2.25rem;
+  height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -69,7 +69,11 @@ exports[`Actions Menu renders closed menu 1`] = `
 .c1 span {
   position: relative;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   color: var(--button);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
@@ -131,18 +135,18 @@ exports[`Actions Menu renders closed menu 1`] = `
 exports[`Actions Menu renders open menu 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: hsl(186,62%,59%);
-  --txt: hsl(0,0%,100%);
+  --button: #56cad7;
+  --txt: #ffffff;
   --hover: #2ba8b6;
-  --button: hsl(0,0%,16%);
-  --hover: #000;
+  --button: #000000;
+  --hover: #7a7a7a;
   border-width: 0;
   border-style: solid;
   border-color: var(--button);
   border-radius: 0;
   background-color: transparent;
   width: 2.25rem;
-  height: 2.25rem;
+  height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -197,7 +201,11 @@ exports[`Actions Menu renders open menu 1`] = `
 .c1 span {
   position: relative;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 500;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   color: var(--button);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
@@ -229,16 +237,16 @@ exports[`Actions Menu renders open menu 1`] = `
 
 .c2 {
   position: absolute;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  background-color: hsl(0,0%,100%);
-  margin-top: 5px;
+  border: 0.0625rem solid #c4c7d3;
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  margin-top: 0.3125rem;
   min-width: 12.5rem;
   max-width: 15.625rem;
   padding: 0;
-  -moz-box-shadow: 0 0 0.9375rem 0 #dbdbdb;
-  -webkit-box-shadow: 0 0 0.9375rem 0 #dbdbdb;
-  box-shadow: 0 0 0.9375rem 0 #dbdbdb;
+  -moz-box-shadow: 0 0 0.9375rem 0 #b3b3b3;
+  -webkit-box-shadow: 0 0 0.9375rem 0 #b3b3b3;
+  box-shadow: 0 0 0.9375rem 0 #b3b3b3;
   z-index: 1;
 }
 
@@ -254,7 +262,7 @@ exports[`Actions Menu renders open menu 1`] = `
 }
 
 .c2 li:hover {
-  background-color: #e0e0e0;
+  background-color: #c4c7d3;
   cursor: pointer;
 }
 
@@ -267,11 +275,20 @@ exports[`Actions Menu renders open menu 1`] = `
 }
 
 .c2 li.danger {
-  border-top: 1px solid #e0e0e0;
+  border-top: 0.0625rem solid #c4c7d3;
 }
 
 .c2 li.danger a {
-  color: hsl(354,83%,64%);
+  color: #ef5766;
+}
+
+.c2 li.disabled a {
+  color: #c4c7d3;
+  pointer-events: none;
+}
+
+.c2 li.disabled:hover {
+  background-color: transparent;
 }
 
 .c2 li a {
@@ -285,7 +302,7 @@ exports[`Actions Menu renders open menu 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0 1.25rem;
-  color: hsl(0,0%,16%);
+  color: #000000;
   -webkit-text-decoration: none;
   text-decoration: none;
   white-space: nowrap;
@@ -327,6 +344,7 @@ exports[`Actions Menu renders open menu 1`] = `
       data-testid="ul-action-menu"
     >
       <li
+        class="default"
         data-testid="li-action-menu"
       >
         <a

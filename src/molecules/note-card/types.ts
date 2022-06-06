@@ -1,1 +1,1 @@
-export type NoteColor = 'info' | 'primary' | 'danger';
+export type NoteColor = 'grey' | 'green' | 'red';

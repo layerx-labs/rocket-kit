@@ -26,6 +26,7 @@ describe('FieldWidthButton', () => {
     const onClickAction = jest.fn();
     const textValue = 'https://taikai.network';
     const buttonText = 'Copy';
+
     render(
       <FieldWidthButton
         type="text"
@@ -35,7 +36,8 @@ describe('FieldWidthButton', () => {
         buttonAction={onClickAction}
       />
     );
-    const button = await screen.findByText(buttonText);
+
+    const button = screen.getByRole('button', { name: buttonText });
     userEvent.click(button);
     expect(onClickAction).toBeCalledTimes(1);
   });

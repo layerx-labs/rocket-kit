@@ -56,6 +56,7 @@ const SelectInteractive = (props: any) => {
 
   return (
     <Styles.SelectWrapper data-testid={dataTestId}>
+      {/* @ts-ignore */}
       <Select
         className="select-interactive"
         classNamePrefix="select"

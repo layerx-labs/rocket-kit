@@ -1,11 +1,13 @@
 export type ButtonVariant = 'solid' | 'outline' | 'text';
 
 export type ButtonColor =
-  | 'primary'
-  | 'danger'
-  | 'info'
+  | 'green'
+  | 'orange'
+  | 'red'
+  | 'grey'
   | 'purple'
   | 'white'
   | 'dark'
+  | 'blue'
   | 'magic'
   | 'pulse';

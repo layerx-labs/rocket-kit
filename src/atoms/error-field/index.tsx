@@ -10,7 +10,7 @@ interface ErrorFieldProps {
 }
 
 const ErrorField = (props: ErrorFieldProps) => {
-  const { color = 'danger', error, className = 'error-field', style } = props;
+  const { color = 'red', error, className = 'error-field', style } = props;
   return (
     <Styles.ErrorStyle color={color} className={className} style={style}>
       {error}
