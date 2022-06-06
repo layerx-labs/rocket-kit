@@ -1,7 +1,6 @@
 import { components } from 'react-select';
 
 import React from 'react';
-import { colors } from '../../../ions/variables';
 import Icon from '../../icon';
 import { TCustomOptions, TOptions } from '../types';
 import { formatGroupLabel } from 'react-select/src/builtins';
@@ -34,11 +33,9 @@ export const FormatGroupLabel: formatGroupLabel<TOptions> = ({
           fontSize: 12,
           lineHeight: '1',
           borderRadius: '2em',
-          color: '#172B4D',
           textAlign: 'center',
           fontWeight: 'normal',
           display: 'inline-block',
-          backgroundColor: `${colors.light}`,
           padding: '0.16666666666667em 0.5em',
         }}
       >

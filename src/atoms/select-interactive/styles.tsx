@@ -4,7 +4,7 @@ import { colors, fontWeight } from '../../ions/variables';
 
 
 
-const { normal, light, grey, purple, lightPurple } = colors;
+const { normal, light, grey, lightGrey, purple, lightPurple } = colors;
 
 export const SelectWrapper = styled.div`
   .select {
@@ -132,14 +132,14 @@ export const SelectGroupLabel = styled.span`
 `;
 
 export const SelectGroupTotal = styled.span`
-  background-color: '#EBECF0';
-  border-radius: '2em';
-  color: '#172B4D';
-  display: 'inline-block';
-  font-size: 12;
-  font-weight: 'normal';
-  line-height: '1';
   min-width: 1;
-  padding: '0.16666666666667em 0.5em';
+  font-size: 12;
+  color: ${normal};
+  line-height: '1';
   text-align: 'center';
+  border-radius: '2em';
+  font-weight: 'normal';
+  padding: ${rem('5px')};
+  display: 'inline-block';
+  background-color: ${lightGrey};
 `;
