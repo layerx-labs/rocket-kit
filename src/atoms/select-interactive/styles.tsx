@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors, fontWeight } from '../../ions/variables';
-
-
+import { colors } from '../../ions/variables';
 
 const { normal, light, grey, lightGrey, purple, lightPurple } = colors;
 
@@ -119,27 +117,19 @@ export const SelectWrapper = styled.div`
       transition-duration: 0.3s;
     }
   }
-`;
 
-export const SelectGroup = styled.div`
-  display: 'flex';
-  justify-content: 'space-between';
+  .select__option--is-disabled {
+    pointer-events: none;
+  }
 `;
 
 export const SelectGroupLabel = styled.span`
-  color: 000000;
-  font-weight: ${fontWeight.bold};
-`;
+  font-size: ${rem('12px')};
+  color: ${lightGrey};
 
-export const SelectGroupTotal = styled.span`
-  min-width: 1;
-  font-size: 12;
-  color: ${normal};
-  line-height: '1';
-  text-align: 'center';
-  border-radius: '2em';
-  font-weight: 'normal';
-  padding: ${rem('5px')};
-  display: 'inline-block';
-  background-color: ${lightGrey};
+  + .tag {
+    border-color: ${lightGrey};
+    background-color: ${lightGrey};
+    color: ${grey};
+  }
 `;

@@ -48,57 +48,6 @@ export const SelectInteractiveSimpleComponent = (
 
 SelectInteractiveSimpleComponent.storyName = 'Interactive Simple';
 
-export const SelectInteractiveGroupedOptionsNotFormattedComponent = (
-  args: SelectInteractiveProps<TSelectInteractiveOption>
-) => {
-  const options = [
-    {
-      label: 'Chocolates',
-      options: [
-        { value: 'white-chocolate', label: 'White Chocolate' },
-        { value: 'black-chocolate', label: 'Black Chocolate' },
-      ],
-    },
-    {
-      label: 'Meats',
-      options: [
-        { value: 'fish', label: 'Fish' },
-        { value: 'chicken', label: 'Chicken' },
-      ],
-    },
-    {
-      label: 'Fruits',
-      options: [
-        { value: 'mango', label: 'Mambo' },
-        { value: 'peach', label: 'Peach' },
-        { value: 'orange', label: 'Orange' },
-      ],
-    },
-  ];
-
-  const [selectOptions, setSelectOptions] = useState<
-    TSelectInteractiveOption | ReadonlyArray<TSelectInteractiveOption> | null
-  >(options[1].options[1]);
-
-  const handleChange: SelectInteractiveProps<TSelectInteractiveOption>['onChange'] =
-    selectedOption => {
-      console.log(selectedOption);
-      setSelectOptions(selectedOption);
-    };
-
-  return (
-    <SelectInteractive
-      {...args}
-      options={options}
-      onChange={handleChange}
-      value={selectOptions}
-    />
-  );
-};
-
-SelectInteractiveGroupedOptionsNotFormattedComponent.storyName =
-  'Interactive Grouped Options';
-
 export const SelectInteractiveFormatedGroupedOptionsComponent = (
   args: SelectInteractiveProps<TSelectInteractiveOption>
 ) => {
@@ -106,7 +55,11 @@ export const SelectInteractiveFormatedGroupedOptionsComponent = (
     {
       label: 'Chocolates',
       options: [
-        { value: 'white-chocolate', label: 'White Chocolate' },
+        {
+          value: 'white-chocolate',
+          label: 'White Chocolate',
+          isDisabled: true,
+        },
         { value: 'black-chocolate', label: 'Black Chocolate' },
       ],
     },
@@ -141,7 +94,6 @@ export const SelectInteractiveFormatedGroupedOptionsComponent = (
     <SelectInteractive
       {...args}
       multi
-      formatGroupLabel
       options={options}
       onChange={handleChange}
       value={selectOptions}
@@ -150,7 +102,7 @@ export const SelectInteractiveFormatedGroupedOptionsComponent = (
 };
 
 SelectInteractiveFormatedGroupedOptionsComponent.storyName =
-  'Interactive and Formatted Grouped Options';
+  'Interactive and Grouped';
 
 SelectInteractiveSimpleComponent.args = {
   multi: false,

@@ -1,10 +1,9 @@
-import { components } from 'react-select';
-
 import React from 'react';
 import Icon from '../../icon';
+import Tag from '../../tag';
+import { components } from 'react-select';
 import { TCustomOptions, TOptions } from '../types';
 import { formatGroupLabel } from 'react-select/src/builtins';
-
 import * as Styles from '../styles';
 
 const { Option } = components;
@@ -13,9 +12,8 @@ export const FormatGroupLabel: formatGroupLabel<TOptions> = ({
   label,
   options,
 }) => {
-  // These styles are only working when hard coded
   return (
-    <Styles.SelectGroup
+    <div
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -25,23 +23,8 @@ export const FormatGroupLabel: formatGroupLabel<TOptions> = ({
       <Styles.SelectGroupLabel className="selective-options-group-label">
         {label}
       </Styles.SelectGroupLabel>
-
-      <Styles.SelectGroupTotal
-        className="selective-options-group-total"
-        style={{
-          minWidth: 1,
-          fontSize: 12,
-          lineHeight: '1',
-          borderRadius: '2em',
-          textAlign: 'center',
-          fontWeight: 'normal',
-          display: 'inline-block',
-          padding: '0.16666666666667em 0.5em',
-        }}
-      >
-        {options?.length}
-      </Styles.SelectGroupTotal>
-    </Styles.SelectGroup>
+      <Tag value={`${options?.length}`} />
+    </div>
   );
 };
 

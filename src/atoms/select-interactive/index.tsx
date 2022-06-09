@@ -20,7 +20,7 @@ const SelectInteractive = ({
   clear = true,
   error,
   disabled = false,
-  formatGroupLabel,
+  formatGroupLabel = true,
   onChange = () => {},
   onInputChange = () => {},
   ...rest
@@ -40,7 +40,7 @@ const SelectInteractive = ({
         className="select-interactive"
         // @ts-ignore
         onChange={e => onChange(e ?? [])}
-        defaultMenuIsOpen={false}
+        defaultMenuIsOpen={true}
         onInputChange={onInputChange}
         components={{
           Option: CustomSelectOption,
