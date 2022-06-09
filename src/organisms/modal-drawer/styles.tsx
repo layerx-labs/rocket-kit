@@ -12,11 +12,11 @@ const { bold } = fontWeight;
 
 const slideInLeft = keyframes`
   from {
-    transform: translate3d(100%, 0, 0);
+    transform: translateX(100%);
   }
 
   to {
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
 `;
 
@@ -42,11 +42,11 @@ export const ModalWrapper = styled.div<ModalStyleBaseProps>`
 `;
 
 export const ModalContainer = styled.div<ModalStyleBaseProps>`
-  position: absolute;
+  position: fixed;
   right: 0;
   background: ${light};
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   padding: ${rem('15px')};
@@ -54,8 +54,9 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
   animation-timing-function: ${timingFunctions('easeOutQuint')};
   animation-duration: 1s;
   animation-fill-mode: forwards;
-  transform: translate3d(100%, 0, 0);
+  transform: translateX(100%);
   animation-name: ${slideInLeft};
+  overflow-y: auto;
 
   @media ${device.s} {
     max-width: ${rem('400px')};
