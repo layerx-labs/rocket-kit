@@ -125,6 +125,10 @@ exports[`Select Interactive renders 1`] = `
   transition-duration: 0.3s;
 }
 
+.c0 .select__option--is-disabled {
+  pointer-events: none;
+}
+
 <div
     class="c0"
   >
