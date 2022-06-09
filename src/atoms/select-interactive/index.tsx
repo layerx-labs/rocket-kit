@@ -1,80 +1,54 @@
 import React from 'react';
-import Select, { components } from 'react-select';
+import Select from 'react-select';
 
-import Icon from '../icon';
 import ErrorField from '../error-field';
+import {
+  CustomSelectOption,
+  CustomSelectValue,
+  FormatGroupLabel,
+} from './components';
 import * as Styles from './styles';
+import { SelectInteractiveProps, TSelectInteractiveOption } from './types';
 
-interface OptionProps {
-  data: {
-    value: string;
-    label: string;
-    icon: string;
-    customImage: React.ReactNode;
-  };
-}
-
-const SelectInteractive = (props: any) => {
-  const {
-    name,
-    multi = false,
-    search = true,
-    placeholder,
-    options,
-    value,
-    clear = true,
-    onChange = () => {},
-    onInputChange = () => {},
-    error,
-    disabled = false,
-    dataTestId,
-  } = props;
-
-  const { Option } = components;
-
-  const CustomSelectOption = (props: OptionProps, commonProps: any) => (
-    <Option {...props} {...commonProps}>
-      {props.data.icon ? (
-        <Icon icon={props.data.icon} />
-      ) : props.data.customImage ? (
-        props.data.customImage
-      ) : null}
-      {props.data.label}
-    </Option>
-  );
-
-  const CustomSelectValue = (props: OptionProps) => (
-    <div>
-      {props.data.icon ? (
-        <Icon icon={props.data.icon} />
-      ) : props.data.customImage ? (
-        props.data.customImage
-      ) : null}
-      {props.data.label}
-    </div>
-  );
-
+const SelectInteractive = ({
+  name,
+  multi = false,
+  search = true,
+  placeholder,
+  options,
+  value,
+  clear = true,
+  error,
+  disabled = false,
+  formatGroupLabel = true,
+  onChange = () => {},
+  onInputChange = () => {},
+  ...rest
+}: SelectInteractiveProps<TSelectInteractiveOption>) => {
   return (
-    <Styles.SelectWrapper data-testid={dataTestId}>
-      {/* @ts-ignore */}
+    <Styles.SelectWrapper {...rest}>
       <Select
-        className="select-interactive"
-        classNamePrefix="select"
         name={name}
-        isMulti={multi}
-        isSearchable={search}
-        isDisabled={disabled}
-        placeholder={placeholder}
-        options={options}
         value={value}
+        isMulti={multi}
+        options={options}
         isClearable={clear}
-        onChange={onChange}
+        isDisabled={disabled}
+        isSearchable={search}
+        classNamePrefix="select"
+        placeholder={placeholder}
+        className="select-interactive"
+        // @ts-ignore
+        onChange={e => onChange(e ?? [])}
         defaultMenuIsOpen={false}
         onInputChange={onInputChange}
         components={{
           Option: CustomSelectOption,
           SingleValue: CustomSelectValue,
         }}
+        formatGroupLabel={s =>
+          formatGroupLabel ? FormatGroupLabel?.(s) : undefined
+        }
       />
       {error ? <ErrorField error={error} /> : null}
     </Styles.SelectWrapper>
