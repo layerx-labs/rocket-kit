@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { normal, light, grey, purple, lightPurple } = colors;
+const { normal, light, grey, lightGrey, purple, lightPurple } = colors;
 
 export const SelectWrapper = styled.div`
   .select {
@@ -116,5 +116,20 @@ export const SelectWrapper = styled.div`
       fill: ${light};
       transition-duration: 0.3s;
     }
+  }
+
+  .select__option--is-disabled {
+    pointer-events: none;
+  }
+`;
+
+export const SelectGroupLabel = styled.span`
+  font-size: ${rem('12px')};
+  color: ${lightGrey};
+
+  + .tag {
+    border-color: ${lightGrey};
+    background-color: ${lightGrey};
+    color: ${grey};
   }
 `;
