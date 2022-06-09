@@ -40,7 +40,7 @@ const SelectInteractive = ({
         className="select-interactive"
         // @ts-ignore
         onChange={e => onChange(e ?? [])}
-        defaultMenuIsOpen={true}
+        defaultMenuIsOpen={false}
         onInputChange={onInputChange}
         components={{
           Option: CustomSelectOption,
