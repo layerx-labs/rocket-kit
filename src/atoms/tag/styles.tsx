@@ -28,10 +28,6 @@ export const TagWrapper = styled.span<TagWrapperProps>`
   text-overflow: ellipsis;
   text-transform: uppercase;
 
-  &:not(:first-child) {
-    margin-left: ${rem('5px')};
-  }
-
   ${props =>
     props.color === 'green' &&
     css`

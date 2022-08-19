@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tag } from '../../src';
+import Tag, { TagProps } from '..';
 
 export default {
   title: 'Design System/Atoms/Tag',
@@ -20,7 +20,7 @@ export default {
   },
 };
 
-export const TagPrimaryComponent = args => <Tag {...args} />;
+export const TagPrimaryComponent = (args: TagProps) => <Tag {...args} />;
 
 TagPrimaryComponent.storyName = 'Simple';
 
