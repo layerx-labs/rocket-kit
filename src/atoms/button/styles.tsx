@@ -128,7 +128,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   background-color: ${props =>
     props.variant === 'solid' ? 'var(--button)' : 'transparent'};
   width: ${props =>
-    props.value ? (props.circle ? rem('36px') : 'min-content') : rem('36px')};
+    props.value ? (props.circle ? rem('32px') : 'min-content') : rem('32px')};
   height: ${rem('32px')};
   display: flex;
   justify-content: center;
@@ -141,7 +141,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   cursor: pointer;
 
   @media ${device.l} {
-    min-width: ${props => (props.value ? rem('100px') : rem('36px'))};
+    min-width: ${props => (props.value ? rem('100px') : rem('32px'))};
   }
 
   &:hover {
