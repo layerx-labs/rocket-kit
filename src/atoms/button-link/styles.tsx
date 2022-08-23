@@ -117,7 +117,7 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
   background-color: ${props =>
     props.variant === 'solid' ? 'var(--button)' : 'transparent'};
   width: min-content;
-  min-width: ${props => (props.value ? rem('80px') : rem('36px'))};
+  min-width: ${props => (props.value ? rem('80px') : rem('32px'))};
   height: ${rem('32px')};
   display: flex;
   justify-content: center;
@@ -130,7 +130,7 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
   cursor: pointer;
 
   @media ${device.l} {
-    min-width: ${props => (props.value ? rem('100px') : rem('36px'))};
+    min-width: ${props => (props.value ? rem('100px') : rem('32px'))};
   }
 
   &:hover {

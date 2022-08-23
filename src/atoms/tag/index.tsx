@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import { TagVariant, TagColor } from './types';
 import * as Styles from './styles';
 
-interface TagProps {
+export interface TagProps {
   variant?: TagVariant;
   color?: TagColor;
   value: string;

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button, ButtonDropdown, ButtonLink } from '../../src';
-import icons from '../../src/ions/icons';
+import ButtonDropdown, { ActionsMenuInterface } from '..';
+import icons from '../../../ions/icons';
 
 export default {
   title: 'Design System/Atoms/Button',
-  component: Button,
+  component: ButtonDropdown,
   argTypes: {
     color: {
       control: {
@@ -35,33 +35,8 @@ export default {
         options: Object.keys(icons),
       },
     },
-    iconPosition: {
-      control: {
-        type: 'select',
-        options: ['left', 'right'],
-      },
-    },
   },
 };
-
-export const ButtonComponent = args => <Button {...args} />;
-
-ButtonComponent.storyName = 'Action';
-ButtonComponent.args = {
-  value: 'Dummie',
-  variant: 'solid',
-  color: 'green',
-  circle: false,
-  className: 'button',
-  querySelector: '.button',
-  ariaLabel: 'Dummie Button',
-  disabled: false,
-  loading: false,
-  icon: 'rocket',
-  iconPosition: 'left',
-};
-
-export const ButtonDropdownComponent = args => <ButtonDropdown {...args} />;
 
 const actions = [
   {
@@ -78,6 +53,10 @@ const actions = [
   },
 ];
 
+export const ButtonDropdownComponent = <T,>(args: ActionsMenuInterface<T>) => (
+  <ButtonDropdown {...args} />
+);
+
 ButtonDropdownComponent.storyName = 'Dropdown';
 ButtonDropdownComponent.args = {
   variant: 'solid',
@@ -89,15 +68,4 @@ ButtonDropdownComponent.args = {
   dataTestId: 'action-button-dropdown',
   startsOpen: false,
   disabled: false,
-};
-
-export const ButtonLinkComponent = args => <ButtonLink {...args} />;
-
-ButtonLinkComponent.storyName = 'Link';
-ButtonLinkComponent.args = {
-  ...ButtonComponent.args,
-  rel: 'noopener',
-  iconPosition: 'left',
-  url: 'https://github.com/taikai/taikai-design-system',
-  blank: false,
 };

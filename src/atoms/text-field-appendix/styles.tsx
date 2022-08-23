@@ -25,6 +25,11 @@ export const Wrapper = styled.div<TextFieldAppendixProps>`
     flex: 1;
     border: 0;
     color: ${props => (props.error ? red : normal)};
+
+    &:disabled {
+      margin: 0;
+      border-radius: 0;
+    }
   }
 
   & + span {

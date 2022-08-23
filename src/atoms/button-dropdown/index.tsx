@@ -5,7 +5,7 @@ import { Button } from '../..';
 import { ButtonColor, ButtonVariant } from '../button/types';
 import { ActionMenu } from './types';
 
-interface ActionsMenuInterface<T> {
+export interface ActionsMenuInterface<T> {
   variant?: ButtonVariant;
   color?: ButtonColor;
   value: string;
