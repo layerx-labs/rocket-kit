@@ -9,7 +9,7 @@ interface InputStyleProps {
   error?: string;
 }
 
-const { grey, lightGrey, red, purple } = colors;
+const { grey, lightGrey, red, purple500 } = colors;
 
 export const TextFieldInputStyle = styled.input<InputStyleProps>`
   border-width: ${props =>
@@ -24,7 +24,7 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
   transition-duration: 0.3s;
 
   &:focus {
-    border-color: ${purple};
+    border-color: ${purple500};
     outline: none;
   }
 

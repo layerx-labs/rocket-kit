@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-const { grey, darkGrey, light, purple } = colors;
+const { grey, darkGrey, light, purple500 } = colors;
 
 export const Field = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ export const Field = styled.div`
       outline: none;
 
       + button {
-        background-color: ${purple};
+        background-color: ${purple500};
       }
     }
   }

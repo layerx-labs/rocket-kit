@@ -2,9 +2,8 @@ import styled from 'styled-components/macro';
 import { rem } from 'polished';
 import { colors, typography } from '../../ions/variables';
 
-const { normal, purple, grey, lightGrey, light } = colors;
-const { bold } = fontWeight;
 const { normal, purple500, grey, lightGrey, light } = colors;
+const { bold } = typography;
 
 interface HorizontalNavInterface {
   customColor?: string;
@@ -67,10 +66,12 @@ export const Wrapper = styled.div<HorizontalNavInterface>`
         }
 
         &:hover {
-          color: ${props => (props.customColor ? props.customColor : purple)};
+          color: ${props =>
+            props.customColor ? props.customColor : purple500};
 
           svg {
-            fill: ${props => (props.customColor ? props.customColor : purple)};
+            fill: ${props =>
+              props.customColor ? props.customColor : purple500};
           }
         }
       }
@@ -82,7 +83,8 @@ export const Wrapper = styled.div<HorizontalNavInterface>`
           pointer-events: none;
 
           svg {
-            fill: ${props => (props.customColor ? props.customColor : purple)};
+            fill: ${props =>
+              props.customColor ? props.customColor : purple500};
           }
         }
       }
