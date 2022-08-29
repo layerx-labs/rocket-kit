@@ -1,6 +1,5 @@
 import React, { CSSProperties } from 'react';
 import { Icon, Spinner } from '../..';
-import { useMouseMoveEffect } from '../../utils/hooks/use-mouse-move-effect';
 import * as Styles from './styles';
 import { ButtonColor, ButtonVariant } from './types';
 
@@ -30,7 +29,6 @@ const Button = (props: ButtonProps) => {
     color = 'green',
     value = '',
     className = 'button',
-    querySelector = '.button',
     ariaLabel,
     action = () => {},
     disabled = false,
@@ -42,8 +40,6 @@ const Button = (props: ButtonProps) => {
     style,
     type,
   } = props;
-
-  useMouseMoveEffect({ querySelector });
 
   return (
     <Styles.ButtonWrapper

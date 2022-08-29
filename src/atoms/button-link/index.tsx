@@ -1,6 +1,5 @@
 import React, { CSSProperties } from 'react';
 import { Icon } from '../..';
-import { useMouseMoveEffect } from '../../utils/hooks/use-mouse-move-effect';
 import { ButtonColor, ButtonVariant } from '../button/types';
 import * as Styles from './styles';
 
@@ -10,6 +9,7 @@ export interface ButtonLinkProps {
   variant?: ButtonVariant;
   circle?: boolean;
   color?: ButtonColor;
+  txtColor?: ButtonColor;
   value?: string;
   className?: string;
   querySelector?: string;
@@ -26,13 +26,13 @@ export interface ButtonLinkProps {
 const ButtonLink = (props: ButtonLinkProps) => {
   const {
     variant = 'solid',
-    color = 'green',
-    querySelector = '.button-link',
+    color = 'purple500',
+    txtColor = 'white',
     className = 'button-link',
     url,
     blank = false,
     icon = '',
-    iconPosition = 'left',
+    iconPosition = 'right',
     value = '',
     action = () => {},
     dataTestId = '',
@@ -46,12 +46,11 @@ const ButtonLink = (props: ButtonLinkProps) => {
     return blank ? 'noopener noreferrer' : '';
   };
 
-  useMouseMoveEffect({ querySelector });
-
   return (
     <Styles.ButtonLinkStyle
       variant={variant}
       color={color}
+      txtColor={txtColor}
       className={`button ${className}`}
       href={url}
       target={blank ? '_blank' : ''}

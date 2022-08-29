@@ -1,7 +1,7 @@
-import styled, { css, keyframes } from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 import { device } from '../../ions/breakpoints';
 import { ButtonColor, ButtonVariant } from './types';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 import { rem } from 'polished';
 
 interface ButtonProps {
@@ -24,25 +24,13 @@ const {
   darkOrange,
   red,
   darkRed,
-  purple,
+  purple500,
   darkPurple,
   blue,
   darkBlue,
 } = colors;
 
-const { bold, medium } = fontWeight;
-
-export const pulseKeyframes = keyframes`
-  0% {
-    box-shadow: 0 0 ${rem('10px')} 0 rgba(40, 40, 40, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 ${rem('10px')} 0 rgba(40, 40, 40, 0);
-  }
-  100% {
-    box-shadow: 0 0 ${rem('10px')} 0 rgba(40, 40, 40, 0.3);
-  }
-`;
+const { bold, medium } = typography;
 
 export const ButtonWrapper = styled.button<ButtonProps>`
   --button: ${green};
@@ -78,16 +66,16 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     `}
 
     ${props =>
-    props.color === 'blue' &&
-    css`
-      --button: ${blue};
-      --hover: ${darkBlue};
-    `}
+      props.color === 'blue' &&
+      css`
+        --button: ${blue};
+        --hover: ${darkBlue};
+      `}
 
   ${props =>
     props.color === 'purple' &&
     css`
-      --button: ${purple};
+      --button: ${purple500};
       --hover: ${darkPurple};
     `}
 
@@ -104,21 +92,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     css`
       --button: ${normal};
       --hover: ${darkGrey};
-    `}
-
-  ${props =>
-    props.color === 'pulse' &&
-    css`
-      --button: ${red};
-      --hover: ${darkRed};
-      animation: ${pulseKeyframes} 1s infinite;
-    `}
-
-  ${props =>
-    props.color === 'magic' &&
-    css`
-      --button: ${light};
-      --hover: ${lightGrey};
     `}
 
   border-width: ${props => (props.variant === 'outline' ? '3px' : 0)};
