@@ -1,10 +1,10 @@
 import styled from 'styled-components/macro';
 import { rem, rgba } from 'polished';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
 const { grey, light } = colors;
-const { bold } = fontWeight;
+const { bold } = typography;
 
 interface BorderProps {
   border: boolean;

@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components/macro';
 import { rem} from "polished";
-import { fontWeight, colors } from './ions/variables';
+import { typography, colors } from './ions/variables';
 import { device } from './ions/breakpoints';
 
 const { normal, grey, lightGrey } = colors;
-const { regular } = fontWeight;
+const { regular } = typography;
 
 const GlobalStyle = createGlobalStyle`
   * {

@@ -1,9 +1,10 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 
 const { normal, purple, grey, lightGrey, light } = colors;
 const { bold } = fontWeight;
+const { normal, purple500, grey, lightGrey, light } = colors;
 
 interface HorizontalNavInterface {
   customColor?: string;

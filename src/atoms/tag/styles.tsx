@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/macro';
 import { rem } from 'polished';
 import { TagVariant, TagColor } from './types';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 
 interface TagWrapperProps {
   variant?: TagVariant;
@@ -9,7 +9,7 @@ interface TagWrapperProps {
 }
 
 const { normal, light, grey, green, orange, red } = colors;
-const { bold } = fontWeight;
+const { bold } = typography;
 
 export const TagWrapper = styled.span<TagWrapperProps>`
   display: inline-block;

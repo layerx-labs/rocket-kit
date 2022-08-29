@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 
 const { lightGrey, green } = colors;
-const { bold } = fontWeight;
+const { bold } = typography;
 
 interface ProgressBarProps {
   progress: number;
