@@ -13,7 +13,6 @@ export const useColor = (value: string) => {
     const indexHoverHue = indexIsLast ? indexCurrentHue - 1 : indexCurrentHue + 1;
     // @ts-ignore
     const hoverColor = colors?.[indexCurrentHue > -1 ? tint + colorHues[indexHoverHue] : tint];
-
     return hoverColor ?? colors.black;
   }
 

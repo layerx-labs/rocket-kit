@@ -4,41 +4,44 @@ import { ButtonColor, ButtonVariant } from '../button/types';
 import * as Styles from './styles';
 
 export interface ButtonLinkProps {
-  url: string;
-  blank?: boolean;
   variant?: ButtonVariant;
-  circle?: boolean;
+  rounded?: boolean;
   color?: ButtonColor;
   txtColor?: ButtonColor;
-  value?: string;
   className?: string;
-  querySelector?: string;
-  ariaLabel?: string;
+  style?: CSSProperties;
   action?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  url: string;
+  blank?: boolean;
+  rel?: string;
+  value?: string;
+  iconPosition?: 'left' | 'right';
+  icon?: string;
   dataTestId?: string;
   eventId?: string;
-  icon?: string;
-  iconPosition?: 'left' | 'right';
-  style?: CSSProperties;
-  rel?: string;
+  ariaLabel?: string;
+  ariaHidden?: boolean;
 }
 
 const ButtonLink = (props: ButtonLinkProps) => {
   const {
     variant = 'solid',
+    rounded = false,
     color = 'purple500',
     txtColor = 'white',
     className = 'button-link',
+    style,
+    action = () => {},
     url,
     blank = false,
-    icon = '',
-    iconPosition = 'right',
+    rel = undefined,
     value = '',
-    action = () => {},
+    iconPosition = 'right',
+    icon = '',
     dataTestId = '',
     eventId = '',
-    style,
-    rel = undefined,
+    ariaLabel = '',
+    ariaHidden = false,
   } = props;
 
   const getRelationshipAttributes = () => {
@@ -49,18 +52,21 @@ const ButtonLink = (props: ButtonLinkProps) => {
   return (
     <Styles.ButtonLinkStyle
       variant={variant}
+      rounded={rounded}
       color={color}
       txtColor={txtColor}
       className={`button ${className}`}
+      style={style}
+      onClick={action}
       href={url}
       target={blank ? '_blank' : ''}
+      rel={getRelationshipAttributes()}
       value={value}
-      onClick={action}
+      iconPosition={iconPosition}
       data-testid={dataTestId}
       data-event={eventId}
-      style={style}
-      iconPosition={iconPosition}
-      rel={getRelationshipAttributes()}
+      aria-label={ariaLabel}
+      aria-hidden={ariaHidden}
     >
       {icon && <Icon icon={icon} />}
       {value && <span>{value}</span>}

@@ -7,6 +7,12 @@ export default {
   title: 'Design System/Atoms/Button',
   component: ButtonLink,
   argTypes: {
+    variant: {
+      control: {
+        type: 'inline-radio',
+        options: ['solid', 'outline', 'text'],
+      },
+    },
     color: {
       control: {
         type: 'select',
@@ -19,22 +25,16 @@ export default {
         options: Object.keys(colors),
       },
     },
-    variant: {
+    iconPosition: {
       control: {
         type: 'inline-radio',
-        options: ['solid', 'outline', 'text'],
+        options: ['left', 'right'],
       },
     },
     icon: {
       control: {
         type: 'select',
         options: ['', ...Object.keys(icons)],
-      },
-    },
-    iconPosition: {
-      control: {
-        type: 'select',
-        options: ['left', 'right'],
       },
     },
   },
@@ -46,19 +46,17 @@ export const ButtonLinkComponent = (args: ButtonLinkProps) => (
 
 ButtonLinkComponent.storyName = 'Link';
 ButtonLinkComponent.args = {
-  value: 'Dummie',
   variant: 'solid',
+  rounded: false,
   color: 'purple500',
   txtColor: 'white',
-  circle: false,
   className: 'button',
-  querySelector: '.button',
-  ariaLabel: 'Dummie Button',
-  disabled: false,
-  loading: false,
-  icon: '',
-  iconPosition: 'right',
-  rel: 'noopener',
-  url: 'https://github.com/taikai/taikai-design-system',
+  url: 'https://github.com/taikai/rocket-kit',
   blank: false,
+  rel: 'noopener',
+  value: 'Dummie',
+  iconPosition: 'right',
+  icon: '',
+  ariaLabel: 'Dummie Button',
+  ariaHidden: false,
 };
