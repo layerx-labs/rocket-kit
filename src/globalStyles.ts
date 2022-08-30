@@ -55,7 +55,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   span {
-    font-size: 1rem;
+    font-family: ${typography.defaultFont};
+    font-size: ${rem(typography.defaultSize)};
+    font-feature-settings: 'ss04' on;
   }
 
   p {

@@ -1,6 +1,5 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { device } from '../../ions/breakpoints';
 import { ButtonColor, ButtonVariant } from '../button/types';
 import { colors, typography, button, misc } from '../../ions/variables';
 import { useColor } from '../../utils/hooks/use-color';
@@ -49,10 +48,6 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
   transition-duration: ${misc.transitionDuration};
   cursor: pointer;
 
-  @media ${device.l} {
-    min-width: ${props => (props.value ? rem('100px') : rem('42px'))};
-  }
-
   &:hover {
     border-color: ${props => (props.variant === 'solid' ? '' : 'var(--hover)')};
     background-color: ${props =>
@@ -79,6 +74,7 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
     font-size: ${rem(typography.defaultSize)};
     font-weight: ${typography.medium};
     letter-spacing: ${typography.letterSpacing};
+    line-height: ${rem(typography.defaultSize)};
     color: ${props => (props.variant === 'solid' ? 'var(--txt)' : 'var(--bg)')};
     pointer-events: none;
     transition-duration: ${misc.transitionDuration};
@@ -87,7 +83,6 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
 
   svg {
     order: ${props => (props.iconPosition === 'left' ? 1 : 2)};
-    width: auto;
     width: ${button.iconSize};
     height: ${button.iconSize};
     fill: ${props => (props.variant === 'solid' ? 'var(--txt)' : 'var(--bg)')};
