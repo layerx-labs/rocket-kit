@@ -23,6 +23,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
       ? colors.grey900
       : useColor(props.color ?? 'black').hover};
 
+  margin: 0;
   border-width: ${props =>
     props.variant === 'outline' ? button.borderWidth : 0};
   border-style: solid;
