@@ -4,7 +4,7 @@ import { TextField } from '../../../';
 import { FormGroupProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/Form Group',
+  title: 'Components/Molecules/Form Group',
   component: FormGroup,
   argTypes: {
     error: {

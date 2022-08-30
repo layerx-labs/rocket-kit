@@ -3,7 +3,7 @@ import { ModalDrawerProps } from '..';
 import { Button, ModalDrawer, ModalFooter } from '../../..';
 
 export default {
-  title: 'Design System/Organisms/Modal',
+  title: 'Components/Organisms/Modal',
   component: ModalDrawer,
   argTypes: {},
 };

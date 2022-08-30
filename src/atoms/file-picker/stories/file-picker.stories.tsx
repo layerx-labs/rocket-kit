@@ -2,7 +2,7 @@ import React from 'react';
 import FilePicker, { FilePickerProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/FilePicker',
+  title: 'Components/Atoms/FilePicker',
   component: FilePicker,
 };
 

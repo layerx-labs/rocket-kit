@@ -4,7 +4,7 @@ import icons from '../../../ions/icons';
 import { colors } from '../../../ions/variables';
 
 export default {
-  title: 'Design System/Atoms/Button',
+  title: 'Components/Atoms/Button',
   component: ButtonLink,
   argTypes: {
     variant: {

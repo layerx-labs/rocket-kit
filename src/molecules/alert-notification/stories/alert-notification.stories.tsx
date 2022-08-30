@@ -2,7 +2,7 @@ import React from 'react';
 import AlertNotification, { AlertNotificationProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/Alert',
+  title: 'Components/Molecules/Alert',
   component: AlertNotification,
   argTypes: {
     variant: {

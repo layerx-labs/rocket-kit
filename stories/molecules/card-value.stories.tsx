@@ -2,7 +2,7 @@ import React from 'react';
 import { CardValue } from '../../src';
 
 export default {
-  title: 'Design System/Molecules/Card Value',
+  title: 'Components/Molecules/Card Value',
   component: CardValue,
   argTypes: {},
 };

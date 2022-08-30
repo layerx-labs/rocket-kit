@@ -3,7 +3,7 @@ import ButtonDropdown, { ActionsMenuInterface } from '..';
 import icons from '../../../ions/icons';
 
 export default {
-  title: 'Design System/Atoms/Button',
+  title: 'Components/Atoms/Button',
   component: ButtonDropdown,
   argTypes: {
     color: {

@@ -17,7 +17,7 @@ interface Transaction {
 }
 
 export default {
-  title: 'Design System/Molecules/Table',
+  title: 'Components/Molecules/Table',
   component: TableDnD,
   argTypes: {
     border: {

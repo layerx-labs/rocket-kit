@@ -2,7 +2,7 @@ import React from 'react';
 import EmptyTable, { EmptyTableProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/Empty Table',
+  title: 'Components/Molecules/Empty Table',
   component: EmptyTable,
   argTypes: {},
 };

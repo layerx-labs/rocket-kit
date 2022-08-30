@@ -2,7 +2,7 @@ import React from 'react';
 import { ErrorField } from '../../src';
 
 export default {
-  title: 'Design System/Atoms/ErrorField',
+  title: 'Components/Atoms/ErrorField',
   component: ErrorField,
   argTypes: {
     color: {

@@ -2,7 +2,7 @@ import React from 'react';
 import Tag, { TagProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/Tag',
+  title: 'Components/Atoms/Tag',
   component: Tag,
   argTypes: {
     color: {

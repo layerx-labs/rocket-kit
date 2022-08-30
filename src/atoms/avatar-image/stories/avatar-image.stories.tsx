@@ -2,7 +2,7 @@ import React from 'react';
 import AvatarImage, { AvatarProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/Avatar Image',
+  title: 'Components/Atoms/Avatar Image',
   component: AvatarImage,
   argTypes: {
     boringType: {

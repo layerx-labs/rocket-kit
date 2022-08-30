@@ -3,7 +3,7 @@ import ModalFooter, { ModalFooterProps } from '..';
 import { Button } from '../../..';
 
 export default {
-  title: 'Design System/Molecules/Modal Footer',
+  title: 'Components/Molecules/Modal Footer',
   component: ModalFooter,
   argTypes: {},
 };

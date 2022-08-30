@@ -2,7 +2,7 @@ import React from 'react';
 import TagNumber, { TagNumberProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/Tag',
+  title: 'Components/Atoms/Tag',
   component: TagNumber,
 };
 

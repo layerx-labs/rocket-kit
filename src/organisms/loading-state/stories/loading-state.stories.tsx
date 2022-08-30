@@ -2,7 +2,7 @@ import React from 'react';
 import LoadingState, { LoadingStateProps } from '..';
 
 export default {
-  title: 'Design System/Organisms/Empty States',
+  title: 'Components/Organisms/Empty States',
   component: LoadingState,
   argTypes: {
     type: {

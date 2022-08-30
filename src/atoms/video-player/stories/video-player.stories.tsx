@@ -2,7 +2,7 @@ import React from 'react';
 import VideoPlayer, { VideoPlayerProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/Video Player',
+  title: 'Components/Atoms/Video Player',
   component: VideoPlayer,
   argTypes: {
     onEnded: { action: 'video ended' },

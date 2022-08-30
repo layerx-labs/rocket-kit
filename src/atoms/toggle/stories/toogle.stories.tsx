@@ -3,7 +3,7 @@ import Toggle from '../index';
 import { ToggleProps } from '../types';
 
 export default {
-  title: 'Design System/Atoms/Toggle',
+  title: 'Components/Atoms/Toggle',
   component: Toggle,
 };
 

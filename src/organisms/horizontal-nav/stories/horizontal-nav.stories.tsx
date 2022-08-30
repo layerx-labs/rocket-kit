@@ -3,7 +3,7 @@ import HorizontalNav, { HorizontalNavInterface } from '..';
 import { Icon } from '../../..';
 
 export default {
-  title: 'Design System/Organisms/Navigation',
+  title: 'Components/Organisms/Navigation',
   component: HorizontalNav,
   argTypes: {
     customColor: { control: 'color' },
