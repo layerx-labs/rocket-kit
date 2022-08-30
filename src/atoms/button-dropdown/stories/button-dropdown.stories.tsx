@@ -1,32 +1,28 @@
 import React from 'react';
 import ButtonDropdown, { ActionsMenuInterface } from '..';
 import icons from '../../../ions/icons';
+import { colors } from '../../../ions/variables';
 
 export default {
   title: 'Components/Atoms/Button',
   component: ButtonDropdown,
   argTypes: {
-    color: {
-      control: {
-        type: 'select',
-        options: [
-          'green',
-          'orange',
-          'red',
-          'grey',
-          'purple',
-          'blue',
-          'white',
-          'dark',
-          'magic',
-          'pulse',
-        ],
-      },
-    },
     variant: {
       control: {
         type: 'inline-radio',
         options: ['solid', 'outline', 'text'],
+      },
+    },
+    color: {
+      control: {
+        type: 'select',
+        options: Object.keys(colors),
+      },
+    },
+    txtColor: {
+      control: {
+        type: 'select',
+        options: Object.keys(colors),
       },
     },
     icon: {
@@ -41,7 +37,7 @@ export default {
 const actions = [
   {
     id: 'createChallenge',
-    value: 'Challenge',
+    value: 'Hackathon',
     url: null,
     action: () => {},
   },
@@ -60,12 +56,15 @@ export const ButtonDropdownComponent = <T,>(args: ActionsMenuInterface<T>) => (
 ButtonDropdownComponent.storyName = 'Dropdown';
 ButtonDropdownComponent.args = {
   variant: 'solid',
-  color: 'green',
+  rounded: false,
+  color: 'purple500',
+  txtColor: 'white',
+  className: 'button-dropdown',
   value: 'Create',
   icon: 'add',
-  ariaLabel: 'Create Challenge',
+  ariaLabel: 'Create new challenge',
+  ariaHidden: false,
   actions,
-  dataTestId: 'action-button-dropdown',
   startsOpen: false,
   disabled: false,
 };
