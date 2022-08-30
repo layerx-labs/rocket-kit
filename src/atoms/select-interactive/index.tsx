@@ -27,6 +27,7 @@ const SelectInteractive = ({
 }: SelectInteractiveProps<TSelectInteractiveOption>) => {
   return (
     <Styles.SelectWrapper {...rest}>
+      {/* @ts-ignore */}
       <Select
         name={name}
         value={value}
