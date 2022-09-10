@@ -26,10 +26,6 @@ exports[`Tag renders 1`] = `
   color: #ffffff;
 }
 
-.c0:not(:first-child) {
-  margin-left: 0.3125rem;
-}
-
 <span
     class="c0 tag"
     color="red"
