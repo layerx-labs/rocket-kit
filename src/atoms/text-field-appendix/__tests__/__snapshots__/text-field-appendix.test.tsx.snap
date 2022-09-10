@@ -87,6 +87,11 @@ exports[`TextField Appendix renders 1`] = `
   color: #000000;
 }
 
+.c0 input:disabled {
+  margin: 0;
+  border-radius: 0;
+}
+
 .c0 + span {
   margin-top: 0;
 }

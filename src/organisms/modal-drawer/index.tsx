@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { ModalFooter } from '../..';
 import * as Styles from './styles';
@@ -25,6 +25,24 @@ const ModalDrawer = (props: ModalDrawerProps) => {
     footerHidden = false,
     zIndex = 10,
   } = props;
+
+  useEffect(() => {
+    const fixViewport = () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    fixViewport();
+
+    if (typeof window !== 'undefined') {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      window.addEventListener('resize', fixViewport);
+      return () => window.removeEventListener('resize', fixViewport);
+    }
+
+    return;
+  }, []);
 
   return isShowing ? (
     ReactDOM.createPortal(
