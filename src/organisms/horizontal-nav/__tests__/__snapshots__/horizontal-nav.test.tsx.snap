@@ -3,18 +3,19 @@
 exports[`Horizontal Nav renders 1`] = `
 <DocumentFragment>
   .c2 {
-  --button: #56cad7;
   --txt: #ffffff;
-  --hover: #2ba8b6;
-  --button: #000000;
-  --hover: #7a7a7a;
+  --hover: #000000;
+  margin: 0;
   border-width: 0;
   border-style: solid;
-  border-color: var(--button);
+  border-color: var(--bg);
   border-radius: 0;
   background-color: transparent;
-  width: 2rem;
-  height: 2rem;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  min-width: 2.625rem;
+  height: 2.625rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -30,6 +31,8 @@ exports[`Horizontal Nav renders 1`] = `
   padding: 0;
   text-transform: uppercase;
   white-space: nowrap;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
@@ -59,7 +62,7 @@ exports[`Horizontal Nav renders 1`] = `
 
 .c2 > *:not(:last-child) {
   margin-left: 0;
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 
 .c2 .spinner {
@@ -68,13 +71,14 @@ exports[`Horizontal Nav renders 1`] = `
 
 .c2 span {
   position: relative;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 500;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  color: var(--button);
+  -webkit-letter-spacing: 0.0625rem;
+  -moz-letter-spacing: 0.0625rem;
+  -ms-letter-spacing: 0.0625rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1rem;
+  color: var(--bg);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -87,10 +91,9 @@ exports[`Horizontal Nav renders 1`] = `
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  width: auto;
-  min-width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--button);
+  width: 1rem;
+  height: 1rem;
+  fill: var(--bg);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -169,11 +172,11 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 .c0 ul li a:hover {
-  color: #4329a6;
+  color: #4329A6;
 }
 
 .c0 ul li a:hover svg {
-  fill: #4329a6;
+  fill: #4329A6;
 }
 
 .c0 ul li.active {
@@ -185,7 +188,7 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 .c0 ul li.active a svg {
-  fill: #4329a6;
+  fill: #4329A6;
 }
 
 .c1 {
@@ -260,12 +263,6 @@ exports[`Horizontal Nav renders 1`] = `
   padding: 0.9375rem;
 }
 
-@media (min-width:1280px) {
-  .c2 {
-    min-width: 2rem;
-  }
-}
-
 <div
     class="c0 horizontal-nav"
   >
@@ -294,8 +291,11 @@ exports[`Horizontal Nav renders 1`] = `
       class="c1 hide"
     >
       <button
+        aria-hidden="false"
         class="c2 button"
         color="dark"
+        data-event=""
+        data-testid=""
         value=""
       >
         <svg

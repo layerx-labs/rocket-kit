@@ -24,7 +24,7 @@ exports[`TextArea renders 1`] = `
 }
 
 .c1:focus {
-  border-color: #4329a6;
+  border-color: #4329A6;
   outline: none;
 }
 

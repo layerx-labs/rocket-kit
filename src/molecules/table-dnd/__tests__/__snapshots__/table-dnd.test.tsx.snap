@@ -22,18 +22,20 @@ exports[`TableDnD renders 1`] = `
 }
 
 .c5 {
-  --button: #56cad7;
+  --bg: #939393;
   --txt: #ffffff;
-  --hover: #2ba8b6;
-  --button: #939393;
-  --hover: #7a7a7a;
+  --hover: #939393;
+  margin: 0;
   border-width: 0;
   border-style: solid;
-  border-color: var(--button);
+  border-color: var(--bg);
   border-radius: 0;
   background-color: transparent;
-  width: 2rem;
-  height: 2rem;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  min-width: 2.625rem;
+  height: 2.625rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -49,6 +51,8 @@ exports[`TableDnD renders 1`] = `
   padding: 0;
   text-transform: uppercase;
   white-space: nowrap;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
@@ -78,7 +82,7 @@ exports[`TableDnD renders 1`] = `
 
 .c5 > *:not(:last-child) {
   margin-left: 0;
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 
 .c5 .spinner {
@@ -87,13 +91,14 @@ exports[`TableDnD renders 1`] = `
 
 .c5 span {
   position: relative;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 500;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  color: var(--button);
+  -webkit-letter-spacing: 0.0625rem;
+  -moz-letter-spacing: 0.0625rem;
+  -ms-letter-spacing: 0.0625rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1rem;
+  color: var(--bg);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -106,10 +111,9 @@ exports[`TableDnD renders 1`] = `
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  width: auto;
-  min-width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--button);
+  width: 1rem;
+  height: 1rem;
+  fill: var(--bg);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -374,12 +378,6 @@ exports[`TableDnD renders 1`] = `
   width: 100%;
 }
 
-@media (min-width:1280px) {
-  .c5 {
-    min-width: 2rem;
-  }
-}
-
 @media (min-width:700px) {
   .c1 {
     display: block;
@@ -594,8 +592,10 @@ exports[`TableDnD renders 1`] = `
             >
               <div>
                 <button
+                  aria-hidden="false"
                   class="c5 button"
                   color="grey"
+                  data-event=""
                   data-testid="icon-button"
                   value=""
                 >

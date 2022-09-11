@@ -3,11 +3,13 @@
 exports[`Tag Number renders 1`] = `
 <DocumentFragment>
   .c0 {
+  --bg: #4329A6;
+  --valueColor: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  border: 0.125rem solid #939393;
+  border: 0.125rem solid var(--bg);
   border-radius: 0.1875rem;
   line-height: 1;
   max-width: 100%;
@@ -21,17 +23,18 @@ exports[`Tag Number renders 1`] = `
   display: inline-block;
   padding: 0.1875rem 0.5rem;
   font-size: 0.75rem;
-  font-weight: 700;
-  -webkit-letter-spacing: 0.1em;
-  -moz-letter-spacing: 0.1em;
-  -ms-letter-spacing: 0.1em;
-  letter-spacing: 0.1em;
+  font-weight: 500;
+  -webkit-letter-spacing: 0.0625rem;
+  -moz-letter-spacing: 0.0625rem;
+  -ms-letter-spacing: 0.0625rem;
+  letter-spacing: 0.0625rem;
 }
 
 .c0 span.label {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  color: var(--bg);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -39,9 +42,8 @@ exports[`Tag Number renders 1`] = `
 }
 
 .c0 span.value {
-  background-color: #939393;
-  font-weight: 700;
-  color: #ffffff;
+  background-color: var(--bg);
+  color: var(--valueColor);
 }
 
 .c0:not(:first-child) {
@@ -50,7 +52,7 @@ exports[`Tag Number renders 1`] = `
 
 <div
     class="c0 tag-number"
-    title="Example"
+    color="purple500"
   >
     <span
       class="label"

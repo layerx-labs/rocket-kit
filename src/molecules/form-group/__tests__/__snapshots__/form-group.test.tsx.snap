@@ -16,7 +16,7 @@ exports[`FormGroup renders 1`] = `
 }
 
 .c2:focus {
-  border-color: #4329a6;
+  border-color: #4329A6;
   outline: none;
 }
 
