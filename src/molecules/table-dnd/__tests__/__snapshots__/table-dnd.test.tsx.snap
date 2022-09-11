@@ -32,7 +32,7 @@ exports[`TableDnD renders 1`] = `
   border-color: var(--button);
   border-radius: 0;
   background-color: transparent;
-  width: 2.25rem;
+  width: 2rem;
   height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -376,7 +376,7 @@ exports[`TableDnD renders 1`] = `
 
 @media (min-width:1280px) {
   .c5 {
-    min-width: 2.25rem;
+    min-width: 2rem;
   }
 }
 

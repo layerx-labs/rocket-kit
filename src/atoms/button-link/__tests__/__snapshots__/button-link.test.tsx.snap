@@ -16,7 +16,7 @@ exports[`Button Link renders 1`] = `
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  min-width: 2.25rem;
+  min-width: 2rem;
   height: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -80,7 +80,7 @@ exports[`Button Link renders 1`] = `
 
 @media (min-width:1280px) {
   .c0 {
-    min-width: 2.25rem;
+    min-width: 2rem;
   }
 }
 
