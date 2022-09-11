@@ -1,13 +1,20 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, typography } from '../../ions/variables';
+import { TagColor } from '../tag/types';
+import { useColor } from '../../utils/hooks/use-color';
+import { typography } from '../../ions/variables';
 
-const { grey, light } = colors;
-const { bold } = typography;
+interface TagWrapperProps {
+  color?: TagColor;
+  valueColor?: TagColor;
+}
 
-export const TagWrapper = styled.div`
+export const TagWrapper = styled.div<TagWrapperProps>`
+  --bg: ${props => useColor(props.color ?? 'black').color};
+  --valueColor: ${props => useColor(props.valueColor ?? 'black').color};
+
   display: flex;
-  border: ${rem('2px')} solid ${grey};
+  border: ${rem('2px')} solid var(--bg);
   border-radius: ${rem('3px')};
   line-height: 1;
   max-width: 100%;
@@ -18,11 +25,12 @@ export const TagWrapper = styled.div`
     display: inline-block;
     padding: ${rem('3px')} ${rem('8px')};
     font-size: ${rem('12px')};
-    font-weight: ${bold};
-    letter-spacing: 0.1em;
+    font-weight: ${typography.medium};
+    letter-spacing: ${rem('1px')};
 
     &.label {
       flex: 1;
+      color: var(--bg);
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -30,9 +38,8 @@ export const TagWrapper = styled.div`
     }
 
     &.value {
-      background-color: ${grey};
-      font-weight: ${bold};
-      color: ${light};
+      background-color: var(--bg);
+      color: var(--valueColor);
     }
   }
 

@@ -5,6 +5,7 @@ import * as Styles from './styles';
 export interface TagProps {
   variant?: TagVariant;
   color?: TagColor;
+  txtColor?: TagColor;
   value: string;
   className?: string;
   style?: CSSProperties;
@@ -13,16 +14,19 @@ export interface TagProps {
 const Tag = (props: TagProps) => {
   const {
     variant = 'solid',
-    color = 'grey',
+    color = 'purple500',
+    txtColor = 'white',
     value,
     className = 'tag',
     style,
   } = props;
+
   return (
     <Styles.TagWrapper
       className={className}
       variant={variant}
       color={color}
+      txtColor={txtColor}
       style={style}
       title={value}
     >
