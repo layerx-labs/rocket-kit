@@ -106,26 +106,6 @@ export const Wrapper = styled.div<LoadingStateProps>`
   }
 `;
 
-export const Table = styled.div<LoadingStateProps>`
-  --columns: ${props => props.columnsNumber};
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-columns: repeat(var(--columns), 1fr);
-  grid-gap: ${rem('15px')};
-  padding: ${rem('15px')};
-
-  .header {
-    width: 50%;
-    height: ${rem('15px')};
-  }
-
-  .cell {
-    width: 100%;
-    height: ${rem('15px')};
-  }
-`;
-
 export const Grid = styled.div<LoadingStateProps>`
   display: grid;
   grid-template-columns: repeat(auto-fill, ${rem('300px')});

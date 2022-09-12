@@ -8,7 +8,7 @@ export default {
     type: {
       control: {
         type: 'select',
-        options: ['text', 'card', 'table', 'value'],
+        options: ['text', 'card', 'value'],
       },
     },
   },
@@ -23,8 +23,5 @@ LoadingStateComponent.args = {
   type: 'text',
   lines: 3,
   cardsNumber: 8,
-  header: true,
-  columnsNumber: 4,
-  rowsNumber: 3,
   center: true,
 };
