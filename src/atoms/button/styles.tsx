@@ -68,6 +68,8 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     opacity: 0.5;
 
     &:hover {
+      background-color: ${props =>
+        props.variant === 'solid' ? 'var(--bg)' : 'transparent'};
       pointer-events: none;
     }
   }
