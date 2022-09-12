@@ -307,3 +307,31 @@ export const Table = styled.table<BorderProps>`
     }
   }
 `;
+
+export const SkeletonCell = styled.div`
+  @keyframes placeholderSkeleton {
+    0% {
+      background-position: ${rem('-800px')} 0;
+    }
+    100% {
+      background-position: ${rem('800px')} 0;
+    }
+  }
+
+  height: ${rem('15px')} !important;
+  background: #f6f7f8;
+  background-image: -webkit-linear-gradient(
+    left,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: ${rem('800px')} 100%;
+  animation-fill-mode: forwards;
+  animation-name: placeholderSkeleton;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+`;

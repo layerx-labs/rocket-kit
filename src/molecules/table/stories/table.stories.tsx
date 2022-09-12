@@ -27,6 +27,21 @@ export default {
         type: 'boolean',
       },
     },
+    loading: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    loadingColumns: {
+      control: {
+        type: 'number',
+      },
+    },
+    loadingRows: {
+      control: {
+        type: 'number',
+      },
+    },
   },
 };
 
@@ -133,7 +148,10 @@ export const TableComponent = (args: TableProps) => (
 
 TableComponent.storyName = 'Table';
 TableComponent.args = {
-  border: false,
+  border: true,
+  loading: false,
+  loadingColumns: 4,
+  loadingRows: 6,
 };
 
 const emptyRows: Transaction[] = [];

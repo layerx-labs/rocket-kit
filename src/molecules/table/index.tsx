@@ -30,6 +30,9 @@ export interface TableProps<CellDataType> {
   dataTestId?: string;
   menuDataTestId?: string;
   actionMenuTestId?: string;
+  loading?: boolean;
+  loadingColumns?: number;
+  loadingRows?: number;
   showEmpty?: boolean;
   emptyValue?: string;
   className?: string;
@@ -43,13 +46,16 @@ export interface CellBaseType {
 
 const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
   const {
-    border = false,
+    border = true,
     options,
     values = [],
     actions = [],
     dataTestId = 'table-test-id',
     menuDataTestId = 'table-action-menu',
     actionMenuTestId = 'icon-button',
+    loading = false,
+    loadingColumns = 4,
+    loadingRows = 20,
     showEmpty = false,
     emptyValue = 'No Data',
     className = 'table',
@@ -57,16 +63,31 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
     startsOpen = false,
   } = props;
 
-  const { ref, isVisible, setIsVisible } =
-    useVisible<HTMLDivElement>(startsOpen);
+  const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
+    startsOpen
+  );
 
   const [rowData, setRowData] = useState({});
   const [rowIndex, setRowIndex] = useState<number | undefined>(undefined);
   const { columns = [] } = options;
   const hasActionMenu = actions.length > 0;
   const validValues = values.filter(hasValue);
-
   const hasValues = Array.isArray(values) && values.length > 0;
+
+  const headSkeleton = (
+    <th>
+      <Styles.SkeletonCell />
+    </th>
+  );
+
+  const cellSkeleton = (
+    <td>
+      <Styles.SkeletonCell />
+    </td>
+  );
+
+  const columnsSkeleton = columns.length > 0 ? columns.length : loadingColumns;
+
   if (showEmpty && !hasValues) {
     const columnHeaders = columns.map(column => column.value);
     return (
@@ -89,76 +110,89 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
         >
           <thead>
             <tr>
-              {columns.map(
-                ({
-                  id = '',
-                  className = '',
-                  value = '',
-                  dataTestId: colDataTestId = null,
-                }) => (
-                  <th
-                    key={id}
-                    className={className}
-                    data-testid={colDataTestId ? `th-${colDataTestId}` : null}
-                  >
-                    {value}
-                  </th>
-                )
-              )}
-              {hasActionMenu && <th />}
+              {loading && !columns
+                ? Array.from({ length: loadingColumns }, () => headSkeleton)
+                : columns.map(
+                    ({
+                      id = '',
+                      className = '',
+                      value = '',
+                      dataTestId: colDataTestId = null,
+                    }) => (
+                      <th
+                        key={id}
+                        className={className}
+                        data-testid={
+                          colDataTestId ? `th-${colDataTestId}` : null
+                        }
+                      >
+                        {value}
+                      </th>
+                    )
+                  )}
+              {!loading && hasActionMenu && <th />}
             </tr>
           </thead>
           <tbody>
-            {validValues.map((row, index) => (
-              <tr key={row.id} data-testid={`row-${dataTestId}`}>
-                {columns.map(
-                  ({
-                    id = '',
-                    dataKey = '',
-                    className = '',
-                    value = '',
-                    renderer = null,
-                    dataTestId,
-                  }) => (
-                    <td
-                      key={id}
-                      className={className}
-                      data-label={value}
-                      data-testid={`td-${dataTestId}`}
-                    >
-                      <div>
-                        {renderer
-                          ? renderer(row[dataKey as keyof CellData], row)
-                          : row[dataKey as keyof CellData]}
-                        {className === 'kai' ? (
-                          <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
-                        ) : null}
-                      </div>
-                    </td>
-                  )
-                )}
+            {loading
+              ? Array.from({ length: loadingRows }, () => (
+                  <tr>
+                    {Array.from(
+                      { length: columnsSkeleton },
+                      () => cellSkeleton
+                    )}
+                  </tr>
+                ))
+              : validValues.map((row, index) => (
+                  <tr key={row.id} data-testid={`row-${dataTestId}`}>
+                    {columns.map(
+                      ({
+                        id = '',
+                        dataKey = '',
+                        className = '',
+                        value = '',
+                        renderer = null,
+                        dataTestId,
+                      }) => (
+                        <td
+                          key={id}
+                          className={className}
+                          data-label={value}
+                          data-testid={`td-${dataTestId}`}
+                        >
+                          <div>
+                            {renderer
+                              ? renderer(row[dataKey as keyof CellData], row)
+                              : row[dataKey as keyof CellData]}
+                            {className === 'kai' ? (
+                              <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
+                            ) : null}
+                          </div>
+                        </td>
+                      )
+                    )}
 
-                {hasActionMenu && (
-                  <td className="menu" data-testid={menuDataTestId}>
-                    <div ref={ref}>
-                      <Button
-                        variant="text"
-                        color="grey"
-                        icon="menuVert"
-                        action={evt => {
-                          evt.preventDefault();
-                          setRowData(row);
-                          setRowIndex(index);
-                          setIsVisible(!isVisible);
-                          evt.stopPropagation();
-                        }}
-                        dataTestId={actionMenuTestId}
-                      />
-                    </div>
-                  </td>
-                )}
-              </tr>
-            ))}
+                    {hasActionMenu && (
+                      <td className="menu" data-testid={menuDataTestId}>
+                        <div ref={ref}>
+                          <Button
+                            variant="text"
+                            color="grey"
+                            icon="menuVert"
+                            action={evt => {
+                              evt.preventDefault();
+                              setRowData(row);
+                              setRowIndex(index);
+                              setIsVisible(!isVisible);
+                              evt.stopPropagation();
+                            }}
+                            dataTestId={actionMenuTestId}
+                          />
+                        </div>
+                      </td>
+                    )}
+                  </tr>
+                ))}
           </tbody>
         </Styles.Table>
 
