@@ -107,6 +107,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
           data-testid={dataTestId}
           className={className}
           style={style}
+          loadingState={loading}
         >
           <thead>
             <tr>

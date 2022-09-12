@@ -6,8 +6,9 @@ import { device } from '../../ions/breakpoints';
 const { normal, light, grey, lightGrey } = colors;
 const { bold } = typography;
 
-interface BorderProps {
+interface TableProps {
   border?: boolean;
+  loadingState?: boolean;
 }
 
 export const TableWrapper = styled.div`
@@ -47,7 +48,7 @@ export const OverflowWrapper = styled.div`
   }
 `;
 
-export const Table = styled.table<BorderProps>`
+export const Table = styled.table<TableProps>`
   width: 100%;
   border-width: ${props => (props.border ? '1px' : '0')};
   border-style: solid;
@@ -152,7 +153,8 @@ export const Table = styled.table<BorderProps>`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: ${lightGrey};
+        background-color: ${props =>
+          props.loadingState ? 'transparent' : lightGrey};
 
         td.menu {
           button {
