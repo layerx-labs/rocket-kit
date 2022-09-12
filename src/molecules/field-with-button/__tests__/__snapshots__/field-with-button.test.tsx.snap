@@ -49,6 +49,7 @@ exports[`FieldWidthButton renders 1`] = `
 }
 
 .c3:disabled:hover {
+  background-color: var(--bg);
   pointer-events: none;
 }
 

@@ -58,6 +58,7 @@ exports[`Modal Footer renders 1`] = `
 }
 
 .c1:disabled:hover {
+  background-color: transparent;
   pointer-events: none;
 }
 
@@ -146,6 +147,7 @@ exports[`Modal Footer renders 1`] = `
 }
 
 .c2:disabled:hover {
+  background-color: var(--bg);
   pointer-events: none;
 }
 

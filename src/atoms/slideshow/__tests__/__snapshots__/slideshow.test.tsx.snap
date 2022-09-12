@@ -58,6 +58,7 @@ exports[`Slideshow renders 1`] = `
 }
 
 .c1:disabled:hover {
+  background-color: transparent;
   pointer-events: none;
 }
 

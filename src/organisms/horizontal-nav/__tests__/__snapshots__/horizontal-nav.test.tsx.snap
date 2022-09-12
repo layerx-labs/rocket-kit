@@ -57,6 +57,7 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 .c2:disabled:hover {
+  background-color: transparent;
   pointer-events: none;
 }
 
