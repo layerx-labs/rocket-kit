@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 import { rem } from 'polished';
 import { colors, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
@@ -50,12 +50,16 @@ export const OverflowWrapper = styled.div`
 
 export const Table = styled.table<TableProps>`
   width: 100%;
-  border-width: ${props => (props.border ? '1px' : '0')};
+  border-width: 0;
   border-style: solid;
   border-color: ${grey};
   border-radius: ${rem('6px')};
   border-spacing: 0;
   white-space: nowrap;
+
+  @media ${device.s} {
+    border-width: ${props => (props.border ? rem('1px') : '0')};
+  }
 
   th,
   td {
@@ -175,6 +179,7 @@ export const Table = styled.table<TableProps>`
       padding: ${rem('15px')};
       display: flex;
       justify-content: flex-end;
+      align-items: center;
 
       > div {
         margin-left: ${rem('100px')};
@@ -217,6 +222,28 @@ export const Table = styled.table<TableProps>`
         content: attr(data-label);
         font-weight: ${bold};
         text-transform: capitalize;
+
+        ${props =>
+          props.loadingState &&
+          css`
+            width: ${rem('75px')};
+            height: ${rem('15px')};
+            background: #f6f7f8;
+            background-image: -webkit-linear-gradient(
+              left,
+              #f6f7f8 0%,
+              #edeef1 20%,
+              #f6f7f8 40%,
+              #f6f7f8 100%
+            );
+            background-repeat: no-repeat;
+            background-size: ${rem('800px')} 100%;
+            animation-fill-mode: forwards;
+            animation-name: placeholderSkeleton;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 1.5s;
+          `}
       }
 
       &.kai {
@@ -258,7 +285,6 @@ export const Table = styled.table<TableProps>`
         display: table-cell;
         height: ${rem('50px')};
         padding: 0 ${rem('15px')};
-        align-items: center;
 
         > div {
           position: relative;
@@ -320,6 +346,7 @@ export const SkeletonCell = styled.div`
     }
   }
 
+  width: 100%;
   height: ${rem('15px')} !important;
   background: #f6f7f8;
   background-image: -webkit-linear-gradient(
