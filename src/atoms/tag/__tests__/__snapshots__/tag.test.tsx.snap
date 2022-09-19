@@ -9,10 +9,10 @@ exports[`Tag renders 1`] = `
   border: 0.125rem solid var(--bg);
   border-radius: 0.25rem;
   background-color: var(--bg);
-  max-width: 9.375rem;
   padding: 0.1875rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
+  text-transform: uppercase;
   -webkit-letter-spacing: 0.0625rem;
   -moz-letter-spacing: 0.0625rem;
   -ms-letter-spacing: 0.0625rem;
@@ -20,9 +20,6 @@ exports[`Tag renders 1`] = `
   line-height: 1;
   color: var(--txt);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
 }
 
 <span
