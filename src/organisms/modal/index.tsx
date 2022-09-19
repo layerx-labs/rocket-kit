@@ -29,14 +29,15 @@ const Modal = (props: ModalProps) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const modalHeight: HTMLElement | null =
-        document.querySelector('div.modal');
+      const modalHeight: HTMLElement | null = document.querySelector(
+        'div.modal'
+      );
 
       modalHeight && modalHeight.offsetHeight + 60 > window.innerHeight
         ? setOverflow(true)
         : setOverflow(false);
 
-      const resizeWindow = throttle(function () {
+      const resizeWindow = throttle(function() {
         modalHeight && modalHeight.offsetHeight + 60 > window.innerHeight
           ? setOverflow(true)
           : setOverflow(false);
@@ -69,11 +70,12 @@ const Modal = (props: ModalProps) => {
               {title && <h2>{title}</h2>}
 
               <Button
-                variant="outline"
-                color="grey"
+                color="white"
+                txtColor="grey200"
                 icon="cross"
                 ariaLabel="Close"
                 action={hide}
+                rounded
               />
             </Styles.ModalHeader>
 

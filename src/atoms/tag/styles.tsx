@@ -19,15 +19,12 @@ export const TagWrapper = styled.span<TagWrapperProps>`
   border-radius: ${rem('4px')};
   background-color: ${props =>
     props.variant === 'solid' ? 'var(--bg)' : 'transparent'};
-  max-width: ${rem('150px')};
   padding: ${rem('3px')} ${rem('8px')};
   font-size: ${rem('12px')};
   font-weight: ${typography.medium};
+  text-transform: uppercase;
   letter-spacing: ${rem('1px')};
   line-height: 1;
-  color: var(--txt);
+  color: ${props => (props.variant === 'solid' ? 'var(--txt)' : 'var(--bg)')};
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
 `;

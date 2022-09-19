@@ -9,8 +9,16 @@ interface CheckboxWrapperProps extends CheckboxErrorProps {
   disabled?: boolean;
 }
 
-const { normal, light, green, darkGreen, red, darkRed, grey, lightGrey } =
-  colors;
+const {
+  normal,
+  light,
+  green,
+  darkGreen,
+  red,
+  darkRed,
+  grey,
+  lightGrey,
+} = colors;
 
 export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   display: flex;
@@ -43,7 +51,7 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   opacity: 0;
   cursor: pointer;
 
-  &:checked:not(:disabled) ~ span {
+  &:checked:not(:disabled)[aria-checked='true'] ~ span {
     background-color: ${props => (props.error ? red : green)};
     border-color: ${props => (props.error ? darkRed : darkGreen)};
 
@@ -52,7 +60,7 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
     }
   }
 
-  &:checked:disabled ~ span {
+  &:checked:disabled[aria-checked='true'] ~ span {
     border-color: transparent;
     background-color: ${lightGrey};
     color: ${grey};

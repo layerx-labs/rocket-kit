@@ -50,14 +50,14 @@
     "trailingComma": "es5",
     "arrowParens": "avoid"
   },
-  "module": "dist/taikai-design-system.esm.js",
+  "module": "dist/rocket-kit.esm.js",
   "size-limit": [
     {
-      "path": "dist/taikai-design-system.cjs.production.min.js",
+      "path": "dist/rocket-kit.cjs.production.min.js",
       "limit": "30 KB"
     },
     {
-      "path": "dist/taikai-design-system.esm.js",
+      "path": "dist/rocket-kit.esm.js",
       "limit": "30 KB"
     }
   ],

@@ -36,7 +36,7 @@ const ButtonLink = (props: ButtonLinkProps) => {
     blank = false,
     rel = undefined,
     value = '',
-    iconPosition = 'right',
+    iconPosition = 'left',
     icon = '',
     dataTestId = '',
     eventId = '',
