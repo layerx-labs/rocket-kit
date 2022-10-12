@@ -80,6 +80,7 @@ exports[`Checkbox renders 1`] = `
 }
 
 .c3:after {
+  display: block;
   content: '';
   position: absolute;
   display: none;
@@ -94,6 +95,38 @@ exports[`Checkbox renders 1`] = `
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.c3.checked.not-disabled {
+  background-color: #56cad7;
+  border-color: #2ba8b6;
+}
+
+.c3.checked.not-disabled:after {
+  display: block;
+}
+
+.c3.checked.disabled {
+  color: #939393;
+  border-color: transparent;
+  background-color: #c4c7d3;
+}
+
+.c3.checked.disabled:after {
+  display: block;
+}
+
+.c3.not-checked.disabled {
+  border-color: #c4c7d3;
+  background-color: #ffffff;
+}
+
+.c3.not-disabled:hover {
+  border-color: #2ba8b6;
+}
+
+.c3.not-disabled:hover:checked ~ span {
+  border-color: #2ba8b6;
 }
 
 <label
@@ -112,7 +145,7 @@ exports[`Checkbox renders 1`] = `
       type="checkbox"
     />
     <span
-      class="c3"
+      class="c3 checked not-disabled"
     />
   </label>
 </DocumentFragment>
