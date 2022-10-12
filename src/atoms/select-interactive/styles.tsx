@@ -26,6 +26,7 @@ export const SelectWrapper = styled.div`
     }
 
     &__value-container {
+      display: flex;
       align-items: center;
       padding: 0 ${rem('15px')};
     }
@@ -91,6 +92,10 @@ export const SelectWrapper = styled.div`
 
   .select__value-container.select__value-container--is-multi > div {
     align-items: stretch;
+
+    .select__multi-value__remove {
+      padding-right: 0;
+    }
   }
 
   .select__value-container,

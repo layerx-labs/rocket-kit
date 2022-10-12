@@ -1,6 +1,5 @@
 import React from 'react';
 import Select from 'react-select';
-
 import ErrorField from '../error-field';
 import {
   CustomSelectOption,
@@ -27,7 +26,6 @@ const SelectInteractive = ({
 }: SelectInteractiveProps<TSelectInteractiveOption>) => {
   return (
     <Styles.SelectWrapper {...rest}>
-      {/* @ts-ignore */}
       <Select
         name={name}
         value={value}
