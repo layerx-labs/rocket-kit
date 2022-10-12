@@ -151,17 +151,17 @@ export const SelectInteractiveCustomComponent = (
     {
       value: 'chocolate',
       label: 'Chocolate',
-      customImage: <img src="./images/default-avatar.svg" alt="" />,
+      customImage: '/images/default-avatar.svg',
     },
     {
       value: 'strawberry',
       label: 'Strawberry',
-      customImage: <img src="./images/default-avatar.svg" alt="" />,
+      customImage: '/images/default-avatar.svg',
     },
     {
       value: 'vanilla',
       label: 'Vanilla',
-      customImage: <img src="./images/default-avatar.svg" alt="" />,
+      customImage: '/images/default-avatar.svg',
     },
   ];
 

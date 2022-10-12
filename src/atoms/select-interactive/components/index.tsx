@@ -33,7 +33,7 @@ export const CustomSelectOption = (props: TCustomOptions, commonProps: any) => (
     {props.data.icon ? (
       <Icon icon={props.data.icon} />
     ) : props.data.customImage ? (
-      props.data.customImage
+      <img src={props.data.customImage} alt={props.data.label} />
     ) : null}
     {props.data.label}
   </Option>
@@ -44,7 +44,7 @@ export const CustomSelectValue = (props: TCustomOptions) => (
     {props.data.icon ? (
       <Icon icon={props.data.icon} />
     ) : props.data.customImage ? (
-      props.data.customImage
+      <img src={props.data.customImage} alt={props.data.label} />
     ) : null}
     {props.data.label}
   </div>
