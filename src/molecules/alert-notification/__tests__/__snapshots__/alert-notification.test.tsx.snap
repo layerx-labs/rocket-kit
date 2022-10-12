@@ -3,18 +3,20 @@
 exports[`AlertNotification renders 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: #56cad7;
+  --bg: #4329A6;
   --txt: #ffffff;
-  --hover: #2ba8b6;
-  --button: #56cad7;
-  --hover: #2ba8b6;
+  --hover: #362185;
+  margin: 0;
   border-width: 0;
   border-style: solid;
-  border-color: var(--button);
+  border-color: var(--bg);
   border-radius: 0;
   background-color: transparent;
-  width: 2.25rem;
-  height: 2rem;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  min-width: 2.625rem;
+  height: 2.625rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -30,6 +32,8 @@ exports[`AlertNotification renders 1`] = `
   padding: 0;
   text-transform: uppercase;
   white-space: nowrap;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
@@ -54,12 +58,13 @@ exports[`AlertNotification renders 1`] = `
 }
 
 .c1:disabled:hover {
+  background-color: transparent;
   pointer-events: none;
 }
 
 .c1 > *:not(:last-child) {
   margin-left: 0;
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 
 .c1 .spinner {
@@ -68,13 +73,14 @@ exports[`AlertNotification renders 1`] = `
 
 .c1 span {
   position: relative;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 500;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  color: var(--button);
+  -webkit-letter-spacing: 0.0625rem;
+  -moz-letter-spacing: 0.0625rem;
+  -ms-letter-spacing: 0.0625rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1rem;
+  color: var(--bg);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -87,10 +93,9 @@ exports[`AlertNotification renders 1`] = `
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  width: auto;
-  min-width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--button);
+  width: 1rem;
+  height: 1rem;
+  fill: var(--bg);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -154,12 +159,6 @@ exports[`AlertNotification renders 1`] = `
   height: 1.25rem;
 }
 
-@media (min-width:1280px) {
-  .c1 {
-    min-width: 2.25rem;
-  }
-}
-
 <div
     class="c0 open"
   >
@@ -169,8 +168,11 @@ exports[`AlertNotification renders 1`] = `
       </span>
     </div>
     <button
+      aria-hidden="false"
       class="c1 button"
-      color="green"
+      color="purple500"
+      data-event=""
+      data-testid=""
       value=""
     >
       <svg

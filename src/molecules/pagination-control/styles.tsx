@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 
 interface PageControlProps {
   dark?: boolean;
 }
 
 const { normal, light, blue, lightGrey } = colors;
-const { bold } = fontWeight;
+const { bold } = typography;
 
 export const PaginationWrapper = styled.div<PageControlProps>`
   --size: ${rem('30px')};

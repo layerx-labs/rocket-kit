@@ -2,7 +2,7 @@ import React from 'react';
 import { Spinner } from '../../src';
 
 export default {
-  title: 'Design System/Atoms/Spinner',
+  title: 'Components/Atoms/Spinner',
   component: Spinner,
   argTypes: {
     fill: { control: 'color' },

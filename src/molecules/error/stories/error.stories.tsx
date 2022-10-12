@@ -2,7 +2,7 @@ import React from 'react';
 import Error, { ErrorProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/Error',
+  title: 'Components/Molecules/Error',
   component: Error,
   argTypes: {
     variant: {

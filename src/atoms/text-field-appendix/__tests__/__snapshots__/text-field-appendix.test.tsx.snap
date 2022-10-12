@@ -16,7 +16,7 @@ exports[`TextField Appendix renders 1`] = `
 }
 
 .c2:focus {
-  border-color: #4329a6;
+  border-color: #4329A6;
   outline: none;
 }
 
@@ -85,6 +85,11 @@ exports[`TextField Appendix renders 1`] = `
   flex: 1;
   border: 0;
   color: #000000;
+}
+
+.c0 input:disabled {
+  margin: 0;
+  border-radius: 0;
 }
 
 .c0 + span {

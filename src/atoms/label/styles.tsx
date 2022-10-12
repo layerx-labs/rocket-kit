@@ -1,9 +1,9 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 
 const { grey } = colors;
-const { bold } = fontWeight;
+const { bold } = typography;
 
 export const LabelStyle = styled.label`
   display: flex;

@@ -35,22 +35,22 @@ exports[`CheckboxGroup renders 1`] = `
   cursor: pointer;
 }
 
-.c3:checked:not(:disabled) ~ span {
+.c3:checked:not(:disabled)[aria-checked='true'] ~ span {
   background-color: #56cad7;
   border-color: #2ba8b6;
 }
 
-.c3:checked:not(:disabled) ~ span:after {
+.c3:checked:not(:disabled)[aria-checked='true'] ~ span:after {
   display: block;
 }
 
-.c3:checked:disabled ~ span {
+.c3:checked:disabled[aria-checked='true'] ~ span {
   border-color: transparent;
   background-color: #c4c7d3;
   color: #939393;
 }
 
-.c3:checked:disabled ~ span:after {
+.c3:checked:disabled[aria-checked='true'] ~ span:after {
   display: block;
 }
 

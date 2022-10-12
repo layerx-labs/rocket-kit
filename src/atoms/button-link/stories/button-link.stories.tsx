@@ -1,44 +1,40 @@
 import React from 'react';
 import ButtonLink, { ButtonLinkProps } from '..';
 import icons from '../../../ions/icons';
+import { colors } from '../../../ions/variables';
 
 export default {
-  title: 'Design System/Atoms/Button',
+  title: 'Components/Atoms/Button',
   component: ButtonLink,
   argTypes: {
-    color: {
-      control: {
-        type: 'select',
-        options: [
-          'green',
-          'orange',
-          'red',
-          'grey',
-          'purple',
-          'blue',
-          'white',
-          'dark',
-          'magic',
-          'pulse',
-        ],
-      },
-    },
     variant: {
       control: {
         type: 'inline-radio',
         options: ['solid', 'outline', 'text'],
       },
     },
-    icon: {
+    color: {
       control: {
         type: 'select',
-        options: Object.keys(icons),
+        options: Object.keys(colors),
+      },
+    },
+    txtColor: {
+      control: {
+        type: 'select',
+        options: Object.keys(colors),
       },
     },
     iconPosition: {
       control: {
-        type: 'select',
+        type: 'inline-radio',
         options: ['left', 'right'],
+      },
+    },
+    icon: {
+      control: {
+        type: 'select',
+        options: ['', ...Object.keys(icons)],
       },
     },
   },
@@ -50,18 +46,17 @@ export const ButtonLinkComponent = (args: ButtonLinkProps) => (
 
 ButtonLinkComponent.storyName = 'Link';
 ButtonLinkComponent.args = {
-  value: 'Dummie',
   variant: 'solid',
-  color: 'green',
-  circle: false,
+  rounded: false,
+  color: 'purple500',
+  txtColor: 'white',
   className: 'button',
-  querySelector: '.button',
-  ariaLabel: 'Dummie Button',
-  disabled: false,
-  loading: false,
-  icon: 'rocket',
-  iconPosition: 'left',
-  rel: 'noopener',
-  url: 'https://github.com/taikai/taikai-design-system',
+  url: 'https://github.com/taikai/rocket-kit',
   blank: false,
+  rel: 'noopener',
+  value: 'Dummie',
+  iconPosition: 'right',
+  icon: '',
+  ariaLabel: 'Dummie Button',
+  ariaHidden: false,
 };

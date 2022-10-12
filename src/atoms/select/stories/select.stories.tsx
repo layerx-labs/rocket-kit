@@ -2,7 +2,7 @@ import React from 'react';
 import Select, { SelectProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/Select',
+  title: 'Components/Atoms/Select',
   component: Select,
   argTypes: {
     minimal: {

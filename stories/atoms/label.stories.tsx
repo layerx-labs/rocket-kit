@@ -2,7 +2,7 @@ import React from 'react';
 import { Label } from '../../src';
 
 export default {
-  title: 'Design System/Atoms/Label',
+  title: 'Components/Atoms/Label',
   component: Label,
 };
 
@@ -21,4 +21,3 @@ LabelComponent.args = {
   kai: false,
   value: 'Stats',
 };
-

@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import { rem, rgba } from 'polished';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
 interface ModalStyleBaseProps {
@@ -9,7 +9,7 @@ interface ModalStyleBaseProps {
 }
 
 const { light } = colors;
-const { bold } = fontWeight;
+const { bold } = typography;
 
 export const ModalOverlay = styled.div<ModalStyleBaseProps>`
   position: fixed;
@@ -84,13 +84,11 @@ export const ModalHeader = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    margin: ${rem('-18px')} ${rem('-18px')} 0 0;
-    background-color: ${light};
+    margin: ${rem('-14px')} ${rem('-14px')} 0 0;
+    border: ${rem('2px')} solid ${colors.grey200};
+    min-width: ${rem('28px')};
+    height: ${rem('28px')};
     z-index: 1;
-
-    &:hover {
-      background-color: ${light};
-    }
 
     @media ${device.s} {
       display: inherit;

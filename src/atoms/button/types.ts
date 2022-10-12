@@ -1,13 +1,5 @@
-export type ButtonVariant = 'solid' | 'outline' | 'text';
+import { colors as allColors } from '../../ions/variables';
 
-export type ButtonColor =
-  | 'green'
-  | 'orange'
-  | 'red'
-  | 'grey'
-  | 'purple'
-  | 'white'
-  | 'dark'
-  | 'blue'
-  | 'magic'
-  | 'pulse';
+export const colors = Object.keys(allColors);
+export type ButtonVariant = 'solid' | 'outline' | 'text';
+export type ButtonColor = typeof colors[number];

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 
 interface DataWarningProps {
   type: 'login' | 'data';
 }
 
 const { normal, green } = colors;
-const { bold } = fontWeight;
+const { bold } = typography;
 
 export const Wrapper = styled.div<DataWarningProps>`
   min-height: 50vh;

@@ -2,7 +2,7 @@ import React from 'react';
 import { NoteCard } from '../../src';
 
 export default {
-  title: 'Design System/Molecules/Note Card',
+  title: 'Components/Molecules/Note Card',
   component: NoteCard,
   argTypes: {
     color: {

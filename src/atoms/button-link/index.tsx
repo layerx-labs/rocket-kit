@@ -1,44 +1,47 @@
 import React, { CSSProperties } from 'react';
 import { Icon } from '../..';
-import { useMouseMoveEffect } from '../../utils/hooks/use-mouse-move-effect';
 import { ButtonColor, ButtonVariant } from '../button/types';
 import * as Styles from './styles';
 
 export interface ButtonLinkProps {
+  variant?: ButtonVariant;
+  rounded?: boolean;
+  color?: ButtonColor;
+  txtColor?: ButtonColor;
+  className?: string;
+  style?: CSSProperties;
+  action?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
   url: string;
   blank?: boolean;
-  variant?: ButtonVariant;
-  circle?: boolean;
-  color?: ButtonColor;
+  rel?: string;
   value?: string;
-  className?: string;
-  querySelector?: string;
-  ariaLabel?: string;
-  action?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  iconPosition?: 'left' | 'right';
+  icon?: string;
   dataTestId?: string;
   eventId?: string;
-  icon?: string;
-  iconPosition?: 'left' | 'right';
-  style?: CSSProperties;
-  rel?: string;
+  ariaLabel?: string;
+  ariaHidden?: boolean;
 }
 
 const ButtonLink = (props: ButtonLinkProps) => {
   const {
     variant = 'solid',
-    color = 'green',
-    querySelector = '.button-link',
+    rounded = false,
+    color = 'purple500',
+    txtColor = 'white',
     className = 'button-link',
+    style,
+    action = () => {},
     url,
     blank = false,
-    icon = '',
-    iconPosition = 'left',
+    rel = undefined,
     value = '',
-    action = () => {},
+    iconPosition = 'left',
+    icon = '',
     dataTestId = '',
     eventId = '',
-    style,
-    rel = undefined,
+    ariaLabel = '',
+    ariaHidden = false,
   } = props;
 
   const getRelationshipAttributes = () => {
@@ -46,22 +49,24 @@ const ButtonLink = (props: ButtonLinkProps) => {
     return blank ? 'noopener noreferrer' : '';
   };
 
-  useMouseMoveEffect({ querySelector });
-
   return (
     <Styles.ButtonLinkStyle
       variant={variant}
+      rounded={rounded}
       color={color}
+      txtColor={txtColor}
       className={`button ${className}`}
+      style={style}
+      onClick={action}
       href={url}
       target={blank ? '_blank' : ''}
+      rel={getRelationshipAttributes()}
       value={value}
-      onClick={action}
+      iconPosition={iconPosition}
       data-testid={dataTestId}
       data-event={eventId}
-      style={style}
-      iconPosition={iconPosition}
-      rel={getRelationshipAttributes()}
+      aria-label={ariaLabel}
+      aria-hidden={ariaHidden}
     >
       {icon && <Icon icon={icon} />}
       {value && <span>{value}</span>}

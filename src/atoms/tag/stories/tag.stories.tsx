@@ -1,14 +1,21 @@
 import React from 'react';
 import Tag, { TagProps } from '..';
+import { colors } from '../../../ions/variables';
 
 export default {
-  title: 'Design System/Atoms/Tag',
+  title: 'Components/Atoms/Tag',
   component: Tag,
   argTypes: {
     color: {
       control: {
         type: 'select',
-        options: ['green', 'orange', 'red', 'grey', 'light'],
+        options: Object.keys(colors),
+      },
+    },
+    txtColor: {
+      control: {
+        type: 'select',
+        options: Object.keys(colors),
       },
     },
     variant: {
@@ -25,7 +32,8 @@ export const TagPrimaryComponent = (args: TagProps) => <Tag {...args} />;
 TagPrimaryComponent.storyName = 'Simple';
 
 TagPrimaryComponent.args = {
-  color: 'grey',
+  color: 'purple500',
+  txtColor: 'white',
   variant: 'solid',
   value: 'Burgdoggen',
 };

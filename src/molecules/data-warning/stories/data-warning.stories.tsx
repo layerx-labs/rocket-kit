@@ -2,7 +2,7 @@ import React from 'react';
 import DataWarning, { DataWarningProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/DataWarning',
+  title: 'Components/Molecules/DataWarning',
   component: DataWarning,
   argTypes: {
     type: {

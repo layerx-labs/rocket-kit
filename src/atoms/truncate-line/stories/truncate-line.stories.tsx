@@ -2,7 +2,7 @@ import React from 'react';
 import TruncateLine, { TruncateLineProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/Truncate Line',
+  title: 'Components/Atoms/Truncate Line',
   component: TruncateLine,
 };
 

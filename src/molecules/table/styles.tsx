@@ -1,13 +1,14 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, fontWeight } from '../../ions/variables';
+import { colors, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
 const { normal, light, grey, lightGrey } = colors;
-const { bold } = fontWeight;
+const { bold } = typography;
 
-interface BorderProps {
+interface TableProps {
   border?: boolean;
+  loadingState?: boolean;
 }
 
 export const TableWrapper = styled.div`
@@ -47,14 +48,18 @@ export const OverflowWrapper = styled.div`
   }
 `;
 
-export const Table = styled.table<BorderProps>`
+export const Table = styled.table<TableProps>`
   width: 100%;
-  border-width: ${props => (props.border ? '1px' : '0')};
+  border-width: 0;
   border-style: solid;
   border-color: ${grey};
   border-radius: ${rem('6px')};
   border-spacing: 0;
   white-space: nowrap;
+
+  @media ${device.s} {
+    border-width: ${props => (props.border ? rem('1px') : '0')};
+  }
 
   th,
   td {
@@ -152,7 +157,8 @@ export const Table = styled.table<BorderProps>`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: ${lightGrey};
+        background-color: ${props =>
+          props.loadingState ? 'transparent' : lightGrey};
 
         td.menu {
           button {
@@ -173,6 +179,7 @@ export const Table = styled.table<BorderProps>`
       padding: ${rem('15px')};
       display: flex;
       justify-content: flex-end;
+      align-items: center;
 
       > div {
         margin-left: ${rem('100px')};
@@ -215,6 +222,28 @@ export const Table = styled.table<BorderProps>`
         content: attr(data-label);
         font-weight: ${bold};
         text-transform: capitalize;
+
+        ${props =>
+          props.loadingState &&
+          css`
+            width: ${rem('75px')};
+            height: ${rem('15px')};
+            background: #f6f7f8;
+            background-image: -webkit-linear-gradient(
+              left,
+              #f6f7f8 0%,
+              #edeef1 20%,
+              #f6f7f8 40%,
+              #f6f7f8 100%
+            );
+            background-repeat: no-repeat;
+            background-size: ${rem('800px')} 100%;
+            animation-fill-mode: forwards;
+            animation-name: placeholderSkeleton;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 1.5s;
+          `}
       }
 
       &.kai {
@@ -256,7 +285,6 @@ export const Table = styled.table<BorderProps>`
         display: table-cell;
         height: ${rem('50px')};
         padding: 0 ${rem('15px')};
-        align-items: center;
 
         > div {
           position: relative;
@@ -306,4 +334,33 @@ export const Table = styled.table<BorderProps>`
       }
     }
   }
+`;
+
+export const SkeletonCell = styled.div`
+  @keyframes placeholderSkeleton {
+    0% {
+      background-position: ${rem('-800px')} 0;
+    }
+    100% {
+      background-position: ${rem('800px')} 0;
+    }
+  }
+
+  width: 100%;
+  height: ${rem('15px')} !important;
+  background: #f6f7f8;
+  background-image: -webkit-linear-gradient(
+    left,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: ${rem('800px')} 100%;
+  animation-fill-mode: forwards;
+  animation-name: placeholderSkeleton;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
 `;

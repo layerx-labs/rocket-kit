@@ -3,20 +3,20 @@
 exports[`Modal Footer renders 1`] = `
 <DocumentFragment>
   .c1 {
-  --button: #56cad7;
+  --bg: #939393;
   --txt: #ffffff;
-  --hover: #2ba8b6;
-  --button: #939393;
-  --hover: #7a7a7a;
-  border-width: 3px;
+  --hover: #939393;
+  margin: 0;
+  border-width: 0.0625rem;
   border-style: solid;
-  border-color: var(--button);
-  border-radius: 999px;
+  border-color: var(--bg);
+  border-radius: 0.5rem;
   background-color: transparent;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: 2rem;
+  min-width: 5rem;
+  height: 2.625rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29,9 +29,11 @@ exports[`Modal Footer renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0 1.25rem;
+  padding: 0 1.75rem;
   text-transform: uppercase;
   white-space: nowrap;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
@@ -56,12 +58,13 @@ exports[`Modal Footer renders 1`] = `
 }
 
 .c1:disabled:hover {
+  background-color: transparent;
   pointer-events: none;
 }
 
 .c1 > *:not(:last-child) {
   margin-left: 0;
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 
 .c1 .spinner {
@@ -70,13 +73,14 @@ exports[`Modal Footer renders 1`] = `
 
 .c1 span {
   position: relative;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 500;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  color: var(--button);
+  -webkit-letter-spacing: 0.0625rem;
+  -moz-letter-spacing: 0.0625rem;
+  -ms-letter-spacing: 0.0625rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1rem;
+  color: var(--bg);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -89,29 +93,28 @@ exports[`Modal Footer renders 1`] = `
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  width: auto;
-  min-width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--button);
+  width: 1rem;
+  height: 1rem;
+  fill: var(--bg);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
 .c2 {
-  --button: #56cad7;
+  --bg: #4329A6;
   --txt: #ffffff;
-  --hover: #2ba8b6;
-  --button: #56cad7;
-  --hover: #2ba8b6;
+  --hover: #362185;
+  margin: 0;
   border-width: 0;
   border-style: solid;
-  border-color: var(--button);
-  border-radius: 999px;
-  background-color: var(--button);
+  border-color: var(--bg);
+  border-radius: 0.5rem;
+  background-color: var(--bg);
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  height: 2rem;
+  min-width: 5rem;
+  height: 2.625rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -124,9 +127,11 @@ exports[`Modal Footer renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0 1.25rem;
+  padding: 0 1.75rem;
   text-transform: uppercase;
   white-space: nowrap;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
@@ -142,22 +147,24 @@ exports[`Modal Footer renders 1`] = `
 }
 
 .c2:disabled:hover {
+  background-color: var(--bg);
   pointer-events: none;
 }
 
 .c2 > *:not(:last-child) {
   margin-left: 0;
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 
 .c2 span {
   position: relative;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 500;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
+  -webkit-letter-spacing: 0.0625rem;
+  -moz-letter-spacing: 0.0625rem;
+  -ms-letter-spacing: 0.0625rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1rem;
   color: var(--txt);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
@@ -171,9 +178,8 @@ exports[`Modal Footer renders 1`] = `
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  width: auto;
-  min-width: 1.25rem;
-  height: 1.25rem;
+  width: 1rem;
+  height: 1rem;
   fill: var(--txt);
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -201,18 +207,6 @@ exports[`Modal Footer renders 1`] = `
   margin-right: 0.3125rem;
 }
 
-@media (min-width:1280px) {
-  .c1 {
-    min-width: 6.25rem;
-  }
-}
-
-@media (min-width:1280px) {
-  .c2 {
-    min-width: 6.25rem;
-  }
-}
-
 @media (min-width:700px) {
   .c0 {
     -webkit-box-pack: end;
@@ -226,8 +220,11 @@ exports[`Modal Footer renders 1`] = `
     class="c0 modal-footer"
   >
     <button
+      aria-hidden="false"
       class="c1 button"
       color="grey"
+      data-event=""
+      data-testid=""
       value="Cancel"
     >
       <span>
@@ -235,8 +232,11 @@ exports[`Modal Footer renders 1`] = `
       </span>
     </button>
     <button
+      aria-hidden="false"
       class="c2 button"
-      color="green"
+      color="purple500"
+      data-event=""
+      data-testid=""
       type="submit"
       value="save"
     >

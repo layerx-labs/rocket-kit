@@ -7,36 +7,46 @@ import { ActionMenu } from './types';
 
 export interface ActionsMenuInterface<T> {
   variant?: ButtonVariant;
+  rounded?: boolean;
   color?: ButtonColor;
-  value: string;
-  icon?: string;
+  txtColor?: ButtonColor;
   className?: string;
   style?: CSSProperties;
-  ariaLabel?: string;
   actions: ActionMenu<T>[];
-  data?: T;
+  value?: string;
+  icon: string;
+  ariaLabel?: string;
+  ariaHidden?: boolean;
   dataTestId?: string;
+  eventId?: string;
+  data?: T;
   startsOpen?: boolean;
   disabled?: boolean;
 }
 
 const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
   const {
-    className = 'button-dropdown',
     variant = 'solid',
-    color = 'green',
-    value = '',
-    icon = 'keyboardDown',
-    ariaLabel = '',
+    rounded = false,
+    color = 'purple500',
+    txtColor = 'white',
+    className = 'button-dropdown',
+    style,
     actions = [],
-    data = null,
+    value = '',
+    icon = 'add',
     dataTestId = 'action-button-dropdown',
+    eventId = '',
+    ariaLabel = '',
+    ariaHidden = false,
+    data = null,
     startsOpen = false,
     disabled = false,
   } = props;
 
-  const { ref, isVisible, setIsVisible } =
-    useVisible<HTMLDivElement>(startsOpen);
+  const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
+    startsOpen
+  );
 
   if (!actions || !Array.isArray(actions) || actions.length === 0) return <></>;
 
@@ -49,21 +59,26 @@ const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
   return (
     <Styles.ActionsMenuStyle
       className={className}
+      style={style}
       visibleActions={visibleActions.length}
       ref={ref}
     >
       <Button
         variant={variant}
+        rounded={rounded}
         color={color}
-        value={value}
-        icon={icon}
-        iconPosition="right"
-        ariaLabel={ariaLabel}
+        txtColor={txtColor}
         action={evt => {
           evt.preventDefault();
           setIsVisible(!isVisible);
         }}
-        dataTestId={dataTestId}
+        value={value}
+        iconPosition="right"
+        icon={icon}
+        data-testid={dataTestId}
+        data-event={eventId}
+        ariaLabel={ariaLabel}
+        aria-hidden={ariaHidden}
         disabled={disabled}
       />
 

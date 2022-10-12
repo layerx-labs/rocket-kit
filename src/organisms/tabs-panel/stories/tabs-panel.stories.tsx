@@ -3,7 +3,7 @@ import { TabsPanelProps } from '..';
 import TabsPanel from '..';
 
 export default {
-  title: 'Design System/Organisms/Navigation',
+  title: 'Components/Organisms/Navigation',
   component: TabsPanel,
   argTypes: {},
 };

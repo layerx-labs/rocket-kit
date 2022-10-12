@@ -2,30 +2,17 @@ import React from 'react';
 import * as Styles from './styles';
 
 export interface LoadingStateProps {
-  type: 'text' | 'card' | 'table' | 'value';
+  type: 'text' | 'card' | 'value';
   lines?: number;
   cardsNumber?: number;
-  header?: boolean;
-  columnsNumber?: number;
-  rowsNumber?: number;
   center?: boolean;
 }
 
 const LoadingState = (props: LoadingStateProps) => {
-  const {
-    type = 'text',
-    lines = 3,
-    cardsNumber = 4,
-    header = true,
-    columnsNumber = 4,
-    rowsNumber = 3,
-    center = true,
-  } = props;
+  const { type = 'text', lines = 3, cardsNumber = 4, center = true } = props;
 
   let paragraphs = [];
   let cards = [];
-  let tableHeader = [];
-  let columns = [];
   let loadingType;
 
   for (let i = 0; i < lines; i++) {
@@ -46,14 +33,6 @@ const LoadingState = (props: LoadingStateProps) => {
     );
   }
 
-  for (let i = 0; i < columnsNumber; i++) {
-    tableHeader.push(<div key={i} className="header"></div>);
-  }
-
-  for (let i = 0; i < columnsNumber * rowsNumber; i++) {
-    columns.push(<div key={i} className="cell"></div>);
-  }
-
   switch (type) {
     case 'text':
       loadingType = (
@@ -69,17 +48,6 @@ const LoadingState = (props: LoadingStateProps) => {
 
     case 'card':
       loadingType = <Styles.Grid center={center}>{cards}</Styles.Grid>;
-      break;
-
-    case 'table':
-      loadingType = (
-        <div>
-          <Styles.Table className="table" columnsNumber={columnsNumber}>
-            {header && tableHeader}
-            {columns}
-          </Styles.Table>
-        </div>
-      );
       break;
 
     case 'value':

@@ -2,7 +2,7 @@ import React from 'react';
 import RadioGroup, { RadioGroupProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/RadioGroup',
+  title: 'Components/Molecules/RadioGroup',
   component: RadioGroup,
   argTypes: {
     type: {

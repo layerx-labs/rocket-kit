@@ -1,65 +1,66 @@
 import React, { CSSProperties } from 'react';
 import { Icon, Spinner } from '../..';
-import { useMouseMoveEffect } from '../../utils/hooks/use-mouse-move-effect';
 import * as Styles from './styles';
 import { ButtonColor, ButtonVariant } from './types';
 
 export interface ButtonProps {
   variant?: ButtonVariant;
-  circle?: boolean;
+  rounded?: boolean;
   color?: ButtonColor;
-  value?: string;
+  txtColor?: ButtonColor;
+  type?: 'submit' | 'reset' | 'button';
   className?: string;
-  querySelector?: string;
-  ariaLabel?: string;
+  style?: CSSProperties;
   action?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  disabled?: boolean;
+  value?: string;
+  iconPosition?: 'left' | 'right';
+  icon?: string;
   loading?: boolean;
+  ariaLabel?: string;
+  ariaHidden?: boolean;
   dataTestId?: string;
   eventId?: string;
-  icon?: string;
-  iconPosition?: 'left' | 'right';
-  style?: CSSProperties;
-  type?: 'submit' | 'reset' | 'button';
+  disabled?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
   const {
     variant = 'solid',
-    circle = false,
-    color = 'green',
-    value = '',
-    className = 'button',
-    querySelector = '.button',
-    ariaLabel,
-    action = () => {},
-    disabled = false,
-    loading = false,
-    dataTestId,
-    eventId,
-    icon = '',
-    iconPosition = 'left',
-    style,
+    rounded = false,
+    color = 'purple500',
+    txtColor = 'white',
     type,
+    className = 'button',
+    style,
+    action = () => {},
+    value = '',
+    iconPosition = 'left',
+    icon = '',
+    loading = false,
+    dataTestId = '',
+    eventId = '',
+    ariaLabel,
+    ariaHidden = false,
+    disabled = false,
   } = props;
-
-  useMouseMoveEffect({ querySelector });
 
   return (
     <Styles.ButtonWrapper
       variant={variant}
+      rounded={rounded}
       color={color}
-      circle={circle}
+      txtColor={txtColor}
+      type={type}
       className={className}
-      value={value}
-      aria-label={ariaLabel}
+      style={style}
       onClick={action}
-      disabled={disabled || loading}
+      value={value}
+      iconPosition={iconPosition}
       data-testid={dataTestId}
       data-event={eventId}
-      style={style}
-      type={type}
-      iconPosition={iconPosition}
+      aria-label={ariaLabel}
+      aria-hidden={ariaHidden}
+      disabled={disabled || loading}
     >
       {loading ? <Spinner /> : icon ? <Icon icon={icon} /> : null}
       {value && <span>{value}</span>}

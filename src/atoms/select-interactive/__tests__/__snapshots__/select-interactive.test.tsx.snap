@@ -14,11 +14,11 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__control:hover {
-  border-color: #4329a6;
+  border-color: #4329A6;
 }
 
 .c0 .select__control--is-focused {
-  border-color: #4329a6;
+  border-color: #4329A6;
   box-shadow: none;
 }
 
@@ -69,12 +69,12 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__option:hover {
-  background-color: #4329a6;
+  background-color: #4329A6;
   color: #ffffff;
 }
 
 .c0 .select__option--is-focused {
-  background-color: #4329a6;
+  background-color: #4329A6;
   color: #ffffff;
 }
 

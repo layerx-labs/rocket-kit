@@ -9,7 +9,7 @@ export interface TSelectInteractiveOption {
 
 export interface TOptions extends TSelectInteractiveOption {
   icon?: string;
-  customImage?: React.ReactNode;
+  customImage?: string;
 }
 
 export interface TCustomOptions {
