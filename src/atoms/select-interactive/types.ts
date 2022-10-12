@@ -1,5 +1,5 @@
 import { MapHTMLAttributes, ReactNode } from 'react';
-import { NamedProps } from 'react-select/src/Select';
+import NamedProps from 'react-select/dist/declarations/src/Select';
 
 export interface TSelectInteractiveOption {
   value: string;

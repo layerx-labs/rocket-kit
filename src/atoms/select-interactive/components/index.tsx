@@ -2,16 +2,17 @@ import React from 'react';
 import Icon from '../../icon';
 import Tag from '../../tag';
 import { components } from 'react-select';
-import { TCustomOptions, TOptions } from '../types';
-import { formatGroupLabel } from 'react-select/src/builtins';
+import { TCustomOptions, TSelectInteractiveOption } from '../types';
 import * as Styles from '../styles';
+
+export interface GroupBase {
+  options: readonly TSelectInteractiveOption[];
+  label?: string;
+}
 
 const { Option } = components;
 
-export const FormatGroupLabel: formatGroupLabel<TOptions> = ({
-  label,
-  options,
-}) => {
+export const FormatGroupLabel = (props: GroupBase) => {
   return (
     <div
       style={{
@@ -21,9 +22,9 @@ export const FormatGroupLabel: formatGroupLabel<TOptions> = ({
       }}
     >
       <Styles.SelectGroupLabel className="selective-options-group-label">
-        {label}
+        {props.label}
       </Styles.SelectGroupLabel>
-      <Tag value={`${options?.length}`} />
+      <Tag value={`${props.options?.length}`} />
     </div>
   );
 };
