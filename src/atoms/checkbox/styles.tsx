@@ -95,6 +95,7 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   transition-duration: 0.3s;
 
   &:after {
+    display: block;
     content: '';
     position: absolute;
     display: none;
@@ -107,5 +108,37 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+
+  &.checked.not-disabled {
+    background-color: ${props => (props.error ? red : green)};
+    border-color: ${props => (props.error ? darkRed : darkGreen)};
+
+    &:after {
+      display: block;
+    }
+  }
+
+  &.checked.disabled {
+    color: ${grey};
+    border-color: transparent;
+    background-color: ${lightGrey};
+
+    &:after {
+      display: block;
+    }
+  }
+
+  &.not-checked.disabled {
+    border-color: ${lightGrey};
+    background-color: ${light};
+  }
+
+  &.not-disabled:hover {
+    border-color: ${props => (props.error ? darkRed : darkGreen)};
+
+    &:checked ~ span {
+      border-color: ${props => (props.error ? darkRed : darkGreen)};
+    }
   }
 `;

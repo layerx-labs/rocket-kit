@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useMemo, useRef, useState } from 'react';
 import {
   CheckboxWrapper,
   CheckboxLabel,
@@ -19,19 +19,45 @@ interface Props {
   required?: boolean;
 }
 
-const Checkbox = (props: Props) => {
-  const {
-    label,
-    value,
-    checked = false,
-    onChange = () => {},
-    error = false,
-    disabled = false,
-    className = 'checkbox',
-    style,
-    dataTestId,
-    required = false,
-  } = props;
+const Checkbox = ({
+  label,
+  value,
+  checked = false,
+  onChange = () => {},
+  error = false,
+  disabled = false,
+  className = 'checkbox',
+  style,
+  dataTestId,
+  required = false,
+}: Props) => {
+  const checkedRef = useRef<boolean>(checked);
+  const [isChecked, setIsChecked] = useState(checked);
+
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsChecked(prev => !prev);
+    onChange(event);
+  };
+
+  const checkmarkClassName = useMemo(() => {
+    let isCheckStr = '';
+    let isDisabledStr = '';
+
+    // if they are different
+    // use the value coming from the props
+    // as it is the source of truth
+    if (checked !== checkedRef.current) {
+      setIsChecked(checked);
+      checkedRef.current = checked;
+      isCheckStr = checked ? 'checked' : 'not-checked';
+    } else if (isChecked) isCheckStr = 'checked';
+    else isCheckStr = 'not-checked';
+
+    if (disabled) isDisabledStr = 'disabled';
+    else isDisabledStr = 'not-disabled';
+
+    return `${isCheckStr} ${isDisabledStr}`;
+  }, [checked, isChecked, disabled]);
 
   return (
     <CheckboxWrapper
@@ -44,15 +70,15 @@ const Checkbox = (props: Props) => {
       <CheckboxInput
         type="checkbox"
         name={value}
-        defaultChecked={checked}
-        aria-checked={checked}
-        onChange={onChange}
+        defaultChecked={isChecked}
+        aria-checked={isChecked}
+        onChange={handleOnChange}
         error={error}
         disabled={disabled}
         data-testid={dataTestId}
         required={required}
       />
-      <Checkmark />
+      <Checkmark className={checkmarkClassName} error={error} />
     </CheckboxWrapper>
   );
 };
