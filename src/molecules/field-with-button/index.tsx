@@ -43,8 +43,10 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
   } = props;
 
   return (
-    <Styles.Wrapper>
-      {label && <Label value={label} />}
+    <Styles.Wrapper data-testid={dataTestId}>
+      {label && (
+        <Label dataTestId={dataTestId?.concat('-label')} value={label} />
+      )}
 
       <Styles.Field>
         <TextField
