@@ -52,6 +52,7 @@ const RadioGroup = (props: RadioGroupProps) => {
               checked={value.checked}
               onChange={onChange}
               disabled={value.disabled || disabled}
+              data-testid={dataTestId?.concat(`-input-${index + 1}`)}
             />
             <label htmlFor={`radio-${group}-${index}`}>{value.label}</label>
             <div className="check" />
