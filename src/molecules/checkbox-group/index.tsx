@@ -23,6 +23,7 @@ export interface CheckboxGroupProps {
   error?: string;
   onChange?: () => {};
   disabled?: boolean;
+  dataTestId?: string;
 }
 
 const CheckboxGroup = (props: CheckboxGroupProps) => {
@@ -33,6 +34,7 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
     onChange,
     error,
     disabled,
+    dataTestId,
   } = props;
 
   return (
@@ -49,6 +51,7 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
                 onChange={onChange}
                 error={!!error}
                 disabled={disabled}
+                dataTestId={dataTestId?.concat(`-option-${index + 1}`)}
               />
             </li>
           ))

@@ -66,7 +66,9 @@ const Checkbox = ({
       error={error}
       disabled={disabled}
     >
-      <CheckboxLabel>{label}</CheckboxLabel>
+      <CheckboxLabel data-testid={dataTestId?.concat('-label')}>
+        {label}
+      </CheckboxLabel>
       <CheckboxInput
         type="checkbox"
         name={value}
@@ -79,7 +81,7 @@ const Checkbox = ({
         required={required}
       />
       <Checkmark
-        data-testid={dataTestId ? `${dataTestId}-mark` : undefined}
+        data-testid={dataTestId?.concat('-mark')}
         className={checkmarkClassName}
         error={error}
       />
