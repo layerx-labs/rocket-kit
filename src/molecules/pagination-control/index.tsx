@@ -11,6 +11,7 @@ export interface PageControlProps {
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
   ariaLabelBuilder?: any;
+  dataTestId?: string;
 }
 
 const PaginationControl = (props: PageControlProps) => {
@@ -23,6 +24,7 @@ const PaginationControl = (props: PageControlProps) => {
     hrefBuilder = () => {},
     onPageChange = () => {},
     ariaLabelBuilder = () => {},
+    dataTestId,
   } = props;
 
   useEffect(() => {
@@ -40,7 +42,7 @@ const PaginationControl = (props: PageControlProps) => {
   });
 
   return (
-    <Styles.PaginationWrapper>
+    <Styles.PaginationWrapper data-testid={dataTestId}>
       {/* @ts-ignore */}
       <ReactPaginate
         containerClassName={dark ? 'dark pagination' : 'pagination'}
