@@ -8,6 +8,7 @@ export interface AlertNotificationProps {
   variant?: 'success' | 'orange' | 'red';
   value: string;
   children?: React.ReactNode;
+  dataTestId?: string;
   closeAction?: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
@@ -20,10 +21,15 @@ const AlertNotification = (props: AlertNotificationProps) => {
     closeAction = () => {},
     value,
     children,
+    dataTestId,
   } = props;
 
   return (
-    <Styles.Wrapper className={className} variant={variant}>
+    <Styles.Wrapper
+      data-testid={dataTestId}
+      className={className}
+      variant={variant}
+    >
       <div>{value ? <span>{value}</span> : children}</div>
       <Button variant="text" icon="cross" action={closeAction} />
     </Styles.Wrapper>
