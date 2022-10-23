@@ -9,6 +9,7 @@ interface NoteCardProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   className?: string;
   style?: CSSProperties;
+  dataTestId?: string;
 }
 
 const NoteCard = (props: NoteCardProps) => {
@@ -19,6 +20,7 @@ const NoteCard = (props: NoteCardProps) => {
     onClick,
     className = 'note-card',
     style,
+    dataTestId,
   } = props;
 
   return (
@@ -27,9 +29,10 @@ const NoteCard = (props: NoteCardProps) => {
       color={color}
       buttonValue={buttonValue}
       style={style}
+      data-testid={dataTestId}
     >
       <div>
-        <p>{value}</p>
+        <p data-testid={dataTestId?.concat('-value')}>{value}</p>
       </div>
       {buttonValue && onClick && (
         <div>
