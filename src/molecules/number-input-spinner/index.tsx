@@ -11,6 +11,7 @@ export interface NumberInputSpinnerProps {
   value?: number;
   onChange?: (value: number) => void;
   disabled?: boolean;
+  dataTestId?: string;
 }
 
 const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
@@ -23,6 +24,7 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
     value = 0,
     onChange,
     disabled = false,
+    dataTestId,
   } = props;
   const isFirstRender = useRef(true);
   const [number, setNumber] = useState(value);
@@ -43,8 +45,9 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
   };
 
   return (
-    <Styles.Wrapper>
+    <Styles.Wrapper data-testid={dataTestId}>
       <Styles.Button
+        data-testid={dataTestId?.concat('-dec')}
         className="remove-button"
         aria-label={decreaseAriaLabel}
         onClick={evt => {
@@ -56,6 +59,7 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
         <Icon icon="remove" />
       </Styles.Button>
       <Styles.Input
+        data-testid={dataTestId?.concat('-textbox')}
         type="number"
         min={min}
         max={max}
@@ -67,6 +71,7 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
         disabled={disabled}
       />
       <Styles.Button
+        data-testid={dataTestId?.concat('-inc')}
         className="add-button"
         aria-label={increaseAriaLabel}
         onClick={evt => {
