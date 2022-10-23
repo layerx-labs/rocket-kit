@@ -1,5 +1,9 @@
+import { ComponentStory } from '@storybook/react';
+import { expect } from '@storybook/jest';
+import { within } from '@testing-library/react';
 import React from 'react';
 import Select, { SelectProps } from '..';
+import { userEvent } from '@storybook/testing-library';
 
 export default {
   title: 'Components/Atoms/Select',
@@ -25,7 +29,9 @@ const options = [
   { value: 'option_3', name: 'Option 3' },
 ];
 
-export const SelectComponent = (args: SelectProps) => {
+export const SelectComponent: ComponentStory<typeof Select> = (
+  args: SelectProps
+) => {
   return <Select {...args} />;
 };
 
@@ -38,4 +44,19 @@ SelectComponent.args = {
   options: options,
   error: '',
   disabled: false,
+  dataTestId: 'select',
+};
+SelectComponent.play = ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const select = canvas.getByTestId('select');
+
+  // Make sure no optin is selected by default
+  expect(select).toHaveValue('');
+  expect(select).toHaveDisplayValue('Select One');
+
+  userEvent.selectOptions(select, 'option_1');
+  expect(select).toHaveDisplayValue('Option 1');
+
+  userEvent.selectOptions(select, 'option_2');
+  expect(select).toHaveDisplayValue('Option 2');
 };

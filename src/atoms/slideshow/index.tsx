@@ -11,6 +11,7 @@ export interface SlideshowProps {
   interval?: number;
   dynamicHeight?: boolean;
   slideSelected?: number;
+  dataTestId?: string;
   children: any;
 }
 
@@ -23,11 +24,12 @@ const Slideshow = (props: SlideshowProps) => {
     interval = 5000,
     dynamicHeight = true,
     slideSelected = 0,
+    dataTestId,
     children,
   } = props;
 
   return (
-    <Styles.Wrapper slidesNumber={slidesNumber}>
+    <Styles.Wrapper data-testid={dataTestId} slidesNumber={slidesNumber}>
       <Carousel
         showArrows={showArrows}
         showStatus={false}
@@ -46,6 +48,7 @@ const Slideshow = (props: SlideshowProps) => {
         renderArrowPrev={(onClickHandler, hasPrev) =>
           hasPrev && (
             <Button
+              dataTestId={dataTestId?.concat('-prev')}
               className="previous"
               variant="text"
               ariaLabel="Previous"
@@ -57,6 +60,7 @@ const Slideshow = (props: SlideshowProps) => {
         renderArrowNext={(onClickHandler, hasNext) =>
           hasNext && (
             <Button
+              dataTestId={dataTestId?.concat('-next')}
               className="next"
               variant="text"
               ariaLabel="Next"

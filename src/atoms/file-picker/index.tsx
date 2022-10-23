@@ -38,7 +38,6 @@ const FilePicker = (props: FilePickerProps) => {
 
   const getUploadedFileName = (e: React.ChangeEvent<HTMLInputElement>) => {
     let files = e.target.files,
-      value = e.target.value,
       fileName;
     if (files && files.length > 1) fileName = `${files.length} ${pluralText}`;
     else fileName = value.split('\\').pop();
@@ -60,7 +59,10 @@ const FilePicker = (props: FilePickerProps) => {
         data-testid={dataTestId}
       />
 
-      <label htmlFor={name}>
+      <label
+        data-testid={dataTestId ? `${dataTestId}-label` : undefined}
+        htmlFor={name}
+      >
         <span className="file-name">{fileName}</span>
         <span className="button">
           <Icon icon="upload" />

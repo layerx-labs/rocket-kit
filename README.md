@@ -58,6 +58,13 @@ import { screen } from '@testing-library/react';
 screen.logTestingPlaygroundURL();
 ```
 
+### Interactions and Storybook tests
+Interaction tests run automatically when you browse around in the storybook UI.
+
+You can also run all of the tests by starting the storybook and then running `npm run test-storybook`.
+
+Github actions are also defined for these tests in `storybook-tests.yml`.
+
 ### Bundle analysis
 
 Calculates the real cost of your library using [size-limit](https://github.com/ai/size-limit) with `npm run size` and visulize it with `npm run analyze`.

@@ -9,6 +9,7 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-links',
     'storybook-addon-designs',
+    '@storybook/addon-interactions',
   ],
   // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
   typescript: {

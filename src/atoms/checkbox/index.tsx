@@ -78,7 +78,11 @@ const Checkbox = ({
         data-testid={dataTestId}
         required={required}
       />
-      <Checkmark className={checkmarkClassName} error={error} />
+      <Checkmark
+        data-testid={dataTestId ? `${dataTestId}-mark` : undefined}
+        className={checkmarkClassName}
+        error={error}
+      />
     </CheckboxWrapper>
   );
 };

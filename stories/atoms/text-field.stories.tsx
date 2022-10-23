@@ -1,3 +1,5 @@
+import { fireEvent, userEvent, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 import React from 'react';
 import { TextField } from '../../src';
 import icons from '../../src/ions/icons';
@@ -39,6 +41,36 @@ TextComponent.args = {
   disabled: false,
   required: false,
 };
+TextComponent.play = async ({ canvasElement }) => {
+  // Make sure that it is unckecked before any interaction
+  const canvas = within(canvasElement);
+  await expect(canvas.getByRole('textbox')).toBeVisible();
+
+  // Make sure placeholder is visible
+  await expect(canvas.getByRole('textbox')).toHaveAttribute(
+    'placeholder',
+    'Awesome Placeholder'
+  );
+
+  await expect(canvas.getByRole('textbox')).not.toHaveFocus();
+  const nonSelectedBorderColor = getComputedStyle(
+    canvas.getByRole('textbox')
+  ).borderColor;
+  userEvent.click(canvas.getByRole('textbox'));
+  await expect(canvas.getByRole('textbox')).toHaveFocus();
+  const selectedBorderColor = getComputedStyle(
+    canvas.getByRole('textbox')
+  ).borderColor;
+  await expect(nonSelectedBorderColor).not.toEqual(selectedBorderColor);
+
+  // Make sure that entered text is visible
+  await userEvent.type(canvas.getByRole('textbox'), 'testinput');
+  await expect(canvas.getByRole('textbox')).toHaveTextContent('testinput');
+
+  // clear out the textbox
+  await userEvent.clear(canvas.getByRole('textbox'));
+  await expect(canvas.getByRole('textbox')).toBeEmpty();
+};
 
 export const TextDefaultComponent = args => <TextField {...args} />;
 
@@ -51,6 +83,14 @@ TextDefaultComponent.args = {
   placeholder: 'Awesome Placeholder',
   onChange: () => {},
   disabled: false,
+};
+TextDefaultComponent.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  // Make sure placeholder is visible
+  await expect(canvas.getByRole('textbox')).toHaveValue(
+    'awesome-input-default'
+  );
 };
 
 export const DisabledComponent = args => <TextField {...args} />;
@@ -65,6 +105,21 @@ DisabledComponent.args = {
   onChange: () => {},
   disabled: true,
 };
+DisabledComponent.play = async ({ canvasElement }) => {
+  const textField = within(canvasElement).getByRole('textbox');
+  // Make sure that it is not possible to enter text in a disabled textfield
+  userEvent.type(textField, 'asdfasdfasdf');
+  expect(textField).toHaveValue(undefined);
+
+  // Make sure that it is not focusable
+  userEvent.click(textField);
+  expect(textField).not.toHaveFocus();
+
+  // expect it to be grayed out
+  expect(getComputedStyle(textField).backgroundColor).toEqual(
+    'rgb(196, 199, 211)'
+  );
+};
 
 export const TextFullBorderComponent = args => <TextField {...args} />;
 
@@ -76,6 +131,15 @@ TextFullBorderComponent.args = {
   placeholder: 'Awesome Placeholder',
   onChange: () => {},
   disabled: false,
+};
+TextFullBorderComponent.play = ({ canvasElement }) => {
+  const textField = within(canvasElement).getByRole('textbox');
+  const css = getComputedStyle(textField);
+  // expect it to have a full border
+  expect(css.borderWidth.match(/(\d+)/).map(Number)[0]).toBeGreaterThan(0);
+  expect(css.borderTop).toEqual(css.borderRight);
+  expect(css.borderRight).toEqual(css.borderBottom);
+  expect(css.borderBottom).toEqual(css.borderLeft);
 };
 
 export const TextIconComponent = args => <TextField {...args} />;
@@ -90,6 +154,18 @@ TextIconComponent.args = {
   onChange: () => {},
   disabled: false,
 };
+TextIconComponent.play = async ({ canvasElement }) => {
+  const textField = within(canvasElement).getByRole('textbox');
+
+  // Make sure it has an icon as a background image
+  const initialIcon = getComputedStyle(textField).backgroundImage;
+  expect(initialIcon).not.toEqual('none');
+
+  // make sure it changes icon to one with color when in focus
+  userEvent.click(textField);
+  const selectedIcon = getComputedStyle(textField).backgroundImage;
+  expect(selectedIcon).not.toEqual(initialIcon);
+};
 
 export const UrlComponent = args => <TextField {...args} />;
 
@@ -102,6 +178,20 @@ UrlComponent.args = {
   onChange: () => {},
   disabled: false,
 };
+UrlComponent.play = ({ canvasElement }) => {
+  const textField = within(canvasElement).getByRole('textbox');
+
+  // expect it to be invalid when a non url string is entered
+  userEvent.type(textField, 'not a url');
+  expect(textField).toBeInvalid();
+  userEvent.clear(textField);
+
+  // expect it to not show an error when a url string is entered
+  userEvent.type(textField, 'https://taikai.network');
+  expect(textField).toBeValid();
+
+  userEvent.clear(textField);
+};
 
 export const PasswordComponent = args => <TextField {...args} />;
 
@@ -113,6 +203,7 @@ PasswordComponent.args = {
   placeholder: 'Type your password here',
   onChange: () => {},
   disabled: false,
+  dataTestId: 'password',
 };
 
 export const DateComponent = args => <TextField {...args} />;
