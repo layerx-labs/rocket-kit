@@ -12,6 +12,7 @@ const Toggle = ({
   checked = false,
   disabled = false,
   isLabelVisible = false,
+  dataTestId,
   onClick = () => {},
   ...rest
 }: ToggleProps) => {
@@ -64,6 +65,7 @@ const Toggle = ({
             disabled={disabled}
             aria-checked={!state}
             aria-label={ariaLabelOff}
+            data-testid={dataTestId?.concat('-switch-off')}
             onChange={() => handleClick(false)}
           />
           <input
@@ -72,12 +74,17 @@ const Toggle = ({
             className="switch-on"
             id={`${id}-switch-on`}
             checked={state}
+            data-testid={dataTestId?.concat('-switch-on')}
             disabled={disabled}
             aria-checked={state}
             aria-label={ariaLabelOn}
             onChange={() => handleClick(true)}
           />
-          <span aria-hidden="true" className="bg" />
+          <span
+            aria-hidden="true"
+            data-testid={dataTestId?.concat('-bg')}
+            className="bg"
+          />
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label
             aria-hidden="true"

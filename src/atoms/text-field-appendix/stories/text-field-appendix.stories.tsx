@@ -1,3 +1,6 @@
+import { ComponentStory } from '@storybook/react';
+import { within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
 import React from 'react';
 import TextFieldAppendix, { TextFieldAppendixProps } from '..';
 
@@ -14,9 +17,9 @@ export default {
   },
 };
 
-export const TextFieldPrependComponent = (args: TextFieldAppendixProps) => (
-  <TextFieldAppendix {...args} />
-);
+export const TextFieldPrependComponent: ComponentStory<
+  typeof TextFieldAppendix
+> = (args: TextFieldAppendixProps) => <TextFieldAppendix {...args} />;
 
 TextFieldPrependComponent.storyName = 'Prepend';
 
@@ -29,11 +32,19 @@ TextFieldPrependComponent.args = {
   onChange: () => {},
   error: '',
   disabled: false,
+  dataTestId: 'textfield',
 };
 
-export const TextFieldAppendComponent = (args: TextFieldAppendixProps) => (
-  <TextFieldAppendix {...args} />
-);
+TextFieldPrependComponent.play = ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const append = canvas.getByTestId('textfield-prepend');
+  expect(append).toBeVisible();
+  expect(append).toHaveTextContent('https://taikai.network/');
+};
+
+export const TextFieldAppendComponent: ComponentStory<
+  typeof TextFieldAppendix
+> = (args: TextFieldAppendixProps) => <TextFieldAppendix {...args} />;
 
 TextFieldAppendComponent.storyName = 'Append';
 
@@ -46,4 +57,12 @@ TextFieldAppendComponent.args = {
   onChange: () => {},
   error: '',
   disabled: false,
+  dataTestId: 'textfield',
+};
+
+TextFieldAppendComponent.play = ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const append = canvas.getByTestId('textfield-append');
+  expect(append).toBeVisible();
+  expect(append).toHaveTextContent('@taikai.network');
 };

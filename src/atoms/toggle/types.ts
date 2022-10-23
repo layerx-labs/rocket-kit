@@ -15,4 +15,6 @@ export interface ToggleProps
   isLabelVisible: boolean;
   ariaLabelOn?: string;
   ariaLabelOff?: string;
+
+  dataTestId?: string;
 }

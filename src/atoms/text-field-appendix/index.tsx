@@ -47,7 +47,11 @@ const TextFieldAppendix = (props: TextFieldAppendixProps) => {
     <>
       <Styles.Wrapper className={className} error={error}>
         {prepend && (
-          <Styles.Appendix error={error} position="left">
+          <Styles.Appendix
+            data-testid={dataTestId?.concat('-prepend')}
+            error={error}
+            position="left"
+          >
             <span>{prepend}</span>
           </Styles.Appendix>
         )}
@@ -67,7 +71,11 @@ const TextFieldAppendix = (props: TextFieldAppendixProps) => {
           required={required}
         />
         {append && (
-          <Styles.Appendix error={error} position="right">
+          <Styles.Appendix
+            data-testid={dataTestId?.concat('-append')}
+            error={error}
+            position="right"
+          >
             <span>{append}</span>
           </Styles.Appendix>
         )}
