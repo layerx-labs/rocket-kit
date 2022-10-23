@@ -21,7 +21,6 @@ export const FieldWidthButtonComponent: ComponentStory<
 
 FieldWidthButtonComponent.storyName = 'FieldWidthButton';
 
-const mockedOnChange = jest.fn();
 const mockedButtonAction = jest.fn();
 FieldWidthButtonComponent.args = {
   label: 'Copy Link',
@@ -29,7 +28,6 @@ FieldWidthButtonComponent.args = {
   disabled: false,
   buttonIcon: 'copy',
   buttonValue: '',
-  onChange: mockedOnChange,
   buttonAction: mockedButtonAction,
   dataTestId: 'field-width',
 };
@@ -46,13 +44,4 @@ FieldWidthButtonComponent.play = async ({ canvasElement }) => {
   expect(mockedButtonAction).toHaveBeenCalledTimes(0);
   userEvent.click(canvas.getByRole('button'));
   expect(mockedButtonAction).toHaveBeenCalledTimes(1);
-
-  expect(mockedOnChange).toHaveBeenCalledTimes(0);
-
-  userEvent.clear(canvas.getByRole('textbox'));
-  userEvent.type(canvas.getByRole('textbox'), 'test');
-
-  expect(mockedOnChange).toHaveBeenCalledTimes(5);
-
-  userEvent.type(canvas.getByRole('textbox'), 'https://taikai.network');
 };

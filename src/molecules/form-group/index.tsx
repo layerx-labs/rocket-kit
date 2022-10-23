@@ -7,14 +7,19 @@ export interface FormGroupProps {
   label: string;
   error?: boolean;
   children: React.ReactNode;
+  dataTestId?: string;
 }
 
 const FormGroup = (props: FormGroupProps) => {
-  const { label, kai = false, error = false, children } = props;
+  const { label, kai = false, error = false, children, dataTestId } = props;
 
   return (
     <Styles.Wrapper error={error}>
-      <Label value={label} kai={kai} />
+      <Label
+        dataTestId={dataTestId?.concat('-label')}
+        value={label}
+        kai={kai}
+      />
       {children}
     </Styles.Wrapper>
   );
