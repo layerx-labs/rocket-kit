@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 import { userEvent, within } from '@storybook/testing-library';
-import { jest, expect } from '@storybook/jest';
+import { expect } from '@storybook/jest';
 import React from 'react';
 import CheckboxGroup, { CheckboxGroupProps } from '..';
 

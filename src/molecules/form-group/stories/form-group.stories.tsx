@@ -2,7 +2,7 @@ import React from 'react';
 import FormGroup from '..';
 import { TextField } from '../../../';
 import { FormGroupProps } from '..';
-import { within } from '@storybook/testing-library';
+import { userEvent, within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 import { ComponentStory } from '@storybook/react';
 
@@ -28,7 +28,11 @@ export const FormGroupComponent: ComponentStory<typeof FormGroup> = (
 ) => {
   return (
     <FormGroup {...args}>
-      <TextField minimal={false} placeholder="Awesome Placeholder" />
+      <TextField
+        dataTestId="textfield"
+        minimal={false}
+        placeholder="Awesome Placeholder"
+      />
     </FormGroup>
   );
 };
@@ -42,5 +46,13 @@ FormGroupComponent.args = {
 };
 FormGroupComponent.play = ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  expect(canvas.getByTestId('form-label')).toHaveValue('Awesome Label');
+  expect(canvas.getByTestId('form-label')).toHaveTextContent('Awesome Label');
+
+  // make sure children are visible and editable
+  expect(canvas.getByTestId('textfield')).toBeVisible();
+  userEvent.type(canvas.getByTestId('textfield'), 'hello');
+  expect(canvas.getByTestId('textfield')).toHaveValue('hello');
+
+  // reset textfield to default
+  userEvent.clear(canvas.getByTestId('textfield'));
 };

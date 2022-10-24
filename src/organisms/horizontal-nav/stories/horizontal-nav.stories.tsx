@@ -1,4 +1,7 @@
-import React from 'react';
+import { ComponentStory } from '@storybook/react';
+import { userEvent, within } from '@storybook/testing-library';
+import { expect, jest } from '@storybook/jest';
+import React, { MouseEventHandler } from 'react';
 import HorizontalNav, { HorizontalNavInterface } from '..';
 import { Icon } from '../../..';
 
@@ -10,6 +13,13 @@ export default {
   },
 };
 
+const mockedActionDetection = jest.fn();
+const mockedAction: (label: string) => MouseEventHandler<HTMLAnchorElement> =
+  (actionLabel: string) => event => {
+    event.preventDefault();
+    event.stopPropagation();
+    mockedActionDetection(actionLabel);
+  };
 const menu = [
   {
     icon: 'overview',
@@ -58,11 +68,6 @@ const menu = [
     url: '#0',
   },
   {
-    icon: 'kai',
-    label: 'Transactions',
-    url: '#0',
-  },
-  {
     icon: 'trophy',
     label: 'Results',
     url: '#0',
@@ -71,15 +76,32 @@ const menu = [
 
 const items = menu.map((item, index) => (
   <li key={index} className={item.active ? 'active' : undefined}>
-    <a href={item.url}>
+    <a href={item.url} onClick={mockedAction(item.label)}>
       {item.icon && <Icon icon={item.icon} />}
       {item.label}
     </a>
   </li>
 ));
 
-export const HorizontalNavComponent = (args: HorizontalNavInterface) => {
+export const HorizontalNavComponent: ComponentStory<typeof HorizontalNav> = (
+  args: HorizontalNavInterface
+) => {
   return <HorizontalNav {...args} />;
+};
+HorizontalNavComponent.play = async ({ canvasElement }) => {
+  const canvas = await within(canvasElement);
+
+  // Make sure all the items are visible
+  // and clickable (except for the first one, bc it is already selected)
+  for (const item of menu.slice(1, 2)) {
+    await expect(canvas.getByText(item.label)).toBeVisible();
+    await expect(canvas.getByText(item.label)).toHaveAttribute(
+      'href',
+      item.url
+    );
+    await userEvent.click(canvas.getByText(item.label));
+    await expect(mockedActionDetection).toHaveBeenCalledWith(item.label);
+  }
 };
 
 HorizontalNavComponent.storyName = 'Horizontal Nav';

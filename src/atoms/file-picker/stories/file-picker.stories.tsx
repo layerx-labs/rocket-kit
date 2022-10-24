@@ -1,8 +1,7 @@
 import React from 'react';
 import FilePicker, { FilePickerProps } from '..';
 import { ComponentStory } from '@storybook/react';
-import { fireEvent, userEvent, within } from '@storybook/testing-library';
-import { waitFor } from '@testing-library/react';
+import { userEvent, within } from '@storybook/testing-library';
 import { expect, jest } from '@storybook/jest';
 
 export default {
@@ -42,7 +41,7 @@ FilePickerComponent.play = async ({ canvasElement }) => {
   userEvent.upload(filepicker, file);
 
   // check if the file is there
-  expect(canvas.getByTestId('filepicker-label')).toHaveDisplayValue(
+  expect(canvas.getByTestId('filepicker-label')).toHaveTextContent(
     'taikai.png'
   );
 

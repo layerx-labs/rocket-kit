@@ -39,8 +39,14 @@ const FilePicker = (props: FilePickerProps) => {
   const getUploadedFileName = (e: React.ChangeEvent<HTMLInputElement>) => {
     let files = e.target.files,
       fileName;
-    if (files && files.length > 1) fileName = `${files.length} ${pluralText}`;
-    else fileName = value.split('\\').pop();
+    if (files && files.length > 1) {
+      fileName = `${files.length} ${pluralText}`;
+    } else if (files && files.length === 1) {
+      fileName = files[0].name;
+    } else {
+      fileName = value.split('\\').pop();
+    }
+
     if (fileName) setFileName(fileName);
   };
 

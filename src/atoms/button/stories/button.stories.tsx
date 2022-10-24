@@ -2,7 +2,7 @@ import React from 'react';
 import Button, { ButtonProps } from '..';
 import icons from '../../../ions/icons';
 import { colors } from '../../../ions/variables';
-import { userEvent, within } from '@storybook/testing-library';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
 import { expect, jest } from '@storybook/jest';
 import { ComponentStory } from '@storybook/react';
 
@@ -68,17 +68,15 @@ ButtonComponent.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
 
   // Make sure that color changes during hover
-  const initialColor = getComputedStyle(
-    canvas.getByRole('button')
-  ).backgroundColor;
-  userEvent.hover(canvas.getByRole('button'));
-  const hoverColor = getComputedStyle(
-    canvas.getByRole('button')
-  ).backgroundColor;
-  expect(hoverColor).not.toEqual(initialColor);
+  const background = getComputedStyle(canvas.getByRole('button'));
+  const hoveroBackground = getComputedStyle(
+    canvas.getByRole('button'),
+    ':hover'
+  );
+  expect(background).not.toEqual(hoveroBackground);
 
   // Make sure that it triggers click event when clicked
-  expect(actionFn).not.toHaveBeenCalled();
+  expect(actionFn).toHaveBeenCalledTimes(0);
   userEvent.click(canvas.getByRole('button'));
-  expect(actionFn).toHaveBeenCalled();
+  expect(actionFn).toHaveBeenCalledTimes(1);
 };

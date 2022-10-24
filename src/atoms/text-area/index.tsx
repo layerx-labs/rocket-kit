@@ -61,8 +61,11 @@ const TextArea = (props: TextAreaProps) => {
         data-testid={dataTestId}
       />
 
-      {charactersCount != undefined && (
-        <Styles.Count minimal={minimal}>
+      {charactersCount !== undefined && (
+        <Styles.Count
+          data-testid={dataTestId?.concat('-count')}
+          minimal={minimal}
+        >
           <span className={charactersCount < 0 ? 'negative' : ''}>
             {charactersCount}
           </span>

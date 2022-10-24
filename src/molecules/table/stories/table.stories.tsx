@@ -3,6 +3,9 @@ import Table from '..';
 import Tag from '../../../atoms/tag';
 import { AvatarImage } from '../../..';
 import { ActionMenu } from '../../actions-menu/types';
+import { ComponentStory } from '@storybook/react';
+import { userEvent, within } from '@storybook/testing-library';
+import { expect, jest } from '@storybook/jest';
 
 export interface TableProps {
   border?: boolean;
@@ -45,11 +48,17 @@ export default {
   },
 };
 
+const mockedAction = jest.fn();
+const onClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  event.preventDefault();
+  mockedAction();
+};
 const actions: ActionMenu<Transaction>[] = [
   {
     id: 'actionDetails',
     type: 'default',
     value: 'Go to Details',
+    action: onClick,
   },
   {
     id: 'actionDelete',
@@ -137,7 +146,9 @@ const rows: Transaction[] = [
   },
 ];
 
-export const TableComponent = (args: TableProps) => (
+export const TableComponent: ComponentStory<typeof Table> = (
+  args: TableProps
+) => (
   <Table<Transaction>
     options={columns}
     values={rows}
@@ -153,10 +164,27 @@ TableComponent.args = {
   loadingColumns: 4,
   loadingRows: 6,
 };
+TableComponent.play = ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  expect(canvas.queryAllByTestId(`td-header-amount-id`)).toHaveLength(4);
+  expect(canvas.getAllByRole('columnheader')).toHaveLength(6);
+
+  userEvent.hover(canvas.getByText(/To the Moon/i));
+  userEvent.click(canvas.getByTestId('icon-button-2'));
+  expect(
+    canvas.getAllByTestId('li-action-menu-actionDetails')[0]
+  ).toBeVisible();
+  expect(canvas.getAllByTestId('li-action-menu-actionDelete')[0]).toBeVisible();
+  expect(mockedAction).toBeCalledTimes(0);
+  userEvent.click(canvas.getByText('Go to Details'));
+  expect(mockedAction).toBeCalledTimes(1);
+};
 
 const emptyRows: Transaction[] = [];
 
-export const TableEmptyComponent = (args: TableProps) => (
+export const TableEmptyComponent: ComponentStory<typeof Table> = (
+  args: TableProps
+) => (
   <Table<Transaction>
     options={columns}
     values={emptyRows}
@@ -167,3 +195,11 @@ export const TableEmptyComponent = (args: TableProps) => (
 
 TableEmptyComponent.storyName = 'Empty Table';
 TableEmptyComponent.args = {};
+TableEmptyComponent.play = ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  expect(canvas.getByText('Amount')).toBeInTheDocument();
+  expect(canvas.getByText('Type')).toBeInTheDocument();
+  expect(canvas.getByText('Created')).toBeInTheDocument();
+
+  expect(canvas.getByText(/no data/i)).toBeInTheDocument();
+};

@@ -12,6 +12,7 @@ export interface ModalProps {
   closeValue?: string;
   footer: boolean;
   zIndex?: number;
+  dataTestId?: string;
 }
 
 const Modal = (props: ModalProps) => {
@@ -23,21 +24,21 @@ const Modal = (props: ModalProps) => {
     closeValue = 'Close',
     footer = false,
     zIndex = 10,
+    dataTestId,
   } = props;
 
   const [overflow, setOverflow] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const modalHeight: HTMLElement | null = document.querySelector(
-        'div.modal'
-      );
+      const modalHeight: HTMLElement | null =
+        document.querySelector('div.modal');
 
       modalHeight && modalHeight.offsetHeight + 60 > window.innerHeight
         ? setOverflow(true)
         : setOverflow(false);
 
-      const resizeWindow = throttle(function() {
+      const resizeWindow = throttle(function () {
         modalHeight && modalHeight.offsetHeight + 60 > window.innerHeight
           ? setOverflow(true)
           : setOverflow(false);
@@ -82,7 +83,11 @@ const Modal = (props: ModalProps) => {
             {children}
 
             {footer && (
-              <ModalFooter closeAction={hide} closeValue={closeValue} />
+              <ModalFooter
+                dataTestId={dataTestId?.concat('-footer')}
+                closeAction={hide}
+                closeValue={closeValue}
+              />
             )}
           </Styles.ModalContainer>
         </Styles.ModalWrapper>

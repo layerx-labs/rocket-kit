@@ -1,11 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 import { expect } from '@storybook/jest';
-import {
-  fireEvent,
-  userEvent,
-  waitFor,
-  within,
-} from '@storybook/testing-library';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
 import React from 'react';
 import Toggle from '../index';
 import { ToggleProps } from '../types';
@@ -35,8 +30,8 @@ ToggleComponent.play = async ({ canvasElement }) => {
   const bgSpan = canvas.getByTestId('toggle-bg');
 
   // Make sure that it is on
-  await expect(switchOn).toBeChecked();
-  await expect(switchOff).not.toBeChecked();
+  expect(switchOn).toBeChecked();
+  expect(switchOff).not.toBeChecked();
   const bgColorOn = getComputedStyle(bgSpan).backgroundColor;
 
   // toggle to off
@@ -54,10 +49,10 @@ ToggleComponent.play = async ({ canvasElement }) => {
 
       // make sure color has changed
       await expect(bgColorOff).not.toEqual(bgColorOn);
-
-      // switch back on
-      await userEvent.click(switchOn);
     },
     { timeout: 300 }
   );
+
+  // switch back on
+  userEvent.click(switchOn);
 };

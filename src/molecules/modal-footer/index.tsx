@@ -30,6 +30,7 @@ const ModalFooter = (props: ModalFooterProps) => {
       style={style}
     >
       <Button
+        dataTestId={dataTestId?.concat('-button')}
         variant="outline"
         color="grey"
         action={closeAction}

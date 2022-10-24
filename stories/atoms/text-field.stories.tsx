@@ -1,4 +1,9 @@
-import { fireEvent, userEvent, within } from '@storybook/testing-library';
+import {
+  fireEvent,
+  userEvent,
+  waitFor,
+  within,
+} from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 import React from 'react';
 import { TextField } from '../../src';
@@ -44,32 +49,40 @@ TextComponent.args = {
 TextComponent.play = async ({ canvasElement }) => {
   // Make sure that it is unckecked before any interaction
   const canvas = within(canvasElement);
-  await expect(canvas.getByRole('textbox')).toBeVisible();
+  expect(canvas.getByRole('textbox')).toBeVisible();
 
   // Make sure placeholder is visible
-  await expect(canvas.getByRole('textbox')).toHaveAttribute(
+  expect(canvas.getByRole('textbox')).toHaveAttribute(
     'placeholder',
     'Awesome Placeholder'
   );
 
-  await expect(canvas.getByRole('textbox')).not.toHaveFocus();
+  expect(canvas.getByRole('textbox')).not.toHaveFocus();
   const nonSelectedBorderColor = getComputedStyle(
     canvas.getByRole('textbox')
   ).borderColor;
   userEvent.click(canvas.getByRole('textbox'));
-  await expect(canvas.getByRole('textbox')).toHaveFocus();
-  const selectedBorderColor = getComputedStyle(
-    canvas.getByRole('textbox')
-  ).borderColor;
-  await expect(nonSelectedBorderColor).not.toEqual(selectedBorderColor);
+
+  fireEvent.transitionEnd(canvas.getByRole('textbox'));
+
+  expect(canvas.getByRole('textbox')).toHaveFocus();
+  await waitFor(
+    () => {
+      const selectedBorderColor = getComputedStyle(
+        canvas.getByRole('textbox')
+      ).borderColor;
+      expect(nonSelectedBorderColor).not.toEqual(selectedBorderColor);
+    },
+    { timeout: 3000 }
+  );
 
   // Make sure that entered text is visible
-  await userEvent.type(canvas.getByRole('textbox'), 'testinput');
-  await expect(canvas.getByRole('textbox')).toHaveTextContent('testinput');
+  userEvent.type(canvas.getByRole('textbox'), 'testinput');
+  expect(canvas.getByRole('textbox')).toHaveValue('testinput');
 
   // clear out the textbox
-  await userEvent.clear(canvas.getByRole('textbox'));
-  await expect(canvas.getByRole('textbox')).toBeEmpty();
+  userEvent.clear(canvas.getByRole('textbox'));
+  expect(canvas.getByRole('textbox')).toBeEmpty();
 };
 
 export const TextDefaultComponent = args => <TextField {...args} />;
@@ -163,8 +176,13 @@ TextIconComponent.play = async ({ canvasElement }) => {
 
   // make sure it changes icon to one with color when in focus
   userEvent.click(textField);
-  const selectedIcon = getComputedStyle(textField).backgroundImage;
-  expect(selectedIcon).not.toEqual(initialIcon);
+  await waitFor(
+    () => {
+      const selectedIcon = getComputedStyle(textField).backgroundImage;
+      expect(selectedIcon).not.toEqual(initialIcon);
+    },
+    { timeout: 1000 }
+  );
 };
 
 export const UrlComponent = args => <TextField {...args} />;

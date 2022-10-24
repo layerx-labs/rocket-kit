@@ -63,9 +63,8 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
     startsOpen = false,
   } = props;
 
-  const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
-    startsOpen
-  );
+  const { ref, isVisible, setIsVisible } =
+    useVisible<HTMLDivElement>(startsOpen);
 
   const [rowData, setRowData] = useState({});
   const [rowIndex, setRowIndex] = useState<number | undefined>(undefined);
@@ -187,7 +186,9 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
                               setIsVisible(!isVisible);
                               evt.stopPropagation();
                             }}
-                            dataTestId={actionMenuTestId}
+                            dataTestId={actionMenuTestId?.concat(
+                              `-${index + 1}`
+                            )}
                           />
                         </div>
                       </td>
