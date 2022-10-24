@@ -2,7 +2,7 @@ import React from 'react';
 import Button, { ButtonProps } from '..';
 import icons from '../../../ions/icons';
 import { colors } from '../../../ions/variables';
-import { userEvent, waitFor, within } from '@storybook/testing-library';
+import { userEvent, within } from '@storybook/testing-library';
 import { expect, jest } from '@storybook/jest';
 import { ComponentStory } from '@storybook/react';
 
