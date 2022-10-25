@@ -67,14 +67,6 @@ ButtonComponent.args = {
 ButtonComponent.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
 
-  // Make sure that color changes during hover
-  const background = getComputedStyle(canvas.getByRole('button'));
-  const hoveroBackground = getComputedStyle(
-    canvas.getByRole('button'),
-    ':hover'
-  );
-  expect(background).not.toEqual(hoveroBackground);
-
   // Make sure that it triggers click event when clicked
   expect(actionFn).toHaveBeenCalledTimes(0);
   userEvent.click(canvas.getByRole('button'));
