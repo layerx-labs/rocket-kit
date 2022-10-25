@@ -345,7 +345,7 @@ exports[`Actions Menu renders open menu 1`] = `
     >
       <li
         class="default"
-        data-testid="li-action-menu"
+        data-testid="li-action-menu-actionDetails"
       >
         <a
           href=""

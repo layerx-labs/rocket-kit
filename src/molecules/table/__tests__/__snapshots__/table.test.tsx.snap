@@ -547,7 +547,7 @@ exports[`Table renders 1`] = `
                   class="c4 button"
                   color="grey"
                   data-event=""
-                  data-testid="icon-button"
+                  data-testid="icon-button-1"
                   value=""
                 >
                   <svg

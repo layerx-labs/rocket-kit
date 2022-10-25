@@ -325,7 +325,7 @@ describe('TableDnD', () => {
 
     userEvent.hover(screen.getByText(/To the Moon/i));
     userEvent.click(screen.getByTestId('icon-button'));
-    expect(screen.getAllByTestId('li-action-menu')).toHaveLength(2);
+    expect(screen.getAllByTestId(/li-action-menu-.*/)).toHaveLength(2);
     userEvent.click(screen.getByText(actionText));
     expect(onClick).toBeCalledTimes(1);
   });
