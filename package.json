@@ -123,5 +123,10 @@
     "react-select": "^5.4.0",
     "styled-components": "^5.2.1",
     "uuid": "^8.3.2"
+  },
+  "resolutions": {
+    "@types/react": "17.0.1",
+    "@types/react-dom": "17.0.1"
   }
+
 }
