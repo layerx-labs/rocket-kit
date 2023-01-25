@@ -16,6 +16,7 @@ export const Field = styled.div`
 
   input {
     flex: 1;
+    margin-right: 0;
     border-radius: ${rem('6px')} 0 0 ${rem('6px')};
 
     &:focus {
@@ -42,7 +43,6 @@ export const Field = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 ${rem('20px')};
-    text-transform: uppercase;
     white-space: nowrap;
     transition-duration: 0.3s;
     cursor: pointer;

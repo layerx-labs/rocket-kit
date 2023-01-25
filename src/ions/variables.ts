@@ -183,16 +183,15 @@ export const typography = {
   regular: 400,
   medium: 500,
   bold: 700,
-  letterSpacing: rem('1px'),
 };
 
 export const button = {
-  height: rem('42px'),
+  height: rem('44px'),
   borderWidth: rem('1px'),
   borderRadius: rem('8px'),
-  padding: rem('28px'),
-  iconSpacing: rem('8px'),
-  iconSize: rem('16px'),
+  padding: rem('24px'),
+  iconSpacing: rem('14px'),
+  iconSize: rem('20px'),
 }
 
 export const misc = {

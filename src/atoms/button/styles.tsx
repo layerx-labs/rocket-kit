@@ -43,7 +43,6 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
   padding: ${props => (props.value ? `0 ${button.padding}` : 0)};
-  text-transform: uppercase;
   white-space: nowrap;
   text-decoration: none;
   transition-duration: ${misc.transitionDuration};
@@ -90,9 +89,11 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     position: relative;
     font-size: ${rem(typography.defaultSize)};
     font-weight: ${typography.medium};
-    letter-spacing: ${typography.letterSpacing};
     line-height: ${rem(typography.defaultSize)};
-    color: ${props => (props.variant === 'solid' ? 'var(--txt)' : 'var(--bg)')};
+    color: ${props =>
+      props.variant === 'solid' || props.variant === 'outline'
+        ? 'var(--txt)'
+        : 'var(--bg)'};
     pointer-events: none;
     transition-duration: ${misc.transitionDuration};
     order: ${props => (props.iconPosition === 'left' ? 2 : 1)};
@@ -102,7 +103,10 @@ export const ButtonWrapper = styled.button<ButtonProps>`
     order: ${props => (props.iconPosition === 'left' ? 1 : 2)};
     width: ${button.iconSize};
     height: ${button.iconSize};
-    fill: ${props => (props.variant === 'solid' ? 'var(--txt)' : 'var(--bg)')};
+    fill: ${props =>
+      props.variant === 'solid' || props.variant === 'outline'
+        ? 'var(--txt)'
+        : 'var(--bg)'};
     transition: ${misc.transitionDuration};
   }
 `;
