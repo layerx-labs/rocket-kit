@@ -75,7 +75,7 @@ exports[`Modal Footer renders 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1rem;
-  color: var(--bg);
+  color: var(--txt);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -90,7 +90,7 @@ exports[`Modal Footer renders 1`] = `
   order: 1;
   width: 1.25rem;
   height: 1.25rem;
-  fill: var(--bg);
+  fill: var(--txt);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
