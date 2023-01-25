@@ -35,7 +35,7 @@ exports[`Table renders 1`] = `
   width: -moz-min-content;
   width: min-content;
   min-width: 2.625rem;
-  height: 2.625rem;
+  height: 2.75rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -49,7 +49,6 @@ exports[`Table renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0;
-  text-transform: uppercase;
   white-space: nowrap;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -83,7 +82,7 @@ exports[`Table renders 1`] = `
 
 .c4 > *:not(:last-child) {
   margin-left: 0;
-  margin-right: 0.5rem;
+  margin-right: 0.875rem;
 }
 
 .c4 .spinner {
@@ -94,10 +93,6 @@ exports[`Table renders 1`] = `
   position: relative;
   font-size: 1rem;
   font-weight: 500;
-  -webkit-letter-spacing: 0.0625rem;
-  -moz-letter-spacing: 0.0625rem;
-  -ms-letter-spacing: 0.0625rem;
-  letter-spacing: 0.0625rem;
   line-height: 1rem;
   color: var(--bg);
   pointer-events: none;
@@ -112,8 +107,8 @@ exports[`Table renders 1`] = `
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
   fill: var(--bg);
   -webkit-transition: 0.3s;
   transition: 0.3s;

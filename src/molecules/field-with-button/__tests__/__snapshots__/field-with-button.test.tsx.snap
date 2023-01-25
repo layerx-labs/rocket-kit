@@ -16,7 +16,7 @@ exports[`FieldWidthButton renders 1`] = `
   width: -moz-min-content;
   width: min-content;
   min-width: 2.625rem;
-  height: 2.625rem;
+  height: 2.75rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -30,7 +30,6 @@ exports[`FieldWidthButton renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0;
-  text-transform: uppercase;
   white-space: nowrap;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -55,17 +54,13 @@ exports[`FieldWidthButton renders 1`] = `
 
 .c3 > *:not(:last-child) {
   margin-left: 0;
-  margin-right: 0.5rem;
+  margin-right: 0.875rem;
 }
 
 .c3 span {
   position: relative;
   font-size: 1rem;
   font-weight: 500;
-  -webkit-letter-spacing: 0.0625rem;
-  -moz-letter-spacing: 0.0625rem;
-  -ms-letter-spacing: 0.0625rem;
-  letter-spacing: 0.0625rem;
   line-height: 1rem;
   color: var(--txt);
   pointer-events: none;
@@ -80,8 +75,8 @@ exports[`FieldWidthButton renders 1`] = `
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
   fill: var(--txt);
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -170,6 +165,7 @@ exports[`FieldWidthButton renders 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin-right: 0;
   border-radius: 0.375rem 0 0 0.375rem;
 }
 
@@ -207,7 +203,6 @@ exports[`FieldWidthButton renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0 1.25rem;
-  text-transform: uppercase;
   white-space: nowrap;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
