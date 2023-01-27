@@ -32,6 +32,10 @@ const ModalDrawer = (props: ModalDrawerProps) => {
     } else {
       document.documentElement.style.overflow = '';
     }
+
+    return () => {
+      document.documentElement.style.overflow = '';
+    };
   }, [isShowing]);
 
   useEffect(() => {
