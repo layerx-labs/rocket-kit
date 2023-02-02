@@ -3,9 +3,9 @@
 exports[`Modal Footer renders 1`] = `
 <DocumentFragment>
   .c1 {
-  --bg: #939393;
-  --txt: #ffffff;
-  --hover: #939393;
+  --bg: #ABACBA;
+  --txt: #ABACBA;
+  --hover: #8F91A3;
   margin: 0;
   border-width: 0.0625rem;
   border-style: solid;
@@ -212,7 +212,7 @@ exports[`Modal Footer renders 1`] = `
     <button
       aria-hidden="false"
       class="c1 button"
-      color="grey"
+      color="grey300"
       data-event=""
       data-testid=""
       value="Cancel"
