@@ -28,7 +28,7 @@ const ButtonLink = (props: ButtonLinkProps) => {
     variant = 'solid',
     rounded = false,
     color = 'purple500',
-    txtColor = 'white',
+    txtColor,
     className = 'button-link',
     style,
     action = () => {},

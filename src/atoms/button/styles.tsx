@@ -15,7 +15,10 @@ interface ButtonProps {
 
 export const ButtonWrapper = styled.button<ButtonProps>`
   --bg: ${props => useColor(props.color ?? 'black').color};
-  --txt: ${props => useColor(props.txtColor ?? 'black').color};
+  --txt: ${props =>
+    props.variant === 'outline' && !props.txtColor
+      ? useColor(props.color ?? 'black').color
+      : useColor(props.txtColor ?? 'white').color};
   --hover: ${props =>
     props.color === 'white'
       ? colors.grey100

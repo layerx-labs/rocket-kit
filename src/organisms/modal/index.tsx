@@ -71,7 +71,7 @@ const Modal = (props: ModalProps) => {
 
               <Button
                 color="white"
-                txtColor="grey200"
+                txtColor="grey300"
                 icon="cross"
                 ariaLabel="Close"
                 action={hide}

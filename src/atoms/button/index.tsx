@@ -28,7 +28,7 @@ const Button = (props: ButtonProps) => {
     variant = 'solid',
     rounded = false,
     color = 'purple500',
-    txtColor = 'white',
+    txtColor,
     type,
     className = 'button',
     style,
