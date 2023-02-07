@@ -1,38 +1,51 @@
 import React from 'react';
-import { CardValue } from '../../src';
+import CardValue, { CardValueProps } from '..';
 
 export default {
   title: 'Components/Molecules/Card Value',
   component: CardValue,
-  argTypes: {},
+  argTypes: {
+    currency: {
+      control: {
+        type: 'select',
+        options: ['', 'tkai', 'vkai'],
+      },
+    },
+  },
 };
 
-export const CardValueComponentKAI = args => <CardValue {...args} />;
+export const CardValueComponentKAI = (args: CardValueProps) => (
+  <CardValue {...args} />
+);
 
-CardValueComponentKAI.storyName = 'With KAI';
+CardValueComponentKAI.storyName = 'With TKAI';
 CardValueComponentKAI.args = {
   label: 'Amount',
-  kai: true,
+  currency: 'tkai',
   value: '13000',
   showArrowButton: false,
 };
 
-export const CardValueComponent = args => <CardValue {...args} />;
+export const CardValueComponent = (args: CardValueProps) => (
+  <CardValue {...args} />
+);
 
 CardValueComponent.storyName = 'No Currency';
 CardValueComponent.args = {
   label: 'Innovators',
-  kai: false,
+  currency: '',
   value: '42',
   showArrowButton: false,
 };
 
-export const CardValueComponentButton = args => <CardValue {...args} />;
+export const CardValueComponentButton = (args: CardValueProps) => (
+  <CardValue {...args} />
+);
 
 CardValueComponentButton.storyName = 'With button';
 CardValueComponentButton.args = {
   label: 'Innovators',
-  kai: false,
+  currency: '',
   value: '42',
   description:
     "I'm baby small batch blue bottle keytar, church-key man braid flannel austin twee poutine mustache.",

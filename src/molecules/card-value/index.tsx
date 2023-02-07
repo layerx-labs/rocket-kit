@@ -2,9 +2,9 @@ import React from 'react';
 import { Button, Label } from '../..';
 import * as Styles from './styles';
 
-interface CardValueProps {
+export interface CardValueProps {
   label: string;
-  kai?: boolean;
+  currency?: 'tkai' | 'vkai';
   value: string | number;
   description?: string;
   buttonValue?: string;
@@ -16,7 +16,7 @@ interface CardValueProps {
 const CardValue = (props: CardValueProps) => {
   const {
     label,
-    kai = false,
+    currency = 'tkai',
     value,
     description,
     buttonValue,
@@ -27,7 +27,7 @@ const CardValue = (props: CardValueProps) => {
 
   return (
     <Styles.CardValueStyle className={className} style={style}>
-      <Label value={label} kai={kai} />
+      <Label value={label} currency={currency} />
       <span>{value}</span>
       {description && <p>{description}</p>}
       {buttonValue && onClick && (
