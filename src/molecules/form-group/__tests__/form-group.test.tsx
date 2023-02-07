@@ -7,7 +7,7 @@ import { FormGroup, TextField } from '../../..';
 describe('FormGroup', () => {
   it('renders', () => {
     const { asFragment } = render(
-      <FormGroup label="label" kai={false}>
+      <FormGroup label="label">
         <TextField type="text" value="this is my text" />
       </FormGroup>
     );
@@ -17,7 +17,7 @@ describe('FormGroup', () => {
   it('has correct value', () => {
     const textValue = 'this is my text';
     render(
-      <FormGroup label="label" kai={false}>
+      <FormGroup label="label">
         <TextField type="text" value={textValue} />
       </FormGroup>
     );

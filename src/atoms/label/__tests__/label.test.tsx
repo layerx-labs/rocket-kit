@@ -15,9 +15,9 @@ describe('Label', () => {
     screen.getByText(fieldText);
   });
 
-  it('has correct value with KAI', () => {
+  it('has correct value with TKAI', () => {
     const fieldText = 'Savings';
-    render(<Label value={fieldText} kai />);
+    render(<Label value={fieldText} currency="tkai" />);
     screen.getByText(fieldText);
   });
 });

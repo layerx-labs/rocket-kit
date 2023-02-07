@@ -8,7 +8,7 @@ import { CardValue } from '../../..';
 describe('Card Value', () => {
   it('renders', () => {
     const { asFragment } = render(
-      <CardValue label={'Amount'} value={'1234567'} kai />
+      <CardValue label={'Amount'} value={'1234567'} currency="tkai" />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -16,7 +16,7 @@ describe('Card Value', () => {
   it('has correct label and string value', () => {
     const label = 'Accounts';
     const value = '345';
-    render(<CardValue label={label} value={value} kai />);
+    render(<CardValue label={label} value={value} currency="tkai" />);
     screen.getByText(label);
     screen.getByText(value);
   });
@@ -24,13 +24,13 @@ describe('Card Value', () => {
   it('has correct label and number value', () => {
     const label = 'Accounts';
     const value = 345;
-    render(<CardValue label={label} value={value} kai />);
+    render(<CardValue label={label} value={value} currency="tkai" />);
     screen.getByText(label);
     screen.getByText(value);
   });
 
   it('does not show arrow button', () => {
-    render(<CardValue label={'Amount'} value={'1234567'} kai />);
+    render(<CardValue label={'Amount'} value={'1234567'} currency="tkai" />);
     expect(screen.queryByRole('button')).not.toBeInTheDocument();
   });
 
@@ -42,7 +42,7 @@ describe('Card Value', () => {
       <CardValue
         label={'Amount'}
         value={'1234567'}
-        kai
+        currency="tkai"
         description={description}
         buttonValue="Open"
         onClick={onClickAction}
