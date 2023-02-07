@@ -14,7 +14,7 @@ export interface LabelProps {
 const { grey } = colors;
 
 const Label = (props: LabelProps) => {
-  const { value, currency = 'tkai', className = 'label', style } = props;
+  const { value, currency, className = 'label', style } = props;
   return (
     <Styles.LabelStyle className={className} style={style}>
       {value}

@@ -16,7 +16,7 @@ export interface CardValueProps {
 const CardValue = (props: CardValueProps) => {
   const {
     label,
-    currency = 'tkai',
+    currency,
     value,
     description,
     buttonValue,

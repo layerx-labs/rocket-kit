@@ -33,7 +33,6 @@ export const CardValueComponent = (args: CardValueProps) => (
 CardValueComponent.storyName = 'No Currency';
 CardValueComponent.args = {
   label: 'Innovators',
-  currency: '',
   value: '42',
   showArrowButton: false,
 };
@@ -45,7 +44,6 @@ export const CardValueComponentButton = (args: CardValueProps) => (
 CardValueComponentButton.storyName = 'With button';
 CardValueComponentButton.args = {
   label: 'Innovators',
-  currency: '',
   value: '42',
   description:
     "I'm baby small batch blue bottle keytar, church-key man braid flannel austin twee poutine mustache.",

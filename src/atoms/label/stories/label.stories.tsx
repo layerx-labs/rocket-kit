@@ -28,6 +28,5 @@ export const LabelComponent = (args: LabelProps) => <Label {...args} />;
 
 LabelComponent.storyName = 'Only Text';
 LabelComponent.args = {
-  currency: '',
   value: 'Stats',
 };

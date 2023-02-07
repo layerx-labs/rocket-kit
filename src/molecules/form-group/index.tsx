@@ -10,7 +10,7 @@ export interface FormGroupProps {
 }
 
 const FormGroup = (props: FormGroupProps) => {
-  const { label, currency = 'tkai', error = false, children } = props;
+  const { label, currency, error = false, children } = props;
 
   return (
     <Styles.Wrapper error={error}>
