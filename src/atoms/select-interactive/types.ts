@@ -32,7 +32,7 @@ type Options =
 
 export interface SelectInteractiveProps<T extends Options>
   extends TDivElement,
-    Pick<NamedProps<T>, 'onInputChange'> {
+    Partial<Pick<NamedProps<T>, 'onInputChange'>> {
   name?: string;
   error?: string;
   clear?: boolean;
