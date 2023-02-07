@@ -4,7 +4,7 @@ import * as Styles from './styles';
 
 export interface CardValueProps {
   label: string;
-  currency?: 'tkai' | 'vkai';
+  currency?: 'tkai' | 'vkai' | undefined;
   value: string | number;
   description?: string;
   buttonValue?: string;

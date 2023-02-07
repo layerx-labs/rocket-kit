@@ -5,7 +5,7 @@ import { colors } from '../../ions/variables';
 import { Icon } from '../..';
 
 export interface LabelProps {
-  currency?: 'tkai' | 'vkai';
+  currency?: 'tkai' | 'vkai' | undefined;
   value: string;
   className?: string;
   style?: React.CSSProperties;
