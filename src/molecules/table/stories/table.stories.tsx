@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from '..';
 import Tag from '../../../atoms/tag';
-import { AvatarImage } from '../../..';
+import { AvatarImage, ButtonLink } from '../../..';
 import { ActionMenu } from '../../actions-menu/types';
 
 export interface TableProps {
@@ -75,7 +75,7 @@ const columns = {
       id: 'amount',
       value: 'Amount',
       dataKey: 'amount',
-      className: 'kai',
+      className: 'vkai',
       dataTestId: 'header-amount-id',
     },
     {
@@ -94,6 +94,13 @@ const columns = {
       id: 'created',
       value: 'Created',
       dataKey: 'createdAt',
+    },
+    {
+      id: 'goTo',
+      className: 'right',
+      value: '',
+      dataKey: 'goTo',
+      renderer: () => <ButtonLink icon="mint" value="View details" url="#0" />,
     },
   ],
 };

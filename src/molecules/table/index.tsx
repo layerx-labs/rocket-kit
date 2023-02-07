@@ -165,8 +165,10 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
                             {renderer
                               ? renderer(row[dataKey as keyof CellData], row)
                               : row[dataKey as keyof CellData]}
-                            {className === 'kai' ? (
-                              <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
+                            {className === 'tkai' ? (
+                              <Icon icon="tkai" fill="hsl(0, 0%, 16%)" />
+                            ) : className === 'vkai' ? (
+                              <Icon icon="vkai" fill="hsl(0, 0%, 16%)" />
                             ) : null}
                           </div>
                         </td>

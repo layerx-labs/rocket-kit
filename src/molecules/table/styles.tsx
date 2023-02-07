@@ -88,7 +88,8 @@ export const Table = styled.table<TableProps>`
       }
     }
 
-    &.kai {
+    &.vkai,
+    &.tkai {
       text-align: right;
 
       > div {
@@ -246,12 +247,14 @@ export const Table = styled.table<TableProps>`
           `}
       }
 
-      &.kai {
+      &.tkai,
+      &.vkai {
         svg {
           float: right;
+          margin-left: ${rem('5px')};
           width: auto;
-          min-width: ${rem('20px')};
-          max-height: ${rem('20px')};
+          min-width: ${rem('22px')};
+          max-height: ${rem('22px')};
         }
       }
 
@@ -265,6 +268,10 @@ export const Table = styled.table<TableProps>`
         &:not(:first-child) {
           display: none;
         }
+      }
+
+      .button {
+        height: ${rem('34px')};
       }
 
       &.menu {
@@ -306,7 +313,8 @@ export const Table = styled.table<TableProps>`
           content: '';
         }
 
-        &.kai {
+        &.tkai,
+        &.vkai {
           max-width: ${rem('100px')};
         }
 
