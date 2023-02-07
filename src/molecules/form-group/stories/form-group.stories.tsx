@@ -12,9 +12,10 @@ export default {
         type: 'boolean',
       },
     },
-    kai: {
+    currency: {
       control: {
-        type: 'boolean',
+        type: 'select',
+        options: ['', 'tkai', 'vkai'],
       },
     },
   },
@@ -31,6 +32,6 @@ export const FormGroupComponent = (args: FormGroupProps) => {
 FormGroupComponent.storyName = 'Form Group';
 FormGroupComponent.args = {
   label: 'Awesome Label',
-  kai: false,
+  currency: '',
   error: false,
 };
