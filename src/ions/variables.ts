@@ -180,8 +180,11 @@ export const colorHues = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 
 export const typography = {
   defaultFont: `"Space Grotesk", Verdana, Arial, Helvetica, sans-serif`,
   defaultSize: '16px',
+  fontSizeSm: rem('14px'),
+  fontSizeXs: rem('12px'),
   regular: 400,
   medium: 500,
+  semiBold: 600,
   bold: 700,
 };
 

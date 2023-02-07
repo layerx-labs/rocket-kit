@@ -3,18 +3,18 @@ import { rem } from 'polished';
 import { colors, typography } from '../../ions/variables';
 
 const { grey } = colors;
-const { bold } = typography;
 
 export const LabelStyle = styled.label`
   display: flex;
   align-items: center;
-  font-size: 0.75rem;
-  font-weight: ${bold};
+  font-size: ${typography.fontSizeXs};
+  font-weight: ${typography.semiBold};
   color: ${grey};
   text-transform: uppercase;
 
   svg {
+    margin-left: ${rem('5px')};
     width: auto;
-    height: ${rem('15px')};
+    height: ${rem('16px')};
   }
 `;
