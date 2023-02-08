@@ -84,6 +84,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   }
 
   .spinner {
+    order: ${props => (props.iconPosition === 'left' ? 1 : 2)};
     border-top-color: ${props =>
       props.variant === 'solid' ? '' : 'var(--button)'};
   }
