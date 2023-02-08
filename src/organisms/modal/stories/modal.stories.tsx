@@ -3,7 +3,7 @@ import { ModalProps } from '..';
 import { Button, Modal, ModalFooter } from '../../..';
 
 export default {
-  title: 'Design System/Organisms/Modal',
+  title: 'Components/Organisms/Modal',
   component: Modal,
   argTypes: {},
 };

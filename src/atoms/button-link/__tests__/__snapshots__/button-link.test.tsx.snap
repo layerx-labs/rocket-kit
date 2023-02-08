@@ -3,21 +3,19 @@
 exports[`Button Link renders 1`] = `
 <DocumentFragment>
   .c0 {
-  --button: #56cad7;
+  --bg: #4329A6;
   --txt: #ffffff;
-  --hover: #2ba8b6;
-  --button: #56cad7;
-  --hover: #2ba8b6;
+  --hover: #362185;
   border-width: 0;
   border-style: solid;
-  border-color: var(--button);
-  border-radius: 999px;
-  background-color: var(--button);
+  border-color: var(--bg);
+  border-radius: 0.5rem;
+  background-color: var(--bg);
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  min-width: 2rem;
-  height: 2rem;
+  min-width: 2.625rem;
+  height: 2.75rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -31,7 +29,6 @@ exports[`Button Link renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0;
-  text-transform: uppercase;
   white-space: nowrap;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -46,17 +43,14 @@ exports[`Button Link renders 1`] = `
 
 .c0 > *:not(:last-child) {
   margin-left: 0;
-  margin-right: 5px;
+  margin-right: 0.875rem;
 }
 
 .c0 span {
   position: relative;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 500;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
+  line-height: 1rem;
   color: var(--txt);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
@@ -70,23 +64,18 @@ exports[`Button Link renders 1`] = `
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  width: auto;
-  min-width: 1.25rem;
+  width: 1.25rem;
   height: 1.25rem;
   fill: var(--txt);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-@media (min-width:1280px) {
-  .c0 {
-    min-width: 2rem;
-  }
-}
-
 <a
+    aria-hidden="false"
+    aria-label=""
     class="c0 button button-link"
-    color="green"
+    color="purple500"
     data-event=""
     data-testid=""
     href="https://github.com/taikai/taikai-design-system"

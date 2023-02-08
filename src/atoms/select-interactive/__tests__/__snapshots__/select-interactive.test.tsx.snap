@@ -14,15 +14,19 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__control:hover {
-  border-color: #4329a6;
+  border-color: #4329A6;
 }
 
 .c0 .select__control--is-focused {
-  border-color: #4329a6;
+  border-color: #4329A6;
   box-shadow: none;
 }
 
 .c0 .select__value-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -69,12 +73,12 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__option:hover {
-  background-color: #4329a6;
+  background-color: #4329A6;
   color: #ffffff;
 }
 
 .c0 .select__option--is-focused {
-  background-color: #4329a6;
+  background-color: #4329A6;
   color: #ffffff;
 }
 
@@ -100,6 +104,10 @@ exports[`Select Interactive renders 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+}
+
+.c0 .select__value-container.select__value-container--is-multi > div .select__multi-value__remove {
+  padding-right: 0;
 }
 
 .c0 .select__value-container svg,
@@ -133,8 +141,12 @@ exports[`Select Interactive renders 1`] = `
     class="c0"
   >
     <div
-      class="select-interactive css-2b097c-container"
+      class="select-interactive css-b62m3t-container"
     >
+      <span
+        class="css-1f43avz-a11yText-A11yText"
+        id="react-select-2-live-region"
+      />
       <span
         aria-atomic="false"
         aria-live="polite"
@@ -142,37 +154,34 @@ exports[`Select Interactive renders 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class="select__control css-yk16xz-control"
+        class="select__control css-13cymwt-control"
       >
         <div
-          class="select__value-container select__value-container--has-value css-g1d714-ValueContainer"
+          class="select__value-container select__value-container--has-value css-1fdsijx-ValueContainer"
         >
           <div>
             Vanilla
           </div>
           <div
-            class="css-b8ldur-Input"
+            class="select__input-container css-qbdosj-Input"
+            data-value=""
           >
-            <div
+            <input
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-haspopup="true"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
               class="select__input"
-              style="display: inline-block;"
-            >
-              <input
-                aria-autocomplete="list"
-                autocapitalize="none"
-                autocomplete="off"
-                autocorrect="off"
-                id="react-select-2-input"
-                spellcheck="false"
-                style="box-sizing: content-box; width: 2px; border: 0px; opacity: 1; outline: 0; padding: 0px;"
-                tabindex="0"
-                type="text"
-                value=""
-              />
-              <div
-                style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-              />
-            </div>
+              id="react-select-2-input"
+              role="combobox"
+              spellcheck="false"
+              style="opacity: 1; width: 100%; grid-area: 1 / 2; min-width: 2px; border: 0px; margin: 0px; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
           </div>
         </div>
         <div
@@ -180,7 +189,7 @@ exports[`Select Interactive renders 1`] = `
         >
           <div
             aria-hidden="true"
-            class="select__indicator select__clear-indicator css-tlfecz-indicatorContainer"
+            class="select__indicator select__clear-indicator css-1xc3v61-indicatorContainer"
           >
             <svg
               aria-hidden="true"
@@ -196,11 +205,11 @@ exports[`Select Interactive renders 1`] = `
             </svg>
           </div>
           <span
-            class="select__indicator-separator css-1okebmr-indicatorSeparator"
+            class="select__indicator-separator css-1u9des2-indicatorSeparator"
           />
           <div
             aria-hidden="true"
-            class="select__indicator select__dropdown-indicator css-tlfecz-indicatorContainer"
+            class="select__indicator select__dropdown-indicator css-1xc3v61-indicatorContainer"
           >
             <svg
               aria-hidden="true"

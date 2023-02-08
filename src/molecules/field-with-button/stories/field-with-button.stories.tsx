@@ -2,7 +2,7 @@ import React from 'react';
 import FieldWidthButton, { FieldWidthButtonProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/FieldWidthButton',
+  title: 'Components/Molecules/FieldWidthButton',
   component: FieldWidthButton,
   argTypes: {
     onChange: { action: () => {} },

@@ -35,22 +35,22 @@ exports[`CheckboxGroup renders 1`] = `
   cursor: pointer;
 }
 
-.c3:checked:not(:disabled) ~ span {
+.c3:checked:not(:disabled)[aria-checked='true'] ~ span {
   background-color: #56cad7;
   border-color: #2ba8b6;
 }
 
-.c3:checked:not(:disabled) ~ span:after {
+.c3:checked:not(:disabled)[aria-checked='true'] ~ span:after {
   display: block;
 }
 
-.c3:checked:disabled ~ span {
+.c3:checked:disabled[aria-checked='true'] ~ span {
   border-color: transparent;
   background-color: #c4c7d3;
   color: #939393;
 }
 
-.c3:checked:disabled ~ span:after {
+.c3:checked:disabled[aria-checked='true'] ~ span:after {
   display: block;
 }
 
@@ -80,6 +80,7 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c4:after {
+  display: block;
   content: '';
   position: absolute;
   display: none;
@@ -94,6 +95,38 @@ exports[`CheckboxGroup renders 1`] = `
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.c4.checked.not-disabled {
+  background-color: #56cad7;
+  border-color: #2ba8b6;
+}
+
+.c4.checked.not-disabled:after {
+  display: block;
+}
+
+.c4.checked.disabled {
+  color: #939393;
+  border-color: transparent;
+  background-color: #c4c7d3;
+}
+
+.c4.checked.disabled:after {
+  display: block;
+}
+
+.c4.not-checked.disabled {
+  border-color: #c4c7d3;
+  background-color: #ffffff;
+}
+
+.c4.not-disabled:hover {
+  border-color: #2ba8b6;
+}
+
+.c4.not-disabled:hover:checked ~ span {
+  border-color: #2ba8b6;
 }
 
 .c0 {
@@ -139,7 +172,7 @@ exports[`CheckboxGroup renders 1`] = `
           type="checkbox"
         />
         <span
-          class="c4"
+          class="c4 not-checked not-disabled"
         />
       </label>
     </li>
@@ -159,7 +192,7 @@ exports[`CheckboxGroup renders 1`] = `
           type="checkbox"
         />
         <span
-          class="c4"
+          class="c4 not-checked not-disabled"
         />
       </label>
     </li>

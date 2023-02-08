@@ -7,7 +7,7 @@ interface SelectStyleProps {
   error?: string;
 }
 
-const { normal, grey, lightGrey, red, purple } = colors;
+const { normal, grey, lightGrey, red, purple500 } = colors;
 
 export const SelectStyle = styled.select<SelectStyleProps>`
   border: ${rem('1px')} solid ${props => (props.error ? red : grey)};
@@ -25,7 +25,7 @@ export const SelectStyle = styled.select<SelectStyleProps>`
   transition-duration: 0.3s;
 
   &:hover {
-    border-color: ${purple};
+    border-color: ${purple500};
   }
 
   &:-moz-focusring {

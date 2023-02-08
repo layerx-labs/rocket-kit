@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { normal, light, grey, lightGrey, purple, lightPurple } = colors;
+const { normal, light, grey, lightGrey, purple500, lightPurple } = colors;
 
 export const SelectWrapper = styled.div`
   .select {
@@ -16,16 +16,17 @@ export const SelectWrapper = styled.div`
       transition-duration: 0.3s;
 
       &:hover {
-        border-color: ${purple};
+        border-color: ${purple500};
       }
 
       &--is-focused {
-        border-color: ${purple};
+        border-color: ${purple500};
         box-shadow: none;
       }
     }
 
     &__value-container {
+      display: flex;
       align-items: center;
       padding: 0 ${rem('15px')};
     }
@@ -67,12 +68,12 @@ export const SelectWrapper = styled.div`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: ${purple};
+        background-color: ${purple500};
         color: ${light};
       }
 
       &--is-focused {
-        background-color: ${purple};
+        background-color: ${purple500};
         color: ${light};
       }
 
@@ -91,6 +92,10 @@ export const SelectWrapper = styled.div`
 
   .select__value-container.select__value-container--is-multi > div {
     align-items: stretch;
+
+    .select__multi-value__remove {
+      padding-right: 0;
+    }
   }
 
   .select__value-container,

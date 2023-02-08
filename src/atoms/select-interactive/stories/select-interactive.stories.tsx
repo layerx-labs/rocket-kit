@@ -3,7 +3,7 @@ import SelectInteractive from '../';
 import { SelectInteractiveProps, TSelectInteractiveOption } from '../types';
 
 export default {
-  title: 'Design System/Atoms/Select',
+  title: 'Components/Atoms/Select',
   component: SelectInteractive,
   argTypes: {
     multi: {
@@ -84,11 +84,12 @@ export const SelectInteractiveFormatedGroupedOptionsComponent = (
     TSelectInteractiveOption | ReadonlyArray<TSelectInteractiveOption> | null
   >(options[1].options[1]);
 
-  const handleChange: SelectInteractiveProps<TSelectInteractiveOption>['onChange'] =
-    selectedOption => {
-      console.log(selectedOption);
-      setSelectOptions(selectedOption);
-    };
+  const handleChange: SelectInteractiveProps<
+    TSelectInteractiveOption
+  >['onChange'] = selectedOption => {
+    console.log(selectedOption);
+    setSelectOptions(selectedOption);
+  };
 
   return (
     <SelectInteractive
@@ -150,17 +151,17 @@ export const SelectInteractiveCustomComponent = (
     {
       value: 'chocolate',
       label: 'Chocolate',
-      customImage: <img src="./images/default-avatar.svg" alt="" />,
+      customImage: '/images/default-avatar.svg',
     },
     {
       value: 'strawberry',
       label: 'Strawberry',
-      customImage: <img src="./images/default-avatar.svg" alt="" />,
+      customImage: '/images/default-avatar.svg',
     },
     {
       value: 'vanilla',
       label: 'Vanilla',
-      customImage: <img src="./images/default-avatar.svg" alt="" />,
+      customImage: '/images/default-avatar.svg',
     },
   ];
 

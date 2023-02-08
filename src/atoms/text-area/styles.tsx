@@ -10,7 +10,7 @@ interface TextAreaProps {
   maxlength?: number;
 }
 
-const { light, grey, lightGrey, red, purple } = colors;
+const { light, grey, lightGrey, red, purple500 } = colors;
 
 export const Wrapper = styled.div`
   position: relative;
@@ -33,7 +33,7 @@ export const TextAreaStyle = styled.textarea<TextAreaProps>`
   resize: none;
 
   &:focus {
-    border-color: ${purple};
+    border-color: ${purple500};
     outline: none;
   }
 

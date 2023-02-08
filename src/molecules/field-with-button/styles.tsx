@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-const { grey, darkGrey, light, purple } = colors;
+const { grey, darkGrey, light, purple500 } = colors;
 
 export const Field = styled.div`
   display: flex;
@@ -16,13 +16,14 @@ export const Field = styled.div`
 
   input {
     flex: 1;
+    margin-right: 0;
     border-radius: ${rem('6px')} 0 0 ${rem('6px')};
 
     &:focus {
       outline: none;
 
       + button {
-        background-color: ${purple};
+        background-color: ${purple500};
       }
     }
   }
@@ -42,7 +43,6 @@ export const Field = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 ${rem('20px')};
-    text-transform: uppercase;
     white-space: nowrap;
     transition-duration: 0.3s;
     cursor: pointer;

@@ -1,6 +1,6 @@
+import 'jest-styled-components';
 import React from 'react';
 import { render } from '@testing-library/react';
-import 'jest-styled-components';
 import { SelectInteractive } from '../../..';
 
 describe('Select Interactive', () => {
@@ -21,6 +21,7 @@ describe('Select Interactive', () => {
         value={options[2]}
         options={options}
         onChange={() => {}}
+        onInputChange={() => {}}
       />
     );
     expect(asFragment()).toMatchSnapshot();

@@ -22,18 +22,20 @@ exports[`Table renders 1`] = `
 }
 
 .c4 {
-  --button: #56cad7;
+  --bg: #939393;
   --txt: #ffffff;
-  --hover: #2ba8b6;
-  --button: #939393;
-  --hover: #7a7a7a;
+  --hover: #939393;
+  margin: 0;
   border-width: 0;
   border-style: solid;
-  border-color: var(--button);
+  border-color: var(--bg);
   border-radius: 0;
   background-color: transparent;
-  width: 2rem;
-  height: 2rem;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  min-width: 2.625rem;
+  height: 2.75rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -47,8 +49,9 @@ exports[`Table renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   padding: 0;
-  text-transform: uppercase;
   white-space: nowrap;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
@@ -73,12 +76,13 @@ exports[`Table renders 1`] = `
 }
 
 .c4:disabled:hover {
+  background-color: transparent;
   pointer-events: none;
 }
 
 .c4 > *:not(:last-child) {
   margin-left: 0;
-  margin-right: 5px;
+  margin-right: 0.875rem;
 }
 
 .c4 .spinner {
@@ -87,13 +91,10 @@ exports[`Table renders 1`] = `
 
 .c4 span {
   position: relative;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 500;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  color: var(--button);
+  line-height: 1rem;
+  color: var(--bg);
   pointer-events: none;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
@@ -106,10 +107,9 @@ exports[`Table renders 1`] = `
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
-  width: auto;
-  min-width: 1.25rem;
+  width: 1.25rem;
   height: 1.25rem;
-  fill: var(--button);
+  fill: var(--bg);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -160,13 +160,17 @@ exports[`Table renders 1`] = `
   justify-content: flex-end;
 }
 
-.c2 th.kai,
-.c2 td.kai {
+.c2 th.vkai,
+.c2 td.vkai,
+.c2 th.tkai,
+.c2 td.tkai {
   text-align: right;
 }
 
-.c2 th.kai > div,
-.c2 td.kai > div {
+.c2 th.vkai > div,
+.c2 td.vkai > div,
+.c2 th.tkai > div,
+.c2 td.tkai > div {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
@@ -251,6 +255,10 @@ exports[`Table renders 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c2 tbody td > div {
@@ -314,11 +322,13 @@ exports[`Table renders 1`] = `
   text-transform: capitalize;
 }
 
-.c2 tbody td.kai svg {
+.c2 tbody td.tkai svg,
+.c2 tbody td.vkai svg {
   float: right;
+  margin-left: 0.3125rem;
   width: auto;
-  min-width: 1.25rem;
-  max-height: 1.25rem;
+  min-width: 1.375rem;
+  max-height: 1.375rem;
 }
 
 .c2 tbody td .avatar-img {
@@ -331,6 +341,10 @@ exports[`Table renders 1`] = `
 
 .c2 tbody td .tag:not(:first-child) {
   display: none;
+}
+
+.c2 tbody td .button {
+  height: 2.125rem;
 }
 
 .c2 tbody td.menu {
@@ -346,12 +360,6 @@ exports[`Table renders 1`] = `
 .c2 tbody td.menu ul {
   top: 2.25rem;
   margin-left: -10.625rem;
-}
-
-@media (min-width:1280px) {
-  .c4 {
-    min-width: 2rem;
-  }
 }
 
 @media (min-width:700px) {
@@ -374,6 +382,12 @@ exports[`Table renders 1`] = `
     -moz-scrollbar-width: none;
     -ms-scrollbar-width: none;
     scrollbar-width: none;
+  }
+}
+
+@media (min-width:700px) {
+  .c2 {
+    border-width: 0.0625rem;
   }
 }
 
@@ -413,10 +427,6 @@ exports[`Table renders 1`] = `
     display: table-cell;
     height: 3.125rem;
     padding: 0 0.9375rem;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
   }
 
   .c2 tbody td > div {
@@ -442,7 +452,8 @@ exports[`Table renders 1`] = `
     content: '';
   }
 
-  .c2 tbody td.kai {
+  .c2 tbody td.tkai,
+  .c2 tbody td.vkai {
     max-width: 6.25rem;
   }
 
@@ -521,15 +532,6 @@ exports[`Table renders 1`] = `
             >
               <div>
                 2700
-                <svg
-                  class="icon"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    d="M9.451 5.76c0.973 0.012 1.76 0.798 1.771 1.77v7.755l10.043-9.085c0.127-0.102 0.272-0.191 0.427-0.261l0.013-0.005c0.217-0.105 0.473-0.166 0.742-0.166 0.001 0 0.002 0 0.003 0h-0c0.492 0.012 0.934 0.214 1.258 0.536l-0-0 0.002-0.002c0.037 0.033 0.071 0.067 0.103 0.102l0.001 0.001c0.255 0.305 0.41 0.701 0.41 1.134 0 0.346-0.099 0.669-0.271 0.942l0.004-0.007c-0.053 0.076-0.107 0.143-0.166 0.205l0.001-0.001c-0.068 0.080-0.141 0.151-0.221 0.215l-0.003 0.002-7.656 6.915 1.961 1.947 1.782-1.605c0.314-0.277 0.729-0.446 1.183-0.446 0.521 0 0.989 0.222 1.317 0.576l0.001 0.001c0.273 0.296 0.44 0.693 0.44 1.129 0 0.052-0.002 0.103-0.007 0.153l0-0.006c-0.029 0.48-0.248 0.904-0.583 1.201l-0.002 0.002-1.635 1.472 3.283 3.26 0.069 0.1 0.036 0.036c0.279 0.299 0.45 0.701 0.45 1.143 0 0.026-0.001 0.052-0.002 0.077l0-0.004c-0.012 0.472-0.21 0.895-0.524 1.201l-0 0c-0.284 0.291-0.671 0.48-1.102 0.508l-0.005 0c-0.041 0.003-0.089 0.005-0.137 0.005-0.37 0-0.713-0.112-0.998-0.305l0.006 0.004-0.061-0.048-0.028-0.026c-0.032-0.022-0.010-0.007-0.066-0.047-0.028-0.022-0.055-0.047-0.102-0.092l-3.453-3.443-1.782 1.605c-0.309 0.284-0.722 0.458-1.176 0.458-0.028 0-0.057-0.001-0.085-0.002l0.004 0c-0.487-0.008-0.922-0.224-1.222-0.562l-0.002-0.002c-0.277-0.314-0.446-0.729-0.446-1.184 0-0.52 0.222-0.989 0.576-1.316l0.001-0.001 1.64-1.477-1.952-1.946-2.070 1.876v4.73c0 0.003 0 0.006 0 0.010 0 0.974-0.789 1.763-1.763 1.763-0.491 0-0.935-0.201-1.255-0.524l-0-0c-0.324-0.313-0.525-0.752-0.525-1.237 0-0.004 0-0.008 0-0.011v0.001-17.254c0.012-0.973 0.798-1.76 1.77-1.771h0.001z"
-                    style="fill: hsl(0, 0%, 16%);"
-                  />
-                </svg>
               </div>
             </td>
             <td
@@ -538,8 +540,10 @@ exports[`Table renders 1`] = `
             >
               <div>
                 <button
+                  aria-hidden="false"
                   class="c4 button"
                   color="grey"
+                  data-event=""
                   data-testid="icon-button"
                   value=""
                 >

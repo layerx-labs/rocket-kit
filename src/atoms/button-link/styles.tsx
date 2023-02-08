@@ -1,137 +1,54 @@
-import styled, { css } from 'styled-components/macro';
-import { device } from '../../ions/breakpoints';
-import { ButtonColor, ButtonVariant } from '../button/types';
-import { colors, fontWeight } from '../../ions/variables';
+import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { pulseKeyframes } from '../button/styles';
+import { ButtonColor, ButtonVariant } from '../button/types';
+import { colors, typography, button, misc } from '../../ions/variables';
+import { useColor } from '../../utils/hooks/use-color';
 
 interface ButtonStyleProps {
   variant?: ButtonVariant;
-  circle?: boolean;
+  rounded?: boolean;
   color?: ButtonColor;
+  txtColor?: ButtonColor;
   value?: String;
   iconPosition?: 'left' | 'right';
 }
 
-const {
-  normal,
-  light,
-  grey,
-  lightGrey,
-  darkGrey,
-  green,
-  darkGreen,
-  orange,
-  darkOrange,
-  red,
-  darkRed,
-  purple,
-  darkPurple,
-  blue,
-  darkBlue,
-} = colors;
-
-const { bold, medium } = fontWeight;
-
 export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
-  --button: ${green};
-  --txt: ${light};
-  --hover: ${darkGreen};
+  --bg: ${props => useColor(props.color ?? 'black').color};
+  --txt: ${props =>
+    props.variant === 'outline' && !props.txtColor
+      ? useColor(props.color ?? 'black').color
+      : useColor(props.txtColor ?? 'white').color};
+  --hover: ${props =>
+    props.color === 'white'
+      ? colors.grey100
+      : props.color === 'black'
+      ? colors.grey900
+      : useColor(props.color ?? 'black').hover};
 
-  ${props =>
-    props.color === 'green' &&
-    css`
-      --button: ${green};
-      --hover: ${darkGreen};
-    `}
-
-  ${props =>
-    props.color === 'orange' &&
-    css`
-      --button: ${orange};
-      --hover: ${darkOrange};
-    `}
-
-  ${props =>
-    props.color === 'red' &&
-    css`
-      --button: ${red};
-      --hover: ${darkRed};
-    `}
-
-  ${props =>
-    props.color === 'grey' &&
-    css`
-      --button: ${grey};
-      --hover: ${darkGrey};
-    `}
-
-  ${props =>
-    props.color === 'purple' &&
-    css`
-      --button: ${purple};
-      --hover: ${darkPurple};
-    `}
-
-  ${props =>
-    props.color === 'white' &&
-    css`
-      --button: ${light};
-      --txt: ${normal};
-      --hover: ${lightGrey};
-    `}
-
-  ${props =>
-    props.color === 'dark' &&
-    css`
-      --button: ${normal};
-      --hover: ${darkGrey};
-    `}
-
-  ${props =>
-    props.color === 'blue' &&
-    css`
-      --button: ${blue};
-      --hover: ${darkBlue};
-    `}
-
-  ${props =>
-    props.color === 'pulse' &&
-    css`
-      --button: ${red};
-      --hover: ${darkRed};
-      animation: ${pulseKeyframes} 1s infinite;
-    `}
-
-  ${props =>
-    props.color === 'magic' &&
-    css`
-      --button: ${light};
-      --hover: ${lightGrey};
-    `}
-
-  border-width: ${props => (props.variant === 'outline' ? '3px' : 0)};
+  border-width: ${props =>
+    props.variant === 'outline' ? button.borderWidth : 0};
   border-style: solid;
-  border-color: var(--button);
-  border-radius: ${props => (props.variant === 'text' ? 0 : '999px')};
+  border-color: var(--bg);
+  border-radius: ${props =>
+    props.variant === 'text'
+      ? 0
+      : props.rounded
+      ? '999px'
+      : button.borderRadius};
   background-color: ${props =>
-    props.variant === 'solid' ? 'var(--button)' : 'transparent'};
+    props.variant === 'solid' ? 'var(--bg)' : 'transparent'};
   width: min-content;
-  min-width: ${props => (props.value ? rem('80px') : rem('32px'))};
-  height: ${rem('32px')};
+  min-width: ${props => (props.value ? rem('80px') : rem('42px'))};
+  height: ${button.height};
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${props => (props.value ? `0 ${rem('20px')}` : 0)};
-  text-transform: uppercase;
+  padding: ${props => (props.value ? `0 ${button.padding}` : 0)};
   white-space: nowrap;
   text-decoration: none;
-  transition-duration: 0.3s;
+  transition-duration: ${misc.transitionDuration};
   cursor: pointer;
-
-  @media ${device.l} {
-    min-width: ${props => (props.value ? rem('100px') : rem('32px'))};
-  }
 
   &:hover {
     border-color: ${props => (props.variant === 'solid' ? '' : 'var(--hover)')};
@@ -148,64 +65,34 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
   }
 
   > *:not(:last-child) {
-    margin-left: ${props => (props.iconPosition === 'right' ? '5px' : 0)};
-    margin-right: ${props => (props.iconPosition === 'left' ? '5px' : 0)};
+    margin-left: ${props =>
+      props.iconPosition === 'right' ? button.iconSpacing : 0};
+    margin-right: ${props =>
+      props.iconPosition === 'left' ? button.iconSpacing : 0};
   }
 
   span {
     position: relative;
-    font-size: 0.75rem;
-    font-weight: ${medium};
-    letter-spacing: 1px;
+    font-size: ${rem(typography.defaultSize)};
+    font-weight: ${typography.medium};
+    line-height: ${rem(typography.defaultSize)};
     color: ${props =>
-      props.variant === 'solid' ? 'var(--txt)' : 'var(--button)'};
+      props.variant === 'solid' || props.variant === 'outline'
+        ? 'var(--txt)'
+        : 'var(--bg)'};
     pointer-events: none;
-    transition-duration: 0.3s;
+    transition-duration: ${misc.transitionDuration};
     order: ${props => (props.iconPosition === 'left' ? 2 : 1)};
   }
 
   svg {
     order: ${props => (props.iconPosition === 'left' ? 1 : 2)};
-    width: auto;
-    min-width: ${rem('20px')};
-    height: ${rem('20px')};
+    width: ${button.iconSize};
+    height: ${button.iconSize};
     fill: ${props =>
-      props.variant === 'solid' ? 'var(--txt)' : 'var(--button)'};
-    transition: 0.3s;
+      props.variant === 'solid' || props.variant === 'outline'
+        ? 'var(--txt)'
+        : 'var(--bg)'};
+    transition: ${misc.transitionDuration};
   }
-
-  ${props =>
-    props.color === 'magic' &&
-    css`
-      position: relative;
-      background-image: linear-gradient(to bottom right, #ef5867, #5031a8);
-      height: ${rem('60px')};
-      padding: 0 ${rem('40px')};
-      overflow: hidden;
-
-      span {
-        font-size: 1rem;
-        font-weight: ${bold};
-      }
-
-      &:before {
-        --size: 0;
-
-        content: '';
-        position: absolute;
-        left: var(--x);
-        top: var(--y);
-        width: var(--size);
-        height: var(--size);
-        background: radial-gradient(circle closest-side, #5031a8, transparent);
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        -webkit-transition: width 0.2s ease, height 0.2s ease;
-        transition: width 0.2s ease, height 0.2s ease;
-      }
-
-      &:hover:before {
-        --size: ${rem('200px')};
-      }
-    `}
 `;

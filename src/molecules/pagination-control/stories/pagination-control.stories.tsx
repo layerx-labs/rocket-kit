@@ -3,7 +3,7 @@ import { withDesign } from 'storybook-addon-designs';
 import PaginationControl, { PageControlProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/PaginationControl',
+  title: 'Components/Molecules/PaginationControl',
   component: PaginationControl,
   decorators: [withDesign],
 };
@@ -22,7 +22,8 @@ PaginationControlLight.args = {
 PaginationControlLight.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/2aV5JcANU1uWQntLdMSTti/TAIKAI-Design-System?node-id=2%3A2',
+    url:
+      'https://www.figma.com/file/2aV5JcANU1uWQntLdMSTti/TAIKAI-Design-System?node-id=2%3A2',
   },
 };
 
@@ -42,6 +43,7 @@ PaginationControlDark.parameters = {
   backgrounds: { default: 'dark' },
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/2aV5JcANU1uWQntLdMSTti/TAIKAI-Design-System?node-id=36%3A49',
+    url:
+      'https://www.figma.com/file/2aV5JcANU1uWQntLdMSTti/TAIKAI-Design-System?node-id=36%3A49',
   },
 };

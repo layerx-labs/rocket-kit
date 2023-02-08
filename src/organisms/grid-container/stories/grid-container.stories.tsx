@@ -4,7 +4,7 @@ import GridRow from '../grid-row';
 import GridCol from '../grid-col';
 
 export default {
-  title: 'Design System/Organisms/Grid Container',
+  title: 'Components/Organisms/Grid Container',
   component: GridContainer,
 };
 

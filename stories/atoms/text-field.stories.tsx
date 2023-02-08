@@ -3,7 +3,7 @@ import { TextField } from '../../src';
 import icons from '../../src/ions/icons';
 
 export default {
-  title: 'Design System/Atoms/TextField',
+  title: 'Components/Atoms/TextField',
   component: TextField,
   argTypes: {
     minimal: {

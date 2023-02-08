@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, WizardSteps } from '../../..';
 
 export default {
-  title: 'Design System/Molecules/Wizard Steps',
+  title: 'Components/Molecules/Wizard Steps',
   component: WizardSteps,
 };
 

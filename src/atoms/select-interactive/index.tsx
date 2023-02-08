@@ -1,6 +1,5 @@
 import React from 'react';
 import Select from 'react-select';
-
 import ErrorField from '../error-field';
 import {
   CustomSelectOption,

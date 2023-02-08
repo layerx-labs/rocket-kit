@@ -2,7 +2,7 @@ import React from 'react';
 import CheckboxGroup, { CheckboxGroupProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/CheckboxGroup',
+  title: 'Components/Molecules/CheckboxGroup',
   component: CheckboxGroup,
   argTypes: {
     type: {

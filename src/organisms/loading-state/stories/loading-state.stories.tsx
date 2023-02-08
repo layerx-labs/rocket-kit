@@ -2,13 +2,13 @@ import React from 'react';
 import LoadingState, { LoadingStateProps } from '..';
 
 export default {
-  title: 'Design System/Organisms/Empty States',
+  title: 'Components/Organisms/Empty States',
   component: LoadingState,
   argTypes: {
     type: {
       control: {
         type: 'select',
-        options: ['text', 'card', 'table', 'value'],
+        options: ['text', 'card', 'value'],
       },
     },
   },
@@ -23,8 +23,5 @@ LoadingStateComponent.args = {
   type: 'text',
   lines: 3,
   cardsNumber: 8,
-  header: true,
-  columnsNumber: 4,
-  rowsNumber: 3,
   center: true,
 };

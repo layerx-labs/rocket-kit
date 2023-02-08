@@ -2,7 +2,7 @@ import React from 'react';
 import TextFieldAppendix, { TextFieldAppendixProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/TextFieldAppendix',
+  title: 'Components/Atoms/TextFieldAppendix',
   component: TextFieldAppendix,
   argTypes: {
     type: {

@@ -4,7 +4,7 @@ import { TextField } from '../../../';
 import { FormGroupProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/Form Group',
+  title: 'Components/Molecules/Form Group',
   component: FormGroup,
   argTypes: {
     error: {
@@ -12,9 +12,10 @@ export default {
         type: 'boolean',
       },
     },
-    kai: {
+    currency: {
       control: {
-        type: 'boolean',
+        type: 'select',
+        options: ['', 'tkai', 'vkai'],
       },
     },
   },
@@ -31,6 +32,6 @@ export const FormGroupComponent = (args: FormGroupProps) => {
 FormGroupComponent.storyName = 'Form Group';
 FormGroupComponent.args = {
   label: 'Awesome Label',
-  kai: false,
+  currency: '',
   error: false,
 };

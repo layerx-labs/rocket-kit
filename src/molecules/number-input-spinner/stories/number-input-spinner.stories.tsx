@@ -3,7 +3,7 @@ import NumberInputSpinner from '..';
 import { NumberInputSpinnerProps } from '..';
 
 export default {
-  title: 'Design System/Molecules/Number Spinner',
+  title: 'Components/Molecules/Number Spinner',
   component: NumberInputSpinner,
   argTypes: { onChange: { action: 'update value' } },
 };

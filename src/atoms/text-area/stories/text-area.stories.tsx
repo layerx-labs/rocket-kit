@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TextArea, { TextAreaProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/TextArea',
+  title: 'Components/Atoms/TextArea',
   component: TextArea,
   argTypes: {
     minimal: {

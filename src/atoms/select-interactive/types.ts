@@ -1,5 +1,5 @@
 import { MapHTMLAttributes, ReactNode } from 'react';
-import { NamedProps } from 'react-select/src/Select';
+import NamedProps from 'react-select/dist/declarations/src/Select';
 
 export interface TSelectInteractiveOption {
   value: string;
@@ -9,7 +9,7 @@ export interface TSelectInteractiveOption {
 
 export interface TOptions extends TSelectInteractiveOption {
   icon?: string;
-  customImage?: React.ReactNode;
+  customImage?: string;
 }
 
 export interface TCustomOptions {
@@ -32,7 +32,7 @@ type Options =
 
 export interface SelectInteractiveProps<T extends Options>
   extends TDivElement,
-    Pick<NamedProps<T>, 'onInputChange'> {
+    Partial<Pick<NamedProps<T>, 'onInputChange'>> {
   name?: string;
   error?: string;
   clear?: boolean;

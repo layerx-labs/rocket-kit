@@ -27,6 +27,18 @@ const ModalDrawer = (props: ModalDrawerProps) => {
   } = props;
 
   useEffect(() => {
+    if (isShowing && typeof window !== 'undefined') {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = '';
+    }
+
+    return () => {
+      document.documentElement.style.overflow = '';
+    };
+  }, [isShowing]);
+
+  useEffect(() => {
     const fixViewport = () => {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);

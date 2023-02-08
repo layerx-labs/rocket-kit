@@ -9,8 +9,16 @@ interface CheckboxWrapperProps extends CheckboxErrorProps {
   disabled?: boolean;
 }
 
-const { normal, light, green, darkGreen, red, darkRed, grey, lightGrey } =
-  colors;
+const {
+  normal,
+  light,
+  green,
+  darkGreen,
+  red,
+  darkRed,
+  grey,
+  lightGrey,
+} = colors;
 
 export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   display: flex;
@@ -43,7 +51,7 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   opacity: 0;
   cursor: pointer;
 
-  &:checked:not(:disabled) ~ span {
+  &:checked:not(:disabled)[aria-checked='true'] ~ span {
     background-color: ${props => (props.error ? red : green)};
     border-color: ${props => (props.error ? darkRed : darkGreen)};
 
@@ -52,7 +60,7 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
     }
   }
 
-  &:checked:disabled ~ span {
+  &:checked:disabled[aria-checked='true'] ~ span {
     border-color: transparent;
     background-color: ${lightGrey};
     color: ${grey};
@@ -87,6 +95,7 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   transition-duration: 0.3s;
 
   &:after {
+    display: block;
     content: '';
     position: absolute;
     display: none;
@@ -99,5 +108,37 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+
+  &.checked.not-disabled {
+    background-color: ${props => (props.error ? red : green)};
+    border-color: ${props => (props.error ? darkRed : darkGreen)};
+
+    &:after {
+      display: block;
+    }
+  }
+
+  &.checked.disabled {
+    color: ${grey};
+    border-color: transparent;
+    background-color: ${lightGrey};
+
+    &:after {
+      display: block;
+    }
+  }
+
+  &.not-checked.disabled {
+    border-color: ${lightGrey};
+    background-color: ${light};
+  }
+
+  &.not-disabled:hover {
+    border-color: ${props => (props.error ? darkRed : darkGreen)};
+
+    &:checked ~ span {
+      border-color: ${props => (props.error ? darkRed : darkGreen)};
+    }
   }
 `;

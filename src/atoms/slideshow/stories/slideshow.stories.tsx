@@ -2,7 +2,7 @@ import React from 'react';
 import Slideshow, { SlideshowProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/Slideshow',
+  title: 'Components/Atoms/Slideshow',
   component: Slideshow,
 };
 

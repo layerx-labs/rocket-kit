@@ -1,17 +1,33 @@
 import React, { CSSProperties } from 'react';
 import * as Styles from './styles';
+import { TagColor } from '../tag/types';
 
 export interface TagNumberProps {
-  label: string;
-  value: number | string;
   className?: string;
   style?: CSSProperties;
+  color?: TagColor;
+  valueColor?: TagColor;
+  label: string;
+  value: number | string;
 }
 
 const TagNumber = (props: TagNumberProps) => {
-  const { label, value, className = 'tag-number', style } = props;
+  const {
+    className = 'tag-number',
+    style,
+    color = 'purple500',
+    valueColor = 'white',
+    label,
+    value,
+  } = props;
+
   return (
-    <Styles.TagWrapper className={className} style={style} title={label}>
+    <Styles.TagWrapper
+      className={className}
+      style={style}
+      color={color}
+      valueColor={valueColor}
+    >
       <span className="label">{label}</span>
       <span className="value">{value}</span>
     </Styles.TagWrapper>

@@ -12,14 +12,15 @@ exports[`Label renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #939393;
   text-transform: uppercase;
 }
 
 .c0 svg {
+  margin-left: 0.3125rem;
   width: auto;
-  height: 0.9375rem;
+  height: 1rem;
 }
 
 <label

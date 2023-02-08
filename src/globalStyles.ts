@@ -1,10 +1,10 @@
 import { createGlobalStyle } from 'styled-components/macro';
 import { rem} from "polished";
-import { fontWeight, colors } from './ions/variables';
+import { typography, colors } from './ions/variables';
 import { device } from './ions/breakpoints';
 
 const { normal, grey, lightGrey } = colors;
-const { regular } = fontWeight;
+const { regular } = typography;
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -55,7 +55,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   span {
-    font-size: 1rem;
+    font-family: ${typography.defaultFont};
+    font-size: ${rem(typography.defaultSize)};
+    font-feature-settings: 'ss04' on;
   }
 
   p {

@@ -4,7 +4,7 @@ import icons from '../../../ions/icons';
 import * as Styles from './styles';
 
 export default {
-  title: 'Design System/Atoms/Icon',
+  title: 'Components/Atoms/Icon',
   component: Icon,
   argTypes: {
     fill: { control: 'color' },

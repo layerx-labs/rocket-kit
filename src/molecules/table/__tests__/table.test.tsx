@@ -63,7 +63,12 @@ describe('Table', () => {
     };
 
     const { asFragment } = render(
-      <Table<CellData> options={options} values={rows} actions={actions} />
+      <Table<CellData>
+        options={options}
+        values={rows}
+        actions={actions}
+        loading={false}
+      />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -150,7 +155,7 @@ describe('Table', () => {
       ],
     };
 
-    render(<Table<CellData> options={options} values={rows} />);
+    render(<Table<CellData> options={options} values={rows} loading={false} />);
     for (let row = 1; row < 6; ++row) {
       screen.getByText(`To the Moon ${row}`);
     }
@@ -200,7 +205,7 @@ describe('Table', () => {
       ],
     };
 
-    render(<Table<CellData> options={options} values={rows} />);
+    render(<Table<CellData> options={options} values={rows} loading={false} />);
 
     screen.getByRole('columnheader', { name: headerAmount });
     screen.getByRole('columnheader', { name: headerType });
@@ -246,7 +251,14 @@ describe('Table', () => {
       ],
     };
 
-    render(<Table<CellData> options={options} values={rows} showEmpty />);
+    render(
+      <Table<CellData>
+        options={options}
+        values={rows}
+        loading={false}
+        showEmpty
+      />
+    );
 
     expect(screen.getByText(headerAmount)).toBeInTheDocument();
     expect(screen.getByText(headerType)).toBeInTheDocument();
@@ -320,7 +332,12 @@ describe('Table', () => {
     };
 
     render(
-      <Table<CellData> options={options} values={rows} actions={actions} />
+      <Table<CellData>
+        options={options}
+        values={rows}
+        actions={actions}
+        loading={false}
+      />
     );
 
     userEvent.hover(screen.getByText(/To the Moon/i));

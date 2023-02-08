@@ -2,7 +2,7 @@ import React from 'react';
 import CheckboxButton, { CheckboxButtonProps } from '..';
 
 export default {
-  title: 'Design System/Atoms/Checkbox',
+  title: 'Components/Atoms/Checkbox',
   component: CheckboxButton,
   argTypes: { onChange: { action: () => {} } },
 };

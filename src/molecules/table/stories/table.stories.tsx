@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from '..';
 import Tag from '../../../atoms/tag';
-import { AvatarImage } from '../../..';
+import { AvatarImage, ButtonLink } from '../../..';
 import { ActionMenu } from '../../actions-menu/types';
 
 export interface TableProps {
@@ -19,12 +19,27 @@ interface Transaction {
 }
 
 export default {
-  title: 'Design System/Molecules/Table',
+  title: 'Components/Molecules/Table',
   component: Table,
   argTypes: {
     border: {
       control: {
         type: 'boolean',
+      },
+    },
+    loading: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    loadingColumns: {
+      control: {
+        type: 'number',
+      },
+    },
+    loadingRows: {
+      control: {
+        type: 'number',
       },
     },
   },
@@ -60,7 +75,7 @@ const columns = {
       id: 'amount',
       value: 'Amount',
       dataKey: 'amount',
-      className: 'kai',
+      className: 'vkai',
       dataTestId: 'header-amount-id',
     },
     {
@@ -79,6 +94,13 @@ const columns = {
       id: 'created',
       value: 'Created',
       dataKey: 'createdAt',
+    },
+    {
+      id: 'goTo',
+      className: 'right',
+      value: '',
+      dataKey: 'goTo',
+      renderer: () => <ButtonLink icon="mint" value="View details" url="#0" />,
     },
   ],
 };
@@ -133,7 +155,10 @@ export const TableComponent = (args: TableProps) => (
 
 TableComponent.storyName = 'Table';
 TableComponent.args = {
-  border: false,
+  border: true,
+  loading: false,
+  loadingColumns: 4,
+  loadingRows: 6,
 };
 
 const emptyRows: Transaction[] = [];
