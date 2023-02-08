@@ -55,7 +55,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
     actionMenuTestId = 'icon-button',
     loading = false,
     loadingColumns = 4,
-    loadingRows = 20,
+    loadingRows = 5,
     showEmpty = false,
     emptyValue = 'No Data',
     className = 'table',
@@ -63,9 +63,8 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
     startsOpen = false,
   } = props;
 
-  const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
-    startsOpen
-  );
+  const { ref, isVisible, setIsVisible } =
+    useVisible<HTMLDivElement>(startsOpen);
 
   const [rowData, setRowData] = useState({});
   const [rowIndex, setRowIndex] = useState<number | undefined>(undefined);
