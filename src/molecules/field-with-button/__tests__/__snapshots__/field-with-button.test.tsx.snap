@@ -57,6 +57,12 @@ exports[`FieldWidthButton renders 1`] = `
   margin-right: 0.875rem;
 }
 
+.c3 .spinner {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
 .c3 span {
   position: relative;
   font-size: 1rem;

@@ -86,6 +86,9 @@ exports[`TableDnD renders 1`] = `
 }
 
 .c5 .spinner {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
   border-top-color: var(--button);
 }
 

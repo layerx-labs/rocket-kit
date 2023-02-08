@@ -66,6 +66,9 @@ exports[`Horizontal Nav renders 1`] = `
 }
 
 .c2 .spinner {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
   border-top-color: var(--button);
 }
 

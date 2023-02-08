@@ -67,6 +67,9 @@ exports[`Modal Footer renders 1`] = `
 }
 
 .c1 .spinner {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
   border-top-color: var(--button);
 }
 
@@ -148,6 +151,12 @@ exports[`Modal Footer renders 1`] = `
 .c2 > *:not(:last-child) {
   margin-left: 0;
   margin-right: 0.875rem;
+}
+
+.c2 .spinner {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 .c2 span {
