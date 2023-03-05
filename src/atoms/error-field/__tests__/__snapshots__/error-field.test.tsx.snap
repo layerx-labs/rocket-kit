@@ -5,7 +5,7 @@ exports[`ErrorField renders 1`] = `
   .c0 {
   display: block;
   font-size: 0.7rem;
-  color: #ef5766;
+  color: #EB5757;
 }
 
 <span

@@ -4,7 +4,7 @@ exports[`TableDnD renders 1`] = `
 <DocumentFragment>
   .c4 {
   position: relative;
-  border: 0.125rem solid #939393;
+  border: 0.125rem solid #C7C8D1;
   border-radius: 999px;
   width: 30px;
   height: 30px;
@@ -22,9 +22,9 @@ exports[`TableDnD renders 1`] = `
 }
 
 .c5 {
-  --bg: #939393;
+  --bg: #73758C;
   --txt: #ffffff;
-  --hover: #939393;
+  --hover: #5C5E70;
   margin: 0;
   border-width: 0;
   border-style: solid;
@@ -55,6 +55,7 @@ exports[`TableDnD renders 1`] = `
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
+  outline: none;
 }
 
 .c5:hover {
@@ -126,8 +127,8 @@ exports[`TableDnD renders 1`] = `
   width: 100%;
   border-width: 0;
   border-style: solid;
-  border-color: #939393;
-  border-radius: 0.375rem;
+  border-color: #C7C8D1;
+  border-radius: 0.5rem;
   border-spacing: 0;
   white-space: nowrap;
   table-layout: auto;
@@ -200,16 +201,16 @@ exports[`TableDnD renders 1`] = `
 }
 
 .c2 th:first-child {
-  border-top-left-radius: 0.375rem;
+  border-top-left-radius: 0.5rem;
 }
 
 .c2 th:last-child {
-  border-top-right-radius: 0.375rem;
+  border-top-right-radius: 0.5rem;
 }
 
 .c2 tr {
-  border: 0.0625rem solid #939393;
-  border-radius: 0.375rem;
+  border: 0.0625rem solid #C7C8D1;
+  border-radius: 0.5rem;
   position: relative;
 }
 
@@ -236,11 +237,11 @@ exports[`TableDnD renders 1`] = `
 }
 
 .c2 tbody tr:hover {
-  background-color: #c4c7d3;
+  background-color: #F1F1F3;
 }
 
 .c2 tbody tr:hover td.drag-handle svg {
-  fill: #939393;
+  fill: #C7C8D1;
 }
 
 .c2 tbody tr:hover td.menu button {
@@ -248,7 +249,7 @@ exports[`TableDnD renders 1`] = `
 }
 
 .c2 tbody td {
-  border-top: 0.0625rem solid #939393;
+  border-top: 0.0625rem solid #C7C8D1;
   height: inherit;
   min-height: 3.125rem;
   padding: 0.9375rem;
@@ -271,7 +272,7 @@ exports[`TableDnD renders 1`] = `
 .c2 tbody td.drag-handle svg {
   width: 1.875rem;
   height: 1.875rem;
-  fill: #939393;
+  fill: #C7C8D1;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
@@ -321,8 +322,8 @@ exports[`TableDnD renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  -webkit-text-decoration-color: #939393;
-  text-decoration-color: #939393;
+  -webkit-text-decoration-color: #8F91A3;
+  text-decoration-color: #8F91A3;
 }
 
 .c2 tbody td:first-child {
@@ -333,7 +334,7 @@ exports[`TableDnD renders 1`] = `
   position: absolute;
   left: 0.9375rem;
   content: attr(data-label);
-  font-weight: 700;
+  font-weight: 600;
   text-transform: capitalize;
 }
 
@@ -380,10 +381,10 @@ exports[`TableDnD renders 1`] = `
 @media (min-width:700px) {
   .c1 {
     display: block;
-    border-radius: 0.375rem;
-    background: linear-gradient(to right,#ffffff 30%,rgba(255,255,255,0)), linear-gradient(to right,rgba(255,255,255,0),#ffffff 70%) 0 100%, radial-gradient( farthest-side at 0% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ), radial-gradient( farthest-side at 100% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ) 0 100%;
+    border-radius: 0.5rem;
+    background: linear-gradient( to right, #ffffff 30%, rgba(255,255,255,0) ), linear-gradient(to right,rgba(255,255,255,0),#ffffff 70%) 0 100%, radial-gradient( farthest-side at 0% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ), radial-gradient( farthest-side at 100% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ) 0 100%;
     background-repeat: no-repeat;
-    background-color: #fff;
+    background-color: #ffffff;
     background-size: 2.5rem 100%,2.5rem 100%, 0.875rem 100%,0.875rem 100%;
     background-position: 0 0,100%,0 0,100%;
     background-attachment: local,local,scroll,scroll;
@@ -418,9 +419,8 @@ exports[`TableDnD renders 1`] = `
 @media (min-width:700px) {
   .c2 thead {
     display: contents;
-    font-weight: 700;
-    color: #939393;
-    text-transform: uppercase;
+    font-weight: 600;
+    color: #8F91A3;
     text-align: left;
   }
 }
@@ -458,7 +458,7 @@ exports[`TableDnD renders 1`] = `
   }
 
   .c2 tbody td:first-child {
-    border-top: 0.0625rem solid #939393;
+    border-top: 0.0625rem solid #C7C8D1;
   }
 
   .c2 tbody td:before {
@@ -592,7 +592,7 @@ exports[`TableDnD renders 1`] = `
                 <button
                   aria-hidden="false"
                   class="c5 button"
-                  color="grey"
+                  color="grey500"
                   data-event=""
                   data-testid="icon-button"
                   value=""

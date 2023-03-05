@@ -35,6 +35,7 @@ exports[`Actions Menu renders closed menu 1`] = `
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
+  outline: none;
 }
 
 .c1:hover {
@@ -165,6 +166,7 @@ exports[`Actions Menu renders open menu 1`] = `
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
+  outline: none;
 }
 
 .c1:hover {
@@ -237,16 +239,17 @@ exports[`Actions Menu renders open menu 1`] = `
 
 .c2 {
   position: absolute;
-  border: 0.0625rem solid #c4c7d3;
-  border-radius: 0.25rem;
+  border: 0.0625rem solid #D9D4ED;
+  border-radius: 0.5rem;
   background-color: #ffffff;
   margin-top: 0.3125rem;
   min-width: 12.5rem;
   max-width: 15.625rem;
   padding: 0;
-  -moz-box-shadow: 0 0 0.9375rem 0 #b3b3b3;
-  -webkit-box-shadow: 0 0 0.9375rem 0 #b3b3b3;
-  box-shadow: 0 0 0.9375rem 0 #b3b3b3;
+  -moz-box-shadow: rgba(0,0,0,0.15);
+  -webkit-box-shadow: rgba(0,0,0,0.15);
+  box-shadow: rgba(0,0,0,0.15);
+  overflow: hidden;
   z-index: 1;
 }
 
@@ -262,28 +265,20 @@ exports[`Actions Menu renders open menu 1`] = `
 }
 
 .c2 li:hover {
-  background-color: #c4c7d3;
+  background-color: #C7BFE4;
   cursor: pointer;
 }
 
-.c2 li:first-child {
-  border-radius: 0.25rem 0.25rem 0 0;
-}
-
-.c2 li:last-child {
-  border-radius: 0 0 0.25rem 0.25rem;
-}
-
 .c2 li.danger {
-  border-top: 0.0625rem solid #c4c7d3;
+  border-top: 0.0625rem solid #D9D4ED;
 }
 
 .c2 li.danger a {
-  color: #ef5766;
+  color: #EB5757;
 }
 
 .c2 li.disabled a {
-  color: #c4c7d3;
+  color: #ABACBA;
   pointer-events: none;
 }
 

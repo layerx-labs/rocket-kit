@@ -68,19 +68,19 @@ exports[`PaginationControl renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #000000;
-  font-weight: 700;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c0 ul.pagination li a:hover {
-  color: #4250e4;
+  color: #4250E4;
 }
 
 .c0 ul.pagination li a svg {
   width: 1.125rem;
   height: auto;
-  fill: #4250e4;
+  fill: #4250E4;
 }
 
 .c0 ul.pagination li.active {
@@ -88,12 +88,12 @@ exports[`PaginationControl renders 1`] = `
 }
 
 .c0 ul.pagination li.active a {
-  background-color: #4250e4;
+  background-color: #4250E4;
   color: #ffffff;
 }
 
 .c0 ul.pagination.dark a {
-  color: #c4c7d3;
+  color: #ffffff;
 }
 
 .c0 ul.pagination.dark a:hover {

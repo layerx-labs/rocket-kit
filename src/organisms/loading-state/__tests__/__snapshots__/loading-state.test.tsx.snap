@@ -52,7 +52,7 @@ exports[`LoadingState renders 1`] = `
 
 .c0 .card {
   position: relative;
-  border: 0.125rem solid #c4c7d3;
+  border: 0.125rem solid #F1F1F3;
   border-radius: 0.375rem;
   width: 18.75rem;
   overflow: hidden;
@@ -68,7 +68,7 @@ exports[`LoadingState renders 1`] = `
   margin: -2.8125rem 0 0 1.25rem;
   width: 5.625rem;
   height: 5.625rem;
-  border: 0.0625rem solid #c4c7d3;
+  border: 0.0625rem solid #F1F1F3;
   border-radius: 999px;
 }
 

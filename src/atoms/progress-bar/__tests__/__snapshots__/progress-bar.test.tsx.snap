@@ -17,15 +17,16 @@ exports[`ProgressBar renders 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  border: 0.0625rem solid #D9D4ED;
   border-radius: 999px;
-  background-color: #c4c7d3;
+  background-color: #F1F1F3;
   height: 0.625rem;
   overflow: hidden;
 }
 
 .c2 {
   border-radius: 999px;
-  background-color: #56cad7;
+  background-color: #4329A6;
   height: 100%;
   width: 10%;
   -webkit-transition-duration: 2s;
@@ -35,7 +36,13 @@ exports[`ProgressBar renders 1`] = `
 .c3 {
   margin-left: 0.3125rem;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 400;
+  color: #6954B8;
+  -webkit-letter-spacing: 0.0625rem;
+  -moz-letter-spacing: 0.0625rem;
+  -ms-letter-spacing: 0.0625rem;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
 }
 
 <div
