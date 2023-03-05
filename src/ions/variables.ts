@@ -160,3 +160,23 @@ export const button = {
 export const misc = {
   transitionDuration: '0.3s'
 }
+
+export const field = {
+  borderWidth: rem('1px'),
+  borderRadius: rem('8px'),
+  borderColor: colors.purple100,
+  hoverBorderColor: colors.purple150,
+  backgroundColor: colors.white,
+  boxShadow: rgba(colors.black, 0.15),
+  color: colors.black,
+  activeBorderColor: colors.purple500,
+  activeColor: colors.purple500,
+  successBackgroundColor: colors.green500,
+  successBorderColor: colors.green600,
+  errorBorderColor: colors.red500,
+  errorBackgroundColor: colors.red300,
+  disabledBackgroundColor: colors.grey100,
+  disabledColor: colors.grey300,
+  height: rem('50px'),
+  placeholderColor: colors.grey200,
+}

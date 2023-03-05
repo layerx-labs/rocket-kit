@@ -3,9 +3,6 @@ import { rem} from "polished";
 import { typography, colors } from './ions/variables';
 import { device } from './ions/breakpoints';
 
-const { normal, grey, lightGrey } = colors;
-const { regular } = typography;
-
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -20,8 +17,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Space Grotesk', Verdana, Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    font-weight: ${regular};
-    color: ${normal};
+    font-weight: ${typography.regular};
+    color: ${colors.black};
     font-feature-settings: 'ss04' on;
     -webkit-font-smoothing: antialiased;
   }
@@ -31,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   h2,
   h2 span {
     margin: 0;
-    font-weight: ${regular};
+    font-weight: ${typography.regular};
   }
 
   h1,
@@ -71,9 +68,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   pre {
-    border: 1px solid ${grey};
+    border: 1px solid ${colors.grey500};
     border-radius: 4px;
-    background-color: ${lightGrey};
+    background-color: ${colors.grey300};
     padding: ${rem('15px')};
   }
 
