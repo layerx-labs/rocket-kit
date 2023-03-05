@@ -2,59 +2,47 @@ import styled, { css } from 'styled-components/macro';
 import { NoteColor } from './types';
 import { rem } from 'polished';
 import { device } from '../../ions/breakpoints';
-import { colors } from '../../ions/variables';
+import { colors, field, misc, typography } from '../../ions/variables';
 
 interface NoteCardProps {
   color?: NoteColor;
   buttonValue?: string;
 }
 
-const {
-  green,
-  lightGreen,
-  darkGreen,
-  grey,
-  lightGrey,
-  darkGrey,
-  red,
-  lightRed,
-  darkRed,
-} = colors;
-
 export const Wrapper = styled.div<NoteCardProps>`
-  --default: ${grey};
-  --light: ${lightGrey};
-  --dark: ${darkGrey};
+  --borderColor: ${field.borderColor};
+  --backgroundColor: ${colors.purple50};
+  --dark: ${colors.purple400};
 
   ${props =>
     props.color === 'grey' &&
     css`
-      --default: ${grey};
-      --light: ${lightGrey};
-      --dark: ${darkGrey};
+      --borderColor: ${field.borderColor};
+      --backgroundColor: ${colors.purple50};
+      --dark: ${colors.purple400};
     `}
 
   ${props =>
     props.color === 'green' &&
     css`
-      --default: ${green};
-      --light: ${lightGreen};
-      --dark: ${darkGreen};
+      --borderColor: ${field.successBorderColor};
+      --backgroundColor: ${field.successBackgroundColor};
+      --dark: ${colors.green900};
     `}
 
   ${props =>
     props.color === 'red' &&
     css`
-      --default: ${red};
-      --light: ${lightRed};
-      --dark: ${darkRed};
+      --borderColor: ${field.errorBorderColor};
+      --backgroundColor: ${field.errorBackgroundColor};
+      --dark: ${colors.red800};
     `}
 
-  border-width: ${rem('2px')};
+  border-width: ${field.borderWidth};
   border-style: solid;
-  border-color: var(--default);
-  border-radius: ${rem('6px')};
-  background-color: var(--light);
+  border-color: var(--borderColor);
+  border-radius: ${field.borderRadius};
+  background-color: var(--backgroundColor);
   padding: ${rem('15px')};
 
   div {
@@ -73,23 +61,23 @@ export const Wrapper = styled.div<NoteCardProps>`
       button {
         margin: ${rem('30px')} 0 0 0;
         border: 0;
-        border-radius: ${rem('6px')};
-        background-color: var(--default);
+        border-radius: ${field.borderRadius};
+        background-color: var(--borderColor);
         height: ${rem('36px')};
         display: flex;
         justify-content: center;
         align-items: center;
         padding: ${rem('20px')};
-        font-size: 0.75rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: hsl(0, 0%, 100%);
+        font-size: ${typography.fontSizeSm};
+        font-weight: ${typography.medium};
+        color: var(--dark);
         white-space: nowrap;
-        transition-duration: 0.3s;
+        transition-duration: ${misc.transitionDuration};
         cursor: pointer;
 
         &:hover {
           background-color: var(--dark);
+          color: ${colors.white};
         }
       }
 

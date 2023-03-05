@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, typography } from '../../ions/variables';
+import { colors, field, misc, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
-
-const { normal, light, grey, lightGrey } = colors;
-const { bold } = typography;
 
 interface TableProps {
   border?: boolean;
@@ -18,9 +15,14 @@ export const TableWrapper = styled.div`
 export const OverflowWrapper = styled.div`
   @media ${device.s} {
     display: block;
-    border-radius: ${rem('6px')};
-    background: linear-gradient(to right, ${light} 30%, rgba(255, 255, 255, 0)),
-      linear-gradient(to right, rgba(255, 255, 255, 0), ${light} 70%) 0 100%,
+    border-radius: ${field.borderRadius};
+    background: linear-gradient(
+        to right,
+        ${colors.white} 30%,
+        rgba(255, 255, 255, 0)
+      ),
+      linear-gradient(to right, rgba(255, 255, 255, 0), ${colors.white} 70%) 0
+        100%,
       radial-gradient(
         farthest-side at 0% 50%,
         rgba(0, 0, 0, 0.2),
@@ -33,7 +35,7 @@ export const OverflowWrapper = styled.div`
         )
         0 100%;
     background-repeat: no-repeat;
-    background-color: #fff;
+    background-color: ${colors.white};
     background-size: ${rem('40px')} 100%, ${rem('40px')} 100%,
       ${rem('14px')} 100%, ${rem('14px')} 100%;
     background-position: 0 0, 100%, 0 0, 100%;
@@ -52,13 +54,13 @@ export const Table = styled.table<TableProps>`
   width: 100%;
   border-width: 0;
   border-style: solid;
-  border-color: ${grey};
-  border-radius: ${rem('6px')};
+  border-color: ${colors.grey200};
+  border-radius: ${field.borderRadius};
   border-spacing: 0;
   white-space: nowrap;
 
   @media ${device.s} {
-    border-width: ${props => (props.border ? rem('1px') : '0')};
+    border-width: ${props => (props.border ? field.borderWidth : 0)};
   }
 
   th,
@@ -108,20 +110,20 @@ export const Table = styled.table<TableProps>`
   }
 
   th {
-    font-size: 0.85rem;
+    font-size: ${typography.fontSizeSm};
 
     &:first-child {
-      border-top-left-radius: ${rem('6px')};
+      border-top-left-radius: ${field.borderRadius};
     }
 
     &:last-child {
-      border-top-right-radius: ${rem('6px')};
+      border-top-right-radius: ${field.borderRadius};
     }
   }
 
   tr {
-    border: ${rem('1px')} solid ${grey};
-    border-radius: ${rem('6px')};
+    border: ${field.borderWidth} solid ${colors.grey200};
+    border-radius: ${field.borderRadius};
     position: relative;
 
     &:not(:last-child) {
@@ -145,9 +147,8 @@ export const Table = styled.table<TableProps>`
 
     @media ${device.s} {
       display: contents;
-      font-weight: ${bold};
-      color: ${grey};
-      text-transform: uppercase;
+      font-weight: ${typography.semiBold};
+      color: ${colors.grey400};
       text-align: left;
     }
   }
@@ -155,11 +156,11 @@ export const Table = styled.table<TableProps>`
   tbody {
     tr {
       display: block;
-      transition-duration: 0.3s;
+      transition-duration: ${misc.transitionDuration};
 
       &:hover {
         background-color: ${props =>
-          props.loadingState ? 'transparent' : lightGrey};
+          props.loadingState ? 'transparent' : colors.grey50};
 
         td.menu {
           button {
@@ -174,7 +175,7 @@ export const Table = styled.table<TableProps>`
     }
 
     td {
-      border-top: ${rem('1px')} solid ${grey};
+      border-top: ${field.borderWidth} solid ${colors.grey200};
       height: inherit;
       min-height: ${rem('50px')};
       padding: ${rem('15px')};
@@ -209,8 +210,8 @@ export const Table = styled.table<TableProps>`
       a {
         display: flex;
         align-items: center;
-        color: ${normal};
-        text-decoration-color: ${grey};
+        color: ${colors.black};
+        text-decoration-color: ${colors.grey400};
       }
 
       &:first-child {
@@ -221,7 +222,7 @@ export const Table = styled.table<TableProps>`
         position: absolute;
         left: ${rem('15px')};
         content: attr(data-label);
-        font-weight: ${bold};
+        font-weight: ${typography.semiBold};
         text-transform: capitalize;
 
         ${props =>
@@ -279,7 +280,7 @@ export const Table = styled.table<TableProps>`
 
         button {
           margin-top: ${rem('5px')};
-          transition: 0.3s;
+          transition: ${misc.transitionDuration};
         }
 
         ul {
@@ -306,7 +307,7 @@ export const Table = styled.table<TableProps>`
         }
 
         &:first-child {
-          border-top: ${rem('1px')} solid ${grey};
+          border-top: ${field.borderWidth} solid ${colors.grey200};
         }
 
         &:before {

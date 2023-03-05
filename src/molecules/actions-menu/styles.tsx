@@ -1,12 +1,10 @@
 import styled, { css } from 'styled-components/macro';
-import { lighten, rem } from 'polished';
-import { colors } from '../../ions/variables';
+import { rem } from 'polished';
+import { field } from '../../ions/variables';
 
 interface ListInterface {
   rowIndex?: number;
 }
-
-const { normal, light, lightGrey, red } = colors;
 
 export const ActionsMenuStyle = styled.div`
   height: ${rem('50px')};
@@ -18,16 +16,17 @@ export const ActionsMenuStyle = styled.div`
 
 export const List = styled.ul<ListInterface>`
   position: absolute;
-  border: ${rem('1px')} solid ${lightGrey};
-  border-radius: ${rem('4px')};
-  background-color: ${light};
+  border: ${field.borderWidth} solid ${field.borderColor};
+  border-radius: ${field.borderRadius};
+  background-color: ${field.backgroundColor};
   margin-top: ${rem('5px')};
   min-width: ${rem('200px')};
   max-width: ${rem('250px')};
   padding: 0;
-  -moz-box-shadow: 0 0 ${rem('15px')} 0 ${lighten(0.7, normal)};
-  -webkit-box-shadow: 0 0 ${rem('15px')} 0 ${lighten(0.7, normal)};
-  box-shadow: 0 0 ${rem('15px')} 0 ${lighten(0.7, normal)};
+  -moz-box-shadow: ${field.boxShadow};
+  -webkit-box-shadow: ${field.boxShadow};
+  box-shadow: ${field.boxShadow};
+  overflow: hidden;
   z-index: 1;
 
   ${props =>
@@ -47,29 +46,21 @@ export const List = styled.ul<ListInterface>`
     transition-duration: 0.3s;
 
     &:hover {
-      background-color: ${lightGrey};
+      background-color: ${field.hoverBorderColor};
       cursor: pointer;
     }
 
-    &:first-child {
-      border-radius: ${rem('4px')} ${rem('4px')} 0 0;
-    }
-
-    &:last-child {
-      border-radius: 0 0 ${rem('4px')} ${rem('4px')};
-    }
-
     &.danger {
-      border-top: ${rem('1px')} solid ${lightGrey};
+      border-top: ${field.borderWidth} solid ${field.borderColor};
 
       a {
-        color: ${red};
+        color: ${field.errorBorderColor};
       }
     }
 
     &.disabled {
       a {
-        color: ${lightGrey};
+        color: ${field.disabledColor};
         pointer-events: none;
       }
 
@@ -83,7 +74,7 @@ export const List = styled.ul<ListInterface>`
       display: flex;
       align-items: center;
       padding: 0 ${rem('20px')};
-      color: ${normal};
+      color: ${field.color};
       text-decoration: none;
       white-space: nowrap;
 

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
+import { field, misc } from '../../ions/variables';
 
 interface WrapperProps {
   type?: 'row' | 'column';
@@ -13,8 +13,6 @@ interface ItemProps {
   error?: string;
   disabled?: boolean;
 }
-
-const { normal, green, darkGreen, grey, lightGrey, red } = colors;
 
 export const Wrapper = styled.ul<WrapperProps>`
   display: flex;
@@ -41,11 +39,11 @@ export const Wrapper = styled.ul<WrapperProps>`
   }
 
   input[type='radio']:checked ~ .check {
-    border-color: ${darkGreen};
+    border-color: ${field.successBorderColor};
   }
 
   input[type='radio']:checked ~ .check::before {
-    background-color: ${green};
+    background-color: ${field.successBackgroundColor};
   }
 
   & + span {
@@ -69,7 +67,7 @@ export const Item = styled.li<ItemProps>`
     padding-left: calc(var(--size) + 5px);
     line-height: var(--size);
     vertical-align: middle;
-    color: ${props => (props.error ? red : null)};
+    color: ${props => (props.error ? field.errorBorderColor : null)};
     cursor: pointer;
     z-index: 1;
   }
@@ -77,11 +75,12 @@ export const Item = styled.li<ItemProps>`
   .check {
     position: absolute;
     top: 0;
-    border: ${rem('2px')} solid ${props => (props.error ? red : grey)};
+    border: ${rem('2px')} solid
+      ${props => (props.error ? field.errorBorderColor : field.borderColor)};
     border-radius: 100%;
     width: var(--size);
     height: var(--size);
-    transition-duration: 0.3s;
+    transition-duration: ${misc.transitionDuration};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,23 +95,23 @@ export const Item = styled.li<ItemProps>`
   }
 
   &:hover .check {
-    border-color: ${normal};
+    border-color: ${field.hoverBorderColor};
   }
 
   ${props =>
     props.disabled &&
     css`
       label {
-        color: ${grey};
+        color: ${field.disabledColor};
       }
 
       input[type='radio'] ~ .check,
       input[type='radio']:checked ~ .check {
-        border-color: ${lightGrey};
+        border-color: ${field.disabledColor};
       }
 
       input[type='radio']:checked ~ .check::before {
-        background-color: ${lightGrey};
+        background-color: ${field.disabledBackgroundColor};
       }
 
       &:hover {

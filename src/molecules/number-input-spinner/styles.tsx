@@ -1,18 +1,16 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
-
-const { grey, lightGrey, lightRed } = colors;
+import { colors, field, misc, typography } from '../../ions/variables';
 
 interface NumberInputSpinnerProps {
   max?: number;
 }
 
 export const Wrapper = styled.div`
-  border: ${rem('1px')} solid ${grey};
-  border-radius: ${rem('6px')};
+  border: ${field.borderWidth} solid ${field.borderColor};
+  border-radius: ${field.borderRadius};
   max-width: max-content;
-  height: ${rem('50px')};
+  height: ${field.height};
   display: flex;
   overflow: hidden;
 
@@ -20,10 +18,10 @@ export const Wrapper = styled.div`
   input {
     &:disabled {
       cursor: inherit;
-      background-color: ${lightGrey};
+      background-color: ${field.disabledBackgroundColor};
 
       svg {
-        opacity: 0.25;
+        fill: ${field.disabledColor};
       }
 
       &:hover {
@@ -39,10 +37,10 @@ export const Input = styled.input<NumberInputSpinnerProps>`
     props.max != null && props.max.toString().length > 5
       ? props.max.toString().length * 10 + 20 + 'px'
       : '70px'};
-  height: ${rem('50px')};
+  height: ${field.height};
   padding: ${rem('10px')};
   font-family: inherit;
-  font-size: 1rem;
+  font-size: ${typography.defaultSize};
   text-align: center;
   -moz-appearance: textfield;
 
@@ -58,33 +56,33 @@ export const Input = styled.input<NumberInputSpinnerProps>`
 
   &:invalid {
     box-shadow: none;
-    background-color: ${lightRed};
+    background-color: ${field.errorBackgroundColor};
   }
 `;
 
 export const Button = styled.button`
-  width: ${rem('50px')};
-  height: ${rem('50px')};
+  width: ${field.height};
+  height: ${field.height};
   border: 0;
-  background-color: ${lightGrey};
+  background-color: ${field.borderColor};
   cursor: pointer;
-  transition-duration: 0.3s;
+  transition-duration: ${misc.transitionDuration};
 
   &.remove-button {
-    border-right: ${rem('1px')} solid ${grey};
+    border-right: ${field.borderWidth} solid ${field.borderColor};
   }
 
   &.add-button {
-    border-left: ${rem('1px')} solid ${grey};
+    border-left: ${field.borderWidth} solid ${field.borderColor};
   }
 
   svg {
     width: auto;
     height: ${rem('20px')};
-    fill: ${grey};
+    fill: ${colors.purple300};
   }
 
   &:hover {
-    background-color: ${lightGrey};
+    background-color: ${field.hoverBorderColor};
   }
 `;
