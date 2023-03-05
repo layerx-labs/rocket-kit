@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import { ErrorFieldColor } from './types';
-import { colors } from '../../ions/variables';
+import { field } from '../../ions/variables';
 import { rem } from 'polished';
 
 import { TextFieldInputStyle as Input } from '../text-field/styles';
@@ -11,12 +11,13 @@ interface ErrorStyleProps {
   color: ErrorFieldColor;
 }
 
-const { green, red } = colors;
-
 export const ErrorStyle = styled.span<ErrorStyleProps>`
   display: block;
   font-size: 0.7rem;
-  color: ${props => (props.color === 'success' ? green : red)};
+  color: ${props =>
+    props.color === 'success'
+      ? field.successBorderColor
+      : field.errorBorderColor};
 
   ${Input} + &, ${TextArea} + &, ${Select} + & {
     margin-top: ${rem('5px')};

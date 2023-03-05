@@ -7,8 +7,6 @@ interface LoadingProps {
   size?: string;
 }
 
-const { light } = colors;
-
 const rotation = keyframes`
   from {
       transform: rotate(0deg);
@@ -20,7 +18,7 @@ const rotation = keyframes`
 
 export const Loading = styled.div<LoadingProps>`
   border: ${rem('5px')} solid hsla(0, 0%, 48%, 0.5);
-  border-top-color: ${props => props.fill || light};
+  border-top-color: ${props => props.fill || colors.white};
   border-radius: 50%;
   width: ${props => props.size || rem('20px')};
   height: ${props => props.size || rem('20px')};

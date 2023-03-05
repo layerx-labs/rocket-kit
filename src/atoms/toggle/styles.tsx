@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
-
-const { light, green, lightGrey } = colors;
+import { colors, field, misc } from '../../ions/variables';
 
 export const Switcher = styled.fieldset`
   margin: 0;
@@ -26,9 +24,9 @@ export const Switcher = styled.fieldset`
       display: inline-block;
       vertical-align: middle;
       width: ${rem('40px')};
-      height: ${rem('24px')};
+      height: ${rem('25px')};
       border-radius: 999px;
-      border: 2px solid ${light};
+      border: ${field.borderWidth} solid ${field.borderColor};
       position: relative;
       opacity: ${props => (props.disabled ? '0.5' : '1')};
 
@@ -40,7 +38,7 @@ export const Switcher = styled.fieldset`
 
       input[type='radio'] {
         display: inline-block;
-        margin: 0 ${rem('-2px')} 0 0;
+        margin: 0 ${rem('-3px')} 0 0;
         width: 50%;
         height: 100%;
         opacity: 0;
@@ -53,7 +51,7 @@ export const Switcher = styled.fieldset`
         }
 
         &.switch-on:checked ~ .bg {
-          background-color: ${green};
+          background-color: ${colors.green500};
         }
 
         &.switch-off:checked ~ .switcher {
@@ -61,21 +59,21 @@ export const Switcher = styled.fieldset`
         }
 
         &.switch-off:checked ~ .bg {
-          background-color: ${lightGrey};
+          background-color: ${colors.grey100};
         }
       }
 
       .switcher {
         display: block;
         position: absolute;
-        top: ${rem('2px')};
-        left: ${rem('2px')};
+        top: ${rem('3px')};
+        left: ${rem('3px')};
         right: 100%;
         width: ${rem('16px')};
         height: ${rem('16px')};
         border-radius: 50%;
-        background-color: ${light};
-        transition: all 0.3s ease-out;
+        background-color: ${colors.white};
+        transition: all ${misc.transitionDuration} ease-out;
         z-index: 2;
       }
 
@@ -88,8 +86,8 @@ export const Switcher = styled.fieldset`
         z-index: 0;
         border-radius: 999px;
         background-color: transparent;
-        transition: all 0.3s ease-out;
-        background-color: ${lightGrey};
+        transition: all ${misc.transitionDuration} ease-out;
+        background-color: ${colors.grey200};
       }
     }
   }
