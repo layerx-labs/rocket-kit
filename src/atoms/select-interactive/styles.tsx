@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
-
-const { normal, light, grey, lightGrey, purple500, lightPurple } = colors;
+import { colors, field, misc, typography } from '../../ions/variables';
 
 export const SelectWrapper = styled.div`
   .select {
@@ -11,16 +9,17 @@ export const SelectWrapper = styled.div`
     }
 
     &__control {
-      border-color: ${grey};
-      min-height: ${rem('50px')};
-      transition-duration: 0.3s;
+      border-color: ${field.borderColor};
+      border-radius: ${field.borderRadius};
+      min-height: ${field.height};
+      transition-duration: ${misc.transitionDuration};
 
       &:hover {
-        border-color: ${purple500};
+        border-color: ${field.hoverBorderColor};
       }
 
       &--is-focused {
-        border-color: ${purple500};
+        border-color: ${field.activeBorderColor};
         box-shadow: none;
       }
     }
@@ -32,15 +31,15 @@ export const SelectWrapper = styled.div`
     }
 
     &__placeholder {
-      color: ${grey};
+      color: ${field.placeholderColor};
     }
 
     &__input {
-      color: ${normal};
+      color: ${field.color};
     }
 
     &__single-value {
-      color: ${normal};
+      color: ${field.color};
     }
 
     &__indicator {
@@ -55,31 +54,35 @@ export const SelectWrapper = styled.div`
         height: ${rem('22px')};
 
         path {
-          fill: hsl(0, 0%, 85%);
+          fill: ${field.borderColor};
         }
       }
 
       &-separator {
-        background-color: ${grey};
+        background-color: ${field.borderColor};
       }
     }
 
     &__option {
-      transition-duration: 0.3s;
+      transition-duration: ${misc.transitionDuration};
 
       &:hover {
-        background-color: ${purple500};
-        color: ${light};
+        background-color: ${field.hoverBorderColor};
+        color: ${field.color};
+
+        svg {
+          fill: ${field.color};
+        }
       }
 
       &--is-focused {
-        background-color: ${purple500};
-        color: ${light};
+        background-color: ${field.activeBorderColor};
+        color: ${colors.white};
       }
 
       &--is-selected {
-        background-color: ${lightPurple};
-        color: ${normal};
+        background-color: ${field.activeBorderColor} !important;
+        color: ${colors.white} !important;
       }
     }
   }
@@ -105,21 +108,21 @@ export const SelectWrapper = styled.div`
       margin: 0 ${rem('5px')} 0 0;
       width: ${rem('20px')};
       height: auto;
-      transition-duration: 0.3s;
+      transition-duration: ${misc.transitionDuration};
     }
   }
 
   .select__option--is-selected {
     svg {
-      fill: ${normal};
-      transition-duration: 0.3s;
+      fill: ${colors.white} !important;
+      transition-duration: ${misc.transitionDuration};
     }
   }
 
   .select__option--is-focused {
     svg {
-      fill: ${light};
-      transition-duration: 0.3s;
+      fill: ${colors.white};
+      transition-duration: ${misc.transitionDuration};
     }
   }
 
@@ -129,12 +132,12 @@ export const SelectWrapper = styled.div`
 `;
 
 export const SelectGroupLabel = styled.span`
-  font-size: ${rem('12px')};
-  color: ${lightGrey};
+  font-size: ${typography.fontSizeXs};
+  color: ${field.placeholderColor};
 
   + .tag {
-    border-color: ${lightGrey};
-    background-color: ${lightGrey};
-    color: ${grey};
+    border-color: ${field.borderColor};
+    background-color: ${field.borderColor};
+    color: ${field.activeBorderColor};
   }
 `;

@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors, typography } from '../../ions/variables';
+import { colors, misc, typography } from '../../ions/variables';
 
 interface ErrorProps {
   variant: 'default' | 'minimal';
 }
-
-const { normal, green } = colors;
-const { bold } = typography;
 
 export const Wrapper = styled.div<ErrorProps>`
   min-height: ${props => (props.variant === 'default' ? '50vh' : 'inherit')};
@@ -25,16 +22,16 @@ export const Wrapper = styled.div<ErrorProps>`
 
   > span {
     margin-top: ${rem('15px')};
-    font-weight: ${bold};
-    color: ${normal};
+    font-weight: ${typography.semiBold};
+    color: ${colors.black};
 
     a {
-      color: ${normal};
-      transition-duration: 0.3s;
+      color: ${colors.black};
+      transition-duration: ${misc.transitionDuration};
+    }
 
-      &:hover {
-        color: ${green};
-      }
+    &:hover {
+      color: ${colors.purple500};
     }
   }
 `;

@@ -1,9 +1,7 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
 import { device } from '../../ions/breakpoints';
-import { colors } from '../../ions/variables';
-
-const { green, grey, lightGrey, light } = colors;
+import { colors, field, typography } from '../../ions/variables';
 
 interface WizardStepProps {
   active?: boolean;
@@ -32,7 +30,9 @@ export const Step = styled.li<WizardStepProps>`
     content: '';
     position: absolute;
     top: 0;
-    border: 0 solid ${props => (props.active ? green : lightGrey)};
+    border: 0 solid
+      ${props =>
+        props.active ? field.successBackgroundColor : field.borderColor};
     border-width: ${rem('22px')} ${rem('15px')};
     width: 0;
     height: 0;
@@ -46,7 +46,8 @@ export const Step = styled.li<WizardStepProps>`
   &:after {
     left: calc(100% - ${rem('18px')});
     border-color: transparent;
-    border-left-color: ${props => (props.active ? green : lightGrey)};
+    border-left-color: ${props =>
+      props.active ? field.successBackgroundColor : field.borderColor};
   }
 
   &:first-child:before {
@@ -61,7 +62,7 @@ export const Step = styled.li<WizardStepProps>`
     overflow: hidden;
 
     > div {
-      border-radius: ${rem('6px')} 0 0 ${rem('6px')};
+      border-radius: ${field.borderRadius} 0 0 ${field.borderRadius};
     }
   }
 
@@ -69,12 +70,13 @@ export const Step = styled.li<WizardStepProps>`
     padding-right: 0;
 
     > div {
-      border-radius: 0 ${rem('6px')} ${rem('6px')} 0;
+      border-radius: 0 ${field.borderRadius} ${field.borderRadius} 0;
     }
   }
 
   > div {
-    background-color: ${props => (props.active ? green : lightGrey)};
+    background-color: ${props =>
+      props.active ? field.successBackgroundColor : field.borderColor};
     width: 100%;
     height: 100%;
     display: flex;
@@ -83,13 +85,13 @@ export const Step = styled.li<WizardStepProps>`
 
     span {
       width: min-content;
-      font-size: 0.75rem;
-      color: ${props => (props.active ? light : grey)};
+      font-size: ${typography.fontSizeSm};
+      color: ${props => (props.active ? colors.white : colors.purple300)};
 
       @media ${device.s} {
         width: 100%;
-        font-size: 1rem;
-        font-weight: 700;
+        font-size: ${typography.defaultSize};
+        font-weight: ${typography.semiBold};
       }
     }
   }

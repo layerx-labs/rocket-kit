@@ -31,9 +31,12 @@ const CardValue = (props: CardValueProps) => {
       <span>{value}</span>
       {description && <p>{description}</p>}
       {buttonValue && onClick && (
-        <Styles.CardValueButtonWrapper>
-          <Button color="grey" value={buttonValue} action={onClick} />
-        </Styles.CardValueButtonWrapper>
+        <Button
+          color="grey150"
+          txtColor="grey500"
+          value={buttonValue}
+          action={onClick}
+        />
       )}
     </Styles.CardValueStyle>
   );

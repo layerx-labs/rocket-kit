@@ -9,10 +9,13 @@ interface SpinnerProps {
   style?: CSSProperties;
 }
 
-const { grey } = colors;
-
 const Spinner = (props: SpinnerProps) => {
-  const { fill = grey, size = '20px', className = 'spinner', style } = props;
+  const {
+    fill = colors.grey200,
+    size = '20px',
+    className = 'spinner',
+    style,
+  } = props;
   return (
     <Styles.Loading
       className={className}

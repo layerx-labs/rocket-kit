@@ -1,11 +1,8 @@
-import { lighten, darken, rem } from 'polished';
+import { rem, rgba } from 'polished';
 
 export const colors = {
-  // NEUTRALS
   black: '#000000',
   white: '#ffffff',
-
-  // GREY
   grey50: '#F1F1F3',
   grey100: '#E3E3E8',
   grey150: '#D5D6DC',
@@ -19,8 +16,6 @@ export const colors = {
   grey850: '#23232A',
   grey900: '#17171C',
   grey950: '#0C0C0E',
-
-  // BLUE
   blue50: '#ECEDFC',
   blue100: '#D9DCFA',
   blue150: '#C6CAF7',
@@ -34,8 +29,6 @@ export const colors = {
   blue850: '#141844',
   blue900: '#0D102E',
   blue950: '#070817',
-
-  // PURPLE
   purple50: '#ECEAF6',
   purple100: '#D9D4ED',
   purple150: '#C7BFE4',
@@ -49,8 +42,6 @@ export const colors = {
   purple850: '#140C32',
   purple900: '#0D0821',
   purple950: '#070411',
-
-  // RED
   red50: '#FDEEEE',
   red100: '#FBDDDD',
   red150: '#F9CDCD',
@@ -64,8 +55,6 @@ export const colors = {
   red850: '#471A1A',
   red900: '#2F1111',
   red950: '#180909',
-
-  // ORACLE
   oracle50: '#F4F0FD',
   oracle100: '#EAE1FB',
   oracle150: '#DFD2FA',
@@ -79,8 +68,6 @@ export const colors = {
   oracle850: '#2D2047',
   oracle900: '#1E152F',
   oracle950: '#0F0B18',
-
-  // GREEN
   green50: '#EBFCF7',
   green100: '#D7F9EF',
   green150: '#C2F6E6',
@@ -94,8 +81,6 @@ export const colors = {
   green850: '#104334',
   green900: '#0B2D23',
   green950: '#051611',
-
-  // ORANGE
   orange50: '#FFF0EA',
   orange100: '#FFE1D5',
   orange150: '#FFD2C0',
@@ -109,8 +94,6 @@ export const colors = {
   orange850: '#4D200D',
   orange900: '#331509',
   orange950: '#1A0B04',
-
-  // YELLOW
   yellow50: '#FFFBEC',
   yellow100: '#FFF7DA',
   yellow150: '#FFF3C7',
@@ -124,8 +107,6 @@ export const colors = {
   yellow850: '#4D4015',
   yellow900: '#332B0E',
   yellow950: '#1A1507',
-
-  // PALE BLUE
   paleBlue50: '#F3F9FD',
   paleBlue100: '#E7F4FB',
   paleBlue150: '#DBEEF9',
@@ -139,8 +120,6 @@ export const colors = {
   paleBlue850: '#293C47',
   paleBlue900: '#1B282F',
   paleBlue950: '#0E1418',
-
-  // PALE ORANGE
   paleOrange50: '#FDF4EC',
   paleOrange100: '#FCE9D9',
   paleOrange150: '#FADEC6',
@@ -154,25 +133,6 @@ export const colors = {
   paleOrange850: '#472C13',
   paleOrange900: '#301D0D',
   paleOrange950: '#180F06',
-
-  // OLD
-  normal: '#000000',
-  light: '#ffffff',
-  blue: '#4250e4',
-  darkBlue: '#1825AD',
-  orange: '#ff6a2c',
-  darkOrange: darken(0.2, '#ff6a2c'),
-  red: '#ef5766',
-  lightRed: lighten(0.25, '#ef5766'),
-  darkRed: darken(0.19, '#ef5766'),
-  lightPurple: lighten(0.4, '#4329a6'),
-  darkPurple: darken(0.15, '#4329a6'),
-  green: '#56cad7',
-  lightGreen: lighten(0.3, '#56cad7'),
-  darkGreen: darken(0.15, '#56cad7'),
-  grey: '#939393',
-  lightGrey: '#c4c7d3',
-  darkGrey: darken(0.1, '#939393'),
 };
 
 export const colorHues = [50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950];
@@ -199,4 +159,24 @@ export const button = {
 
 export const misc = {
   transitionDuration: '0.3s'
+}
+
+export const field = {
+  borderWidth: rem('1px'),
+  borderRadius: rem('8px'),
+  borderColor: colors.purple100,
+  hoverBorderColor: colors.purple150,
+  backgroundColor: colors.white,
+  boxShadow: rgba(colors.black, 0.15),
+  color: colors.black,
+  activeBorderColor: colors.purple500,
+  activeColor: colors.purple500,
+  successBackgroundColor: colors.green500,
+  successBorderColor: colors.green600,
+  errorBorderColor: colors.red500,
+  errorBackgroundColor: colors.red300,
+  disabledBackgroundColor: colors.grey100,
+  disabledColor: colors.grey300,
+  height: rem('50px'),
+  placeholderColor: colors.grey200,
 }

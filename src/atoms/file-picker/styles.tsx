@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
+import { field, misc } from '../../ions/variables';
 
 interface FilePickerProps {
-  minimal?: boolean;
   error?: boolean;
   disabled?: boolean;
 }
-
-const { red, grey, lightGrey, darkGrey, green, darkGreen, light, normal } =
-  colors;
 
 export const Wrapper = styled.div<FilePickerProps>`
   input {
@@ -23,21 +19,23 @@ export const Wrapper = styled.div<FilePickerProps>`
 
   label {
     margin-bottom: 0 !important;
-    border-width: ${props =>
-      props.minimal ? `0 0 ${rem('1px')} 0` : rem('1px')};
+    border-width: ${field.borderWidth};
     border-style: solid;
-    border-color: ${props => (props.error ? red : grey)};
-    border-radius: ${props => (props.minimal ? 0 : rem('6px'))};
-    background-color: ${props => (props.disabled ? lightGrey : 'transparent')};
+    border-color: ${props =>
+      props.error ? field.errorBorderColor : field.borderColor};
+    border-radius: ${field.borderRadius};
+    background-color: ${props =>
+      props.disabled ? field.disabledBackgroundColor : 'transparent'};
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: ${rem('50px')};
+    height: ${field.height};
     -webkit-appearance: none;
     outline: none;
     cursor: ${props => (props.disabled ? 'default' : 'pointer')};
     pointer-events: ${props => (props.disabled ? 'none' : '')};
+    transition-duration: ${misc.transitionDuration};
     overflow: hidden;
 
     span {
@@ -47,8 +45,8 @@ export const Wrapper = styled.div<FilePickerProps>`
       &.file-name {
         flex: 1;
         display: block;
-        padding: ${props => (props.minimal ? 0 : `0 ${rem('10px')}`)};
-        color: ${props => (props.disabled ? grey : normal)};
+        padding: ${`0 ${rem('10px')}`};
+        color: ${props => (props.disabled ? field.disabledColor : field.color)};
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -56,37 +54,49 @@ export const Wrapper = styled.div<FilePickerProps>`
 
       &.button {
         border-left: ${props =>
-          props.minimal ? 0 : `${rem('1px')} solid ${grey}`};
+          `${field.borderWidth} solid ${
+            props.error ? field.errorBorderColor : field.borderColor
+          }`};
         background-color: ${props =>
-          props.minimal ? 'transparent' : props.disabled ? lightGrey : green};
+          props.disabled
+            ? field.disabledBackgroundColor
+            : props.error
+            ? field.errorBackgroundColor
+            : field.borderColor};
         height: 100%;
-        padding: ${props =>
-          props.minimal
-            ? `0 ${rem('5px')} 0 ${rem('20px')}`
-            : `0 ${rem('20px')}`};
+        padding: ${`0 ${rem('20px')}`};
         color: ${props =>
-          props.disabled ? grey : props.minimal ? darkGrey : light};
-        transition-duration: 0.3s;
+          props.disabled
+            ? field.disabledColor
+            : props.error
+            ? field.errorBorderColor
+            : field.activeColor};
+        transition-duration: ${misc.transitionDuration};
 
         svg {
           margin-right: ${rem('8px')};
           width: auto;
           height: ${rem('24px')};
           fill: ${props =>
-            props.disabled ? grey : props.minimal ? darkGrey : light};
-          transition-duration: 0.3s;
+            props.disabled
+              ? field.disabledColor
+              : props.error
+              ? field.errorBorderColor
+              : field.activeColor};
+          transition-duration: ${misc.transitionDuration};
         }
 
         &:hover {
-          background-color: ${props =>
-            props.minimal ? 'transparent' : darkGreen};
-          color: ${props => (props.minimal ? darkGreen : light)};
-
-          svg {
-            fill: ${props =>
-              props.disabled ? grey : props.minimal ? darkGreen : light};
-          }
+          background-color: ${field.hoverBorderColor};
         }
+      }
+    }
+
+    &:hover {
+      border-color: ${field.hoverBorderColor};
+
+      span.button {
+        background-color: ${field.hoverBorderColor};
       }
     }
   }

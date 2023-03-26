@@ -11,15 +11,13 @@ export interface LabelProps {
   style?: React.CSSProperties;
 }
 
-const { grey } = colors;
-
 const Label = (props: LabelProps) => {
   const { value, currency, className = 'label', style } = props;
   return (
     <Styles.LabelStyle className={className} style={style}>
       {value}
-      {currency === 'tkai' && <Icon icon="tkai" fill={grey} />}
-      {currency === 'vkai' && <Icon icon="vkai" fill={grey} />}
+      {currency === 'tkai' && <Icon icon="tkai" fill={colors.grey200} />}
+      {currency === 'vkai' && <Icon icon="vkai" fill={colors.grey200} />}
     </Styles.LabelStyle>
   );
 };

@@ -1,10 +1,7 @@
 import styled from 'styled-components/macro';
 import { rem, rgba } from 'polished';
-import { colors, typography } from '../../ions/variables';
+import { colors, field, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
-
-const { grey, light } = colors;
-const { bold } = typography;
 
 interface BorderProps {
   border: boolean;
@@ -15,17 +12,17 @@ export const EmptyTableWrapper = styled.div`
 `;
 
 export const EmptyTableHead = styled.div<BorderProps>`
-  border-width: ${props => (props.border ? rem('1px') : `0 0 ${rem('1px')} 0`)};
+  border-width: ${props =>
+    props.border ? field.borderWidth : `0 0 ${field.borderWidth} 0`};
   border-style: solid;
-  border-color: ${grey};
-  border-radius: ${rem('6px')} ${rem('6px')} 0 0;
+  border-color: ${colors.grey200};
+  border-radius: ${field.borderRadius} ${field.borderRadius} 0 0;
   height: ${rem('50px')};
   display: flex;
   align-items: center;
-  font-size: 0.85rem;
-  font-weight: ${bold};
-  color: ${grey};
-  text-transform: uppercase;
+  font-size: ${typography.fontSizeSm};
+  font-weight: ${typography.semiBold};
+  color: ${colors.grey400};
 
   > div {
     white-space: nowrap;
@@ -34,10 +31,9 @@ export const EmptyTableHead = styled.div<BorderProps>`
     display: none;
     flex: 1;
     padding: 0 ${rem('15px')};
-    font-size: 0.85rem;
-    font-weight: ${bold};
-    color: ${grey};
-    text-transform: uppercase;
+    font-size: ${typography.fontSizeSm};
+    font-weight: ${typography.semiBold};
+    color: ${colors.grey400};
 
     &:first-child,
     &:nth-child(2) {
@@ -64,10 +60,12 @@ export const EmptyTableHead = styled.div<BorderProps>`
 
 export const EmptyTableBody = styled.div<BorderProps>`
   border-width: ${props =>
-    props.border ? `0 ${rem('1px')} ${rem('1px')} ${rem('1px')}` : 0};
+    props.border
+      ? `0 ${field.borderWidth} ${field.borderWidth} ${field.borderWidth}`
+      : 0};
   border-style: solid;
-  border-color: ${grey};
-  border-radius: 0 0 ${rem('6px')} ${rem('6px')};
+  border-color: ${colors.grey200};
+  border-radius: 0 0 ${field.borderRadius} ${field.borderRadius};
 `;
 
 export const EmptyTableRow = styled.div`
@@ -76,7 +74,7 @@ export const EmptyTableRow = styled.div`
   align-items: center;
 
   &:not(:last-child) {
-    border-bottom: ${rem('1px')} solid ${grey};
+    border-bottom: ${field.borderWidth} solid ${colors.grey200};
   }
 
   > div {
@@ -108,7 +106,7 @@ export const EmptyTableRow = styled.div`
 `;
 
 export const EmptyTableCellText = styled.div`
-  background-color: #edeef1;
+  background-color: ${colors.grey200};
   width: 100%;
   height: ${rem('15px')};
 `;
@@ -118,8 +116,8 @@ export const EmptyTableOverlay = styled.div`
   bottom: 0;
   background-image: linear-gradient(
     to bottom,
-    ${rgba(light, 0)},
-    ${rgba(light, 1)}
+    ${rgba(colors.white, 0)},
+    ${rgba(colors.white, 1)}
   );
   width: 100%;
   height: calc(100% - ${rem('50px')});
@@ -128,5 +126,5 @@ export const EmptyTableOverlay = styled.div`
   align-items: flex-end;
   padding: 0 ${rem('15px')} ${rem('15px')} ${rem('15px')};
   text-align: center;
-  color: ${grey};
+  color: ${colors.grey400};
 `;

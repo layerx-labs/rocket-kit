@@ -4,13 +4,6 @@ import TextArea, { TextAreaProps } from '..';
 export default {
   title: 'Components/Atoms/TextArea',
   component: TextArea,
-  argTypes: {
-    minimal: {
-      control: {
-        type: 'boolean',
-      },
-    },
-  },
 };
 
 export const TextAreaComponent = (args: TextAreaProps) => (
@@ -19,7 +12,6 @@ export const TextAreaComponent = (args: TextAreaProps) => (
 
 TextAreaComponent.storyName = 'Text Area';
 TextAreaComponent.args = {
-  minimal: true,
   name: 'awesome-text-area',
   placeholder: 'Awesome Placeholder',
   height: '100px',
@@ -46,7 +38,6 @@ export const TextAreaCharactersCountComponent = (args: TextAreaProps) => {
 
 TextAreaCharactersCountComponent.storyName = 'Characters Count';
 TextAreaCharactersCountComponent.args = {
-  minimal: true,
   name: 'awesome-text-area',
   placeholder: 'Awesome Placeholder',
   height: '100px',
@@ -61,7 +52,6 @@ export const TextAreaDefaultComponent = (args: TextAreaProps) => (
 
 TextAreaDefaultComponent.storyName = 'Default Value';
 TextAreaDefaultComponent.args = {
-  minimal: true,
   height: '100px',
   placeholder: 'Awesome Placeholder',
   defaultValue: 'Awesome default text!',
@@ -76,7 +66,6 @@ export const TextAreaDisabledComponent = (args: TextAreaProps) => (
 
 TextAreaDisabledComponent.storyName = 'Disabled';
 TextAreaDisabledComponent.args = {
-  minimal: true,
   name: 'name',
   height: '100px',
   placeholder: 'Awesome Placeholder',
@@ -91,7 +80,6 @@ export const TextAreaFullBorderComponent = (args: TextAreaProps) => (
 
 TextAreaFullBorderComponent.storyName = 'Full Border';
 TextAreaFullBorderComponent.args = {
-  minimal: false,
   name: 'awesome-input',
   height: '100px',
   placeholder: 'Awesome Placeholder',
@@ -105,7 +93,6 @@ export const TextAreaErrorComponent = (args: TextAreaProps) => (
 
 TextAreaErrorComponent.storyName = 'Error';
 TextAreaErrorComponent.args = {
-  minimal: true,
   name: 'awesome-input',
   height: '100px',
   placeholder: 'Awesome Placeholder',

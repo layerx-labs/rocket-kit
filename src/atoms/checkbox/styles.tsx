@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
+import { colors, field, misc } from '../../ions/variables';
 
 interface CheckboxErrorProps {
   error?: boolean;
@@ -8,17 +8,6 @@ interface CheckboxErrorProps {
 interface CheckboxWrapperProps extends CheckboxErrorProps {
   disabled?: boolean;
 }
-
-const {
-  normal,
-  light,
-  green,
-  darkGreen,
-  red,
-  darkRed,
-  grey,
-  lightGrey,
-} = colors;
 
 export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   display: flex;
@@ -31,12 +20,18 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   user-select: none;
 
   &:hover input:not(:disabled) ~ span {
-    border-color: ${props => (props.error ? darkRed : normal)};
+    border-color: ${props =>
+      props.error ? field.errorBorderColor : field.hoverBorderColor};
   }
 
   span {
-    color: ${props => (props.disabled ? grey : props.error ? red : null)};
-    border-color: ${props => (props.error ? red : null)};
+    color: ${props =>
+      props.disabled
+        ? field.disabledColor
+        : props.error
+        ? field.errorBorderColor
+        : null};
+    border-color: ${props => (props.error ? field.errorBorderColor : null)};
   }
 `;
 
@@ -52,8 +47,10 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   cursor: pointer;
 
   &:checked:not(:disabled)[aria-checked='true'] ~ span {
-    background-color: ${props => (props.error ? red : green)};
-    border-color: ${props => (props.error ? darkRed : darkGreen)};
+    background-color: ${props =>
+      props.error ? field.errorBackgroundColor : field.successBackgroundColor};
+    border-color: ${props =>
+      props.error ? field.errorBorderColor : field.successBorderColor};
 
     &:after {
       display: block;
@@ -62,8 +59,8 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
 
   &:checked:disabled[aria-checked='true'] ~ span {
     border-color: transparent;
-    background-color: ${lightGrey};
-    color: ${grey};
+    background-color: ${field.disabledBackgroundColor};
+    color: ${field.disabledColor};
 
     &:after {
       display: block;
@@ -71,15 +68,17 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   }
 
   &:not(:checked):disabled ~ span {
-    border-color: ${lightGrey};
-    background-color: ${light};
+    border-color: ${field.disabledBackgroundColor};
+    background-color: ${field.backgroundColor};
   }
 
   &:hover:not(:disabled) {
-    border-color: ${props => (props.error ? darkRed : darkGreen)};
+    border-color: ${props =>
+      props.error ? field.errorBorderColor : field.activeBorderColor};
 
     &:checked ~ span {
-      border-color: ${props => (props.error ? darkRed : darkGreen)};
+      border-color: ${props =>
+        props.error ? field.errorBorderColor : field.successBorderColor};
     }
   }
 `;
@@ -88,11 +87,12 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   position: absolute;
   top: 0;
   left: 0;
-  border: ${rem('2px')} solid ${props => (props.error ? red : grey)};
+  border: ${rem('2px')} solid
+    ${props => (props.error ? field.errorBorderColor : field.borderColor)};
   border-radius: 100%;
   width: ${rem('24px')};
   height: ${rem('24px')};
-  transition-duration: 0.3s;
+  transition-duration: ${misc.transitionDuration};
 
   &:after {
     display: block;
@@ -103,7 +103,7 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
     left: ${rem('6px')};
     width: ${rem('5px')};
     height: ${rem('9px')};
-    border: solid ${light};
+    border: solid ${colors.white};
     border-width: 0 ${rem('3px')} ${rem('3px')} 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -111,8 +111,10 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   }
 
   &.checked.not-disabled {
-    background-color: ${props => (props.error ? red : green)};
-    border-color: ${props => (props.error ? darkRed : darkGreen)};
+    background-color: ${props =>
+      props.error ? field.errorBackgroundColor : field.successBackgroundColor};
+    border-color: ${props =>
+      props.error ? field.errorBorderColor : field.successBorderColor};
 
     &:after {
       display: block;
@@ -120,9 +122,9 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   }
 
   &.checked.disabled {
-    color: ${grey};
+    color: ${field.disabledColor};
     border-color: transparent;
-    background-color: ${lightGrey};
+    background-color: ${field.disabledBackgroundColor};
 
     &:after {
       display: block;
@@ -130,15 +132,17 @@ export const Checkmark = styled.span<CheckboxErrorProps>`
   }
 
   &.not-checked.disabled {
-    border-color: ${lightGrey};
-    background-color: ${light};
+    border-color: ${field.disabledBackgroundColor};
+    background-color: ${colors.white};
   }
 
   &.not-disabled:hover {
-    border-color: ${props => (props.error ? darkRed : darkGreen)};
+    border-color: ${props =>
+      props.error ? field.errorBorderColor : field.successBorderColor};
 
     &:checked ~ span {
-      border-color: ${props => (props.error ? darkRed : darkGreen)};
+      border-color: ${props =>
+        props.error ? field.errorBorderColor : field.successBorderColor};
     }
   }
 `;

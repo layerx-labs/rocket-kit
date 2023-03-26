@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
+import { field, misc } from '../../ions/variables';
 
 interface TextFieldAppendixProps {
   error?: string;
@@ -11,20 +11,38 @@ interface AppendixProps {
   error?: string;
 }
 
-const { normal, grey, lightGrey, red, lightRed } = colors;
-
 export const Wrapper = styled.div<TextFieldAppendixProps>`
-  border-width: ${rem('1px')};
+  border-width: ${field.borderWidth};
   border-style: solid;
-  border-color: ${props => (props.error ? red : grey)};
-  border-radius: ${rem('6px')};
+  border-color: ${props =>
+    props.error ? field.errorBorderColor : field.borderColor};
+  border-radius: ${field.borderRadius};
   display: flex;
+  transition-duration: ${misc.transitionDuration};
   overflow: hidden;
+
+  &:hover {
+    border-color: ${field.hoverBorderColor};
+  }
+
+  &:has(input:focus) {
+    border-color: ${field.activeBorderColor};
+  }
+
+  &:has(input:disabled) {
+    background-color: ${field.disabledBackgroundColor};
+    color: ${field.disabledColor};
+
+    > div {
+      background-color: ${field.disabledBackgroundColor};
+      color: ${field.disabledColor};
+    }
+  }
 
   input {
     flex: 1;
     border: 0;
-    color: ${props => (props.error ? red : normal)};
+    color: ${props => (props.error ? field.errorBorderColor : field.color)};
 
     &:disabled {
       margin: 0;
@@ -39,12 +57,16 @@ export const Wrapper = styled.div<TextFieldAppendixProps>`
 
 export const Appendix = styled.div<AppendixProps>`
   border-width: ${props =>
-    props.position === 'left' ? `0 ${rem('1px')} 0 0` : `0 0 0 ${rem('1px')}`};
+    props.position === 'left'
+      ? `0 ${field.borderWidth} 0 0`
+      : `0 0 0 ${field.borderWidth}`};
   border-style: solid;
-  border-color: ${props => (props.error ? red : grey)};
-  background-color: ${props => (props.error ? lightRed : lightGrey)};
+  border-color: ${props =>
+    props.error ? field.errorBorderColor : field.borderColor};
+  background-color: ${props =>
+    props.error ? field.errorBackgroundColor : field.borderColor};
   padding: 0 ${rem('15px')};
-  color: ${props => (props.error ? red : grey)};
+  color: ${props => (props.error ? field.errorBorderColor : field.color)};
   line-height: ${rem('48px')};
   vertical-align: center;
   overflow: hidden;

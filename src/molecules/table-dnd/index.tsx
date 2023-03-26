@@ -3,15 +3,12 @@ import { Button, EmptyTable, Icon } from '../..';
 import { hasValue } from '../../utils/filters/has-value';
 import { ActionMenu } from '../actions-menu/types';
 import { colors } from '../../ions/variables';
-
 import { TableWrapper, OverflowWrapper } from '../table/styles';
 import { ActionMenuList } from '../actions-menu';
 import useVisible from '../../utils/hooks/use-visible';
 import * as Styles from './styles';
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
-const { light } = colors;
 
 interface TableOption<CellDataType> {
   id: string;
@@ -68,8 +65,9 @@ const TableDnD = <CellData extends CellBaseType>(
     startsOpen = false,
   } = props;
 
-  const { ref, isVisible, setIsVisible } =
-    useVisible<HTMLDivElement>(startsOpen);
+  const { ref, isVisible, setIsVisible } = useVisible<HTMLDivElement>(
+    startsOpen
+  );
 
   const [draggableId, setDraggableId] = useState('');
   const [rowData, setRowData] = useState({});
@@ -104,12 +102,12 @@ const TableDnD = <CellData extends CellBaseType>(
 
   const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
     userSelect: 'none',
-    background: isDragging ? light : 'transparent',
+    background: isDragging ? colors.white : 'transparent',
     ...draggableStyle,
   });
 
   const getListStyle = (isDraggingOver: boolean) => ({
-    background: isDraggingOver ? light : 'transparent',
+    background: isDraggingOver ? colors.white : 'transparent',
   });
 
   return (
@@ -228,7 +226,7 @@ const TableDnD = <CellData extends CellBaseType>(
                               <div ref={ref}>
                                 <Button
                                   variant="text"
-                                  color="grey"
+                                  color="grey500"
                                   icon="menuVert"
                                   action={evt => {
                                     evt.preventDefault();

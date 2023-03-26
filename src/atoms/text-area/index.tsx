@@ -3,7 +3,6 @@ import ErrorField from '../error-field';
 import * as Styles from './styles';
 
 export interface TextAreaProps {
-  minimal?: boolean;
   className?: string;
   style?: CSSProperties;
   height?: string;
@@ -23,7 +22,6 @@ export interface TextAreaProps {
 
 const TextArea = (props: TextAreaProps) => {
   const {
-    minimal = true,
     className = 'text-area',
     style,
     height,
@@ -44,7 +42,6 @@ const TextArea = (props: TextAreaProps) => {
   return (
     <Styles.Wrapper className="text-field">
       <Styles.TextAreaStyle
-        minimal={minimal}
         className={className}
         style={style}
         height={height}
@@ -62,7 +59,7 @@ const TextArea = (props: TextAreaProps) => {
       />
 
       {charactersCount != undefined && (
-        <Styles.Count minimal={minimal}>
+        <Styles.Count>
           <span className={charactersCount < 0 ? 'negative' : ''}>
             {charactersCount}
           </span>
