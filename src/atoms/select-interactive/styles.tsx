@@ -25,8 +25,6 @@ export const SelectWrapper = styled.div`
     }
 
     &__value-container {
-      display: flex;
-      align-items: center;
       padding: 0 ${rem('15px')};
     }
 
@@ -140,4 +138,15 @@ export const SelectGroupLabel = styled.span`
     background-color: ${field.borderColor};
     color: ${field.activeBorderColor};
   }
+`;
+
+export const SingleValue = styled.div`
+  grid-area: 1 / 1 / 2 / 3;
+  margin-left: ${rem('2px')};
+  margin-right: ${rem('2px')};
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
 `;
