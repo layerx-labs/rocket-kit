@@ -24,7 +24,7 @@ export default {
 export const FormGroupComponent = (args: FormGroupProps) => {
   return (
     <FormGroup {...args}>
-      <TextField minimal={false} placeholder="Awesome Placeholder" />
+      <TextField placeholder="Awesome Placeholder" />
     </FormGroup>
   );
 };
