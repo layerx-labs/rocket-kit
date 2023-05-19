@@ -83,7 +83,7 @@
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-macros": "^3.0.1",
-    "chromatic": "^5.6.3",
+    "chromatic": "^6.17.4",
     "cross-var": "^1.1.0",
     "dotenv-cli": "^4.0.0",
     "eslint-plugin-jest-dom": "^3.6.5",
