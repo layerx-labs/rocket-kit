@@ -5,7 +5,6 @@ import { TextFieldType } from './types';
 
 interface TextFieldProps {
   type?: TextFieldType;
-  minimal?: boolean;
   error?: string;
   icon?: string;
   name?: string;
@@ -26,7 +25,6 @@ interface TextFieldProps {
 const TextField = (props: TextFieldProps) => {
   const {
     type = 'text',
-    minimal = true,
     icon,
     name,
     value,
@@ -47,7 +45,6 @@ const TextField = (props: TextFieldProps) => {
   return (
     <>
       <Styles.TextFieldInputStyle
-        minimal={minimal}
         icon={icon}
         type={type}
         name={name}

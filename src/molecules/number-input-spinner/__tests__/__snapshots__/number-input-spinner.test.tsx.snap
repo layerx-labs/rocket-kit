@@ -3,8 +3,8 @@
 exports[`NumberInputSpinner renders 1`] = `
 <DocumentFragment>
   .c0 {
-  border: 0.0625rem solid #939393;
-  border-radius: 0.375rem;
+  border: 0.0625rem solid #D9D4ED;
+  border-radius: 0.5rem;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
@@ -19,12 +19,12 @@ exports[`NumberInputSpinner renders 1`] = `
 .c0 button:disabled,
 .c0 input:disabled {
   cursor: inherit;
-  background-color: #c4c7d3;
+  background-color: #E3E3E8;
 }
 
 .c0 button:disabled svg,
 .c0 input:disabled svg {
-  opacity: 0.25;
+  fill: #ABACBA;
 }
 
 .c0 button:disabled:hover,
@@ -38,7 +38,7 @@ exports[`NumberInputSpinner renders 1`] = `
   height: 3.125rem;
   padding: 0.625rem;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 16px;
   text-align: center;
   -moz-appearance: textfield;
 }
@@ -55,35 +55,35 @@ exports[`NumberInputSpinner renders 1`] = `
 
 .c2:invalid {
   box-shadow: none;
-  background-color: #facbd0;
+  background-color: #F39A9A;
 }
 
 .c1 {
   width: 3.125rem;
   height: 3.125rem;
   border: 0;
-  background-color: #c4c7d3;
+  background-color: #D9D4ED;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
 .c1.remove-button {
-  border-right: 0.0625rem solid #939393;
+  border-right: 0.0625rem solid #D9D4ED;
 }
 
 .c1.add-button {
-  border-left: 0.0625rem solid #939393;
+  border-left: 0.0625rem solid #D9D4ED;
 }
 
 .c1 svg {
   width: auto;
   height: 1.25rem;
-  fill: #939393;
+  fill: #8E7FCA;
 }
 
 .c1:hover {
-  background-color: #c4c7d3;
+  background-color: #C7BFE4;
 }
 
 <div

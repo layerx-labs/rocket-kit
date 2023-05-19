@@ -3,8 +3,6 @@ import { rem } from 'polished';
 import { device } from '../../ions/breakpoints';
 import { colors } from '../../ions/variables';
 
-const { light } = colors;
-
 interface SlideshowProps {
   slidesNumber: number;
 }
@@ -56,7 +54,7 @@ export const Wrapper = styled.div<SlideshowProps>`
   }
 
   .carousel .control-prev.control-arrow:before {
-    border-right: ${rem('8px')} solid #fff;
+    border-right: ${rem('8px')} solid ${colors.white};
   }
 
   .carousel .control-next.control-arrow {
@@ -64,7 +62,7 @@ export const Wrapper = styled.div<SlideshowProps>`
   }
 
   .carousel .control-next.control-arrow:before {
-    border-left: ${rem('8px')} solid #fff;
+    border-left: ${rem('8px')} solid ${colors.white};
   }
 
   .carousel-root {
@@ -132,7 +130,7 @@ export const Wrapper = styled.div<SlideshowProps>`
     margin-right: ${rem('6px')};
     white-space: nowrap;
     overflow: hidden;
-    border: ${rem('3px')} solid #fff;
+    border: ${rem('3px')} solid ${colors.white};
     padding: ${rem('2px')};
   }
 
@@ -158,7 +156,7 @@ export const Wrapper = styled.div<SlideshowProps>`
 
   .carousel.carousel-slider .control-arrow {
     top: 0;
-    color: #fff;
+    color: ${colors.white};
     font-size: ${rem('26px')};
     bottom: 0;
     margin-top: 0;
@@ -247,7 +245,7 @@ export const Wrapper = styled.div<SlideshowProps>`
     padding: ${rem('5px')};
     font-size: ${rem('10px')};
     text-shadow: ${rem('1px')} ${rem('1px')} ${rem('1px')} rgba(0, 0, 0, 0.9);
-    color: #fff;
+    color: ${colors.white};
   }
 
   > div > div > button {
@@ -261,7 +259,7 @@ export const Wrapper = styled.div<SlideshowProps>`
     svg {
       width: ${rem('36px')};
       height: ${rem('36px')};
-      fill: ${light};
+      fill: ${colors.white};
     }
 
     &.next {
@@ -272,7 +270,7 @@ export const Wrapper = styled.div<SlideshowProps>`
       opacity: 1;
 
       svg {
-        fill: ${light};
+        fill: ${colors.white};
       }
     }
 
@@ -297,7 +295,7 @@ export const Wrapper = styled.div<SlideshowProps>`
       position: relative;
       display: inline-block;
       border-radius: 999px;
-      background-color: ${light};
+      background-color: ${colors.white};
       width: ${rem('15px')};
       height: ${rem('15px')};
       opacity: 0.25;

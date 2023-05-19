@@ -6,11 +6,6 @@ export default {
   title: 'Components/Atoms/TextField',
   component: TextField,
   argTypes: {
-    minimal: {
-      control: {
-        type: 'boolean',
-      },
-    },
     type: {
       control: {
         type: 'select',
@@ -30,7 +25,6 @@ export const TextComponent = args => <TextField {...args} />;
 
 TextComponent.storyName = 'Text';
 TextComponent.args = {
-  minimal: true,
   type: 'text',
   name: 'awesome-input',
   placeholder: 'Awesome Placeholder',
@@ -44,7 +38,6 @@ export const TextDefaultComponent = args => <TextField {...args} />;
 
 TextDefaultComponent.storyName = 'Default Value';
 TextDefaultComponent.args = {
-  minimal: true,
   type: 'text',
   defaultValue: 'awesome-input-default',
   value: null,
@@ -57,7 +50,6 @@ export const DisabledComponent = args => <TextField {...args} />;
 
 DisabledComponent.storyName = 'Disabled';
 DisabledComponent.args = {
-  minimal: true,
   type: 'text',
   name: 'name',
   placeholder: 'Awesome Placeholder',
@@ -70,7 +62,6 @@ export const TextFullBorderComponent = args => <TextField {...args} />;
 
 TextFullBorderComponent.storyName = 'Full Border';
 TextFullBorderComponent.args = {
-  minimal: false,
   type: 'text',
   name: 'awesome-input',
   placeholder: 'Awesome Placeholder',
@@ -82,7 +73,6 @@ export const TextIconComponent = args => <TextField {...args} />;
 
 TextIconComponent.storyName = 'W/ Icon';
 TextIconComponent.args = {
-  minimal: true,
   type: 'text',
   name: 'awesome-input',
   icon: 'rocket',
@@ -95,7 +85,6 @@ export const UrlComponent = args => <TextField {...args} />;
 
 UrlComponent.storyName = 'URL';
 UrlComponent.args = {
-  minimal: true,
   type: 'url',
   name: 'awesome-url',
   placeholder: 'Type your URL here',
@@ -107,7 +96,6 @@ export const PasswordComponent = args => <TextField {...args} />;
 
 PasswordComponent.storyName = 'Password';
 PasswordComponent.args = {
-  minimal: true,
   type: 'password',
   name: 'awesome-password',
   placeholder: 'Type your password here',
@@ -119,7 +107,6 @@ export const DateComponent = args => <TextField {...args} />;
 
 DateComponent.storyName = 'Date';
 DateComponent.args = {
-  minimal: true,
   type: 'date',
   name: 'awesome-date',
   onChange: () => {},
@@ -130,7 +117,6 @@ export const TimeComponent = args => <TextField {...args} />;
 
 TimeComponent.storyName = 'Time';
 TimeComponent.args = {
-  minimal: true,
   type: 'time',
   name: 'awesome-time',
   onChange: () => {},
@@ -141,7 +127,6 @@ export const NumberComponent = args => <TextField {...args} />;
 
 NumberComponent.storyName = 'Number';
 NumberComponent.args = {
-  minimal: false,
   type: 'number',
   min: 1,
   max: 150,
@@ -155,7 +140,6 @@ export const TextErrorComponent = args => <TextField {...args} />;
 
 TextErrorComponent.storyName = 'Error';
 TextErrorComponent.args = {
-  minimal: true,
   type: 'text',
   name: 'awesome-input',
   placeholder: 'Awesome Placeholder',

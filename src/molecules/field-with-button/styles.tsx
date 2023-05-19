@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
+import { field, misc } from '../../ions/variables';
 
 export const Wrapper = styled.div`
   label {
@@ -8,23 +8,18 @@ export const Wrapper = styled.div`
   }
 `;
 
-const { grey, darkGrey, light, purple500 } = colors;
-
 export const Field = styled.div`
   display: flex;
   flex-wrap: wrap;
 
   input {
     flex: 1;
-    margin-right: 0;
-    border-radius: ${rem('6px')} 0 0 ${rem('6px')};
+    margin-right: ${rem('-1px')};
+    border-radius: ${field.borderRadius} 0 0 ${field.borderRadius};
 
-    &:focus {
-      outline: none;
-
-      + button {
-        background-color: ${purple500};
-      }
+    &:disabled {
+      background-color: ${field.backgroundColor};
+      color: ${field.color};
     }
   }
 
@@ -35,38 +30,27 @@ export const Field = styled.div`
 
   button {
     border: 0;
-    border-radius: 0 ${rem('6px')} ${rem('6px')} 0;
-    background-color: ${grey};
+    border-radius: 0 ${field.borderRadius} ${field.borderRadius} 0;
     min-width: ${rem('50px')};
-    height: ${rem('50px')};
+    height: ${field.height};
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 ${rem('20px')};
     white-space: nowrap;
-    transition-duration: 0.3s;
+    transition-duration: ${misc.transitionDuration};
     cursor: pointer;
 
-    svg {
-      width: auto;
-      min-width: ${rem('20px')};
-      height: ${rem('20px')};
-      fill: ${light};
-      transition: 0.3s;
+    span {
+      color: ${field.activeColor};
     }
 
-    &:hover {
-      background-color: ${darkGrey};
+    svg {
+      fill: ${field.activeColor};
     }
 
     &:disabled {
-      cursor: inherit;
-      opacity: 0.5;
-
-      &:hover {
-        background-color: ${grey};
-        pointer-events: none;
-      }
+      border: ${field.borderWidth} solid ${field.borderColor} !important;
     }
   }
 `;

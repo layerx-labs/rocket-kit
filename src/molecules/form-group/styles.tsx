@@ -1,9 +1,6 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
-
-const { normal, grey, red } = colors;
-
+import { colors, field } from '../../ions/variables';
 interface WrapperProps {
   error?: boolean;
 }
@@ -13,10 +10,10 @@ export const Wrapper = styled.div<WrapperProps>`
 
   > label {
     margin-bottom: ${rem('5px')};
-    color: ${props => (props.error ? red : grey)};
+    color: ${props => (props.error ? field.errorBorderColor : colors.grey200)};
 
     span {
-      color: ${props => (props.error ? red : normal)};
+      color: ${props => (props.error ? field.errorBorderColor : field.color)};
     }
   }
 

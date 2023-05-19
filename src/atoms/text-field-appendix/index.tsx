@@ -52,7 +52,6 @@ const TextFieldAppendix = (props: TextFieldAppendixProps) => {
           </Styles.Appendix>
         )}
         <TextField
-          minimal={false}
           type={type}
           name={name}
           value={value}

@@ -1,8 +1,6 @@
 import styled from 'styled-components/macro';
-import { rem, lighten } from 'polished';
-import { colors } from '../../ions/variables';
-
-const { normal, light, lightGrey } = colors;
+import { rem } from 'polished';
+import { field, misc } from '../../ions/variables';
 
 interface ActionsMenuInterface {
   visibleActions: number;
@@ -16,17 +14,17 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
     opacity: 0;
     top: 0;
     margin: 0;
-    border: ${rem('1px')} solid ${lightGrey};
-    border-radius: ${rem('4px')};
-    background-color: ${light};
+    border: ${rem('1px')} solid ${field.borderColor};
+    border-radius: ${field.borderRadius};
+    background-color: ${field.backgroundColor};
     min-width: ${rem('200px')};
     max-width: ${rem('250px')};
     height: 0;
     max-height: none;
     padding: 0;
-    -moz-box-shadow: 0 0 ${rem('15px')} 0 ${lighten(0.7, normal)};
-    -webkit-box-shadow: 0 0 ${rem('15px')} 0 ${lighten(0.7, normal)};
-    box-shadow: 0 0 ${rem('15px')} 0 ${lighten(0.7, normal)};
+    -moz-box-shadow: 0 0 ${rem('15px')} 0 ${field.boxShadow};
+    -webkit-box-shadow: 0 0 ${rem('15px')} 0 ${field.boxShadow};
+    box-shadow: 0 0 ${rem('15px')} 0 ${field.boxShadow};
     overflow-y: hidden;
     z-index: 1;
     -webkit-scrollbar-width: none;
@@ -35,11 +33,14 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    transition-duration: 0.25s;
+    transition-duration: ${misc.transitionDuration};
 
     &.isOpen {
       opacity: 1;
-      height: calc(${rem('45px')} * ${props => props.visibleActions} + 2px);
+      // prettier-ignore
+      height: calc(${rem('45px')} * ${props => props.visibleActions} + ${rem(
+  '2px'
+)});
       max-height: ${rem('1280px')};
     }
 
@@ -50,7 +51,7 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
       transition-duration: 0.3s;
 
       &:hover {
-        background-color: ${lightGrey};
+        background-color: ${field.borderColor};
         cursor: pointer;
       }
 
@@ -67,7 +68,7 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
         display: flex;
         align-items: center;
         padding: 0 ${rem('20px')};
-        color: ${normal};
+        color: ${field.color};
         text-decoration: none;
         white-space: nowrap;
 

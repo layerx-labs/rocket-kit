@@ -7,9 +7,6 @@ interface ModalStyleBaseProps {
   zIndex: number;
 }
 
-const { light } = colors;
-const { bold } = typography;
-
 const slideInLeft = keyframes`
   from {
     transform: translateX(100%);
@@ -24,7 +21,7 @@ export const ModalOverlay = styled.div<ModalStyleBaseProps>`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: ${rgba(0, 0, 0, 0.8)};
+  background-color: ${rgba(colors.black, 0.8)};
   width: 100vw;
   height: 100vh;
   z-index: ${props => (props.zIndex ? props.zIndex : 10)};
@@ -44,7 +41,7 @@ export const ModalWrapper = styled.div<ModalStyleBaseProps>`
 export const ModalContainer = styled.div<ModalStyleBaseProps>`
   position: fixed;
   right: 0;
-  background: ${light};
+  background: ${colors.white};
   width: 100%;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -70,8 +67,8 @@ export const ModalHeader = styled.div`
 
   h2 {
     margin: 0 0 ${rem('30px')} 0;
-    font-size: 2rem;
-    font-weight: ${bold};
+    font-size: ${rem('32px')};
+    font-weight: ${typography.semiBold};
   }
 `;
 

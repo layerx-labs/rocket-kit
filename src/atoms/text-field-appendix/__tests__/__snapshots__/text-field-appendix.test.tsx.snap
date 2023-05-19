@@ -5,14 +5,23 @@ exports[`TextField Appendix renders 1`] = `
   .c2 {
   border-width: 0.0625rem;
   border-style: solid;
-  border-color: #939393;
-  border-radius: 6px;
+  border-color: #D9D4ED;
+  border-radius: 0.5rem;
+  background-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+  background-position: 0.625rem 50%;
   height: 3.125rem;
   padding: 0.625rem;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 16px;
+  -webkit-transition-property: border-color;
+  transition-property: border-color;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+}
+
+.c2:hover {
+  border-color: #C7BFE4;
 }
 
 .c2:focus {
@@ -21,12 +30,13 @@ exports[`TextField Appendix renders 1`] = `
 }
 
 .c2:disabled {
-  background-color: #c4c7d3;
-  color: #939393;
+  border-color: #D9D4ED;
+  background-color: #E3E3E8;
+  color: #ABACBA;
 }
 
 .c2:invalid {
-  border-color: #ef5766;
+  border-color: #EB5757;
   outline: none;
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -34,49 +44,67 @@ exports[`TextField Appendix renders 1`] = `
 }
 
 .c2:required {
-  border-color: #939393;
+  border-color: #D9D4ED;
 }
 
-.c2::-webkit-input-placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
-.c2::-moz-placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
-.c2:-ms-input-placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
-.c2::placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
-.c2:-ms-input-placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
+.c2::-webkit-input-placeholder,
+.c2:-ms-input-placeholder,
 .c2::-ms-input-placeholder {
-  color: #939393;
+  color: #C7C8D1;
+  opacity: 1;
+}
+
+.c2::-moz-placeholder,
+.c2:-ms-input-placeholder,
+.c2::-ms-input-placeholder {
+  color: #C7C8D1;
+  opacity: 1;
+}
+
+.c2:-ms-input-placeholder,
+.c2:-ms-input-placeholder,
+.c2::-ms-input-placeholder {
+  color: #C7C8D1;
+  opacity: 1;
+}
+
+.c2::placeholder,
+.c2:-ms-input-placeholder,
+.c2::-ms-input-placeholder {
+  color: #C7C8D1;
   opacity: 1;
 }
 
 .c0 {
   border-width: 0.0625rem;
   border-style: solid;
-  border-color: #939393;
-  border-radius: 0.375rem;
+  border-color: #D9D4ED;
+  border-radius: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   overflow: hidden;
+}
+
+.c0:hover {
+  border-color: #C7BFE4;
+}
+
+.c0:has(input:focus) {
+  border-color: #4329A6;
+}
+
+.c0:has(input:disabled) {
+  background-color: #E3E3E8;
+  color: #ABACBA;
+}
+
+.c0:has(input:disabled) > div {
+  background-color: #E3E3E8;
+  color: #ABACBA;
 }
 
 .c0 input {
@@ -99,10 +127,10 @@ exports[`TextField Appendix renders 1`] = `
 .c1 {
   border-width: 0 0.0625rem 0 0;
   border-style: solid;
-  border-color: #939393;
-  background-color: #c4c7d3;
+  border-color: #D9D4ED;
+  background-color: #D9D4ED;
   padding: 0 0.9375rem;
-  color: #939393;
+  color: #000000;
   line-height: 3rem;
   vertical-align: center;
   overflow: hidden;

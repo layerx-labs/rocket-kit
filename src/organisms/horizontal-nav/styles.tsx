@@ -1,9 +1,6 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, typography } from '../../ions/variables';
-
-const { normal, purple500, grey, lightGrey, light } = colors;
-const { bold } = typography;
+import { colors, field, misc, typography } from '../../ions/variables';
 
 interface HorizontalNavInterface {
   customColor?: string;
@@ -50,41 +47,43 @@ export const Wrapper = styled.div<HorizontalNavInterface>`
         display: flex;
         align-items: center;
         padding: ${rem('10px')};
-        color: ${normal};
+        color: ${colors.black};
         text-transform: capitalize;
         text-decoration: none;
         white-space: nowrap;
-        transition-duration: 0.3s;
+        transition-duration: ${misc.transitionDuration};
 
         svg {
           margin-right: ${rem('5px')};
           width: auto;
           height: ${rem('24px')};
           min-width: ${rem('24px')};
-          fill: ${grey};
-          transition-duration: 0.3s;
+          fill: ${colors.grey200};
+          transition-duration: ${misc.transitionDuration};
         }
 
         &:hover {
           color: ${props =>
-            props.customColor ? props.customColor : purple500};
+            props.customColor ? props.customColor : colors.purple500};
 
           svg {
             fill: ${props =>
-              props.customColor ? props.customColor : purple500};
+              props.customColor ? props.customColor : colors.purple500};
           }
         }
       }
 
       &.active {
-        font-weight: ${bold};
+        font-weight: ${typography.medium};
 
         a {
+          color: ${props =>
+            props.customColor ? props.customColor : colors.purple500};
           pointer-events: none;
 
           svg {
             fill: ${props =>
-              props.customColor ? props.customColor : purple500};
+              props.customColor ? props.customColor : colors.purple500};
           }
         }
       }
@@ -103,14 +102,14 @@ export const More = styled.div`
   ul {
     position: absolute;
     right: 0;
-    border: ${rem('1px')} solid ${lightGrey};
-    border-radius: ${rem('4px')};
-    background-color: ${light};
+    border: ${field.borderWidth} solid ${field.borderColor};
+    border-radius: ${field.borderRadius};
+    background-color: ${field.backgroundColor};
     margin-top: ${rem('5px')};
     padding: 0;
-    -moz-box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.2);
-    -webkit-box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.2);
-    box-shadow: 0 0 ${rem('15px')} 0 rgba(40, 40, 40, 0.2);
+    -moz-box-shadow: ${field.boxShadow};
+    -webkit-box-shadow: ${field.boxShadow};
+    box-shadow: ${field.boxShadow};
     z-index: 1;
     overflow-x: hidden;
     overflow-y: auto;
@@ -128,27 +127,27 @@ export const More = styled.div`
 
     li {
       list-style: none;
-      transition-duration: 0.3s;
+      transition-duration: ${misc.transitionDuration};
 
       &:hover {
-        background-color: ${lightGrey};
+        background-color: ${field.borderColor};
         cursor: pointer;
 
         a {
-          color: ${normal};
+          color: ${colors.black};
 
           svg {
-            fill: ${normal};
+            fill: ${colors.black};
           }
         }
       }
 
       &:first-child {
-        border-radius: ${rem('4px')} ${rem('4px')} 0 0;
+        border-radius: ${field.borderRadius} ${field.borderRadius} 0 0;
       }
 
       &:last-child {
-        border-radius: 0 0 ${rem('4px')} ${rem('4px')};
+        border-radius: 0 0 ${field.borderRadius} ${field.borderRadius};
       }
 
       a {

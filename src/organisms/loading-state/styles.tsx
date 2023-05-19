@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import { colors } from '../../ions/variables';
 
-const { lightGrey } = colors;
-
 interface LoadingStateProps {
   type?: 'text' | 'card' | 'table' | 'value';
   columnsNumber?: number;
@@ -71,7 +69,7 @@ export const Wrapper = styled.div<LoadingStateProps>`
 
   .card {
     position: relative;
-    border: ${rem('2px')} solid ${lightGrey};
+    border: ${rem('2px')} solid ${colors.grey50};
     border-radius: ${rem('6px')};
     width: ${rem('300px')};
     overflow: hidden;
@@ -86,7 +84,7 @@ export const Wrapper = styled.div<LoadingStateProps>`
       margin: ${rem('-45px')} 0 0 ${rem('20px')};
       width: ${rem('90px')};
       height: ${rem('90px')};
-      border: ${rem('1px')} solid ${lightGrey};
+      border: ${rem('1px')} solid ${colors.grey50};
       border-radius: 999px;
     }
 

@@ -2,8 +2,6 @@ import styled from 'styled-components/macro';
 import { rem } from 'polished';
 import { colors } from '../../../ions/variables';
 
-const { lightGrey } = colors;
-
 export const List = styled.ul`
   padding: 0;
   display: grid;
@@ -12,7 +10,7 @@ export const List = styled.ul`
 
   li {
     list-style: none;
-    border: ${rem('1px')} solid ${lightGrey};
+    border: ${rem('1px')} solid ${colors.grey100};
     width: ${rem('120px')};
 
     > div {
@@ -30,7 +28,7 @@ export const List = styled.ul`
       }
 
       &:last-child {
-        background-color: ${lightGrey};
+        background-color: ${colors.grey100};
         height: ${rem('30px')};
 
         span {

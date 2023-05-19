@@ -5,11 +5,6 @@ export default {
   title: 'Components/Atoms/Select',
   component: Select,
   argTypes: {
-    minimal: {
-      control: {
-        type: 'boolean',
-      },
-    },
     onChange: { action: 'update value' },
     disabled: {
       control: {
@@ -32,7 +27,6 @@ export const SelectComponent = (args: SelectProps) => {
 SelectComponent.storyName = 'Default';
 
 SelectComponent.args = {
-  minimal: false,
   name: 'title',
   placeholder: 'Select One',
   options: options,

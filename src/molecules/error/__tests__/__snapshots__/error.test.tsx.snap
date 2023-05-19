@@ -30,7 +30,7 @@ exports[`Error renders 1`] = `
 
 .c0 > span {
   margin-top: 0.9375rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #000000;
 }
 
@@ -40,8 +40,8 @@ exports[`Error renders 1`] = `
   transition-duration: 0.3s;
 }
 
-.c0 > span a:hover {
-  color: #56cad7;
+.c0 > span:hover {
+  color: #4329A6;
 }
 
 <div

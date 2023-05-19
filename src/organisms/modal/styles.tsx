@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import { rem, rgba } from 'polished';
-import { colors, typography } from '../../ions/variables';
+import { colors, field, misc, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
 
 interface ModalStyleBaseProps {
@@ -8,14 +8,11 @@ interface ModalStyleBaseProps {
   modalOverflow?: boolean;
 }
 
-const { light } = colors;
-const { bold } = typography;
-
 export const ModalOverlay = styled.div<ModalStyleBaseProps>`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: ${rgba(0, 0, 0, 0.8)};
+  background-color: ${rgba(colors.black, 0.8)};
   width: 100vw;
   height: 100vh;
   z-index: ${props => (props.zIndex ? props.zIndex : 10)};
@@ -46,17 +43,17 @@ export const ModalWrapper = styled.div<ModalStyleBaseProps>`
 
 export const ModalContainer = styled.div<ModalStyleBaseProps>`
   position: relative;
-  background: ${light};
+  background: ${colors.white};
   width: 100%;
   min-height: 0;
   padding: ${rem('15px')};
   word-wrap: break-word;
-  transition-duration: 0.3s;
+  transition-duration: ${misc.transitionDuration};
 
   @media ${device.s} {
     --spacing: ${rem('30px')};
     margin: var(--spacing);
-    border-radius: ${rem('6px')};
+    border-radius: ${field.borderRadius};
     max-width: ${rem('860px')};
     padding: var(--spacing);
 
@@ -75,8 +72,8 @@ export const ModalHeader = styled.div`
 
   h2 {
     margin: 0 0 ${rem('30px')} 0;
-    font-size: 2rem;
-    font-weight: ${bold};
+    font-size: ${rem('32px')};
+    font-weight: ${typography.semiBold};
   }
 
   button {
@@ -89,6 +86,7 @@ export const ModalHeader = styled.div`
     min-width: ${rem('28px')};
     height: ${rem('28px')};
     z-index: 1;
+    outline: none;
 
     @media ${device.s} {
       display: inherit;

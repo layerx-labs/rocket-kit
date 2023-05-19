@@ -1,21 +1,28 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors } from '../../ions/variables';
+import { colors, field, misc } from '../../ions/variables';
 
 interface CheckboxWrapperProps {
   checked?: boolean;
   disabled?: boolean;
 }
 
-const { light, green, darkGreen, grey, lightGrey } = colors;
-
 export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
-  border: ${rem('3px')} solid
-    ${props => (props.disabled ? grey : props.checked ? darkGreen : grey)};
-  border-radius: ${rem('6px')};
+  border: ${field.borderWidth} solid
+    ${props =>
+      props.disabled
+        ? field.borderColor
+        : props.checked
+        ? field.successBorderColor
+        : field.borderColor};
+  border-radius: ${field.borderRadius};
   background-color: ${props =>
-    props.disabled ? lightGrey : props.checked ? green : light};
-  height: ${rem('50px')};
+    props.disabled
+      ? field.disabledBackgroundColor
+      : props.checked
+      ? field.successBackgroundColor
+      : field.backgroundColor};
+  height: ${field.height};
   display: flex;
   align-items: center;
   position: relative;
@@ -24,20 +31,29 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition-duration: 0.3s;
+  transition-duration: ${misc.transitionDuration};
 
   &:hover input:not(:disabled) ~ span {
-    border-color: ${grey};
+    border-color: ${field.hoverBorderColor};
   }
 
   &:hover {
     background-color: ${props =>
-      props.disabled ? lightGrey : props.checked ? green : lightGrey};
+      props.disabled
+        ? field.disabledBackgroundColor
+        : props.checked
+        ? field.successBackgroundColor
+        : field.borderColor};
   }
 
   span {
-    color: ${props => (props.disabled ? grey : props.checked ? light : null)};
-    transition-duration: 0.3s;
+    color: ${props =>
+      props.disabled
+        ? field.disabledColor
+        : props.checked
+        ? colors.white
+        : null};
+    transition-duration: ${misc.transitionDuration};
   }
 `;
 
@@ -53,8 +69,8 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   cursor: pointer;
 
   &:checked:not(:disabled) ~ span {
-    background-color: ${light};
-    border-color: ${light};
+    background-color: ${colors.white};
+    border-color: ${field.successBorderColor};
 
     &:after {
       display: block;
@@ -62,23 +78,23 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   }
 
   &:checked:disabled ~ span {
-    border-color: transparent;
-    background-color: ${grey};
-    color: ${grey};
+    background-color: ${field.disabledBackgroundColor};
+    color: ${field.disabledColor};
 
     &:after {
       display: block;
+      border-color: ${field.disabledColor};
     }
   }
 
   &:not(:checked):disabled ~ span {
-    border-color: ${grey};
-    background-color: ${lightGrey};
+    border-color: ${field.disabledBackgroundColor};
+    background-color: ${field.backgroundColor};
   }
 
   &:hover:not(:disabled) {
     &:checked ~ span {
-      border-color: ${light};
+      border-color: ${field.successBorderColor};
     }
   }
 `;
@@ -86,12 +102,12 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
 export const Checkmark = styled.span<CheckboxWrapperProps>`
   position: absolute;
   left: ${rem('10px')};
-  border: ${rem('2px')} solid ${grey};
+  border: ${rem('2px')} solid ${field.borderColor};
   border-radius: 999px;
-  background-color: ${light};
+  background-color: ${colors.white};
   width: ${rem('24px')};
   height: ${rem('24px')};
-  transition-duration: 0.3s;
+  transition-duration: ${misc.transitionDuration};
 
   &:after {
     content: '';
@@ -101,7 +117,8 @@ export const Checkmark = styled.span<CheckboxWrapperProps>`
     left: ${rem('6px')};
     width: ${rem('5px')};
     height: ${rem('9px')};
-    border: solid ${props => (props.disabled ? light : green)};
+    border: solid
+      ${props => (props.disabled ? colors.white : field.successBorderColor)};
     border-width: 0 ${rem('3px')} ${rem('3px')} 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);

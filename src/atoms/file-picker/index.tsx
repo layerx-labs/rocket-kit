@@ -4,7 +4,6 @@ import Icon from '../icon';
 import * as Styles from './styles';
 
 export interface FilePickerProps {
-  minimal?: boolean;
   name: string;
   accept?: string;
   multiple?: boolean;
@@ -20,7 +19,6 @@ export interface FilePickerProps {
 
 const FilePicker = (props: FilePickerProps) => {
   const {
-    minimal = false,
     name,
     accept,
     multiple = false,
@@ -46,7 +44,7 @@ const FilePicker = (props: FilePickerProps) => {
   };
 
   return (
-    <Styles.Wrapper disabled={disabled} minimal={minimal} error={!!error}>
+    <Styles.Wrapper disabled={disabled} error={!!error}>
       <input
         id={name}
         type="file"
