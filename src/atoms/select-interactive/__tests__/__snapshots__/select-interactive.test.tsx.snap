@@ -24,14 +24,6 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__value-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   padding: 0 0.9375rem;
 }
 
@@ -142,6 +134,17 @@ exports[`Select Interactive renders 1`] = `
   pointer-events: none;
 }
 
+.c1 {
+  grid-area: 1 / 1 / 2 / 3;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
 <div
     class="c0"
   >
@@ -164,7 +167,9 @@ exports[`Select Interactive renders 1`] = `
         <div
           class="select__value-container select__value-container--has-value css-1fdsijx-ValueContainer"
         >
-          <div>
+          <div
+            class="c1"
+          >
             Vanilla
           </div>
           <div
