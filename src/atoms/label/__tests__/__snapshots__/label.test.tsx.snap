@@ -13,7 +13,7 @@ exports[`Label renders 1`] = `
   align-items: center;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #C7C8D1;
+  color: #73758C;
 }
 
 .c0 svg {
