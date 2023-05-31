@@ -10,6 +10,8 @@ export interface VideoPlayerProps {
   width?: string;
   height?: string;
   onEnded?: any;
+  onReady?: any;
+  onError?: any;
 }
 
 const VideoPlayer = (props: VideoPlayerProps) => {
@@ -21,6 +23,8 @@ const VideoPlayer = (props: VideoPlayerProps) => {
     width = '100%',
     height = '100%',
     onEnded,
+    onReady,
+    onError,
   } = props;
 
   return (
@@ -35,6 +39,8 @@ const VideoPlayer = (props: VideoPlayerProps) => {
         width={width}
         height={height}
         onEnded={onEnded}
+        onReady={onReady}
+        onError={onError}
       />
     </Styles.Wrapper>
   );

@@ -10,7 +10,7 @@ export const Wrapper = styled.div<WrapperProps>`
 
   > label {
     margin-bottom: ${rem('5px')};
-    color: ${props => (props.error ? field.errorBorderColor : colors.grey200)};
+    color: ${props => (props.error ? field.errorBorderColor : colors.grey500)};
 
     span {
       color: ${props => (props.error ? field.errorBorderColor : field.color)};

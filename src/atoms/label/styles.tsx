@@ -7,7 +7,7 @@ export const LabelStyle = styled.label`
   align-items: center;
   font-size: ${typography.fontSizeXs};
   font-weight: ${typography.semiBold};
-  color: ${colors.grey200};
+  color: ${colors.grey500};
 
   svg {
     margin-left: ${rem('5px')};
