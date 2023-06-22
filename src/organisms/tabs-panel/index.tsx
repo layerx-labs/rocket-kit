@@ -1,4 +1,5 @@
 import React from 'react';
+// @ts-ignore
 import Tabs from 'react-responsive-tabs';
 import * as Styles from './styles';
 
