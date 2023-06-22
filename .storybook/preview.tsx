@@ -1,5 +1,8 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';
+import { rem } from 'polished';
+import { typography, colors } from '../src/ions/variables';
+import { device } from '../src/ions/breakpoints';
 
 /* TODO: update import for your custom theme configurations */
 // import { lightTheme, darkTheme } from '../path/to/themes';
