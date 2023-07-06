@@ -89,7 +89,7 @@ exports[`Empty Table renders 1`] = `
 .c1 {
   position: absolute;
   bottom: 0;
-  background-image: linear-gradient( to bottom, rgba(255,255,255,0), rgba(255,255,255,1) );
+  background-image: linear-gradient( to bottom,rgba(255,255,255,0),rgba(255,255,255,1) );
   width: 100%;
   height: calc(100% - 3.125rem);
   display: -webkit-box;
