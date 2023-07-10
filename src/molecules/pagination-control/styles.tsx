@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { colors, typography } from '../../ions/variables';
+import { colors, field, misc, typography } from '../../ions/variables';
 
 interface PageControlProps {
   dark?: boolean;
 }
-
-const { normal, light, blue, lightGrey } = colors;
-const { bold } = typography;
 
 export const PaginationWrapper = styled.div<PageControlProps>`
   --size: ${rem('30px')};
@@ -27,10 +24,10 @@ export const PaginationWrapper = styled.div<PageControlProps>`
 
       &.previous,
       &.next {
-        transition-duration: 0.3s;
+        transition-duration: ${misc.transitionDuration};
 
         a svg {
-          transition-duration: 0.3s;
+          transition-duration: ${misc.transitionDuration};
         }
       }
 
@@ -38,29 +35,29 @@ export const PaginationWrapper = styled.div<PageControlProps>`
       .break {
         min-width: var(--size);
         height: var(--size);
-        transition-duration: 0.3s;
+        transition-duration: ${misc.transitionDuration};
       }
 
       a {
-        border-radius: ${rem('8px')};
+        border-radius: ${field.borderRadius};
         min-width: var(--size);
         height: var(--size);
         padding: 0 ${rem('5px')};
         display: flex;
         justify-content: center;
         align-items: center;
-        color: ${normal};
-        font-weight: ${bold};
+        color: ${colors.black};
+        font-weight: ${typography.semiBold};
         text-decoration: none;
 
         &:hover {
-          color: ${blue};
+          color: ${colors.blue500};
         }
 
         svg {
           width: ${rem('18px')};
           height: auto;
-          fill: ${blue};
+          fill: ${colors.blue500};
         }
       }
 
@@ -68,18 +65,18 @@ export const PaginationWrapper = styled.div<PageControlProps>`
         pointer-events: none;
 
         a {
-          background-color: ${blue};
-          color: ${light};
+          background-color: ${colors.blue500};
+          color: ${colors.white};
         }
       }
     }
 
     &.dark {
       a {
-        color: ${lightGrey};
+        color: ${colors.white};
 
         &:hover {
-          color: ${light};
+          color: ${colors.white};
         }
       }
     }

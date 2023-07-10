@@ -41,12 +41,12 @@ export const CustomSelectOption = (props: TCustomOptions, commonProps: any) => (
 );
 
 export const CustomSelectValue = (props: TCustomOptions) => (
-  <div>
+  <Styles.SingleValue>
     {props.data.icon ? (
       <Icon icon={props.data.icon} />
     ) : props.data.customImage ? (
       <img src={props.data.customImage} alt={props.data.label} />
     ) : null}
     {props.data.label}
-  </div>
+  </Styles.SingleValue>
 );

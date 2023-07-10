@@ -3,7 +3,6 @@ import ErrorField from '../error-field';
 import * as Styles from './styles';
 
 export interface SelectProps {
-  minimal?: boolean;
   placeholder?: string;
   options: any;
   defaultValue?: string | number;
@@ -19,7 +18,6 @@ export interface SelectProps {
 
 const Select = (props: SelectProps) => {
   const {
-    minimal = false,
     placeholder,
     options,
     defaultValue,
@@ -42,7 +40,6 @@ const Select = (props: SelectProps) => {
   return (
     <>
       <Styles.SelectStyle
-        minimal={minimal}
         name={name}
         defaultValue={defaultValue}
         value={value}

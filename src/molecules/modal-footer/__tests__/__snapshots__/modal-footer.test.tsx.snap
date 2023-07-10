@@ -36,6 +36,7 @@ exports[`Modal Footer renders 1`] = `
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
+  outline: none;
 }
 
 .c1:hover {
@@ -132,6 +133,7 @@ exports[`Modal Footer renders 1`] = `
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
+  outline: none;
 }
 
 .c2:hover {

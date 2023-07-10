@@ -3,9 +3,9 @@
 exports[`FieldWidthButton renders 1`] = `
 <DocumentFragment>
   .c3 {
-  --bg: #4329A6;
+  --bg: #D9D4ED;
   --txt: #ffffff;
-  --hover: #362185;
+  --hover: #C7BFE4;
   margin: 0;
   border-width: 0;
   border-style: solid;
@@ -36,6 +36,7 @@ exports[`FieldWidthButton renders 1`] = `
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor: pointer;
+  outline: none;
 }
 
 .c3:hover {
@@ -91,14 +92,23 @@ exports[`FieldWidthButton renders 1`] = `
 .c2 {
   border-width: 0.0625rem;
   border-style: solid;
-  border-color: #939393;
-  border-radius: 6px;
+  border-color: #D9D4ED;
+  border-radius: 0.5rem;
+  background-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+  background-position: 0.625rem 50%;
   height: 3.125rem;
   padding: 0.625rem;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 16px;
+  -webkit-transition-property: border-color;
+  transition-property: border-color;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+}
+
+.c2:hover {
+  border-color: #C7BFE4;
 }
 
 .c2:focus {
@@ -107,12 +117,13 @@ exports[`FieldWidthButton renders 1`] = `
 }
 
 .c2:disabled {
-  background-color: #c4c7d3;
-  color: #939393;
+  border-color: #D9D4ED;
+  background-color: #E3E3E8;
+  color: #ABACBA;
 }
 
 .c2:invalid {
-  border-color: #ef5766;
+  border-color: #EB5757;
   outline: none;
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -120,36 +131,34 @@ exports[`FieldWidthButton renders 1`] = `
 }
 
 .c2:required {
-  border-color: #939393;
+  border-color: #D9D4ED;
 }
 
-.c2::-webkit-input-placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
-.c2::-moz-placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
-.c2:-ms-input-placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
-.c2::placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
-.c2:-ms-input-placeholder {
-  color: #939393;
-  opacity: 1;
-}
-
+.c2::-webkit-input-placeholder,
+.c2:-ms-input-placeholder,
 .c2::-ms-input-placeholder {
-  color: #939393;
+  color: #C7C8D1;
+  opacity: 1;
+}
+
+.c2::-moz-placeholder,
+.c2:-ms-input-placeholder,
+.c2::-ms-input-placeholder {
+  color: #C7C8D1;
+  opacity: 1;
+}
+
+.c2:-ms-input-placeholder,
+.c2:-ms-input-placeholder,
+.c2::-ms-input-placeholder {
+  color: #C7C8D1;
+  opacity: 1;
+}
+
+.c2::placeholder,
+.c2:-ms-input-placeholder,
+.c2::-ms-input-placeholder {
+  color: #C7C8D1;
   opacity: 1;
 }
 
@@ -171,16 +180,13 @@ exports[`FieldWidthButton renders 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin-right: 0;
-  border-radius: 0.375rem 0 0 0.375rem;
+  margin-right: -0.0625rem;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
-.c1 input:focus {
-  outline: none;
-}
-
-.c1 input:focus + button {
-  background-color: #4329A6;
+.c1 input:disabled {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .c1 span {
@@ -192,8 +198,7 @@ exports[`FieldWidthButton renders 1`] = `
 
 .c1 button {
   border: 0;
-  border-radius: 0 0.375rem 0.375rem 0;
-  background-color: #939393;
+  border-radius: 0 0.5rem 0.5rem 0;
   min-width: 3.125rem;
   height: 3.125rem;
   display: -webkit-box;
@@ -215,27 +220,16 @@ exports[`FieldWidthButton renders 1`] = `
   cursor: pointer;
 }
 
-.c1 button svg {
-  width: auto;
-  min-width: 1.25rem;
-  height: 1.25rem;
-  fill: #ffffff;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.c1 button span {
+  color: #4329A6;
 }
 
-.c1 button:hover {
-  background-color: #7a7a7a;
+.c1 button svg {
+  fill: #4329A6;
 }
 
 .c1 button:disabled {
-  cursor: inherit;
-  opacity: 0.5;
-}
-
-.c1 button:disabled:hover {
-  background-color: #939393;
-  pointer-events: none;
+  border: 0.0625rem solid #D9D4ED !important;
 }
 
 <div
@@ -246,6 +240,7 @@ exports[`FieldWidthButton renders 1`] = `
     >
       <input
         class="c2 text-field"
+        disabled=""
         placeholder=""
         type="text"
         value="this is my text"
@@ -253,7 +248,7 @@ exports[`FieldWidthButton renders 1`] = `
       <button
         aria-hidden="false"
         class="c3 button"
-        color="purple500"
+        color="purple100"
         data-event=""
         data-testid=""
         value=""

@@ -1,40 +1,41 @@
 import styled from 'styled-components';
-import { rem, lighten } from 'polished';
-import { colors } from '../../ions/variables';
-
-const { normal, grey, lightGrey, light } = colors;
+import { rem } from 'polished';
+import { colors, field, misc } from '../../ions/variables';
 
 export const Wrapper = styled.div`
   .tab {
-    border-color: ${lightGrey};
+    border-color: ${field.borderColor};
 
     &[aria-selected='true'] {
       border-bottom: 0;
     }
 
     &[aria-selected='false'] {
-      background-color: ${lightGrey};
-      color: ${grey};
-      transition-duration: 0.3s;
+      background-color: ${field.borderColor};
+      color: ${colors.black};
+      transition-duration: ${misc.transitionDuration};
 
       &:hover {
-        color: ${normal};
+        color: ${colors.black};
       }
     }
 
     &:first-child {
-      border-top-left-radius: ${rem('6px')};
+      border-top-left-radius: ${field.borderRadius};
     }
 
     &:last-child {
-      border-top-right-radius: ${rem('6px')};
+      border-top-right-radius: ${field.borderRadius};
     }
   }
 
   .panel {
-    border-radius: 0 ${rem('6px')} ${rem('6px')} ${rem('6px')};
-    border-color: ${lightGrey};
-    background-color: ${light};
+    // prettier-ignore
+    border-radius: 0 ${field.borderRadius} ${field.borderRadius} ${
+  field.borderRadius
+};
+    border-color: ${field.borderColor};
+    background-color: ${colors.white};
     padding: ${rem('30px')};
   }
 
@@ -54,8 +55,10 @@ export const Wrapper = styled.div`
   .RRT__tab {
     background: #eee;
     border-style: solid;
-    border-color: ${lighten(0.25, grey)};
-    border-width: ${rem('1px')} ${rem('1px')} ${rem('1px')} 0;
+    border-color: ${field.borderColor};
+    border-width: ${field.borderWidth} ${field.borderWidth} ${
+  field.borderWidth
+} 0;
     cursor: pointer;
     z-index: 1;
     white-space: nowrap;
@@ -64,24 +67,24 @@ export const Wrapper = styled.div`
 
   .RRT__tab:focus {
     outline: 0;
-    background-color: ${lighten(0.25, grey)};
+    background-color: ${field.borderColor};
   }
 
   .RRT__accordion .RRT__tab {
-    border-left-width: ${rem('1px')};
+    border-left-width: ${field.borderWidth};
   }
 
   .RRT__tab--first {
-    border-left-width: ${rem('1px')};
+    border-left-width: ${field.borderWidth};
   }
 
   .RRT__tab--selected {
-    background: ${light};
-    border-color: ${lighten(0.25, grey)} ${lighten(0.25, grey)} ${light};
+    background: ${colors.white};
+    border-color: ${field.borderColor} ${field.borderColor} ${colors.white};
   }
 
   .RRT__tab--selected:focus {
-    background-color: ${light};
+    background-color: ${colors.white};
   }
 
   .RRT__tab--disabled {
@@ -111,7 +114,7 @@ export const Wrapper = styled.div`
   .RRT__panel {
     margin-top: ${rem('-1px')};
     padding: 1em;
-    border: ${rem('1px')} solid ${lighten(0.25, grey)};
+    border: ${rem('1px')} solid ${field.borderColor};
   }
 
   .RRT__panel--hidden {
@@ -123,9 +126,9 @@ export const Wrapper = styled.div`
   }
 
   .RRT__showmore {
-    background: ${lightGrey};
-    border: ${rem('1px')} solid ${lighten(0.25, grey)};
-    border-radius: 0 ${rem('6px')} 0 0;
+    background: ${field.borderColor};
+    border: ${rem('1px')} solid ${field.borderColor};
+    border-radius: 0 ${field.borderRadius} 0 0;
     cursor: pointer;
     z-index: 1;
     white-space: nowrap;
@@ -134,7 +137,7 @@ export const Wrapper = styled.div`
   }
 
   .RRT__showmore--selected {
-    background: ${light};
+    background: ${colors.white};
     border-bottom: none;
   }
 
@@ -145,7 +148,7 @@ export const Wrapper = styled.div`
   }
 
   .RRT__showmore-label--selected {
-    background-color: ${lighten(0.25, grey)};
+    background-color: ${field.borderColor};
   }
 
   .RRT__showmore-list {

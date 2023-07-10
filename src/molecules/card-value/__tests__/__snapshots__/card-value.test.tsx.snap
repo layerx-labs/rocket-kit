@@ -13,8 +13,7 @@ exports[`Card Value renders 1`] = `
   align-items: center;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #939393;
-  text-transform: uppercase;
+  color: #73758C;
 }
 
 .c1 svg {
@@ -24,8 +23,8 @@ exports[`Card Value renders 1`] = `
 }
 
 .c0 {
-  border: 0.0625rem solid #939393;
-  border-radius: 0.375rem;
+  border: 0.0625rem solid #D9D4ED;
+  border-radius: 0.5rem;
   background-color: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -42,17 +41,16 @@ exports[`Card Value renders 1`] = `
   display: block;
   margin-top: 0.3125rem;
   font-size: 2rem;
-  font-weight: var(--bold,700);
+  font-weight: 600;
   line-height: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-@media (min-width:1280px) {
-  .c0 {
-    padding: 1.875rem;
-  }
+.c0 a,
+.c0 button {
+  margin-top: 1.25rem;
 }
 
 <div
@@ -68,7 +66,7 @@ exports[`Card Value renders 1`] = `
       >
         <path
           d="M10.47 7c.807.01 1.46.663 1.469 1.469v6.43l8.328-7.533c.106-.085.226-.159.355-.217l.01-.004a1.42 1.42 0 01.616-.138h.002c.408.01.775.178 1.044.445l.001-.002c.03.028.059.056.085.085h.001c.212.254.34.582.34.941 0 .287-.082.555-.224.781l.003-.005a1.437 1.437 0 01-.138.17l.001-.001a1.33 1.33 0 01-.183.178l-.003.002-6.349 5.734 1.627 1.615 1.477-1.331a1.484 1.484 0 012.073.108h.001a1.377 1.377 0 01.36 1.064v-.005c-.024.398-.206.75-.484.996l-.002.001-1.355 1.22 2.722 2.704.057.083.03.03a1.385 1.385 0 01.372 1.012v-.003c-.01.391-.174.742-.435.996a1.402 1.402 0 01-.914.42h-.004a1.47 1.47 0 01-.941-.249l.005.004-.05-.04-.024-.021-.055-.039a1.107 1.107 0 01-.084-.076l-2.864-2.856-1.478 1.331a1.437 1.437 0 01-1.045.379h.003a1.382 1.382 0 01-1.014-.466l-.001-.002a1.482 1.482 0 01.108-2.073v-.001l1.36-1.225-1.618-1.614-1.717 1.556v3.931a1.462 1.462 0 01-2.503 1.027A1.422 1.422 0 019 22.785v-.009.001V8.47c.01-.807.662-1.46 1.468-1.469h.002z"
-          style="fill: #939393;"
+          style="fill: #C7C8D1;"
         />
       </svg>
     </label>

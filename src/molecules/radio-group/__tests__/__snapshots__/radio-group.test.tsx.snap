@@ -21,11 +21,11 @@ exports[`RadioGroup renders 1`] = `
 }
 
 .c0 input[type='radio']:checked ~ .check {
-  border-color: #2ba8b6;
+  border-color: #2AB38A;
 }
 
 .c0 input[type='radio']:checked ~ .check::before {
-  background-color: #56cad7;
+  background-color: #35E0AD;
 }
 
 .c0 + span {
@@ -59,7 +59,7 @@ exports[`RadioGroup renders 1`] = `
 .c1 .check {
   position: absolute;
   top: 0;
-  border: 0.125rem solid #939393;
+  border: 0.125rem solid #D9D4ED;
   border-radius: 100%;
   width: var(--size);
   height: var(--size);
@@ -88,7 +88,7 @@ exports[`RadioGroup renders 1`] = `
 }
 
 .c1:hover .check {
-  border-color: #000000;
+  border-color: #C7BFE4;
 }
 
 <div

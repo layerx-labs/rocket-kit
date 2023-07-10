@@ -20,7 +20,7 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c1:hover input:not(:disabled) ~ span {
-  border-color: #000000;
+  border-color: #C7BFE4;
 }
 
 .c2 {
@@ -36,8 +36,8 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c3:checked:not(:disabled)[aria-checked='true'] ~ span {
-  background-color: #56cad7;
-  border-color: #2ba8b6;
+  background-color: #35E0AD;
+  border-color: #2AB38A;
 }
 
 .c3:checked:not(:disabled)[aria-checked='true'] ~ span:after {
@@ -46,8 +46,8 @@ exports[`CheckboxGroup renders 1`] = `
 
 .c3:checked:disabled[aria-checked='true'] ~ span {
   border-color: transparent;
-  background-color: #c4c7d3;
-  color: #939393;
+  background-color: #E3E3E8;
+  color: #ABACBA;
 }
 
 .c3:checked:disabled[aria-checked='true'] ~ span:after {
@@ -55,23 +55,23 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c3:not(:checked):disabled ~ span {
-  border-color: #c4c7d3;
+  border-color: #E3E3E8;
   background-color: #ffffff;
 }
 
 .c3:hover:not(:disabled) {
-  border-color: #2ba8b6;
+  border-color: #4329A6;
 }
 
 .c3:hover:not(:disabled):checked ~ span {
-  border-color: #2ba8b6;
+  border-color: #2AB38A;
 }
 
 .c4 {
   position: absolute;
   top: 0;
   left: 0;
-  border: 0.125rem solid #939393;
+  border: 0.125rem solid #D9D4ED;
   border-radius: 100%;
   width: 1.5rem;
   height: 1.5rem;
@@ -98,8 +98,8 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c4.checked.not-disabled {
-  background-color: #56cad7;
-  border-color: #2ba8b6;
+  background-color: #35E0AD;
+  border-color: #2AB38A;
 }
 
 .c4.checked.not-disabled:after {
@@ -107,9 +107,9 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c4.checked.disabled {
-  color: #939393;
+  color: #ABACBA;
   border-color: transparent;
-  background-color: #c4c7d3;
+  background-color: #E3E3E8;
 }
 
 .c4.checked.disabled:after {
@@ -117,16 +117,16 @@ exports[`CheckboxGroup renders 1`] = `
 }
 
 .c4.not-checked.disabled {
-  border-color: #c4c7d3;
+  border-color: #E3E3E8;
   background-color: #ffffff;
 }
 
 .c4.not-disabled:hover {
-  border-color: #2ba8b6;
+  border-color: #2AB38A;
 }
 
 .c4.not-disabled:hover:checked ~ span {
-  border-color: #2ba8b6;
+  border-color: #2AB38A;
 }
 
 .c0 {

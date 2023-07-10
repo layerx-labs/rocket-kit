@@ -7,14 +7,14 @@ exports[`TextArea renders 1`] = `
 }
 
 .c1 {
-  border-width: 0 0 0.0625rem 0;
+  border-width: 0.0625rem;
   border-style: solid;
-  border-color: #939393;
-  border-radius: 0;
+  border-color: #D9D4ED;
+  border-radius: 0.5rem;
   width: 100%;
   height: 6.25rem;
-  min-height: rem('40px');
-  padding: 0;
+  min-height: 3.125rem;
+  padding: 0.625rem;
   font-family: inherit;
   font-size: 1rem;
   word-break: break-word;
@@ -23,18 +23,22 @@ exports[`TextArea renders 1`] = `
   resize: none;
 }
 
+.c1:hover {
+  border-color: #C7BFE4;
+}
+
 .c1:focus {
   border-color: #4329A6;
   outline: none;
 }
 
 .c1:disabled {
-  background-color: #c4c7d3;
-  color: #939393;
+  background-color: #E3E3E8;
+  color: #ABACBA;
 }
 
 .c1:invalid {
-  border-color: #ef5766;
+  border-color: #EB5757;
   outline: none;
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -42,36 +46,36 @@ exports[`TextArea renders 1`] = `
 }
 
 .c1:required {
-  border-color: #939393;
+  border-color: #D9D4ED;
 }
 
 .c1::-webkit-input-placeholder {
-  color: #939393;
+  color: #C7C8D1;
   opacity: 1;
 }
 
 .c1::-moz-placeholder {
-  color: #939393;
+  color: #C7C8D1;
   opacity: 1;
 }
 
 .c1:-ms-input-placeholder {
-  color: #939393;
+  color: #C7C8D1;
   opacity: 1;
 }
 
 .c1::placeholder {
-  color: #939393;
+  color: #C7C8D1;
   opacity: 1;
 }
 
 .c1:-ms-input-placeholder {
-  color: #939393;
+  color: #C7C8D1;
   opacity: 1;
 }
 
 .c1::-ms-input-placeholder {
-  color: #939393;
+  color: #C7C8D1;
   opacity: 1;
 }
 

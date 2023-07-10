@@ -3,7 +3,7 @@
 exports[`Tag renders 1`] = `
 <DocumentFragment>
   .c0 {
-  --bg: #ef5766;
+  --bg: #EB5757;
   --txt: #ffffff;
   display: inline-block;
   border: 0.125rem solid var(--bg);
@@ -24,7 +24,7 @@ exports[`Tag renders 1`] = `
 
 <span
     class="c0 tag"
-    color="red"
+    color="red500"
     title="hello"
   >
     hello

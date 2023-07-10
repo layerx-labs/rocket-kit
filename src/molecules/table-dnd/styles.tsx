@@ -1,10 +1,7 @@
 import styled from 'styled-components/macro';
 import { rem } from 'polished';
-import { colors, typography } from '../../ions/variables';
+import { colors, field, misc, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
-
-const { normal, grey, lightGrey } = colors;
-const { bold } = typography;
 
 interface TableDnDProps {
   border?: boolean;
@@ -15,10 +12,10 @@ interface TableDnDProps {
 export const Table = styled.table<TableDnDProps>`
   position: relative;
   width: 100%;
-  border-width: ${props => (props.border ? '1px' : '0')};
+  border-width: ${props => (props.border ? field.borderWidth : 0)};
   border-style: solid;
-  border-color: ${grey};
-  border-radius: ${rem('6px')};
+  border-color: ${colors.grey200};
+  border-radius: ${field.borderRadius};
   border-spacing: 0;
   white-space: nowrap;
   table-layout: ${props => props.layout};
@@ -72,17 +69,17 @@ export const Table = styled.table<TableDnDProps>`
     font-size: 0.85rem;
 
     &:first-child {
-      border-top-left-radius: ${rem('6px')};
+      border-top-left-radius: ${field.borderRadius};
     }
 
     &:last-child {
-      border-top-right-radius: ${rem('6px')};
+      border-top-right-radius: ${field.borderRadius};
     }
   }
 
   tr {
-    border: ${rem('1px')} solid ${grey};
-    border-radius: ${rem('6px')};
+    border: ${field.borderWidth} solid ${colors.grey200};
+    border-radius: ${field.borderRadius};
     position: relative;
 
     &:not(:last-child) {
@@ -106,9 +103,8 @@ export const Table = styled.table<TableDnDProps>`
 
     @media ${device.s} {
       display: contents;
-      font-weight: ${bold};
-      color: ${grey};
-      text-transform: uppercase;
+      font-weight: ${typography.semiBold};
+      color: ${colors.grey400};
       text-align: left;
     }
   }
@@ -116,15 +112,15 @@ export const Table = styled.table<TableDnDProps>`
   tbody {
     tr {
       display: block;
-      transition-duration: 0.3s;
+      transition-duration: ${misc.transitionDuration};
 
       &:hover {
-        background-color: ${lightGrey};
+        background-color: ${colors.grey50};
 
         td {
           &.drag-handle {
             svg {
-              fill: ${grey};
+              fill: ${colors.grey200};
             }
           }
 
@@ -142,7 +138,7 @@ export const Table = styled.table<TableDnDProps>`
     }
 
     td {
-      border-top: ${rem('1px')} solid ${grey};
+      border-top: ${field.borderWidth} solid ${colors.grey200};
       height: inherit;
       min-height: ${rem('50px')};
       padding: ${rem('15px')};
@@ -157,8 +153,8 @@ export const Table = styled.table<TableDnDProps>`
         svg {
           width: ${rem('30px')};
           height: ${rem('30px')};
-          fill: ${grey};
-          transition-duration: 0.3s;
+          fill: ${colors.grey200};
+          transition-duration: ${misc.transitionDuration};
         }
       }
 
@@ -189,8 +185,8 @@ export const Table = styled.table<TableDnDProps>`
       a {
         display: flex;
         align-items: center;
-        color: ${normal};
-        text-decoration-color: ${grey};
+        color: ${colors.black};
+        text-decoration-color: ${colors.grey400};
       }
 
       &:first-child {
@@ -201,7 +197,7 @@ export const Table = styled.table<TableDnDProps>`
         position: absolute;
         left: ${rem('15px')};
         content: attr(data-label);
-        font-weight: ${bold};
+        font-weight: ${typography.semiBold};
         text-transform: capitalize;
       }
 
@@ -231,7 +227,7 @@ export const Table = styled.table<TableDnDProps>`
 
         button {
           margin-top: ${rem('5px')};
-          transition: 0.3s;
+          transition: ${misc.transitionDuration};
         }
 
         ul {
@@ -259,7 +255,7 @@ export const Table = styled.table<TableDnDProps>`
         }
 
         &:first-child {
-          border-top: ${rem('1px')} solid ${grey};
+          border-top: ${field.borderWidth} solid ${colors.grey200};
         }
 
         &:before {

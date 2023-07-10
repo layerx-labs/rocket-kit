@@ -15,8 +15,8 @@ exports[`FilePicker renders 1`] = `
   margin-bottom: 0 !important;
   border-width: 0.0625rem;
   border-style: solid;
-  border-color: #939393;
-  border-radius: 0.375rem;
+  border-color: #D9D4ED;
+  border-radius: 0.5rem;
   background-color: transparent;
   display: -webkit-box;
   display: -webkit-flex;
@@ -35,6 +35,8 @@ exports[`FilePicker renders 1`] = `
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   overflow: hidden;
 }
 
@@ -62,11 +64,11 @@ exports[`FilePicker renders 1`] = `
 }
 
 .c0 label span.button {
-  border-left: 0.0625rem solid #939393;
-  background-color: #56cad7;
+  border-left: 0.0625rem solid #D9D4ED;
+  background-color: #D9D4ED;
   height: 100%;
   padding: 0 1.25rem;
-  color: #ffffff;
+  color: #4329A6;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
@@ -75,18 +77,21 @@ exports[`FilePicker renders 1`] = `
   margin-right: 0.5rem;
   width: auto;
   height: 1.5rem;
-  fill: #ffffff;
+  fill: #4329A6;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
 .c0 label span.button:hover {
-  background-color: #2ba8b6;
-  color: #ffffff;
+  background-color: #C7BFE4;
 }
 
-.c0 label span.button:hover svg {
-  fill: #ffffff;
+.c0 label:hover {
+  border-color: #C7BFE4;
+}
+
+.c0 label:hover span.button {
+  background-color: #C7BFE4;
 }
 
 <div

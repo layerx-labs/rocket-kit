@@ -7,14 +7,15 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__control {
-  border-color: #939393;
+  border-color: #D9D4ED;
+  border-radius: 0.5rem;
   min-height: 3.125rem;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
 .c0 .select__control:hover {
-  border-color: #4329A6;
+  border-color: #C7BFE4;
 }
 
 .c0 .select__control--is-focused {
@@ -23,19 +24,11 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__value-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   padding: 0 0.9375rem;
 }
 
 .c0 .select__placeholder {
-  color: #939393;
+  color: #C7C8D1;
 }
 
 .c0 .select__input {
@@ -60,11 +53,11 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__indicator svg path {
-  fill: hsl(0,0%,85%);
+  fill: #D9D4ED;
 }
 
 .c0 .select__indicator-separator {
-  background-color: #939393;
+  background-color: #D9D4ED;
 }
 
 .c0 .select__option {
@@ -73,8 +66,12 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__option:hover {
-  background-color: #4329A6;
-  color: #ffffff;
+  background-color: #C7BFE4;
+  color: #000000;
+}
+
+.c0 .select__option:hover svg {
+  fill: #000000;
 }
 
 .c0 .select__option--is-focused {
@@ -83,8 +80,8 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__option--is-selected {
-  background-color: #bcb0eb;
-  color: #000000;
+  background-color: #4329A6 !important;
+  color: #ffffff !important;
 }
 
 .c0 .select__value-container > div,
@@ -122,7 +119,7 @@ exports[`Select Interactive renders 1`] = `
 }
 
 .c0 .select__option--is-selected svg {
-  fill: #000000;
+  fill: #ffffff !important;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
@@ -135,6 +132,17 @@ exports[`Select Interactive renders 1`] = `
 
 .c0 .select__option--is-disabled {
   pointer-events: none;
+}
+
+.c1 {
+  grid-area: 1 / 1 / 2 / 3;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 <div
@@ -159,7 +167,9 @@ exports[`Select Interactive renders 1`] = `
         <div
           class="select__value-container select__value-container--has-value css-1fdsijx-ValueContainer"
         >
-          <div>
+          <div
+            class="c1"
+          >
             Vanilla
           </div>
           <div

@@ -13,7 +13,6 @@ export const FilePickerComponent = (args: FilePickerProps) => (
 FilePickerComponent.story = {
   name: 'File Picker',
   args: {
-    minimal: false,
     multiple: false,
     name: 'file',
     placeholder: 'Select file',

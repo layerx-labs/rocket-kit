@@ -50,6 +50,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   text-decoration: none;
   transition-duration: ${misc.transitionDuration};
   cursor: pointer;
+  outline: none;
 
   &:hover {
     border-color: ${props => (props.variant === 'solid' ? '' : 'var(--hover)')};

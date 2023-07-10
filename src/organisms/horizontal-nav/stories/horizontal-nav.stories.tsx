@@ -58,7 +58,7 @@ const menu = [
     url: '#0',
   },
   {
-    icon: 'kai',
+    icon: 'tkai',
     label: 'Transactions',
     url: '#0',
   },

@@ -11,11 +11,7 @@ export interface FieldWidthButtonProps {
   name?: string;
   placeholder?: string;
   value?: string | number;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  disabled?: boolean;
-  error?: string;
   dataTestId?: string;
-  required?: boolean;
   buttonIcon: string;
   buttonValue?: string;
   buttonAction?: (
@@ -31,11 +27,7 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
     name,
     placeholder,
     value,
-    onChange,
-    disabled = false,
-    error = '',
     dataTestId,
-    required = false,
     buttonIcon,
     buttonValue,
     buttonAction,
@@ -48,18 +40,15 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
 
       <Styles.Field>
         <TextField
-          minimal={false}
           type={type}
           name={name}
           value={value}
-          onChange={onChange}
           placeholder={placeholder}
-          disabled={disabled}
-          error={error}
           dataTestId={dataTestId}
-          required={required}
+          disabled
         />
         <Button
+          color="purple100"
           icon={buttonIcon}
           value={buttonValue}
           action={buttonAction}
