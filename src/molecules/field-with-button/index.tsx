@@ -33,7 +33,7 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
     buttonValue,
     buttonAction,
     buttonDisabled,
-    disabled = false,
+    disabled = true,
   } = props;
 
   const [loading, setLoading] = useState(false);
