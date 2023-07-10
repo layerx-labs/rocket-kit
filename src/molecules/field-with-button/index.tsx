@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Label from '../../atoms/label';
 import TextField from '../../atoms/text-field';
 import { TextFieldType } from '../../atoms/text-field/types';
@@ -11,11 +11,13 @@ export interface FieldWidthButtonProps {
   name?: string;
   placeholder?: string;
   value?: string | number;
+  disabled?: boolean;
   dataTestId?: string;
   buttonIcon: string;
   buttonValue?: string;
   buttonAction?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    value: string | number | null
   ) => void;
   buttonDisabled?: boolean;
 }
@@ -32,7 +34,12 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
     buttonValue,
     buttonAction,
     buttonDisabled,
+    disabled = false,
   } = props;
+
+  const [fieldValue, setFieldValue] = useState<string | number | null>(
+    value ?? null
+  );
 
   return (
     <Styles.Wrapper>
@@ -42,17 +49,25 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
         <TextField
           type={type}
           name={name}
-          value={value}
+          disabled={disabled}
           placeholder={placeholder}
           dataTestId={dataTestId}
-          disabled
+          value={fieldValue ?? undefined}
+          onChange={e => {
+            e.preventDefault();
+            if (e.target.value === '' || e.target.value === ' ') {
+              setFieldValue(null);
+              return;
+            }
+            setFieldValue(e.target.value);
+          }}
         />
         <Button
           color="purple100"
           icon={buttonIcon}
           value={buttonValue}
-          action={buttonAction}
           disabled={buttonDisabled}
+          action={e => buttonAction?.(e, fieldValue)}
         />
       </Styles.Field>
     </Styles.Wrapper>

@@ -11,7 +11,7 @@ export default {
 };
 
 export const FieldWidthButtonComponent = (args: FieldWidthButtonProps) => {
-  return <FieldWidthButton {...args} />;
+  return <FieldWidthButton {...args} buttonAction={(_, e) => console.log(e)} />;
 };
 
 FieldWidthButtonComponent.storyName = 'FieldWidthButton';
