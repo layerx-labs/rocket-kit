@@ -15,10 +15,8 @@ export interface FieldWidthButtonProps {
   dataTestId?: string;
   buttonIcon: string;
   buttonValue?: string;
-  buttonAction?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    value: string | number | null
-  ) => void;
+  onChange?: (value: string | number | null) => void;
+  buttonAction?: (value: string | number | null) => void | Promise<void>;
   buttonDisabled?: boolean;
 }
 
@@ -29,6 +27,7 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
     name,
     placeholder,
     value,
+    onChange,
     dataTestId,
     buttonIcon,
     buttonValue,
@@ -37,9 +36,21 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
     disabled = false,
   } = props;
 
+  const [loading, setLoading] = useState(false);
   const [fieldValue, setFieldValue] = useState<string | number | null>(
     value ?? null
   );
+
+  const handleOnClickAction = async () => {
+    if (buttonAction?.constructor.name !== 'AsyncFunction') {
+      buttonAction?.(fieldValue);
+      return;
+    }
+
+    setLoading(true);
+    await buttonAction?.(fieldValue);
+    setLoading(false);
+  };
 
   return (
     <Styles.Wrapper>
@@ -55,19 +66,27 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
           value={fieldValue ?? undefined}
           onChange={e => {
             e.preventDefault();
+
             if (e.target.value === '' || e.target.value === ' ') {
               setFieldValue(null);
-              return;
+              onChange?.(e.target.value);
+            } else {
+              setFieldValue(e.target.value);
+              onChange?.(e.target.value);
             }
-            setFieldValue(e.target.value);
           }}
         />
+
         <Button
           color="purple100"
+          loading={loading}
           icon={buttonIcon}
           value={buttonValue}
           disabled={buttonDisabled}
-          action={e => buttonAction?.(e, fieldValue)}
+          action={e => {
+            e.preventDefault();
+            handleOnClickAction();
+          }}
         />
       </Styles.Field>
     </Styles.Wrapper>
