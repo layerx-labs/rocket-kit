@@ -27,4 +27,5 @@ FieldWidthButtonComponent.args = {
   value: 'https://taikai.network',
   buttonIcon: 'copy',
   buttonValue: '',
+  disabled: true,
 };
