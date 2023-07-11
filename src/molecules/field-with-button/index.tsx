@@ -18,6 +18,7 @@ export interface FieldWidthButtonProps {
   onChange?: (value: string | number | null) => void;
   buttonAction?: (value: string | number | null) => void | Promise<void>;
   buttonDisabled?: boolean;
+  clearFieldAfterSubmit?: boolean;
 }
 
 const FieldWidthButton = (props: FieldWidthButtonProps) => {
@@ -34,6 +35,7 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
     buttonAction,
     buttonDisabled,
     disabled = true,
+    clearFieldAfterSubmit = false,
   } = props;
 
   const [loading, setLoading] = useState(false);
@@ -44,12 +46,13 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
   const handleOnClickAction = async () => {
     if (buttonAction?.constructor.name !== 'AsyncFunction') {
       buttonAction?.(fieldValue);
-      return;
+    } else {
+      setLoading(true);
+      await buttonAction?.(fieldValue);
+      setLoading(false);
     }
 
-    setLoading(true);
-    await buttonAction?.(fieldValue);
-    setLoading(false);
+    clearFieldAfterSubmit && setFieldValue('');
   };
 
   return (
