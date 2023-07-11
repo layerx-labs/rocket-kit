@@ -28,4 +28,5 @@ FieldWidthButtonComponent.args = {
   buttonIcon: 'copy',
   buttonValue: '',
   disabled: true,
+  buttonDisabled: false,
 };
