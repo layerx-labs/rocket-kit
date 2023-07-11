@@ -46,7 +46,7 @@ const SelectInteractive = ({
           SingleValue: CustomSelectValue,
         }}
         formatGroupLabel={s =>
-          formatGroupLabel ? FormatGroupLabel?.(s) : undefined
+          formatGroupLabel ? FormatGroupLabel(s) : undefined
         }
       />
       {error ? <ErrorField error={error} /> : null}

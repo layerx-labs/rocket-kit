@@ -1,10 +1,15 @@
-import { createGlobalStyle } from 'styled-components/macro';
-import { rem} from "polished";
-import { typography, colors } from './ions/variables';
-import { device } from './ions/breakpoints';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { withThemeFromJSXProvider } from '@storybook/addon-styling';
+import { rem } from 'polished';
+import { typography, colors } from '../src/ions/variables';
+import { device } from '../src/ions/breakpoints';
 
-const GlobalStyle = createGlobalStyle`
-  * {
+/* TODO: update import for your custom theme configurations */
+// import { lightTheme, darkTheme } from '../path/to/themes';
+
+/* TODO: replace with your own global styles, or remove */
+const GlobalStyles = createGlobalStyle`
+    * {
     box-sizing: border-box;
   }
 
@@ -88,4 +93,36 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default GlobalStyle;
+const preview = {
+  actions: { argTypesRegex: '^on.*' },
+
+  backgrounds: {
+    default: 'light',
+    values: [
+      {
+        name: 'light',
+        value: '#ffffff',
+      },
+      {
+        name: 'dark',
+        value: '#0D0F19',
+      },
+    ],
+  },
+
+  decorators: [
+    // Adds global styles and theme switching support.
+    withThemeFromJSXProvider({
+      /* Uncomment for theme switching support */
+      // themes: {
+      //   light: lightTheme,
+      //   dark: darkTheme,
+      // }
+      // defaultTheme: 'light',
+      // Provider: ThemeProvider,
+      GlobalStyles,
+    }),
+  ],
+};
+
+export default preview;

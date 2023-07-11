@@ -24,7 +24,7 @@ export const FormatGroupLabel = (props: GroupBase) => {
       <Styles.SelectGroupLabel className="selective-options-group-label">
         {props.label}
       </Styles.SelectGroupLabel>
-      <Tag value={`${props.options?.length}`} />
+      <Tag value={`${props.options.length}`} />
     </div>
   );
 };

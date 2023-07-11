@@ -84,12 +84,11 @@ export const SelectInteractiveFormatedGroupedOptionsComponent = (
     TSelectInteractiveOption | ReadonlyArray<TSelectInteractiveOption> | null
   >(options[1].options[1]);
 
-  const handleChange: SelectInteractiveProps<
-    TSelectInteractiveOption
-  >['onChange'] = selectedOption => {
-    console.log(selectedOption);
-    setSelectOptions(selectedOption);
-  };
+  const handleChange: SelectInteractiveProps<TSelectInteractiveOption>['onChange'] =
+    selectedOption => {
+      console.log(selectedOption);
+      setSelectOptions(selectedOption);
+    };
 
   return (
     <SelectInteractive
