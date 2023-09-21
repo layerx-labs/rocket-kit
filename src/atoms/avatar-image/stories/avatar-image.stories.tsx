@@ -22,8 +22,7 @@ PNG.args = {
   boringType: 'pixel',
   square: false,
   alt: 'Maria Rincon',
-  url:
-    'https://taikai.azureedge.net/O4f7yrc0ecq0JUEirIk1sZ2XItEpJ-xrIr2W03kRrJs/rs:fit:400:400:0/g:no/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3RhaWthaS1zdG9yYWdlL2ltYWdlcy90YWlrYWkvbWFyaWFfNDAwXzQwMC5qcGc.jpg',
+  url: 'https://taikai.azureedge.net/O4f7yrc0ecq0JUEirIk1sZ2XItEpJ-xrIr2W03kRrJs/rs:fit:400:400:0/g:no/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3RhaWthaS1zdG9yYWdlL2ltYWdlcy90YWlrYWkvbWFyaWFfNDAwXzQwMC5qcGc.jpg',
 };
 
 export const SVG = (args: AvatarProps) => <AvatarImage {...args} />;
@@ -34,7 +33,7 @@ SVG.args = {
   boringType: 'pixel',
   square: false,
   alt: 'Default Avatar',
-  url: './images/default-avatar.svg',
+  url: 'images/default-avatar.svg',
 };
 
 export const BoringAvatar = (args: AvatarProps) => <AvatarImage {...args} />;

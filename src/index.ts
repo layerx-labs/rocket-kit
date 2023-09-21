@@ -25,6 +25,7 @@ export { default as FilePicker } from './atoms/file-picker';
 
 // Molecules
 export { default as ActionsMenu } from './molecules/actions-menu';
+export { ActionMenuList } from './molecules/actions-menu';
 export { default as CardValue } from './molecules/card-value';
 export { default as EmptyTable } from './molecules/empty-table';
 export { default as ModalFooter } from './molecules/modal-footer';
