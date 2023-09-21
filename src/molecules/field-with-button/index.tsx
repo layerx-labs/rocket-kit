@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Label from '../../atoms/label';
 import TextField from '../../atoms/text-field';
 import { TextFieldType } from '../../atoms/text-field/types';
@@ -11,13 +11,14 @@ export interface FieldWidthButtonProps {
   name?: string;
   placeholder?: string;
   value?: string | number;
+  disabled?: boolean;
   dataTestId?: string;
   buttonIcon: string;
   buttonValue?: string;
-  buttonAction?: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => void;
+  onChange?: (value: string | number | null) => void;
+  buttonAction?: (value: string | number | null) => void | Promise<void>;
   buttonDisabled?: boolean;
+  clearFieldAfterSubmit?: boolean;
 }
 
 const FieldWidthButton = (props: FieldWidthButtonProps) => {
@@ -27,12 +28,32 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
     name,
     placeholder,
     value,
+    onChange,
     dataTestId,
     buttonIcon,
     buttonValue,
     buttonAction,
     buttonDisabled,
+    disabled = true,
+    clearFieldAfterSubmit = false,
   } = props;
+
+  const [loading, setLoading] = useState(false);
+  const [fieldValue, setFieldValue] = useState<string | number | null>(
+    value ?? null
+  );
+
+  const handleOnClickAction = async () => {
+    if (buttonAction?.constructor.name !== 'AsyncFunction') {
+      buttonAction?.(fieldValue);
+    } else {
+      setLoading(true);
+      await buttonAction?.(fieldValue);
+      setLoading(false);
+    }
+
+    clearFieldAfterSubmit && setFieldValue('');
+  };
 
   return (
     <Styles.Wrapper>
@@ -42,17 +63,33 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
         <TextField
           type={type}
           name={name}
-          value={value}
+          disabled={disabled}
           placeholder={placeholder}
           dataTestId={dataTestId}
-          disabled
+          value={fieldValue ?? undefined}
+          onChange={e => {
+            e.preventDefault();
+
+            if (e.target.value === '' || e.target.value === ' ') {
+              setFieldValue(null);
+              onChange?.(e.target.value);
+            } else {
+              setFieldValue(e.target.value);
+              onChange?.(e.target.value);
+            }
+          }}
         />
+
         <Button
           color="purple100"
+          loading={loading}
           icon={buttonIcon}
           value={buttonValue}
-          action={buttonAction}
           disabled={buttonDisabled}
+          action={e => {
+            e.preventDefault();
+            handleOnClickAction();
+          }}
         />
       </Styles.Field>
     </Styles.Wrapper>

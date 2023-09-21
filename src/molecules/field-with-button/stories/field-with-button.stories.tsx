@@ -11,7 +11,13 @@ export default {
 };
 
 export const FieldWidthButtonComponent = (args: FieldWidthButtonProps) => {
-  return <FieldWidthButton {...args} />;
+  return (
+    <FieldWidthButton
+      {...args}
+      buttonAction={value => console.log(value)}
+      onChange={value => console.log(value)}
+    />
+  );
 };
 
 FieldWidthButtonComponent.storyName = 'FieldWidthButton';
@@ -21,4 +27,6 @@ FieldWidthButtonComponent.args = {
   value: 'https://taikai.network',
   buttonIcon: 'copy',
   buttonValue: '',
+  disabled: true,
+  buttonDisabled: false,
 };

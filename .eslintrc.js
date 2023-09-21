@@ -8,5 +8,6 @@ module.exports = {
     'plugin:testing-library/react',
     'plugin:jest-dom/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:storybook/recommended',
   ],
 };
