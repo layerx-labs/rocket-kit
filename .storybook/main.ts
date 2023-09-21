@@ -20,7 +20,7 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true, // 👈 Disables telemetry
   },
-  staticDirs: ['./static'],
+  staticDirs: ['../static'],
   webpackFinal: async (config) => {
     config.resolve = {
       ...config.resolve,
