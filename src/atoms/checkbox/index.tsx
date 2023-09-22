@@ -6,7 +6,7 @@ import {
   Checkmark,
 } from './styles';
 
-interface Props {
+export interface CheckboxProps {
   value: string;
   label?: string | React.ReactNode;
   checked?: boolean | undefined;
@@ -30,7 +30,7 @@ const Checkbox = ({
   style,
   dataTestId,
   required = false,
-}: Props) => {
+}: CheckboxProps) => {
   const checkedRef = useRef<boolean>(checked);
   const [isChecked, setIsChecked] = useState(checked);
 

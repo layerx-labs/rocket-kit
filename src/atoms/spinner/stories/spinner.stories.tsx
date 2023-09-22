@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from '../../src';
+import Spinner, { SpinnerProps } from '..';
 
 export default {
   title: 'Components/Atoms/Spinner',
@@ -9,7 +9,7 @@ export default {
   },
 };
 
-export const SpinnerComponent = args => <Spinner {...args} />;
+export const SpinnerComponent = (args: SpinnerProps) => <Spinner {...args} />;
 
 SpinnerComponent.storyName = 'Spinner';
 

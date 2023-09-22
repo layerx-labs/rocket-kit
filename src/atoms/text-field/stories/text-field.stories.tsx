@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextField } from '../../src';
-import icons from '../../src/ions/icons';
+import TextField, { TextFieldProps } from '..';
+import icons from '../../../ions/icons';
 
 export default {
   title: 'Components/Atoms/TextField',
@@ -21,7 +21,7 @@ export default {
   },
 };
 
-export const TextComponent = args => <TextField {...args} />;
+export const TextComponent = (args: TextFieldProps) => <TextField {...args} />;
 
 TextComponent.storyName = 'Text';
 TextComponent.args = {
@@ -34,7 +34,9 @@ TextComponent.args = {
   required: false,
 };
 
-export const TextDefaultComponent = args => <TextField {...args} />;
+export const TextDefaultComponent = (args: TextFieldProps) => (
+  <TextField {...args} />
+);
 
 TextDefaultComponent.storyName = 'Default Value';
 TextDefaultComponent.args = {
@@ -46,7 +48,9 @@ TextDefaultComponent.args = {
   disabled: false,
 };
 
-export const DisabledComponent = args => <TextField {...args} />;
+export const DisabledComponent = (args: TextFieldProps) => (
+  <TextField {...args} />
+);
 
 DisabledComponent.storyName = 'Disabled';
 DisabledComponent.args = {
@@ -58,7 +62,9 @@ DisabledComponent.args = {
   disabled: true,
 };
 
-export const TextFullBorderComponent = args => <TextField {...args} />;
+export const TextFullBorderComponent = (args: TextFieldProps) => (
+  <TextField {...args} />
+);
 
 TextFullBorderComponent.storyName = 'Full Border';
 TextFullBorderComponent.args = {
@@ -69,7 +75,9 @@ TextFullBorderComponent.args = {
   disabled: false,
 };
 
-export const TextIconComponent = args => <TextField {...args} />;
+export const TextIconComponent = (args: TextFieldProps) => (
+  <TextField {...args} />
+);
 
 TextIconComponent.storyName = 'W/ Icon';
 TextIconComponent.args = {
@@ -81,7 +89,7 @@ TextIconComponent.args = {
   disabled: false,
 };
 
-export const UrlComponent = args => <TextField {...args} />;
+export const UrlComponent = (args: TextFieldProps) => <TextField {...args} />;
 
 UrlComponent.storyName = 'URL';
 UrlComponent.args = {
@@ -92,7 +100,9 @@ UrlComponent.args = {
   disabled: false,
 };
 
-export const PasswordComponent = args => <TextField {...args} />;
+export const PasswordComponent = (args: TextFieldProps) => (
+  <TextField {...args} />
+);
 
 PasswordComponent.storyName = 'Password';
 PasswordComponent.args = {
@@ -103,7 +113,7 @@ PasswordComponent.args = {
   disabled: false,
 };
 
-export const DateComponent = args => <TextField {...args} />;
+export const DateComponent = (args: TextFieldProps) => <TextField {...args} />;
 
 DateComponent.storyName = 'Date';
 DateComponent.args = {
@@ -113,7 +123,7 @@ DateComponent.args = {
   disabled: false,
 };
 
-export const TimeComponent = args => <TextField {...args} />;
+export const TimeComponent = (args: TextFieldProps) => <TextField {...args} />;
 
 TimeComponent.storyName = 'Time';
 TimeComponent.args = {
@@ -123,7 +133,9 @@ TimeComponent.args = {
   disabled: false,
 };
 
-export const NumberComponent = args => <TextField {...args} />;
+export const NumberComponent = (args: TextFieldProps) => (
+  <TextField {...args} />
+);
 
 NumberComponent.storyName = 'Number';
 NumberComponent.args = {
@@ -136,7 +148,9 @@ NumberComponent.args = {
   disabled: false,
 };
 
-export const TextErrorComponent = args => <TextField {...args} />;
+export const TextErrorComponent = (args: TextFieldProps) => (
+  <TextField {...args} />
+);
 
 TextErrorComponent.storyName = 'Error';
 TextErrorComponent.args = {

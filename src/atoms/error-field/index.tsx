@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import * as Styles from './styles';
 import { ErrorFieldColor } from './types';
 
-interface ErrorFieldProps {
+export interface ErrorFieldProps {
   color?: ErrorFieldColor;
   error: string;
   className?: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NoteCard } from '../../src';
+import NoteCard, { NoteCardProps } from '..';
 
 export default {
   title: 'Components/Molecules/Note Card',
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-export const NoteCardText = args => <NoteCard {...args} />;
+export const NoteCardText = (args: NoteCardProps) => <NoteCard {...args} />;
 
 NoteCardText.storyName = 'Text Only';
 NoteCardText.args = {
