@@ -35,38 +35,6 @@ exports[`Checkbox renders 1`] = `
   cursor: pointer;
 }
 
-.c2:checked:not(:disabled)[aria-checked='true'] ~ span {
-  background-color: #35E0AD;
-  border-color: #2AB38A;
-}
-
-.c2:checked:not(:disabled)[aria-checked='true'] ~ span:after {
-  display: block;
-}
-
-.c2:checked:disabled[aria-checked='true'] ~ span {
-  border-color: transparent;
-  background-color: #E3E3E8;
-  color: #ABACBA;
-}
-
-.c2:checked:disabled[aria-checked='true'] ~ span:after {
-  display: block;
-}
-
-.c2:not(:checked):disabled ~ span {
-  border-color: #E3E3E8;
-  background-color: #ffffff;
-}
-
-.c2:hover:not(:disabled) {
-  border-color: #4329A6;
-}
-
-.c2:hover:not(:disabled):checked ~ span {
-  border-color: #2AB38A;
-}
-
 .c3 {
   position: absolute;
   top: 0;
