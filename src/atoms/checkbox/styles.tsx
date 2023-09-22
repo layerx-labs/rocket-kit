@@ -45,42 +45,6 @@ export const CheckboxInput = styled.input<CheckboxWrapperProps>`
   left: 0;
   opacity: 0;
   cursor: pointer;
-
-  &:checked:not(:disabled)[aria-checked='true'] ~ span {
-    background-color: ${props =>
-      props.error ? field.errorBackgroundColor : field.successBackgroundColor};
-    border-color: ${props =>
-      props.error ? field.errorBorderColor : field.successBorderColor};
-
-    &:after {
-      display: block;
-    }
-  }
-
-  &:checked:disabled[aria-checked='true'] ~ span {
-    border-color: transparent;
-    background-color: ${field.disabledBackgroundColor};
-    color: ${field.disabledColor};
-
-    &:after {
-      display: block;
-    }
-  }
-
-  &:not(:checked):disabled ~ span {
-    border-color: ${field.disabledBackgroundColor};
-    background-color: ${field.backgroundColor};
-  }
-
-  &:hover:not(:disabled) {
-    border-color: ${props =>
-      props.error ? field.errorBorderColor : field.activeBorderColor};
-
-    &:checked ~ span {
-      border-color: ${props =>
-        props.error ? field.errorBorderColor : field.successBorderColor};
-    }
-  }
 `;
 
 export const Checkmark = styled.span<CheckboxErrorProps>`

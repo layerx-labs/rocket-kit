@@ -1,12 +1,14 @@
 import React from 'react';
-import { Checkbox } from '../../src';
+import Checkbox, { CheckboxProps } from '..';
 
 export default {
   title: 'Components/Atoms/Checkbox',
   component: Checkbox,
 };
 
-export const CheckboxSimpleComponent = args => <Checkbox {...args} />;
+export const CheckboxSimpleComponent = (args: CheckboxProps) => (
+  <Checkbox {...args} />
+);
 
 CheckboxSimpleComponent.storyName = 'Simple';
 CheckboxSimpleComponent.args = {
@@ -19,7 +21,7 @@ CheckboxSimpleComponent.args = {
   onChange: () => {},
 };
 
-export const CheckboxNodeComponent = args => (
+export const CheckboxNodeComponent = (args: CheckboxProps) => (
   <Checkbox
     label={[
       'I agree with ',

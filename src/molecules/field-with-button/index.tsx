@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Label from '../../atoms/label';
 import TextField from '../../atoms/text-field';
 import { TextFieldType } from '../../atoms/text-field/types';
@@ -21,26 +21,24 @@ export interface FieldWidthButtonProps {
   clearFieldAfterSubmit?: boolean;
 }
 
-const FieldWidthButton = (props: FieldWidthButtonProps) => {
-  const {
-    label,
-    type = 'text',
-    name,
-    placeholder,
-    value,
-    onChange,
-    dataTestId,
-    buttonIcon,
-    buttonValue,
-    buttonAction,
-    buttonDisabled,
-    disabled = true,
-    clearFieldAfterSubmit = false,
-  } = props;
-
+const FieldWidthButton = ({
+  label,
+  type = 'text',
+  name,
+  placeholder,
+  value,
+  onChange,
+  dataTestId,
+  buttonIcon,
+  buttonValue,
+  buttonAction,
+  buttonDisabled,
+  disabled = true,
+  clearFieldAfterSubmit = false,
+}: FieldWidthButtonProps) => {
   const [loading, setLoading] = useState(false);
   const [fieldValue, setFieldValue] = useState<string | number | null>(
-    value ?? null
+    value ?? ''
   );
 
   const handleOnClickAction = async () => {
@@ -54,6 +52,11 @@ const FieldWidthButton = (props: FieldWidthButtonProps) => {
 
     clearFieldAfterSubmit && setFieldValue('');
   };
+
+  useEffect(() => {
+    if (!value) return;
+    setFieldValue(value);
+  }, [value]);
 
   return (
     <Styles.Wrapper>

@@ -3,7 +3,7 @@ import { ErrorField } from '../..';
 import * as Styles from './styles';
 import { TextFieldType } from './types';
 
-interface TextFieldProps {
+export interface TextFieldProps {
   type?: TextFieldType;
   error?: string;
   icon?: string;
