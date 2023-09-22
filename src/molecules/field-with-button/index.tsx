@@ -37,7 +37,9 @@ const FieldWidthButton = ({
   clearFieldAfterSubmit = false,
 }: FieldWidthButtonProps) => {
   const [loading, setLoading] = useState(false);
-  const [fieldValue, setFieldValue] = useState<string | number | null>(null);
+  const [fieldValue, setFieldValue] = useState<string | number | null>(
+    value ?? ''
+  );
 
   const handleOnClickAction = async () => {
     if (buttonAction?.constructor.name !== 'AsyncFunction') {

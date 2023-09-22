@@ -15,11 +15,22 @@ describe('FieldWidthButton', () => {
 
   it('has correct value', () => {
     const textValue = 'this is my text';
-    render(
+
+    // It renders with an initial value
+    const { rerender } = render(
       <FieldWidthButton type="text" value={textValue} buttonIcon="copy" />
     );
     const foundInput = screen.getByDisplayValue(textValue);
     expect(foundInput).toHaveValue(textValue);
+
+    // The previous value is replaced by changing the prop `value`
+    const secondTextValue = 'custom text after render';
+    rerender(
+      <FieldWidthButton type="text" value={secondTextValue} buttonIcon="copy" />
+    );
+    expect(screen.getByDisplayValue(secondTextValue)).toHaveValue(
+      secondTextValue
+    );
   });
 
   it('calls action callback', async () => {
