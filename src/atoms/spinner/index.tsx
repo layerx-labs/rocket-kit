@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import { colors } from '../../ions/variables';
 import * as Styles from './styles';
 
-interface SpinnerProps {
+export interface SpinnerProps {
   fill?: string;
   size?: string;
   className?: string;

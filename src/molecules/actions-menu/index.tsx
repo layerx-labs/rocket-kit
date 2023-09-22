@@ -4,14 +4,14 @@ import { Button } from '../..';
 import { ActionMenu } from './types';
 import * as Styles from './styles';
 
-interface ActionsMenuListInterface<T> {
+export interface ActionsMenuListInterface<T> {
   actions: ActionMenu<T>[];
   data?: any;
   rowIndex?: number;
   handleOptionClick?: () => void;
 }
 
-interface ActionsMenuInterface<T> {
+export interface ActionsMenuInterface<T> {
   className?: string;
   ariaLabel?: string;
   actions: ActionMenu<T>[];

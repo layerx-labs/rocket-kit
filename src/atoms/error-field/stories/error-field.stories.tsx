@@ -1,5 +1,5 @@
 import React from 'react';
-import { ErrorField } from '../../src';
+import ErrorField, { ErrorFieldProps } from '..';
 
 export default {
   title: 'Components/Atoms/ErrorField',
@@ -14,7 +14,9 @@ export default {
   },
 };
 
-export const ErrorComponent = args => <ErrorField {...args} />;
+export const ErrorComponent = (args: ErrorFieldProps) => (
+  <ErrorField {...args} />
+);
 
 ErrorComponent.storyName = 'Error';
 ErrorComponent.args = {
@@ -22,7 +24,9 @@ ErrorComponent.args = {
   color: 'red',
 };
 
-export const SuccessComponent = args => <ErrorField {...args} />;
+export const SuccessComponent = (args: ErrorFieldProps) => (
+  <ErrorField {...args} />
+);
 
 SuccessComponent.storyName = 'Success';
 SuccessComponent.args = {

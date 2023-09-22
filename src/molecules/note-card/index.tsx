@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import { NoteColor } from './types';
 import * as Styles from './styles';
 
-interface NoteCardProps {
+export interface NoteCardProps {
   color?: NoteColor;
   value: any;
   buttonValue?: string;
