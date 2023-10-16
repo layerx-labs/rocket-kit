@@ -9,7 +9,7 @@ export default {
 };
 
 export const ModalDrawerComponent = (args: ModalDrawerProps) => {
-  const [isShowing, setIsShowing] = useState(true);
+  const [isShowing, setIsShowing] = useState(false);
   return (
     <div>
       {!isShowing && (
@@ -60,7 +60,7 @@ ModalDrawerComponent.args = {
 };
 
 export const ModalDrawerCustomFooterComponent = (args: ModalDrawerProps) => {
-  const [isShowing, setIsShowing] = useState(true);
+  const [isShowing, setIsShowing] = useState(false);
   return (
     <div>
       {!isShowing && (
