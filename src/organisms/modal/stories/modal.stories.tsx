@@ -23,11 +23,11 @@ ModalComponentBase.args = {
   title: 'Checkout',
   footer: true,
   closeValue: 'Close',
-  isShowing: true,
+  isShowing: false,
 };
 
 export const ModalEditorComponent = (args: ModalProps) => {
-  const [isShowing, setIsShowing] = useState(true);
+  const [isShowing, setIsShowing] = useState(false);
   return (
     <div>
       {!isShowing && (
