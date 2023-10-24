@@ -30,14 +30,12 @@ export const ModalEditorComponent = (args: ModalProps) => {
   const [isShowing, setIsShowing] = useState(true);
   return (
     <div>
-      {!isShowing && (
-        <Button
-          value={'Open Modal'}
-          action={() => {
-            setIsShowing(!isShowing);
-          }}
-        />
-      )}
+      <Button
+        value={'Open Modal'}
+        action={() => {
+          setIsShowing(!isShowing);
+        }}
+      />
       <Modal
         {...args}
         isShowing={isShowing}

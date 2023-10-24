@@ -12,14 +12,12 @@ export const ModalDrawerComponent = (args: ModalDrawerProps) => {
   const [isShowing, setIsShowing] = useState(true);
   return (
     <div>
-      {!isShowing && (
-        <Button
-          value={'Open Modal'}
-          action={() => {
-            setIsShowing(!isShowing);
-          }}
-        />
-      )}
+      <Button
+        value={'Open Modal'}
+        action={() => {
+          setIsShowing(!isShowing);
+        }}
+      />
       <ModalDrawer
         {...args}
         isShowing={isShowing}
@@ -63,14 +61,12 @@ export const ModalDrawerCustomFooterComponent = (args: ModalDrawerProps) => {
   const [isShowing, setIsShowing] = useState(true);
   return (
     <div>
-      {!isShowing && (
-        <Button
-          value={'Open Modal'}
-          action={() => {
-            setIsShowing(!isShowing);
-          }}
-        />
-      )}
+      <Button
+        value={'Open Modal'}
+        action={() => {
+          setIsShowing(!isShowing);
+        }}
+      />
       <ModalDrawer
         {...args}
         isShowing={isShowing}
