@@ -8,36 +8,52 @@ export default {
   argTypes: {},
 };
 
-export const ModalComponentBase = (args: ModalProps) => (
-  <Modal {...args}>
-    <p>
-      "Jerky ground round corned beef shank shoulder. Corned beef chislic
-      landjaeger, salami ham hock strip steak chicken rump turducken doner ball
-      tip porchetta pork chop."
-    </p>
-  </Modal>
-);
+export const ModalComponentBase = (args: ModalProps) => {
+  const [isShowing, setIsShowing] = useState(false);
+
+  return (
+    <div>
+      <Button
+        value={'Open Modal'}
+        action={() => {
+          setIsShowing(!isShowing);
+        }}
+      />
+      <Modal
+        {...args}
+        isShowing={isShowing}
+        hide={() => {
+          setIsShowing(false);
+        }}
+      >
+        <p>
+          "Jerky ground round corned beef shank shoulder. Corned beef chislic
+          landjaeger, salami ham hock strip steak chicken rump turducken doner
+          ball tip porchetta pork chop."
+        </p>
+      </Modal>
+    </div>
+  );
+};
 
 ModalComponentBase.storyName = 'Simple';
 ModalComponentBase.args = {
   title: 'Checkout',
   footer: true,
   closeValue: 'Close',
-  isShowing: true,
+  isShowing: false,
 };
 
 export const ModalEditorComponent = (args: ModalProps) => {
-  const [isShowing, setIsShowing] = useState(true);
+  const [isShowing, setIsShowing] = useState(false);
   return (
     <div>
-      {!isShowing && (
-        <Button
-          value={'Open Modal'}
-          action={() => {
-            setIsShowing(!isShowing);
-          }}
-        />
-      )}
+      <Button
+        value={'Open Modal'}
+        action={() => {
+          setIsShowing(!isShowing);
+        }}
+      />
       <Modal
         {...args}
         isShowing={isShowing}
