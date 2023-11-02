@@ -15,20 +15,22 @@ export type CheckboxItem = {
   required?: boolean;
 };
 
-interface CheckboxGroupItemOnChange {
+interface ICheckboxGroupItemOnChange {
   value: string;
   checked: boolean;
 }
+interface ICheckboxGroupOnChange {
+  event: React.ChangeEvent<HTMLInputElement>;
+  /** The option item with its latest value state */
+  option: ICheckboxGroupItemOnChange;
+}
+
 export interface CheckboxGroupProps {
   type?: 'row' | 'column';
   children?: React.ReactNode;
   options?: CheckboxItem[];
   error?: string;
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    /** The option item with its latest value state */
-    option: CheckboxGroupItemOnChange
-  ) => void;
+  onChange?: (data: ICheckboxGroupOnChange) => void;
   disabled?: boolean;
 }
 
@@ -54,9 +56,12 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
                 value={value.value}
                 checked={value.checked ?? undefined}
                 onChange={(event, isChecked) =>
-                  onChange?.(event, {
-                    value: value.value,
-                    checked: isChecked,
+                  onChange?.({
+                    event,
+                    option: {
+                      value: value.value,
+                      checked: isChecked,
+                    },
                   })
                 }
                 error={!!error}
