@@ -7,6 +7,9 @@ export type CheckboxItem = {
   value: string;
   label?: string | React.ReactNode;
   checked?: boolean | null;
+  /** The item changes can be tracked here
+   * or inside the `CheckboxGroup' onChange`
+   */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   disabled?: boolean;
@@ -21,6 +24,9 @@ export interface CheckboxGroupProps {
   children?: React.ReactNode;
   options?: CheckboxItem[];
   error?: string;
+  /** The item changes can be tracked here
+   * or inside the `CheckboxItem' onChange`
+   */
   onChange?: CheckboxProps['onChange'];
   disabled?: boolean;
 }
