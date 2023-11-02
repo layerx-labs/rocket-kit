@@ -10,10 +10,7 @@ export interface CheckboxProps {
   value: string;
   label?: string | React.ReactNode;
   checked?: boolean | undefined;
-  onChange?: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    value: boolean
-  ) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error?: boolean;
   disabled?: boolean;
   className?: string;
@@ -40,7 +37,7 @@ const Checkbox = ({
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(prev => {
       const value = !prev;
-      onChange(event, value);
+      onChange(event);
       return value;
     });
   };
