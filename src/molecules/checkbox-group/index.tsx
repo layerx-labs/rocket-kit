@@ -6,8 +6,7 @@ import * as Styles from './styles';
 export type CheckboxItem = {
   value: string;
   label?: string | React.ReactNode;
-  checked?: boolean;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  checked?: boolean | null;
   error?: string;
   disabled?: boolean;
   className?: string;
@@ -16,12 +15,20 @@ export type CheckboxItem = {
   required?: boolean;
 };
 
+interface CheckboxGroupItemOnChange {
+  value: string;
+  checked: boolean;
+}
 export interface CheckboxGroupProps {
   type?: 'row' | 'column';
   children?: React.ReactNode;
   options?: CheckboxItem[];
   error?: string;
-  onChange?: () => {};
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    /** The option item with its latest value state */
+    option: CheckboxGroupItemOnChange
+  ) => void;
   disabled?: boolean;
 }
 
@@ -45,8 +52,13 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
               <Checkbox
                 label={value.label}
                 value={value.value}
-                checked={value.checked}
-                onChange={onChange}
+                checked={value.checked ?? undefined}
+                onChange={(event, isChecked) =>
+                  onChange?.(event, {
+                    value: value.value,
+                    checked: isChecked,
+                  })
+                }
                 error={!!error}
                 disabled={disabled}
               />

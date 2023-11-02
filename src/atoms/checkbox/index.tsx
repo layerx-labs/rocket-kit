@@ -10,7 +10,10 @@ export interface CheckboxProps {
   value: string;
   label?: string | React.ReactNode;
   checked?: boolean | undefined;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    value: boolean
+  ) => void;
   error?: boolean;
   disabled?: boolean;
   className?: string;
@@ -35,8 +38,11 @@ const Checkbox = ({
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(prev => !prev);
-    onChange(event);
+    setIsChecked(prev => {
+      const value = !prev;
+      onChange(event, value);
+      return value;
+    });
   };
 
   const checkmarkClassName = useMemo(() => {
