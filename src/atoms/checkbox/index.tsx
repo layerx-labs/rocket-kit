@@ -35,11 +35,8 @@ const Checkbox = ({
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(prev => {
-      const value = !prev;
-      onChange(event);
-      return value;
-    });
+    setIsChecked(prev => !prev);
+    onChange(event);
   };
 
   const checkmarkClassName = useMemo(() => {
