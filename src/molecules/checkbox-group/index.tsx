@@ -1,12 +1,15 @@
 import React, { CSSProperties } from 'react';
-import Checkbox from '../../atoms/checkbox';
+import Checkbox, { CheckboxProps } from '../../atoms/checkbox';
 import ErrorField from '../../atoms/error-field';
 import * as Styles from './styles';
 
 export type CheckboxItem = {
   value: string;
   label?: string | React.ReactNode;
-  checked?: boolean;
+  checked?: boolean | null;
+  /** The item changes can be tracked here
+   * or inside the `CheckboxGroup' onChange`
+   */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
   disabled?: boolean;
@@ -21,7 +24,10 @@ export interface CheckboxGroupProps {
   children?: React.ReactNode;
   options?: CheckboxItem[];
   error?: string;
-  onChange?: () => {};
+  /** The item changes can be tracked here
+   * or inside the `CheckboxItem' onChange`
+   */
+  onChange?: CheckboxProps['onChange'];
   disabled?: boolean;
 }
 
@@ -45,8 +51,11 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
               <Checkbox
                 label={value.label}
                 value={value.value}
-                checked={value.checked}
-                onChange={onChange}
+                checked={value.checked ?? undefined}
+                onChange={event => {
+                  onChange?.(event);
+                  value.onChange?.(event);
+                }}
                 error={!!error}
                 disabled={disabled}
               />
