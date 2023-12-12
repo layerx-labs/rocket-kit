@@ -124,5 +124,8 @@
     "react-select": "^5.7.3",
     "styled-components": "^5.2.1",
     "uuid": "^8.3.2"
+  },
+    "resolutions": {
+    "cliui": "^8.0.1"
   }
 }
