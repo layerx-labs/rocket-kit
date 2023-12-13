@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['testing-library', 'jest-dom', 'jsx-a11y'],
+  plugins: ['testing-library', 'jest-dom', 'jsx-a11y', 'prettier'],
   extends: [
     'react-app',
     'prettier/@typescript-eslint',
