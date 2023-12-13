@@ -12534,7 +12534,7 @@ sisteransi@^1.0.5:
   resolved "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz"
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
 
-size-limit@11.0.1, size-limit@^11.10.0:
+size-limit@11.0.1, size-limit@^11.0.1:
   version "11.0.1"
   resolved "https://registry.npmjs.org/size-limit/-/size-limit-11.0.1.tgz"
   integrity sha512-6L80ocVspWPrhIRg8kPl41VypqTGH8/lu9e6TJiSJpkNLtOR2h/EEqdAO/wNJOv/sUVtjX+lVEWrzBpItGP+gQ==

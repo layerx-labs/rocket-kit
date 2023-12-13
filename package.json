@@ -105,7 +105,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
-    "size-limit": "^11.10.0",
+    "size-limit": "^11.0.1",
     "storybook": "^7.6.4",
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
