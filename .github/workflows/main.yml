@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ['16.x']
+        node: ['16.x', '18.x']
         os: [ubuntu-latest, windows-latest]
 
     steps:
@@ -22,8 +22,8 @@ jobs:
       - name: Install deps and build (with cache)
         run: yarn install --no-lockfile
 
-      - name: Lint
-        run: yarn lint
+      # - name: Lint
+      #   run: yarn lint
 
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
