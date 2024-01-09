@@ -106,6 +106,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
+    "rollup-plugin-postcss": "^4.0.2",
     "size-limit": "^11.0.1",
     "storybook": "^7.6.7",
     "tsdx": "^0.14.1",
