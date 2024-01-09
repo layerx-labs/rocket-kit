@@ -1,92 +1,96 @@
-import React, { useState, useRef, useEffect } from 'react';
-import * as Styles from './styles';
-import useVisible from '../../utils/hooks/use-visible';
-import { Button } from '../..';
+import { useState } from 'react';
+import { InView } from 'react-intersection-observer';
+import { Button, Icon } from '../..';
+import { HorizontalNavInterface, ItemInterface } from './types';
+import styles from './styles.module.css';
 
-export interface HorizontalNavInterface {
-  className?: string;
-  customColor?: string;
-  items: any;
-  startsOpen?: boolean;
-}
-
-const HorizontalNav = (props: HorizontalNavInterface) => {
-  const [showMore, setShowMore] = useState(false);
-  const moreMenu = useRef(null);
-  const visibleMenuRef = useRef<HTMLUListElement>(null);
-
-  const {
-    className = 'horizontal-nav',
-    customColor = '',
-    items,
-    startsOpen = false,
-  } = props;
-
-  const { ref, isVisible, setIsVisible } =
-    useVisible<HTMLDivElement>(startsOpen);
-
-  useEffect(() => {
-    if (!ref || !ref.current) return;
-
-    const visible = document!
-      .querySelector('ul.menu')!
-      .getElementsByTagName('li');
-
-    const more = document.querySelector('.more')!.getElementsByTagName('li');
-    const moreVisibility = () =>
-      more.length > 0 ? setShowMore(true) : setShowMore(false);
-
-    const removeItem = () => {
-      if (visible.length === 1) return;
-      let last = visible[visible.length - 1];
-      document.querySelector('ul.more')!.prepend(last);
-    };
-
-    const addItem = () => {
-      if (more.length === 0) return;
-      let first = more[0];
-      document.querySelector('ul.menu')!.append(first);
-    };
-
-    const checkOverflow = () => {
-      moreVisibility();
-      for (let i = 0; i < visible.length + 20; i++) {
-        visibleMenuRef.current!.scrollWidth + 50 > ref.current!.offsetWidth
-          ? removeItem()
-          : addItem();
-      }
-    };
-
-    checkOverflow();
-
-    if (typeof window !== 'undefined') {
-      moreVisibility();
-      window.addEventListener('resize', checkOverflow);
-      return () => window.removeEventListener('resize', checkOverflow);
+function scroll(
+  container: HTMLElement | null,
+  direction: string,
+  speed: number | undefined,
+  distance: number,
+  step: number
+) {
+  let scrollAmount = 0;
+  const slideTimer = setInterval(function () {
+    if (container && direction === 'left') {
+      container.scrollLeft -= step;
+    } else {
+      container ? (container.scrollLeft += step) : null;
     }
 
-    return;
-  }, [ref]);
+    scrollAmount += step;
+
+    if (scrollAmount >= distance) {
+      window.clearInterval(slideTimer);
+    }
+  }, speed);
+}
+
+export default function HorizontalNav(props: HorizontalNavInterface) {
+  const { id = 'horizontal-nav', items } = props;
+  const [showBackButton, setShowBackButton] = useState(false);
+  const [showForwardButton, setShowForwardButton] = useState(true);
+
+  const forward = () => {
+    const container = document.getElementById(id);
+    scroll(container, 'right', 10, 200, 10);
+  };
+
+  const back = () => {
+    const container = document.getElementById(id);
+    scroll(container, 'left', 10, 200, 10);
+  };
 
   return (
-    <Styles.Wrapper ref={ref} className={className} customColor={customColor}>
-      <ul className="menu" ref={visibleMenuRef}>
-        {items}
-      </ul>
-
-      <Styles.More className={showMore ? 'hide' : ''} ref={moreMenu}>
+    <div className={styles.wrapper}>
+      {showBackButton && (
         <Button
-          variant="text"
-          color="dark"
-          icon="menuVert"
-          action={() => {
-            setIsVisible(!isVisible);
-          }}
+          className={styles.back}
+          variant="solid"
+          color="white"
+          txtColor="black"
+          icon="caret-left"
+          action={back}
         />
-        <ul className={isVisible ? 'more is-open' : 'more'}></ul>
-      </Styles.More>
-    </Styles.Wrapper>
+      )}
+      <div id={id}>
+        <ul className="menu">
+          {items.map((item: ItemInterface, index: number) => (
+            // @ts-ignore
+            <InView
+              key={index}
+              as="li"
+              className={item.active ? styles.active : undefined}
+              threshold={1}
+              onChange={inView => {
+                if (index === 0 && inView) setShowBackButton(false);
+                if (index === 0 && !inView) setShowBackButton(true);
+                if (index === items.length - 1 && inView)
+                  setShowForwardButton(false);
+                if (index === items.length - 1 && !inView)
+                  setShowForwardButton(true);
+              }}
+            >
+              <a href={item.url}>
+                {item.icon && <Icon icon={item.icon} />}
+                {item.label}
+              </a>
+            </InView>
+            // </li>
+          ))}
+        </ul>
+      </div>
+      {showForwardButton && (
+        <Button
+          className={styles.forward}
+          variant="solid"
+          color="white"
+          txtColor="black"
+          icon="caret-right"
+          action={forward}
+        />
+      )}
+    </div>
   );
-};
-
-export default HorizontalNav;
+}
