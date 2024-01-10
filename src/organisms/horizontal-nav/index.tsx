@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 import { Button, Icon } from '../..';
 import { HorizontalNavInterface, ItemInterface } from './types';

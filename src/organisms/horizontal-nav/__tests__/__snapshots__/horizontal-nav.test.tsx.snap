@@ -2,318 +2,33 @@
 
 exports[`Horizontal Nav renders 1`] = `
 <DocumentFragment>
-  .c2 {
-  --txt: #ffffff;
-  --hover: #000000;
-  margin: 0;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--bg);
-  border-radius: 0;
-  background-color: transparent;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  min-width: 2.625rem;
-  height: 2.75rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  outline: none;
-}
-
-.c2:hover {
-  border-color: var(--hover);
-  background-color: transparent;
-}
-
-.c2:hover span {
-  color: var(--hover);
-}
-
-.c2:hover svg {
-  fill: var(--hover);
-}
-
-.c2:disabled {
-  cursor: inherit;
-  opacity: 0.5;
-}
-
-.c2:disabled:hover {
-  background-color: transparent;
-  pointer-events: none;
-}
-
-.c2 > *:not(:last-child) {
-  margin-left: 0;
-  margin-right: 0.875rem;
-}
-
-.c2 .spinner {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  border-top-color: var(--button);
-}
-
-.c2 span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1rem;
-  color: var(--bg);
-  pointer-events: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.c2 svg {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--bg);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c0 ul.menu {
-  width: 0;
-  -webkit-animation: showAnimation 1s forwards;
-  animation: showAnimation 1s forwards;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
-  overflow: hidden;
-}
-
-.c0 ul {
-  margin: 0;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  padding: 0;
-}
-
-.c0 ul.menu {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c0 ul.menu li:not(:last-child) {
-  margin-right: 0.625rem;
-}
-
-.c0 ul li {
-  position: relative;
-  list-style: none;
-}
-
-.c0 ul li a {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0.625rem;
-  color: #000000;
-  text-transform: capitalize;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0 ul li a svg {
-  margin-right: 0.3125rem;
-  width: auto;
-  height: 1.5rem;
-  min-width: 1.5rem;
-  fill: #C7C8D1;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0 ul li a:hover {
-  color: #4329A6;
-}
-
-.c0 ul li a:hover svg {
-  fill: #4329A6;
-}
-
-.c0 ul li.active {
-  font-weight: 500;
-}
-
-.c0 ul li.active a {
-  color: #4329A6;
-  pointer-events: none;
-}
-
-.c0 ul li.active a svg {
-  fill: #4329A6;
-}
-
-.c1 {
-  position: relative;
-  display: none;
-}
-
-.c1.hide {
-  display: initial;
-}
-
-.c1 ul {
-  position: absolute;
-  right: 0;
-  border: 0.0625rem solid #D9D4ED;
-  border-radius: 0.5rem;
-  background-color: #ffffff;
-  margin-top: 0.3125rem;
-  padding: 0;
-  -moz-box-shadow: rgba(0,0,0,0.15);
-  -webkit-box-shadow: rgba(0,0,0,0.15);
-  box-shadow: rgba(0,0,0,0.15);
-  z-index: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -ms-scrollbar-width: none;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-.c1 ul.more {
-  display: none;
-}
-
-.c1 ul.is-open {
-  display: inherit;
-}
-
-.c1 ul li {
-  list-style: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c1 ul li:hover {
-  background-color: #D9D4ED;
-  cursor: pointer;
-}
-
-.c1 ul li:hover a {
-  color: #000000;
-}
-
-.c1 ul li:hover a svg {
-  fill: #000000;
-}
-
-.c1 ul li:first-child {
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.c1 ul li:last-child {
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.c1 ul li a {
-  width: 100%;
-  height: 100%;
-  padding: 0.9375rem;
-}
-
-<div
-    class="c0 horizontal-nav"
+  <div
+    class="wrapper"
   >
-    <ul
-      class="menu"
-    >
-      <li
-        class="active"
-      >
-        <a
-          href="#0"
-        >
-          <svg
-            class="icon"
-            viewBox="0 0 32 32"
-          >
-            <path
-              d="M17.333 22.667h-10.667c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333h10.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333zM25.333 12h-18.667c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333h18.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333zM6.667 20h18.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333h-18.667c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333zM5.333 8c0 0.733 0.6 1.333 1.333 1.333h18.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333h-18.667c-0.733 0-1.333 0.6-1.333 1.333z"
-            />
-          </svg>
-          Overview
-        </a>
-      </li>
-    </ul>
     <div
-      class="c1 hide"
+      id="horizontal-nav"
     >
-      <button
-        aria-hidden="false"
-        class="c2 button"
-        color="dark"
-        data-event=""
-        data-testid=""
-        value=""
-      >
-        <svg
-          class="icon"
-          viewBox="0 0 32 32"
-        >
-          <path
-            d="M16 10.667c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.666 1.194-2.667 2.666v0c0.004 1.471 1.196 2.662 2.666 2.667h0zM16 13.333c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667c1.473 0 2.667-1.194 2.667-2.667v0c-0.005-1.471-1.196-2.662-2.666-2.667h-0zM16 21.333c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667c1.473 0 2.667-1.194 2.667-2.667v0c-0.005-1.471-1.196-2.662-2.666-2.667h-0z"
-          />
-        </svg>
-      </button>
       <ul
-        class="more"
+        class="menu"
       >
         <li
-          class=""
+          class="active"
         >
+          <a
+            href="#0"
+          >
+            <svg
+              class="icon"
+              viewBox="0 0 32 32"
+            >
+              <path
+                d="M17.333 22.667h-10.667c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333h10.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333zM25.333 12h-18.667c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333h18.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333zM6.667 20h18.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333h-18.667c-0.733 0-1.333 0.6-1.333 1.333s0.6 1.333 1.333 1.333zM5.333 8c0 0.733 0.6 1.333 1.333 1.333h18.667c0.733 0 1.333-0.6 1.333-1.333s-0.6-1.333-1.333-1.333h-18.667c-0.733 0-1.333 0.6-1.333 1.333z"
+              />
+            </svg>
+            Overview
+          </a>
+        </li>
+        <li>
           <a
             href="#0"
           >
@@ -328,9 +43,7 @@ exports[`Horizontal Nav renders 1`] = `
             Timeline
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             href="#0"
           >
@@ -345,9 +58,7 @@ exports[`Horizontal Nav renders 1`] = `
             Rules
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             href="#0"
           >
@@ -362,9 +73,7 @@ exports[`Horizontal Nav renders 1`] = `
             Resources
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             href="#0"
           >
@@ -379,9 +88,7 @@ exports[`Horizontal Nav renders 1`] = `
             Projects
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             href="#0"
           >
@@ -396,9 +103,7 @@ exports[`Horizontal Nav renders 1`] = `
             Innovators
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             href="#0"
           >
@@ -413,9 +118,7 @@ exports[`Horizontal Nav renders 1`] = `
             Backers
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             href="#0"
           >
@@ -430,9 +133,7 @@ exports[`Horizontal Nav renders 1`] = `
             Faqs
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             href="#0"
           >
@@ -447,9 +148,7 @@ exports[`Horizontal Nav renders 1`] = `
             Updates
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             href="#0"
           >
@@ -462,9 +161,7 @@ exports[`Horizontal Nav renders 1`] = `
             Transactions
           </a>
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             href="#0"
           >

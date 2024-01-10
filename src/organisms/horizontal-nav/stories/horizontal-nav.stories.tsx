@@ -77,5 +77,4 @@ HorizontalNavComponent.storyName = 'Horizontal Nav';
 
 HorizontalNavComponent.args = {
   items: menu,
-  startsOpen: false,
 };
