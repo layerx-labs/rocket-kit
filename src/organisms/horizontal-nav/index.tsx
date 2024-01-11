@@ -77,7 +77,6 @@ export default function HorizontalNav(props: HorizontalNavInterface) {
                 {item.label}
               </a>
             </InView>
-            // </li>
           ))}
         </ul>
       </div>
