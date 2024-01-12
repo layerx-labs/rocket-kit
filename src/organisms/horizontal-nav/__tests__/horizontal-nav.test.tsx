@@ -1,7 +1,8 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { HorizontalNav, Icon } from '../../..';
 import 'jest-styled-components';
+import { render } from '@testing-library/react';
+import { HorizontalNav } from '../../..';
+import { mockAllIsIntersecting } from 'react-intersection-observer/test-utils';
 
 const menu = [
   {
@@ -74,18 +75,9 @@ const menu = [
 
 describe('Horizontal Nav', () => {
   it('renders', () => {
-    const { asFragment } = render(
-      <HorizontalNav
-        items={menu.map((item, index) => (
-          <li key={index} className={item.active ? 'active' : ''}>
-            <a href={item.url}>
-              {item.icon && <Icon icon={item.icon} />}
-              {item.label}
-            </a>
-          </li>
-        ))}
-      />
-    );
+    const { asFragment } = render(<HorizontalNav items={menu} />);
+    // This causes all (existing) IntersectionObservers to be set as intersecting
+    mockAllIsIntersecting(true);
     expect(asFragment()).toMatchSnapshot();
   });
 });
