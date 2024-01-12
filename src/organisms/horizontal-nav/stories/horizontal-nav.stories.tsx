@@ -1,6 +1,6 @@
 import React from 'react';
-import HorizontalNav, { HorizontalNavInterface } from '..';
-import { Icon } from '../../..';
+import HorizontalNav from '..';
+import { HorizontalNavInterface } from '../types';
 
 export default {
   title: 'Components/Organisms/Navigation',
@@ -69,15 +69,6 @@ const menu = [
   },
 ];
 
-const items = menu.map((item, index) => (
-  <li key={index} className={item.active ? 'active' : undefined}>
-    <a href={item.url}>
-      {item.icon && <Icon icon={item.icon} />}
-      {item.label}
-    </a>
-  </li>
-));
-
 export const HorizontalNavComponent = (args: HorizontalNavInterface) => {
   return <HorizontalNav {...args} />;
 };
@@ -85,6 +76,5 @@ export const HorizontalNavComponent = (args: HorizontalNavInterface) => {
 HorizontalNavComponent.storyName = 'Horizontal Nav';
 
 HorizontalNavComponent.args = {
-  items: items,
-  startsOpen: false,
+  items: menu,
 };
