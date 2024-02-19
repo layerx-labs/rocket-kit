@@ -39,12 +39,10 @@ export const ModalWrapper = styled.div<ModalStyleBaseProps>`
 `;
 
 export const ModalContainer = styled.div<ModalStyleBaseProps>`
-  position: fixed;
-  right: 0;
+  margin-left: auto;
   background: ${colors.white};
   width: 100%;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: ${rem('15px')};
@@ -54,7 +52,6 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
   animation-fill-mode: forwards;
   transform: translateX(100%);
   animation-name: ${slideInLeft};
-  overflow-y: auto;
 
   @media ${device.s} {
     max-width: ${rem('400px')};
