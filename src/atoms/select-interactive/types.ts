@@ -44,4 +44,5 @@ export interface SelectInteractiveProps<T extends Options>
   value?: ReadonlyArray<TOptions> | TOptions | null | undefined;
   onChange: (values: Array<TOptions> | TOptions) => void;
   options: ReadonlyArray<TOptions | OptionsGroup<TOptions>>;
+  dataTestId?: string;
 }
