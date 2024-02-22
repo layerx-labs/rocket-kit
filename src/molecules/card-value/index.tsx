@@ -11,6 +11,7 @@ export interface CardValueProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   className?: string;
   style?: React.CSSProperties;
+  dataTestId?: string;
 }
 
 const CardValue = (props: CardValueProps) => {
@@ -23,10 +24,15 @@ const CardValue = (props: CardValueProps) => {
     onClick,
     className = 'card-value',
     style,
+    dataTestId,
   } = props;
 
   return (
-    <Styles.CardValueStyle className={className} style={style}>
+    <Styles.CardValueStyle
+      className={className}
+      style={style}
+      data-testid={dataTestId}
+    >
       <Label value={label} currency={currency} />
       <span>{value}</span>
       {description && <p>{description}</p>}
