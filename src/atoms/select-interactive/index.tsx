@@ -22,10 +22,11 @@ const SelectInteractive = ({
   formatGroupLabel = true,
   onChange = () => {},
   onInputChange = () => {},
+  dataTestId,
   ...rest
 }: SelectInteractiveProps<TSelectInteractiveOption>) => {
   return (
-    <Styles.SelectWrapper {...rest}>
+    <Styles.SelectWrapper data-testid={dataTestId} {...rest}>
       <Select
         name={name}
         value={value}
