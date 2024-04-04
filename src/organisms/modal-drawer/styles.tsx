@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components/macro';
+import styled from 'styled-components';
 import { rem, rgba, timingFunctions } from 'polished';
 import { colors, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
@@ -6,16 +6,6 @@ import { device } from '../../ions/breakpoints';
 interface ModalStyleBaseProps {
   zIndex: number;
 }
-
-const slideInLeft = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-`;
 
 export const ModalOverlay = styled.div<ModalStyleBaseProps>`
   position: fixed;
@@ -39,6 +29,16 @@ export const ModalWrapper = styled.div<ModalStyleBaseProps>`
 `;
 
 export const ModalContainer = styled.div<ModalStyleBaseProps>`
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
   margin-left: auto;
   background: ${colors.white};
   width: 100%;
@@ -51,7 +51,7 @@ export const ModalContainer = styled.div<ModalStyleBaseProps>`
   animation-duration: 1s;
   animation-fill-mode: forwards;
   transform: translateX(100%);
-  animation-name: ${slideInLeft};
+  animation-name: slideInLeft;
 
   @media ${device.s} {
     max-width: ${rem('400px')};
