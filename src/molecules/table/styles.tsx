@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/macro';
+import styled, { css } from 'styled-components';
 import { rem } from 'polished';
 import { colors, field, misc, typography } from '../../ions/variables';
 import { device } from '../../ions/breakpoints';
@@ -16,11 +16,8 @@ export const OverflowWrapper = styled.div`
   @media ${device.s} {
     display: block;
     border-radius: ${field.borderRadius};
-    background: linear-gradient(
-        to right,
-        ${colors.white} 30%,
-        rgba(255, 255, 255, 0)
-      ),
+    background:
+      linear-gradient(to right, ${colors.white} 30%, rgba(255, 255, 255, 0)),
       linear-gradient(to right, rgba(255, 255, 255, 0), ${colors.white} 70%) 0
         100%,
       radial-gradient(
@@ -36,9 +33,16 @@ export const OverflowWrapper = styled.div`
         0 100%;
     background-repeat: no-repeat;
     background-color: ${colors.white};
-    background-size: ${rem('40px')} 100%, ${rem('40px')} 100%,
-      ${rem('14px')} 100%, ${rem('14px')} 100%;
-    background-position: 0 0, 100%, 0 0, 100%;
+    background-size:
+      ${rem('40px')} 100%,
+      ${rem('40px')} 100%,
+      ${rem('14px')} 100%,
+      ${rem('14px')} 100%;
+    background-position:
+      0 0,
+      100%,
+      0 0,
+      100%;
     background-attachment: local, local, scroll, scroll;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
