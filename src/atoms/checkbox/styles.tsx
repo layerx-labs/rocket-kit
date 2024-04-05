@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { rem } from 'polished';
 import { colors, field, misc } from '../../ions/variables';
 
@@ -29,8 +29,8 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
       props.disabled
         ? field.disabledColor
         : props.error
-        ? field.errorBorderColor
-        : null};
+          ? field.errorBorderColor
+          : null};
     border-color: ${props => (props.error ? field.errorBorderColor : null)};
   }
 `;
