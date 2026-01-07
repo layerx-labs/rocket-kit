@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { rem } from 'polished';
 import { TagColor } from '../tag/types';
 import { useColor } from '../../utils/hooks/use-color';

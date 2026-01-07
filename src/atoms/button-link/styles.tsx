@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { rem } from 'polished';
 import { ButtonColor, ButtonVariant } from '../button/types';
 import { colors, typography, button, misc } from '../../ions/variables';
@@ -23,8 +23,8 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
     props.color === 'white'
       ? colors.grey100
       : props.color === 'black'
-      ? colors.grey900
-      : useColor(props.color ?? 'black').hover};
+        ? colors.grey900
+        : useColor(props.color ?? 'black').hover};
 
   border-width: ${props =>
     props.variant === 'outline' ? button.borderWidth : 0};
@@ -34,8 +34,8 @@ export const ButtonLinkStyle = styled.a<ButtonStyleProps>`
     props.variant === 'text'
       ? 0
       : props.rounded
-      ? '999px'
-      : button.borderRadius};
+        ? '999px'
+        : button.borderRadius};
   background-color: ${props =>
     props.variant === 'solid' ? 'var(--bg)' : 'transparent'};
   width: min-content;

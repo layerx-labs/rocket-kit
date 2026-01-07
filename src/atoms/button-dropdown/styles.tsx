@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { rem } from 'polished';
 import { field, misc } from '../../ions/variables';
 
@@ -39,8 +39,8 @@ export const ActionsMenuStyle = styled.div<ActionsMenuInterface>`
       opacity: 1;
       // prettier-ignore
       height: calc(${rem('45px')} * ${props => props.visibleActions} + ${rem(
-  '2px'
-)});
+        '2px'
+      )});
       max-height: ${rem('1280px')};
     }
 

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/macro';
+import styled, { css } from 'styled-components';
 import { rem } from 'polished';
 import { field, misc, typography } from '../../ions/variables';
 import icons from '../../ions/icons';
@@ -66,8 +66,8 @@ export const TextFieldInputStyle = styled.input<InputStyleProps>`
         props.error
           ? 'rgb(235,87,87)'
           : 'rgb(217,212,237)'}" d=${JSON.stringify(
-      icons[props.icon]
-    )} /></svg>');
+        icons[props.icon]
+      )} /></svg>');
       padding-left: ${rem('40px')};
 
       &:focus {

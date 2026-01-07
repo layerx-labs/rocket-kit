@@ -22,10 +22,12 @@ const SelectInteractive = ({
   formatGroupLabel = true,
   onChange = () => {},
   onInputChange = () => {},
+  dataTestId,
+  filterOption,
   ...rest
 }: SelectInteractiveProps<TSelectInteractiveOption>) => {
   return (
-    <Styles.SelectWrapper {...rest}>
+    <Styles.SelectWrapper data-testid={dataTestId} {...rest}>
       <Select
         name={name}
         value={value}
@@ -48,6 +50,7 @@ const SelectInteractive = ({
         formatGroupLabel={s =>
           formatGroupLabel ? FormatGroupLabel(s) : undefined
         }
+        filterOption={filterOption}
       />
       {error ? <ErrorField error={error} /> : null}
     </Styles.SelectWrapper>

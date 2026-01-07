@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { rem } from 'polished';
 import { colors, field, misc } from '../../ions/variables';
 
@@ -13,15 +13,15 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
       props.disabled
         ? field.borderColor
         : props.checked
-        ? field.successBorderColor
-        : field.borderColor};
+          ? field.successBorderColor
+          : field.borderColor};
   border-radius: ${field.borderRadius};
   background-color: ${props =>
     props.disabled
       ? field.disabledBackgroundColor
       : props.checked
-      ? field.successBackgroundColor
-      : field.backgroundColor};
+        ? field.successBackgroundColor
+        : field.backgroundColor};
   height: ${field.height};
   display: flex;
   align-items: center;
@@ -42,8 +42,8 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
       props.disabled
         ? field.disabledBackgroundColor
         : props.checked
-        ? field.successBackgroundColor
-        : field.borderColor};
+          ? field.successBackgroundColor
+          : field.borderColor};
   }
 
   span {
@@ -51,8 +51,8 @@ export const CheckboxWrapper = styled.label<CheckboxWrapperProps>`
       props.disabled
         ? field.disabledColor
         : props.checked
-        ? colors.white
-        : null};
+          ? colors.white
+          : null};
     transition-duration: ${misc.transitionDuration};
   }
 `;
