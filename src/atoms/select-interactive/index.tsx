@@ -23,6 +23,7 @@ const SelectInteractive = ({
   onChange = () => {},
   onInputChange = () => {},
   dataTestId,
+  filterOption,
   ...rest
 }: SelectInteractiveProps<TSelectInteractiveOption>) => {
   return (
@@ -49,6 +50,7 @@ const SelectInteractive = ({
         formatGroupLabel={s =>
           formatGroupLabel ? FormatGroupLabel(s) : undefined
         }
+        filterOption={filterOption}
       />
       {error ? <ErrorField error={error} /> : null}
     </Styles.SelectWrapper>

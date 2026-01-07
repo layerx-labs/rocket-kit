@@ -1,4 +1,5 @@
 import { MapHTMLAttributes, ReactNode } from 'react';
+import { FilterOptionOption } from 'react-select/dist/declarations/src/filters';
 import NamedProps from 'react-select/dist/declarations/src/Select';
 
 export interface TSelectInteractiveOption {
@@ -45,4 +46,5 @@ export interface SelectInteractiveProps<T extends Options>
   onChange: (values: Array<TOptions> | TOptions) => void;
   options: ReadonlyArray<TOptions | OptionsGroup<TOptions>>;
   dataTestId?: string;
+  filterOption?: ((option: FilterOptionOption<TOptions>, inputValue: string) => boolean) | null;
 }
