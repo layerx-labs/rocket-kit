@@ -50,6 +50,9 @@
     "trailingComma": "es5",
     "arrowParens": "avoid"
   },
+  "np": {
+    "yarn": true
+  },
   "module": "dist/rocket-kit.esm.js",
   "size-limit": [
     {
