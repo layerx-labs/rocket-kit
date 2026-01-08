@@ -8,7 +8,7 @@ export default {
     currency: {
       control: {
         type: 'select',
-        options: ['', 'tkai', 'vkai'],
+        options: ['', 'lx', 'vote', 'tkai', 'vkai'],
       },
     },
   },
@@ -18,10 +18,10 @@ export const CardValueComponentKAI = (args: CardValueProps) => (
   <CardValue {...args} />
 );
 
-CardValueComponentKAI.storyName = 'With TKAI';
+CardValueComponentKAI.storyName = 'With LX';
 CardValueComponentKAI.args = {
   label: 'Amount',
-  currency: 'tkai',
+  currency: 'lx',
   value: '13000',
   showArrowButton: false,
 };

@@ -15,7 +15,7 @@ export default {
     currency: {
       control: {
         type: 'select',
-        options: ['', 'tkai', 'vkai'],
+        options: ['', 'lx', 'vote', 'tkai', 'vkai'],
       },
     },
   },
@@ -32,6 +32,6 @@ export const FormGroupComponent = (args: FormGroupProps) => {
 FormGroupComponent.storyName = 'Form Group';
 FormGroupComponent.args = {
   label: 'Awesome Label',
-  currency: '',
+  currency: 'lx',
   error: false,
 };
