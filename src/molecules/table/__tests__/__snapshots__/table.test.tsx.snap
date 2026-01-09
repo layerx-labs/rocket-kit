@@ -167,14 +167,22 @@ exports[`Table renders 1`] = `
 .c2 th.vkai,
 .c2 td.vkai,
 .c2 th.tkai,
-.c2 td.tkai {
+.c2 td.tkai,
+.c2 th.lx,
+.c2 td.lx,
+.c2 th.vote,
+.c2 td.vote {
   text-align: right;
 }
 
 .c2 th.vkai > div,
 .c2 td.vkai > div,
 .c2 th.tkai > div,
-.c2 td.tkai > div {
+.c2 td.tkai > div,
+.c2 th.lx > div,
+.c2 td.lx > div,
+.c2 th.vote > div,
+.c2 td.vote > div {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
@@ -327,7 +335,9 @@ exports[`Table renders 1`] = `
 }
 
 .c2 tbody td.tkai svg,
-.c2 tbody td.vkai svg {
+.c2 tbody td.vkai svg,
+.c2 tbody td.lx svg,
+.c2 tbody td.vote svg {
   float: right;
   margin-left: 0.3125rem;
   width: auto;
