@@ -8,7 +8,7 @@ export default {
     currency: {
       control: {
         type: 'select',
-        options: ['', 'tkai', 'vkai'],
+        options: ['', 'lx', 'vote', 'tkai', 'vkai'],
       },
     },
   },
@@ -20,7 +20,7 @@ export const LabelComponentKAI = (args: LabelProps) => {
 
 LabelComponentKAI.storyName = 'With Currency';
 LabelComponentKAI.args = {
-  currency: 'tkai',
+  currency: 'lx',
   value: 'Amount',
 };
 

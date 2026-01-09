@@ -3,7 +3,7 @@ import { Label } from '../..';
 import * as Styles from './styles';
 
 export interface FormGroupProps {
-  currency?: 'tkai' | 'vkai' | undefined;
+  currency?: 'lx' | 'vote' | 'tkai' | 'vkai' | undefined;
   label: string;
   error?: boolean;
   children: React.ReactNode;

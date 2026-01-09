@@ -6,5 +6,5 @@ dist
 package-lock.json
 .env
 *.tgz
-
+.claude
 .vscode
