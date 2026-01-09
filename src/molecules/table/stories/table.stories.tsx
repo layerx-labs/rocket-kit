@@ -75,7 +75,7 @@ const columns = {
       id: 'amount',
       value: 'Amount',
       dataKey: 'amount',
-      className: 'vkai',
+      className: 'lx',
       dataTestId: 'header-amount-id',
     },
     {

@@ -95,7 +95,9 @@ export const Table = styled.table<TableProps>`
     }
 
     &.vkai,
-    &.tkai {
+    &.tkai,
+    &.lx,
+    &.vote {
       text-align: right;
 
       > div {
@@ -253,7 +255,9 @@ export const Table = styled.table<TableProps>`
       }
 
       &.tkai,
-      &.vkai {
+      &.vkai,
+      &.lx,
+      &.vote {
         svg {
           float: right;
           margin-left: ${rem('5px')};

@@ -168,6 +168,10 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
                               <Icon icon="tkai" fill="hsl(0, 0%, 16%)" />
                             ) : className === 'vkai' ? (
                               <Icon icon="vkai" fill="hsl(0, 0%, 16%)" />
+                            ) : className === 'lx' ? (
+                              <Icon icon="lx" fill="hsl(0, 0%, 16%)" />
+                            ) : className === 'vote' ? (
+                              <Icon icon="vote" fill="hsl(0, 0%, 16%)" />
                             ) : null}
                           </div>
                         </td>
