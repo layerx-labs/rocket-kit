@@ -72,19 +72,6 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
   const hasActionMenu = actions.length > 0;
   const validValues = values.filter(hasValue);
   const hasValues = Array.isArray(values) && values.length > 0;
-
-  const headSkeleton = (
-    <th>
-      <Styles.SkeletonCell />
-    </th>
-  );
-
-  const cellSkeleton = (
-    <td>
-      <Styles.SkeletonCell />
-    </td>
-  );
-
   const columnsSkeleton = columns.length > 0 ? columns.length : loadingColumns;
 
   if (showEmpty && !hasValues) {
@@ -111,7 +98,11 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
           <thead>
             <tr>
               {loading && !columns
-                ? Array.from({ length: loadingColumns }, () => headSkeleton)
+                ? Array.from({ length: loadingColumns }, (_, i) => (
+                    <th key={`skeleton-head-${i}`}>
+                      <Styles.SkeletonCell />
+                    </th>
+                  ))
                 : columns.map(
                     ({
                       id = '',
@@ -135,12 +126,13 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
           </thead>
           <tbody>
             {loading
-              ? Array.from({ length: loadingRows }, () => (
-                  <tr>
-                    {Array.from(
-                      { length: columnsSkeleton },
-                      () => cellSkeleton
-                    )}
+              ? Array.from({ length: loadingRows }, (_, rowIndex) => (
+                  <tr key={`skeleton-row-${rowIndex}`}>
+                    {Array.from({ length: columnsSkeleton }, (_, colIndex) => (
+                      <td key={`skeleton-cell-${rowIndex}-${colIndex}`}>
+                        <Styles.SkeletonCell />
+                      </td>
+                    ))}
                   </tr>
                 ))
               : validValues.map((row, index) => (
