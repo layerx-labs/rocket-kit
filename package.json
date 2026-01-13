@@ -1,5 +1,5 @@
 {
-  "version": "3.0.10-beta.2",
+  "version": "3.0.11",
   "name": "@taikai/rocket-kit",
   "author": "taikai",
   "description": "TAIKAI Design System",
@@ -49,6 +49,9 @@
     "singleQuote": true,
     "trailingComma": "es5",
     "arrowParens": "avoid"
+  },
+  "np": {
+    "yarn": true
   },
   "module": "dist/rocket-kit.esm.js",
   "size-limit": [

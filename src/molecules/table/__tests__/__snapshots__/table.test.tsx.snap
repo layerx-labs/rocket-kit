@@ -167,14 +167,22 @@ exports[`Table renders 1`] = `
 .c2 th.vkai,
 .c2 td.vkai,
 .c2 th.tkai,
-.c2 td.tkai {
+.c2 td.tkai,
+.c2 th.lx,
+.c2 td.lx,
+.c2 th.vote,
+.c2 td.vote {
   text-align: right;
 }
 
 .c2 th.vkai > div,
 .c2 td.vkai > div,
 .c2 th.tkai > div,
-.c2 td.tkai > div {
+.c2 td.tkai > div,
+.c2 th.lx > div,
+.c2 td.lx > div,
+.c2 th.vote > div,
+.c2 td.vote > div {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
@@ -327,7 +335,9 @@ exports[`Table renders 1`] = `
 }
 
 .c2 tbody td.tkai svg,
-.c2 tbody td.vkai svg {
+.c2 tbody td.vkai svg,
+.c2 tbody td.lx svg,
+.c2 tbody td.vote svg {
   float: right;
   margin-left: 0.3125rem;
   width: auto;
@@ -370,11 +380,11 @@ exports[`Table renders 1`] = `
   .c1 {
     display: block;
     border-radius: 0.5rem;
-    background: linear-gradient( to right,#ffffff 30%,rgba(255,255,255,0) ),linear-gradient(to right,rgba(255,255,255,0),#ffffff 70%) 0 100%,radial-gradient( farthest-side at 0% 50%,rgba(0,0,0,0.2),rgba(0,0,0,0) ),radial-gradient( farthest-side at 100% 50%,rgba(0,0,0,0.2),rgba(0,0,0,0) ) 0 100%;
+    background: linear-gradient(to right,#ffffff 30%,rgba(255,255,255,0)), linear-gradient(to right,rgba(255,255,255,0),#ffffff 70%) 0 100%, radial-gradient( farthest-side at 0% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ), radial-gradient( farthest-side at 100% 50%, rgba(0,0,0,0.2), rgba(0,0,0,0) ) 0 100%;
     background-repeat: no-repeat;
     background-color: #ffffff;
-    background-size: 2.5rem 100%,2.5rem 100%,0.875rem 100%,0.875rem 100%;
-    background-position: 0 0,100%,0 0,100%;
+    background-size: 2.5rem 100%, 2.5rem 100%, 0.875rem 100%, 0.875rem 100%;
+    background-position: 0 0, 100%, 0 0, 100%;
     background-attachment: local,local,scroll,scroll;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
