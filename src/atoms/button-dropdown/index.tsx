@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 import useVisible from '../../utils/hooks/use-visible';
 import { Button } from '../..';
 import { ButtonColor, ButtonVariant } from '../button/types';
@@ -30,7 +31,7 @@ const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
     rounded = false,
     color = 'purple500',
     txtColor = 'white',
-    className = 'button-dropdown',
+    className,
     style,
     actions = [],
     value = '',
@@ -56,11 +57,12 @@ const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
 
   if (visibleActions.length === 0) return <></>;
 
+  const menuHeight = `calc(2.8125rem * ${visibleActions.length} + 0.125rem)`;
+
   return (
-    <Styles.ActionsMenuStyle
-      className={className}
-      style={style}
-      visibleActions={visibleActions.length}
+    <div
+      className={clsx(styles.wrapper, className)}
+      style={{ '--menuHeight': menuHeight, ...style } as CSSProperties}
       ref={ref}
     >
       <Button
@@ -82,7 +84,7 @@ const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
         disabled={disabled}
       />
 
-      <ul data-testid={'ul-action-menu'} className={isVisible ? 'isOpen' : ''}>
+      <ul data-testid={'ul-action-menu'} className={isVisible ? styles.isOpen : ''}>
         {visibleActions.map(
           ({ id = '', url = '', action = () => {}, value = '' }) => (
             <li key={id} data-testid={'li-action-menu'}>
@@ -99,7 +101,7 @@ const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
           )
         )}
       </ul>
-    </Styles.ActionsMenuStyle>
+    </div>
   );
 };
 

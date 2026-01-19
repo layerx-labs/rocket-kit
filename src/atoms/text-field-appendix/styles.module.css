@@ -1,0 +1,81 @@
+.wrapper {
+  border-width: var(--fieldBorderWidth);
+  border-style: solid;
+  border-color: var(--fieldBorderColor);
+  border-radius: var(--fieldBorderRadius);
+  display: flex;
+  transition-duration: var(--transitionDurationDefault);
+  overflow: hidden;
+}
+
+.wrapper.hasError {
+  border-color: var(--fieldErrorBorderColor);
+}
+
+.wrapper:hover {
+  border-color: var(--fieldHoverBorderColor);
+}
+
+.wrapper:has(input:focus) {
+  border-color: var(--fieldActiveBorderColor);
+}
+
+.wrapper:has(input:disabled) {
+  background-color: var(--fieldDisabledBackgroundColor);
+  color: var(--fieldDisabledColor);
+}
+
+.wrapper:has(input:disabled) > div {
+  background-color: var(--fieldDisabledBackgroundColor);
+  color: var(--fieldDisabledColor);
+}
+
+.wrapper input {
+  flex: 1;
+  border: 0;
+  color: var(--fieldColor);
+}
+
+.wrapper.hasError input {
+  color: var(--fieldErrorBorderColor);
+}
+
+.wrapper input:disabled {
+  margin: 0;
+  border-radius: 0;
+}
+
+.wrapper + span {
+  margin-top: 0;
+}
+
+.wrapper.hasError + span {
+  margin-top: 0.3125rem; /* 5px */
+}
+
+.appendix {
+  border-style: solid;
+  border-color: var(--fieldBorderColor);
+  background-color: var(--fieldBorderColor);
+  padding: 0 0.9375rem; /* 15px */
+  color: var(--fieldColor);
+  line-height: 3rem; /* 48px */
+  vertical-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.appendixLeft {
+  border-width: 0 var(--fieldBorderWidth) 0 0;
+}
+
+.appendixRight {
+  border-width: 0 0 0 var(--fieldBorderWidth);
+}
+
+.appendix.hasError {
+  border-color: var(--fieldErrorBorderColor);
+  background-color: var(--fieldErrorBackgroundColor);
+  color: var(--fieldErrorBorderColor);
+}

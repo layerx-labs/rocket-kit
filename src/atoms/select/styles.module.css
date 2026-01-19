@@ -1,0 +1,38 @@
+.select {
+  border: var(--fieldBorderWidth) solid var(--fieldBorderColor);
+  border-radius: var(--fieldBorderRadius);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='rgb(217,212,237)' d='M10.827 12.387l5.173 5.173 5.173-5.173c0.52-0.52 1.36-0.52 1.88 0v0c0.52 0.52 0.52 1.36 0 1.88l-6.12 6.12c-0.52 0.52-1.36 0.52-1.88 0l-6.12-6.12c-0.52-0.52-0.52-1.36 0-1.88v0c0.52-0.507 1.373-0.52 1.893 0z'></path></svg>");
+  background-position: calc(100% - 15px) center;
+  background-repeat: no-repeat;
+  background-size: 1.875rem; /* 30px */
+  background-color: transparent;
+  height: var(--fieldHeight);
+  padding: 0 4.0625rem 0 0.9375rem; /* 65px 15px */
+  font-size: var(--fontSizeM);
+  appearance: none;
+  cursor: pointer;
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.select.hasError {
+  border-color: var(--fieldErrorBorderColor);
+}
+
+.select:hover {
+  border-color: var(--fieldHoverBorderColor);
+}
+
+.select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 var(--black);
+}
+
+.select:focus {
+  outline: none;
+}
+
+.select:disabled {
+  background-color: var(--fieldDisabledBackgroundColor);
+  color: var(--fieldDisabledColor);
+  pointer-events: none;
+}

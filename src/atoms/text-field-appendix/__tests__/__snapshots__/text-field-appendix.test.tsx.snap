@@ -2,7 +2,7 @@
 
 exports[`TextField Appendix renders 1`] = `
 <DocumentFragment>
-  .c2 {
+  .c0 {
   border-width: 0.0625rem;
   border-style: solid;
   border-color: #D9D4ED;
@@ -20,22 +20,22 @@ exports[`TextField Appendix renders 1`] = `
   transition-duration: 0.3s;
 }
 
-.c2:hover {
+.c0:hover {
   border-color: #C7BFE4;
 }
 
-.c2:focus {
+.c0:focus {
   border-color: #4329A6;
   outline: none;
 }
 
-.c2:disabled {
+.c0:disabled {
   border-color: #D9D4ED;
   background-color: #E3E3E8;
   color: #ABACBA;
 }
 
-.c2:invalid {
+.c0:invalid {
   border-color: #EB5757;
   outline: none;
   box-shadow: none;
@@ -43,113 +43,50 @@ exports[`TextField Appendix renders 1`] = `
   -moz-box-shadow: none;
 }
 
-.c2:required {
+.c0:required {
   border-color: #D9D4ED;
 }
 
-.c2::-webkit-input-placeholder,
-.c2:-ms-input-placeholder,
-.c2::-ms-input-placeholder {
+.c0::-webkit-input-placeholder,
+.c0:-ms-input-placeholder,
+.c0::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
 }
 
-.c2::-moz-placeholder,
-.c2:-ms-input-placeholder,
-.c2::-ms-input-placeholder {
+.c0::-moz-placeholder,
+.c0:-ms-input-placeholder,
+.c0::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
 }
 
-.c2:-ms-input-placeholder,
-.c2:-ms-input-placeholder,
-.c2::-ms-input-placeholder {
+.c0:-ms-input-placeholder,
+.c0:-ms-input-placeholder,
+.c0::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
 }
 
-.c2::placeholder,
-.c2:-ms-input-placeholder,
-.c2::-ms-input-placeholder {
+.c0::placeholder,
+.c0:-ms-input-placeholder,
+.c0::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
-}
-
-.c0 {
-  border-width: 0.0625rem;
-  border-style: solid;
-  border-color: #D9D4ED;
-  border-radius: 0.5rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  overflow: hidden;
-}
-
-.c0:hover {
-  border-color: #C7BFE4;
-}
-
-.c0:has(input:focus) {
-  border-color: #4329A6;
-}
-
-.c0:has(input:disabled) {
-  background-color: #E3E3E8;
-  color: #ABACBA;
-}
-
-.c0:has(input:disabled) > div {
-  background-color: #E3E3E8;
-  color: #ABACBA;
-}
-
-.c0 input {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  border: 0;
-  color: #000000;
-}
-
-.c0 input:disabled {
-  margin: 0;
-  border-radius: 0;
-}
-
-.c0 + span {
-  margin-top: 0;
-}
-
-.c1 {
-  border-width: 0 0.0625rem 0 0;
-  border-style: solid;
-  border-color: #D9D4ED;
-  background-color: #D9D4ED;
-  padding: 0 0.9375rem;
-  color: #000000;
-  line-height: 3rem;
-  vertical-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 <div
-    class="c0 text-field-appendix"
+    class="wrapper"
   >
     <div
-      class="c1"
+      class="appendix appendixLeft"
     >
       <span>
         appendix
       </span>
     </div>
     <input
-      class="c2 text-field"
+      class="c0 text-field"
       placeholder=""
       type="text"
       value="this is my text"

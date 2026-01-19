@@ -2,7 +2,7 @@
 
 exports[`FormGroup renders 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c0 {
   border-width: 0.0625rem;
   border-style: solid;
   border-color: #D9D4ED;
@@ -20,22 +20,22 @@ exports[`FormGroup renders 1`] = `
   transition-duration: 0.3s;
 }
 
-.c1:hover {
+.c0:hover {
   border-color: #C7BFE4;
 }
 
-.c1:focus {
+.c0:focus {
   border-color: #4329A6;
   outline: none;
 }
 
-.c1:disabled {
+.c0:disabled {
   border-color: #D9D4ED;
   background-color: #E3E3E8;
   color: #ABACBA;
 }
 
-.c1:invalid {
+.c0:invalid {
   border-color: #EB5757;
   outline: none;
   box-shadow: none;
@@ -43,57 +43,40 @@ exports[`FormGroup renders 1`] = `
   -moz-box-shadow: none;
 }
 
-.c1:required {
+.c0:required {
   border-color: #D9D4ED;
 }
 
-.c1::-webkit-input-placeholder,
-.c1:-ms-input-placeholder,
-.c1::-ms-input-placeholder {
+.c0::-webkit-input-placeholder,
+.c0:-ms-input-placeholder,
+.c0::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
 }
 
-.c1::-moz-placeholder,
-.c1:-ms-input-placeholder,
-.c1::-ms-input-placeholder {
+.c0::-moz-placeholder,
+.c0:-ms-input-placeholder,
+.c0::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
 }
 
-.c1:-ms-input-placeholder,
-.c1:-ms-input-placeholder,
-.c1::-ms-input-placeholder {
+.c0:-ms-input-placeholder,
+.c0:-ms-input-placeholder,
+.c0::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
 }
 
-.c1::placeholder,
-.c1:-ms-input-placeholder,
-.c1::-ms-input-placeholder {
+.c0::placeholder,
+.c0:-ms-input-placeholder,
+.c0::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
-}
-
-.c0 {
-  display: inline-block;
-}
-
-.c0 > label {
-  margin-bottom: 0.3125rem;
-  color: #73758C;
-}
-
-.c0 > label span {
-  color: #000000;
-}
-
-.c0:not(:last-child) {
-  margin-bottom: 0.9375rem;
 }
 
 <div
-    class="c0"
+    class="wrapper"
   >
     <label
       class="label"
@@ -101,7 +84,7 @@ exports[`FormGroup renders 1`] = `
       label
     </label>
     <input
-      class="c1 text-field"
+      class="c0 text-field"
       placeholder=""
       type="text"
       value="this is my text"

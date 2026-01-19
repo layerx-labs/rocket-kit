@@ -1,6 +1,8 @@
 import React, { CSSProperties } from 'react';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 import { TagColor } from '../tag/types';
+import { useColor } from '../../utils/hooks/use-color';
 
 export interface TagNumberProps {
   className?: string;
@@ -13,7 +15,7 @@ export interface TagNumberProps {
 
 const TagNumber = (props: TagNumberProps) => {
   const {
-    className = 'tag-number',
+    className,
     style,
     color = 'purple500',
     valueColor = 'white',
@@ -21,16 +23,20 @@ const TagNumber = (props: TagNumberProps) => {
     value,
   } = props;
 
+  const bgColor = useColor(color);
+  const valColor = useColor(valueColor);
+
+  const cssVars = {
+    '--bg': bgColor.color,
+    '--valueColor': valColor.color,
+    ...style,
+  } as CSSProperties;
+
   return (
-    <Styles.TagWrapper
-      className={className}
-      style={style}
-      color={color}
-      valueColor={valueColor}
-    >
-      <span className="label">{label}</span>
-      <span className="value">{value}</span>
-    </Styles.TagWrapper>
+    <div className={clsx(styles.wrapper, className)} style={cssVars}>
+      <span className={styles.label}>{label}</span>
+      <span className={styles.value}>{value}</span>
+    </div>
   );
 };
 

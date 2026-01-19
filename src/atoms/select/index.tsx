@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
+import clsx from 'clsx';
 import ErrorField from '../error-field';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface SelectProps {
   placeholder?: string;
@@ -27,6 +28,8 @@ const Select = (props: SelectProps) => {
     error,
     disabled = false,
     dataTestId,
+    className,
+    style,
   } = props;
 
   const selectOptions = options.map(
@@ -39,12 +42,13 @@ const Select = (props: SelectProps) => {
 
   return (
     <>
-      <Styles.SelectStyle
+      <select
+        className={clsx(styles.select, error && styles.hasError, className)}
+        style={style}
         name={name}
         defaultValue={defaultValue}
         value={value}
         onChange={onChange}
-        error={error}
         disabled={disabled}
         data-testid={dataTestId}
       >
@@ -54,7 +58,7 @@ const Select = (props: SelectProps) => {
           </option>
         )}
         {selectOptions}
-      </Styles.SelectStyle>
+      </select>
       {error ? <ErrorField error={error} /> : null}
     </>
   );

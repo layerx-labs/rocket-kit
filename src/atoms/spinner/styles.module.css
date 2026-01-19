@@ -1,0 +1,17 @@
+.spinner {
+  border: 0.3125rem solid hsla(0, 0%, 48%, 0.5); /* 5px */
+  border-top-color: var(--spinnerFill, var(--white));
+  border-radius: 50%;
+  width: var(--spinnerSize, 1.25rem); /* 20px */
+  height: var(--spinnerSize, 1.25rem);
+  animation: rotation 0.8s ease infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

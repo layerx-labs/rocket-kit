@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
+import clsx from 'clsx';
 import { colors } from '../../ions/variables';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface SpinnerProps {
   fill?: string;
@@ -13,15 +14,20 @@ const Spinner = (props: SpinnerProps) => {
   const {
     fill = colors.grey200,
     size = '20px',
-    className = 'spinner',
+    className,
     style,
   } = props;
+
+  const cssVars = {
+    '--spinnerFill': fill,
+    '--spinnerSize': size,
+    ...style,
+  } as CSSProperties;
+
   return (
-    <Styles.Loading
-      className={className}
-      fill={fill}
-      size={size}
-      style={style}
+    <div
+      className={clsx(styles.spinner, className)}
+      style={cssVars}
     />
   );
 };
