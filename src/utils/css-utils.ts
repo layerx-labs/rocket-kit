@@ -26,3 +26,17 @@ export function transparentize(amount: number, color: string): string {
   const b = parseInt(hex.slice(4, 6), 16);
   return `rgba(${r}, ${g}, ${b}, ${1 - amount})`;
 }
+
+/**
+ * Convert a hex color to rgba with opacity
+ * @param color - hex color string (e.g., '#ff0000' or 'ff0000')
+ * @param alpha - opacity value 0-1
+ * @returns rgba color string
+ */
+export function rgba(color: string, alpha: number): string {
+  const hex = color.replace('#', '');
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
