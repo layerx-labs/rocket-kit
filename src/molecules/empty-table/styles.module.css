@@ -1,0 +1,135 @@
+.wrapper {
+  position: relative;
+}
+
+.head {
+  border-style: solid;
+  border-color: var(--grey200);
+  border-radius: var(--fieldBorderRadius) var(--fieldBorderRadius) 0 0;
+  height: 3.125rem; /* 50px */
+  display: flex;
+  align-items: center;
+  font-size: var(--fontSizeS);
+  font-weight: 600;
+  color: var(--grey400);
+}
+
+.head.hasBorder {
+  border-width: var(--fieldBorderWidth);
+}
+
+.head.noBorder {
+  border-width: 0 0 var(--fieldBorderWidth) 0;
+}
+
+.head > div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: none;
+  flex: 1;
+  padding: 0 0.9375rem; /* 15px */
+  font-size: var(--fontSizeS);
+  font-weight: 600;
+  color: var(--grey400);
+}
+
+.head > div:first-child,
+.head > div:nth-child(2) {
+  display: initial;
+}
+
+@media (min-width: 700px) {
+  .head > div:nth-child(3) {
+    display: initial;
+  }
+}
+
+@media (min-width: 900px) {
+  .head > div:nth-child(4) {
+    display: initial;
+  }
+}
+
+@media (min-width: 1280px) {
+  .head > div {
+    display: initial;
+  }
+}
+
+.body {
+  border-style: solid;
+  border-color: var(--grey200);
+  border-radius: 0 0 var(--fieldBorderRadius) var(--fieldBorderRadius);
+}
+
+.body.hasBorder {
+  border-width: 0 var(--fieldBorderWidth) var(--fieldBorderWidth) var(--fieldBorderWidth);
+}
+
+.body.noBorder {
+  border-width: 0;
+}
+
+.row {
+  height: 3.125rem; /* 50px */
+  display: flex;
+  align-items: center;
+}
+
+.row:not(:last-child) {
+  border-bottom: var(--fieldBorderWidth) solid var(--grey200);
+}
+
+.row > div {
+  display: none;
+  flex: 1;
+  padding: 0 0.9375rem; /* 15px */
+}
+
+.row > div:first-child,
+.row > div:nth-child(2) {
+  display: inherit;
+}
+
+@media (min-width: 700px) {
+  .row > div:nth-child(3) {
+    display: inherit;
+  }
+}
+
+@media (min-width: 900px) {
+  .row > div:nth-child(4) {
+    display: inherit;
+  }
+}
+
+@media (min-width: 1280px) {
+  .row > div {
+    display: inherit;
+  }
+}
+
+.cellText {
+  background-color: var(--grey200);
+  width: 100%;
+  height: 0.9375rem; /* 15px */
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+  width: 100%;
+  height: calc(100% - 3.125rem); /* 50px */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 0.9375rem 0.9375rem 0.9375rem; /* 15px */
+  text-align: center;
+  color: var(--grey400);
+}

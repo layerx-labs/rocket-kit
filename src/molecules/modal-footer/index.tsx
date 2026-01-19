@@ -1,6 +1,7 @@
 import React from 'react';
+import clsx from 'clsx';
 import { Button } from '../..';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface ModalFooterProps {
   children?: React.ReactNode;
@@ -19,13 +20,13 @@ const ModalFooter = (props: ModalFooterProps) => {
     closeAction,
     closeValue = 'Close',
     dataTestId,
-    className = 'modal-footer',
+    className,
     style,
   } = props;
 
   return (
-    <Styles.FooterStyle
-      className={className}
+    <div
+      className={clsx(styles.footer, className)}
       data-testid={dataTestId}
       style={style}
     >
@@ -36,7 +37,7 @@ const ModalFooter = (props: ModalFooterProps) => {
         value={closeValue}
       />
       {children}
-    </Styles.FooterStyle>
+    </div>
   );
 };
 

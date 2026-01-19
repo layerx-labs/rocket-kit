@@ -1,0 +1,50 @@
+.wrapper label {
+  margin-bottom: 0.3125rem; /* 5px */
+}
+
+.field {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field input {
+  flex: 1;
+  margin-right: -0.0625rem; /* -1px */
+  border-radius: var(--fieldBorderRadius) 0 0 var(--fieldBorderRadius);
+}
+
+.field input:disabled {
+  background-color: var(--fieldBackgroundColor);
+  color: var(--fieldColor);
+}
+
+.field span {
+  order: 3;
+  width: 100%;
+}
+
+.field button {
+  border: 0;
+  border-radius: 0 var(--fieldBorderRadius) var(--fieldBorderRadius) 0;
+  min-width: 3.125rem; /* 50px */
+  height: var(--fieldHeight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.25rem; /* 20px */
+  white-space: nowrap;
+  transition-duration: var(--transitionDurationDefault);
+  cursor: pointer;
+}
+
+.field button span {
+  color: var(--fieldActiveColor);
+}
+
+.field button svg {
+  fill: var(--fieldActiveColor);
+}
+
+.field button:disabled {
+  border: var(--fieldBorderWidth) solid var(--fieldBorderColor) !important;
+}

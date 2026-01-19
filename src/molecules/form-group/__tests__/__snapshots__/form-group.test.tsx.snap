@@ -2,7 +2,7 @@
 
 exports[`FormGroup renders 1`] = `
 <DocumentFragment>
-  .c2 {
+  .c1 {
   border-width: 0.0625rem;
   border-style: solid;
   border-color: #D9D4ED;
@@ -20,22 +20,22 @@ exports[`FormGroup renders 1`] = `
   transition-duration: 0.3s;
 }
 
-.c2:hover {
+.c1:hover {
   border-color: #C7BFE4;
 }
 
-.c2:focus {
+.c1:focus {
   border-color: #4329A6;
   outline: none;
 }
 
-.c2:disabled {
+.c1:disabled {
   border-color: #D9D4ED;
   background-color: #E3E3E8;
   color: #ABACBA;
 }
 
-.c2:invalid {
+.c1:invalid {
   border-color: #EB5757;
   outline: none;
   box-shadow: none;
@@ -43,56 +43,36 @@ exports[`FormGroup renders 1`] = `
   -moz-box-shadow: none;
 }
 
-.c2:required {
+.c1:required {
   border-color: #D9D4ED;
 }
 
-.c2::-webkit-input-placeholder,
-.c2:-ms-input-placeholder,
-.c2::-ms-input-placeholder {
+.c1::-webkit-input-placeholder,
+.c1:-ms-input-placeholder,
+.c1::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
 }
 
-.c2::-moz-placeholder,
-.c2:-ms-input-placeholder,
-.c2::-ms-input-placeholder {
+.c1::-moz-placeholder,
+.c1:-ms-input-placeholder,
+.c1::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
 }
 
-.c2:-ms-input-placeholder,
-.c2:-ms-input-placeholder,
-.c2::-ms-input-placeholder {
+.c1:-ms-input-placeholder,
+.c1:-ms-input-placeholder,
+.c1::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
 }
 
-.c2::placeholder,
-.c2:-ms-input-placeholder,
-.c2::-ms-input-placeholder {
+.c1::placeholder,
+.c1:-ms-input-placeholder,
+.c1::-ms-input-placeholder {
   color: #C7C8D1;
   opacity: 1;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #73758C;
-}
-
-.c1 svg {
-  margin-left: 0.3125rem;
-  width: auto;
-  height: 1rem;
 }
 
 .c0 {
@@ -116,12 +96,12 @@ exports[`FormGroup renders 1`] = `
     class="c0"
   >
     <label
-      class="c1 label"
+      class="label"
     >
       label
     </label>
     <input
-      class="c2 text-field"
+      class="c1 text-field"
       placeholder=""
       type="text"
       value="this is my text"

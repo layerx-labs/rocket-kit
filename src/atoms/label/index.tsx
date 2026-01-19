@@ -1,6 +1,6 @@
 import React from 'react';
-import * as Styles from './styles';
-
+import clsx from 'clsx';
+import styles from './styles.module.css';
 import { colors } from '../../ions/variables';
 import { Icon } from '../..';
 
@@ -12,12 +12,12 @@ export interface LabelProps {
 }
 
 const Label = (props: LabelProps) => {
-  const { value, currency, className = 'label', style } = props;
+  const { value, currency, className, style } = props;
   return (
-    <Styles.LabelStyle className={className} style={style}>
+    <label className={clsx(styles.label, className)} style={style}>
       {value}
       {currency && <Icon icon={currency} fill={colors.grey200} />}
-    </Styles.LabelStyle>
+    </label>
   );
 };
 

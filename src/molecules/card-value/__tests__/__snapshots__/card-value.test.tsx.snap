@@ -2,62 +2,11 @@
 
 exports[`Card Value renders 1`] = `
 <DocumentFragment>
-  .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #73758C;
-}
-
-.c1 svg {
-  margin-left: 0.3125rem;
-  width: auto;
-  height: 1rem;
-}
-
-.c0 {
-  border: 0.0625rem solid #D9D4ED;
-  border-radius: 0.5rem;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0.9375rem;
-  overflow-x: auto;
-}
-
-.c0 > span {
-  display: block;
-  margin-top: 0.3125rem;
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.c0 a,
-.c0 button {
-  margin-top: 1.25rem;
-}
-
-<div
-    class="c0 card-value"
+  <div
+    class="cardValue"
   >
     <label
-      class="c1 label"
+      class="label"
     >
       Amount
       <svg

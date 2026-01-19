@@ -3,25 +3,6 @@
 exports[`TableDnD renders 1`] = `
 <DocumentFragment>
   .c4 {
-  position: relative;
-  border: 0.125rem solid #C7C8D1;
-  border-radius: 999px;
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.c4 > * {
-  width: 100%;
-  height: 100%;
-}
-
-.c4 img {
-  object-fit: cover;
-}
-
-.c5 {
   --bg: #73758C;
   --txt: #ffffff;
   --hover: #5C5E70;
@@ -58,42 +39,42 @@ exports[`TableDnD renders 1`] = `
   outline: none;
 }
 
-.c5:hover {
+.c4:hover {
   border-color: var(--hover);
   background-color: transparent;
 }
 
-.c5:hover span {
+.c4:hover span {
   color: var(--hover);
 }
 
-.c5:hover svg {
+.c4:hover svg {
   fill: var(--hover);
 }
 
-.c5:disabled {
+.c4:disabled {
   cursor: inherit;
   opacity: 0.5;
 }
 
-.c5:disabled:hover {
+.c4:disabled:hover {
   background-color: transparent;
   pointer-events: none;
 }
 
-.c5 > *:not(:last-child) {
+.c4 > *:not(:last-child) {
   margin-left: 0;
   margin-right: 0.875rem;
 }
 
-.c5 .spinner {
+.c4 .spinner {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
   border-top-color: var(--button);
 }
 
-.c5 span {
+.c4 span {
   position: relative;
   font-size: 1rem;
   font-weight: 500;
@@ -107,7 +88,7 @@ exports[`TableDnD renders 1`] = `
   order: 2;
 }
 
-.c5 svg {
+.c4 svg {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
@@ -556,8 +537,8 @@ exports[`TableDnD renders 1`] = `
             >
               <div>
                 <div
-                  class="c4 avatar-img"
-                  size="30"
+                  class="wrapper"
+                  style="--avatarSize: 30px;"
                 >
                   <img
                     alt="To the Moon"
@@ -591,7 +572,7 @@ exports[`TableDnD renders 1`] = `
               <div>
                 <button
                   aria-hidden="false"
-                  class="c5 button"
+                  class="c4 button"
                   color="grey500"
                   data-event=""
                   data-testid="icon-button"

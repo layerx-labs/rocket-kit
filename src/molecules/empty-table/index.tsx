@@ -1,5 +1,6 @@
 import React from 'react';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 export interface EmptyTableProps {
   border?: boolean;
@@ -19,23 +20,31 @@ const EmptyTable = (props: EmptyTableProps) => {
   for (let i = 0; i < tableHead.length; i++) {
     columns.push(
       <div key={i}>
-        <Styles.EmptyTableCellText />
+        <div className={styles.cellText} />
       </div>
     );
   }
 
   for (let i = 0; i < 3; i++) {
-    rows.push(<Styles.EmptyTableRow key={i}>{columns}</Styles.EmptyTableRow>);
+    rows.push(
+      <div className={styles.row} key={i}>
+        {columns}
+      </div>
+    );
   }
 
   return (
-    <Styles.EmptyTableWrapper>
-      <Styles.EmptyTableOverlay>
+    <div className={styles.wrapper}>
+      <div className={styles.overlay}>
         <span>{value}</span>
-      </Styles.EmptyTableOverlay>
-      <Styles.EmptyTableHead border={border}>{headCells}</Styles.EmptyTableHead>
-      <Styles.EmptyTableBody border={border}>{rows}</Styles.EmptyTableBody>
-    </Styles.EmptyTableWrapper>
+      </div>
+      <div className={clsx(styles.head, border ? styles.hasBorder : styles.noBorder)}>
+        {headCells}
+      </div>
+      <div className={clsx(styles.body, border ? styles.hasBorder : styles.noBorder)}>
+        {rows}
+      </div>
+    </div>
   );
 };
 

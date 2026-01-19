@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridRow {
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .gridRow {
+    display: flex;
+  }
+}

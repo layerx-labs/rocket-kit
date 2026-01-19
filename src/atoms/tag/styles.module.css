@@ -1,0 +1,22 @@
+.tag {
+  display: inline-block;
+  border: 0.125rem solid var(--bg); /* 2px */
+  border-radius: 0.25rem; /* 4px */
+  padding: 0.1875rem 0.5rem; /* 3px 8px */
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem; /* 1px */
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.variantSolid {
+  background-color: var(--bg);
+  color: var(--txt);
+}
+
+.variantOutline {
+  background-color: transparent;
+  color: var(--bg);
+}

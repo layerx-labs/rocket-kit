@@ -152,6 +152,13 @@
   --buttonIconSpacing: 0.875rem; /* 14px */
   --buttonIconSize: 1.25rem; /* 20px */
 
+  /* Breakpoints */
+  --breakpointXs: 360px;
+  --breakpointS: 700px;
+  --breakpointM: 900px;
+  --breakpointL: 1280px;
+  --breakpointXl: 1600px;
+
   /* Field tokens */
   --fieldBorderWidth: 0.0625rem; /* 1px */
   --fieldBorderRadius: 0.5rem; /* 8px */

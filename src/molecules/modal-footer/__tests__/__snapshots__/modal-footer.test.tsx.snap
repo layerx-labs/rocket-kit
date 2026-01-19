@@ -2,7 +2,7 @@
 
 exports[`Modal Footer renders 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c0 {
   --bg: #ABACBA;
   --txt: #ABACBA;
   --hover: #8F91A3;
@@ -39,42 +39,42 @@ exports[`Modal Footer renders 1`] = `
   outline: none;
 }
 
-.c1:hover {
+.c0:hover {
   border-color: var(--hover);
   background-color: transparent;
 }
 
-.c1:hover span {
+.c0:hover span {
   color: var(--hover);
 }
 
-.c1:hover svg {
+.c0:hover svg {
   fill: var(--hover);
 }
 
-.c1:disabled {
+.c0:disabled {
   cursor: inherit;
   opacity: 0.5;
 }
 
-.c1:disabled:hover {
+.c0:disabled:hover {
   background-color: transparent;
   pointer-events: none;
 }
 
-.c1 > *:not(:last-child) {
+.c0 > *:not(:last-child) {
   margin-left: 0;
   margin-right: 0.875rem;
 }
 
-.c1 .spinner {
+.c0 .spinner {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
   border-top-color: var(--button);
 }
 
-.c1 span {
+.c0 span {
   position: relative;
   font-size: 1rem;
   font-weight: 500;
@@ -88,7 +88,7 @@ exports[`Modal Footer renders 1`] = `
   order: 2;
 }
 
-.c1 svg {
+.c0 svg {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
@@ -99,7 +99,7 @@ exports[`Modal Footer renders 1`] = `
   transition: 0.3s;
 }
 
-.c2 {
+.c1 {
   --bg: #4329A6;
   --txt: #ffffff;
   --hover: #362185;
@@ -136,32 +136,32 @@ exports[`Modal Footer renders 1`] = `
   outline: none;
 }
 
-.c2:hover {
+.c1:hover {
   background-color: var(--hover);
 }
 
-.c2:disabled {
+.c1:disabled {
   cursor: inherit;
   opacity: 0.5;
 }
 
-.c2:disabled:hover {
+.c1:disabled:hover {
   background-color: var(--bg);
   pointer-events: none;
 }
 
-.c2 > *:not(:last-child) {
+.c1 > *:not(:last-child) {
   margin-left: 0;
   margin-right: 0.875rem;
 }
 
-.c2 .spinner {
+.c1 .spinner {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
 }
 
-.c2 span {
+.c1 span {
   position: relative;
   font-size: 1rem;
   font-weight: 500;
@@ -175,7 +175,7 @@ exports[`Modal Footer renders 1`] = `
   order: 2;
 }
 
-.c2 svg {
+.c1 svg {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
@@ -186,43 +186,12 @@ exports[`Modal Footer renders 1`] = `
   transition: 0.3s;
 }
 
-.c0 {
-  position: relative;
-  margin-top: 3.125rem;
-  max-width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c0 > button {
-  min-width: 6.25rem;
-}
-
-.c0 > button:not(:last-child) {
-  margin-right: 0.3125rem;
-}
-
-@media (min-width:700px) {
-  .c0 {
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-  }
-}
-
 <div
-    class="c0 modal-footer"
+    class="footer"
   >
     <button
       aria-hidden="false"
-      class="c1 button"
+      class="c0 button"
       color="grey300"
       data-event=""
       data-testid=""
@@ -234,7 +203,7 @@ exports[`Modal Footer renders 1`] = `
     </button>
     <button
       aria-hidden="false"
-      class="c2 button"
+      class="c1 button"
       color="purple500"
       data-event=""
       data-testid=""

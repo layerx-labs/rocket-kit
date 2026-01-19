@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface ProgressBarProps {
   progress: number;
@@ -10,12 +10,15 @@ const ProgressBar = (props: ProgressBarProps) => {
   const { progress = 0, value = '' } = props;
 
   return (
-    <Styles.Wrapper>
-      <Styles.Bar>
-        <Styles.Progress progress={progress} />
-      </Styles.Bar>
-      {value && <Styles.Value>{value}</Styles.Value>}
-    </Styles.Wrapper>
+    <div className={styles.wrapper}>
+      <div className={styles.bar}>
+        <div
+          className={styles.progress}
+          style={{ width: progress ? `${progress}%` : 0 }}
+        />
+      </div>
+      {value && <div className={styles.value}>{value}</div>}
+    </div>
   );
 };
 

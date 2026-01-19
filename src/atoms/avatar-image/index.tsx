@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import Avatar from 'boring-avatars';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 export interface AvatarProps {
   style?: CSSProperties;
@@ -16,7 +17,7 @@ export interface AvatarProps {
 const AvatarImage = (props: AvatarProps) => {
   const {
     style,
-    className = 'avatar-img',
+    className,
     size = 30,
     url,
     alt,
@@ -25,8 +26,15 @@ const AvatarImage = (props: AvatarProps) => {
     square = false,
   } = props;
 
+  const wrapperStyle = {
+    '--avatarSize': `${size}px`,
+  } as CSSProperties;
+
   return (
-    <Styles.Wrapper className={className} size={size} square={square}>
+    <div
+      className={clsx(styles.wrapper, square && styles.square, className)}
+      style={wrapperStyle}
+    >
       {boring && !url ? (
         <Avatar
           size={size}
@@ -38,7 +46,7 @@ const AvatarImage = (props: AvatarProps) => {
       ) : (
         <img style={style} src={url} alt={alt} />
       )}
-    </Styles.Wrapper>
+    </div>
   );
 };
 
