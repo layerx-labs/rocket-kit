@@ -30,7 +30,7 @@ const Tag = (props: TagProps) => {
     '--bg': bgColor.color,
     '--txt': textColor.color,
     ...style,
-  } as CSSProperties;
+  } as CSSProperties & Record<string, string>;
 
   return (
     <span

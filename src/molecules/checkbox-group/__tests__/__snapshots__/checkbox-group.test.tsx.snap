@@ -2,7 +2,7 @@
 
 exports[`CheckboxGroup renders 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19,23 +19,23 @@ exports[`CheckboxGroup renders 1`] = `
   user-select: none;
 }
 
-.c1:hover input:not(:disabled) ~ span {
+.c0:hover input:not(:disabled) ~ span {
   border-color: #C7BFE4;
 }
 
-.c2 {
+.c1 {
   margin-left: calc(1.5rem + 0.3125rem);
   line-height: 1.5rem;
 }
 
-.c3 {
+.c2 {
   position: absolute;
   left: 0;
   opacity: 0;
   cursor: pointer;
 }
 
-.c4 {
+.c3 {
   position: absolute;
   top: 0;
   left: 0;
@@ -47,7 +47,7 @@ exports[`CheckboxGroup renders 1`] = `
   transition-duration: 0.3s;
 }
 
-.c4:after {
+.c3:after {
   display: block;
   content: '';
   position: absolute;
@@ -65,102 +65,78 @@ exports[`CheckboxGroup renders 1`] = `
   transform: rotate(45deg);
 }
 
-.c4.checked.not-disabled {
+.c3.checked.not-disabled {
   background-color: #35E0AD;
   border-color: #2AB38A;
 }
 
-.c4.checked.not-disabled:after {
+.c3.checked.not-disabled:after {
   display: block;
 }
 
-.c4.checked.disabled {
+.c3.checked.disabled {
   color: #ABACBA;
   border-color: transparent;
   background-color: #E3E3E8;
 }
 
-.c4.checked.disabled:after {
+.c3.checked.disabled:after {
   display: block;
 }
 
-.c4.not-checked.disabled {
+.c3.not-checked.disabled {
   border-color: #E3E3E8;
   background-color: #ffffff;
 }
 
-.c4.not-disabled:hover {
+.c3.not-disabled:hover {
   border-color: #2AB38A;
 }
 
-.c4.not-disabled:hover:checked ~ span {
+.c3.not-disabled:hover:checked ~ span {
   border-color: #2AB38A;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.c0 li {
-  position: relative;
-  min-height: 1.5rem;
-}
-
-.c0 li:not(:last-child) {
-  margin-bottom: 0.625rem;
 }
 
 <ul
-    class="c0"
-    type="column"
+    class="wrapper typeColumn"
   >
     <li>
       <label
-        class="c1 checkbox"
+        class="c0 checkbox"
       >
         <span
-          class="c2"
+          class="c1"
         >
           Option 1
         </span>
         <input
           aria-checked="false"
-          class="c3"
+          class="c2"
           name="option_1"
           type="checkbox"
         />
         <span
-          class="c4 not-checked not-disabled"
+          class="c3 not-checked not-disabled"
         />
       </label>
     </li>
     <li>
       <label
-        class="c1 checkbox"
+        class="c0 checkbox"
       >
         <span
-          class="c2"
+          class="c1"
         >
           Option 2
         </span>
         <input
           aria-checked="false"
-          class="c3"
+          class="c2"
           name="option_2"
           type="checkbox"
         />
         <span
-          class="c4 not-checked not-disabled"
+          class="c3 not-checked not-disabled"
         />
       </label>
     </li>

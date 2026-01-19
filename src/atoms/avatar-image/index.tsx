@@ -28,7 +28,7 @@ const AvatarImage = (props: AvatarProps) => {
 
   const wrapperStyle = {
     '--avatarSize': `${size}px`,
-  } as CSSProperties;
+  } as CSSProperties & Record<string, string>;
 
   return (
     <div

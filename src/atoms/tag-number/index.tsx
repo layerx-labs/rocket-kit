@@ -30,7 +30,7 @@ const TagNumber = (props: TagNumberProps) => {
     '--bg': bgColor.color,
     '--valueColor': valColor.color,
     ...style,
-  } as CSSProperties;
+  } as CSSProperties & Record<string, string>;
 
   return (
     <div className={clsx(styles.wrapper, className)} style={cssVars}>

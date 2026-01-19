@@ -62,7 +62,7 @@ const ButtonDropdown = <T,>(props: ActionsMenuInterface<T>) => {
   return (
     <div
       className={clsx(styles.wrapper, className)}
-      style={{ '--menuHeight': menuHeight, ...style } as CSSProperties}
+      style={{ '--menuHeight': menuHeight, ...style } as CSSProperties & Record<string, string>}
       ref={ref}
     >
       <Button

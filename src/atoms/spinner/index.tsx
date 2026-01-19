@@ -22,7 +22,7 @@ const Spinner = (props: SpinnerProps) => {
     '--spinnerFill': fill,
     '--spinnerSize': size,
     ...style,
-  } as CSSProperties;
+  } as CSSProperties & Record<string, string>;
 
   return (
     <div

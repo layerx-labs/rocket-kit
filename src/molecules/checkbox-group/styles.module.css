@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.typeRow {
+  flex-direction: row;
+}
+
+.typeColumn {
+  flex-direction: column;
+}
+
+.wrapper li {
+  position: relative;
+  min-height: 1.5rem; /* 24px */
+}
+
+.typeRow > li:not(:last-child) {
+  margin-right: 1.875rem; /* 30px */
+}
+
+.typeColumn > li:not(:last-child) {
+  margin-bottom: 0.625rem; /* 10px */
+}
