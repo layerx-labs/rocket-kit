@@ -2250,7 +2250,7 @@
     "@size-limit/file" "11.2.0"
     size-limit "11.2.0"
 
-"@storybook/addon-a11y@^8.0.5":
+"@storybook/addon-a11y@^8":
   version "8.6.15"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-8.6.15.tgz#68073f53e77b0296105860efd1eeb42ed41c8f22"
   integrity sha512-hNSI28z1PCu7/mQ+skVHX+PvLwnLLiM4d+Ecr0hhZLJDwa5JoZrnszSrCoGadSzaRe270kwjYoEwgX9MGXaxrA==
@@ -2289,7 +2289,7 @@
     dequal "^2.0.2"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-controls@^8.0.5":
+"@storybook/addon-controls@^8":
   version "8.6.15"
   resolved "https://registry.yarnpkg.com/@storybook/addon-controls/-/addon-controls-8.6.15.tgz#aa106e52b88afde9bbcbb8051dc2ec495fdfd38e"
   integrity sha512-CgV8WqGxQrqSKs1a/Y1v4mrsBJXGFmO5u4kvdhPbftRVfln11W4Hvc1SFmgXwGvmcwekAKH79Uwwkjhj3l6gzA==
@@ -2311,7 +2311,7 @@
     react-dom "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-essentials@^8.0.5":
+"@storybook/addon-essentials@^8":
   version "8.6.14"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-8.6.14.tgz#228f6ebeafba1d3368e8d900508dbdc86640ad34"
   integrity sha512-5ZZSHNaW9mXMOFkoPyc3QkoNGdJHETZydI62/OASR0lmPlJ1065TNigEo5dJddmZNn0/3bkE8eKMAzLnO5eIdA==
@@ -2341,7 +2341,7 @@
   dependencies:
     "@storybook/global" "^5.0.0"
 
-"@storybook/addon-links@^8.0.5":
+"@storybook/addon-links@^8":
   version "8.6.15"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-8.6.15.tgz#d625ac224d20dcabe73de0c79fe2b0e849a8b78a"
   integrity sha512-abRWnDPBTwnj6sQYfAjUnYCNuUQbrVLLOyuormbDUqOcvZ+OqehNYo4BKXx0/lz61h0A2dOD1IuDo40uWyYVFQ==
@@ -2401,7 +2401,7 @@
   dependencies:
     memoizerific "^1.11.3"
 
-"@storybook/addon-webpack5-compiler-swc@^1.0.2":
+"@storybook/addon-webpack5-compiler-swc@^1":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@storybook/addon-webpack5-compiler-swc/-/addon-webpack5-compiler-swc-1.0.6.tgz#6fe1d3af421e3efc935c866a719e02b62f2ab6ea"
   integrity sha512-QiZheKKYsUCAtPn9phwtmOBAWBNxnxyfu5E+HUSQIbX94pTwc3ROufJ3g1R/RMQZcklOYXpSI0V8FS1m6aUVkg==
@@ -2764,7 +2764,7 @@
   resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-8.6.15.tgz#772a1b15a28a7c000894238e2e9b995326eab9e8"
   integrity sha512-m2trBmmd4iom1qwrp1F109zjRDc0cPaHYhDQxZR4Qqdz8pYevYJTlipDbH/K4NVB6Rn687RT29OoOPfJh6vkFA==
 
-"@storybook/react-webpack5@^8.0.5":
+"@storybook/react-webpack5@^8":
   version "8.6.15"
   resolved "https://registry.yarnpkg.com/@storybook/react-webpack5/-/react-webpack5-8.6.15.tgz#92067db1ef95f0db13c9f564db80d91caab46594"
   integrity sha512-YPAAZm7qfaRFMGBt3IhvvuBzuvBKcOUmGvcqZVZSlOtMKFzH1kweyloo6DGE648MxqN4WVcWpp6MnpivORM72w==
@@ -2773,7 +2773,7 @@
     "@storybook/preset-react-webpack" "8.6.15"
     "@storybook/react" "8.6.15"
 
-"@storybook/react@8.6.15", "@storybook/react@^8.0.5":
+"@storybook/react@8.6.15", "@storybook/react@^8":
   version "8.6.15"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-8.6.15.tgz#368759e7d24d0237efc3fab430dc029cf8f31ffc"
   integrity sha512-hdnhlJg+YkpPMOw2hvK7+mhdxAbguA+TFTIAzVV9CeUYoHDIZAsgeKVhRmgZGN20NGjRN5ZcwkplAMJnF9v+6w==
@@ -2841,7 +2841,7 @@
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.6.15.tgz#781e6b36f113a10e76379956b9451276e8d5bda2"
   integrity sha512-dAbL0XOekyT6XsF49R6Etj3WxQ/LpdJDIswUUeHgVJ6/yd2opZOGbPxnwA3zlmAh1c0tvpPyhSDXxSG79u8e4Q==
 
-"@storybook/theming@^8.0.5":
+"@storybook/theming@^8":
   version "8.6.14"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-8.6.14.tgz#78c6dc878f705de70c67f2b2d08b8313b985d81a"
   integrity sha512-r4y+LsiB37V5hzpQo+BM10PaCsp7YlZ0YcZzQP1OCkPlYXmUAFy2VvDKaFRpD8IeNPKug2u4iFm/laDEbs03dg==
@@ -11867,7 +11867,7 @@ store2@^2.14.2:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.14.4.tgz#81b313abaddade4dcd7570c5cc0e3264a8f7a242"
   integrity sha512-srTItn1GOvyvOycgxjAnPA63FZNwy0PTyUBFMHRM+hVFltAeoh0LmNBz9SZqUS9mMqGk8rfyWyXn3GH5ReJ8Zw==
 
-storybook@^8.0.5:
+storybook@^8:
   version "8.6.15"
   resolved "https://registry.yarnpkg.com/storybook/-/storybook-8.6.15.tgz#eb4a3bae1ac0fe875bb322a412fac9709d9b5124"
   integrity sha512-Ob7DMlwWx8s7dMvcQ3xPc02TvUeralb+xX3oaPRk9wY9Hc6M1IBC/7cEoITkSmRS2v38DHubC+mtEKNc1u2gQg==
