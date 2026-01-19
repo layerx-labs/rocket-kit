@@ -3,6 +3,7 @@
 exports[`Actions Menu renders closed menu 1`] = `
 <DocumentFragment>
   .c1 {
+  --bg: #000000;
   --txt: #ffffff;
   --hover: #000000;
   margin: 0;
@@ -134,6 +135,7 @@ exports[`Actions Menu renders closed menu 1`] = `
 exports[`Actions Menu renders open menu 1`] = `
 <DocumentFragment>
   .c1 {
+  --bg: #000000;
   --txt: #ffffff;
   --hover: #000000;
   margin: 0;
