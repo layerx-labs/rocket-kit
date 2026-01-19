@@ -23,7 +23,7 @@ exports[`Select Interactive renders 1`] = `
         class="select__control css-13cymwt-control"
       >
         <div
-          class="select__value-container select__value-container--has-value css-1fdsijx-ValueContainer"
+          class="select__value-container select__value-container--has-value css-hlgwow"
         >
           <div
             class="singleValue"
@@ -31,7 +31,7 @@ exports[`Select Interactive renders 1`] = `
             Vanilla
           </div>
           <div
-            class="select__input-container css-qbdosj-Input"
+            class="select__input-container css-19bb58m"
             data-value=""
           >
             <input
@@ -54,7 +54,7 @@ exports[`Select Interactive renders 1`] = `
           </div>
         </div>
         <div
-          class="select__indicators css-1hb7zxy-IndicatorsContainer"
+          class="select__indicators css-1wy0on6"
         >
           <div
             aria-hidden="true"
