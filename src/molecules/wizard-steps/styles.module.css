@@ -1,0 +1,93 @@
+.steps {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  display: flex;
+}
+
+.step {
+  list-style: none;
+  flex: 1;
+  position: relative;
+  height: 2.75rem; /* 44px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1.125rem; /* 18px */
+  text-align: center;
+}
+
+.step::before,
+.step::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  border: 0 solid var(--stepBorderColor, var(--fieldBorderColor));
+  border-width: 1.375rem 0.9375rem; /* 22px 15px */
+  width: 0;
+  height: 0;
+}
+
+.step::before {
+  left: -0.9375rem; /* -15px */
+  border-left-color: transparent;
+}
+
+.step::after {
+  left: calc(100% - 1.125rem); /* 18px */
+  border-color: transparent;
+  border-left-color: var(--stepBorderColor, var(--fieldBorderColor));
+}
+
+.step:first-child::before {
+  border: none;
+}
+
+.step:last-child::after {
+  border: none;
+}
+
+.step:first-child {
+  overflow: hidden;
+}
+
+.step:first-child > div {
+  border-radius: var(--fieldBorderRadius) 0 0 var(--fieldBorderRadius);
+}
+
+.step:last-child {
+  padding-right: 0;
+}
+
+.step:last-child > div {
+  border-radius: 0 var(--fieldBorderRadius) var(--fieldBorderRadius) 0;
+}
+
+.step > div {
+  background-color: var(--stepBorderColor, var(--fieldBorderColor));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step > div span {
+  width: min-content;
+  font-size: var(--fontSizeSm);
+  color: var(--stepTextColor, var(--colorPurple300));
+}
+
+/* Active state */
+.isActive {
+  --stepBorderColor: var(--fieldSuccessBackgroundColor);
+  --stepTextColor: var(--colorWhite);
+}
+
+@media (min-width: 576px) {
+  .step > div span {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: var(--fontWeightSemiBold);
+  }
+}

@@ -2,96 +2,12 @@
 
 exports[`NumberInputSpinner renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  border: 0.0625rem solid #D9D4ED;
-  border-radius: 0.5rem;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  height: 3.125rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  overflow: hidden;
-}
-
-.c0 button:disabled,
-.c0 input:disabled {
-  cursor: inherit;
-  background-color: #E3E3E8;
-}
-
-.c0 button:disabled svg,
-.c0 input:disabled svg {
-  fill: #ABACBA;
-}
-
-.c0 button:disabled:hover,
-.c0 input:disabled:hover {
-  pointer-events: none;
-}
-
-.c2 {
-  border: 0;
-  width: 70px;
-  height: 3.125rem;
-  padding: 0.625rem;
-  font-family: inherit;
-  font-size: 16px;
-  text-align: center;
-  -moz-appearance: textfield;
-}
-
-.c2::-webkit-outer-spin-button,
-.c2::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c2:invalid {
-  box-shadow: none;
-  background-color: #F39A9A;
-}
-
-.c1 {
-  width: 3.125rem;
-  height: 3.125rem;
-  border: 0;
-  background-color: #D9D4ED;
-  cursor: pointer;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c1.remove-button {
-  border-right: 0.0625rem solid #D9D4ED;
-}
-
-.c1.add-button {
-  border-left: 0.0625rem solid #D9D4ED;
-}
-
-.c1 svg {
-  width: auto;
-  height: 1.25rem;
-  fill: #8E7FCA;
-}
-
-.c1:hover {
-  background-color: #C7BFE4;
-}
-
-<div
-    class="c0"
+  <div
+    class="wrapper"
   >
     <button
       aria-label="Decrease Value"
-      class="c1 remove-button"
+      class="button removeButton"
     >
       <svg
         class="icon"
@@ -103,15 +19,16 @@ exports[`NumberInputSpinner renders 1`] = `
       </svg>
     </button>
     <input
-      class="c2"
+      class="input"
       max="10"
       min="0"
+      style="--inputWidth: 70px;"
       type="number"
       value="5"
     />
     <button
       aria-label="Increase Value"
-      class="c1 add-button"
+      class="button addButton"
     >
       <svg
         class="icon"

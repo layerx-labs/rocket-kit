@@ -1,0 +1,76 @@
+.wrapper {
+  border: var(--fieldBorderWidth) solid var(--fieldBorderColor);
+  border-radius: var(--fieldBorderRadius);
+  max-width: max-content;
+  height: var(--fieldHeight);
+  display: flex;
+  overflow: hidden;
+}
+
+.wrapper button:disabled,
+.wrapper input:disabled {
+  cursor: inherit;
+  background-color: var(--fieldDisabledBackgroundColor);
+}
+
+.wrapper button:disabled svg {
+  fill: var(--fieldDisabledColor);
+}
+
+.wrapper button:disabled:hover,
+.wrapper input:disabled:hover {
+  pointer-events: none;
+}
+
+.input {
+  border: 0;
+  width: var(--inputWidth, 70px);
+  height: var(--fieldHeight);
+  padding: 0.625rem; /* 10px */
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:invalid {
+  box-shadow: none;
+  background-color: var(--fieldErrorBackgroundColor);
+}
+
+.button {
+  width: var(--fieldHeight);
+  height: var(--fieldHeight);
+  border: 0;
+  background-color: var(--fieldBorderColor);
+  cursor: pointer;
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.removeButton {
+  border-right: var(--fieldBorderWidth) solid var(--fieldBorderColor);
+}
+
+.addButton {
+  border-left: var(--fieldBorderWidth) solid var(--fieldBorderColor);
+}
+
+.button svg {
+  width: auto;
+  height: 1.25rem; /* 20px */
+  fill: var(--colorPurple300);
+}
+
+.button:hover {
+  background-color: var(--fieldHoverBorderColor);
+}

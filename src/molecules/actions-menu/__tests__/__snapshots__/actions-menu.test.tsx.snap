@@ -2,16 +2,8 @@
 
 exports[`Actions Menu renders closed menu 1`] = `
 <DocumentFragment>
-  .c0 {
-  height: 3.125rem;
-}
-
-.c0 button {
-  margin-top: 0.4375rem;
-}
-
-<div
-    class="c0"
+  <div
+    class="actionsMenu"
   >
     <button
       aria-hidden="false"
@@ -36,88 +28,8 @@ exports[`Actions Menu renders closed menu 1`] = `
 
 exports[`Actions Menu renders open menu 1`] = `
 <DocumentFragment>
-  .c0 {
-  height: 3.125rem;
-}
-
-.c0 button {
-  margin-top: 0.4375rem;
-}
-
-.c1 {
-  position: absolute;
-  border: 0.0625rem solid #D9D4ED;
-  border-radius: 0.5rem;
-  background-color: #ffffff;
-  margin-top: 0.3125rem;
-  min-width: 12.5rem;
-  max-width: 15.625rem;
-  padding: 0;
-  -moz-box-shadow: rgba(0,0,0,0.15);
-  -webkit-box-shadow: rgba(0,0,0,0.15);
-  box-shadow: rgba(0,0,0,0.15);
-  overflow: hidden;
-  z-index: 1;
-}
-
-.c1 li {
-  list-style: none;
-  min-height: 2.8125rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c1 li:hover {
-  background-color: #C7BFE4;
-  cursor: pointer;
-}
-
-.c1 li.danger {
-  border-top: 0.0625rem solid #D9D4ED;
-}
-
-.c1 li.danger a {
-  color: #EB5757;
-}
-
-.c1 li.disabled a {
-  color: #ABACBA;
-  pointer-events: none;
-}
-
-.c1 li.disabled:hover {
-  background-color: transparent;
-}
-
-.c1 li a {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 1.25rem;
-  color: #000000;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.c1 li a span {
-  display: table-cell;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-<div
-    class="c0"
+  <div
+    class="actionsMenu"
   >
     <button
       aria-hidden="false"
@@ -137,7 +49,7 @@ exports[`Actions Menu renders open menu 1`] = `
       </svg>
     </button>
     <ul
-      class="c1"
+      class="list"
       data-testid="ul-action-menu"
     >
       <li

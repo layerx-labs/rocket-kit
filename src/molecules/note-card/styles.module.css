@@ -1,0 +1,73 @@
+.wrapper {
+  --borderColor: var(--fieldBorderColor);
+  --backgroundColor: var(--colorPurple50);
+  --dark: var(--colorPurple400);
+  border-width: var(--fieldBorderWidth);
+  border-style: solid;
+  border-color: var(--borderColor);
+  border-radius: var(--fieldBorderRadius);
+  background-color: var(--backgroundColor);
+  padding: 0.9375rem; /* 15px */
+}
+
+.wrapper div:first-child {
+  flex: 1;
+}
+
+.wrapper div p {
+  margin: 0;
+}
+
+/* Color variants */
+.colorGrey {
+  --borderColor: var(--fieldBorderColor);
+  --backgroundColor: var(--colorPurple50);
+  --dark: var(--colorPurple400);
+}
+
+.colorGreen {
+  --borderColor: var(--fieldSuccessBorderColor);
+  --backgroundColor: var(--fieldSuccessBackgroundColor);
+  --dark: var(--colorGreen900);
+}
+
+.colorRed {
+  --borderColor: var(--fieldErrorBorderColor);
+  --backgroundColor: var(--fieldErrorBackgroundColor);
+  --dark: var(--colorRed800);
+}
+
+/* With button styles */
+.hasButton button {
+  margin: 1.875rem 0 0 0; /* 30px */
+  border: 0;
+  border-radius: var(--fieldBorderRadius);
+  background-color: var(--borderColor);
+  height: 2.25rem; /* 36px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem; /* 20px */
+  font-size: var(--fontSizeSm);
+  font-weight: var(--fontWeightMedium);
+  color: var(--dark);
+  white-space: nowrap;
+  transition-duration: var(--transitionDurationDefault);
+  cursor: pointer;
+}
+
+.hasButton button:hover {
+  background-color: var(--dark);
+  color: var(--colorWhite);
+}
+
+@media (min-width: 576px) {
+  .hasButton {
+    display: flex;
+    align-items: center;
+  }
+
+  .hasButton button {
+    margin: 0 0 0 1.875rem; /* 30px */
+  }
+}
