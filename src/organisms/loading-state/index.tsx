@@ -1,5 +1,6 @@
 import React from 'react';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 export interface LoadingStateProps {
   type: 'text' | 'card' | 'value';
@@ -47,7 +48,11 @@ const LoadingState = (props: LoadingStateProps) => {
       break;
 
     case 'card':
-      loadingType = <Styles.Grid center={center}>{cards}</Styles.Grid>;
+      loadingType = (
+        <div className={clsx(styles.grid, center && styles.gridCenter)}>
+          {cards}
+        </div>
+      );
       break;
 
     case 'value':
@@ -72,7 +77,7 @@ const LoadingState = (props: LoadingStateProps) => {
       );
   }
 
-  return <Styles.Wrapper type={type}>{loadingType}</Styles.Wrapper>;
+  return <div className={styles.wrapper}>{loadingType}</div>;
 };
 
 export default LoadingState;

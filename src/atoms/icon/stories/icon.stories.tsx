@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon, { IconProps } from '..';
 import icons from '../../../ions/icons';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export default {
   title: 'Components/Atoms/Icon',
@@ -15,7 +15,7 @@ export const Icons = (args: IconProps) => {
   const IconsList = (props: IconProps) => {
     const { fill } = props;
     return (
-      <Styles.List>
+      <ul className={styles.list}>
         {Object.keys(icons).map(icon => (
           <li key={icon}>
             <div>
@@ -26,7 +26,7 @@ export const Icons = (args: IconProps) => {
             </div>
           </li>
         ))}
-      </Styles.List>
+      </ul>
     );
   };
 

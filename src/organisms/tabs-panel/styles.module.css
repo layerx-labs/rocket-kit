@@ -1,0 +1,157 @@
+.wrapper :global(.tab) {
+  border-color: var(--fieldBorderColor);
+}
+
+.wrapper :global(.tab[aria-selected='true']) {
+  border-bottom: 0;
+}
+
+.wrapper :global(.tab[aria-selected='false']) {
+  background-color: var(--fieldBorderColor);
+  color: var(--colorBlack);
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.wrapper :global(.tab[aria-selected='false']:hover) {
+  color: var(--colorBlack);
+}
+
+.wrapper :global(.tab:first-child) {
+  border-top-left-radius: var(--fieldBorderRadius);
+}
+
+.wrapper :global(.tab:last-child) {
+  border-top-right-radius: var(--fieldBorderRadius);
+}
+
+.wrapper :global(.panel) {
+  border-radius: 0 var(--fieldBorderRadius) var(--fieldBorderRadius) var(--fieldBorderRadius);
+  border-color: var(--fieldBorderColor);
+  background-color: var(--colorWhite);
+  padding: 1.875rem; /* 30px */
+}
+
+.wrapper :global(.RRT__container) {
+  position: relative;
+}
+
+.wrapper :global(.RRT__tabs) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper :global(.RRT__accordion) {
+  flex-direction: column;
+}
+
+.wrapper :global(.RRT__tab) {
+  background: #eee;
+  border-style: solid;
+  border-color: var(--fieldBorderColor);
+  border-width: var(--fieldBorderWidth) var(--fieldBorderWidth) var(--fieldBorderWidth) 0;
+  cursor: pointer;
+  z-index: 1;
+  white-space: nowrap;
+  padding: 0.7em 1em;
+}
+
+.wrapper :global(.RRT__tab:focus) {
+  outline: 0;
+  background-color: var(--fieldBorderColor);
+}
+
+.wrapper :global(.RRT__accordion .RRT__tab) {
+  border-left-width: var(--fieldBorderWidth);
+}
+
+.wrapper :global(.RRT__tab--first) {
+  border-left-width: var(--fieldBorderWidth);
+}
+
+.wrapper :global(.RRT__tab--selected) {
+  background: var(--colorWhite);
+  border-color: var(--fieldBorderColor) var(--fieldBorderColor) var(--colorWhite);
+}
+
+.wrapper :global(.RRT__tab--selected:focus) {
+  background-color: var(--colorWhite);
+}
+
+.wrapper :global(.RRT__tab--disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wrapper :global(.RRT__tab:focus) {
+  z-index: 2;
+}
+
+.wrapper :global(.RRT__tab--selected .RRT__removable) {
+  position: relative;
+}
+
+.wrapper :global(.RRT__tab--selected .RRT__removable-text) {
+  margin-right: 0.625rem; /* 10px */
+}
+
+.wrapper :global(.RRT__tab--selected .RRT__removable-icon) {
+  position: absolute;
+  font-size: 1.125rem; /* 18px */
+  right: 0.5em;
+  top: 0.2em;
+}
+
+.wrapper :global(.RRT__panel) {
+  margin-top: -0.0625rem; /* -1px */
+  padding: 1em;
+  border: 0.0625rem solid var(--fieldBorderColor); /* 1px */
+}
+
+.wrapper :global(.RRT__panel--hidden) {
+  display: none;
+}
+
+.wrapper :global(.RRT__accordion .RRT__panel) {
+  margin-top: 0;
+}
+
+.wrapper :global(.RRT__showmore) {
+  background: var(--fieldBorderColor);
+  border: 0.0625rem solid var(--fieldBorderColor); /* 1px */
+  border-radius: 0 var(--fieldBorderRadius) 0 0;
+  cursor: pointer;
+  z-index: 1;
+  white-space: nowrap;
+  margin-left: -0.0625rem; /* -1px */
+  position: relative;
+}
+
+.wrapper :global(.RRT__showmore--selected) {
+  background: var(--colorWhite);
+  border-bottom: none;
+}
+
+.wrapper :global(.RRT__showmore-label) {
+  padding: 0.7em 1em;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper :global(.RRT__showmore-label--selected) {
+  background-color: var(--fieldBorderColor);
+}
+
+.wrapper :global(.RRT__showmore-list) {
+  position: absolute;
+  right: -0.0625rem; /* -1px */
+  top: 100%;
+  display: none;
+}
+
+.wrapper :global(.RRT__showmore-list--opened) {
+  display: block;
+}
+
+.wrapper :global(.RRT__showmore-list--opened div.tab:last-child) {
+  border-radius: 0;
+}

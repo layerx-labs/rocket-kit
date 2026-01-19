@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { CSSProperties, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { ModalFooter } from '../..';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface ModalDrawerProps {
   isShowing: boolean;
@@ -56,22 +56,30 @@ const ModalDrawer = (props: ModalDrawerProps) => {
     return;
   }, []);
 
+  const cssVars = {
+    '--modalZIndex': zIndex,
+  } as CSSProperties & Record<string, number>;
+
   return isShowing ? (
     ReactDOM.createPortal(
       <React.Fragment>
-        <Styles.ModalOverlay zIndex={zIndex} />
-        <Styles.ModalWrapper
+        <div className={styles.modalOverlay} style={cssVars} />
+        <div
+          className={styles.modalWrapper}
           aria-modal
           tabIndex={-1}
           role="dialog"
-          zIndex={zIndex}
+          style={cssVars}
         >
-          <Styles.ModalContainer
+          <div
+            className={styles.modalContainer}
             onClick={event => event.stopPropagation()}
-            zIndex={zIndex}
+            style={cssVars}
           >
-            <Styles.ModalHeader>{title && <h2>{title}</h2>}</Styles.ModalHeader>
-            <Styles.ModalContent>{children}</Styles.ModalContent>
+            <div className={styles.modalHeader}>
+              {title && <h2>{title}</h2>}
+            </div>
+            <div className={styles.modalContent}>{children}</div>
 
             {!footerHidden &&
               (footer ? (
@@ -79,8 +87,8 @@ const ModalDrawer = (props: ModalDrawerProps) => {
               ) : (
                 <ModalFooter closeAction={hide} closeValue={closeValue} />
               ))}
-          </Styles.ModalContainer>
-        </Styles.ModalWrapper>
+          </div>
+        </div>
       </React.Fragment>,
       document.body
     )
