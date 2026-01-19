@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { CSSProperties, useState } from 'react';
+import clsx from 'clsx';
 import { Button, EmptyTable, Icon } from '../..';
 import { hasValue } from '../../utils/filters/has-value';
 import { ActionMenu } from '../actions-menu/types';
 import { colors } from '../../ions/variables';
-import { TableWrapper, OverflowWrapper } from '../table/styles';
 import { ActionMenuList } from '../actions-menu';
 import useVisible from '../../utils/hooks/use-visible';
-import * as Styles from './styles';
+import styles from './styles.module.css';
+import tableStyles from '../table/styles.module.css';
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
@@ -110,6 +111,11 @@ const TableDnD = <CellData extends CellBaseType>(
     background: isDraggingOver ? colors.white : 'transparent',
   });
 
+  const tableStyle = {
+    '--tableLayout': 'auto',
+    ...style,
+  } as CSSProperties & Record<string, string>;
+
   return (
     // @ts-ignore
     <DragDropContext
@@ -129,14 +135,16 @@ const TableDnD = <CellData extends CellBaseType>(
         setDraggableId('');
       }}
     >
-      <TableWrapper>
-        <OverflowWrapper>
-          <Styles.Table
-            border={border}
+      <div className={tableStyles.tableWrapper}>
+        <div className={tableStyles.overflowWrapper}>
+          <table
+            className={clsx(
+              styles.table,
+              border && styles.hasBorder,
+              className
+            )}
             data-testid={dataTestId}
-            className={className}
-            style={style}
-            layout="auto"
+            style={tableStyle}
           >
             <thead>
               <tr>
@@ -175,11 +183,14 @@ const TableDnD = <CellData extends CellBaseType>(
                       index={index}
                     >
                       {(provided, snapshot) => (
-                        <Styles.TableRow
+                        <tr
                           ref={provided.innerRef}
                           key={row.id}
                           data-testid={`row-${dataTestId}`}
-                          draggableId={draggableId}
+                          className={clsx(
+                            styles.tableRow,
+                            draggableId === `${index}` && styles.isDragging
+                          )}
                           style={getItemStyle(
                             snapshot.isDragging,
                             provided.draggableProps.style
@@ -240,7 +251,7 @@ const TableDnD = <CellData extends CellBaseType>(
                               </div>
                             </td>
                           )}
-                        </Styles.TableRow>
+                        </tr>
                       )}
                     </Draggable>
                   ))}
@@ -248,7 +259,7 @@ const TableDnD = <CellData extends CellBaseType>(
                 </tbody>
               )}
             </Droppable>
-          </Styles.Table>
+          </table>
 
           {isVisible && (
             <ActionMenuList
@@ -257,8 +268,8 @@ const TableDnD = <CellData extends CellBaseType>(
               rowIndex={rowIndex}
             />
           )}
-        </OverflowWrapper>
-      </TableWrapper>
+        </div>
+      </div>
     </DragDropContext>
   );
 };

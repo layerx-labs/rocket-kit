@@ -1,0 +1,381 @@
+.tableWrapper {
+  position: relative;
+}
+
+.overflowWrapper {
+  @media (min-width: 576px) {
+    display: block;
+    border-radius: var(--fieldBorderRadius);
+    background:
+      linear-gradient(to right, var(--colorWhite) 30%, rgba(255, 255, 255, 0)),
+      linear-gradient(to right, rgba(255, 255, 255, 0), var(--colorWhite) 70%) 0 100%,
+      radial-gradient(farthest-side at 0% 50%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+      radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: var(--colorWhite);
+    background-size:
+      2.5rem 100%,
+      2.5rem 100%,
+      0.875rem 100%,
+      0.875rem 100%;
+    background-position:
+      0 0,
+      100%,
+      0 0,
+      100%;
+    background-attachment: local, local, scroll, scroll;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    scrollbar-width: none;
+  }
+}
+
+.table {
+  width: 100%;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--colorGrey200);
+  border-radius: var(--fieldBorderRadius);
+  border-spacing: 0;
+  white-space: nowrap;
+}
+
+.hasBorder {
+  @media (min-width: 576px) {
+    border-width: var(--fieldBorderWidth);
+  }
+}
+
+.table th,
+.table td {
+  height: 3.125rem; /* 50px */
+  padding: 0 0.9375rem; /* 15px */
+}
+
+.table th:global(.center),
+.table td:global(.center) {
+  text-align: center;
+}
+
+.table th:global(.center) > div,
+.table td:global(.center) > div {
+  justify-content: center;
+}
+
+.table th:global(.right),
+.table td:global(.right) {
+  text-align: right;
+}
+
+.table th:global(.right) > div,
+.table td:global(.right) > div {
+  justify-content: flex-end;
+}
+
+@media (min-width: 576px) {
+  .table th:global(.thin),
+  .table td:global(.thin) {
+    max-width: min-content;
+  }
+}
+
+.table th:global(.vkai),
+.table td:global(.vkai),
+.table th:global(.tkai),
+.table td:global(.tkai),
+.table th:global(.lx),
+.table td:global(.lx),
+.table th:global(.vote),
+.table td:global(.vote) {
+  text-align: right;
+}
+
+.table th:global(.vkai) > div,
+.table td:global(.vkai) > div,
+.table th:global(.tkai) > div,
+.table td:global(.tkai) > div,
+.table th:global(.lx) > div,
+.table td:global(.lx) > div,
+.table th:global(.vote) > div,
+.table td:global(.vote) > div {
+  justify-content: flex-end;
+}
+
+.table th:global(.avatar) > div,
+.table td:global(.avatar) > div {
+  display: flex;
+  align-items: center;
+}
+
+.table th:global(.avatar) :global(.avatar-img),
+.table td:global(.avatar) :global(.avatar-img) {
+  margin-right: 0.9375rem; /* 15px */
+}
+
+.table th {
+  font-size: var(--fontSizeSm);
+}
+
+.table th:first-child {
+  border-top-left-radius: var(--fieldBorderRadius);
+}
+
+.table th:last-child {
+  border-top-right-radius: var(--fieldBorderRadius);
+}
+
+.table tr {
+  border: var(--fieldBorderWidth) solid var(--colorGrey200);
+  border-radius: var(--fieldBorderRadius);
+  position: relative;
+}
+
+.table tr:not(:last-child) {
+  margin-bottom: 0.9375rem; /* 15px */
+}
+
+@media (min-width: 576px) {
+  .table tr {
+    border: 0;
+  }
+}
+
+.table thead {
+  border: none;
+  clip: rect(0 0 0 0);
+  height: 0.0625rem; /* 1px */
+  margin: -0.0625rem; /* -1px */
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0.0625rem; /* 1px */
+}
+
+@media (min-width: 576px) {
+  .table thead {
+    display: contents;
+    font-weight: var(--fontWeightSemiBold);
+    color: var(--colorGrey400);
+    text-align: left;
+  }
+}
+
+.table tbody tr {
+  display: block;
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.table tbody tr:hover {
+  background-color: var(--colorGrey50);
+}
+
+.isLoadingState tbody tr:hover {
+  background-color: transparent;
+}
+
+.table tbody tr:hover td:global(.menu) button {
+  opacity: 1;
+}
+
+@media (min-width: 576px) {
+  .table tbody tr {
+    display: table-row;
+  }
+}
+
+.table tbody td {
+  border-top: var(--fieldBorderWidth) solid var(--colorGrey200);
+  height: inherit;
+  min-height: 3.125rem; /* 50px */
+  padding: 0.9375rem; /* 15px */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.table tbody td > div {
+  margin-left: 6.25rem; /* 100px */
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: right;
+}
+
+.table tbody td > div > span {
+  display: none;
+}
+
+.table tbody td > div > span:first-child,
+.table tbody td > div > span:last-child {
+  display: inherit;
+}
+
+.table tbody td img {
+  min-width: 1.875rem; /* 30px */
+  min-height: 1.875rem; /* 30px */
+}
+
+.table tbody td a {
+  display: flex;
+  align-items: center;
+  color: var(--colorBlack);
+  text-decoration-color: var(--colorGrey400);
+}
+
+.table tbody td:first-child {
+  border: 0;
+}
+
+.table tbody td::before {
+  position: absolute;
+  left: 0.9375rem; /* 15px */
+  content: attr(data-label);
+  font-weight: var(--fontWeightSemiBold);
+  text-transform: capitalize;
+}
+
+.isLoadingState tbody td::before {
+  width: 4.6875rem; /* 75px */
+  height: 0.9375rem; /* 15px */
+  background: #f6f7f8;
+  background-image: -webkit-linear-gradient(
+    left,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 50rem 100%; /* 800px */
+  animation-fill-mode: forwards;
+  animation-name: placeholderSkeleton;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+}
+
+.table tbody td:global(.tkai) svg,
+.table tbody td:global(.vkai) svg,
+.table tbody td:global(.lx) svg,
+.table tbody td:global(.vote) svg {
+  float: right;
+  margin-left: 0.3125rem; /* 5px */
+  width: auto;
+  min-width: 1.375rem; /* 22px */
+  max-height: 1.375rem; /* 22px */
+}
+
+.table tbody td :global(.avatar-img) {
+  display: none;
+}
+
+.table tbody td :global(.tag) {
+  margin: 0;
+}
+
+.table tbody td :global(.tag):not(:first-child) {
+  display: none;
+}
+
+.table tbody td :global(.button) {
+  height: 2.125rem; /* 34px */
+}
+
+.table tbody td:global(.menu) {
+  padding: 0 0.625rem 0 0; /* 10px */
+}
+
+.table tbody td:global(.menu) button {
+  margin-top: 0.3125rem; /* 5px */
+  transition: var(--transitionDurationDefault);
+}
+
+.table tbody td:global(.menu) ul {
+  top: 2.25rem; /* 36px */
+  margin-left: -10.625rem; /* -170px */
+}
+
+@media (min-width: 576px) {
+  .table tbody td {
+    display: table-cell;
+    height: 3.125rem; /* 50px */
+    padding: 0 0.9375rem; /* 15px */
+  }
+
+  .table tbody td > div {
+    position: relative;
+    margin-left: 0;
+    display: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .table tbody td > div > span {
+    display: inherit;
+  }
+
+  .table tbody td:first-child {
+    border-top: var(--fieldBorderWidth) solid var(--colorGrey200);
+  }
+
+  .table tbody td::before {
+    content: '';
+  }
+
+  .table tbody td:global(.tkai),
+  .table tbody td:global(.vkai) {
+    max-width: 6.25rem; /* 100px */
+  }
+
+  .table tbody td :global(.avatar-img) {
+    display: inherit;
+  }
+
+  .table tbody td :global(.tag):not(:first-child) {
+    display: inherit;
+  }
+
+  .table tbody td :global(.tag):not(:last-child) {
+    margin-right: 0.3125rem; /* 5px */
+  }
+
+  .table tbody td:global(.menu) {
+    width: 2.5rem; /* 40px */
+  }
+
+  .table tbody td:global(.menu) button {
+    opacity: 0;
+  }
+}
+
+@keyframes placeholderSkeleton {
+  0% {
+    background-position: -50rem 0; /* -800px */
+  }
+  100% {
+    background-position: 50rem 0; /* 800px */
+  }
+}
+
+.skeletonCell {
+  width: 100%;
+  height: 0.9375rem !important; /* 15px */
+  background: #f6f7f8;
+  background-image: -webkit-linear-gradient(
+    left,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 50rem 100%; /* 800px */
+  animation-fill-mode: forwards;
+  animation-name: placeholderSkeleton;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+}

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import clsx from 'clsx';
 import { Button, EmptyTable, Icon } from '../..';
 import { hasValue } from '../../utils/filters/has-value';
 import { ActionMenu } from '../actions-menu/types';
 import { ActionMenuList } from '../actions-menu';
 import useVisible from '../../utils/hooks/use-visible';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 interface TableOption<CellDataType> {
   id: string;
@@ -86,21 +87,24 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
   }
 
   return (
-    <Styles.TableWrapper>
-      <Styles.OverflowWrapper>
-        <Styles.Table
-          border={border}
+    <div className={styles.tableWrapper}>
+      <div className={styles.overflowWrapper}>
+        <table
+          className={clsx(
+            styles.table,
+            border && styles.hasBorder,
+            loading && styles.isLoadingState,
+            className
+          )}
           data-testid={dataTestId}
-          className={className}
           style={style}
-          loadingState={loading}
         >
           <thead>
             <tr>
               {loading && !columns
                 ? Array.from({ length: loadingColumns }, (_, i) => (
                     <th key={`skeleton-head-${i}`}>
-                      <Styles.SkeletonCell />
+                      <div className={styles.skeletonCell} />
                     </th>
                   ))
                 : columns.map(
@@ -130,7 +134,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
                   <tr key={`skeleton-row-${rowIndex}`}>
                     {Array.from({ length: columnsSkeleton }, (_, colIndex) => (
                       <td key={`skeleton-cell-${rowIndex}-${colIndex}`}>
-                        <Styles.SkeletonCell />
+                        <div className={styles.skeletonCell} />
                       </td>
                     ))}
                   </tr>
@@ -192,7 +196,7 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
                   </tr>
                 ))}
           </tbody>
-        </Styles.Table>
+        </table>
 
         {isVisible && (
           <ActionMenuList
@@ -204,8 +208,8 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
             }}
           />
         )}
-      </Styles.OverflowWrapper>
-    </Styles.TableWrapper>
+      </div>
+    </div>
   );
 };
 
