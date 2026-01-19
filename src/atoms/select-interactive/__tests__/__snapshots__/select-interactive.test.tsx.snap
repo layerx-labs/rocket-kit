@@ -2,151 +2,8 @@
 
 exports[`Select Interactive renders 1`] = `
 <DocumentFragment>
-  .c0 .select-interactive {
-  z-index: 3;
-}
-
-.c0 .select__control {
-  border-color: #D9D4ED;
-  border-radius: 0.5rem;
-  min-height: 3.125rem;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0 .select__control:hover {
-  border-color: #C7BFE4;
-}
-
-.c0 .select__control--is-focused {
-  border-color: #4329A6;
-  box-shadow: none;
-}
-
-.c0 .select__value-container {
-  padding: 0 0.9375rem;
-}
-
-.c0 .select__placeholder {
-  color: #C7C8D1;
-}
-
-.c0 .select__input {
-  color: #000000;
-}
-
-.c0 .select__single-value {
-  color: #000000;
-}
-
-.c0 .select__indicator {
-  padding: 0 0.9375rem;
-}
-
-.c0 .select__indicator:hover {
-  color: inherit;
-}
-
-.c0 .select__indicator svg {
-  width: 1.375rem;
-  height: 1.375rem;
-}
-
-.c0 .select__indicator svg path {
-  fill: #D9D4ED;
-}
-
-.c0 .select__indicator-separator {
-  background-color: #D9D4ED;
-}
-
-.c0 .select__option {
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0 .select__option:hover {
-  background-color: #C7BFE4;
-  color: #000000;
-}
-
-.c0 .select__option:hover svg {
-  fill: #000000;
-}
-
-.c0 .select__option--is-focused {
-  background-color: #4329A6;
-  color: #ffffff;
-}
-
-.c0 .select__option--is-selected {
-  background-color: #4329A6 !important;
-  color: #ffffff !important;
-}
-
-.c0 .select__value-container > div,
-.c0 .select__option {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c0 .select__value-container.select__value-container--is-multi > div {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.c0 .select__value-container.select__value-container--is-multi > div .select__multi-value__remove {
-  padding-right: 0;
-}
-
-.c0 .select__value-container svg,
-.c0 .select__option svg,
-.c0 .select__value-container img,
-.c0 .select__option img {
-  margin: 0 0.3125rem 0 0;
-  width: 1.25rem;
-  height: auto;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0 .select__option--is-selected svg {
-  fill: #ffffff !important;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0 .select__option--is-focused svg {
-  fill: #ffffff;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0 .select__option--is-disabled {
-  pointer-events: none;
-}
-
-.c1 {
-  grid-area: 1 / 1 / 2 / 3;
-  margin-left: 0.125rem;
-  margin-right: 0.125rem;
-  max-width: 100%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-<div
-    class="c0"
+  <div
+    class="selectWrapper"
   >
     <div
       class="select-interactive css-b62m3t-container"
@@ -169,7 +26,7 @@ exports[`Select Interactive renders 1`] = `
           class="select__value-container select__value-container--has-value css-1fdsijx-ValueContainer"
         >
           <div
-            class="c1"
+            class="singleValue"
           >
             Vanilla
           </div>

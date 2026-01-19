@@ -2,132 +2,23 @@
 
 exports[`CheckboxButton renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  border: 0.0625rem solid #2AB38A;
-  border-radius: 0.5rem;
-  background-color: #35E0AD;
-  height: 3.125rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0:hover input:not(:disabled) ~ span {
-  border-color: #C7BFE4;
-}
-
-.c0:hover {
-  background-color: #35E0AD;
-}
-
-.c0 span {
-  color: #ffffff;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c1 {
-  margin-left: 2.5rem;
-  line-height: 1.5rem;
-}
-
-.c2 {
-  position: absolute;
-  left: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.c2:checked:not(:disabled) ~ span {
-  background-color: #ffffff;
-  border-color: #2AB38A;
-}
-
-.c2:checked:not(:disabled) ~ span:after {
-  display: block;
-}
-
-.c2:checked:disabled ~ span {
-  background-color: #E3E3E8;
-  color: #ABACBA;
-}
-
-.c2:checked:disabled ~ span:after {
-  display: block;
-  border-color: #ABACBA;
-}
-
-.c2:not(:checked):disabled ~ span {
-  border-color: #E3E3E8;
-  background-color: #ffffff;
-}
-
-.c2:hover:not(:disabled):checked ~ span {
-  border-color: #2AB38A;
-}
-
-.c3 {
-  position: absolute;
-  left: 0.625rem;
-  border: 0.125rem solid #D9D4ED;
-  border-radius: 999px;
-  background-color: #ffffff;
-  width: 1.5rem;
-  height: 1.5rem;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c3:after {
-  content: '';
-  position: absolute;
-  display: none;
-  top: 0.1875rem;
-  left: 0.375rem;
-  width: 0.3125rem;
-  height: 0.5625rem;
-  border: solid #2AB38A;
-  border-width: 0 0.1875rem 0.1875rem 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-<label
-    class="c0 checkbox-button"
+  <label
+    class="wrapper checkbox-button isChecked"
   >
     <span
-      class="c1"
+      class="label"
     >
       hello
     </span>
     <input
       aria-checked="true"
       checked=""
-      class="c2"
+      class="input"
       name="check"
       type="checkbox"
     />
     <span
-      class="c3"
+      class="checkmark"
     />
   </label>
 </DocumentFragment>

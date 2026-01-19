@@ -6,7 +6,7 @@ import {
   CustomSelectValue,
   FormatGroupLabel,
 } from './components';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 import { SelectInteractiveProps, TSelectInteractiveOption } from './types';
 
 const SelectInteractive = ({
@@ -27,7 +27,7 @@ const SelectInteractive = ({
   ...rest
 }: SelectInteractiveProps<TSelectInteractiveOption>) => {
   return (
-    <Styles.SelectWrapper data-testid={dataTestId} {...rest}>
+    <div className={styles.selectWrapper} data-testid={dataTestId} {...rest}>
       <Select
         name={name}
         value={value}
@@ -53,7 +53,7 @@ const SelectInteractive = ({
         filterOption={filterOption}
       />
       {error ? <ErrorField error={error} /> : null}
-    </Styles.SelectWrapper>
+    </div>
   );
 };
 

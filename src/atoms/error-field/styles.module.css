@@ -1,0 +1,17 @@
+.errorField {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--fieldErrorBorderColor);
+}
+
+.errorField.colorSuccess {
+  color: var(--fieldSuccessBorderColor);
+}
+
+/* Adjacent sibling styles for form fields */
+:global(.text-field) + .errorField,
+:global(textarea) + .errorField,
+:global(select) + .errorField,
+:global(input) + .errorField {
+  margin-top: 0.3125rem; /* 5px */
+}
