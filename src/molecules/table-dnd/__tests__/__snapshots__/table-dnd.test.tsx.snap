@@ -2,104 +2,7 @@
 
 exports[`TableDnD renders 1`] = `
 <DocumentFragment>
-  .c4 {
-  --bg: #73758C;
-  --txt: #ffffff;
-  --hover: #5C5E70;
-  margin: 0;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--bg);
-  border-radius: 0;
-  background-color: transparent;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  min-width: 2.625rem;
-  height: 2.75rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  outline: none;
-}
-
-.c4:hover {
-  border-color: var(--hover);
-  background-color: transparent;
-}
-
-.c4:hover span {
-  color: var(--hover);
-}
-
-.c4:hover svg {
-  fill: var(--hover);
-}
-
-.c4:disabled {
-  cursor: inherit;
-  opacity: 0.5;
-}
-
-.c4:disabled:hover {
-  background-color: transparent;
-  pointer-events: none;
-}
-
-.c4 > *:not(:last-child) {
-  margin-left: 0;
-  margin-right: 0.875rem;
-}
-
-.c4 .spinner {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  border-top-color: var(--button);
-}
-
-.c4 span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1rem;
-  color: var(--bg);
-  pointer-events: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.c4 svg {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--bg);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.c0 {
+  .c0 {
   position: relative;
 }
 
@@ -572,11 +475,10 @@ exports[`TableDnD renders 1`] = `
               <div>
                 <button
                   aria-hidden="false"
-                  class="c4 button"
-                  color="grey500"
+                  class="button variantText iconOnly iconLeft button"
                   data-event=""
                   data-testid="icon-button"
-                  value=""
+                  style="--bg: #73758C; --txt: #ffffff; --hover: #5C5E70; --buttonMinWidth: 2.625rem; --buttonPadding: 0; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
                 >
                   <svg
                     class="icon"

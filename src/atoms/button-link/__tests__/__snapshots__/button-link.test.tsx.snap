@@ -2,86 +2,16 @@
 
 exports[`Button Link renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  --bg: #4329A6;
-  --txt: #ffffff;
-  --hover: #362185;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--bg);
-  border-radius: 0.5rem;
-  background-color: var(--bg);
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  min-width: 2.625rem;
-  height: 2.75rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  cursor: pointer;
-}
-
-.c0:hover {
-  background-color: var(--hover);
-}
-
-.c0 > *:not(:last-child) {
-  margin-left: 0;
-  margin-right: 0.875rem;
-}
-
-.c0 span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1rem;
-  color: var(--txt);
-  pointer-events: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.c0 svg {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--txt);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-<a
+  <a
     aria-hidden="false"
     aria-label=""
-    class="c0 button button-link"
-    color="purple500"
+    class="buttonLink variantSolid notRounded iconOnly iconLeft button button-link"
     data-event=""
     data-testid=""
     href="https://github.com/taikai/taikai-design-system"
     rel=""
+    style="--bg: #4329A6; --txt: #ffffff; --hover: #362185; --buttonMinWidth: 2.625rem; --buttonPadding: 0; --textOrder: 2; --iconOrder: 1;"
     target=""
-    value=""
   />
 </DocumentFragment>
 `;

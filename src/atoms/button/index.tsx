@@ -1,7 +1,10 @@
 import React, { CSSProperties } from 'react';
+import clsx from 'clsx';
 import { Icon, Spinner } from '../..';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 import { ButtonColor, ButtonVariant } from './types';
+import { useColor } from '../../utils/hooks/use-color';
+import { colors } from '../../ions/variables';
 
 export interface ButtonProps {
   variant?: ButtonVariant;
@@ -44,18 +47,49 @@ const Button = (props: ButtonProps) => {
     disabled = false,
   } = props;
 
+  const bgColor = useColor(color ?? 'black');
+  const textColor = useColor(
+    variant === 'outline' && !txtColor ? (color ?? 'black') : (txtColor ?? 'white')
+  );
+  const hoverColor =
+    color === 'white'
+      ? colors.grey100
+      : color === 'black'
+        ? colors.grey900
+        : bgColor.hover;
+
+  const cssVars = {
+    '--bg': bgColor.color,
+    '--txt': textColor.color,
+    '--hover': hoverColor,
+    '--buttonMinWidth': value ? '5rem' : '2.625rem',
+    '--buttonPadding': value ? '0 var(--buttonPaddingX)' : '0',
+    '--spinnerOrder': iconPosition === 'left' ? 1 : 2,
+    '--textOrder': iconPosition === 'left' ? 2 : 1,
+    '--iconOrder': iconPosition === 'left' ? 1 : 2,
+    ...style,
+  } as CSSProperties & Record<string, string | number>;
+
+  const variantClass =
+    variant === 'solid'
+      ? styles.variantSolid
+      : variant === 'outline'
+        ? styles.variantOutline
+        : styles.variantText;
+
   return (
-    <Styles.ButtonWrapper
-      variant={variant}
-      rounded={rounded}
-      color={color}
-      txtColor={txtColor}
+    <button
       type={type}
-      className={className}
-      style={style}
+      className={clsx(
+        styles.button,
+        variantClass,
+        variant !== 'text' && (rounded ? styles.rounded : styles.notRounded),
+        !value && styles.iconOnly,
+        iconPosition === 'left' ? styles.iconLeft : styles.iconRight,
+        className
+      )}
+      style={cssVars}
       onClick={action}
-      value={value}
-      iconPosition={iconPosition}
       data-testid={dataTestId}
       data-event={eventId}
       aria-label={ariaLabel}
@@ -64,7 +98,7 @@ const Button = (props: ButtonProps) => {
     >
       {loading ? <Spinner /> : icon ? <Icon icon={icon} /> : null}
       {value && <span>{value}</span>}
-    </Styles.ButtonWrapper>
+    </button>
   );
 };
 

@@ -2,80 +2,7 @@
 
 exports[`FormGroup renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  border-width: 0.0625rem;
-  border-style: solid;
-  border-color: #D9D4ED;
-  border-radius: 0.5rem;
-  background-repeat: no-repeat;
-  background-size: 1.25rem 1.25rem;
-  background-position: 0.625rem 50%;
-  height: 3.125rem;
-  padding: 0.625rem;
-  font-family: inherit;
-  font-size: 16px;
-  -webkit-transition-property: border-color;
-  transition-property: border-color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0:hover {
-  border-color: #C7BFE4;
-}
-
-.c0:focus {
-  border-color: #4329A6;
-  outline: none;
-}
-
-.c0:disabled {
-  border-color: #D9D4ED;
-  background-color: #E3E3E8;
-  color: #ABACBA;
-}
-
-.c0:invalid {
-  border-color: #EB5757;
-  outline: none;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-}
-
-.c0:required {
-  border-color: #D9D4ED;
-}
-
-.c0::-webkit-input-placeholder,
-.c0:-ms-input-placeholder,
-.c0::-ms-input-placeholder {
-  color: #C7C8D1;
-  opacity: 1;
-}
-
-.c0::-moz-placeholder,
-.c0:-ms-input-placeholder,
-.c0::-ms-input-placeholder {
-  color: #C7C8D1;
-  opacity: 1;
-}
-
-.c0:-ms-input-placeholder,
-.c0:-ms-input-placeholder,
-.c0::-ms-input-placeholder {
-  color: #C7C8D1;
-  opacity: 1;
-}
-
-.c0::placeholder,
-.c0:-ms-input-placeholder,
-.c0::-ms-input-placeholder {
-  color: #C7C8D1;
-  opacity: 1;
-}
-
-<div
+  <div
     class="wrapper"
   >
     <label
@@ -84,7 +11,7 @@ exports[`FormGroup renders 1`] = `
       label
     </label>
     <input
-      class="c0 text-field"
+      class="textField text-field"
       placeholder=""
       type="text"
       value="this is my text"

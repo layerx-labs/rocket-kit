@@ -2,174 +2,14 @@
 
 exports[`FieldWidthButton renders 1`] = `
 <DocumentFragment>
-  .c1 {
-  --bg: #D9D4ED;
-  --txt: #ffffff;
-  --hover: #C7BFE4;
-  margin: 0;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--bg);
-  border-radius: 0.5rem;
-  background-color: var(--bg);
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  min-width: 2.625rem;
-  height: 2.75rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  outline: none;
-}
-
-.c1:hover {
-  background-color: var(--hover);
-}
-
-.c1:disabled {
-  cursor: inherit;
-  opacity: 0.5;
-}
-
-.c1:disabled:hover {
-  background-color: var(--bg);
-  pointer-events: none;
-}
-
-.c1 > *:not(:last-child) {
-  margin-left: 0;
-  margin-right: 0.875rem;
-}
-
-.c1 .spinner {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-}
-
-.c1 span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1rem;
-  color: var(--txt);
-  pointer-events: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.c1 svg {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--txt);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.c0 {
-  border-width: 0.0625rem;
-  border-style: solid;
-  border-color: #D9D4ED;
-  border-radius: 0.5rem;
-  background-repeat: no-repeat;
-  background-size: 1.25rem 1.25rem;
-  background-position: 0.625rem 50%;
-  height: 3.125rem;
-  padding: 0.625rem;
-  font-family: inherit;
-  font-size: 16px;
-  -webkit-transition-property: border-color;
-  transition-property: border-color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c0:hover {
-  border-color: #C7BFE4;
-}
-
-.c0:focus {
-  border-color: #4329A6;
-  outline: none;
-}
-
-.c0:disabled {
-  border-color: #D9D4ED;
-  background-color: #E3E3E8;
-  color: #ABACBA;
-}
-
-.c0:invalid {
-  border-color: #EB5757;
-  outline: none;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-}
-
-.c0:required {
-  border-color: #D9D4ED;
-}
-
-.c0::-webkit-input-placeholder,
-.c0:-ms-input-placeholder,
-.c0::-ms-input-placeholder {
-  color: #C7C8D1;
-  opacity: 1;
-}
-
-.c0::-moz-placeholder,
-.c0:-ms-input-placeholder,
-.c0::-ms-input-placeholder {
-  color: #C7C8D1;
-  opacity: 1;
-}
-
-.c0:-ms-input-placeholder,
-.c0:-ms-input-placeholder,
-.c0::-ms-input-placeholder {
-  color: #C7C8D1;
-  opacity: 1;
-}
-
-.c0::placeholder,
-.c0:-ms-input-placeholder,
-.c0::-ms-input-placeholder {
-  color: #C7C8D1;
-  opacity: 1;
-}
-
-<div
+  <div
     class="wrapper"
   >
     <div
       class="field"
     >
       <input
-        class="c0 text-field"
+        class="textField text-field"
         disabled=""
         placeholder=""
         type="text"
@@ -177,11 +17,10 @@ exports[`FieldWidthButton renders 1`] = `
       />
       <button
         aria-hidden="false"
-        class="c1 button"
-        color="purple100"
+        class="button variantSolid notRounded iconOnly iconLeft button"
         data-event=""
         data-testid=""
-        value=""
+        style="--bg: #D9D4ED; --txt: #ffffff; --hover: #C7BFE4; --buttonMinWidth: 2.625rem; --buttonPadding: 0; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
       >
         <svg
           class="icon"

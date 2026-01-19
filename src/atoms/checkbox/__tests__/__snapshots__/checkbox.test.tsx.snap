@@ -2,118 +2,23 @@
 
 exports[`Checkbox renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  padding-left: 0;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c0:hover input:not(:disabled) ~ span {
-  border-color: #C7BFE4;
-}
-
-.c1 {
-  margin-left: calc(1.5rem + 0.3125rem);
-  line-height: 1.5rem;
-}
-
-.c2 {
-  position: absolute;
-  left: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.c3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 0.125rem solid #D9D4ED;
-  border-radius: 100%;
-  width: 1.5rem;
-  height: 1.5rem;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.c3:after {
-  display: block;
-  content: '';
-  position: absolute;
-  display: none;
-  top: 0.1875rem;
-  left: 0.375rem;
-  width: 0.3125rem;
-  height: 0.5625rem;
-  border: solid #ffffff;
-  border-width: 0 0.1875rem 0.1875rem 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.c3.checked.not-disabled {
-  background-color: #35E0AD;
-  border-color: #2AB38A;
-}
-
-.c3.checked.not-disabled:after {
-  display: block;
-}
-
-.c3.checked.disabled {
-  color: #ABACBA;
-  border-color: transparent;
-  background-color: #E3E3E8;
-}
-
-.c3.checked.disabled:after {
-  display: block;
-}
-
-.c3.not-checked.disabled {
-  border-color: #E3E3E8;
-  background-color: #ffffff;
-}
-
-.c3.not-disabled:hover {
-  border-color: #2AB38A;
-}
-
-.c3.not-disabled:hover:checked ~ span {
-  border-color: #2AB38A;
-}
-
-<label
-    class="c0 checkbox"
+  <label
+    class="wrapper checkbox"
   >
     <span
-      class="c1"
+      class="label"
     >
       hello
     </span>
     <input
       aria-checked="true"
       checked=""
-      class="c2"
+      class="input"
       name="check"
       type="checkbox"
     />
     <span
-      class="c3 checked not-disabled"
+      class="checkmark checked not-disabled"
     />
   </label>
 </DocumentFragment>

@@ -2,104 +2,7 @@
 
 exports[`Actions Menu renders closed menu 1`] = `
 <DocumentFragment>
-  .c1 {
-  --bg: #000000;
-  --txt: #ffffff;
-  --hover: #000000;
-  margin: 0;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--bg);
-  border-radius: 0;
-  background-color: transparent;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  min-width: 2.625rem;
-  height: 2.75rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  outline: none;
-}
-
-.c1:hover {
-  border-color: var(--hover);
-  background-color: transparent;
-}
-
-.c1:hover span {
-  color: var(--hover);
-}
-
-.c1:hover svg {
-  fill: var(--hover);
-}
-
-.c1:disabled {
-  cursor: inherit;
-  opacity: 0.5;
-}
-
-.c1:disabled:hover {
-  background-color: transparent;
-  pointer-events: none;
-}
-
-.c1 > *:not(:last-child) {
-  margin-left: 0;
-  margin-right: 0.875rem;
-}
-
-.c1 .spinner {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  border-top-color: var(--button);
-}
-
-.c1 span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1rem;
-  color: var(--bg);
-  pointer-events: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.c1 svg {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--bg);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.c0 {
+  .c0 {
   height: 3.125rem;
 }
 
@@ -113,11 +16,10 @@ exports[`Actions Menu renders closed menu 1`] = `
     <button
       aria-hidden="false"
       aria-label=""
-      class="c1 button"
-      color="dark"
+      class="button variantText iconOnly iconLeft button"
       data-event=""
       data-testid="action-menu-button"
-      value=""
+      style="--bg: #000000; --txt: #ffffff; --hover: #000000; --buttonMinWidth: 2.625rem; --buttonPadding: 0; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
     >
       <svg
         class="icon"
@@ -134,104 +36,7 @@ exports[`Actions Menu renders closed menu 1`] = `
 
 exports[`Actions Menu renders open menu 1`] = `
 <DocumentFragment>
-  .c1 {
-  --bg: #000000;
-  --txt: #ffffff;
-  --hover: #000000;
-  margin: 0;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--bg);
-  border-radius: 0;
-  background-color: transparent;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  min-width: 2.625rem;
-  height: 2.75rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  outline: none;
-}
-
-.c1:hover {
-  border-color: var(--hover);
-  background-color: transparent;
-}
-
-.c1:hover span {
-  color: var(--hover);
-}
-
-.c1:hover svg {
-  fill: var(--hover);
-}
-
-.c1:disabled {
-  cursor: inherit;
-  opacity: 0.5;
-}
-
-.c1:disabled:hover {
-  background-color: transparent;
-  pointer-events: none;
-}
-
-.c1 > *:not(:last-child) {
-  margin-left: 0;
-  margin-right: 0.875rem;
-}
-
-.c1 .spinner {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  border-top-color: var(--button);
-}
-
-.c1 span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1rem;
-  color: var(--bg);
-  pointer-events: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.c1 svg {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--bg);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.c0 {
+  .c0 {
   height: 3.125rem;
 }
 
@@ -239,7 +44,7 @@ exports[`Actions Menu renders open menu 1`] = `
   margin-top: 0.4375rem;
 }
 
-.c2 {
+.c1 {
   position: absolute;
   border: 0.0625rem solid #D9D4ED;
   border-radius: 0.5rem;
@@ -255,7 +60,7 @@ exports[`Actions Menu renders open menu 1`] = `
   z-index: 1;
 }
 
-.c2 li {
+.c1 li {
   list-style: none;
   min-height: 2.8125rem;
   display: -webkit-box;
@@ -266,29 +71,29 @@ exports[`Actions Menu renders open menu 1`] = `
   transition-duration: 0.3s;
 }
 
-.c2 li:hover {
+.c1 li:hover {
   background-color: #C7BFE4;
   cursor: pointer;
 }
 
-.c2 li.danger {
+.c1 li.danger {
   border-top: 0.0625rem solid #D9D4ED;
 }
 
-.c2 li.danger a {
+.c1 li.danger a {
   color: #EB5757;
 }
 
-.c2 li.disabled a {
+.c1 li.disabled a {
   color: #ABACBA;
   pointer-events: none;
 }
 
-.c2 li.disabled:hover {
+.c1 li.disabled:hover {
   background-color: transparent;
 }
 
-.c2 li a {
+.c1 li a {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -305,7 +110,7 @@ exports[`Actions Menu renders open menu 1`] = `
   white-space: nowrap;
 }
 
-.c2 li a span {
+.c1 li a span {
   display: table-cell;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -317,11 +122,10 @@ exports[`Actions Menu renders open menu 1`] = `
     <button
       aria-hidden="false"
       aria-label=""
-      class="c1 button"
-      color="dark"
+      class="button variantText iconOnly iconLeft button"
       data-event=""
       data-testid="action-menu-button"
-      value=""
+      style="--bg: #000000; --txt: #ffffff; --hover: #000000; --buttonMinWidth: 2.625rem; --buttonPadding: 0; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
     >
       <svg
         class="icon"
@@ -333,7 +137,7 @@ exports[`Actions Menu renders open menu 1`] = `
       </svg>
     </button>
     <ul
-      class="c2"
+      class="c1"
       data-testid="ul-action-menu"
     >
       <li

@@ -2,200 +2,15 @@
 
 exports[`Modal Footer renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  --bg: #ABACBA;
-  --txt: #ABACBA;
-  --hover: #8F91A3;
-  margin: 0;
-  border-width: 0.0625rem;
-  border-style: solid;
-  border-color: var(--bg);
-  border-radius: 0.5rem;
-  background-color: transparent;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  min-width: 5rem;
-  height: 2.75rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 1.5rem;
-  white-space: nowrap;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  outline: none;
-}
-
-.c0:hover {
-  border-color: var(--hover);
-  background-color: transparent;
-}
-
-.c0:hover span {
-  color: var(--hover);
-}
-
-.c0:hover svg {
-  fill: var(--hover);
-}
-
-.c0:disabled {
-  cursor: inherit;
-  opacity: 0.5;
-}
-
-.c0:disabled:hover {
-  background-color: transparent;
-  pointer-events: none;
-}
-
-.c0 > *:not(:last-child) {
-  margin-left: 0;
-  margin-right: 0.875rem;
-}
-
-.c0 .spinner {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  border-top-color: var(--button);
-}
-
-.c0 span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1rem;
-  color: var(--txt);
-  pointer-events: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.c0 svg {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--txt);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.c1 {
-  --bg: #4329A6;
-  --txt: #ffffff;
-  --hover: #362185;
-  margin: 0;
-  border-width: 0;
-  border-style: solid;
-  border-color: var(--bg);
-  border-radius: 0.5rem;
-  background-color: var(--bg);
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  min-width: 5rem;
-  height: 2.75rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 0 1.5rem;
-  white-space: nowrap;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  outline: none;
-}
-
-.c1:hover {
-  background-color: var(--hover);
-}
-
-.c1:disabled {
-  cursor: inherit;
-  opacity: 0.5;
-}
-
-.c1:disabled:hover {
-  background-color: var(--bg);
-  pointer-events: none;
-}
-
-.c1 > *:not(:last-child) {
-  margin-left: 0;
-  margin-right: 0.875rem;
-}
-
-.c1 .spinner {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-}
-
-.c1 span {
-  position: relative;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1rem;
-  color: var(--txt);
-  pointer-events: none;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.c1 svg {
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: var(--txt);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-<div
+  <div
     class="footer"
   >
     <button
       aria-hidden="false"
-      class="c0 button"
-      color="grey300"
+      class="button variantOutline notRounded iconLeft button"
       data-event=""
       data-testid=""
-      value="Cancel"
+      style="--bg: #ABACBA; --txt: #ABACBA; --hover: #8F91A3; --buttonMinWidth: 5rem; --buttonPadding: 0 var(--buttonPaddingX); --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
     >
       <span>
         Cancel
@@ -203,12 +18,11 @@ exports[`Modal Footer renders 1`] = `
     </button>
     <button
       aria-hidden="false"
-      class="c1 button"
-      color="purple500"
+      class="button variantSolid notRounded iconLeft button"
       data-event=""
       data-testid=""
+      style="--bg: #4329A6; --txt: #ffffff; --hover: #362185; --buttonMinWidth: 5rem; --buttonPadding: 0 var(--buttonPaddingX); --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
       type="submit"
-      value="save"
     >
       <span>
         save

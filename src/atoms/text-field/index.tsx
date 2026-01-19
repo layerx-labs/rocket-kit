@@ -1,7 +1,9 @@
 import React, { CSSProperties } from 'react';
+import clsx from 'clsx';
 import { ErrorField } from '../..';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 import { TextFieldType } from './types';
+import icons from '../../ions/icons';
 
 export interface TextFieldProps {
   type?: TextFieldType;
@@ -42,10 +44,28 @@ const TextField = (props: TextFieldProps) => {
     required = false,
   } = props;
 
+  // Generate SVG data URLs for icon
+  const getIconDataUrl = (iconName: string, fillColor: string) => {
+    const iconPath = icons[iconName];
+    if (!iconPath) return undefined;
+    const encodedPath = JSON.stringify(iconPath);
+    return `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32"><path style="fill:${fillColor}" d=${encodedPath} /></svg>')`;
+  };
+
+  const cssVars = icon
+    ? {
+        '--textFieldIcon': getIconDataUrl(
+          icon,
+          error ? 'rgb(235,87,87)' : 'rgb(217,212,237)'
+        ),
+        '--textFieldIconFocus': getIconDataUrl(icon, 'rgb(67,41,166)'),
+        ...style,
+      }
+    : { ...style };
+
   return (
     <>
-      <Styles.TextFieldInputStyle
-        icon={icon}
+      <input
         type={type}
         name={name}
         value={value}
@@ -55,10 +75,14 @@ const TextField = (props: TextFieldProps) => {
         min={min}
         max={max}
         disabled={disabled}
-        error={error}
         data-testid={dataTestId}
-        className={className}
-        style={style}
+        className={clsx(
+          styles.textField,
+          className,
+          error && styles.hasError,
+          icon && styles.hasIcon
+        )}
+        style={cssVars as CSSProperties & Record<string, string | undefined>}
         pattern={pattern}
         required={required}
       />
