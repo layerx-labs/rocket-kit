@@ -12,3 +12,7 @@
     display: flex;
   }
 }
+
+.gridCol {
+  flex: var(--gridColSize, 1);
+}

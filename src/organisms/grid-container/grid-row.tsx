@@ -1,10 +1,11 @@
 import React from 'react';
+import clsx from 'clsx';
 import { GridContainerProps } from '.';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 const GridRow = (props: GridContainerProps) => {
   const { className = 'grid-row', children } = props;
-  return <Styles.GridRow className={className}>{children}</Styles.GridRow>;
+  return <div className={clsx(styles.gridRow, className)}>{children}</div>;
 };
 
 export default GridRow;
