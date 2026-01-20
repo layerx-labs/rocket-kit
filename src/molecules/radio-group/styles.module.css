@@ -22,11 +22,11 @@
   margin-bottom: 0.625rem; /* 10px */
 }
 
-.wrapper input[type='radio']:checked ~ .check {
+.wrapper input[type='radio']:checked ~ :global(.check) {
   border-color: var(--fieldSuccessBorderColor);
 }
 
-.wrapper input[type='radio']:checked ~ .check::before {
+.wrapper input[type='radio']:checked ~ :global(.check)::before {
   background-color: var(--fieldSuccessBackgroundColor);
 }
 
@@ -60,7 +60,7 @@
   color: var(--fieldErrorBorderColor);
 }
 
-.item .check {
+.item :global(.check) {
   position: absolute;
   top: 0;
   border: 0.125rem solid var(--fieldBorderColor); /* 2px */
@@ -73,11 +73,11 @@
   align-items: center;
 }
 
-.item.hasError .check {
+.item.hasError :global(.check) {
   border-color: var(--fieldErrorBorderColor);
 }
 
-.item .check::before {
+.item :global(.check)::before {
   content: '';
   display: block;
   border-radius: 100%;
@@ -85,7 +85,7 @@
   width: calc(var(--size) / 1.5);
 }
 
-.item:hover .check {
+.item:hover :global(.check) {
   border-color: var(--fieldHoverBorderColor);
 }
 
@@ -93,12 +93,12 @@
   color: var(--fieldDisabledColor);
 }
 
-.item.isDisabled input[type='radio'] ~ .check,
-.item.isDisabled input[type='radio']:checked ~ .check {
+.item.isDisabled input[type='radio'] ~ :global(.check),
+.item.isDisabled input[type='radio']:checked ~ :global(.check) {
   border-color: var(--fieldDisabledColor);
 }
 
-.item.isDisabled input[type='radio']:checked ~ .check::before {
+.item.isDisabled input[type='radio']:checked ~ :global(.check)::before {
   background-color: var(--fieldDisabledBackgroundColor);
 }
 
