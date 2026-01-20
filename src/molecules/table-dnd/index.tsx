@@ -117,7 +117,7 @@ const TableDnD = <CellData extends CellBaseType>(
   } as CSSProperties & Record<string, string>;
 
   return (
-    // @ts-ignore
+    // @ts-expect-error react-beautiful-dnd types are incompatible with React 18
     <DragDropContext
       onBeforeDragStart={result => {
         setDraggableId(result.draggableId);
@@ -167,7 +167,7 @@ const TableDnD = <CellData extends CellBaseType>(
                 )}
               </tr>
             </thead>
-            {/* @ts-ignore */}
+            {/* @ts-expect-error react-beautiful-dnd types are incompatible with React 18 */}
             <Droppable droppableId="droppable">
               {(provided, snapshot) => (
                 <tbody
@@ -177,7 +177,7 @@ const TableDnD = <CellData extends CellBaseType>(
                 >
                   <>
                   {validValues.map((row, index) => (
-                    // @ts-ignore
+                    // @ts-expect-error react-beautiful-dnd types are incompatible with React 18
                     <Draggable
                       key={`${index}`}
                       draggableId={`${index}`}
@@ -219,17 +219,12 @@ const TableDnD = <CellData extends CellBaseType>(
                                 data-testid={`td-${dataTestId}`}
                               >
                                 <div>
-                                  <>
-                                    {renderer
-                                      ? renderer(
-                                          row[dataKey as keyof CellData],
-                                          row
-                                        )
-                                      : (row[dataKey as keyof CellData] as unknown as React.ReactNode)}
-                                    {className === 'kai' ? (
-                                      <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
-                                    ) : null}
-                                  </>
+                                  {renderer
+                                    ? renderer(row[dataKey as keyof CellData], row)
+                                    : (row[dataKey as keyof CellData] as unknown as React.ReactNode)}
+                                  {className === 'kai' && (
+                                    <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
+                                  )}
                                 </div>
                               </td>
                             )
@@ -270,6 +265,9 @@ const TableDnD = <CellData extends CellBaseType>(
               actions={actions}
               data={rowData}
               rowIndex={rowIndex}
+              handleOptionClick={() => {
+                setIsVisible(false);
+              }}
             />
           )}
         </div>
