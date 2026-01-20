@@ -52,7 +52,7 @@ const TextArea = (props: TextAreaProps) => {
         name={name}
         placeholder={placeholder}
         value={value}
-        defaultValue={defaultValue}
+        defaultValue={value === undefined ? defaultValue : undefined}
         onChange={onChange}
         minLength={minlength}
         maxLength={maxlength}

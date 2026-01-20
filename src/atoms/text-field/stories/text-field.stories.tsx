@@ -38,7 +38,6 @@ TextDefaultComponent.storyName = 'Default Value';
 TextDefaultComponent.args = {
   type: 'text',
   defaultValue: 'awesome-input-default',
-  value: null,
   placeholder: 'Awesome Placeholder',
   onChange: () => {},
   disabled: false,

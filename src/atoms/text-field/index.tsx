@@ -69,7 +69,7 @@ const TextField = (props: TextFieldProps) => {
         type={type}
         name={name}
         value={value}
-        defaultValue={defaultValue}
+        defaultValue={value === undefined ? defaultValue : undefined}
         onChange={onChange}
         placeholder={placeholder}
         min={min}

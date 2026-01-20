@@ -55,7 +55,6 @@ TextAreaDefaultComponent.args = {
   height: '100px',
   placeholder: 'Awesome Placeholder',
   defaultValue: 'Awesome default text!',
-  value: null,
   onChange: () => {},
   disabled: false,
 };
