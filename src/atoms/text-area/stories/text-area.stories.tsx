@@ -27,11 +27,11 @@ export const TextAreaCharactersCountComponent = (args: TextAreaProps) => {
 
   return (
     <TextArea
+      {...args}
       charactersCount={textLength}
       onChange={evt => {
         setText(evt.target.value);
       }}
-      {...args}
     />
   );
 };
