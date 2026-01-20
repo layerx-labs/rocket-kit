@@ -179,8 +179,8 @@ const TableDnD = <CellData extends CellBaseType>(
                   {validValues.map((row, index) => (
                     // @ts-expect-error react-beautiful-dnd types are incompatible with React 18
                     <Draggable
-                      key={`${index}`}
-                      draggableId={`${index}`}
+                      key={row.id}
+                      draggableId={row.id}
                       index={index}
                     >
                       {(provided, snapshot) => (
@@ -190,7 +190,7 @@ const TableDnD = <CellData extends CellBaseType>(
                           data-testid={`row-${dataTestId}`}
                           className={clsx(
                             styles.tableRow,
-                            draggableId === `${index}` && styles.isDragging
+                            draggableId === row.id && styles.isDragging
                           )}
                           style={getItemStyle(
                             snapshot.isDragging,
