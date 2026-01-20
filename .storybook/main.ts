@@ -5,22 +5,24 @@ const config: StorybookConfig = {
     '../src/**/*.mdx',
     '../src/**/*.stories.tsx',
   ],
+
   addons: [
-    '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     '@storybook/addon-webpack5-compiler-swc',
+    '@storybook/addon-docs'
   ],
+
   framework: {
     name: '@storybook/react-webpack5',
     options: {},
   },
-  docs: {
-    autodocs: true,
-  },
+
   core: {
     disableTelemetry: true, // 👈 Disables telemetry
   },
+
   staticDirs: ['../static'],
+
   webpackFinal: async (config) => {
     config.resolve = {
       ...config.resolve,
@@ -34,7 +36,7 @@ const config: StorybookConfig = {
 
     // Return the altered config
     return config;
-  },
+  }
 };
 
 export default config;

@@ -4,19 +4,27 @@ const preview = {
   parameters: {
     actions: { argTypesRegex: '^on.*' },
     backgrounds: {
-      default: 'light',
-      values: [
-        {
+      options: {
+        light: {
           name: 'light',
           value: '#ffffff',
         },
-        {
+
+        dark: {
           name: 'dark',
           value: '#0D0F19',
-        },
-      ],
+        }
+      }
     },
   },
+
+  initialGlobals: {
+    backgrounds: {
+      value: 'light'
+    }
+  },
+
+  tags: ['autodocs']
 };
 
 export default preview;
