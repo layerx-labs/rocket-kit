@@ -72,10 +72,10 @@
     "@babel/preset-typescript": "^7",
     "@size-limit/preset-small-lib": "^11.0.1",
     "@storybook/addon-a11y": "^10.1.11",
+    "@storybook/addon-docs": "^10.1.11",
     "@storybook/addon-links": "^10.1.11",
-    "@storybook/addon-webpack5-compiler-swc": "^4.0.2",
     "@storybook/react": "^10.1.11",
-    "@storybook/react-webpack5": "^10.1.11",
+    "@storybook/react-vite": "^10.1.11",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^13.0.7",
@@ -115,8 +115,8 @@
     "tsdx": "^0.14.1",
     "tslib": "^2",
     "typescript": "^4.2.3",
-    "webpack-cli": "^5.1.4",
-    "@storybook/addon-docs": "^10.1.11"
+    "vite": "^7.3.1",
+    "webpack-cli": "^5.1.4"
   },
   "publishConfig": {
     "access": "public",

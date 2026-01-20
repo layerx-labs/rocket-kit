@@ -1,42 +1,23 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
+import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: [
-    '../src/**/*.mdx',
-    '../src/**/*.stories.tsx',
-  ],
+  stories: ['../src/**/*.stories.tsx'],
 
   addons: [
     '@storybook/addon-a11y',
-    '@storybook/addon-webpack5-compiler-swc',
-    '@storybook/addon-docs'
+    '@storybook/addon-docs',
   ],
 
   framework: {
-    name: '@storybook/react-webpack5',
+    name: '@storybook/react-vite',
     options: {},
   },
 
   core: {
-    disableTelemetry: true, // 👈 Disables telemetry
+    disableTelemetry: true,
   },
 
   staticDirs: ['../static'],
-
-  webpackFinal: async (config) => {
-    config.resolve = {
-      ...config.resolve,
-      fallback: {
-        ...(config.resolve || {}).fallback,
-        fs: false,
-        stream: false,
-        os: false,
-      },
-    };
-
-    // Return the altered config
-    return config;
-  }
 };
 
 export default config;
