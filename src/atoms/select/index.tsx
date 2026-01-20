@@ -46,14 +46,14 @@ const Select = (props: SelectProps) => {
         className={clsx(styles.select, error && styles.hasError, className)}
         style={style}
         name={name}
-        defaultValue={defaultValue}
+        defaultValue={defaultValue ?? (placeholder ? '' : undefined)}
         value={value}
         onChange={onChange}
         disabled={disabled}
         data-testid={dataTestId}
       >
         {placeholder && (
-          <option value="" disabled selected hidden>
+          <option value="" disabled hidden>
             {placeholder}
           </option>
         )}

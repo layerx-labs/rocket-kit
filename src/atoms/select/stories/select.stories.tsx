@@ -7,9 +7,7 @@ export default {
   argTypes: {
     onChange: { action: 'update value' },
     disabled: {
-      control: {
-        type: 'boolean',
-      },
+      control: 'boolean',
     },
   },
 };
