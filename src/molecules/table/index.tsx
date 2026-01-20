@@ -157,18 +157,20 @@ const Table = <CellData extends CellBaseType>(props: TableProps<CellData>) => {
                           data-testid={`td-${dataTestId}`}
                         >
                           <div>
-                            {renderer
-                              ? renderer(row[dataKey as keyof CellData], row)
-                              : row[dataKey as keyof CellData]}
-                            {className === 'tkai' ? (
-                              <Icon icon="tkai" fill="hsl(0, 0%, 16%)" />
-                            ) : className === 'vkai' ? (
-                              <Icon icon="vkai" fill="hsl(0, 0%, 16%)" />
-                            ) : className === 'lx' ? (
-                              <Icon icon="lx" fill="hsl(0, 0%, 16%)" />
-                            ) : className === 'vote' ? (
-                              <Icon icon="vote" fill="hsl(0, 0%, 16%)" />
-                            ) : null}
+                            <>
+                              {renderer
+                                ? renderer(row[dataKey as keyof CellData], row)
+                                : (row[dataKey as keyof CellData] as unknown as React.ReactNode)}
+                              {className === 'tkai' ? (
+                                <Icon icon="tkai" fill="hsl(0, 0%, 16%)" />
+                              ) : className === 'vkai' ? (
+                                <Icon icon="vkai" fill="hsl(0, 0%, 16%)" />
+                              ) : className === 'lx' ? (
+                                <Icon icon="lx" fill="hsl(0, 0%, 16%)" />
+                              ) : className === 'vote' ? (
+                                <Icon icon="vote" fill="hsl(0, 0%, 16%)" />
+                              ) : null}
+                            </>
                           </div>
                         </td>
                       )

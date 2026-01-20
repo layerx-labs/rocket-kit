@@ -175,6 +175,7 @@ const TableDnD = <CellData extends CellBaseType>(
                   ref={provided.innerRef}
                   style={getListStyle(snapshot.isDraggingOver)}
                 >
+                  <>
                   {validValues.map((row, index) => (
                     // @ts-ignore
                     <Draggable
@@ -218,15 +219,17 @@ const TableDnD = <CellData extends CellBaseType>(
                                 data-testid={`td-${dataTestId}`}
                               >
                                 <div>
-                                  {renderer
-                                    ? renderer(
-                                        row[dataKey as keyof CellData],
-                                        row
-                                      )
-                                    : row[dataKey as keyof CellData]}
-                                  {className === 'kai' ? (
-                                    <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
-                                  ) : null}
+                                  <>
+                                    {renderer
+                                      ? renderer(
+                                          row[dataKey as keyof CellData],
+                                          row
+                                        )
+                                      : (row[dataKey as keyof CellData] as unknown as React.ReactNode)}
+                                    {className === 'kai' ? (
+                                      <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
+                                    ) : null}
+                                  </>
                                 </div>
                               </td>
                             )
@@ -256,6 +259,7 @@ const TableDnD = <CellData extends CellBaseType>(
                     </Draggable>
                   ))}
                   {provided.placeholder}
+                  </>
                 </tbody>
               )}
             </Droppable>
