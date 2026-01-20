@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--buttonPadding);
+  padding: 0 var(--buttonPadding);
   white-space: nowrap;
   text-decoration: none;
   transition-duration: var(--transitionDurationDefault);

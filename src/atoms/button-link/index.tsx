@@ -49,7 +49,9 @@ const ButtonLink = (props: ButtonLinkProps) => {
 
   const bgColor = useColor(color ?? 'black');
   const textColor = useColor(
-    variant === 'outline' && !txtColor ? (color ?? 'black') : (txtColor ?? 'white')
+    variant === 'outline' && !txtColor
+      ? (color ?? 'black')
+      : (txtColor ?? 'white')
   );
   const hoverColor =
     color === 'white'
@@ -63,7 +65,6 @@ const ButtonLink = (props: ButtonLinkProps) => {
     '--txt': textColor.color,
     '--hover': hoverColor,
     '--buttonMinWidth': value ? '5rem' : '2.625rem',
-    '--buttonPadding': value ? '0 var(--buttonPaddingX)' : '0',
     '--textOrder': iconPosition === 'left' ? 2 : 1,
     '--iconOrder': iconPosition === 'left' ? 1 : 2,
     ...style,
