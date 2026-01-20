@@ -33,34 +33,28 @@ export const Icons = (args: IconProps) => {
   return <IconsList {...args} />;
 };
 
-Icons.story = {
-  name: 'All',
-  args: {
-    fill: '#000000',
-  },
+Icons.storyName = 'All';
+Icons.args = {
+  fill: '#000000',
 };
 
 export const IconComponent = (args: IconProps) => <Icon {...args} />;
 
-IconComponent.story = {
-  name: 'Single',
-  args: {
-    ...Icons.story.args,
-    icon: 'rocket',
-  },
-  argTypes: {
-    icon: {
-      control: {
-        type: 'select',
-        options: Object.keys(icons),
-      },
-    },
-  },
-  decorators: [
-    (Story: any) => (
-      <div style={{ width: '50px', height: '50px' }}>
-        <Story />
-      </div>
-    ),
-  ],
+IconComponent.storyName = 'Single';
+IconComponent.args = {
+  ...Icons.args,
+  icon: 'rocket',
 };
+IconComponent.argTypes = {
+  icon: {
+    control: 'select',
+    options: Object.keys(icons),
+  },
+};
+IconComponent.decorators = [
+  (Story: any) => (
+    <div style={{ width: '50px', height: '50px' }}>
+      <Story />
+    </div>
+  ),
+];

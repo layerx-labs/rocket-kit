@@ -23,13 +23,12 @@ CheckboxSimpleComponent.args = {
 
 export const CheckboxNodeComponent = (args: CheckboxProps) => (
   <Checkbox
-    label={[
-      'I agree with ',
-      <a href="#0">Terms of Service</a>,
-      ' and ',
-      <a href="#0">Privacy Policy</a>,
-      ' of TAIKAI',
-    ]}
+    label={
+      <>
+        I agree with <a href="#0">Terms of Service</a> and{' '}
+        <a href="#0">Privacy Policy</a> of TAIKAI
+      </>
+    }
     {...args}
   />
 );

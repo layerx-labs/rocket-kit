@@ -10,15 +10,13 @@ export const FilePickerComponent = (args: FilePickerProps) => (
   <FilePicker {...args} />
 );
 
-FilePickerComponent.story = {
-  name: 'File Picker',
-  args: {
-    multiple: false,
-    name: 'file',
-    placeholder: 'Select file',
-    pluralText: 'files selected',
-    error: '',
-    buttonText: 'Browse',
-    disabled: false,
-  },
+FilePickerComponent.storyName = 'File Picker';
+FilePickerComponent.args = {
+  multiple: false,
+  name: 'file',
+  placeholder: 'Select file',
+  pluralText: 'files selected',
+  error: '',
+  buttonText: 'Browse',
+  disabled: false,
 };
