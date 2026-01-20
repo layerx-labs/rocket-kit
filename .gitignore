@@ -9,3 +9,5 @@ package-lock.json
 .claude
 .vscode
 storybook-static
+coverage
+tsconfig.tsbuildinfo
