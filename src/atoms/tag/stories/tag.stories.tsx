@@ -7,22 +7,16 @@ export default {
   component: Tag,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
     txtColor: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
     variant: {
-      control: {
-        type: 'inline-radio',
-        options: ['solid', 'outline'],
-      },
+      control: 'inline-radio',
+      options: ['solid', 'outline'],
     },
   },
 };

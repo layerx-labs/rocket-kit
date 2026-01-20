@@ -1,8 +1,9 @@
 import React from 'react';
+import clsx from 'clsx';
 import { ErrorField } from '../..';
 import TextField from '../text-field';
 import { TextFieldType } from '../text-field/types';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface TextFieldAppendixProps {
   append?: string;
@@ -38,18 +39,18 @@ const TextFieldAppendix = (props: TextFieldAppendixProps) => {
     disabled = false,
     error,
     dataTestId,
-    className = 'text-field-appendix',
+    className,
     pattern,
     required = false,
   } = props;
 
   return (
     <>
-      <Styles.Wrapper className={className} error={error}>
+      <div className={clsx(styles.wrapper, error && styles.hasError, className)}>
         {prepend && (
-          <Styles.Appendix error={error} position="left">
+          <div className={clsx(styles.appendix, styles.appendixLeft, error && styles.hasError)}>
             <span>{prepend}</span>
-          </Styles.Appendix>
+          </div>
         )}
         <TextField
           type={type}
@@ -66,11 +67,11 @@ const TextFieldAppendix = (props: TextFieldAppendixProps) => {
           required={required}
         />
         {append && (
-          <Styles.Appendix error={error} position="right">
+          <div className={clsx(styles.appendix, styles.appendixRight, error && styles.hasError)}>
             <span>{append}</span>
-          </Styles.Appendix>
+          </div>
         )}
-      </Styles.Wrapper>
+      </div>
       {error ? <ErrorField error={error} /> : null}
     </>
   );

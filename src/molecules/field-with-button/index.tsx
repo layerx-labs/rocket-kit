@@ -3,7 +3,7 @@ import Label from '../../atoms/label';
 import TextField from '../../atoms/text-field';
 import { TextFieldType } from '../../atoms/text-field/types';
 import Button from '../../atoms/button';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface FieldWidthButtonProps {
   label?: string;
@@ -59,10 +59,10 @@ const FieldWidthButton = ({
   }, [value]);
 
   return (
-    <Styles.Wrapper>
+    <div className={styles.wrapper}>
       {label && <Label value={label} />}
 
-      <Styles.Field>
+      <div className={styles.field}>
         <TextField
           type={type}
           name={name}
@@ -94,8 +94,8 @@ const FieldWidthButton = ({
             handleOnClickAction();
           }}
         />
-      </Styles.Field>
-    </Styles.Wrapper>
+      </div>
+    </div>
   );
 };
 

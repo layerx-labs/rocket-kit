@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import 'jest-styled-components';
 import TruncateLine from '..';
 
 describe('Truncate Line', () => {

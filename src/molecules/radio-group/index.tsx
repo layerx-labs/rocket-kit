@@ -1,6 +1,7 @@
 import React from 'react';
+import clsx from 'clsx';
 import ErrorField from '../../atoms/error-field';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export type Item = {
   value: string;
@@ -36,14 +37,22 @@ const RadioGroup = (props: RadioGroupProps) => {
 
   return (
     <div style={style} className={className}>
-      <Styles.Wrapper
-        type={type}
-        group={group}
-        error={error}
+      <ul
+        className={clsx(
+          styles.wrapper,
+          type === 'row' ? styles.typeRow : styles.typeColumn
+        )}
         data-testid={dataTestId}
       >
         {options.map((value, index) => (
-          <Styles.Item key={index} disabled={value.disabled || disabled}>
+          <li
+            key={index}
+            className={clsx(
+              styles.item,
+              error && styles.hasError,
+              (value.disabled || disabled) && styles.isDisabled
+            )}
+          >
             <input
               id={`radio-${group}-${index}`}
               type="radio"
@@ -55,9 +64,9 @@ const RadioGroup = (props: RadioGroupProps) => {
             />
             <label htmlFor={`radio-${group}-${index}`}>{value.label}</label>
             <div className="check" />
-          </Styles.Item>
+          </li>
         ))}
-      </Styles.Wrapper>
+      </ul>
       {error ? <ErrorField error={error} /> : null}
     </div>
   );

@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.875rem; /* 30px */
+  text-align: center;
+}
+
+.variantDefault {
+  min-height: 50vh;
+}
+
+.variantMinimal {
+  min-height: inherit;
+}
+
+.wrapper svg {
+  width: auto;
+  height: 6.25rem; /* 100px */
+}
+
+.wrapper > span {
+  margin-top: 0.9375rem; /* 15px */
+  font-weight: var(--fontWeightSemiBold);
+  color: var(--black);
+}
+
+.wrapper > span a {
+  color: var(--black);
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.wrapper > span:hover {
+  color: var(--purple500);
+}

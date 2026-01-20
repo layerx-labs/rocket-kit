@@ -1,6 +1,8 @@
 import React, { CSSProperties } from 'react';
+import clsx from 'clsx';
 import { TagVariant, TagColor } from './types';
-import * as Styles from './styles';
+import styles from './styles.module.css';
+import { useColor } from '../../utils/hooks/use-color';
 
 export interface TagProps {
   variant?: TagVariant;
@@ -17,21 +19,31 @@ const Tag = (props: TagProps) => {
     color = 'purple500',
     txtColor = 'white',
     value,
-    className = 'tag',
+    className,
     style,
   } = props;
 
+  const bgColor = useColor(color);
+  const textColor = useColor(txtColor);
+
+  const cssVars = {
+    '--bg': bgColor.color,
+    '--txt': textColor.color,
+    ...style,
+  } as CSSProperties & Record<string, string>;
+
   return (
-    <Styles.TagWrapper
-      className={className}
-      variant={variant}
-      color={color}
-      txtColor={txtColor}
-      style={style}
+    <span
+      className={clsx(
+        styles.tag,
+        variant === 'solid' ? styles.variantSolid : styles.variantOutline,
+        className
+      )}
+      style={cssVars}
       title={value}
     >
       {value}
-    </Styles.TagWrapper>
+    </span>
   );
 };
 

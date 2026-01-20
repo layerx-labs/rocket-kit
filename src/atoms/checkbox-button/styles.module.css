@@ -1,0 +1,118 @@
+.wrapper {
+  border: var(--fieldBorderWidth) solid var(--fieldBorderColor);
+  border-radius: var(--fieldBorderRadius);
+  background-color: var(--fieldBackgroundColor);
+  height: var(--fieldHeight);
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.wrapper:hover input:not(:disabled) ~ span {
+  border-color: var(--fieldHoverBorderColor);
+}
+
+.wrapper:hover {
+  background-color: var(--fieldBorderColor);
+}
+
+/* Checked state */
+.wrapper.isChecked {
+  border-color: var(--fieldSuccessBorderColor);
+  background-color: var(--fieldSuccessBackgroundColor);
+}
+
+.wrapper.isChecked:hover {
+  background-color: var(--fieldSuccessBackgroundColor);
+}
+
+.wrapper.isChecked span {
+  color: var(--white);
+}
+
+/* Disabled state */
+.wrapper.isDisabled {
+  border-color: var(--fieldBorderColor);
+  background-color: var(--fieldDisabledBackgroundColor);
+  cursor: auto;
+}
+
+.wrapper.isDisabled:hover {
+  background-color: var(--fieldDisabledBackgroundColor);
+}
+
+.wrapper.isDisabled span {
+  color: var(--fieldDisabledColor);
+}
+
+.label {
+  margin-left: 2.5rem; /* 40px */
+  line-height: 1.5rem; /* 24px */
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.input {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.input:checked:not(:disabled) ~ .checkmark {
+  background-color: var(--white);
+  border-color: var(--fieldSuccessBorderColor);
+}
+
+.input:checked:not(:disabled) ~ .checkmark::after {
+  display: block;
+}
+
+.input:checked:disabled ~ .checkmark {
+  background-color: var(--fieldDisabledBackgroundColor);
+  color: var(--fieldDisabledColor);
+}
+
+.input:checked:disabled ~ .checkmark::after {
+  display: block;
+  border-color: var(--fieldDisabledColor);
+}
+
+.input:not(:checked):disabled ~ .checkmark {
+  border-color: var(--fieldDisabledBackgroundColor);
+  background-color: var(--fieldBackgroundColor);
+}
+
+.input:hover:not(:disabled):checked ~ .checkmark {
+  border-color: var(--fieldSuccessBorderColor);
+}
+
+.checkmark {
+  position: absolute;
+  left: 0.625rem; /* 10px */
+  border: 0.125rem solid var(--fieldBorderColor); /* 2px */
+  border-radius: 999px;
+  background-color: var(--white);
+  width: 1.5rem; /* 24px */
+  height: 1.5rem; /* 24px */
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.checkmark::after {
+  content: '';
+  position: absolute;
+  display: none;
+  top: 0.1875rem; /* 3px */
+  left: 0.375rem; /* 6px */
+  width: 0.3125rem; /* 5px */
+  height: 0.5625rem; /* 9px */
+  border: solid var(--fieldSuccessBorderColor);
+  border-width: 0 0.1875rem 0.1875rem 0; /* 3px */
+  transform: rotate(45deg);
+}
+
+.wrapper.isDisabled .checkmark::after {
+  border-color: var(--white);
+}

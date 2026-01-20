@@ -1,6 +1,7 @@
 import React from 'react';
+import clsx from 'clsx';
 import { Button, Label } from '../..';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface CardValueProps {
   label: string;
@@ -22,14 +23,14 @@ const CardValue = (props: CardValueProps) => {
     description,
     buttonValue,
     onClick,
-    className = 'card-value',
+    className,
     style,
     dataTestId,
   } = props;
 
   return (
-    <Styles.CardValueStyle
-      className={className}
+    <div
+      className={clsx(styles.cardValue, className)}
       style={style}
       data-testid={dataTestId}
     >
@@ -44,7 +45,7 @@ const CardValue = (props: CardValueProps) => {
           action={onClick}
         />
       )}
-    </Styles.CardValueStyle>
+    </div>
   );
 };
 

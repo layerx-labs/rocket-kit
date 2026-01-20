@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 import { ToggleProps } from './types';
 import { v4 } from 'uuid';
 
@@ -43,8 +43,8 @@ const Toggle = ({
   }, [checked]);
 
   return (
-    <Styles.Switcher
-      disabled={disabled}
+    <fieldset
+      className={clsx(styles.switcher, disabled && styles.isDisabled)}
       role="radiogroup"
       aria-label="toggle switcher"
       {...rest}
@@ -90,7 +90,7 @@ const Toggle = ({
           <label htmlFor={`${id}-switch-on`}>{labelRight}</label>
         )}
       </div>
-    </Styles.Switcher>
+    </fieldset>
   );
 };
 

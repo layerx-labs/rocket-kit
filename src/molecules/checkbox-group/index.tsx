@@ -1,7 +1,8 @@
 import React, { CSSProperties } from 'react';
+import clsx from 'clsx';
 import Checkbox, { CheckboxProps } from '../../atoms/checkbox';
 import ErrorField from '../../atoms/error-field';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export type CheckboxItem = {
   value: string;
@@ -42,7 +43,12 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
   } = props;
 
   return (
-    <Styles.Wrapper type={type} error={error}>
+    <ul
+      className={clsx(
+        styles.wrapper,
+        type === 'row' ? styles.typeRow : styles.typeColumn
+      )}
+    >
       {children
         ? children
         : options && Array.isArray(options)
@@ -63,7 +69,7 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
           ))
         : null}
       {error ? <ErrorField error={error} /> : null}
-    </Styles.Wrapper>
+    </ul>
   );
 };
 

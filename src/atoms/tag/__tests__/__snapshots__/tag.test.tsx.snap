@@ -2,29 +2,9 @@
 
 exports[`Tag renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  --bg: #EB5757;
-  --txt: #ffffff;
-  display: inline-block;
-  border: 0.125rem solid var(--bg);
-  border-radius: 0.25rem;
-  background-color: var(--bg);
-  padding: 0.1875rem 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  -webkit-letter-spacing: 0.0625rem;
-  -moz-letter-spacing: 0.0625rem;
-  -ms-letter-spacing: 0.0625rem;
-  letter-spacing: 0.0625rem;
-  line-height: 1;
-  color: var(--txt);
-  white-space: nowrap;
-}
-
-<span
-    class="c0 tag"
-    color="red500"
+  <span
+    class="tag variantSolid"
+    style="--bg: #EB5757; --txt: #ffffff;"
     title="hello"
   >
     hello

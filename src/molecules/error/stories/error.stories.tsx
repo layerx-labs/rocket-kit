@@ -6,10 +6,8 @@ export default {
   component: Error,
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-        options: ['default', 'minimal'],
-      },
+      control: 'select',
+      options: ['default', 'minimal'],
     },
   },
 };

@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import * as Styles from './styles';
+import React, { CSSProperties, useState, useEffect, useRef } from 'react';
+import clsx from 'clsx';
 import { Icon } from '../..';
+import styles from './styles.module.css';
 
 export interface NumberInputSpinnerProps {
   decreaseAriaLabel?: string;
@@ -42,10 +43,20 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
     setNumber(value);
   };
 
+  // Calculate input width based on max value length
+  const inputWidth =
+    max != null && max.toString().length > 5
+      ? max.toString().length * 10 + 20 + 'px'
+      : '70px';
+
+  const inputStyle = {
+    '--inputWidth': inputWidth,
+  } as CSSProperties & Record<string, string>;
+
   return (
-    <Styles.Wrapper>
-      <Styles.Button
-        className="remove-button"
+    <div className={styles.wrapper}>
+      <button
+        className={clsx(styles.button, styles.removeButton)}
         aria-label={decreaseAriaLabel}
         onClick={evt => {
           evt.preventDefault();
@@ -54,8 +65,9 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
         disabled={number <= min || disabled}
       >
         <Icon icon="remove" />
-      </Styles.Button>
-      <Styles.Input
+      </button>
+      <input
+        className={styles.input}
         type="number"
         min={min}
         max={max}
@@ -65,9 +77,10 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
           updateValue(parseInt(evt.target.value));
         }}
         disabled={disabled}
+        style={inputStyle}
       />
-      <Styles.Button
-        className="add-button"
+      <button
+        className={clsx(styles.button, styles.addButton)}
         aria-label={increaseAriaLabel}
         onClick={evt => {
           evt.preventDefault();
@@ -76,8 +89,8 @@ const NumberInputSpinner = (props: NumberInputSpinnerProps) => {
         disabled={number >= max || disabled}
       >
         <Icon icon="add" />
-      </Styles.Button>
-    </Styles.Wrapper>
+      </button>
+    </div>
   );
 };
 

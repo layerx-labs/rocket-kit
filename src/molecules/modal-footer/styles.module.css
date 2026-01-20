@@ -1,0 +1,21 @@
+.footer {
+  position: relative;
+  margin-top: 3.125rem; /* 50px */
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer > button {
+  min-width: 6.25rem; /* 100px */
+}
+
+.footer > button:not(:last-child) {
+  margin-right: 0.3125rem; /* 5px */
+}
+
+@media (min-width: 700px) {
+  .footer {
+    justify-content: flex-end;
+  }
+}

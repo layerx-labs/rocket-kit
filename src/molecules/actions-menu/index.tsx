@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
+import clsx from 'clsx';
 import useVisible from '../../utils/hooks/use-visible';
 import { Button } from '../..';
 import { ActionMenu } from './types';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface ActionsMenuListInterface<T> {
   actions: ActionMenu<T>[];
@@ -31,8 +32,19 @@ export const ActionMenuList = <T,>(props: ActionsMenuListInterface<T>) => {
 
   if (visibleActions.length === 0) return <></>;
 
+  const listStyle =
+    rowIndex !== undefined
+      ? ({
+          '--rowIndexMargin': `calc(2.8125rem + 3.125rem * ${rowIndex} + 2.625rem)`,
+        } as CSSProperties & Record<string, string>)
+      : undefined;
+
   return (
-    <Styles.List rowIndex={rowIndex} data-testid="ul-action-menu">
+    <ul
+      className={clsx(styles.list, rowIndex !== undefined && styles.hasRowIndex)}
+      style={listStyle}
+      data-testid="ul-action-menu"
+    >
       {visibleActions.map(
         ({ id = '', type = '', url = '', action = () => {}, value = '' }) => (
           <li
@@ -53,7 +65,7 @@ export const ActionMenuList = <T,>(props: ActionsMenuListInterface<T>) => {
           </li>
         )
       )}
-    </Styles.List>
+    </ul>
   );
 };
 
@@ -70,7 +82,7 @@ const ActionsMenu = <T,>(props: ActionsMenuInterface<T>) => {
     useVisible<HTMLDivElement>(startsOpen);
 
   return (
-    <Styles.ActionsMenuStyle ref={ref}>
+    <div className={styles.actionsMenu} ref={ref}>
       <Button
         variant="text"
         color="dark"
@@ -93,7 +105,7 @@ const ActionsMenu = <T,>(props: ActionsMenuInterface<T>) => {
           }}
         />
       ) : null}
-    </Styles.ActionsMenuStyle>
+    </div>
   );
 };
 

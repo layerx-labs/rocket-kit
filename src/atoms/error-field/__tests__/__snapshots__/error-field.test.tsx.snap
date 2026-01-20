@@ -2,15 +2,8 @@
 
 exports[`ErrorField renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  display: block;
-  font-size: 0.7rem;
-  color: #EB5757;
-}
-
-<span
-    class="c0 error-field"
-    color="red"
+  <span
+    class="errorField error-field"
   >
     operation failed.
   </span>

@@ -1,4 +1,4 @@
-import { rem, rgba } from 'polished';
+import { rem, rgba } from '../utils/css-utils';
 
 export const colors = {
   black: '#000000',

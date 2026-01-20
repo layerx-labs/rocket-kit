@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 export type Step = {
   active: boolean;
@@ -24,19 +25,19 @@ const WizardSteps = (props: WizardStepsProps) => {
 
   return (
     <div className={className} style={style} data-testid={dataTestId}>
-      <Styles.Steps>
+      <ul className={styles.steps}>
         {steps.map((step, index) => (
-          <Styles.Step
+          <li
             key={index}
-            active={step.active}
+            className={clsx(styles.step, step.active && styles.isActive)}
             data-testid={`step-${step.dataTestId}`}
           >
             <div>
               <span>{step.value}</span>
             </div>
-          </Styles.Step>
+          </li>
         ))}
-      </Styles.Steps>
+      </ul>
     </div>
   );
 };

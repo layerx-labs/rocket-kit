@@ -8,34 +8,24 @@ export default {
   component: ButtonLink,
   argTypes: {
     variant: {
-      control: {
-        type: 'inline-radio',
-        options: ['solid', 'outline', 'text'],
-      },
+      control: 'inline-radio',
+      options: ['solid', 'outline', 'text'],
     },
     color: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
     txtColor: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
     iconPosition: {
-      control: {
-        type: 'inline-radio',
-        options: ['left', 'right'],
-      },
+      control: 'inline-radio',
+      options: ['left', 'right'],
     },
     icon: {
-      control: {
-        type: 'select',
-        options: ['', ...Object.keys(icons)],
-      },
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
     },
   },
 };

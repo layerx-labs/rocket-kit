@@ -7,16 +7,12 @@ export default {
   component: TagNumber,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
     valueColor: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
   },
 };

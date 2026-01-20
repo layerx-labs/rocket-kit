@@ -1,6 +1,7 @@
 import React from 'react';
+import clsx from 'clsx';
 import { Label } from '../..';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface FormGroupProps {
   currency?: 'lx' | 'vote' | 'tkai' | 'vkai' | undefined;
@@ -13,10 +14,10 @@ const FormGroup = (props: FormGroupProps) => {
   const { label, currency, error = false, children } = props;
 
   return (
-    <Styles.Wrapper error={error}>
+    <div className={clsx(styles.wrapper, error && styles.hasError)}>
       <Label value={label} currency={currency} />
       {children}
-    </Styles.Wrapper>
+    </div>
   );
 };
 

@@ -1,0 +1,141 @@
+.selectWrapper :global(.select-interactive) {
+  z-index: 3;
+}
+
+.selectWrapper :global(.select__control) {
+  border-color: var(--fieldBorderColor);
+  border-radius: var(--fieldBorderRadius);
+  min-height: var(--fieldHeight);
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.selectWrapper :global(.select__control:hover) {
+  border-color: var(--fieldHoverBorderColor);
+}
+
+.selectWrapper :global(.select__control--is-focused) {
+  border-color: var(--fieldActiveBorderColor);
+  box-shadow: none;
+}
+
+.selectWrapper :global(.select__value-container) {
+  padding: 0 0.9375rem; /* 15px */
+}
+
+.selectWrapper :global(.select__placeholder) {
+  color: var(--fieldPlaceholderColor);
+}
+
+.selectWrapper :global(.select__input) {
+  color: var(--fieldColor);
+}
+
+.selectWrapper :global(.select__single-value) {
+  color: var(--fieldColor);
+}
+
+.selectWrapper :global(.select__indicator) {
+  padding: 0 0.9375rem; /* 15px */
+}
+
+.selectWrapper :global(.select__indicator:hover) {
+  color: inherit;
+}
+
+.selectWrapper :global(.select__indicator svg) {
+  width: 1.375rem; /* 22px */
+  height: 1.375rem; /* 22px */
+}
+
+.selectWrapper :global(.select__indicator svg path) {
+  fill: var(--fieldBorderColor);
+}
+
+.selectWrapper :global(.select__indicator-separator) {
+  background-color: var(--fieldBorderColor);
+}
+
+.selectWrapper :global(.select__option) {
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.selectWrapper :global(.select__option:hover) {
+  background-color: var(--fieldHoverBorderColor);
+  color: var(--fieldColor);
+}
+
+.selectWrapper :global(.select__option:hover svg) {
+  fill: var(--fieldColor);
+}
+
+.selectWrapper :global(.select__option--is-focused) {
+  background-color: var(--fieldActiveBorderColor);
+  color: var(--white);
+}
+
+.selectWrapper :global(.select__option--is-selected) {
+  background-color: var(--fieldActiveBorderColor) !important;
+  color: var(--white) !important;
+}
+
+.selectWrapper :global(.select__value-container) > div,
+.selectWrapper :global(.select__option) {
+  display: flex;
+  align-items: center;
+}
+
+.selectWrapper :global(.select__value-container.select__value-container--is-multi) > div {
+  align-items: stretch;
+}
+
+.selectWrapper :global(.select__value-container.select__value-container--is-multi .select__multi-value__remove) {
+  padding-right: 0;
+}
+
+.selectWrapper :global(.select__value-container) svg,
+.selectWrapper :global(.select__value-container) img,
+.selectWrapper :global(.select__option) svg,
+.selectWrapper :global(.select__option) img {
+  margin: 0 0.3125rem 0 0; /* 5px */
+  width: 1.25rem; /* 20px */
+  height: auto;
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.selectWrapper :global(.select__option--is-selected svg) {
+  fill: var(--white) !important;
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.selectWrapper :global(.select__option--is-focused svg) {
+  fill: var(--white);
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.selectWrapper :global(.select__option--is-disabled) {
+  pointer-events: none;
+}
+
+/* SelectGroupLabel */
+.selectGroupLabel {
+  font-size: var(--fontSizeXs);
+  color: var(--fieldPlaceholderColor);
+}
+
+.selectGroupLabel + :global(.tag) {
+  border-color: var(--fieldBorderColor);
+  background-color: var(--fieldBorderColor);
+  color: var(--fieldActiveBorderColor);
+}
+
+/* SingleValue */
+.singleValue {
+  grid-area: 1 / 1 / 2 / 3;
+  margin-left: 0.125rem; /* 2px */
+  margin-right: 0.125rem; /* 2px */
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}

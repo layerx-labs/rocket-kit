@@ -114,11 +114,11 @@ export const TableDnDComponent = (args: TableDnDProps) => {
   const [tableRows, setTableRows] = useState(rows);
   return (
     <TableDnD
+      {...args}
       options={columns}
       values={tableRows}
       actions={actions}
       onChange={(newRows: any) => setTableRows(newRows)}
-      {...args}
     />
   );
 };

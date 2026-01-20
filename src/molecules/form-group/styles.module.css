@@ -1,0 +1,24 @@
+.wrapper {
+  display: inline-block;
+}
+
+.wrapper > label {
+  margin-bottom: 0.3125rem; /* 5px */
+  color: var(--grey500);
+}
+
+.wrapper.hasError > label {
+  color: var(--fieldErrorBorderColor);
+}
+
+.wrapper > label span {
+  color: var(--fieldColor);
+}
+
+.wrapper.hasError > label span {
+  color: var(--fieldErrorBorderColor);
+}
+
+.wrapper:not(:last-child) {
+  margin-bottom: 0.9375rem; /* 15px */
+}

@@ -1,14 +1,15 @@
 import React from 'react';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 export interface GridContainerProps {
   className?: string;
   children?: React.ReactNode;
 }
 
-const TabsPanel = (props: GridContainerProps) => {
-  const { className = 'grid-container', children } = props;
-  return <Styles.Wrapper className={className}>{children}</Styles.Wrapper>;
+const GridContainer = (props: GridContainerProps) => {
+  const { className, children } = props;
+  return <div className={clsx(styles.wrapper, className)}>{children}</div>;
 };
 
-export default TabsPanel;
+export default GridContainer;

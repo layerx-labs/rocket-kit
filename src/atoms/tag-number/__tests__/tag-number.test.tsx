@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import 'jest-styled-components';
 import { TagNumber } from '../../..';
 
 describe('Tag Number', () => {

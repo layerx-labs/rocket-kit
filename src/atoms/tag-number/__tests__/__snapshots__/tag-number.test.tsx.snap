@@ -2,57 +2,9 @@
 
 exports[`Tag Number renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  --bg: #4329A6;
-  --valueColor: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  border: 0.125rem solid var(--bg);
-  border-radius: 0.1875rem;
-  line-height: 1;
-  max-width: 100%;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  overflow: hidden;
-}
-
-.c0 span {
-  display: inline-block;
-  padding: 0.1875rem 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  -webkit-letter-spacing: 0.0625rem;
-  -moz-letter-spacing: 0.0625rem;
-  -ms-letter-spacing: 0.0625rem;
-  letter-spacing: 0.0625rem;
-}
-
-.c0 span.label {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  color: var(--bg);
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-}
-
-.c0 span.value {
-  background-color: var(--bg);
-  color: var(--valueColor);
-}
-
-.c0:not(:first-child) {
-  margin-left: 0.3125rem;
-}
-
-<div
-    class="c0 tag-number"
-    color="purple500"
+  <div
+    class="wrapper"
+    style="--bg: #4329A6; --valueColor: #ffffff;"
   >
     <span
       class="label"

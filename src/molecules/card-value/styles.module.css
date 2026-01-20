@@ -1,0 +1,25 @@
+.cardValue {
+  border: var(--fieldBorderWidth) solid var(--fieldBorderColor);
+  border-radius: var(--fieldBorderRadius);
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 0.9375rem; /* 15px */
+  overflow-x: auto;
+}
+
+.cardValue > span {
+  display: block;
+  margin-top: 0.3125rem; /* 5px */
+  font-size: 2rem; /* 32px */
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardValue a,
+.cardValue button {
+  margin-top: 1.25rem; /* 20px */
+}

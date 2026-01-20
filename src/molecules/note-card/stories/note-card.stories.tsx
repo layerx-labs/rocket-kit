@@ -6,10 +6,8 @@ export default {
   component: NoteCard,
   argTypes: {
     color: {
-      control: {
-        type: 'select',
-        options: ['grey', 'green', 'red'],
-      },
+      control: 'select',
+      options: ['grey', 'green', 'red'],
     },
     onClick: { action: 'clicked' },
   },

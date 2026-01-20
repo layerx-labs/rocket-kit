@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 // @ts-ignore
 import IconLoginOnly from '../../ions/icon-login-only';
@@ -27,10 +27,10 @@ const DataWarning = (props: DataWarningProps) => {
   }
 
   return (
-    <Styles.Wrapper type={type}>
+    <div className={styles.wrapper}>
       {icon}
       <div>{children}</div>
-    </Styles.Wrapper>
+    </div>
   );
 };
 

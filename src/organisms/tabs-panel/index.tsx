@@ -1,7 +1,7 @@
 import React from 'react';
 // @ts-ignore
 import Tabs from 'react-responsive-tabs';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export type Tab = {
   title: string;
@@ -36,7 +36,7 @@ const TabsPanel = (props: TabsPanelProps) => {
   };
 
   return (
-    <Styles.Wrapper>
+    <div className={styles.wrapper}>
       <Tabs
         transform={false}
         unmountOnExit={unmountOnExit}
@@ -45,7 +45,7 @@ const TabsPanel = (props: TabsPanelProps) => {
         onChange={onChange}
         items={getTabs()}
       />
-    </Styles.Wrapper>
+    </div>
   );
 };
 

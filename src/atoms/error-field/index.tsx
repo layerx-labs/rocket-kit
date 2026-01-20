@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 import { ErrorFieldColor } from './types';
 
 export interface ErrorFieldProps {
@@ -12,9 +13,16 @@ export interface ErrorFieldProps {
 const ErrorField = (props: ErrorFieldProps) => {
   const { color = 'red', error, className = 'error-field', style } = props;
   return (
-    <Styles.ErrorStyle color={color} className={className} style={style}>
+    <span
+      className={clsx(
+        styles.errorField,
+        color === 'success' && styles.colorSuccess,
+        className
+      )}
+      style={style}
+    >
       {error}
-    </Styles.ErrorStyle>
+    </span>
   );
 };
 

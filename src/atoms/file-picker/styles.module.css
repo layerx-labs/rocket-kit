@@ -1,0 +1,104 @@
+.wrapper input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.wrapper label {
+  margin-bottom: 0 !important;
+  border-width: var(--fieldBorderWidth);
+  border-style: solid;
+  border-color: var(--fieldBorderColor);
+  border-radius: var(--fieldBorderRadius);
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: var(--fieldHeight);
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition-duration: var(--transitionDurationDefault);
+  overflow: hidden;
+}
+
+.wrapper.hasError label {
+  border-color: var(--fieldErrorBorderColor);
+}
+
+.wrapper.isDisabled label {
+  background-color: var(--fieldDisabledBackgroundColor);
+  cursor: default;
+  pointer-events: none;
+}
+
+.wrapper label span {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper label :global(.file-name) {
+  flex: 1;
+  display: block;
+  padding: 0 0.625rem; /* 10px */
+  color: var(--fieldColor);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wrapper.isDisabled label :global(.file-name) {
+  color: var(--fieldDisabledColor);
+}
+
+.wrapper label :global(.button) {
+  border-left: var(--fieldBorderWidth) solid var(--fieldBorderColor);
+  background-color: var(--fieldBorderColor);
+  height: 100%;
+  padding: 0 1.25rem; /* 20px */
+  color: var(--fieldActiveBorderColor);
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.wrapper.hasError label :global(.button) {
+  border-left-color: var(--fieldErrorBorderColor);
+  background-color: var(--fieldErrorBackgroundColor);
+  color: var(--fieldErrorBorderColor);
+}
+
+.wrapper.isDisabled label :global(.button) {
+  background-color: var(--fieldDisabledBackgroundColor);
+  color: var(--fieldDisabledColor);
+}
+
+.wrapper label :global(.button) svg {
+  margin-right: 0.5rem; /* 8px */
+  width: auto;
+  height: 1.5rem; /* 24px */
+  fill: var(--fieldActiveBorderColor);
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.wrapper.hasError label :global(.button) svg {
+  fill: var(--fieldErrorBorderColor);
+}
+
+.wrapper.isDisabled label :global(.button) svg {
+  fill: var(--fieldDisabledColor);
+}
+
+.wrapper label :global(.button):hover {
+  background-color: var(--fieldHoverBorderColor);
+}
+
+.wrapper label:hover {
+  border-color: var(--fieldHoverBorderColor);
+}
+
+.wrapper label:hover :global(.button) {
+  background-color: var(--fieldHoverBorderColor);
+}

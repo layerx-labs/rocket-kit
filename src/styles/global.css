@@ -143,6 +143,40 @@
 
   /* Misc */
   --transitionDurationDefault: 0.3s;
+
+  /* Button tokens */
+  --buttonHeight: 2.75rem; /* 44px */
+  --buttonBorderWidth: 0.0625rem; /* 1px */
+  --buttonBorderRadius: 0.5rem; /* 8px */
+  --buttonPadding: 1.5rem; /* 24px */
+  --buttonIconSpacing: 0.875rem; /* 14px */
+  --buttonIconSize: 1.25rem; /* 20px */
+
+  /* Breakpoints */
+  --breakpointXs: 360px;
+  --breakpointS: 700px;
+  --breakpointM: 900px;
+  --breakpointL: 1280px;
+  --breakpointXl: 1600px;
+
+  /* Field tokens */
+  --fieldBorderWidth: 0.0625rem; /* 1px */
+  --fieldBorderRadius: 0.5rem; /* 8px */
+  --fieldBorderColor: var(--purple100);
+  --fieldHoverBorderColor: var(--purple150);
+  --fieldBackgroundColor: var(--white);
+  --fieldBoxShadow: rgba(0, 0, 0, 0.15);
+  --fieldColor: var(--black);
+  --fieldActiveBorderColor: var(--purple500);
+  --fieldActiveColor: var(--purple500);
+  --fieldSuccessBackgroundColor: var(--green500);
+  --fieldSuccessBorderColor: var(--green600);
+  --fieldErrorBorderColor: var(--red500);
+  --fieldErrorBackgroundColor: var(--red300);
+  --fieldDisabledBackgroundColor: var(--grey100);
+  --fieldDisabledColor: var(--grey300);
+  --fieldHeight: 3.125rem; /* 50px */
+  --fieldPlaceholderColor: var(--grey200);
 }
 
 * {

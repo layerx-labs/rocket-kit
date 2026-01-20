@@ -6,10 +6,8 @@ export default {
   component: Label,
   argTypes: {
     currency: {
-      control: {
-        type: 'select',
-        options: ['', 'lx', 'vote', 'tkai', 'vkai'],
-      },
+      control: 'select',
+      options: ['', 'lx', 'vote', 'tkai', 'vkai'],
     },
   },
 };

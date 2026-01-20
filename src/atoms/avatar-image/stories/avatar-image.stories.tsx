@@ -6,10 +6,8 @@ export default {
   component: AvatarImage,
   argTypes: {
     boringType: {
-      control: {
-        type: 'select',
-        options: ['marble', 'beam', 'pixel', 'sunset', 'ring', 'bauhaus'],
-      },
+      control: 'select',
+      options: ['marble', 'beam', 'pixel', 'sunset', 'ring', 'bauhaus'],
     },
   },
 };

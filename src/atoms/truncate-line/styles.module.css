@@ -1,0 +1,12 @@
+.wrapper {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.wrapper span {
+  display: table-cell;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

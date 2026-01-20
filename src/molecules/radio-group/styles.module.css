@@ -1,0 +1,108 @@
+.wrapper {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.typeRow {
+  flex-direction: row;
+}
+
+.typeColumn {
+  flex-direction: column;
+}
+
+.typeRow > li:not(:last-child) {
+  margin-right: 1.875rem; /* 30px */
+}
+
+.typeColumn > li:not(:last-child) {
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+.wrapper input[type='radio']:checked ~ :global(.check) {
+  border-color: var(--fieldSuccessBorderColor);
+}
+
+.wrapper input[type='radio']:checked ~ :global(.check)::before {
+  background-color: var(--fieldSuccessBackgroundColor);
+}
+
+.wrapper + span {
+  margin-top: 0.625rem; /* 10px */
+}
+
+/* Item */
+.item {
+  --size: 1.5rem; /* 24px */
+  display: flex;
+  position: relative;
+  min-height: var(--size);
+}
+
+.item input[type='radio'] {
+  position: absolute;
+  visibility: hidden;
+}
+
+.item label {
+  position: relative;
+  padding-left: calc(var(--size) + 5px);
+  line-height: var(--size);
+  vertical-align: middle;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.item.hasError label {
+  color: var(--fieldErrorBorderColor);
+}
+
+.item :global(.check) {
+  position: absolute;
+  top: 0;
+  border: 0.125rem solid var(--fieldBorderColor); /* 2px */
+  border-radius: 100%;
+  width: var(--size);
+  height: var(--size);
+  transition-duration: var(--transitionDurationDefault);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item.hasError :global(.check) {
+  border-color: var(--fieldErrorBorderColor);
+}
+
+.item :global(.check)::before {
+  content: '';
+  display: block;
+  border-radius: 100%;
+  height: calc(var(--size) / 1.5);
+  width: calc(var(--size) / 1.5);
+}
+
+.item:hover :global(.check) {
+  border-color: var(--fieldHoverBorderColor);
+}
+
+.item.isDisabled label {
+  color: var(--fieldDisabledColor);
+}
+
+.item.isDisabled input[type='radio'] ~ :global(.check),
+.item.isDisabled input[type='radio']:checked ~ :global(.check) {
+  border-color: var(--fieldDisabledColor);
+}
+
+.item.isDisabled input[type='radio']:checked ~ :global(.check)::before {
+  background-color: var(--fieldDisabledBackgroundColor);
+}
+
+.item.isDisabled:hover {
+  pointer-events: none;
+  cursor: auto;
+}

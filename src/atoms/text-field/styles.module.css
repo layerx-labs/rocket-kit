@@ -1,0 +1,63 @@
+.textField {
+  border-width: var(--fieldBorderWidth);
+  border-style: solid;
+  border-color: var(--fieldBorderColor);
+  border-radius: var(--fieldBorderRadius);
+  background-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem; /* 20px */
+  background-position: 0.625rem 50%; /* 10px */
+  height: var(--fieldHeight);
+  padding: 0.625rem; /* 10px */
+  font-family: inherit;
+  font-size: 1rem;
+  transition-property: border-color;
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.textField.hasError {
+  border-color: var(--fieldErrorBorderColor);
+}
+
+.textField:hover {
+  border-color: var(--fieldHoverBorderColor);
+}
+
+.textField:focus {
+  border-color: var(--fieldActiveBorderColor);
+  outline: none;
+}
+
+.textField:disabled {
+  border-color: var(--fieldBorderColor);
+  background-color: var(--fieldDisabledBackgroundColor);
+  color: var(--fieldDisabledColor);
+}
+
+.textField:invalid {
+  border-color: var(--fieldErrorBorderColor);
+  outline: none;
+  box-shadow: none;
+}
+
+.textField:required {
+  border-color: var(--fieldBorderColor);
+}
+
+.textField:required.hasError {
+  border-color: var(--fieldErrorBorderColor);
+}
+
+.textField::placeholder {
+  color: var(--fieldPlaceholderColor);
+  opacity: 1;
+}
+
+/* Icon support via CSS custom property */
+.hasIcon {
+  background-image: var(--textFieldIcon);
+  padding-left: 2.5rem; /* 40px */
+}
+
+.hasIcon:focus {
+  background-image: var(--textFieldIconFocus);
+}

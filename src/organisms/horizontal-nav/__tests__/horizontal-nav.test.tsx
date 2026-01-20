@@ -1,5 +1,4 @@
 import React from 'react';
-import 'jest-styled-components';
 import { render } from '@testing-library/react';
 import { HorizontalNav } from '../../..';
 import { mockAllIsIntersecting } from 'react-intersection-observer/test-utils';

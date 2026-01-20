@@ -8,3 +8,6 @@ package-lock.json
 *.tgz
 .claude
 .vscode
+storybook-static
+coverage
+tsconfig.tsbuildinfo

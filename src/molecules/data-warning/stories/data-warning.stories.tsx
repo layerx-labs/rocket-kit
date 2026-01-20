@@ -6,10 +6,8 @@ export default {
   component: DataWarning,
   argTypes: {
     type: {
-      control: {
-        type: 'select',
-        options: ['login', 'data'],
-      },
+      control: 'select',
+      options: ['login', 'data'],
     },
   },
 };

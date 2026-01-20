@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  border: 0.125rem solid var(--bg); /* 2px */
+  border-radius: 0.1875rem; /* 3px */
+  line-height: 1;
+  max-width: 100%;
+  width: max-content;
+  overflow: hidden;
+}
+
+.wrapper:not(:first-child) {
+  margin-left: 0.3125rem; /* 5px */
+}
+
+.label,
+.value {
+  display: inline-block;
+  padding: 0.1875rem 0.5rem; /* 3px 8px */
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  letter-spacing: 0.0625rem; /* 1px */
+}
+
+.label {
+  flex: 1;
+  color: var(--bg);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.value {
+  background-color: var(--bg);
+  color: var(--valueColor);
+}

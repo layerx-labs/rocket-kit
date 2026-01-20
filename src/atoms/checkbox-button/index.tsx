@@ -1,5 +1,6 @@
 import React, { useState, CSSProperties } from 'react';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 export interface CheckboxButtonProps {
   label?: string | React.ReactNode;
@@ -29,14 +30,17 @@ const CheckboxButton = (props: CheckboxButtonProps) => {
   const [buttonChecked, setButtonChecked] = useState(checked);
 
   return (
-    <Styles.CheckboxWrapper
+    <label
       style={style}
-      className={className}
-      disabled={disabled}
-      checked={buttonChecked}
+      className={clsx(
+        styles.wrapper,
+        className,
+        buttonChecked && styles.isChecked,
+        disabled && styles.isDisabled
+      )}
     >
-      <Styles.CheckboxLabel>{label}</Styles.CheckboxLabel>
-      <Styles.CheckboxInput
+      <span className={styles.label}>{label}</span>
+      <input
         type="checkbox"
         name={value}
         defaultChecked={checked}
@@ -45,12 +49,13 @@ const CheckboxButton = (props: CheckboxButtonProps) => {
         disabled={disabled}
         data-testid={dataTestId}
         required={required}
+        className={styles.input}
         onClick={() => {
           setButtonChecked(!buttonChecked);
         }}
       />
-      <Styles.Checkmark disabled={disabled} />
-    </Styles.CheckboxWrapper>
+      <span className={styles.checkmark} />
+    </label>
   );
 };
 

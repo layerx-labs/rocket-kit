@@ -6,10 +6,8 @@ export default {
   component: ErrorField,
   argTypes: {
     color: {
-      control: {
-        type: 'inline-radio',
-        options: ['success', 'red'],
-      },
+      control: 'inline-radio',
+      options: ['success', 'red'],
     },
   },
 };

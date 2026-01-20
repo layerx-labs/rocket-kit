@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface PageControlProps {
   dark?: boolean;
@@ -40,7 +40,7 @@ const PaginationControl = (props: PageControlProps) => {
   });
 
   return (
-    <Styles.PaginationWrapper>
+    <div className={styles.wrapper}>
       {/* @ts-ignore */}
       <ReactPaginate
         containerClassName={dark ? 'dark pagination' : 'pagination'}
@@ -67,7 +67,7 @@ const PaginationControl = (props: PageControlProps) => {
         }}
         ariaLabelBuilder={ariaLabelBuilder}
       />
-    </Styles.PaginationWrapper>
+    </div>
   );
 };
 

@@ -1,0 +1,36 @@
+.list {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 120px);
+  grid-gap: 0.625rem; /* 10px */
+}
+
+.list li {
+  list-style: none;
+  border: 0.0625rem solid var(--grey100); /* 1px */
+  width: 7.5rem; /* 120px */
+}
+
+.list li > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list li > div:first-child {
+  height: 4.375rem; /* 70px */
+}
+
+.list li > div:first-child svg {
+  width: auto;
+  height: 3.125rem; /* 50px */
+}
+
+.list li > div:last-child {
+  background-color: var(--grey100);
+  height: 1.875rem; /* 30px */
+}
+
+.list li > div:last-child span {
+  font-size: 0.7rem;
+}
