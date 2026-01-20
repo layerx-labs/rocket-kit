@@ -2,6 +2,7 @@ import React from 'react';
 import Button, { ButtonProps } from '..';
 import icons from '../../../ions/icons';
 import { colors } from '../../../ions/variables';
+import { expect, within, userEvent, fn } from 'storybook/test';
 
 export default {
   title: 'Components/Atoms/Button',
@@ -46,4 +47,17 @@ ButtonComponent.args = {
   ariaLabel: 'Dummie Button',
   ariaHidden: false,
   disabled: false,
+  action: fn(),
+};
+ButtonComponent.play = async ({ canvasElement, args }) => {
+  const canvas = within(canvasElement);
+  const button = canvas.getByRole('button', { name: /dummie/i });
+
+  // Verify the button exists and has correct text
+  await expect(button).toBeInTheDocument();
+  await expect(button).toHaveTextContent('Dummie');
+
+  // Click the button and verify the action was called
+  await userEvent.click(button);
+  await expect(args.action).toHaveBeenCalled();
 };
