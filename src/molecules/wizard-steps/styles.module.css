@@ -81,7 +81,7 @@
 /* Active state */
 .isActive {
   --stepBorderColor: var(--fieldSuccessBackgroundColor);
-  --stepTextColor: var(--colorWhite);
+  --stepTextColor: var(--white);
 }
 
 @media (min-width: 576px) {

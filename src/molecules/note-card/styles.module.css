@@ -58,7 +58,7 @@
 
 .hasButton button:hover {
   background-color: var(--dark);
-  color: var(--colorWhite);
+  color: var(--white);
 }
 
 @media (min-width: 576px) {

@@ -186,7 +186,7 @@
 .table tbody td a {
   display: flex;
   align-items: center;
-  color: var(--colorBlack);
+  color: var(--black);
   text-decoration-color: var(--colorGrey400);
 }
 

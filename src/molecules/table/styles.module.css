@@ -7,12 +7,12 @@
     display: block;
     border-radius: var(--fieldBorderRadius);
     background:
-      linear-gradient(to right, var(--colorWhite) 30%, rgba(255, 255, 255, 0)),
-      linear-gradient(to right, rgba(255, 255, 255, 0), var(--colorWhite) 70%) 0 100%,
+      linear-gradient(to right, var(--white) 30%, rgba(255, 255, 255, 0)),
+      linear-gradient(to right, rgba(255, 255, 255, 0), var(--white) 70%) 0 100%,
       radial-gradient(farthest-side at 0% 50%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
       radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 0 100%;
     background-repeat: no-repeat;
-    background-color: var(--colorWhite);
+    background-color: var(--white);
     background-size:
       2.5rem 100%,
       2.5rem 100%,
@@ -221,7 +221,7 @@
 .table tbody td a {
   display: flex;
   align-items: center;
-  color: var(--colorBlack);
+  color: var(--black);
   text-decoration-color: var(--colorGrey400);
 }
 

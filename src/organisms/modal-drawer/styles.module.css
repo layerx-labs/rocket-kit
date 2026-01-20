@@ -31,7 +31,7 @@
 
 .modalContainer {
   margin-left: auto;
-  background: var(--colorWhite);
+  background: var(--white);
   width: 100%;
   min-height: 100vh;
   display: flex;
