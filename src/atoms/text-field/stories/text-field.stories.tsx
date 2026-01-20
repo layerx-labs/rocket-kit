@@ -7,16 +7,12 @@ export default {
   component: TextField,
   argTypes: {
     type: {
-      control: {
-        type: 'select',
-        options: ['text', 'url', 'password', 'date', 'time', 'number'],
-      },
+      control: 'select',
+      options: ['text', 'url', 'password', 'date', 'time', 'number'],
     },
     icon: {
-      control: {
-        type: 'select',
-        options: Object.keys(icons),
-      },
+      control: 'select',
+      options: Object.keys(icons),
     },
   },
 };

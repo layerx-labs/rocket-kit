@@ -8,28 +8,20 @@ export default {
   component: ButtonDropdown,
   argTypes: {
     variant: {
-      control: {
-        type: 'inline-radio',
-        options: ['solid', 'outline', 'text'],
-      },
+      control: 'inline-radio',
+      options: ['solid', 'outline', 'text'],
     },
     color: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
     txtColor: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
     icon: {
-      control: {
-        type: 'select',
-        options: Object.keys(icons),
-      },
+      control: 'select',
+      options: Object.keys(icons),
     },
   },
 };

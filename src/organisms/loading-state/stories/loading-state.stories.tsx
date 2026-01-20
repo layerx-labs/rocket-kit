@@ -6,10 +6,8 @@ export default {
   component: LoadingState,
   argTypes: {
     type: {
-      control: {
-        type: 'select',
-        options: ['text', 'card', 'value'],
-      },
+      control: 'select',
+      options: ['text', 'card', 'value'],
     },
   },
 };

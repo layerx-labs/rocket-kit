@@ -6,10 +6,8 @@ export default {
   component: RadioGroup,
   argTypes: {
     type: {
-      control: {
-        type: 'inline-radio',
-        options: ['row', 'column'],
-      },
+      control: 'inline-radio',
+      options: ['row', 'column'],
     },
     onChange: { action: () => {} },
   },
