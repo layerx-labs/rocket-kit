@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Toggle from '../index';
 import { ToggleProps } from '../types';
 
@@ -7,7 +7,21 @@ export default {
   component: Toggle,
 };
 
-export const ToggleComponent = (args: ToggleProps) => <Toggle {...args} />;
+export const ToggleComponent = (args: ToggleProps) => {
+  const [checked, setChecked] = useState(args.checked ?? false);
+
+  useEffect(() => {
+    setChecked(args.checked ?? false);
+  }, [args.checked]);
+
+  return (
+    <Toggle
+      {...args}
+      checked={checked}
+      onClick={(value: boolean) => setChecked(value)}
+    />
+  );
+};
 
 ToggleComponent.storyName = 'Toggle';
 ToggleComponent.args = {
