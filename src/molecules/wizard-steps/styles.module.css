@@ -75,7 +75,7 @@
 .step > div span {
   width: min-content;
   font-size: var(--fontSizeSm);
-  color: var(--stepTextColor, var(--colorPurple300));
+  color: var(--stepTextColor, var(--purple300));
 }
 
 /* Active state */

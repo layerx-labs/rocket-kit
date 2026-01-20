@@ -35,7 +35,7 @@
   width: 100%;
   border-width: 0;
   border-style: solid;
-  border-color: var(--colorGrey200);
+  border-color: var(--grey200);
   border-radius: var(--fieldBorderRadius);
   border-spacing: 0;
   white-space: nowrap;
@@ -126,7 +126,7 @@
 }
 
 .table tr {
-  border: var(--fieldBorderWidth) solid var(--colorGrey200);
+  border: var(--fieldBorderWidth) solid var(--grey200);
   border-radius: var(--fieldBorderRadius);
   position: relative;
 }
@@ -156,7 +156,7 @@
   .table thead {
     display: contents;
     font-weight: var(--fontWeightSemiBold);
-    color: var(--colorGrey400);
+    color: var(--grey400);
     text-align: left;
   }
 }
@@ -167,7 +167,7 @@
 }
 
 .table tbody tr:hover {
-  background-color: var(--colorGrey50);
+  background-color: var(--grey50);
 }
 
 .isLoadingState tbody tr:hover {
@@ -185,7 +185,7 @@
 }
 
 .table tbody td {
-  border-top: var(--fieldBorderWidth) solid var(--colorGrey200);
+  border-top: var(--fieldBorderWidth) solid var(--grey200);
   height: inherit;
   min-height: 3.125rem; /* 50px */
   padding: 0.9375rem; /* 15px */
@@ -222,7 +222,7 @@
   display: flex;
   align-items: center;
   color: var(--black);
-  text-decoration-color: var(--colorGrey400);
+  text-decoration-color: var(--grey400);
 }
 
 .table tbody td:first-child {
@@ -318,7 +318,7 @@
   }
 
   .table tbody td:first-child {
-    border-top: var(--fieldBorderWidth) solid var(--colorGrey200);
+    border-top: var(--fieldBorderWidth) solid var(--grey200);
   }
 
   .table tbody td::before {

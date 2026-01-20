@@ -81,7 +81,7 @@
   top: 0;
   right: 0;
   margin: -0.875rem -0.875rem 0 0; /* -14px */
-  border: 0.125rem solid var(--colorGrey200); /* 2px */
+  border: 0.125rem solid var(--grey200); /* 2px */
   min-width: 1.75rem; /* 28px */
   height: 1.75rem; /* 28px */
   z-index: 1;

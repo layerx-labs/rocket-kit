@@ -1,7 +1,7 @@
 .wrapper {
   --borderColor: var(--fieldBorderColor);
-  --backgroundColor: var(--colorPurple50);
-  --dark: var(--colorPurple400);
+  --backgroundColor: var(--purple50);
+  --dark: var(--purple400);
   border-width: var(--fieldBorderWidth);
   border-style: solid;
   border-color: var(--borderColor);
@@ -21,20 +21,20 @@
 /* Color variants */
 .colorGrey {
   --borderColor: var(--fieldBorderColor);
-  --backgroundColor: var(--colorPurple50);
-  --dark: var(--colorPurple400);
+  --backgroundColor: var(--purple50);
+  --dark: var(--purple400);
 }
 
 .colorGreen {
   --borderColor: var(--fieldSuccessBorderColor);
   --backgroundColor: var(--fieldSuccessBackgroundColor);
-  --dark: var(--colorGreen900);
+  --dark: var(--green900);
 }
 
 .colorRed {
   --borderColor: var(--fieldErrorBorderColor);
   --backgroundColor: var(--fieldErrorBackgroundColor);
-  --dark: var(--colorRed800);
+  --dark: var(--red800);
 }
 
 /* With button styles */

@@ -7,7 +7,7 @@
 
 .list li {
   list-style: none;
-  border: 0.0625rem solid var(--colorGrey100); /* 1px */
+  border: 0.0625rem solid var(--grey100); /* 1px */
   width: 7.5rem; /* 120px */
 }
 
@@ -27,7 +27,7 @@
 }
 
 .list li > div:last-child {
-  background-color: var(--colorGrey100);
+  background-color: var(--grey100);
   height: 1.875rem; /* 30px */
 }
 

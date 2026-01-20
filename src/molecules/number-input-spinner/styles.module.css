@@ -68,7 +68,7 @@
 .button svg {
   width: auto;
   height: 1.25rem; /* 20px */
-  fill: var(--colorPurple300);
+  fill: var(--purple300);
 }
 
 .button:hover {
