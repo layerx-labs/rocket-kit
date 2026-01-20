@@ -38,7 +38,7 @@ exports[`TableDnD renders 1`] = `
           <tr
             class="tableRow"
             data-rbd-draggable-context-id="0"
-            data-rbd-draggable-id="0"
+            data-rbd-draggable-id="1"
             data-testid="row-table-test-id"
           >
             <td
@@ -47,7 +47,7 @@ exports[`TableDnD renders 1`] = `
               <div
                 aria-describedby="rbd-hidden-text-0-hidden-text-0"
                 data-rbd-drag-handle-context-id="0"
-                data-rbd-drag-handle-draggable-id="0"
+                data-rbd-drag-handle-draggable-id="1"
                 draggable="false"
                 role="button"
                 tabindex="0"
@@ -107,7 +107,7 @@ exports[`TableDnD renders 1`] = `
                   class="button variantText iconOnly iconLeft button"
                   data-event=""
                   data-testid="icon-button"
-                  style="--bg: #73758C; --txt: #ffffff; --hover: #5C5E70; --buttonMinWidth: 2.625rem; --buttonPadding: 0; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
+                  style="--bg: #73758C; --txt: #ffffff; --hover: #5C5E70; --buttonMinWidth: 2.625rem; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
                 >
                   <svg
                     class="icon"

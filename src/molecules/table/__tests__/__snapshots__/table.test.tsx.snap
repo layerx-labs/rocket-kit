@@ -68,7 +68,7 @@ exports[`Table renders 1`] = `
                   class="button variantText iconOnly iconLeft button"
                   data-event=""
                   data-testid="icon-button"
-                  style="--bg: #73758C; --txt: #ffffff; --hover: #5C5E70; --buttonMinWidth: 2.625rem; --buttonPadding: 0; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
+                  style="--bg: #73758C; --txt: #ffffff; --hover: #5C5E70; --buttonMinWidth: 2.625rem; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
                 >
                   <svg
                     class="icon"

@@ -10,7 +10,7 @@ exports[`Modal Footer renders 1`] = `
       class="button variantOutline notRounded iconLeft button"
       data-event=""
       data-testid=""
-      style="--bg: #ABACBA; --txt: #ABACBA; --hover: #8F91A3; --buttonMinWidth: 5rem; --buttonPadding: 0 var(--buttonPaddingX); --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
+      style="--bg: #ABACBA; --txt: #ABACBA; --hover: #8F91A3; --buttonMinWidth: 5rem; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
     >
       <span>
         Cancel
@@ -21,7 +21,7 @@ exports[`Modal Footer renders 1`] = `
       class="button variantSolid notRounded iconLeft button"
       data-event=""
       data-testid=""
-      style="--bg: #4329A6; --txt: #ffffff; --hover: #362185; --buttonMinWidth: 5rem; --buttonPadding: 0 var(--buttonPaddingX); --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
+      style="--bg: #4329A6; --txt: #ffffff; --hover: #362185; --buttonMinWidth: 5rem; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
       type="submit"
     >
       <span>

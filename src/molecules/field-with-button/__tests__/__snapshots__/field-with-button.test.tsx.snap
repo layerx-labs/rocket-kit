@@ -20,7 +20,7 @@ exports[`FieldWidthButton renders 1`] = `
         class="button variantSolid notRounded iconOnly iconLeft button"
         data-event=""
         data-testid=""
-        style="--bg: #D9D4ED; --txt: #ffffff; --hover: #C7BFE4; --buttonMinWidth: 2.625rem; --buttonPadding: 0; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
+        style="--bg: #D9D4ED; --txt: #ffffff; --hover: #C7BFE4; --buttonMinWidth: 2.625rem; --spinnerOrder: 1; --textOrder: 2; --iconOrder: 1;"
       >
         <svg
           class="icon"

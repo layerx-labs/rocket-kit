@@ -10,7 +10,7 @@ exports[`Button Link renders 1`] = `
     data-testid=""
     href="https://github.com/taikai/taikai-design-system"
     rel=""
-    style="--bg: #4329A6; --txt: #ffffff; --hover: #362185; --buttonMinWidth: 2.625rem; --buttonPadding: 0; --textOrder: 2; --iconOrder: 1;"
+    style="--bg: #4329A6; --txt: #ffffff; --hover: #362185; --buttonMinWidth: 2.625rem; --textOrder: 2; --iconOrder: 1;"
     target=""
   />
 </DocumentFragment>
