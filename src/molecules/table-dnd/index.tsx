@@ -119,7 +119,6 @@ const TableDnD = <CellData extends CellBaseType>(
   } as CSSProperties & Record<string, string>;
 
   return (
-    // @ts-expect-error react-beautiful-dnd types are incompatible with React 18
     <DragDropContext
       onBeforeDragStart={result => {
         setDraggableId(result.draggableId);
@@ -182,7 +181,6 @@ const TableDnD = <CellData extends CellBaseType>(
                 )}
               </tr>
             </thead>
-            {/* @ts-expect-error react-beautiful-dnd types are incompatible with React 18 */}
             <Droppable droppableId="droppable">
               {(provided, snapshot) => (
                 <tbody
@@ -192,7 +190,6 @@ const TableDnD = <CellData extends CellBaseType>(
                 >
                   <>
                   {validValues.map((row, index) => (
-                    // @ts-expect-error react-beautiful-dnd types are incompatible with React 18
                     <Draggable
                       key={row.id}
                       draggableId={row.id}

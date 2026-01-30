@@ -40,6 +40,7 @@ exports[`TableDnD renders 1`] = `
             data-rbd-draggable-context-id="0"
             data-rbd-draggable-id="1"
             data-testid="row-table-test-id"
+            style="user-select: none; background-color: transparent;"
           >
             <td
               class="thin drag-handle"
@@ -92,6 +93,7 @@ exports[`TableDnD renders 1`] = `
                   viewBox="0 0 32 32"
                 >
                   <path
+                    d="M27 9.4V5h-7.15v4.4h-7.7V5H5v4.4h3.3v4.4h3.85v4.4h-3.3v4.4H5V27h7.15v-4.4h7.7V27H27v-4.4h-3.85v-4.4h-3.3v-4.4h3.85V9.4z"
                     style="fill: hsl(0, 0%, 16%);"
                   />
                 </svg>
