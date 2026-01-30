@@ -3,7 +3,7 @@
 exports[`Tag renders 1`] = `
 <DocumentFragment>
   <span
-    class="tag variantSolid"
+    class="tag tag variantSolid"
     style="--bg: #EB5757; --txt: #ffffff;"
     title="hello"
   >

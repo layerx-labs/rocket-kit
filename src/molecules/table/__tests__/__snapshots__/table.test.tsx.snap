@@ -38,7 +38,7 @@ exports[`Table renders 1`] = `
             >
               <div>
                 <div
-                  class="wrapper"
+                  class="avatar-img wrapper"
                   style="--avatarSize: 30px;"
                 >
                   <img
