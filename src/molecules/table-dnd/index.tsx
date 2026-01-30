@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState } from 'react';
+import React, { CSSProperties, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { Button, EmptyTable, Icon } from '../..';
 import { hasValue } from '../../utils/filters/has-value';
@@ -73,6 +73,8 @@ const TableDnD = <CellData extends CellBaseType>(
   const [draggableId, setDraggableId] = useState('');
   const [rowData, setRowData] = useState({});
   const [rowIndex, setRowIndex] = useState<number | undefined>(undefined);
+  const [columnWidths, setColumnWidths] = useState<number[]>([]);
+  const tableRef = useRef<HTMLTableElement>(null);
 
   const { columns = [] } = options;
   const hasActionMenu = actions.length > 0;
@@ -102,9 +104,9 @@ const TableDnD = <CellData extends CellBaseType>(
   };
 
   const getItemStyle = (isDragging: boolean, draggableStyle: any) => ({
-    userSelect: 'none',
-    background: isDragging ? colors.white : 'transparent',
     ...draggableStyle,
+    userSelect: 'none',
+    backgroundColor: isDragging ? colors.white : 'transparent',
   });
 
   const getListStyle = (isDraggingOver: boolean) => ({
@@ -121,8 +123,21 @@ const TableDnD = <CellData extends CellBaseType>(
     <DragDropContext
       onBeforeDragStart={result => {
         setDraggableId(result.draggableId);
+        // Capture column widths from the row being dragged
+        if (tableRef.current) {
+          const row = tableRef.current.querySelector(
+            `tr[data-rbd-draggable-id="${result.draggableId}"]`
+          );
+          if (row) {
+            const cells = row.querySelectorAll('td');
+            const widths = Array.from(cells).map(cell => cell.offsetWidth);
+            setColumnWidths(widths);
+          }
+        }
       }}
       onDragEnd={result => {
+        setDraggableId('');
+        setColumnWidths([]);
         if (!result.destination) {
           return;
         }
@@ -132,12 +147,12 @@ const TableDnD = <CellData extends CellBaseType>(
           result.destination.index
         );
         onChange(newValues);
-        setDraggableId('');
       }}
     >
       <div className={tableStyles.tableWrapper}>
         <div className={tableStyles.overflowWrapper}>
           <table
+            ref={tableRef}
             className={clsx(
               styles.table,
               border && styles.hasBorder,
@@ -188,6 +203,7 @@ const TableDnD = <CellData extends CellBaseType>(
                           ref={provided.innerRef}
                           key={row.id}
                           data-testid={`row-${dataTestId}`}
+                          {...provided.draggableProps}
                           className={clsx(
                             styles.tableRow,
                             draggableId === row.id && styles.isDragging
@@ -196,34 +212,49 @@ const TableDnD = <CellData extends CellBaseType>(
                             snapshot.isDragging,
                             provided.draggableProps.style
                           )}
-                          {...provided.draggableProps}
                         >
-                          <td className="thin drag-handle">
+                          <td
+                            className="thin drag-handle"
+                            style={
+                              snapshot.isDragging && columnWidths[0]
+                                ? { width: columnWidths[0] }
+                                : undefined
+                            }
+                          >
                             <div {...provided.dragHandleProps}>
                               <Icon icon="drag-handle" />
                             </div>
                           </td>
                           {columns.map(
-                            ({
-                              id = '',
-                              dataKey = '',
-                              className = '',
-                              value = '',
-                              renderer = null,
-                              dataTestId,
-                            }) => (
+                            (
+                              {
+                                id = '',
+                                dataKey = '',
+                                className = '',
+                                value = '',
+                                renderer = null,
+                                dataTestId,
+                              },
+                              colIndex
+                            ) => (
                               <td
                                 key={id}
                                 className={className}
                                 data-label={value}
                                 data-testid={`td-${dataTestId}`}
+                                style={
+                                  snapshot.isDragging &&
+                                  columnWidths[colIndex + 1]
+                                    ? { width: columnWidths[colIndex + 1] }
+                                    : undefined
+                                }
                               >
                                 <div>
                                   {renderer
                                     ? renderer(row[dataKey as keyof CellData], row)
                                     : (row[dataKey as keyof CellData] as unknown as React.ReactNode)}
                                   {className === 'kai' && (
-                                    <Icon icon="kai" fill="hsl(0, 0%, 16%)" />
+                                    <Icon icon="lx" fill="hsl(0, 0%, 16%)" />
                                   )}
                                 </div>
                               </td>
@@ -231,7 +262,16 @@ const TableDnD = <CellData extends CellBaseType>(
                           )}
 
                           {hasActionMenu && (
-                            <td className="menu" data-testid={menuDataTestId}>
+                            <td
+                              className="menu"
+                              data-testid={menuDataTestId}
+                              style={
+                                snapshot.isDragging &&
+                                columnWidths[columns.length + 1]
+                                  ? { width: columnWidths[columns.length + 1] }
+                                  : undefined
+                              }
+                            >
                               <div ref={ref}>
                                 <Button
                                   variant="text"
