@@ -1,3 +1,6 @@
+// Global CSS variables
+import './styles/global.css';
+
 // Atoms
 export { default as AvatarImage } from './atoms/avatar-image';
 export { default as Button } from './atoms/button';
