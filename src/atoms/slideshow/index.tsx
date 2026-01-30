@@ -1,7 +1,8 @@
 import React from 'react';
+import clsx from 'clsx';
 import { Carousel } from 'react-responsive-carousel';
 import Button from '../button';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface SlideshowProps {
   showArrows?: boolean;
@@ -27,7 +28,9 @@ const Slideshow = (props: SlideshowProps) => {
   } = props;
 
   return (
-    <Styles.Wrapper slidesNumber={slidesNumber}>
+    <div
+      className={clsx(styles.wrapper, slidesNumber <= 1 && styles.hideDots)}
+    >
       <Carousel
         showArrows={showArrows}
         showStatus={false}
@@ -92,7 +95,7 @@ const Slideshow = (props: SlideshowProps) => {
       >
         {children}
       </Carousel>
-    </Styles.Wrapper>
+    </div>
   );
 };
 

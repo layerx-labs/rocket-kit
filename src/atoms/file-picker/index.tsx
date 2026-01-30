@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import clsx from 'clsx';
 import ErrorField from '../error-field';
 import Icon from '../icon';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface FilePickerProps {
   name: string;
@@ -44,7 +45,13 @@ const FilePicker = (props: FilePickerProps) => {
   };
 
   return (
-    <Styles.Wrapper disabled={disabled} error={!!error}>
+    <div
+      className={clsx(
+        styles.wrapper,
+        error && styles.hasError,
+        disabled && styles.isDisabled
+      )}
+    >
       <input
         id={name}
         type="file"
@@ -66,7 +73,7 @@ const FilePicker = (props: FilePickerProps) => {
         </span>
       </label>
       {error && <ErrorField error={error} />}
-    </Styles.Wrapper>
+    </div>
   );
 };
 

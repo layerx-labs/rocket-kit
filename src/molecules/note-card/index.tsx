@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
+import clsx from 'clsx';
 import { NoteColor } from './types';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface NoteCardProps {
   color?: NoteColor;
@@ -21,11 +22,21 @@ const NoteCard = (props: NoteCardProps) => {
     style,
   } = props;
 
+  const colorClass =
+    color === 'grey'
+      ? styles.colorGrey
+      : color === 'green'
+        ? styles.colorGreen
+        : styles.colorRed;
+
   return (
-    <Styles.Wrapper
-      className={className}
-      color={color}
-      buttonValue={buttonValue}
+    <div
+      className={clsx(
+        styles.wrapper,
+        colorClass,
+        buttonValue && styles.hasButton,
+        className
+      )}
       style={style}
     >
       <div>
@@ -36,7 +47,7 @@ const NoteCard = (props: NoteCardProps) => {
           <button onClick={onClick}>{buttonValue}</button>
         </div>
       )}
-    </Styles.Wrapper>
+    </div>
   );
 };
 

@@ -2,40 +2,31 @@ import React from 'react';
 import Button, { ButtonProps } from '..';
 import icons from '../../../ions/icons';
 import { colors } from '../../../ions/variables';
+import { expect, within, userEvent, fn } from 'storybook/test';
 
 export default {
   title: 'Components/Atoms/Button',
   component: Button,
   argTypes: {
     variant: {
-      control: {
-        type: 'inline-radio',
-        options: ['solid', 'outline', 'text'],
-      },
+      control: 'inline-radio',
+      options: ['solid', 'outline', 'text'],
     },
     color: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
     txtColor: {
-      control: {
-        type: 'select',
-        options: Object.keys(colors),
-      },
+      control: 'select',
+      options: Object.keys(colors),
     },
     iconPosition: {
-      control: {
-        type: 'inline-radio',
-        options: ['left', 'right'],
-      },
+      control: 'inline-radio',
+      options: ['left', 'right'],
     },
     icon: {
-      control: {
-        type: 'select',
-        options: ['', ...Object.keys(icons)],
-      },
+      control: 'select',
+      options: ['', ...Object.keys(icons)],
     },
   },
 };
@@ -56,4 +47,17 @@ ButtonComponent.args = {
   ariaLabel: 'Dummie Button',
   ariaHidden: false,
   disabled: false,
+  action: fn(),
+};
+ButtonComponent.play = async ({ canvasElement, args }) => {
+  const canvas = within(canvasElement);
+  const button = canvas.getByRole('button', { name: /dummie/i });
+
+  // Verify the button exists and has correct text
+  await expect(button).toBeInTheDocument();
+  await expect(button).toHaveTextContent('Dummie');
+
+  // Click the button and verify the action was called
+  await userEvent.click(button);
+  await expect(args.action).toHaveBeenCalled();
 };

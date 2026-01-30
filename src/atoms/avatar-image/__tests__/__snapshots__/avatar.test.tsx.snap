@@ -2,28 +2,9 @@
 
 exports[`Avatar renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  position: relative;
-  border: 0.125rem solid #C7C8D1;
-  border-radius: 999px;
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.c0 > * {
-  width: 100%;
-  height: 100%;
-}
-
-.c0 img {
-  object-fit: cover;
-}
-
-<div
-    class="c0 avatar-img"
-    size="30"
+  <div
+    class="wrapper"
+    style="--avatarSize: 30px;"
   >
     <img
       alt="avatar alt"

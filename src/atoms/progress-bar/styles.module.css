@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  flex: 1;
+  border: 0.0625rem solid var(--purple100); /* 1px */
+  border-radius: 999px;
+  background-color: var(--grey50);
+  height: 0.625rem; /* 10px */
+  overflow: hidden;
+}
+
+.progress {
+  border-radius: 999px;
+  background-color: var(--purple500);
+  height: 100%;
+  transition-duration: 2s;
+}
+
+.value {
+  margin-left: 0.3125rem; /* 5px */
+  font-size: var(--fontSizeXs);
+  font-weight: 400;
+  color: var(--purple400);
+  letter-spacing: 0.0625rem; /* 1px */
+  text-transform: uppercase;
+}

@@ -1,0 +1,148 @@
+.button {
+  margin: 0;
+  border-style: solid;
+  background-color: transparent;
+  width: min-content;
+  min-width: var(--buttonMinWidth, 5rem); /* default 80px */
+  height: var(--buttonHeight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--buttonPadding);
+  white-space: nowrap;
+  text-decoration: none;
+  transition-duration: var(--transitionDurationDefault);
+  cursor: pointer;
+  outline: none;
+}
+
+/* Variant: solid */
+.variantSolid {
+  border-width: 0;
+  border-color: var(--bg);
+  background-color: var(--bg);
+}
+
+.variantSolid:hover {
+  background-color: var(--hover);
+}
+
+.variantSolid:disabled:hover {
+  background-color: var(--bg);
+}
+
+.variantSolid span {
+  color: var(--txt);
+}
+
+.variantSolid svg {
+  fill: var(--txt);
+}
+
+/* Variant: outline */
+.variantOutline {
+  border-width: var(--buttonBorderWidth);
+  border-color: var(--bg);
+  background-color: transparent;
+}
+
+.variantOutline:hover {
+  border-color: var(--hover);
+}
+
+.variantOutline:hover span {
+  color: var(--hover);
+}
+
+.variantOutline:hover svg {
+  fill: var(--hover);
+}
+
+.variantOutline span {
+  color: var(--txt);
+}
+
+.variantOutline svg {
+  fill: var(--txt);
+}
+
+/* Variant: text */
+.variantText {
+  border-width: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.variantText:hover span {
+  color: var(--hover);
+}
+
+.variantText:hover svg {
+  fill: var(--hover);
+}
+
+.variantText span {
+  color: var(--bg);
+}
+
+.variantText svg {
+  fill: var(--bg);
+}
+
+/* Border radius */
+.rounded {
+  border-radius: 999px;
+}
+
+.notRounded {
+  border-radius: var(--buttonBorderRadius);
+}
+
+/* Icon only button (no value) */
+.iconOnly {
+  min-width: 2.625rem; /* 42px */
+  padding: 0;
+}
+
+/* Disabled state */
+.button:disabled {
+  cursor: inherit;
+  opacity: 0.5;
+}
+
+.button:disabled:hover {
+  pointer-events: none;
+}
+
+/* Icon positioning */
+.iconLeft > *:not(:last-child) {
+  margin-right: var(--buttonIconSpacing);
+}
+
+.iconRight > *:not(:last-child) {
+  margin-left: var(--buttonIconSpacing);
+}
+
+/* Spinner */
+.button :global(.spinner) {
+  order: var(--spinnerOrder, 1);
+}
+
+/* Span (text) */
+.button span {
+  position: relative;
+  font-size: 1rem; /* 16px */
+  font-weight: var(--fontWeightMedium);
+  line-height: 1rem;
+  pointer-events: none;
+  transition-duration: var(--transitionDurationDefault);
+  order: var(--textOrder, 2);
+}
+
+/* SVG (icon) */
+.button svg {
+  order: var(--iconOrder, 1);
+  width: var(--buttonIconSize);
+  height: var(--buttonIconSize);
+  transition: var(--transitionDurationDefault);
+}

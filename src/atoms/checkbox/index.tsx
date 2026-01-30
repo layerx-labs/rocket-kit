@@ -1,10 +1,6 @@
 import React, { CSSProperties, useMemo, useRef, useState } from 'react';
-import {
-  CheckboxWrapper,
-  CheckboxLabel,
-  CheckboxInput,
-  Checkmark,
-} from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 export interface CheckboxProps {
   value: string;
@@ -60,26 +56,29 @@ const Checkbox = ({
   }, [checked, isChecked, disabled]);
 
   return (
-    <CheckboxWrapper
+    <label
       style={style}
-      className={className}
-      error={error}
-      disabled={disabled}
+      className={clsx(
+        styles.wrapper,
+        className,
+        error && styles.hasError,
+        disabled && styles.isDisabled
+      )}
     >
-      <CheckboxLabel>{label}</CheckboxLabel>
-      <CheckboxInput
+      <span className={styles.label}>{label}</span>
+      <input
         type="checkbox"
         name={value}
         defaultChecked={isChecked}
         aria-checked={isChecked}
         onChange={handleOnChange}
-        error={error}
         disabled={disabled}
         data-testid={dataTestId}
         required={required}
+        className={styles.input}
       />
-      <Checkmark className={checkmarkClassName} error={error} />
-    </CheckboxWrapper>
+      <span className={clsx(styles.checkmark, checkmarkClassName)} />
+    </label>
   );
 };
 

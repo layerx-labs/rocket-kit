@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon, { IconProps } from '..';
 import icons from '../../../ions/icons';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export default {
   title: 'Components/Atoms/Icon',
@@ -15,7 +15,7 @@ export const Icons = (args: IconProps) => {
   const IconsList = (props: IconProps) => {
     const { fill } = props;
     return (
-      <Styles.List>
+      <ul className={styles.list}>
         {Object.keys(icons).map(icon => (
           <li key={icon}>
             <div>
@@ -26,41 +26,35 @@ export const Icons = (args: IconProps) => {
             </div>
           </li>
         ))}
-      </Styles.List>
+      </ul>
     );
   };
 
   return <IconsList {...args} />;
 };
 
-Icons.story = {
-  name: 'All',
-  args: {
-    fill: '#000000',
-  },
+Icons.storyName = 'All';
+Icons.args = {
+  fill: '#000000',
 };
 
 export const IconComponent = (args: IconProps) => <Icon {...args} />;
 
-IconComponent.story = {
-  name: 'Single',
-  args: {
-    ...Icons.story.args,
-    icon: 'rocket',
-  },
-  argTypes: {
-    icon: {
-      control: {
-        type: 'select',
-        options: Object.keys(icons),
-      },
-    },
-  },
-  decorators: [
-    (Story: any) => (
-      <div style={{ width: '50px', height: '50px' }}>
-        <Story />
-      </div>
-    ),
-  ],
+IconComponent.storyName = 'Single';
+IconComponent.args = {
+  ...Icons.args,
+  icon: 'rocket',
 };
+IconComponent.argTypes = {
+  icon: {
+    control: 'select',
+    options: Object.keys(icons),
+  },
+};
+IconComponent.decorators = [
+  (Story: any) => (
+    <div style={{ width: '50px', height: '50px' }}>
+      <Story />
+    </div>
+  ),
+];

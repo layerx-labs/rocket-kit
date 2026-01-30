@@ -2,161 +2,18 @@
 
 exports[`Empty Table renders 1`] = `
 <DocumentFragment>
-  .c0 {
-  position: relative;
-}
-
-.c2 {
-  border-width: 0.0625rem;
-  border-style: solid;
-  border-color: #C7C8D1;
-  border-radius: 0.5rem 0.5rem 0 0;
-  height: 3.125rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #8F91A3;
-}
-
-.c2 > div {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: none;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding: 0 0.9375rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #8F91A3;
-}
-
-.c2 > div:first-child,
-.c2 > div:nth-child(2) {
-  display: initial;
-}
-
-.c3 {
-  border-width: 0 0.0625rem 0.0625rem 0.0625rem;
-  border-style: solid;
-  border-color: #C7C8D1;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.c4 {
-  height: 3.125rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c4:not(:last-child) {
-  border-bottom: 0.0625rem solid #C7C8D1;
-}
-
-.c4 > div {
-  display: none;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  padding: 0 0.9375rem;
-}
-
-.c4 > div:first-child,
-.c4 > div:nth-child(2) {
-  display: inherit;
-}
-
-.c5 {
-  background-color: #C7C8D1;
-  width: 100%;
-  height: 0.9375rem;
-}
-
-.c1 {
-  position: absolute;
-  bottom: 0;
-  background-image: linear-gradient( to bottom, rgba(255,255,255,0), rgba(255,255,255,1) );
-  width: 100%;
-  height: calc(100% - 3.125rem);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  padding: 0 0.9375rem 0.9375rem 0.9375rem;
-  text-align: center;
-  color: #8F91A3;
-}
-
-@media (min-width:700px) {
-  .c2 > div:nth-child(3) {
-    display: initial;
-  }
-}
-
-@media (min-width:900px) {
-  .c2 > div:nth-child(4) {
-    display: initial;
-  }
-}
-
-@media (min-width:1280px) {
-  .c2 > div {
-    display: initial;
-  }
-}
-
-@media (min-width:700px) {
-  .c4 > div:nth-child(3) {
-    display: inherit;
-  }
-}
-
-@media (min-width:900px) {
-  .c4 > div:nth-child(4) {
-    display: inherit;
-  }
-}
-
-@media (min-width:1280px) {
-  .c4 > div {
-    display: inherit;
-  }
-}
-
-<div
-    class="c0"
+  <div
+    class="wrapper"
   >
     <div
-      class="c1"
+      class="overlay"
     >
       <span>
         No data
       </span>
     </div>
     <div
-      class="c2"
+      class="head hasBorder"
     >
       <div>
         Column 1
@@ -172,77 +29,77 @@ exports[`Empty Table renders 1`] = `
       </div>
     </div>
     <div
-      class="c3"
+      class="body hasBorder"
     >
       <div
-        class="c4"
+        class="row"
       >
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
       </div>
       <div
-        class="c4"
+        class="row"
       >
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
       </div>
       <div
-        class="c4"
+        class="row"
       >
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
         <div>
           <div
-            class="c5"
+            class="cellText"
           />
         </div>
       </div>

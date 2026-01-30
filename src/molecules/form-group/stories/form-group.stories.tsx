@@ -8,15 +8,11 @@ export default {
   component: FormGroup,
   argTypes: {
     error: {
-      control: {
-        type: 'boolean',
-      },
+      control: 'boolean',
     },
     currency: {
-      control: {
-        type: 'select',
-        options: ['', 'lx', 'vote', 'tkai', 'vkai'],
-      },
+      control: 'select',
+      options: ['', 'lx', 'vote', 'tkai', 'vkai'],
     },
   },
 };

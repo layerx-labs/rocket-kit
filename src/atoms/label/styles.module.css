@@ -1,0 +1,13 @@
+.label {
+  display: flex;
+  align-items: center;
+  font-size: var(--fontSizeXs);
+  font-weight: 600;
+  color: var(--grey500);
+}
+
+.label svg {
+  margin-left: 0.3125rem; /* 5px */
+  width: auto;
+  height: 1rem; /* 16px */
+}

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { CSSProperties, useState, useEffect } from 'react';
+import clsx from 'clsx';
 import throttle from 'lodash.throttle';
 import ReactDOM from 'react-dom';
 import { Button, ModalFooter } from '../..';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface ModalProps {
   isShowing: boolean;
@@ -50,23 +51,27 @@ const Modal = (props: ModalProps) => {
     }
   }, []);
 
+  const cssVars = {
+    '--modalZIndex': zIndex,
+  } as CSSProperties & Record<string, number>;
+
   return isShowing ? (
     ReactDOM.createPortal(
       <React.Fragment>
-        <Styles.ModalOverlay zIndex={zIndex} />
-        <Styles.ModalWrapper
+        <div className={styles.modalOverlay} style={cssVars} />
+        <div
+          className={clsx(styles.modalWrapper, overflow && styles.hasOverflow)}
           aria-modal
           tabIndex={-1}
           role="dialog"
-          zIndex={zIndex}
-          modalOverflow={overflow}
+          style={cssVars}
         >
-          <Styles.ModalContainer
+          <div
+            className={clsx(styles.modalContainer, 'modal')}
             onClick={event => event.stopPropagation()}
-            zIndex={zIndex}
-            className="modal"
+            style={cssVars}
           >
-            <Styles.ModalHeader>
+            <div className={styles.modalHeader}>
               {title && <h2>{title}</h2>}
 
               <Button
@@ -77,15 +82,15 @@ const Modal = (props: ModalProps) => {
                 action={hide}
                 rounded
               />
-            </Styles.ModalHeader>
+            </div>
 
             {children}
 
             {footer && (
               <ModalFooter closeAction={hide} closeValue={closeValue} />
             )}
-          </Styles.ModalContainer>
-        </Styles.ModalWrapper>
+          </div>
+        </div>
       </React.Fragment>,
       document.body
     )

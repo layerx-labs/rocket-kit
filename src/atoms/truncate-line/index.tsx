@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react';
-import * as Styles from './styles';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 export interface TruncateLineProps {
   value: string;
@@ -9,15 +10,15 @@ export interface TruncateLineProps {
 }
 
 const TruncateLine = (props: TruncateLineProps) => {
-  const { value, className = 'truncate', style, dataTestId } = props;
+  const { value, className, style, dataTestId } = props;
   return (
-    <Styles.TruncateWrapper
-      className={className}
+    <div
+      className={clsx(styles.wrapper, className)}
       style={style}
       data-testid={dataTestId}
     >
       <span>{value}</span>
-    </Styles.TruncateWrapper>
+    </div>
   );
 };
 

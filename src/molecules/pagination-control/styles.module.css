@@ -1,0 +1,75 @@
+.wrapper {
+  --size: 1.875rem; /* 30px */
+}
+
+.wrapper :global(ul.pagination) {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+
+.wrapper :global(ul.pagination li) {
+  min-width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+}
+
+.wrapper :global(ul.pagination li.previous),
+.wrapper :global(ul.pagination li.next) {
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.wrapper :global(ul.pagination li.previous a svg),
+.wrapper :global(ul.pagination li.next a svg) {
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.wrapper :global(ul.pagination li a),
+.wrapper :global(ul.pagination li .break) {
+  min-width: var(--size);
+  height: var(--size);
+  transition-duration: var(--transitionDurationDefault);
+}
+
+.wrapper :global(ul.pagination li a) {
+  border-radius: var(--fieldBorderRadius);
+  min-width: var(--size);
+  height: var(--size);
+  padding: 0 0.3125rem; /* 5px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+  font-weight: var(--fontWeightSemiBold);
+  text-decoration: none;
+}
+
+.wrapper :global(ul.pagination li a:hover) {
+  color: var(--blue500);
+}
+
+.wrapper :global(ul.pagination li a svg) {
+  width: 1.125rem; /* 18px */
+  height: auto;
+  fill: var(--blue500);
+}
+
+.wrapper :global(ul.pagination li.active) {
+  pointer-events: none;
+}
+
+.wrapper :global(ul.pagination li.active a) {
+  background-color: var(--blue500);
+  color: var(--white);
+}
+
+.wrapper :global(ul.pagination.dark a) {
+  color: var(--white);
+}
+
+.wrapper :global(ul.pagination.dark a:hover) {
+  color: var(--white);
+}

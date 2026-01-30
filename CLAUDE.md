@@ -10,31 +10,31 @@ TAIKAI Rocket Kit is a React design system and component library (`@taikai/rocke
 
 ```bash
 # Development - run in watch mode
-yarn start
+bun start
 
 # Run Storybook for component development (port 6006)
-yarn storybook
+bun run storybook
 
 # Build for production
-yarn build
+bun run build
 
 # Run all tests
-yarn test
+bun test
 
 # Run a single test file
-yarn test <filename>  # e.g., yarn test button.test.tsx
+bun test <filename>  # e.g., bun test button.test.tsx
 
 # Run tests in watch mode
-yarn test --watch
+bun test --watch
 
 # Lint source code
-yarn lint
+bun run lint
 
 # Check bundle size (30KB limit)
-yarn size
+bun run size
 
 # Analyze bundle
-yarn analyze
+bun run analyze
 ```
 
 ## Architecture
@@ -86,8 +86,8 @@ All components must be exported from `src/index.ts` following the atomic design 
 
 ## Key Dependencies
 
-- React 16+ (peer dependency)
+- React 18+ (peer dependency)
 - styled-components 5.2+
 - TypeScript 4.2+
 - TSDX for build tooling
-- Storybook 8 for documentation
+- Storybook 10 for documentation (uses Vite)

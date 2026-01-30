@@ -11,8 +11,7 @@
       }
     ],
     "@babel/preset-typescript",
-    "@babel/preset-react",
-    "@babel/preset-flow"
+    "@babel/preset-react"
   ],
   "plugins": ["macros", "@babel/plugin-proposal-optional-chaining"]
 }

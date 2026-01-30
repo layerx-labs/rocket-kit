@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
+import clsx from 'clsx';
 import ErrorField from '../error-field';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface TextAreaProps {
   className?: string;
@@ -39,34 +40,36 @@ const TextArea = (props: TextAreaProps) => {
     dataTestId,
   } = props;
 
+  const textareaStyle = height
+    ? ({ '--textareaHeight': height, ...style } as CSSProperties & Record<string, string>)
+    : style;
+
   return (
-    <Styles.Wrapper className="text-field">
-      <Styles.TextAreaStyle
-        className={className}
-        style={style}
-        height={height}
+    <div className={clsx(styles.wrapper, 'text-field')}>
+      <textarea
+        className={clsx(styles.textarea, className, error && styles.hasError)}
+        style={textareaStyle}
         name={name}
         placeholder={placeholder}
         value={value}
-        defaultValue={defaultValue}
+        defaultValue={value === undefined ? defaultValue : undefined}
         onChange={onChange}
-        minlength={minlength}
-        maxlength={maxlength}
+        minLength={minlength}
+        maxLength={maxlength}
         disabled={disabled}
-        error={error}
         required={required}
         data-testid={dataTestId}
       />
 
       {charactersCount != undefined && (
-        <Styles.Count>
+        <div className={styles.count}>
           <span className={charactersCount < 0 ? 'negative' : ''}>
             {charactersCount}
           </span>
-        </Styles.Count>
+        </div>
       )}
       {error ? <ErrorField error={error} /> : null}
-    </Styles.Wrapper>
+    </div>
   );
 };
 

@@ -31,10 +31,7 @@ export const SlideshowComponent = (args: SlideshowProps) => {
   );
 };
 
-SlideshowComponent.story = {
-  name: 'Slideshow',
-};
-
+SlideshowComponent.storyName = 'Slideshow';
 SlideshowComponent.args = {
   showArrows: true,
   slidesNumber: 3,

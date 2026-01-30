@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import * as Styles from './styles';
+import styles from './styles.module.css';
 
 export interface VideoPlayerProps {
   video: any;
@@ -28,7 +28,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
   } = props;
 
   return (
-    <Styles.Wrapper>
+    <div className={styles.wrapper}>
       {/* @ts-ignore */}
       <ReactPlayer
         style={{ position: 'absolute', top: 0, left: 0 }}
@@ -42,7 +42,7 @@ const VideoPlayer = (props: VideoPlayerProps) => {
         onReady={onReady}
         onError={onError}
       />
-    </Styles.Wrapper>
+    </div>
   );
 };
 
