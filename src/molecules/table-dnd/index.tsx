@@ -44,7 +44,7 @@ export interface TableProps<CellDataType> {
 }
 
 export interface CellBaseType {
-  id: string;
+  id: string | number;
 }
 
 const TableDnD = <CellData extends CellBaseType>(
@@ -191,19 +191,19 @@ const TableDnD = <CellData extends CellBaseType>(
                   <>
                   {validValues.map((row, index) => (
                     <Draggable
-                      key={row.id}
-                      draggableId={row.id}
+                      key={String(row.id)}
+                      draggableId={String(row.id)}
                       index={index}
                     >
                       {(provided, snapshot) => (
                         <tr
                           ref={provided.innerRef}
-                          key={row.id}
+                          key={String(row.id)}
                           data-testid={`row-${dataTestId}`}
                           {...provided.draggableProps}
                           className={clsx(
                             styles.tableRow,
-                            draggableId === row.id && styles.isDragging
+                            draggableId === String(row.id) && styles.isDragging
                           )}
                           style={getItemStyle(
                             snapshot.isDragging,
