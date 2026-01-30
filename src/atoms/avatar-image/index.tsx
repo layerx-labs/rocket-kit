@@ -32,7 +32,7 @@ const AvatarImage = (props: AvatarProps) => {
 
   return (
     <div
-      className={clsx(styles.wrapper, square && styles.square, className)}
+      className={clsx('avatar-img', styles.wrapper, square && styles.square, className)}
       style={wrapperStyle}
     >
       {boring && !url ? (

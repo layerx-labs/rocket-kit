@@ -35,6 +35,7 @@ const Tag = (props: TagProps) => {
   return (
     <span
       className={clsx(
+        'tag',
         styles.tag,
         variant === 'solid' ? styles.variantSolid : styles.variantOutline,
         className
